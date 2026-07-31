@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ponderaciones EvAU / EBAU 2026 – Por Universidad y Comunidad</title>
+  <meta name="description" content="Consulta las ponderaciones oficiales de todas las universidades públicas españolas para la Fase Voluntaria de la EvAU / EBAU 2026." />
+  <meta name="theme-color" content="#5a43f2" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="/js/site.js" defer></script>
+  <style>
+    .selector-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 1.25rem;
+    }
+
+    .selector-card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .comunidad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .comunidad-btn {
+      padding: 10px 14px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .comunidad-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .comunidad-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .result-area {
+      display: none;
+    }
+
+    .result-area.visible {
+      display: block;
+    }
+
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .pdf-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .pdf-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-card);
+    }
+
+    .pdf-card .uni-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .pdf-card .uni-city {
+      font-size: 0.8rem;
+      color: var(--text-hint);
+    }
+
+    .pdf-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: auto;
+      padding: 5px 0;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .pdf-card a:hover { text-decoration: underline; }
+
+    .pdf-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--danger-light);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .info-callout {
+      background: var(--primary-light);
+      border: 0.5px solid rgba(59,79,216,0.2);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      font-size: 0.88rem;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .info-callout::before {
+      content: 'ℹ';
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .section-title-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-area h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .badge-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="/" aria-label="Miebau, inicio"><span class="brand-mark" aria-hidden="true">✓</span><span>mi<span style="color:var(--primary)">ebau</span></span></a>
+      <ul class="navbar-links">
+        <li><a href="/calculadora.html">Calculadora</a></li>
+        <li><a href="/ponderaciones.html" class="active">Ponderaciones</a></li>
+        <li><a href="/examenes.html">Exámenes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="page-header">
+      <span class="eyebrow">PDFs oficiales 2026</span>
+      <h1>Ponderaciones EvAU 2026</h1>
+      <p>Consulta los coeficientes aplicados por cada universidad para la Fase Voluntaria de la Selectividad.</p>
+    </header>
+
+    <div class="info-callout">
+      Los PDFs contienen las tablas oficiales de ponderaciones de todas las universidades públicas de España para el curso 2025–2026.
+    </div>
+
+    <!-- Selector de comunidad -->
+    <div class="selector-card">
+      <h2>Selecciona tu comunidad autónoma</h2>
+      <div class="comunidad-grid" id="comunidadGrid">
+        <button class="comunidad-btn" onclick="seleccionar(this, 'andalucia')">Andalucía</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'aragon')">Aragón</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'asturias')">Asturias</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'cantabria')">Cantabria</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'clm')">Castilla-La Mancha</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'cyl')">Castilla y León</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'cataluna')">Cataluña</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'valenciana')">C. Valenciana</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'extremadura')">Extremadura</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'galicia')">Galicia</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'baleares')">Islas Baleares</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'canarias')">Islas Canarias</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'rioja')">La Rioja</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'madrid')">Madrid</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'murcia')">Murcia</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'navarra')">Navarra</button>
+        <button class="comunidad-btn" onclick="seleccionar(this, 'paisvasco')">País Vasco</button>
+      </div>
+    </div>
+
+    <div class="idle-state" id="idlePonderaciones"><div class="empty-icon" aria-hidden="true">⌁</div><strong>Elige una comunidad para empezar</strong><p style="margin:4px 0 0;font-size:.88rem">Te mostraremos las universidades y documentos disponibles.</p></div>
+
+    <!-- Resultado -->
+    <div class="result-area" id="resultArea">
+      <div class="card">
+        <div class="section-title-area">
+          <h2 id="resultTitle">Universidades</h2>
+          <span class="badge-count" id="countBadge"></span>
+        </div>
+        <div class="pdf-grid" id="pdfGrid"></div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="card" style="margin-top: 0.5rem;">
+      <div class="card-title">¿Qué son las ponderaciones?</div>
+      <p style="font-size: 0.93rem; margin-bottom: 0.75rem;">
+        Las ponderaciones son los coeficientes (0.1 o 0.2) que multiplican la nota de cada materia voluntaria en el cálculo de tu nota de admisión. Una misma asignatura puede ponderar diferente según la universidad y el grado.
+      </p>
+      <p style="font-size: 0.93rem;">
+        Para sacar el máximo partido, compara las ponderaciones de las universidades que te interesan y elige las asignaturas voluntarias que más suben tu nota de admisión para esa carrera concreta.
+      </p>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h2>¿Has calculado ya tu nota?</h2>
+      <p>Comparte esta herramienta con tus compañeros para que también puedan consultar las ponderaciones oficiales.</p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <a href="/calculadora.html" class="btn btn-primary">Ir a la calculadora</a>
+        <button class="btn btn-outline" onclick="navigator.share ? navigator.share({title:'Ponderaciones EvAU 2026', url: location.href}) : navigator.clipboard.writeText(location.href)">
+          Compartir página
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora.html">Calculadora</a><a href="/ponderaciones.html">Ponderaciones</a><a href="/examenes.html">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
+
+  <script>
+    // Datos de universidades por comunidad. 
+    // Reemplaza los href con las URLs reales de tus PDFs.
+    const data = {
+      andalucia: {
+        nombre: 'Andalucía',
+        unis: [
+          { nombre: 'Universidad de Almería', ciudad: 'Almería', pdf: '#' },
+          { nombre: 'Universidad de Cádiz', ciudad: 'Cádiz', pdf: '#' },
+          { nombre: 'Universidad de Córdoba', ciudad: 'Córdoba', pdf: '#' },
+          { nombre: 'Universidad de Granada', ciudad: 'Granada', pdf: '#' },
+          { nombre: 'Universidad de Huelva', ciudad: 'Huelva', pdf: '#' },
+          { nombre: 'Universidad de Jaén', ciudad: 'Jaén', pdf: '#' },
+          { nombre: 'Universidad de Málaga', ciudad: 'Málaga', pdf: '#' },
+          { nombre: 'Universidad Pablo de Olavide', ciudad: 'Sevilla', pdf: '#' },
+          { nombre: 'Universidad de Sevilla', ciudad: 'Sevilla', pdf: '#' },
+        ]
+      },
+      aragon: {
+        nombre: 'Aragón',
+        unis: [
+          { nombre: 'Universidad de Zaragoza', ciudad: 'Zaragoza', pdf: '#' },
+        ]
+      },
+      asturias: {
+        nombre: 'Asturias',
+        unis: [
+          { nombre: 'Universidad de Oviedo', ciudad: 'Oviedo', pdf: '#' },
+        ]
+      },
+      cantabria: {
+        nombre: 'Cantabria',
+        unis: [
+          { nombre: 'Universidad de Cantabria', ciudad: 'Santander', pdf: '#' },
+        ]
+      },
+      clm: {
+        nombre: 'Castilla-La Mancha',
+        unis: [
+          { nombre: 'Universidad de Castilla-La Mancha', ciudad: 'Toledo', pdf: '#' },
+        ]
+      },
+      cyl: {
+        nombre: 'Castilla y León',
+        unis: [
+          { nombre: 'Universidad de Burgos', ciudad: 'Burgos', pdf: '#' },
+          { nombre: 'Universidad de León', ciudad: 'León', pdf: '#' },
+          { nombre: 'Universidad de Salamanca', ciudad: 'Salamanca', pdf: '#' },
+          { nombre: 'Universidad de Valladolid', ciudad: 'Valladolid', pdf: '#' },
+        ]
+      },
+      cataluna: {
+        nombre: 'Cataluña',
+        unis: [
+          { nombre: 'Universitat de Barcelona', ciudad: 'Barcelona', pdf: '#' },
+          { nombre: 'Universitat Autònoma de Barcelona', ciudad: 'Bellaterra', pdf: '#' },
+          { nombre: 'Universitat Politècnica de Catalunya', ciudad: 'Barcelona', pdf: '#' },
+          { nombre: 'Universitat de Girona', ciudad: 'Girona', pdf: '#' },
+          { nombre: 'Universitat de Lleida', ciudad: 'Lleida', pdf: '#' },
+          { nombre: 'Universitat Rovira i Virgili', ciudad: 'Tarragona', pdf: '#' },
+        ]
+      },
+      valenciana: {
+        nombre: 'Comunidad Valenciana',
+        unis: [
+          { nombre: 'Universitat de València', ciudad: 'Valencia', pdf: '#' },
+          { nombre: 'Universitat Politècnica de València', ciudad: 'Valencia', pdf: '#' },
+          { nombre: 'Universitat d\'Alacant', ciudad: 'Alicante', pdf: '#' },
+          { nombre: 'Universitat Jaume I', ciudad: 'Castellón', pdf: '#' },
+        ]
+      },
+      extremadura: {
+        nombre: 'Extremadura',
+        unis: [
+          { nombre: 'Universidad de Extremadura', ciudad: 'Badajoz', pdf: '#' },
+        ]
+      },
+      galicia: {
+        nombre: 'Galicia',
+        unis: [
+          { nombre: 'Universidad de A Coruña', ciudad: 'A Coruña', pdf: '#' },
+          { nombre: 'Universidad de Santiago de Compostela', ciudad: 'Santiago', pdf: '#' },
+          { nombre: 'Universidad de Vigo', ciudad: 'Vigo', pdf: '#' },
+        ]
+      },
+      baleares: {
+        nombre: 'Islas Baleares',
+        unis: [
+          { nombre: 'Universitat de les Illes Balears', ciudad: 'Palma', pdf: '#' },
+        ]
+      },
+      canarias: {
+        nombre: 'Islas Canarias',
+        unis: [
+          { nombre: 'Universidad de Las Palmas de Gran Canaria', ciudad: 'Las Palmas', pdf: '#' },
+          { nombre: 'Universidad de La Laguna', ciudad: 'La Laguna', pdf: '#' },
+        ]
+      },
+      rioja: {
+        nombre: 'La Rioja',
+        unis: [
+          { nombre: 'Universidad de La Rioja', ciudad: 'Logroño', pdf: '#' },
+        ]
+      },
+      madrid: {
+        nombre: 'Madrid',
+        unis: [
+          { nombre: 'Universidad Complutense de Madrid', ciudad: 'Madrid', pdf: '#' },
+          { nombre: 'Universidad Autónoma de Madrid', ciudad: 'Madrid', pdf: '#' },
+          { nombre: 'Universidad Politécnica de Madrid', ciudad: 'Madrid', pdf: '#' },
+          { nombre: 'Universidad Carlos III de Madrid', ciudad: 'Leganés', pdf: '#' },
+          { nombre: 'Universidad Rey Juan Carlos', ciudad: 'Móstoles', pdf: '#' },
+          { nombre: 'Universidad de Alcalá', ciudad: 'Alcalá de Henares', pdf: '#' },
+        ]
+      },
+      murcia: {
+        nombre: 'Murcia',
+        unis: [
+          { nombre: 'Universidad de Murcia', ciudad: 'Murcia', pdf: '#' },
+          { nombre: 'Universidad Politécnica de Cartagena', ciudad: 'Cartagena', pdf: '#' },
+        ]
+      },
+      navarra: {
+        nombre: 'Navarra',
+        unis: [
+          { nombre: 'Universidad Pública de Navarra', ciudad: 'Pamplona', pdf: '#' },
+        ]
+      },
+      paisvasco: {
+        nombre: 'País Vasco',
+        unis: [
+          { nombre: 'Universidad del País Vasco / EHU', ciudad: 'Bilbao', pdf: '#' },
+        ]
+      }
+    };
+
+    function seleccionar(btn, comunidadKey) {
+      document.querySelectorAll('.comunidad-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const comunidad = data[comunidadKey];
+      if (!comunidad) return;
+
+      document.getElementById('resultTitle').textContent = 'Universidades de ' + comunidad.nombre;
+      document.getElementById('countBadge').textContent = comunidad.unis.length + ' universidades';
+
+      const area = document.getElementById('resultArea');
+      area.classList.add('visible');
+      document.getElementById('idlePonderaciones').style.display = 'none';
+      const grid = document.getElementById('pdfGrid');
+      grid.innerHTML = '<div class="pdf-card skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div><div class="pdf-card skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div><div class="pdf-card skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>';
+      area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Estado de carga visual; los datos y enlaces originales se mantienen intactos.
+      setTimeout(() => {
+        grid.innerHTML = comunidad.unis.map(u => `
+          <div class="pdf-card">
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <div class="pdf-icon">📄</div>
+              <div>
+                <div class="uni-name">${u.nombre}</div>
+                <div class="uni-city">${u.ciudad}</div>
+              </div>
+            </div>
+            <a href="${u.pdf}" target="_blank" rel="noopener">
+              Descargar PDF →
+            </a>
+          </div>
+        `).join('');
+      }, 180);
+    }
+  </script>
+
+</body>
+</html>

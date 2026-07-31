@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exámenes EvAU / EBAU 2026 – Oficiales PDF por Asignatura y Comunidad</title>
+  <meta name="description" content="Descarga exámenes oficiales de la EvAU / EBAU clasificados por asignatura, comunidad autónoma y año. Prepara la Selectividad 2026 con pruebas reales." />
+  <meta name="theme-color" content="#5a43f2" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="/js/site.js" defer></script>
+  <style>
+    .filters-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 1.25rem;
+    }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 120px;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .filters-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group-inline {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .results-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .badge-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .exam-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exam-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0.9rem 1.1rem;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .exam-row:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-card);
+    }
+
+    .exam-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--danger-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .exam-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .exam-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .exam-meta {
+      font-size: 0.8rem;
+      color: var(--text-hint);
+      margin-top: 2px;
+    }
+
+    .exam-tags {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+      align-items: center;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 100px;
+      border: 0.5px solid var(--border-strong);
+      color: var(--text-muted);
+      background: var(--bg);
+      white-space: nowrap;
+    }
+
+    .tag.year {
+      background: var(--amber-light);
+      color: var(--amber);
+      border-color: transparent;
+    }
+
+    .exam-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--primary);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .exam-link:hover { text-decoration: underline; }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-hint);
+    }
+
+    .empty-state .empty-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .empty-state p { font-size: 0.92rem; color: var(--text-hint); }
+
+    .result-area { display: none; }
+    .result-area.visible { display: block; }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .tip-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+    }
+
+    .tip-card .tip-icon {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .tip-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-box {
+      background: var(--surface-alt);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .contact-box a { color: var(--primary); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="/" aria-label="Miebau, inicio"><span class="brand-mark" aria-hidden="true">✓</span><span>mi<span style="color:var(--primary)">ebau</span></span></a>
+      <ul class="navbar-links">
+        <li><a href="/calculadora.html">Calculadora</a></li>
+        <li><a href="/ponderaciones.html">Ponderaciones</a></li>
+        <li><a href="/examenes.html" class="active">Exámenes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="page-header">
+      <span class="eyebrow">PDFs oficiales · 2023 – 2025</span>
+      <h1>Exámenes EvAU oficiales</h1>
+      <p>Descarga pruebas reales de años anteriores filtradas por asignatura, comunidad y año.</p>
+    </header>
+
+    <!-- Filtros -->
+    <div class="filters-card">
+      <div class="filters-grid">
+        <div class="form-group-inline">
+          <label class="form-label" for="selAsignatura">Asignatura</label>
+          <select class="form-select" id="selAsignatura">
+            <option value="">-- Selecciona asignatura --</option>
+            <option>Alemán</option>
+            <option>Análisis Musical</option>
+            <option>Anatomía Aplicada</option>
+            <option>Artes Escénicas</option>
+            <option>Biología</option>
+            <option>Ciencias Generales</option>
+            <option>Ciencia de la Tierra y Medioambiente</option>
+            <option>Coro y Técnica Vocal</option>
+            <option>Cultura Audiovisual</option>
+            <option>Dibujo Artístico II</option>
+            <option>Dibujo Técnico aplicado a las Artes Plásticas y al Diseño II</option>
+            <option>Dibujo Técnico II</option>
+            <option>Diseño</option>
+            <option>Economía de la Empresa</option>
+            <option>Electrotecnia</option>
+            <option>Empresa y Diseño de Modelos de Negocio</option>
+            <option>Francés</option>
+            <option>Fundamentos Artísticos</option>
+            <option>Fundamentos del Arte</option>
+            <option>Física</option>
+            <option>Geografía</option>
+            <option>Geología y Ciencias Ambientales</option>
+            <option>Griego</option>
+            <option>Historia de España</option>
+            <option>Historia de la Filosofía</option>
+            <option>Historia de la Música y de la Danza</option>
+            <option>Historia del Arte</option>
+            <option>Imagen</option>
+            <option>Inglés</option>
+            <option>Italiano</option>
+            <option>Latín II</option>
+            <option>Lengua Castellana y Literatura</option>
+            <option>Lengua Catalana y Literatura</option>
+            <option>Lengua Gallega y Literatura</option>
+            <option>Lengua Vasca y Literatura</option>
+            <option>Lengua y Literatura (Valenciano)</option>
+            <option>Lenguaje y Práctica Musical</option>
+            <option>Literatura Castellana</option>
+            <option>Literatura Catalana</option>
+            <option>Literatura Dramática</option>
+            <option>Literatura Universal</option>
+            <option>Matemáticas Aplicadas a las Ciencias Sociales</option>
+            <option>Matemáticas II</option>
+            <option>Mecánica</option>
+            <option>Movimientos Culturales y Artísticos</option>
+            <option>Portugués</option>
+            <option>Química</option>
+            <option>Tecnología Industrial</option>
+            <option>Tecnología e Ingeniería</option>
+            <option>Técnicas de Expresión Gráfico Plástica</option>
+          </select>
+        </div>
+
+        <div class="form-group-inline">
+          <label class="form-label" for="selComunidad">Comunidad Autónoma</label>
+          <select class="form-select" id="selComunidad">
+            <option value="">-- Selecciona comunidad --</option>
+            <option>Andalucía</option>
+            <option>Aragón</option>
+            <option>Asturias</option>
+            <option>Cantabria</option>
+            <option>Castilla-La Mancha</option>
+            <option>Castilla y León</option>
+            <option>Cataluña</option>
+            <option>Comunidad Valenciana</option>
+            <option>Extremadura</option>
+            <option>Galicia</option>
+            <option>Islas Baleares</option>
+            <option>Islas Canarias</option>
+            <option>La Rioja</option>
+            <option>Madrid</option>
+            <option>Murcia</option>
+            <option>Navarra</option>
+            <option>País Vasco</option>
+          </select>
+        </div>
+
+        <div class="form-group-inline">
+          <label class="form-label" for="selAnio">Año</label>
+          <select class="form-select" id="selAnio">
+            <option value="">Todos</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-success btn-block" onclick="buscarExamenes()">
+        Buscar exámenes
+      </button>
+    </div>
+
+    <!-- Resultados -->
+    <div class="result-area" id="resultArea">
+      <div class="card">
+        <div class="results-header">
+          <h2 id="resultTitle">Resultados</h2>
+          <span class="badge-count" id="countBadge"></span>
+        </div>
+        <div class="exam-list" id="examList"></div>
+      </div>
+    </div>
+
+    <!-- Por qué practicar -->
+    <div class="card" style="margin-top: 0.5rem;">
+      <div class="card-title">Por qué practicar con exámenes reales</div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <p>Conoces la estructura y el tipo de preguntas que aparecen en tu comunidad.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">⏱</div>
+          <p>Mejoras la gestión del tiempo antes del día del examen real.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">📉</div>
+          <p>Reduces el estrés al familiarizarte con la dificultad habitual de cada asignatura.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔁</div>
+          <p>Identificas patrones y preguntas frecuentes que se repiten cada año.</p>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        ¿Tienes un examen oficial que no aparece en la web o has encontrado algún error?
+        Escríbenos a <a href="mailto:calculadoraebau@gmail.com">calculadoraebau@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h2>¿Tus exámenes ya están listos?</h2>
+      <p>Comparte esta herramienta con tus compañeros para que también puedan preparar la EvAU 2026.</p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <a href="/calculadora.html" class="btn btn-primary">Calcular mi nota</a>
+        <button class="btn btn-outline" onclick="navigator.share ? navigator.share({title:'Exámenes EvAU 2026', url: location.href}) : navigator.clipboard.writeText(location.href)">
+          Compartir página
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora.html">Calculadora</a><a href="/ponderaciones.html">Ponderaciones</a><a href="/examenes.html">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
+
+  <script>
+    // Este array debe llenarse con tus datos reales de exámenes.
+    // Estructura: { asignatura, comunidad, anio, pdf (URL al archivo) }
+    // Por ahora genera resultados de ejemplo para demostrar la UI.
+    function buscarExamenes() {
+      const asig = document.getElementById('selAsignatura').value;
+      const com  = document.getElementById('selComunidad').value;
+      const anio = document.getElementById('selAnio').value;
+
+      if (!asig && !com) {
+        alert('Selecciona al menos una asignatura o comunidad autónoma.');
+        return;
+      }
+
+      // --- Reemplaza esta lógica con tu fuente de datos real ---
+      // Ejemplo: fetch a tu JSON o llamada a tu API/backend
+      const anios = anio ? [anio] : ['2025', '2024', '2023'];
+      const comunidades = com ? [com] : ['Madrid', 'Andalucía', 'Murcia'];
+      const asignaturas = asig ? [asig] : [];
+
+      const resultados = [];
+      anios.forEach(a => {
+        comunidades.forEach(c => {
+          if (asignaturas.length > 0) {
+            asignaturas.forEach(s => {
+              resultados.push({ asignatura: s, comunidad: c, anio: a, pdf: '#' });
+            });
+          } else {
+            resultados.push({ asignatura: asig || '(asignatura)', comunidad: c, anio: a, pdf: '#' });
+          }
+        });
+      });
+      // --- Fin de ejemplo ---
+
+      const list = document.getElementById('examList');
+      const area = document.getElementById('resultArea');
+
+      document.getElementById('resultTitle').textContent =
+        [asig, com, anio ? 'Año ' + anio : ''].filter(Boolean).join(' · ') || 'Todos los resultados';
+      document.getElementById('countBadge').textContent = resultados.length + ' exámenes';
+
+      if (resultados.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">🔍</div>
+            <p>No se han encontrado exámenes con esos filtros.<br>Prueba con otra combinación.</p>
+          </div>`;
+      } else {
+        list.innerHTML = resultados.map(r => `
+          <div class="exam-row">
+            <div class="exam-icon">📄</div>
+            <div class="exam-info">
+              <div class="exam-title">${r.asignatura}</div>
+              <div class="exam-meta">${r.comunidad}</div>
+            </div>
+            <div class="exam-tags">
+              <span class="tag year">${r.anio}</span>
+              <span class="tag">${r.comunidad}</span>
+            </div>
+            <a class="exam-link" href="${r.pdf}" target="_blank" rel="noopener">
+              PDF →
+            </a>
+          </div>
+        `).join('');
+      }
+
+      area.classList.add('visible');
+      area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>

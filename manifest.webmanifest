@@ -1,0 +1,12 @@
+{
+  "name": "Miebau · Tu EvAU, con todo claro",
+  "short_name": "Miebau",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fc",
+  "theme_color": "#5a43f2",
+  "lang": "es-ES",
+  "description": "Herramientas claras para preparar la EvAU.",
+  "icons": [{ "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

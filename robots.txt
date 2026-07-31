@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /proximamente.html
+
+Sitemap: https://miebau.es/sitemap.xml
