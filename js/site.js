@@ -76,7 +76,7 @@
   footer();
   addCalculatorCta();
   optimizeImages();
-  ['/js/seo.js', '/js/integrations.js'].forEach((src) => {
+  ['/js/seo.js'].forEach((src) => {
     const script = document.createElement('script');
     script.src = src;
     script.async = false;

@@ -1,85 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#5a43f2" />
-  <title>Calculadora EvAU 2026 · Miebau</title>
-  <meta name="description" content="Calcula tu nota de acceso y admisión EvAU / EBAU 2026 en segundos." />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5a43f2">
+  <title>Calculadora EvAU, CFGS y Mayores de 25 · Miebau</title>
+  <meta name="description" content="Calcula, guarda y compara tus simulaciones de nota de acceso y admisión sin salir de tu navegador.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
+  <script src="/js/miebau-core.js" defer></script>
+  <script src="/js/calculadora.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="Navegación principal"><div class="navbar-inner">
-    <a class="navbar-brand" href="/" aria-label="Miebau, inicio"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17.5V6.8c0-.8.9-1.3 1.6-.9L12 9.6l6.4-3.7c.7-.4 1.6.1 1.6.9v10.7c0 .5-.4.9-.9.9H4.9c-.5 0-.9-.4-.9-.9Z" fill="currentColor" opacity=".9"/><path d="m7.5 12 3 2.8L16.8 9" stroke="#5A43F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>mi<span style="color:var(--primary)">ebau</span></span></a>
-    <ul class="navbar-links"><li><a href="/calculadora.html" class="active">Calculadora</a></li><li><a href="/ponderaciones.html">Ponderaciones</a></li><li><a href="/examenes.html">Exámenes</a></li></ul>
-  </div></nav>
+  <nav class="navbar" aria-label="Navegación principal"></nav>
 
-  <main class="page">
-    <div class="calculator-intro"><header class="page-header"><span class="eyebrow">Calculadora 2026</span><h1>Tu nota, sin complicaciones.</h1><p>Rellena tus calificaciones y descubre tu nota de acceso y de admisión en segundos.</p></header></div>
+  <main class="page calculator-page">
+    <div class="calculator-intro">
+      <header class="page-header">
+        <span class="eyebrow">Tu espacio de cálculo</span>
+        <h1>Tu nota, sin complicaciones.</h1>
+        <p>Simula distintos caminos, guarda tus combinaciones y decide con más calma. Todo queda en este dispositivo.</p>
+      </header>
+      <div class="local-badge"><span aria-hidden="true">●</span> 100 % en tu navegador</div>
+    </div>
 
-    <section class="card">
-      <div class="card-title"><span><span class="calc-step">1</span>Nota media de Bachillerato</span></div>
-      <div class="form-group" style="max-width:420px;margin-bottom:0"><label class="form-label" for="notaBachillerato">Nota media (0 – 10)</label><input class="form-input" type="number" id="notaBachillerato" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Ej. 8,50" /><p class="form-hint">La nota media de los dos años de Bachillerato.</p></div>
+    <section class="card mode-card" aria-labelledby="modeTitle">
+      <div class="card-title" id="modeTitle">Elige tu vía de acceso <span class="pill">Preparada para ampliar</span></div>
+      <div class="mode-switcher" role="tablist" aria-label="Modo de cálculo">
+        <button class="mode-option active" type="button" role="tab" aria-selected="true" data-mode="evau">
+          <span class="mode-option-icon" aria-hidden="true">01</span><span><strong>EvAU / EBAU</strong><small>Bachillerato + fase obligatoria</small></span>
+        </button>
+        <button class="mode-option" type="button" role="tab" aria-selected="false" data-mode="cfgs">
+          <span class="mode-option-icon" aria-hidden="true">02</span><span><strong>CFGS</strong><small>Ciclo formativo de grado superior</small></span>
+        </button>
+        <button class="mode-option" type="button" role="tab" aria-selected="false" data-mode="mayores25">
+          <span class="mode-option-icon" aria-hidden="true">03</span><span><strong>Mayores de 25</strong><small>Prueba de acceso + admisión</small></span>
+        </button>
+      </div>
+      <p class="mode-description" id="modeDescription">Calcula la nota de acceso sobre 10 y suma hasta dos materias ponderadas para llegar a 14.</p>
+      <div class="future-notice compact-notice" data-future-feature>
+        Las ponderaciones y fórmulas pueden variar según universidad y convocatoria. Este espacio queda preparado para añadir reglas específicas cuando existan datos oficiales.
+      </div>
     </section>
 
-    <section class="card">
-      <div class="card-title"><span><span class="calc-step">2</span>Fase obligatoria</span><span class="pill">4 asignaturas</span></div>
-      <div class="form-row"><div class="form-group"><label class="form-label" for="lengua">Lengua Castellana y Literatura</label><input class="form-input" type="number" id="lengua" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10" /></div><div class="form-group"><label class="form-label" for="historia">Historia de España</label><input class="form-input" type="number" id="historia" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10" /></div></div>
-      <div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="idioma">Lengua Extranjera</label><input class="form-input" type="number" id="idioma" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Inglés, francés…" /></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="troncal">Troncal de modalidad</label><input class="form-input" type="number" id="troncal" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10" /></div></div>
+    <section class="wizard-progress-card" aria-labelledby="wizardTitle">
+      <div class="wizard-progress-heading"><div><span class="eyebrow">Calculadora paso a paso</span><h2 id="wizardTitle">Completa tu simulación</h2></div><strong id="wizardProgressText">Paso 1 de 3</strong></div>
+      <div class="wizard-progress-track" aria-hidden="true"><div class="wizard-progress-bar" id="wizardProgressBar"></div></div>
+      <ol class="wizard-steps" aria-label="Pasos de la calculadora">
+        <li class="current" data-step-indicator="1"><span>1</span><b>Base</b></li>
+        <li data-step-indicator="2"><span>2</span><b>Fase</b></li>
+        <li data-step-indicator="3"><span>3</span><b>Objetivo</b></li>
+      </ol>
     </section>
 
-    <section class="card">
-      <div class="card-title"><span><span class="calc-step">3</span>Fase voluntaria</span><span class="pill"><a href="/ponderaciones.html">Ver ponderaciones →</a></span></div>
-      <p class="form-hint" style="margin:-8px 0 18px">Incluye hasta dos materias que aumenten tu nota de admisión.</p>
-      <div class="sub-card"><div class="sub-card-label">Materia 1</div><div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="pond1">Ponderación</label><select class="form-select" id="pond1"><option value="0">Sin ponderar</option><option value="0.1">0,1</option><option value="0.2" selected>0,2</option></select></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="nota1">Nota</label><input class="form-input" type="number" id="nota1" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10" /></div></div></div>
-      <div class="sub-card" style="margin-bottom:0"><div class="sub-card-label">Materia 2</div><div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="pond2">Ponderación</label><select class="form-select" id="pond2"><option value="0">Sin ponderar</option><option value="0.1" selected>0,1</option><option value="0.2">0,2</option></select></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="nota2">Nota</label><input class="form-input" type="number" id="nota2" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10" /></div></div></div>
+    <form id="calculatorForm" novalidate>
+      <section class="wizard-panel active" data-step-panel="1" aria-labelledby="step1Title">
+        <div class="card">
+          <div class="card-title"><span><span class="calc-step">1</span><span id="step1Title">Tu nota base</span></span><span class="pill">Obligatoria</span></div>
+          <div class="mode-fields" data-mode-fields="evau">
+            <div class="form-group" style="max-width:430px;margin-bottom:0"><label class="form-label" for="notaBachillerato">Nota media de Bachillerato</label><input class="form-input" type="number" id="notaBachillerato" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Ej. 8,50"><p class="form-hint">La media de los dos años de Bachillerato.</p></div>
+          </div>
+          <div class="mode-fields" data-mode-fields="cfgs" hidden>
+            <div class="form-group" style="max-width:430px;margin-bottom:0"><label class="form-label" for="mediaCFGS">Nota media del CFGS</label><input class="form-input" type="number" id="mediaCFGS" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Ej. 8,50"><p class="form-hint">Introduce tu expediente final sobre 10.</p></div>
+          </div>
+          <div class="mode-fields" data-mode-fields="mayores25" hidden>
+            <div class="form-group" style="max-width:430px;margin-bottom:0"><label class="form-label" for="notaMayores25">Nota de tu prueba de acceso</label><input class="form-input" type="number" id="notaMayores25" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Ej. 7,80"><p class="form-hint">La nota base de tu convocatoria, sobre 10.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wizard-panel" data-step-panel="2" aria-labelledby="step2Title" hidden>
+        <div class="card">
+          <div class="card-title"><span><span class="calc-step">2</span><span id="step2Title">Fase obligatoria</span></span><span class="pill" id="step2Pill">4 asignaturas</span></div>
+          <div class="evau-only-fields">
+            <p class="form-hint" style="margin:-8px 0 18px">Necesitamos las cuatro calificaciones para calcular la media de esta fase.</p>
+            <div class="form-row"><div class="form-group"><label class="form-label" for="lengua">Lengua Castellana y Literatura</label><input class="form-input" type="number" id="lengua" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10"></div><div class="form-group"><label class="form-label" for="historia">Historia de España</label><input class="form-input" type="number" id="historia" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10"></div></div>
+            <div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="idioma">Lengua Extranjera</label><input class="form-input" type="number" id="idioma" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Inglés, francés…"></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="troncal">Troncal de modalidad</label><input class="form-input" type="number" id="troncal" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10"></div></div>
+          </div>
+          <div class="mode-note" data-non-evau-note hidden>
+            <div class="mode-note-icon" aria-hidden="true">✓</div>
+            <div><strong>Esta vía no utiliza una fase obligatoria separada.</strong><p>Continúa con tus materias de admisión. La nota base introducida en el paso anterior se mantiene.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wizard-panel" data-step-panel="3" aria-labelledby="step3Title" hidden>
+        <div class="card">
+          <div class="card-title"><span><span class="calc-step">3</span><span id="step3Title">Materias de admisión y objetivo</span></span><span class="pill">Hasta 14</span></div>
+          <p class="form-hint" style="margin:-8px 0 18px">Añade hasta dos materias que ponderen para tu grado. Si no las conoces todavía, déjalas en blanco.</p>
+          <div class="sub-card"><div class="sub-card-label">Materia ponderada 1</div><div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="pond1">Ponderación</label><select class="form-select" id="pond1"><option value="0">Sin ponderar</option><option value="0.1">0,1</option><option value="0.2" selected>0,2</option></select></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="nota1">Nota de la materia</label><input class="form-input" type="number" id="nota1" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10"></div></div></div>
+          <div class="sub-card" style="margin-bottom:0"><div class="sub-card-label">Materia ponderada 2</div><div class="form-row"><div class="form-group" style="margin-bottom:0"><label class="form-label" for="pond2">Ponderación</label><select class="form-select" id="pond2"><option value="0">Sin ponderar</option><option value="0.1" selected>0,1</option><option value="0.2">0,2</option></select></div><div class="form-group" style="margin-bottom:0"><label class="form-label" for="nota2">Nota de la materia</label><input class="form-input" type="number" id="nota2" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 – 10"></div></div></div>
+          <div class="goal-inline"><div><span class="eyebrow">Objetivo de nota</span><h3>¿A qué nota quieres llegar?</h3><p>Guardaremos este objetivo solo en tu dispositivo.</p></div><div class="goal-input-wrap"><label class="sr-only" for="objetivoNota">Nota objetivo sobre 14</label><input class="form-input" type="number" id="objetivoNota" min="0" max="14" step="0.01" value="12" inputmode="decimal"><span>/ 14</span></div></div>
+        </div>
+      </section>
+
+      <div class="wizard-actions"><button class="btn btn-ghost" type="button" id="previousStep" hidden>← Atrás</button><span class="wizard-action-spacer"></span><button class="btn btn-primary btn-lg" type="button" id="nextStep">Siguiente <span aria-hidden="true">→</span></button><button class="btn btn-success btn-lg" type="button" id="calculateButton" hidden>Calcular mi nota <span aria-hidden="true">✦</span></button></div>
+      <p class="form-error" id="formError" role="alert" hidden></p>
+    </form>
+
+    <section class="goal-card card" aria-labelledby="goalTitle">
+      <div class="goal-card-copy"><span class="eyebrow">Tu objetivo</span><h2 id="goalTitle">Cada décima cuenta.</h2><p id="goalMessage">Calcula tu simulación para ver cuánto te acerca a tu meta.</p></div><div class="goal-meter"><div class="goal-meter-top"><strong id="goalCurrent">—</strong><span id="goalTarget">Objetivo: 12,00</span></div><div class="score-track light-track"><div class="score-progress goal-progress" id="goalProgress"></div></div><p id="goalProgressText">Aún no hay una simulación guardada.</p></div>
     </section>
 
-    <button class="btn btn-success btn-lg btn-block" type="button" onclick="calcular()">Calcular mi nota EvAU <span aria-hidden="true">→</span></button>
-
-    <section class="result-box" id="resultado" style="display:none" aria-live="polite">
-      <div class="result-kicker">Tu nota de admisión</div>
-      <div class="result-hero-value"><span id="notaPrincipal">—</span><small>/ 14</small></div>
-      <p class="result-message" id="mensajeResultado">Cada paso cuenta: sigue construyendo tu futuro.</p>
-      <div class="score-track" aria-label="Progreso de nota sobre 14"><div class="score-progress" id="barraNota" style="width:0%"></div></div>
+    <section class="result-box" id="resultado" hidden aria-live="polite">
+      <div class="result-kicker">Tu nota de admisión</div><div class="result-hero-value"><span id="notaPrincipal">—</span><small>/ 14</small></div><p class="result-message" id="mensajeResultado">Cada paso cuenta.</p><div class="score-track" aria-label="Progreso de nota sobre 14"><div class="score-progress" id="barraNota"></div></div>
       <div class="result-grid"><div class="result-mini"><div class="result-label">Nota de acceso</div><div class="result-value" id="notaAcceso">—</div><div class="result-sub">sobre 10</div></div><div class="result-mini"><div class="result-label">Nota de admisión</div><div class="result-value" id="notaAdmision">—</div><div class="result-sub">sobre 14</div></div></div>
-      <div class="result-breakdown"><div>Bachillerato<strong id="desgloseBach">—</strong></div><div>Fase obligatoria<strong id="desgloseObl">—</strong></div><div>Voluntarias<strong id="desgloseVol">—</strong></div></div>
-      <div class="result-actions"><button class="btn" type="button" onclick="compartirResultado()">Compartir</button><button class="btn" type="button" onclick="copiarResultado()">Copiar nota</button><button class="btn" type="button" onclick="descargarResultado()">Descargar imagen</button></div>
+      <div class="result-breakdown"><div>Base<strong id="desgloseBach">—</strong></div><div>Fase<strong id="desgloseObl">—</strong></div><div>Voluntarias<strong id="desgloseVol">—</strong></div></div>
+      <div class="result-actions"><button class="btn" type="button" id="saveCalculation">Guardar cálculo</button><button class="btn" type="button" id="shareResult">Compartir</button><button class="btn" type="button" id="copyResult">Copiar nota</button><button class="btn" type="button" id="copyLink">Copiar enlace</button><button class="btn" type="button" id="downloadResult">Descargar imagen</button></div>
     </section>
 
-    <section class="career-cta" id="carreras"><h2>¿A qué carreras podrías acceder con esta nota?</h2><p>Contrasta tu resultado con las notas de corte y explora las opciones que encajan contigo.</p><a href="/notas-de-corte.html" class="btn btn-lg">Ver notas de corte <span aria-hidden="true">→</span></a></section>
+    <section class="card inverse-card" aria-labelledby="inverseTitle">
+      <div class="card-title"><span><span class="calc-step inverse-step">↗</span><span id="inverseTitle">Calculadora inversa</span></span><span class="pill">Planifica tu siguiente paso</span></div>
+      <p class="form-hint" style="margin:-8px 0 20px">Dile a Miebau qué quieres mejorar y calcularemos la nota aproximada que necesitas con los datos actuales.</p>
+      <div class="form-row"><div class="form-group"><label class="form-label" for="inverseTarget">Quiero calcular</label><select class="form-select" id="inverseTarget"><option value="base">Mi nota base / de acceso</option><option value="obligatoria">Mi media de fase obligatoria</option><option value="vol1">La nota de mi materia ponderada 1</option><option value="vol2">La nota de mi materia ponderada 2</option></select></div><div class="form-group"><label class="form-label" for="inverseGoal">Para llegar a</label><div class="input-suffix"><input class="form-input" type="number" id="inverseGoal" min="0" max="14" step="0.01" value="12" inputmode="decimal"><span>/ 14</span></div></div></div>
+      <button class="btn btn-primary" type="button" id="inverseButton">Calcular cuánto necesito →</button><div class="inverse-result" id="inverseResult" hidden aria-live="polite"><strong id="inverseValue">—</strong><span id="inverseMessage">Introduce tus datos para estimarlo.</span></div>
+    </section>
 
-    <section class="info-section"><div class="card"><div class="card-title">¿Cómo se calcula la nota EvAU 2026?</div><h3>Nota de acceso (sobre 10)</h3><p>Combina tu rendimiento en Bachillerato y la Fase Obligatoria.</p><div class="formula-box">0,6 × Nota Bachillerato + 0,4 × Nota Fase Obligatoria</div><h3>Nota de admisión (sobre 14)</h3><p>Se suman las mejores ponderaciones de las materias voluntarias.</p><div class="formula-box">Nota de acceso + (Materia 1 × ponderación) + (Materia 2 × ponderación)</div></div><div class="card"><div class="card-title">Consejos para subir tu nota</div><ul class="tips-list"><li>Elige tus materias voluntarias según la carrera que quieres estudiar.</li><li>Comprueba las ponderaciones en la <a href="/ponderaciones.html">tabla por universidad</a>.</li><li>Practica con <a href="/examenes.html">exámenes reales de años anteriores</a>.</li><li>Prueba diferentes combinaciones para maximizar tu nota final.</li></ul></div></section>
+    <section class="history-section" aria-labelledby="historyTitle"><div class="section-heading"><div><span class="eyebrow">Tus simulaciones</span><h2 id="historyTitle">Historial y comparación</h2></div><button class="btn btn-ghost" type="button" id="clearHistory" hidden>Borrar historial</button></div><div class="history-layout"><div class="history-list" id="historyList"><div class="empty-state"><div class="empty-icon" aria-hidden="true">◷</div><strong>Todavía no has guardado simulaciones</strong><p>Guarda una combinación para verla aquí y compararla con otras.</p></div></div><div class="comparison-panel" id="comparisonPanel" hidden><div class="card-title">Comparación <span class="pill" id="comparisonCount">0 / 3</span></div><div id="comparisonContent"></div></div></div></section>
+
+    <div data-premium-banner data-premium-title="Convierte tus objetivos en un plan" data-premium-text="La base de Premium está preparada para añadir seguimiento, favoritos y recomendaciones cuando llegue el momento."></div>
+
+    <section class="career-cta"><h2>¿A qué carreras podrías acceder con esta nota?</h2><p>Contrasta tu resultado con una futura base de notas de corte y explora las opciones que encajan contigo.</p><a href="/notas-de-corte.html" class="btn btn-lg">Ver notas de corte <span aria-hidden="true">→</span></a></section>
+
+    <section class="info-section"><div class="card"><div class="card-title">¿Cómo se calcula?</div><h3>EvAU / EBAU</h3><div class="formula-box">0,6 × Bachillerato + 0,4 × fase obligatoria + ponderaciones</div><h3>CFGS y Mayores de 25</h3><p>La interfaz ya contempla ambas vías y conserva sus simulaciones por separado. La fórmula base queda parametrizada para incorporar reglas concretas de cada convocatoria.</p></div><div class="card"><div class="card-title">Una calculadora que te acompaña</div><ul class="tips-list"><li>Prueba varias combinaciones antes de decidir tus materias.</li><li>Guarda tus escenarios y compáralos en un vistazo.</li><li>Usa la calculadora inversa para convertir una meta en un siguiente paso.</li><li>Los datos se quedan en este dispositivo: no se envían a ningún servidor.</li></ul></div></section>
   </main>
-  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora.html">Calculadora</a><a href="/ponderaciones.html">Ponderaciones</a><a href="/examenes.html">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
-  <script>
-    function getVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
-    function calcular() {
-      const bach = getVal('notaBachillerato'), lengua = getVal('lengua'), historia = getVal('historia'), idioma = getVal('idioma'), troncal = getVal('troncal');
-      const pond1 = parseFloat(document.getElementById('pond1').value) || 0, nota1 = getVal('nota1');
-      const pond2 = parseFloat(document.getElementById('pond2').value) || 0, nota2 = getVal('nota2');
-      const mediaFaseObl = (lengua + historia + idioma + troncal) / 4;
-      const notaAcceso = (0.6 * bach) + (0.4 * mediaFaseObl);
-      const notaAdmision = notaAcceso + (nota1 * pond1) + (nota2 * pond2);
-      const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-      const acceso = clamp(notaAcceso, 0, 10), admision = clamp(notaAdmision, 0, 14);
-      document.getElementById('notaAcceso').textContent = acceso.toFixed(3);
-      document.getElementById('notaAdmision').textContent = admision.toFixed(3);
-      document.getElementById('notaPrincipal').textContent = admision.toFixed(3);
-      document.getElementById('desgloseBach').textContent = (0.6 * bach).toFixed(3);
-      document.getElementById('desgloseObl').textContent = (0.4 * mediaFaseObl).toFixed(3);
-      document.getElementById('desgloseVol').textContent = ((nota1 * pond1) + (nota2 * pond2)).toFixed(3);
-      document.getElementById('mensajeResultado').textContent = admision >= 12 ? '¡Excelente! Estás muy cerca de abrir muchas puertas.' : admision >= 9 ? 'Vas por muy buen camino. Cada décima suma.' : 'Este es tu punto de partida: sigue a por esa nota.';
-      const box = document.getElementById('resultado'); box.style.display = 'block';
-      requestAnimationFrame(() => { document.getElementById('barraNota').style.width = (admision / 14 * 100) + '%'; });
-      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    function textoResultado() { return 'Mi nota de admisión EvAU es ' + document.getElementById('notaAdmision').textContent + ' sobre 14. Calcula la tuya en Miebau.'; }
-    async function compartirResultado() { if (navigator.share) { try { await navigator.share({ title: 'Mi nota EvAU · Miebau', text: textoResultado(), url: location.href }); } catch (_) {} } else { copiarResultado(); } }
-    async function copiarResultado() { try { await navigator.clipboard.writeText(textoResultado()); const b = document.activeElement; if (b && b.tagName === 'BUTTON') { const old = b.textContent; b.textContent = '¡Copiado!'; setTimeout(() => b.textContent = old, 1600); } } catch (_) {} }
-    function descargarResultado() { const nota = document.getElementById('notaAdmision').textContent; const c = document.createElement('canvas'); c.width = 1200; c.height = 630; const x = c.getContext('2d'); const g = x.createLinearGradient(0,0,1200,630); g.addColorStop(0,'#171e40'); g.addColorStop(.55,'#4534c9'); g.addColorStop(1,'#6650fb'); x.fillStyle=g; x.fillRect(0,0,c.width,c.height); x.fillStyle='#9ff3d8'; x.font='700 34px Arial'; x.fillText('MIEBAU · EVAU 2026',74,94); x.fillStyle='#ffffff'; x.font='800 210px Arial'; x.fillText(nota,70,330); x.fillStyle='#cdc7ff'; x.font='700 36px Arial'; x.fillText('MI NOTA DE ADMISIÓN / 14',78,390); x.fillStyle='#ffffff'; x.font='600 36px Arial'; x.fillText('Tu EvAU, con todo claro.',78,530); const a=document.createElement('a'); a.download='mi-nota-evau-miebau.png'; a.href=c.toDataURL('image/png'); a.click(); }
-  </script>
+
+  <footer></footer>
 </body>
 </html>

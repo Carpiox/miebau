@@ -1,19 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#5a43f2" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5a43f2">
   <title>Notas de corte · Miebau</title>
-  <meta name="description" content="Próximamente podrás consultar notas de corte por carrera y universidad en Miebau." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Espacio preparado para consultar y comparar notas de corte por grado, universidad y comunidad.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
+  <script src="/js/miebau-core.js" defer></script>
+  <script src="/js/notas-de-corte.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="Navegación principal"><div class="navbar-inner"><a class="navbar-brand" href="/" aria-label="Miebau, inicio"><span class="brand-mark" aria-hidden="true">✓</span><span>mi<span style="color:var(--primary)">ebau</span></span></a><ul class="navbar-links"><li><a href="/calculadora.html">Calculadora</a></li><li><a href="/ponderaciones.html">Ponderaciones</a></li><li><a href="/examenes.html">Exámenes</a></li></ul></div></nav>
-  <main class="page"><section class="hero" style="margin-top:16px"><span class="hero-badge">Próximamente</span><h1>Notas de corte <span>sin dar vueltas.</span></h1><p>Estamos preparando esta sección para que puedas descubrir qué carreras están a tu alcance según tu nota de admisión.</p><div class="hero-actions"><a href="/calculadora.html" class="btn btn-primary btn-lg">Volver a mi nota</a><a href="/ponderaciones.html" class="btn btn-outline btn-lg">Ver ponderaciones</a></div></section><section class="card" style="text-align:center;max-width:760px;margin:0 auto"><div style="font-size:2.5rem;margin-bottom:10px" aria-hidden="true">✦</div><h2>Una herramienta útil está en camino</h2><p style="margin:10px auto 0;max-width:510px">Aquí podrás comparar notas de corte por grado, universidad y comunidad autónoma.</p></section></main>
-  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora.html">Calculadora</a><a href="/ponderaciones.html">Ponderaciones</a><a href="/examenes.html">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
+  <nav class="navbar" aria-label="Navegación principal"></nav>
+  <main class="page">
+    <header class="content-hero"><span class="eyebrow">Próximamente</span><h1>Notas de corte <span class="accent-text">sin dar vueltas.</span></h1><p>Estamos preparando una herramienta para contrastar tu nota con grados y universidades. La interfaz y el contrato de datos ya están listos para la siguiente fase.</p></header>
+
+    <section class="future-data-hero" data-future-feature aria-labelledby="cutoffFutureTitle"><div class="placeholder-symbol" aria-hidden="true">⌁</div><div><h2 id="cutoffFutureTitle">Una fuente de datos en camino</h2><p>Aquí podrás filtrar por carrera, universidad y comunidad, ordenar resultados y comparar tus opciones. Por ahora no mostramos datos inventados.</p></div><a class="btn btn-primary" href="/calculadora.html">Calcular mi nota</a></section>
+
+    <section class="filters-card cutoff-filters" aria-labelledby="filtersTitle">
+      <div class="section-heading"><div><span class="eyebrow">Explora cuando haya datos</span><h2 id="filtersTitle">Filtros de notas de corte</h2></div><span class="pill">Interfaz preparada</span></div>
+      <div class="form-row"><div class="form-group"><label class="form-label" for="degreeFilter">Grado o palabra clave</label><input class="form-input" id="degreeFilter" type="search" placeholder="Ej. Psicología"></div><div class="form-group"><label class="form-label" for="universityFilter">Universidad</label><input class="form-input" id="universityFilter" type="search" placeholder="Ej. UCM"></div></div>
+      <div class="form-row"><div class="form-group"><label class="form-label" for="communityFilter">Comunidad autónoma</label><select class="form-select" id="communityFilter"><option value="">Todas las comunidades</option><option>Andalucía</option><option>Aragón</option><option>Asturias</option><option>Castilla y León</option><option>Cataluña</option><option>Comunidad de Madrid</option><option>Comunidad Valenciana</option><option>Galicia</option><option>Murcia</option></select></div><div class="form-group"><label class="form-label" for="cutoffSort">Ordenar por</label><select class="form-select" id="cutoffSort"><option value="note-desc">Nota más alta</option><option value="note-asc">Nota más baja</option><option value="name">Nombre del grado</option></select></div></div>
+      <div class="filter-actions"><button class="btn btn-primary" type="button" id="applyCutoffFilters">Aplicar filtros</button><button class="btn btn-ghost" type="button" id="resetCutoffFilters">Limpiar</button></div>
+    </section>
+
+    <section class="card" aria-live="polite"><div class="section-title-area"><h2 id="cutoffResultTitle">Resultados preparados</h2><span class="badge-count" id="cutoffCount">0 resultados</span></div><div id="cutoffResults" class="cutoff-results"><div class="empty-state"><div class="empty-icon" aria-hidden="true">◌</div><strong>Todavía no hay datos conectados</strong><p>Cuando exista una fuente oficial, este listado podrá recibirla sin cambiar la experiencia de usuario.</p></div></div></section>
+
+    <div data-premium-banner data-premium-title="Guarda tus carreras favoritas" data-premium-text="La futura capa Premium podrá ayudarte a seguir opciones, objetivos y cambios de convocatoria desde el mismo espacio."></div>
+    <section class="share-section"><h2>Mientras tanto, prepara tu estrategia</h2><p>Calcula tu nota y revisa las ponderaciones disponibles para saber qué información te falta antes de elegir.</p><div class="hero-actions"><a class="btn btn-primary" href="/calculadora.html">Ir a la calculadora</a><a class="btn btn-outline" href="/ponderaciones.html">Ver ponderaciones</a></div></section>
+  </main>
+  <footer></footer>
 </body>
 </html>
