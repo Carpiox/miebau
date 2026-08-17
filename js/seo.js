@@ -21,7 +21,11 @@
     'proximamente.html': { path: '/proximamente', crumb: 'Próximamente', noindex: true },
     '404.html': { path: '/404', crumb: 'Página no encontrada', noindex: true }
   };
-  const route = routes[page] || { path: location.pathname, crumb: document.title };
+  const isProfileHtmlPage = location.pathname.indexOf('/ponderaciones/') === 0 && page.endsWith('.html');
+  const profileSlug = page.replace(/\.html$/, '');
+  const route = isProfileHtmlPage
+    ? { path: '/ponderaciones/' + profileSlug, crumb: document.title }
+    : (routes[page] || { path: location.pathname, crumb: document.title });
   const canonical = base + route.path;
   const description = document.querySelector('meta[name="description"]')?.content || 'Herramientas claras para preparar la EvAU.';
   const addMeta = (selector, attributes) => {

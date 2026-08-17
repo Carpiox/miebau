@@ -15,13 +15,13 @@
 <body>
   <nav class="navbar" aria-label="Navegación principal"></nav>
   <main class="page">
-    <header class="content-hero"><span class="eyebrow">Documentos locales · 2026</span><h1>Ponderaciones para elegir mejor.</h1><p>Consulta los documentos disponibles por comunidad y universidad. La página está preparada para recibir tablas estructuradas por grado cuando exista una fuente oficial conectada.</p></header>
+    <header class="content-hero"><span class="eyebrow">Documentos y fichas · 2026</span><h1>Ponderaciones para elegir mejor.</h1><p>Consulta documentos oficiales disponibles y fichas informativas de universidades agrupadas por comunidad autónoma. Las fichas no sustituyen la información oficial de admisión.</p></header>
 
     <div class="info-callout"><strong>Sin APIs ni scraping:</strong> los documentos que aparecen aquí son archivos estáticos incluidos en el proyecto. Las comunidades sin documento se muestran como huecos preparados para el futuro.</div>
 
     <section class="selector-card" aria-labelledby="ponderacionesFiltersTitle"><div class="section-heading"><div><span class="eyebrow">Busca rápido</span><h2 id="ponderacionesFiltersTitle">Filtra documentos</h2></div><span class="pill" id="ponderacionesCount">0 documentos</span></div><div class="form-row"><div class="form-group"><label class="form-label" for="regionFilter">Comunidad autónoma</label><select class="form-select" id="regionFilter"><option value="">Todas las comunidades</option></select></div><div class="form-group"><label class="form-label" for="universitySearch">Universidad o documento</label><input class="form-input" id="universitySearch" type="search" placeholder="Ej. Complutense"></div></div></section>
 
-    <section class="card" data-future-feature aria-labelledby="documentsTitle"><div class="section-title-area"><h2 id="documentsTitle">Documentos disponibles</h2><span class="badge-count" id="documentBadge">—</span></div><div class="pdf-grid" id="pdfGrid"></div></section>
+    <section class="card" data-future-feature aria-labelledby="documentsTitle"><div class="section-title-area"><h2 id="documentsTitle">Documentos y fichas disponibles</h2><span class="badge-count" id="documentBadge">—</span></div><div class="pdf-grid" id="pdfGrid"></div></section>
 
     <section class="card"><div class="card-title">Un contrato de datos reutilizable</div><div class="contract-grid"><div><span class="contract-key">comunidad</span><p>Región o autonomía a la que pertenece el documento.</p></div><div><span class="contract-key">universidad</span><p>Nombre normalizado de la universidad o conjunto de universidades.</p></div><div><span class="contract-key">grado</span><p>Campo preparado para conectar ponderaciones por titulación.</p></div><div><span class="contract-key">materia · coeficiente</span><p>La pareja que alimentará la calculadora cuando llegue la tabla.</p></div></div></section>
 

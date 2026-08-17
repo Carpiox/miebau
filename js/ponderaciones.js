@@ -1,12 +1,11 @@
 /*
- * Ponderaciones · catálogo estático y contrato futuro.
- * No se consulta ninguna URL: `pdf` siempre apunta a un archivo local del
- * proyecto o queda a null para indicar que falta una fuente oficial.
+ * Ponderaciones · catálogo estático y fichas informativas.
+ * Los PDFs existentes siguen apuntando a archivos locales. Las universidades
+ * privadas enlazan a fichas HTML estáticas sin inventar ponderaciones.
  */
 (function (window, document) {
   'use strict';
 
-  // Contrato futuro por grado: { comunidad, universidad, grado, materia, coeficiente, curso }.
   const DOCUMENTS = [
     { region: 'Andalucía', name: 'Ponderaciones de Andalucía', city: 'Comunidad autónoma', pdf: null },
     { region: 'Aragón', name: 'Ponderaciones de Aragón', city: 'Comunidad autónoma', pdf: '/ponderaciones/Aragon/Aragon.pdf' },
@@ -36,33 +35,109 @@
     { region: 'País Vasco', name: 'Ponderaciones del País Vasco', city: 'Comunidad autónoma', pdf: null }
   ];
 
+  const PRIVATE_UNIVERSITIES = [
+    { region: 'Andalucía', name: 'Universidad Loyola', mode: 'Presencial', profile: '/ponderaciones/universidad-loyola' },
+    { region: 'Andalucía', name: 'UTAMED', mode: 'Online', profile: '/ponderaciones/utamed' },
+    { region: 'Andalucía', name: 'Universidad CEU Fernando III', mode: 'Presencial', profile: '/ponderaciones/universidad-ceu-fernando-iii' },
+    { region: 'Andalucía', name: 'Universidad Europea de Andalucía', mode: 'Presencial', profile: '/ponderaciones/universidad-europea-de-andalucia' },
+    { region: 'Andalucía', name: 'Universidad Alfonso X el Sabio Mare Nostrum', mode: 'Presencial', profile: '/ponderaciones/universidad-alfonso-x-el-sabio-mare-nostrum' },
+    { region: 'Aragón', name: 'Universidad San Jorge', mode: 'Presencial', profile: '/ponderaciones/universidad-san-jorge' },
+    { region: 'Islas Canarias', name: 'Universidad Europea de Canarias', mode: 'Presencial', profile: '/ponderaciones/universidad-europea-de-canarias' },
+    { region: 'Islas Canarias', name: 'Universidad Fernando Pessoa-Canarias', mode: 'Presencial', profile: '/ponderaciones/universidad-fernando-pessoa-canarias' },
+    { region: 'Islas Canarias', name: 'Universidad del Atlántico Medio', mode: 'Presencial', profile: '/ponderaciones/universidad-del-atlantico-medio' },
+    { region: 'Islas Canarias', name: 'Universidad de las Hespérides', mode: 'Online', profile: '/ponderaciones/universidad-de-las-hesperides' },
+    { region: 'Cantabria', name: 'Universidad Europea del Atlántico', mode: 'Presencial', profile: '/ponderaciones/universidad-europea-del-atlantico' },
+    { region: 'Castilla y León', name: 'Universidad Pontificia de Salamanca', mode: 'Presencial', profile: '/ponderaciones/universidad-pontificia-de-salamanca' },
+    { region: 'Castilla y León', name: 'UCAV', mode: 'Presencial', profile: '/ponderaciones/ucav' },
+    { region: 'Castilla y León', name: 'UEMC', mode: 'Presencial', profile: '/ponderaciones/uemc' },
+    { region: 'Castilla y León', name: 'IE University', mode: 'Presencial', profile: '/ponderaciones/ie-university' },
+    { region: 'Castilla y León', name: 'Universidad Internacional Isabel I de Castilla', mode: 'Online', profile: '/ponderaciones/universidad-internacional-isabel-i-de-castilla' },
+    { region: 'Cataluña', name: 'Universidad Ramon Llull', mode: 'Presencial', profile: '/ponderaciones/universidad-ramon-llull' },
+    { region: 'Cataluña', name: 'UOC', mode: 'Online', profile: '/ponderaciones/uoc' },
+    { region: 'Cataluña', name: 'UIC Barcelona', mode: 'Presencial', profile: '/ponderaciones/uic-barcelona' },
+    { region: 'Cataluña', name: 'UVic-UCC', mode: 'Presencial', profile: '/ponderaciones/uvic-ucc' },
+    { region: 'Cataluña', name: 'Universitat Abat Oliba CEU', mode: 'Presencial', profile: '/ponderaciones/universitat-abat-oliba-ceu' },
+    { region: 'Comunidad Valenciana', name: 'Universidad CEU Cardenal Herrera', mode: 'Presencial', profile: '/ponderaciones/universidad-ceu-cardenal-herrera' },
+    { region: 'Comunidad Valenciana', name: 'Universidad Católica de Valencia San Vicente Mártir', mode: 'Presencial', profile: '/ponderaciones/universidad-catolica-de-valencia-san-vicente-martir' },
+    { region: 'Comunidad Valenciana', name: 'VIU', mode: 'Online', profile: '/ponderaciones/viu' },
+    { region: 'Comunidad Valenciana', name: 'Universidad Europea de Valencia', mode: 'Presencial', profile: '/ponderaciones/universidad-europea-de-valencia' },
+    { region: 'Galicia', name: 'Universidad Intercontinental de la Empresa (UIE)', mode: 'Presencial', profile: '/ponderaciones/universidad-intercontinental-de-la-empresa' },
+    { region: 'La Rioja', name: 'UNIR', mode: 'Online', profile: '/ponderaciones/unir' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Pontificia Comillas', mode: 'Presencial', profile: '/ponderaciones/universidad-pontificia-comillas' },
+    { region: 'Comunidad de Madrid', name: 'UAX', mode: 'Presencial', profile: '/ponderaciones/uax' },
+    { region: 'Comunidad de Madrid', name: 'Universidad CEU San Pablo', mode: 'Presencial', profile: '/ponderaciones/universidad-ceu-san-pablo' },
+    { region: 'Comunidad de Madrid', name: 'UFV', mode: 'Presencial', profile: '/ponderaciones/ufv' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Nebrija', mode: 'Presencial', profile: '/ponderaciones/universidad-nebrija' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Europea de Madrid', mode: 'Presencial', profile: '/ponderaciones/universidad-europea-de-madrid' },
+    { region: 'Comunidad de Madrid', name: 'UCJC', mode: 'Presencial', profile: '/ponderaciones/ucjc' },
+    { region: 'Comunidad de Madrid', name: 'UDIMA', mode: 'Online', profile: '/ponderaciones/udima' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Eclesiástica San Dámaso', mode: 'Presencial', profile: '/ponderaciones/universidad-eclesiastica-san-damaso' },
+    { region: 'Comunidad de Madrid', name: 'ESIC Universidad', mode: 'Presencial', profile: '/ponderaciones/esic-universidad' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Villanueva', mode: 'Presencial', profile: '/ponderaciones/universidad-villanueva' },
+    { region: 'Comunidad de Madrid', name: 'CUNEF Universidad', mode: 'Presencial', profile: '/ponderaciones/cunef-universidad' },
+    { region: 'Comunidad de Madrid', name: 'UNIE', mode: 'Presencial', profile: '/ponderaciones/unie' },
+    { region: 'Comunidad de Madrid', name: 'UDIT', mode: 'Presencial', profile: '/ponderaciones/udit' },
+    { region: 'Región de Murcia', name: 'UCAM', mode: 'Presencial', profile: '/ponderaciones/ucam' },
+    { region: 'Navarra', name: 'Universidad de Navarra', mode: 'Presencial', profile: '/ponderaciones/universidad-de-navarra' },
+    { region: 'País Vasco', name: 'Universidad de Deusto', mode: 'Presencial', profile: '/ponderaciones/universidad-de-deusto' },
+    { region: 'País Vasco', name: 'Mondragon Unibertsitatea', mode: 'Presencial', profile: '/ponderaciones/mondragon-unibertsitatea' },
+    { region: 'País Vasco', name: 'EUNEIZ', mode: 'Presencial', profile: '/ponderaciones/euneiz' }
+  ];
+
+  const CATALOG = DOCUMENTS.concat(PRIVATE_UNIVERSITIES).sort((a, b) => {
+    const regionOrder = a.region.localeCompare(b.region, 'es');
+    return regionOrder || a.name.localeCompare(b.name, 'es');
+  });
   const $ = (id) => document.getElementById(id);
-  const regions = [...new Set(DOCUMENTS.map((documentItem) => documentItem.region))].sort((a, b) => a.localeCompare(b, 'es'));
+  const regions = [...new Set(CATALOG.map((documentItem) => documentItem.region))];
 
   function populateRegions() {
     regions.forEach((region) => {
-      const option = document.createElement('option'); option.value = region; option.textContent = region; $('regionFilter').appendChild(option);
+      const option = document.createElement('option');
+      option.value = region;
+      option.textContent = region;
+      $('regionFilter').appendChild(option);
     });
   }
 
   function filteredDocuments() {
     const region = $('regionFilter').value;
     const search = $('universitySearch').value.trim().toLocaleLowerCase('es');
-    return DOCUMENTS.filter((documentItem) => (!region || documentItem.region === region) && (!search || (documentItem.name + ' ' + documentItem.city).toLocaleLowerCase('es').includes(search)));
+    return CATALOG.filter((documentItem) => (!region || documentItem.region === region) && (!search || (documentItem.name + ' ' + documentItem.region).toLocaleLowerCase('es').includes(search)));
   }
 
   function render() {
     const documents = filteredDocuments();
-    $('ponderacionesCount').textContent = documents.length + (documents.length === 1 ? ' documento' : ' documentos');
-    $('documentBadge').textContent = documents.filter((documentItem) => documentItem.pdf).length + ' disponibles';
-    const grid = $('pdfGrid'); grid.replaceChildren();
+    const pdfCount = documents.filter((documentItem) => documentItem.pdf).length;
+    const profileCount = documents.filter((documentItem) => documentItem.profile).length;
+    $('ponderacionesCount').textContent = documents.length + (documents.length === 1 ? ' recurso' : ' recursos');
+    $('documentBadge').textContent = pdfCount + ' PDFs · ' + profileCount + ' fichas';
+
+    const grid = $('pdfGrid');
+    grid.replaceChildren();
     documents.forEach((documentItem) => {
-      const card = document.createElement('article'); card.className = 'pdf-card' + (documentItem.pdf ? '' : ' pdf-card-pending');
-      card.innerHTML = '<div class="pdf-card-heading"><span class="pdf-icon" aria-hidden="true">▤</span><span class="eyebrow">' + documentItem.region + '</span></div><div class="uni-name">' + documentItem.name + '</div><div class="uni-city">' + documentItem.city + '</div>';
-      if (documentItem.pdf) {
-        const link = document.createElement('a'); link.href = documentItem.pdf; link.target = '_blank'; link.rel = 'noopener'; link.textContent = 'Abrir documento PDF →'; card.appendChild(link);
+      const card = document.createElement('article');
+      card.className = 'pdf-card' + (!documentItem.pdf && !documentItem.profile ? ' pdf-card-pending' : '');
+      const mode = documentItem.mode ? 'Universidad privada · ' + documentItem.mode : documentItem.city;
+      card.innerHTML = '<div class="pdf-card-heading"><span class="pdf-icon" aria-hidden="true">◈</span><span class="eyebrow">' + documentItem.region + '</span></div><div class="uni-name">' + documentItem.name + '</div><div class="uni-city">' + mode + '</div>';
+
+      if (documentItem.profile) {
+        const link = document.createElement('a');
+        link.href = documentItem.profile;
+        link.textContent = 'Ver ficha informativa →';
+        card.appendChild(link);
+      } else if (documentItem.pdf) {
+        const link = document.createElement('a');
+        link.href = documentItem.pdf;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Abrir documento PDF →';
+        card.appendChild(link);
       } else {
-        const pending = document.createElement('span'); pending.className = 'pending-link'; pending.textContent = 'Documento pendiente de conectar'; card.appendChild(pending);
+        const pending = document.createElement('span');
+        pending.className = 'pending-link';
+        pending.textContent = 'Documento pendiente de conectar';
+        card.appendChild(pending);
       }
       grid.appendChild(card);
     });
