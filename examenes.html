@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exámenes EvAU / EBAU 2026 – Oficiales PDF por Asignatura y Comunidad</title>
+  <link rel="canonical" href="https://miebau.es/examenes">
   <meta name="description" content="Descarga exámenes oficiales de la EvAU / EBAU clasificados por asignatura, comunidad autónoma y año. Prepara la Selectividad 2026 con pruebas reales." />
   <meta name="theme-color" content="#5a43f2" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
@@ -205,16 +206,7 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="navbar-inner">
-      <a class="navbar-brand" href="/" aria-label="Miebau, inicio"><span class="brand-mark" aria-hidden="true">✓</span><span>mi<span style="color:var(--primary)">ebau</span></span></a>
-      <ul class="navbar-links">
-        <li><a href="/calculadora.html">Calculadora</a></li>
-        <li><a href="/ponderaciones">Ponderaciones</a></li>
-        <li><a href="/examenes.html" class="active">Exámenes</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="navbar" aria-label="Navegación principal"></nav>
 
   <div class="page">
 
@@ -369,7 +361,7 @@
       <h2>¿Tus exámenes ya están listos?</h2>
       <p>Comparte esta herramienta con tus compañeros para que también puedan preparar la EvAU 2026.</p>
       <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <a href="/calculadora.html" class="btn btn-primary">Calcular mi nota</a>
+        <a href="/calculadora" class="btn btn-primary">Calcular mi nota</a>
         <button class="btn btn-outline" onclick="navigator.share ? navigator.share({title:'Exámenes EvAU 2026', url: location.href}) : navigator.clipboard.writeText(location.href)">
           Compartir página
         </button>
@@ -378,7 +370,7 @@
 
   </div>
 
-  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora.html">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes.html">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
+  <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
 
   <script>
     // Este array debe llenarse con tus datos reales de exámenes.

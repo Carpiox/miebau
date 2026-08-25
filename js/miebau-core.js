@@ -86,7 +86,7 @@
       const text = node.dataset.premiumText || 'Estamos preparando herramientas ampliadas para organizar tus opciones y objetivos.';
       node.innerHTML = '<div class="premium-banner-icon" aria-hidden="true">✦</div>' +
         '<div class="premium-banner-copy"><span class="eyebrow">Próximamente</span><h2>' + title + '</h2><p>' + text + '</p></div>' +
-        '<a class="btn btn-outline" href="/premium.html">Ver Premium</a>';
+        '<a class="btn btn-outline" href="/premium">Ver Premium</a>';
       node.classList.add('premium-banner');
     });
   }
