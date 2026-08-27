@@ -106,41 +106,80 @@
     return CATALOG.filter((documentItem) => (!region || documentItem.region === region) && (!search || (documentItem.name + ' ' + documentItem.region).toLocaleLowerCase('es').includes(search)));
   }
 
+  function createDocumentCard(documentItem) {
+    const card = document.createElement('article');
+    card.className = 'pdf-card' + (!documentItem.pdf && !documentItem.profile ? ' pdf-card-pending' : '');
+    const mode = documentItem.mode ? 'Universidad privada · ' + documentItem.mode : documentItem.city;
+    card.innerHTML = '<div class="pdf-card-heading"><span class="pdf-icon" aria-hidden="true">◈</span><span class="eyebrow">' + documentItem.region + '</span></div><div class="uni-name">' + documentItem.name + '</div><div class="uni-city">' + mode + '</div>';
+
+    if (documentItem.profile) {
+      const link = document.createElement('a');
+      link.href = documentItem.profile;
+      link.textContent = 'Ver ficha informativa →';
+      card.appendChild(link);
+    } else if (documentItem.pdf) {
+      const link = document.createElement('a');
+      link.href = documentItem.pdf;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'Abrir documento PDF →';
+      card.appendChild(link);
+    } else {
+      const pending = document.createElement('span');
+      pending.className = 'pending-link';
+      pending.textContent = 'Documento pendiente de conectar';
+      card.appendChild(pending);
+    }
+    return card;
+  }
+
+  function appendDocumentCards(container, documents) {
+    documents.forEach((documentItem) => container.appendChild(createDocumentCard(documentItem)));
+  }
+
+  function createDocumentGroup(title, documents) {
+    const section = document.createElement('section');
+    section.className = 'university-group';
+
+    const heading = document.createElement('h3');
+    heading.textContent = title;
+    section.appendChild(heading);
+
+    if (documents.length) {
+      const groupGrid = document.createElement('div');
+      groupGrid.className = 'pdf-grid';
+      appendDocumentCards(groupGrid, documents);
+      section.appendChild(groupGrid);
+    } else {
+      const empty = document.createElement('p');
+      empty.className = 'university-group-empty';
+      empty.textContent = 'No hay resultados en esta sección.';
+      section.appendChild(empty);
+    }
+    return section;
+  }
+
   function render() {
     const documents = filteredDocuments();
     const pdfCount = documents.filter((documentItem) => documentItem.pdf).length;
     const profileCount = documents.filter((documentItem) => documentItem.profile).length;
+    const selectedRegion = $('regionFilter').value;
     $('ponderacionesCount').textContent = documents.length + (documents.length === 1 ? ' recurso' : ' recursos');
     $('documentBadge').textContent = pdfCount + ' PDFs · ' + profileCount + ' fichas';
 
     const grid = $('pdfGrid');
     grid.replaceChildren();
-    documents.forEach((documentItem) => {
-      const card = document.createElement('article');
-      card.className = 'pdf-card' + (!documentItem.pdf && !documentItem.profile ? ' pdf-card-pending' : '');
-      const mode = documentItem.mode ? 'Universidad privada · ' + documentItem.mode : documentItem.city;
-      card.innerHTML = '<div class="pdf-card-heading"><span class="pdf-icon" aria-hidden="true">◈</span><span class="eyebrow">' + documentItem.region + '</span></div><div class="uni-name">' + documentItem.name + '</div><div class="uni-city">' + mode + '</div>';
+    grid.classList.toggle('pdf-grid-grouped', Boolean(selectedRegion));
 
-      if (documentItem.profile) {
-        const link = document.createElement('a');
-        link.href = documentItem.profile;
-        link.textContent = 'Ver ficha informativa →';
-        card.appendChild(link);
-      } else if (documentItem.pdf) {
-        const link = document.createElement('a');
-        link.href = documentItem.pdf;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = 'Abrir documento PDF →';
-        card.appendChild(link);
-      } else {
-        const pending = document.createElement('span');
-        pending.className = 'pending-link';
-        pending.textContent = 'Documento pendiente de conectar';
-        card.appendChild(pending);
-      }
-      grid.appendChild(card);
-    });
+    if (selectedRegion) {
+      const publicDocuments = documents.filter((documentItem) => Object.prototype.hasOwnProperty.call(documentItem, 'pdf'));
+      const privateUniversities = documents.filter((documentItem) => Object.prototype.hasOwnProperty.call(documentItem, 'mode'));
+      grid.appendChild(createDocumentGroup('Universidades públicas', publicDocuments));
+      grid.appendChild(createDocumentGroup('Universidades privadas', privateUniversities));
+      return;
+    }
+
+    appendDocumentCards(grid, documents);
   }
 
   populateRegions();
