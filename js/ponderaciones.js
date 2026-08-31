@@ -1,38 +1,35 @@
 /*
- * Ponderaciones · catálogo estático y fichas informativas.
- * Los PDFs existentes siguen apuntando a archivos locales. Las universidades
- * privadas enlazan a fichas HTML estáticas sin inventar ponderaciones.
+ * Ponderaciones · fuentes oficiales y fichas informativas.
+ * Las universidades privadas enlazan a fichas HTML estáticas sin inventar
+ * ponderaciones.
  */
 (function (window, document) {
   'use strict';
 
   const DOCUMENTS = [
-    { region: 'Andalucía', name: 'Ponderaciones de Andalucía', city: 'Comunidad autónoma', pdf: null },
-    { region: 'Aragón', name: 'Ponderaciones de Aragón', city: 'Comunidad autónoma', pdf: '/ponderaciones/Aragon/Aragon.pdf' },
-    { region: 'Asturias', name: 'Ponderaciones de Asturias', city: 'Comunidad autónoma', pdf: '/ponderaciones/Asturias/Asturias.pdf' },
-    { region: 'Cantabria', name: 'Estudios de Grado y Ponderaciones 2024-25', city: 'Universidad de Cantabria', pdf: '/ponderaciones/Cantabria/Estudios de Grado y Ponderaciones 2024-25.pdf' },
-    { region: 'Castilla-La Mancha', name: 'Ponderaciones de Castilla-La Mancha', city: 'Comunidad autónoma', pdf: '/ponderaciones/Castilla_la_macha/Castilla_la_manta.pdf' },
-    { region: 'Castilla y León', name: 'Universidad de Burgos', city: 'Burgos', pdf: '/ponderaciones/Castilla_y_leon/UBU_-_Universidad_de_Burgos.pdf' },
-    { region: 'Castilla y León', name: 'Universidad de León', city: 'León', pdf: '/ponderaciones/Castilla_y_leon/ULE_-_Universidad_de_León.pdf' },
-    { region: 'Castilla y León', name: 'Universidad de Salamanca', city: 'Salamanca', pdf: '/ponderaciones/Castilla_y_leon/USAL_-_Universidad_de_Salamanca.pdf' },
-    { region: 'Castilla y León', name: 'Universidad de Valladolid', city: 'Valladolid', pdf: '/ponderaciones/Castilla_y_leon/UVA_-_Universidad_de_Valladolid.pdf' },
-    { region: 'Cataluña', name: 'Ponderaciones de Cataluña', city: 'Comunidad autónoma', pdf: '/ponderaciones/Catalunya/Catalunya.pdf' },
-    { region: 'Comunidad Valenciana', name: 'Ponderaciones de la Comunidad Valenciana', city: 'Comunidad autónoma', pdf: '/ponderaciones/Comunidad_Valenciana/Comunidad_Valenciana.pdf' },
-    { region: 'Extremadura', name: 'Ponderaciones de Extremadura', city: 'Comunidad autónoma', pdf: '/ponderaciones/Extremadura/Extremadura.pdf' },
-    { region: 'Galicia', name: 'Ponderaciones de Galicia', city: 'Comunidad autónoma', pdf: '/ponderaciones/Galicia/Galicia.pdf' },
-    { region: 'Islas Baleares', name: 'Ponderaciones de las Islas Baleares', city: 'Comunidad autónoma', pdf: '/ponderaciones/Islas_Baleares/Islas_Baleares.pdf' },
-    { region: 'Islas Canarias', name: 'Ponderaciones de las Islas Canarias', city: 'Comunidad autónoma', pdf: '/ponderaciones/Islas_Canarias/Islas_Canarias.pdf' },
-    { region: 'La Rioja', name: 'Ponderaciones de La Rioja', city: 'Comunidad autónoma', pdf: '/ponderaciones/La_Rioja/La_Rioja.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad de Alcalá', city: 'Madrid', pdf: '/ponderaciones/Madrid/UAH_-_Universidad_de_Alcalá.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Autónoma de Madrid', city: 'Madrid', pdf: '/ponderaciones/Madrid/UAM_-_Universidad_Autónoma_de _Madrid.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Carlos III de Madrid', city: 'Madrid', pdf: '/ponderaciones/Madrid/UC3M _-_Universidad_Carlos_III_de_Madrid.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Complutense de Madrid', city: 'Madrid', pdf: '/ponderaciones/Madrid/UCM_-_Universidad_Complutense_de_Madrid.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Politécnica de Madrid', city: 'Madrid', pdf: '/ponderaciones/Madrid/UPM_-_Universidad_Politécnica_de_Madrid.pdf' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Rey Juan Carlos', city: 'Madrid', pdf: '/ponderaciones/Madrid/URJC_-_Universidad_Rey_Juan_Carlos.pdf' },
-    { region: 'Región de Murcia', name: 'Universidad de Murcia', city: 'Murcia', pdf: '/ponderaciones/Murcia/UM_-_Universidad_de_Murcia.pdf' },
-    { region: 'Región de Murcia', name: 'Universidad Politécnica de Cartagena', city: 'Cartagena', pdf: '/ponderaciones/Murcia/UPCT_-_Universidad_Politécnica_de_Cartagena2025.pdf' },
-    { region: 'Navarra', name: 'Ponderaciones de Navarra', city: 'Comunidad autónoma', pdf: '/ponderaciones/Navarra/Navarra.pdf' },
-    { region: 'País Vasco', name: 'Ponderaciones del País Vasco', city: 'Comunidad autónoma', pdf: null }
+    { region: 'Andalucía', name: 'Ponderaciones de Andalucía 2026-2027', city: 'Distrito Único Universitario de Andalucía', pdf: 'https://www.juntadeandalucia.es/economiaconocimientoempresasyuniversidad/sguit/?q=mapa' },
+    { region: 'Aragón', name: 'Ponderaciones de Aragón 2026-2027', city: 'Universidad de Zaragoza', pdf: 'https://academico.unizar.es/acceso-admision-grado/ponder' },
+    { region: 'Asturias', name: 'Ponderaciones de Asturias 2026-2027', city: 'Universidad de Oviedo', pdf: 'https://www.uniovi.es/documents/39158/13774579/PONDERACIONES.pdf' },
+    { region: 'Cantabria', name: 'Estudios de Grado y Ponderaciones 2026-2027', city: 'Universidad de Cantabria', pdf: 'https://web.unican.es/admision/Documents/Acceso/Estudios%20de%20Grado%20y%20Ponderaciones%202026-27.pdf' },
+    { region: 'Castilla-La Mancha', name: 'Ponderaciones de Castilla-La Mancha 2026-2027', city: 'Universidad de Castilla-La Mancha', pdf: 'https://soporte.uclm.es/hc/es/articles/11225019713298' },
+    { region: 'Castilla y León', name: 'Ponderaciones de Castilla y León 2026-2027', city: 'Distrito único universitario', pdf: 'https://www.educa.jcyl.es/universidad/es/servicio-ensenanza-universitaria/admision-ensenanzas-universitarias-oficiales-grado-universi/parametros-ponderacion-curso-2026-2027' },
+    { region: 'Cataluña', name: 'Ponderaciones de Cataluña 2026-2027', city: 'Consell Interuniversitari de Catalunya', pdf: 'https://universitats.gencat.cat/es/preinscripcions/ponderacions/index.html' },
+    { region: 'Comunidad Valenciana', name: 'Ponderaciones de la Comunidad Valenciana 2026-2027', city: 'Generalitat Valenciana', pdf: 'https://universitats.gva.es/es/-/c%C3%A1lculo-calificaciones' },
+    { region: 'Extremadura', name: 'Ponderaciones de Extremadura 2026-2027', city: 'Universidad de Extremadura', pdf: 'https://alumnado.unex.es/pau/pau/' },
+    { region: 'Galicia', name: 'Ponderaciones de Galicia 2026-2027', city: 'CIUG', pdf: 'https://ciug.gal/lexislacion' },
+    { region: 'Islas Baleares', name: 'Ponderaciones de las Islas Baleares 2026-2027', city: 'Universidad de las Islas Baleares', pdf: 'https://estudis.uib.es/estudis-de-grau/com-hi-pots-accedir/acces/parametres' },
+    { region: 'Islas Canarias', name: 'Ponderaciones ULPGC 2026-2027', city: 'Universidad de Las Palmas de Gran Canaria', pdf: 'https://www.ulpgc.es/gestion-academica/materiasdeponderacion' },
+    { region: 'Islas Canarias', name: 'Ponderaciones ULL 2026-2027', city: 'Universidad de La Laguna', pdf: null, note: 'Pendiente de verificar la tabla específica de la ULL. No comparte tabla con la ULPGC.' },
+    { region: 'La Rioja', name: 'Ponderaciones de La Rioja 2026-2027', city: 'Universidad de La Rioja', pdf: 'https://www.unirioja.es/administracion-y-servicios/oficina-de-estudiantes/pau/parametros-de-ponderacion/' },
+    { region: 'Comunidad de Madrid', name: 'Universidad de Alcalá', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Autónoma de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Carlos III de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Complutense de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Politécnica de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Rey Juan Carlos', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    { region: 'Región de Murcia', name: 'Ponderaciones de la Región de Murcia 2026-2027', city: 'Distrito Único de la Región de Murcia', pdf: 'https://www.um.es/web/estudios/utilidades/ponderaciones' },
+    { region: 'Navarra', name: 'Ponderaciones de Navarra 2026-2027', city: 'Universidad Pública de Navarra', pdf: 'https://www.unavarra.es/sites/estudios/acceso-y-admision/admision-en-estudios-de-grado/notas-de-corte-y-simulador.html' },
+    { region: 'País Vasco', name: 'Ponderaciones del País Vasco 2026-2027', city: 'UPV/EHU', pdf: 'https://www.ehu.eus/es/web/unibertsitaterako-sarbidea/vias-de-acceso/bachillerato-y-ciclos-formativos-de-grado-superior/parametros-de-ponderacion' }
   ];
 
   const PRIVATE_UNIVERSITIES = [
@@ -122,12 +119,12 @@
       link.href = documentItem.pdf;
       link.target = '_blank';
       link.rel = 'noopener';
-      link.textContent = 'Abrir documento PDF →';
+      link.textContent = 'Abrir fuente oficial →';
       card.appendChild(link);
     } else {
       const pending = document.createElement('span');
       pending.className = 'pending-link';
-      pending.textContent = 'Documento pendiente de conectar';
+      pending.textContent = documentItem.note || 'Documento pendiente de verificar';
       card.appendChild(pending);
     }
     return card;
@@ -165,7 +162,7 @@
     const profileCount = documents.filter((documentItem) => documentItem.profile).length;
     const selectedRegion = $('regionFilter').value;
     $('ponderacionesCount').textContent = documents.length + (documents.length === 1 ? ' recurso' : ' recursos');
-    $('documentBadge').textContent = pdfCount + ' PDFs · ' + profileCount + ' fichas';
+    $('documentBadge').textContent = pdfCount + ' fuentes oficiales · ' + profileCount + ' fichas';
 
     const grid = $('pdfGrid');
     grid.replaceChildren();
