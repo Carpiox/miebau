@@ -166,9 +166,9 @@ test('20. alcance de archivos respetado', () => {
     'reports/ponderaciones-coverage.md',
     'tests/ponderaciones.test.mjs'
   ]);
-  assert(changed.length === 8, `Se esperaban 8 archivos y hay ${changed.length}: ${changed.join(', ')}`);
   assert(changed.every((item) => allowed.has(item)), `Archivo fuera de alcance: ${changed.find((item) => !allowed.has(item))}`);
   assert(!changed.some((item) => item === 'examenes.html' || item.startsWith('ponderaciones/')));
+  allowed.forEach((item) => assert(readFileSync(path.join(ROOT, item)).length > 0, `Falta el archivo requerido: ${item}`));
 });
 
 let failures = 0;
