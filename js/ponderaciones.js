@@ -1,5 +1,7 @@
 /*
  * Ponderaciones · fuentes oficiales y fichas informativas.
+ * Actualizado en agosto de 2026 con enlaces de fuentes oficiales verificadas.
+ * Las URL institucionales pueden cambiar y deben revisarse periódicamente.
  * Las universidades privadas enlazan a fichas HTML estáticas sin inventar
  * ponderaciones.
  */
@@ -21,12 +23,13 @@
     { region: 'Islas Canarias', name: 'Ponderaciones ULPGC 2026-2027', city: 'Universidad de Las Palmas de Gran Canaria', pdf: 'https://www.ulpgc.es/gestion-academica/materiasdeponderacion' },
     { region: 'Islas Canarias', name: 'Ponderaciones ULL 2026-2027', city: 'Universidad de La Laguna', pdf: null, note: 'Pendiente de verificar la tabla específica de la ULL. No comparte tabla con la ULPGC.' },
     { region: 'La Rioja', name: 'Ponderaciones de La Rioja 2026-2027', city: 'Universidad de La Rioja', pdf: 'https://www.unirioja.es/administracion-y-servicios/oficina-de-estudiantes/pau/parametros-de-ponderacion/' },
-    { region: 'Comunidad de Madrid', name: 'Universidad de Alcalá', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Autónoma de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Carlos III de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Complutense de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Politécnica de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
-    { region: 'Comunidad de Madrid', name: 'Universidad Rey Juan Carlos', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de cada universidad.' },
+    // Madrid publica una tabla por universidad. La UCM 2025-2026 es solo la referencia principal facilitada: verificar cada tabla específica 2026-2027 antes de enlazarla.
+    { region: 'Comunidad de Madrid', name: 'Universidad de Alcalá', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de esta universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Autónoma de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de esta universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Carlos III de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de esta universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Complutense de Madrid', city: 'Referencia UCM 2025-2026 · verificar 2026-2027', pdf: 'https://www.ucm.es/file/tabla-de-ponderaciones-ucm-2025-2026/' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Politécnica de Madrid', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de esta universidad.' },
+    { region: 'Comunidad de Madrid', name: 'Universidad Rey Juan Carlos', city: 'Madrid', pdf: null, note: 'Pendiente de verificar la tabla específica 2026-2027 de esta universidad.' },
     { region: 'Región de Murcia', name: 'Ponderaciones de la Región de Murcia 2026-2027', city: 'Distrito Único de la Región de Murcia', pdf: 'https://www.um.es/web/estudios/utilidades/ponderaciones' },
     { region: 'Navarra', name: 'Ponderaciones de Navarra 2026-2027', city: 'Universidad Pública de Navarra', pdf: 'https://www.unavarra.es/sites/estudios/acceso-y-admision/admision-en-estudios-de-grado/notas-de-corte-y-simulador.html' },
     { region: 'País Vasco', name: 'Ponderaciones del País Vasco 2026-2027', city: 'UPV/EHU', pdf: 'https://www.ehu.eus/es/web/unibertsitaterako-sarbidea/vias-de-acceso/bachillerato-y-ciclos-formativos-de-grado-superior/parametros-de-ponderacion' }
@@ -162,7 +165,7 @@
     const profileCount = documents.filter((documentItem) => documentItem.profile).length;
     const selectedRegion = $('regionFilter').value;
     $('ponderacionesCount').textContent = documents.length + (documents.length === 1 ? ' recurso' : ' recursos');
-    $('documentBadge').textContent = pdfCount + ' fuentes oficiales · ' + profileCount + ' fichas';
+    $('documentBadge').textContent = pdfCount + (pdfCount === 1 ? ' fuente oficial' : ' fuentes oficiales') + ' · ' + profileCount + (profileCount === 1 ? ' ficha' : ' fichas');
 
     const grid = $('pdfGrid');
     grid.replaceChildren();
