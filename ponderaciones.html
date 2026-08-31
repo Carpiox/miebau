@@ -8,10 +8,10 @@
   <link rel="canonical" href="https://miebau.es/ponderaciones">
   <meta name="description" content="Consulta tablas oficiales de ponderaciones EvAU 2026-2027 en HTML, busca por grado o materia, filtra coeficientes 0,2 y descarga los resultados en CSV.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css?v=20260831-ponderaciones">
+  <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
   <script src="/js/site.js" defer></script>
   <script src="/js/miebau-core.js" defer></script>
-  <script src="/js/ponderaciones.js?v=20260831-ponderaciones" defer></script>
+  <script src="/js/ponderaciones.js?v=20260831-perfiles" defer></script>
 </head>
 <body>
   <nav class="navbar" aria-label="Navegación principal"></nav>
@@ -23,6 +23,31 @@
     </header>
 
     <div class="info-callout"><strong>Cobertura comprobada:</strong> 4 matrices oficiales completas, 912 titulaciones y 8.397 pares materia-coeficiente. Las fuentes que requieren OCR, autenticación o reconciliación manual aparecen como pendientes o bloqueadas.</div>
+
+    <section class="selector-card community-entry" id="comunidades" aria-labelledby="ponderacionesFiltersTitle">
+      <div class="section-heading">
+        <div><span class="eyebrow">Empieza aquí</span><h2 id="ponderacionesFiltersTitle">Filtra por comunidad autónoma</h2></div>
+        <span class="pill" id="ponderacionesCount">17 comunidades</span>
+      </div>
+      <p>Elige una comunidad para comparar sus universidades públicas y privadas y entrar en la ficha específica de cada una.</p>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="regionFilter">Comunidad autónoma</label><select class="form-select" id="regionFilter"><option value="">Elige una comunidad</option></select></div>
+        <div class="form-group"><label class="form-label" for="universitySearch">O busca una universidad</label><input class="form-input" id="universitySearch" type="search" autocomplete="off" placeholder="Ej. Complutense"></div>
+      </div>
+      <div class="region-quick-links" id="regionQuickLinks" aria-label="Accesos rápidos por comunidad"></div>
+    </section>
+
+    <section class="card community-results" aria-labelledby="documentsTitle">
+      <div class="section-title-area"><h2 id="documentsTitle" tabindex="-1">Universidades públicas y privadas</h2><span class="badge-count" id="documentBadge">36 públicas · 46 privadas</span></div>
+      <p class="catalog-status" id="catalogStatus" role="status" aria-live="polite">Elige una comunidad. Las tablas pendientes se identifican expresamente y no muestran coeficientes inventados.</p>
+      <div class="pdf-grid pdf-grid-grouped" id="pdfGrid"><p class="catalog-empty-state">Elige una comunidad autónoma para ver sus universidades públicas y privadas. También puedes buscar una universidad directamente.</p></div>
+    </section>
+
+    <div class="ponderaciones-global-intro" id="tabla-global">
+      <span class="eyebrow">Herramienta secundaria</span>
+      <h2>Consulta la tabla global</h2>
+      <p>Si ya conoces el grado o la materia, busca directamente entre las 8.397 ponderaciones verificadas.</p>
+    </div>
 
     <section class="selector-card ponderaciones-controls" aria-labelledby="tableFiltersTitle">
       <div class="section-heading">
@@ -73,29 +98,15 @@
           <caption>Ponderaciones oficiales 2026-2027 de la Universidad de Zaragoza: muestra inicial verificable sin JavaScript.</caption>
           <thead><tr><th scope="col">Grado</th><th scope="col">Universidad</th><th scope="col">Campus</th><th scope="col">Materia</th><th scope="col">Coeficiente</th></tr></thead>
           <tbody id="ponderacionesTableBody">
-            <tr><th scope="row">Biotecnología (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Matemáticas II</td><td class="coefficient-value">0,2</td></tr>
-            <tr><th scope="row">Ciencias Ambientales (H)</th><td>Universidad de Zaragoza</td><td>Huesca</td><td>Matemáticas Aplicadas a las CCSS II</td><td class="coefficient-value">0,2</td></tr>
-            <tr><th scope="row">Ciencia y Tecnología de los Alimentos (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Tecnología e Ingeniería II</td><td class="coefficient-value">0,2</td></tr>
-            <tr><th scope="row">Física (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Física</td><td class="coefficient-value">0,2</td></tr>
-            <tr><th scope="row">Geología (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Geología y Ciencias Ambientales</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Biotecnología (Z)</th><td><a class="table-university-link" href="/ponderaciones/unizar">Universidad de Zaragoza</a></td><td>Zaragoza</td><td>Matemáticas II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Ciencias Ambientales (H)</th><td><a class="table-university-link" href="/ponderaciones/unizar">Universidad de Zaragoza</a></td><td>Huesca</td><td>Matemáticas Aplicadas a las CCSS II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Ciencia y Tecnología de los Alimentos (Z)</th><td><a class="table-university-link" href="/ponderaciones/unizar">Universidad de Zaragoza</a></td><td>Zaragoza</td><td>Tecnología e Ingeniería II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Física (Z)</th><td><a class="table-university-link" href="/ponderaciones/unizar">Universidad de Zaragoza</a></td><td>Zaragoza</td><td>Física</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Geología (Z)</th><td><a class="table-university-link" href="/ponderaciones/unizar">Universidad de Zaragoza</a></td><td>Zaragoza</td><td>Geología y Ciencias Ambientales</td><td class="coefficient-value">0,2</td></tr>
           </tbody>
         </table>
       </div>
       <noscript><p class="table-static-note">Esta muestra permanece disponible sin JavaScript. La consulta completa necesita JavaScript para filtrar el JSON estático; el PDF oficial sigue accesible en el enlace superior.</p></noscript>
-    </section>
-
-    <section class="selector-card" aria-labelledby="ponderacionesFiltersTitle">
-      <div class="section-heading"><div><span class="eyebrow">Cobertura y fichas</span><h2 id="ponderacionesFiltersTitle">Filtra fuentes por comunidad</h2></div><span class="pill" id="ponderacionesCount">69 recursos</span></div>
-      <div class="form-row">
-        <div class="form-group"><label class="form-label" for="regionFilter">Comunidad autónoma</label><select class="form-select" id="regionFilter"><option value="">Todas las comunidades</option></select></div>
-        <div class="form-group"><label class="form-label" for="universitySearch">Universidad o fuente</label><input class="form-input" id="universitySearch" type="search" autocomplete="off" placeholder="Ej. Complutense"></div>
-      </div>
-    </section>
-
-    <section class="card" aria-labelledby="documentsTitle">
-      <div class="section-title-area"><h2 id="documentsTitle">Universidades públicas y privadas</h2><span class="badge-count" id="documentBadge">23 fuentes · 46 fichas</span></div>
-      <p class="catalog-status" id="catalogStatus" role="status" aria-live="polite">Las tablas pendientes se identifican expresamente y no muestran coeficientes inventados.</p>
-      <div class="pdf-grid" id="pdfGrid"></div>
     </section>
 
     <div data-premium-banner data-premium-title="Acierta con tus materias" data-premium-text="Compara escenarios con la calculadora y vuelve a la fuente oficial antes de cerrar tu elección."></div>
