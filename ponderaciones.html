@@ -4,29 +4,101 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5a43f2">
-  <title>Ponderaciones EvAU · Miebau</title>
+  <title>Ponderaciones EvAU 2026-2027 por universidad · Miebau</title>
   <link rel="canonical" href="https://miebau.es/ponderaciones">
-  <meta name="description" content="Ponderaciones oficiales EvAU/EBAU 2026-2027 ya disponibles por comunidad autónoma para elegir materias y preparar la admisión universitaria.">
+  <meta name="description" content="Consulta tablas oficiales de ponderaciones EvAU 2026-2027 en HTML, busca por grado o materia, filtra coeficientes 0,2 y descarga los resultados en CSV.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=20260831-ponderaciones">
   <script src="/js/site.js" defer></script>
   <script src="/js/miebau-core.js" defer></script>
-  <script src="/js/ponderaciones.js" defer></script>
+  <script src="/js/ponderaciones.js?v=20260831-ponderaciones" defer></script>
 </head>
 <body>
   <nav class="navbar" aria-label="Navegación principal"></nav>
   <main class="page">
-    <header class="content-hero"><span class="eyebrow">Ponderaciones oficiales · Curso 2026-2027</span><h1>Ponderaciones para elegir mejor.</h1><p>Las ponderaciones del curso 2026-2027 ya están disponibles en las fuentes oficiales de la mayoría de comunidades autónomas. Consulta la fuente de tu universidad antes de elegir materias.</p></header>
+    <header class="content-hero">
+      <span class="eyebrow">Datos oficiales · Curso 2026-2027</span>
+      <h1>Ponderaciones para elegir con datos claros.</h1>
+      <p>Consulta coeficientes oficiales por titulación y materia. Publicamos una tabla solo cuando la fuente, el curso y cada fila se pueden verificar sin heredar datos de otra universidad.</p>
+    </header>
 
-    <div class="info-callout"><strong>Fuentes oficiales verificadas:</strong> enlazamos a las publicaciones disponibles para 2026-2027. En la Comunidad de Madrid se debe verificar la tabla específica de cada universidad; en Canarias, ULPGC y ULL publican tablas distintas.</div>
+    <div class="info-callout"><strong>Cobertura comprobada:</strong> 4 matrices oficiales completas, 912 titulaciones y 8.397 pares materia-coeficiente. Las fuentes que requieren OCR, autenticación o reconciliación manual aparecen como pendientes o bloqueadas.</div>
 
-    <section class="selector-card" aria-labelledby="ponderacionesFiltersTitle"><div class="section-heading"><div><span class="eyebrow">Busca rápido</span><h2 id="ponderacionesFiltersTitle">Filtra documentos</h2></div><span class="pill" id="ponderacionesCount">0 documentos</span></div><div class="form-row"><div class="form-group"><label class="form-label" for="regionFilter">Comunidad autónoma</label><select class="form-select" id="regionFilter"><option value="">Todas las comunidades</option></select></div><div class="form-group"><label class="form-label" for="universitySearch">Universidad o documento</label><input class="form-input" id="universitySearch" type="search" placeholder="Ej. Complutense"></div></div></section>
+    <section class="selector-card ponderaciones-controls" aria-labelledby="tableFiltersTitle">
+      <div class="section-heading">
+        <div><span class="eyebrow">Tabla interactiva</span><h2 id="tableFiltersTitle">Busca grado, materia o universidad</h2></div>
+        <span class="pill" id="tableCoverageBadge">Actualizado 2026-2027 · Fuente oficial</span>
+      </div>
+      <div class="ponderaciones-filter-grid">
+        <div class="form-group">
+          <label class="form-label" for="datasetFilter">Tabla oficial</label>
+          <select class="form-select" id="datasetFilter">
+            <option value="aragon-2026-2027">Universidad de Zaragoza</option>
+            <option value="cataluna-2026-2027">Preinscripción universitaria de Cataluña</option>
+            <option value="comunidad-valenciana-2026-2027">Sistema Universitario Valenciano</option>
+            <option value="islas-baleares-2026-2027">Universitat de les Illes Balears</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="tableUniversityFilter">Universidad</label>
+          <select class="form-select" id="tableUniversityFilter"><option value="">Todas las incluidas en la tabla</option></select>
+        </div>
+        <div class="form-group ponderaciones-search-group">
+          <label class="form-label" for="tableSearch">Grado, materia, universidad, campus o centro</label>
+          <input class="form-input" id="tableSearch" type="search" autocomplete="off" placeholder="Ej. Biotecnología o Matemáticas II">
+        </div>
+      </div>
+      <div class="ponderaciones-toolbar">
+        <label class="coefficient-toggle" for="onlyHighWeights"><input id="onlyHighWeights" type="checkbox"> Solo coeficientes <span class="coefficient-value">0,2</span></label>
+        <div class="ponderaciones-actions">
+          <button class="btn btn-ghost" id="clearTableFilters" type="button">Limpiar filtros</button>
+          <button class="btn btn-primary" id="downloadTableCsv" type="button">Descargar tabla (CSV)</button>
+        </div>
+      </div>
+    </section>
 
-    <section class="card" aria-labelledby="documentsTitle"><div class="section-title-area"><h2 id="documentsTitle">Ponderaciones oficiales y fichas disponibles</h2><span class="badge-count" id="documentBadge">—</span></div><div class="pdf-grid" id="pdfGrid"></div></section>
+    <section class="card ponderaciones-table-card" id="ponderacionesApp" aria-labelledby="verifiedTableTitle">
+      <div class="ponderaciones-source-heading">
+        <div>
+          <span class="source-status source-status-verified">Actualizado 2026-2027 · Fuente oficial</span>
+          <h2 id="verifiedTableTitle">Universidad de Zaragoza</h2>
+          <p id="tableSourceScope">Todos los grados y programas conjuntos publicados por la Universidad de Zaragoza.</p>
+        </div>
+        <a class="btn btn-outline" id="officialTableLink" href="https://academico.unizar.es/sites/academico/files/archivos/acceso/norma/anexo1ponder2627.pdf" target="_blank" rel="noopener">Ver PDF oficial</a>
+      </div>
+      <p class="table-keyboard-hint" id="tableKeyboardHint">En móvil, desliza la tabla horizontalmente. La primera columna permanece visible.</p>
+      <div class="ponderaciones-result-line" id="tableResultCount" role="status" aria-live="polite">Muestra inicial de 5 filas verificadas. Activa JavaScript para consultar y descargar las 8.397 ponderaciones.</div>
+      <div class="ponderaciones-table-scroll" id="tableScroll" tabindex="0" aria-describedby="tableKeyboardHint">
+        <table class="ponderaciones-table" id="ponderacionesTable">
+          <caption>Ponderaciones oficiales 2026-2027 de la Universidad de Zaragoza: muestra inicial verificable sin JavaScript.</caption>
+          <thead><tr><th scope="col">Grado</th><th scope="col">Universidad</th><th scope="col">Campus</th><th scope="col">Materia</th><th scope="col">Coeficiente</th></tr></thead>
+          <tbody id="ponderacionesTableBody">
+            <tr><th scope="row">Biotecnología (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Matemáticas II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Ciencias Ambientales (H)</th><td>Universidad de Zaragoza</td><td>Huesca</td><td>Matemáticas Aplicadas a las CCSS II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Ciencia y Tecnología de los Alimentos (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Tecnología e Ingeniería II</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Física (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Física</td><td class="coefficient-value">0,2</td></tr>
+            <tr><th scope="row">Geología (Z)</th><td>Universidad de Zaragoza</td><td>Zaragoza</td><td>Geología y Ciencias Ambientales</td><td class="coefficient-value">0,2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <noscript><p class="table-static-note">Esta muestra permanece disponible sin JavaScript. La consulta completa necesita JavaScript para filtrar el JSON estático; el PDF oficial sigue accesible en el enlace superior.</p></noscript>
+    </section>
 
-    <section class="card"><div class="card-title">Un contrato de datos reutilizable</div><div class="contract-grid"><div><span class="contract-key">comunidad</span><p>Región o autonomía a la que pertenece el documento.</p></div><div><span class="contract-key">universidad</span><p>Nombre normalizado de la universidad o conjunto de universidades.</p></div><div><span class="contract-key">grado</span><p>Campo preparado para conectar ponderaciones por titulación.</p></div><div><span class="contract-key">materia · coeficiente</span><p>La pareja que alimentará la calculadora cuando llegue la tabla.</p></div></div></section>
+    <section class="selector-card" aria-labelledby="ponderacionesFiltersTitle">
+      <div class="section-heading"><div><span class="eyebrow">Cobertura y fichas</span><h2 id="ponderacionesFiltersTitle">Filtra fuentes por comunidad</h2></div><span class="pill" id="ponderacionesCount">69 recursos</span></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="regionFilter">Comunidad autónoma</label><select class="form-select" id="regionFilter"><option value="">Todas las comunidades</option></select></div>
+        <div class="form-group"><label class="form-label" for="universitySearch">Universidad o fuente</label><input class="form-input" id="universitySearch" type="search" autocomplete="off" placeholder="Ej. Complutense"></div>
+      </div>
+    </section>
 
-    <div data-premium-banner data-premium-title="Acierta con tus materias" data-premium-text="La base de Premium está preparada para recomendar combinaciones y guardar universidades favoritas cuando conectemos datos completos."></div>
+    <section class="card" aria-labelledby="documentsTitle">
+      <div class="section-title-area"><h2 id="documentsTitle">Universidades públicas y privadas</h2><span class="badge-count" id="documentBadge">23 fuentes · 46 fichas</span></div>
+      <p class="catalog-status" id="catalogStatus" role="status" aria-live="polite">Las tablas pendientes se identifican expresamente y no muestran coeficientes inventados.</p>
+      <div class="pdf-grid" id="pdfGrid"></div>
+    </section>
+
+    <div data-premium-banner data-premium-title="Acierta con tus materias" data-premium-text="Compara escenarios con la calculadora y vuelve a la fuente oficial antes de cerrar tu elección."></div>
     <section class="share-section"><h2>¿Has calculado ya tu nota?</h2><p>Prueba distintas combinaciones en la calculadora y vuelve aquí con una idea más clara.</p><div class="hero-actions"><a href="/calculadora" class="btn btn-primary">Ir a la calculadora</a><a href="/notas-de-corte" class="btn btn-outline">Notas de corte</a></div></section>
   </main>
   <footer></footer>
