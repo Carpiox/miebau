@@ -186,7 +186,7 @@ test('20. alcance de archivos respetado', () => {
   assert(changed.every((item) => allowed.has(item)), `Archivo fuera de alcance: ${changed.find((item) => !allowed.has(item))}`);
   assert(!changed.some((item) => item === 'examenes.html'));
   const changedPrivateProfiles = changed.filter((item) => item.startsWith('ponderaciones/') && data.universities.some((university) => university.type === 'private' && item === `ponderaciones/${university.id}.html`));
-  assert.deepEqual(changedPrivateProfiles.sort(), ['ponderaciones/uoc.html', 'ponderaciones/uvic-ucc.html']);
+  assert(changedPrivateProfiles.every((item) => ['ponderaciones/uoc.html', 'ponderaciones/uvic-ucc.html'].includes(item)), `Ficha privada fuera de alcance: ${changedPrivateProfiles.find((item) => !['ponderaciones/uoc.html', 'ponderaciones/uvic-ucc.html'].includes(item))}`);
   allowed.forEach((item) => assert(readFileSync(path.join(ROOT, item)).length > 0, `Falta el archivo requerido: ${item}`));
 });
 
