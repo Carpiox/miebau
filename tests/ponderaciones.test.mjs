@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { validateFixture } from '../scripts/build-ponderaciones-data.mjs';
+import { buildFaqEntries, recordsForUniversity } from '../scripts/build-ponderaciones-profiles.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
@@ -23,6 +24,18 @@ const tests = [];
 
 function test(name, callback) {
   tests.push({ name, callback });
+}
+
+function visibleText(fragment) {
+  return fragment
+    .replace(/<[^>]+>/g, '')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 test('1. JavaScript válido', () => {
@@ -179,14 +192,10 @@ test('20. alcance de archivos respetado', () => {
     'reports/ponderaciones-coverage.md',
     'tests/ponderaciones.test.mjs',
     'sitemap.xml',
-    'ponderaciones/uoc.html',
-    'ponderaciones/uvic-ucc.html',
-    ...data.universities.filter((item) => item.type === 'public').map((item) => `ponderaciones/${item.id}.html`)
+    ...data.universities.map((item) => `ponderaciones/${item.id}.html`)
   ]);
   assert(changed.every((item) => allowed.has(item)), `Archivo fuera de alcance: ${changed.find((item) => !allowed.has(item))}`);
   assert(!changed.some((item) => item === 'examenes.html'));
-  const changedPrivateProfiles = changed.filter((item) => item.startsWith('ponderaciones/') && data.universities.some((university) => university.type === 'private' && item === `ponderaciones/${university.id}.html`));
-  assert(changedPrivateProfiles.every((item) => ['ponderaciones/uoc.html', 'ponderaciones/uvic-ucc.html'].includes(item)), `Ficha privada fuera de alcance: ${changedPrivateProfiles.find((item) => !['ponderaciones/uoc.html', 'ponderaciones/uvic-ucc.html'].includes(item))}`);
   allowed.forEach((item) => assert(readFileSync(path.join(ROOT, item)).length > 0, `Falta el archivo requerido: ${item}`));
 });
 
@@ -246,6 +255,76 @@ test('24. comunidad primero y enlaces bidireccionales', () => {
   assert(html.includes('href="/ponderaciones/unizar"'));
   assert(readFileSync(jsPath, 'utf8').includes('catalog-profile-link'));
   assert(data.universities.every((item) => item.profile?.startsWith('/ponderaciones/')));
+});
+
+test('25. FAQ visible y FAQPage coinciden sin inventar ponderaciones', () => {
+  const fixedQuestions = [
+    '¿Qué es una ponderación en la EvAU/PAU?',
+    '¿Cómo se calcula mi nota de admisión con la ponderación?',
+  ];
+  const fixedAnswers = [
+    'Es el coeficiente (0,1 o 0,2 según la universidad y la titulación) que se aplica a la nota de una materia de modalidad examinada en la fase voluntaria de la EvAU. Sirve para calcular la nota de admisión a un grado concreto, no la nota de acceso general.',
+    'Nota de admisión = nota de acceso (0-10, resultado de la fase general y el expediente) + (a × M1) + (b × M2), donde M1 y M2 son las notas de hasta dos materias de modalidad examinadas y a, b son sus coeficientes de ponderación. Solo cuentan las materias con nota igual o superior a 5.',
+  ];
+
+  data.universities.forEach((university) => {
+    const profileHtml = readFileSync(path.join(ROOT, 'ponderaciones', `${university.id}.html`), 'utf8');
+    const universityRecords = recordsForUniversity(data, university.id);
+    const expectedEntries = buildFaqEntries(university, universityRecords);
+    const schemaMatch = profileHtml.match(/<script type="application\/ld\+json" id="profileFaqJsonLd">([\s\S]*?)<\/script>/);
+    const visibleMatch = profileHtml.match(/<!-- ponderaciones-faq:generated:start -->([\s\S]*?)<!-- ponderaciones-faq:generated:end -->/);
+    assert(schemaMatch, `Falta FAQPage en ${university.id}`);
+    assert(visibleMatch, `Falta FAQ visible en ${university.id}`);
+    assert.equal((profileHtml.match(/"@type":"FAQPage"/g) || []).length, 1, `FAQPage duplicado en ${university.id}`);
+    assert.equal((profileHtml.match(/id="profileFaqTitle"/g) || []).length, 1, `FAQ visible duplicado en ${university.id}`);
+
+    const schema = JSON.parse(schemaMatch[1]);
+    const schemaEntries = schema.mainEntity.map((entry) => ({
+      question: entry.name,
+      answer: entry.acceptedAnswer.text,
+    }));
+    assert.equal(schema['@type'], 'FAQPage');
+    assert.deepEqual(schemaEntries, expectedEntries.map(({ question, answer }) => ({ question, answer })), `FAQPage incoherente en ${university.id}`);
+
+    const renderedText = visibleText(visibleMatch[1]);
+    expectedEntries.forEach((entry) => {
+      assert(renderedText.includes(entry.question), `Pregunta oculta o ausente en ${university.id}: ${entry.question}`);
+      assert(renderedText.includes(entry.answer), `Respuesta oculta o ausente en ${university.id}: ${entry.question}`);
+    });
+    assert.deepEqual(expectedEntries.slice(0, 2).map((entry) => entry.question), fixedQuestions);
+    assert.deepEqual(expectedEntries.slice(0, 2).map((entry) => entry.answer), fixedAnswers);
+
+    if (!universityRecords.length) {
+      assert.equal(expectedEntries.length, 3, `Número de preguntas incorrecto sin datos en ${university.id}`);
+      assert.equal(expectedEntries[2].question, `¿Cuándo se publicarán las ponderaciones de ${university.name}?`);
+      assert(visibleMatch[1].includes('href="#aviso-email"'), `El FAQ no enlaza al aviso en ${university.id}`);
+      return;
+    }
+
+    const highWeightSubjects = [...new Set(universityRecords.filter((record) => record.coefficient === 0.2).map((record) => record.subject))];
+    const highWeightQuestion = expectedEntries.find((entry) => entry.question === `¿Qué materias dan más nota en ${university.name}?`);
+    if (highWeightSubjects.length) {
+      assert(highWeightQuestion, `Falta la pregunta de materias 0,2 en ${university.id}`);
+      assert.equal(highWeightQuestion.answer, `Las materias con coeficiente 0,2 publicadas para ${university.name} son: ${highWeightSubjects.join(', ')}.`);
+    } else {
+      assert(!highWeightQuestion, `Pregunta 0,2 inventada en ${university.id}`);
+    }
+
+    const degreeGroups = new Map();
+    universityRecords.forEach((record) => {
+      if (!degreeGroups.has(record.degree)) degreeGroups.set(record.degree, []);
+      degreeGroups.get(record.degree).push(record);
+    });
+    let selectedDegree = null;
+    for (const [degree, degreeRecords] of degreeGroups) {
+      if (!selectedDegree || degreeRecords.length > selectedDegree.records.length) selectedDegree = { degree, records: degreeRecords };
+    }
+    const degreeQuestion = `¿Qué ponderación tiene cada materia para estudiar ${selectedDegree.degree} en ${university.name}?`;
+    const degreeAnswer = `Para estudiar ${selectedDegree.degree} en ${university.name}, las ponderaciones publicadas son: ${selectedDegree.records.map((record) => `${record.subject}: ${record.coefficient.toFixed(1).replace('.', ',')}`).join('; ')}.`;
+    const degreeEntry = expectedEntries.find((entry) => entry.question === degreeQuestion);
+    assert(degreeEntry, `Falta la pregunta de titulación en ${university.id}`);
+    assert.equal(degreeEntry.answer, degreeAnswer, `Ponderaciones inventadas en ${university.id}`);
+  });
 });
 
 let failures = 0;

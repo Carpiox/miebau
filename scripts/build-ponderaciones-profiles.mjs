@@ -7,6 +7,21 @@ const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
 const PROFILE_DIR = path.join(ROOT, 'ponderaciones');
 const GENERATED_START = '<!-- ponderaciones-profile:generated:start -->';
 const GENERATED_END = '<!-- ponderaciones-profile:generated:end -->';
+const FAQ_START = '<!-- ponderaciones-faq:generated:start -->';
+const FAQ_END = '<!-- ponderaciones-faq:generated:end -->';
+const FAQ_JSON_LD_START = '<!-- ponderaciones-faq-jsonld:generated:start -->';
+const FAQ_JSON_LD_END = '<!-- ponderaciones-faq-jsonld:generated:end -->';
+
+const FIXED_FAQS = [
+  {
+    question: '¿Qué es una ponderación en la EvAU/PAU?',
+    answer: 'Es el coeficiente (0,1 o 0,2 según la universidad y la titulación) que se aplica a la nota de una materia de modalidad examinada en la fase voluntaria de la EvAU. Sirve para calcular la nota de admisión a un grado concreto, no la nota de acceso general.',
+  },
+  {
+    question: '¿Cómo se calcula mi nota de admisión con la ponderación?',
+    answer: 'Nota de admisión = nota de acceso (0-10, resultado de la fase general y el expediente) + (a × M1) + (b × M2), donde M1 y M2 son las notas de hasta dos materias de modalidad examinadas y a, b son sus coeficientes de ponderación. Solo cuentan las materias con nota igual o superior a 5.',
+  },
+];
 
 function escapeHtml(value = '') {
   return String(value)
@@ -49,6 +64,115 @@ function recordsForUniversity(data, universityId) {
     }
   }
   return records;
+}
+
+function uniqueHighWeightSubjects(records) {
+  const subjects = [];
+  const seen = new Set();
+  for (const record of records) {
+    if (record.coefficient !== 0.2 || seen.has(record.subject)) continue;
+    seen.add(record.subject);
+    subjects.push(record.subject);
+  }
+  return subjects;
+}
+
+function degreeWithMostRecords(records) {
+  const groups = new Map();
+  for (const record of records) {
+    if (!groups.has(record.degree)) groups.set(record.degree, []);
+    groups.get(record.degree).push(record);
+  }
+  let selected = null;
+  for (const [degree, degreeRecords] of groups) {
+    if (!selected || degreeRecords.length > selected.records.length) {
+      selected = { degree, records: degreeRecords };
+    }
+  }
+  return selected;
+}
+
+function buildFaqEntries(university, records) {
+  const entries = FIXED_FAQS.map((entry) => ({ ...entry }));
+  if (!records.length) {
+    entries.push({
+      question: `¿Cuándo se publicarán las ponderaciones de ${university.name}?`,
+      answer: `Todavía no hay una fecha oficial confirmada para la publicación de las ponderaciones de ${university.name}. Puedes solicitar un aviso en el formulario de esta ficha.`,
+      noticeLink: true,
+    });
+    return entries;
+  }
+
+  const highWeightSubjects = uniqueHighWeightSubjects(records);
+  if (highWeightSubjects.length) {
+    entries.push({
+      question: `¿Qué materias dan más nota en ${university.name}?`,
+      answer: `Las materias con coeficiente 0,2 publicadas para ${university.name} son: ${highWeightSubjects.join(', ')}.`,
+    });
+  }
+
+  const selectedDegree = degreeWithMostRecords(records);
+  if (selectedDegree) {
+    const weights = selectedDegree.records
+      .map((record) => `${record.subject}: ${coefficientText(record.coefficient)}`)
+      .join('; ');
+    entries.push({
+      question: `¿Qué ponderación tiene cada materia para estudiar ${selectedDegree.degree} en ${university.name}?`,
+      answer: `Para estudiar ${selectedDegree.degree} en ${university.name}, las ponderaciones publicadas son: ${weights}.`,
+    });
+  }
+
+  return entries;
+}
+
+function faqJsonLd(entries) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: entries.map((entry) => ({
+      '@type': 'Question',
+      name: entry.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: entry.answer,
+      },
+    })),
+  }).replace(/</g, '\\u003c');
+}
+
+function renderFaqJsonLd(entries, baseIndent = '  ') {
+  return [
+    `${baseIndent}${FAQ_JSON_LD_START}`,
+    `${baseIndent}<script type="application/ld+json" id="profileFaqJsonLd">${faqJsonLd(entries)}</script>`,
+    `${baseIndent}${FAQ_JSON_LD_END}`,
+  ].join('\n');
+}
+
+function renderFaqAnswer(entry) {
+  const answer = escapeHtml(entry.answer);
+  if (!entry.noticeLink) return answer;
+  const linkText = 'formulario de esta ficha';
+  return answer.replace(linkText, `<a href="#aviso-email">${linkText}</a>`);
+}
+
+function renderFaqSection(entries, baseIndent = '        ') {
+  const prefix = baseIndent;
+  const items = entries.flatMap((entry) => [
+    `${prefix}    <div class="profile-faq-item">`,
+    `${prefix}      <h3>${escapeHtml(entry.question)}</h3>`,
+    `${prefix}      <p>${renderFaqAnswer(entry)}</p>`,
+    `${prefix}    </div>`,
+  ]);
+  return [
+    `${prefix}${FAQ_START}`,
+    `${prefix}<section class="profile-faq" aria-labelledby="profileFaqTitle">`,
+    `${prefix}  <h2 id="profileFaqTitle">Preguntas frecuentes sobre ponderaciones</h2>`,
+    `${prefix}  <div class="profile-faq-list">`,
+    ...items,
+    `${prefix}  </div>`,
+    `${prefix}</section>`,
+    `${prefix}${FAQ_END}`,
+  ].join('\n');
 }
 
 function renderRows(records, indent = '          ') {
@@ -137,6 +261,9 @@ function renderPublicProfile(data, university, records) {
     ? `<p>Consulta también la <a href="${escapeHtml(ownSource.sourceUrl)}" target="_blank" rel="noopener noreferrer">fuente oficial disponible</a>.</p>`
     : '';
   const decision = hasRecords ? renderVerifiedSection(data, university, records) : renderNotice(university);
+  const faqEntries = buildFaqEntries(university, records);
+  const faqSection = renderFaqSection(faqEntries);
+  const faqSchema = renderFaqJsonLd(faqEntries);
   const scripts = hasRecords ? '  <script src="/js/ponderaciones.js?v=20260831-perfiles" defer></script>\n' : '';
   const breadcrumb = JSON.stringify({
     '@context': 'https://schema.org',
@@ -161,6 +288,7 @@ function renderPublicProfile(data, university, records) {
   <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
   <script src="/js/site.js" defer></script>
 ${scripts}  <script type="application/ld+json">${breadcrumb}</script>
+${faqSchema}
 </head>
 <body>
   <nav class="navbar" aria-label="Navegación principal"></nav>
@@ -178,6 +306,7 @@ ${scripts}  <script type="application/ld+json">${breadcrumb}</script>
         <p><strong>Estado:</strong> ${escapeHtml(statusLabel(university, hasRecords))}. Solo mostramos coeficientes cuando una fuente oficial permite verificar el curso y cada fila.</p>
 ${sourceLink ? `        ${sourceLink}\n` : ''}
 ${decision}
+${faqSection}
       </article>
 
       <aside class="card profile-sidebar">
@@ -222,19 +351,47 @@ function ensureProfileScript(html) {
   return withGrid.replace(siteScript, `${siteScript}\n  <script src="/js/ponderaciones.js?v=20260831-perfiles" defer></script>`);
 }
 
+function replaceGeneratedBlock(html, startMarker, endMarker, replacement) {
+  const start = html.indexOf(startMarker);
+  if (start === -1) return null;
+  const end = html.indexOf(endMarker, start);
+  if (end === -1) throw new Error(`Bloque generado incompleto: ${startMarker}`);
+  return `${html.slice(0, start)}${replacement}${html.slice(end + endMarker.length)}`;
+}
+
+function upsertPrivateFaqSection(html, section) {
+  const replaced = replaceGeneratedBlock(html, FAQ_START, FAQ_END, section.trim());
+  if (replaced !== null) return replaced;
+  const articleEnd = html.indexOf('      </article>');
+  if (articleEnd === -1) throw new Error('No se encontró el final del contenido principal en ficha privada');
+  return `${html.slice(0, articleEnd)}\n${section}\n${html.slice(articleEnd)}`;
+}
+
+function upsertPrivateFaqJsonLd(html, schema) {
+  const replaced = replaceGeneratedBlock(html, FAQ_JSON_LD_START, FAQ_JSON_LD_END, schema.trim());
+  if (replaced !== null) return replaced;
+  const headEnd = html.indexOf('</head>');
+  if (headEnd === -1) throw new Error('No se encontró el final de head en ficha privada');
+  return `${html.slice(0, headEnd)}${schema}\n${html.slice(headEnd)}`;
+}
+
 async function expectedFiles(data) {
   const files = [];
   for (const university of data.universities) {
     const records = recordsForUniversity(data, university.id);
+    const faqEntries = buildFaqEntries(university, records);
     const filePath = path.join(PROFILE_DIR, `${university.id}.html`);
     if (university.type === 'public') {
       files.push({ filePath, content: renderPublicProfile(data, university, records) });
       continue;
     }
-    if (!records.length) continue;
     const current = await readFile(filePath, 'utf8');
-    const section = renderVerifiedSection(data, university, records);
-    files.push({ filePath, content: ensureProfileScript(replacePrivateDecisionBlock(current, section)) });
+    const withDecision = records.length
+      ? ensureProfileScript(replacePrivateDecisionBlock(current, renderVerifiedSection(data, university, records)))
+      : current;
+    const withFaq = upsertPrivateFaqSection(withDecision, renderFaqSection(faqEntries));
+    const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
+    files.push({ filePath, content: withSchema });
   }
   return files;
 }
@@ -261,4 +418,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { recordsForUniversity, renderPublicProfile, renderVerifiedSection };
+export { buildFaqEntries, recordsForUniversity, renderPublicProfile, renderVerifiedSection };
