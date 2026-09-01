@@ -18,12 +18,6 @@
 
   const DATA_URL = '/data/ponderaciones-2026-2027.json?v=20260831';
   const MAX_VISIBLE_ROWS = 500;
-  const STATUS_LABELS = {
-    verified: 'Verificada 2026-2027',
-    pending: 'Pendiente de normalizar',
-    blocked: 'Fuente bloqueada',
-    no_publication: 'Sin tabla publicada'
-  };
   let dataPromise;
 
   function normalizeText(value) {
@@ -297,9 +291,16 @@
     renderAll();
   }
 
+  function catalogCardView(item) {
+    return {
+      href: item.profile || '',
+      cta: 'Ver ponderaciones →'
+    };
+  }
+
   function createCatalogCard(doc, item) {
     const isPrivate = item.kind === 'private';
-    const card = element(doc, 'article', `pdf-card${!item.hasVerifiedRows ? ' pdf-card-pending' : ''}`);
+    const card = element(doc, 'article', 'pdf-card');
     const heading = element(doc, 'div', 'pdf-card-heading');
     heading.appendChild(element(doc, 'span', 'pdf-icon', isPrivate ? '◇' : '◈'));
     heading.firstChild.setAttribute('aria-hidden', 'true');
@@ -307,14 +308,11 @@
     card.appendChild(heading);
     card.appendChild(element(doc, 'div', 'uni-name', item.name));
 
-    const status = item.hasVerifiedRows ? 'verified' : item.status;
-    const label = item.hasVerifiedRows ? STATUS_LABELS.verified : STATUS_LABELS[status];
-    card.appendChild(element(doc, 'span', `source-status source-status-${status}`, label));
     card.appendChild(element(doc, 'div', 'uni-city', `${isPrivate ? 'Universidad privada' : item.isRegionalGroup ? 'Cobertura pública regional' : 'Universidad pública'} · ${item.mode}`));
-    if (!item.hasVerifiedRows && item.reason) card.appendChild(element(doc, 'p', 'source-note', item.reason));
-    if (item.profile) {
-      const link = element(doc, 'a', 'catalog-profile-link', item.hasVerifiedRows ? 'Ver ficha y ponderaciones →' : 'Ver ficha informativa →');
-      link.href = item.profile;
+    const view = catalogCardView(item);
+    if (view.href) {
+      const link = element(doc, 'a', 'catalog-profile-link', view.cta);
+      link.href = view.href;
       card.appendChild(link);
     }
     return card;
@@ -343,21 +341,11 @@
     const catalogStatus = doc.getElementById('catalogStatus');
     if (!regionFilter || !search || !count || !badge || !grid) return;
 
-    const sources = new Map(data.sources.map((item) => [item.id, item]));
-    const verifiedUniversityIds = new Set(data.datasets.flatMap((dataset) => dataset.rows.flatMap((row) => row.universityIds)));
-    const catalog = data.universities.map((item) => {
-      const source = sources.get(item.sourceId) || {};
-      return {
-        ...source,
-        ...item,
-        kind: item.type,
-        hasVerifiedRows: verifiedUniversityIds.has(item.id),
-        isRegionalGroup: item.id.endsWith('-publicas'),
-        reason: source.reason || '',
-        sourceType: source.sourceType || '',
-        sourceUrl: source.sourceUrl || '',
-      };
-    }).sort((a, b) => a.region.localeCompare(b.region, 'es') || a.name.localeCompare(b.name, 'es'));
+    const catalog = data.universities.map((item) => ({
+      ...item,
+      kind: item.type,
+      isRegionalGroup: item.id.endsWith('-publicas')
+    })).sort((a, b) => a.region.localeCompare(b.region, 'es') || a.name.localeCompare(b.name, 'es'));
     const regions = [...new Set(catalog.map((item) => item.region))].sort((a, b) => a.localeCompare(b, 'es'));
 
     regionFilter.replaceChildren(option(doc, '', 'Elige una comunidad'));
@@ -386,7 +374,7 @@
       const query = normalizeText(search.value);
       const items = catalog.filter((item) => {
         const inRegion = !selectedRegion || item.region === selectedRegion;
-        const matches = !query || normalizeText(`${item.name} ${item.region} ${item.sourceType || ''} ${item.mode || ''}`).includes(query);
+        const matches = !query || normalizeText(`${item.name} ${item.region} ${item.mode || ''}`).includes(query);
         return inRegion && matches;
       });
       const visiblePublic = items.filter((item) => item.kind === 'public');
@@ -404,7 +392,7 @@
       if (!selectedRegion && !query) {
         count.textContent = `${regions.length} comunidades`;
         badge.textContent = `${catalog.filter((item) => item.kind === 'public').length} públicas · ${catalog.filter((item) => item.kind === 'private').length} privadas`;
-        if (catalogStatus) catalogStatus.textContent = 'Elige una comunidad. Las tablas pendientes se identifican expresamente y no muestran coeficientes inventados.';
+        if (catalogStatus) catalogStatus.textContent = 'Elige una comunidad para acceder a la ficha de cada universidad.';
         grid.appendChild(element(doc, 'p', 'catalog-empty-state', 'Elige una comunidad autónoma para ver sus universidades públicas y privadas. También puedes buscar una universidad directamente.'));
         return;
       }
@@ -530,6 +518,7 @@
     flattenRows,
     filterRows,
     buildCsv,
+    catalogCardView,
     init
   };
 }));

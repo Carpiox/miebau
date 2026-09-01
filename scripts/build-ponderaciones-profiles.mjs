@@ -66,6 +66,24 @@ function recordsForUniversity(data, universityId) {
   return records;
 }
 
+function classifyUniversityCoverage(data, university) {
+  let hasRows = false;
+  let hasExclusiveRows = false;
+  for (const dataset of data.datasets) {
+    for (const row of dataset.rows) {
+      if (!row.universityIds.includes(university.id)) continue;
+      hasRows = true;
+      if (row.universityIds.length === 1) hasExclusiveRows = true;
+    }
+  }
+
+  if (university.status === 'verified' && university.datasetId && hasExclusiveRows) return 'verified';
+  if (hasRows) return 'partial';
+  if (university.status === 'blocked') return 'blocked';
+  if (university.status === 'no_publication') return 'no_publication';
+  return 'pending';
+}
+
 function uniqueHighWeightSubjects(records) {
   const subjects = [];
   const seen = new Set();
@@ -182,7 +200,8 @@ function renderRows(records, indent = '          ') {
   }).join('\n');
 }
 
-function renderVerifiedSection(data, university, records, baseIndent = '        ') {
+function renderVerifiedSection(data, university, records, coverage = 'verified', baseIndent = '        ') {
+  const isPartial = coverage === 'partial';
   const sourceIds = [...new Set(records.map((record) => record.sourceId))];
   const source = data.sources.find((item) => item.id === sourceIds[0]);
   const sourceLink = source?.sourceUrl
@@ -191,17 +210,28 @@ function renderVerifiedSection(data, university, records, baseIndent = '        
   const sourceDescription = sourceIds.length === 1 && source
     ? `${source.name}. ${source.scope}`
     : 'Filas verificadas en las fuentes oficiales incluidas en la base de datos de Miebau.';
-  const resultText = `${records.length.toLocaleString('es-ES')} ${records.length === 1 ? 'ponderación verificada' : 'ponderaciones verificadas'} para esta ficha.`;
+  const resultText = isPartial
+    ? `${records.length.toLocaleString('es-ES')} ${records.length === 1 ? 'ponderación verificada' : 'ponderaciones verificadas'} en programas conjuntos o parciales; no representan el catálogo propio completo.`
+    : `${records.length.toLocaleString('es-ES')} ${records.length === 1 ? 'ponderación verificada' : 'ponderaciones verificadas'} del catálogo propio.`;
   const prefix = baseIndent;
+  const title = isPartial ? 'Programas conjuntos y datos parciales 2026-2027' : 'Ponderaciones 2026-2027';
+  const status = isPartial ? 'Programas conjuntos verificados · catálogo propio pendiente' : 'Catálogo propio verificado · 2026-2027';
+  const tableScope = isPartial
+    ? 'Estas filas oficiales corresponden a programas conjuntos o parciales y no acreditan el catálogo propio completo de la universidad.'
+    : 'Grado, campus, materia y coeficiente publicados para esta universidad.';
+  const caption = isPartial
+    ? `Ponderaciones oficiales 2026-2027 de programas conjuntos o parciales en los que participa ${university.name}.`
+    : `Ponderaciones oficiales 2026-2027 de ${university.name}.`;
 
   return [
     `${prefix}${GENERATED_START}`,
-    `${prefix}<section class="profile-ponderaciones" id="profilePonderacionesApp" data-university-id="${escapeHtml(university.id)}" aria-labelledby="profilePonderacionesTitle">`,
+    `${prefix}<section class="profile-ponderaciones" id="profilePonderacionesApp" data-university-id="${escapeHtml(university.id)}" data-coverage="${coverage}" aria-labelledby="profilePonderacionesTitle">`,
     `${prefix}  <div class="section-heading profile-table-heading">`,
-    `${prefix}    <div><span class="eyebrow">Datos oficiales</span><h2 id="profilePonderacionesTitle">Ponderaciones 2026-2027</h2></div>`,
-    `${prefix}    <span class="source-status source-status-verified">Actualizado 2026-2027 · Fuente oficial</span>`,
+    `${prefix}    <div><span class="eyebrow">Datos oficiales</span><h2 id="profilePonderacionesTitle">${title}</h2></div>`,
+    `${prefix}    <span class="source-status source-status-verified">${status}</span>`,
     `${prefix}  </div>`,
     `${prefix}  <p>${escapeHtml(sourceDescription)}</p>`,
+    ...(isPartial ? [`${prefix}  <p><strong>Alcance:</strong> ${escapeHtml(tableScope)}</p>`] : []),
     `${prefix}  <div class="selector-card ponderaciones-controls profile-table-controls">`,
     `${prefix}    <div class="ponderaciones-filter-grid profile-filter-grid">`,
     `${prefix}      <div class="form-group ponderaciones-search-group"><label class="form-label" for="profileTableSearch">Buscar grado, campus o materia</label><input class="form-input" id="profileTableSearch" type="search" autocomplete="off" placeholder="Ej. Biología o Matemáticas II"></div>`,
@@ -212,12 +242,12 @@ function renderVerifiedSection(data, university, records, baseIndent = '        
     `${prefix}    </div>`,
     `${prefix}  </div>`,
     `${prefix}  <div class="card ponderaciones-table-card profile-table-card">`,
-    `${prefix}    <div class="ponderaciones-source-heading"><div><h3>${escapeHtml(university.name)}</h3><p>Grado, campus, materia y coeficiente publicados para esta universidad.</p></div>${sourceLink}</div>`,
+    `${prefix}    <div class="ponderaciones-source-heading"><div><h3>${escapeHtml(university.name)}</h3><p>${escapeHtml(tableScope)}</p></div>${sourceLink}</div>`,
     `${prefix}    <p class="table-keyboard-hint" id="profileTableKeyboardHint">En móvil, desliza la tabla horizontalmente. La primera columna permanece visible.</p>`,
     `${prefix}    <div class="ponderaciones-result-line" id="profileTableResultCount" role="status" aria-live="polite">${resultText}</div>`,
     `${prefix}    <div class="ponderaciones-table-scroll" id="profileTableScroll" tabindex="0" aria-describedby="profileTableKeyboardHint">`,
     `${prefix}      <table class="ponderaciones-table profile-ponderaciones-table" id="profilePonderacionesTable">`,
-    `${prefix}        <caption>Ponderaciones oficiales 2026-2027 de ${escapeHtml(university.name)}.</caption>`,
+    `${prefix}        <caption>${escapeHtml(caption)}</caption>`,
     `${prefix}        <thead><tr><th scope="col">Grado</th><th scope="col">Campus</th><th scope="col">Materia</th><th scope="col">Coeficiente</th></tr></thead>`,
     `${prefix}        <tbody id="profilePonderacionesTableBody">`,
     renderRows(records, `${prefix}          `),
@@ -226,41 +256,54 @@ function renderVerifiedSection(data, university, records, baseIndent = '        
     `${prefix}    </div>`,
     `${prefix}    <noscript><p class="table-static-note">La tabla completa está incluida en el HTML. Activa JavaScript solo si quieres utilizar los filtros o descargar el CSV.</p></noscript>`,
     `${prefix}  </div>`,
+    ...(isPartial ? [renderNotice(university, baseIndent, { partial: true, includeGlobalLink: false })] : []),
     `${prefix}  <p class="profile-global-link"><a href="/ponderaciones#tabla-global">Ver también todas las ponderaciones</a></p>`,
     `${prefix}</section>`,
     `${prefix}${GENERATED_END}`,
   ].join('\n');
 }
 
-function renderNotice(university, baseIndent = '        ') {
+function renderNotice(university, baseIndent = '        ', { partial = false, includeGlobalLink = true } = {}) {
   const prefix = baseIndent;
   const name = escapeHtml(university.name);
+  const heading = partial ? 'Catálogo propio pendiente' : 'Antes de decidir';
+  const title = partial ? 'Avísame cuando se publique el catálogo propio' : 'Avísame cuando se publiquen las ponderaciones';
+  const description = partial
+    ? `Las filas anteriores pertenecen a programas conjuntos o a una cobertura parcial. El catálogo propio completo de ${name} todavía no está verificado; no se completará por semejanza con otras universidades.`
+    : 'Esta ficha no publica ponderaciones, notas de corte ni requisitos de admisión. Deben contrastarse con la universidad y la convocatoria antes de elegir materias o valorar una matrícula.';
+  const consent = partial
+    ? 'Quiero que me avisen cuando se publique el catálogo propio completo 2026-2027 de esta universidad'
+    : 'Quiero que me avisen cuando se publiquen las ponderaciones 2026-2027 de esta universidad';
   return [
-    `${prefix}<h2>Antes de decidir</h2>`,
-    `${prefix}<form class="card" name="aviso-ponderaciones" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="aviso-ponderaciones"><p hidden><label>No rellenes este campo si eres una persona<input name="bot-field"></label></p><input type="hidden" name="universidad" value="${name}"><div class="card-title">Avísame cuando se publiquen las ponderaciones</div><p>Esta ficha no publica ponderaciones, notas de corte ni requisitos de admisión. Deben contrastarse con la universidad y la convocatoria antes de elegir materias o valorar una matrícula.</p><div class="form-group"><label class="form-label" for="aviso-email">Tu correo electrónico</label><input class="form-input" id="aviso-email" type="email" name="email" autocomplete="email" required placeholder="tu@email.com"></div><div class="form-group"><label class="form-label"><input type="checkbox" name="consentimiento" required> Quiero que me avisen cuando se publiquen las ponderaciones 2026-2027 de esta universidad</label><p class="form-hint">Usaremos tu correo solo para este aviso. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div><button class="btn btn-primary" type="submit">Quiero recibir el aviso</button></form>`,
-    `${prefix}<p class="profile-global-link"><a href="/ponderaciones#tabla-global">Ver también todas las ponderaciones</a></p>`,
+    `${prefix}<h2>${heading}</h2>`,
+    `${prefix}<form class="card" name="aviso-ponderaciones" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="aviso-ponderaciones"><p hidden><label>No rellenes este campo si eres una persona<input name="bot-field"></label></p><input type="hidden" name="universidad" value="${name}"><div class="card-title">${title}</div><p>${description}</p><div class="form-group"><label class="form-label" for="aviso-email">Tu correo electrónico</label><input class="form-input" id="aviso-email" type="email" name="email" autocomplete="email" required placeholder="tu@email.com"></div><div class="form-group"><label class="form-label"><input type="checkbox" name="consentimiento" required> ${consent}</label><p class="form-hint">Usaremos tu correo solo para este aviso. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div><button class="btn btn-primary" type="submit">Quiero recibir el aviso</button></form>`,
+    ...(includeGlobalLink ? [`${prefix}<p class="profile-global-link"><a href="/ponderaciones#tabla-global">Ver también todas las ponderaciones</a></p>`] : []),
   ].join('\n');
 }
 
-function statusLabel(university, hasRecords) {
-  if (hasRecords) return 'Ponderaciones verificadas';
-  if (university.status === 'blocked') return 'Fuente pendiente de acceso';
-  return 'Ponderaciones pendientes';
+function statusLabel(coverage) {
+  if (coverage === 'verified') return 'Catálogo propio verificado';
+  if (coverage === 'partial') return 'Programas conjuntos o datos parciales verificados; catálogo propio pendiente';
+  if (coverage === 'blocked') return 'Fuente bloqueada; catálogo propio pendiente';
+  if (coverage === 'no_publication') return 'Sin tabla propia publicada';
+  return 'Catálogo propio pendiente';
 }
 
-function metaDescription(university, hasRecords) {
-  if (hasRecords) return `Consulta las ponderaciones EvAU 2026-2027 de ${university.name} en ${university.region}: grados, campus, materias y coeficientes verificados.`;
+function metaDescription(university, coverage) {
+  if (coverage === 'verified') return `Consulta las ponderaciones EvAU 2026-2027 de ${university.name} en ${university.region}: grados, campus, materias y coeficientes verificados.`;
+  if (coverage === 'partial') return `Consulta los programas conjuntos y datos parciales verificados de ${university.name}; su catálogo propio de ponderaciones EvAU 2026-2027 sigue pendiente.`;
   return `Ficha de ${university.name} en ${university.region}: estado de las ponderaciones EvAU 2026-2027 y acceso a la fuente oficial disponible.`;
 }
 
 function renderPublicProfile(data, university, records) {
+  const coverage = classifyUniversityCoverage(data, university);
   const hasRecords = records.length > 0;
   const ownSource = data.sources.find((item) => item.id === university.sourceId);
   const canonical = `https://miebau.es/ponderaciones/${university.id}`;
   const sourceLink = ownSource?.sourceUrl
     ? `<p>Consulta también la <a href="${escapeHtml(ownSource.sourceUrl)}" target="_blank" rel="noopener noreferrer">fuente oficial disponible</a>.</p>`
     : '';
-  const decision = hasRecords ? renderVerifiedSection(data, university, records) : renderNotice(university);
+  const decision = hasRecords ? renderVerifiedSection(data, university, records, coverage) : renderNotice(university);
   const faqEntries = buildFaqEntries(university, records);
   const faqSection = renderFaqSection(faqEntries);
   const faqSchema = renderFaqJsonLd(faqEntries);
@@ -282,7 +325,7 @@ function renderPublicProfile(data, university, records) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5a43f2">
   <title>${escapeHtml(university.name)} · Ponderaciones 2026-2027 · Miebau</title>
-  <meta name="description" content="${escapeHtml(metaDescription(university, hasRecords))}">
+  <meta name="description" content="${escapeHtml(metaDescription(university, coverage))}">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
@@ -303,7 +346,7 @@ ${faqSchema}
       <article class="card prose">
         <h2>Información de la ficha</h2>
         <p>${escapeHtml(university.scope)}</p>
-        <p><strong>Estado:</strong> ${escapeHtml(statusLabel(university, hasRecords))}. Solo mostramos coeficientes cuando una fuente oficial permite verificar el curso y cada fila.</p>
+        <p><strong>Estado:</strong> ${escapeHtml(statusLabel(coverage))}. Solo mostramos coeficientes cuando una fuente oficial permite verificar el curso y cada fila.</p>
 ${sourceLink ? `        ${sourceLink}\n` : ''}
 ${decision}
 ${faqSection}
@@ -379,6 +422,7 @@ async function expectedFiles(data) {
   const files = [];
   for (const university of data.universities) {
     const records = recordsForUniversity(data, university.id);
+    const coverage = classifyUniversityCoverage(data, university);
     const faqEntries = buildFaqEntries(university, records);
     const filePath = path.join(PROFILE_DIR, `${university.id}.html`);
     if (university.type === 'public') {
@@ -387,7 +431,7 @@ async function expectedFiles(data) {
     }
     const current = await readFile(filePath, 'utf8');
     const withDecision = records.length
-      ? ensureProfileScript(replacePrivateDecisionBlock(current, renderVerifiedSection(data, university, records)))
+      ? ensureProfileScript(replacePrivateDecisionBlock(current, renderVerifiedSection(data, university, records, coverage)))
       : current;
     const withFaq = upsertPrivateFaqSection(withDecision, renderFaqSection(faqEntries));
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
@@ -418,4 +462,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { buildFaqEntries, recordsForUniversity, renderPublicProfile, renderVerifiedSection };
+export { buildFaqEntries, classifyUniversityCoverage, recordsForUniversity, renderPublicProfile, renderVerifiedSection };

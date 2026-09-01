@@ -1034,9 +1034,9 @@
       "mode": "Online",
       "profile": "/ponderaciones/uoc",
       "sourceId": "cataluna",
-      "datasetId": "cataluna-2026-2027",
-      "status": "verified",
-      "scope": "Solo las titulaciones que aparecen expresamente con su código en la fuente catalana."
+      "datasetId": null,
+      "status": "pending",
+      "scope": "Solo consta un programa conjunto con la URV en la fuente catalana; el catálogo propio completo sigue pendiente."
     },
     {
       "id": "uic-barcelona",

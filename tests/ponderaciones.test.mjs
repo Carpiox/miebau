@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { validateFixture } from '../scripts/build-ponderaciones-data.mjs';
-import { buildFaqEntries, recordsForUniversity } from '../scripts/build-ponderaciones-profiles.mjs';
+import { buildFaqEntries, classifyUniversityCoverage, recordsForUniversity } from '../scripts/build-ponderaciones-profiles.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
@@ -36,6 +36,10 @@ function visibleText(fragment) {
     .replace(/&amp;/g, '&')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function degreeRowsForUniversity(universityId) {
+  return data.datasets.flatMap((dataset) => dataset.rows).filter((row) => row.universityIds.includes(universityId));
 }
 
 test('1. JavaScript válido', () => {
@@ -99,7 +103,7 @@ test('9. datasets compartidos se referencian sin duplicarse', () => {
   assert(data.datasets.find((dataset) => dataset.id === 'cataluna-2026-2027').rows.some((row) => row.universityIds.length > 1));
   assert(data.datasets.find((dataset) => dataset.id === 'comunidad-valenciana-2026-2027').rows.some((row) => row.universityIds.length === 5));
   const privateWithData = data.universities.filter((item) => item.type === 'private' && item.datasetId).map((item) => item.id).sort();
-  assert.deepEqual(privateWithData, ['uoc', 'uvic-ucc']);
+  assert.deepEqual(privateWithData, ['uvic-ucc']);
 });
 
 test('10. búsqueda tolerante a tildes', () => {
@@ -135,6 +139,16 @@ test('14. controles accesibles y usables con teclado', () => {
   assert(html.includes('tabindex="0"'));
   assert(html.includes('<caption>'));
   assert(html.includes('<thead>') && html.includes('<tbody id="ponderacionesTableBody">'));
+});
+
+test('14b. la tabla global conserva HTML inicial pero empieza cerrada', () => {
+  const opening = html.match(/<details[^>]*id="globalTableDetails"[^>]*>/);
+  assert(opening, 'Falta el contenedor details de la tabla global');
+  assert(!/\sopen(?:\s|=|>)/.test(opening[0]), 'La tabla global no debe aparecer abierta por defecto');
+  const details = html.slice(opening.index, html.indexOf('</details>', opening.index) + '</details>'.length);
+  assert(details.includes('<summary>Ver ejemplo de la tabla global</summary>'));
+  assert(details.includes('id="ponderacionesApp"'));
+  assert.equal((details.match(/<tbody id="ponderacionesTableBody">[\s\S]*?<\/tbody>/)?.[0].match(/<tr>/g) || []).length, 5);
 });
 
 test('15. móvil con scroll horizontal y primera columna sticky', () => {
@@ -208,22 +222,53 @@ test('21. existen 82 fichas estáticas y todas tienen perfil limpio', () => {
 });
 
 test('22. fichas con datos incluyen la tabla completa en el HTML inicial', () => {
-  const verifiedIds = [...new Set(records.flatMap((record) => record.universityIds))];
-  assert.equal(verifiedIds.length, 18);
-  verifiedIds.forEach((id) => {
+  const idsWithRows = [...new Set(records.flatMap((record) => record.universityIds))];
+  const partialIds = data.universities.filter((item) => classifyUniversityCoverage(data, item) === 'partial').map((item) => item.id).sort();
+  const verifiedIds = data.universities.filter((item) => classifyUniversityCoverage(data, item) === 'verified').map((item) => item.id);
+  assert.equal(idsWithRows.length, 18);
+  assert.deepEqual(partialIds, ['uam', 'uc3m', 'uoc']);
+  assert.equal(verifiedIds.length, 15);
+  idsWithRows.forEach((id) => {
     const profileHtml = readFileSync(path.join(ROOT, 'ponderaciones', `${id}.html`), 'utf8');
     const expectedRows = records.filter((record) => record.universityIds.includes(id)).length;
     const body = profileHtml.match(/<tbody id="profilePonderacionesTableBody">([\s\S]*?)<\/tbody>/);
     assert(body, `Falta la tabla HTML de ${id}`);
     assert.equal((body[1].match(/<tr>/g) || []).length, expectedRows, `Filas incompletas en ${id}`);
-    assert(!profileHtml.includes('name="aviso-ponderaciones"'), `La ficha verificada ${id} conserva el aviso`);
     assert(profileHtml.includes('aria-live="polite"'));
     assert(profileHtml.includes('Ver también todas las ponderaciones'));
+    if (partialIds.includes(id)) {
+      assert(profileHtml.includes('data-coverage="partial"'), `Falta el estado parcial de ${id}`);
+      assert(profileHtml.includes('Programas conjuntos verificados · catálogo propio pendiente'));
+      assert(profileHtml.includes('name="aviso-ponderaciones"'), `Falta el aviso de catálogo propio en ${id}`);
+    } else {
+      assert(profileHtml.includes('data-coverage="verified"'), `Falta el estado verificado de ${id}`);
+      assert(!profileHtml.includes('name="aviso-ponderaciones"'), `La ficha verificada ${id} conserva el aviso`);
+    }
   });
-  data.universities.filter((item) => !verifiedIds.includes(item.id) && item.type === 'public').forEach((university) => {
+  data.universities.filter((item) => !idsWithRows.includes(item.id) && item.type === 'public').forEach((university) => {
     const profileHtml = readFileSync(path.join(ROOT, 'ponderaciones', `${university.id}.html`), 'utf8');
     assert(profileHtml.includes('name="aviso-ponderaciones"'), `Falta el aviso de ${university.id}`);
     assert(!profileHtml.includes('profilePonderacionesTableBody'), `Se inventó una tabla para ${university.id}`);
+  });
+});
+
+test('22b. la cobertura propia no se deduce de filas conjuntas', () => {
+  for (const id of ['uam', 'uc3m', 'uoc']) {
+    const university = data.universities.find((item) => item.id === id);
+    const rows = degreeRowsForUniversity(id);
+    assert(rows.length > 0, `Faltan las filas parciales de ${id}`);
+    assert(rows.every((row) => row.universityIds.length > 1), `${id} tiene alguna fila exclusiva inesperada`);
+    assert.equal(classifyUniversityCoverage(data, university), 'partial');
+  }
+  for (const id of ['uab', 'unizar', 'uvic-ucc']) {
+    const university = data.universities.find((item) => item.id === id);
+    assert.equal(classifyUniversityCoverage(data, university), 'verified');
+    assert(degreeRowsForUniversity(id).some((row) => row.universityIds.length === 1), `${id} no conserva filas propias`);
+  }
+  data.universities.filter((item) => classifyUniversityCoverage(data, item) === 'verified').forEach((university) => {
+    assert.equal(university.status, 'verified');
+    assert(university.datasetId, `Falta dataset propio en ${university.id}`);
+    assert(degreeRowsForUniversity(university.id).some((row) => row.universityIds.length === 1));
   });
 });
 
@@ -255,6 +300,21 @@ test('24. comunidad primero y enlaces bidireccionales', () => {
   assert(html.includes('href="/ponderaciones/unizar"'));
   assert(readFileSync(jsPath, 'utf8').includes('catalog-profile-link'));
   assert(data.universities.every((item) => item.profile?.startsWith('/ponderaciones/')));
+});
+
+test('24b. el catálogo no publica estados internos y usa un CTA único', () => {
+  data.universities.forEach((university) => {
+    assert.deepEqual(api.catalogCardView(university), {
+      href: university.profile,
+      cta: 'Ver ponderaciones →',
+    });
+  });
+  const catalogSource = readFileSync(jsPath, 'utf8').match(/function createCatalogCard[\s\S]*?function createCatalogGroup/)?.[0] || '';
+  assert(!catalogSource.includes('source-status'));
+  assert(!catalogSource.includes('source-note'));
+  assert(!catalogSource.includes('reason'));
+  assert(!catalogSource.includes('Ver ficha informativa'));
+  assert(!catalogSource.includes('Ver ficha y ponderaciones'));
 });
 
 test('25. FAQ visible y FAQPage coinciden sin inventar ponderaciones', () => {
