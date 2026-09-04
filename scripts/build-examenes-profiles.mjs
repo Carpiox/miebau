@@ -58,8 +58,8 @@ function validateDistinctIntros(entries) {
 
 function validateData(data) {
   assert(data && typeof data === 'object', 'El JSON raíz debe ser un objeto');
-  assert(Array.isArray(data.sources) && data.sources.length === 11, 'El primer lote debe declarar 11 fuentes oficiales');
-  assert(Array.isArray(data.entries) && data.entries.length === 10, 'El primer lote debe contener exactamente 10 fichas');
+  assert(Array.isArray(data.sources) && data.sources.length === 32, 'Los dos primeros lotes deben declarar 32 fuentes oficiales');
+  assert(Array.isArray(data.entries) && data.entries.length === 30, 'Los dos primeros lotes deben contener exactamente 30 fichas');
   assert(!JSON.stringify(data).includes('TODO'), 'No se permiten marcadores TODO');
 
   const sourceIds = new Set();
@@ -67,7 +67,7 @@ function validateData(data) {
     assert(source.id && !sourceIds.has(source.id), `Fuente duplicada o sin id: ${source.id || '(vacío)'}`);
     sourceIds.add(source.id);
     assert(source.status === 'verified', `La fuente ${source.id} no está verificada`);
-    assert(/^https:\/\/(?:www\.)?(?:um\.es|carm\.es)\//.test(source.sourceUrl), `La fuente ${source.id} no apunta a un dominio oficial murciano`);
+    assert(/^https:\/\/(?:www\.)?(?:um\.es|carm\.es|ucm\.es)\//.test(source.sourceUrl), `La fuente ${source.id} no apunta a uno de los dominios oficiales admitidos`);
     assert(source.period === 'PAU 2026', `Periodo inesperado en ${source.id}`);
   }
 
@@ -81,10 +81,10 @@ function validateData(data) {
   };
 
   for (const entry of data.entries) {
-    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1 && entry.prioridad <= 10, `Prioridad inválida: ${entry.prioridad}`);
+    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1 && entry.prioridad <= 30, `Prioridad inválida: ${entry.prioridad}`);
     assert(!unique.priority.has(entry.prioridad), `Prioridad duplicada: ${entry.prioridad}`);
     unique.priority.add(entry.prioridad);
-    assert(/^region-de-murcia\/[a-z0-9-]+$/.test(entry.slug), `Slug inválido: ${entry.slug}`);
+    assert(/^(?:region-de-murcia|comunidad-de-madrid)\/[a-z0-9-]+$/.test(entry.slug), `Slug inválido: ${entry.slug}`);
     assert(entry.url === `/examenes/${entry.slug}`, `URL incoherente para ${entry.slug}`);
     assert(entry.estado_datos === 'estructura_verificada', `Estado no verificado en ${entry.slug}`);
     assert(entry.indexacion === 'noindex', `La ficha ${entry.slug} debe permanecer en noindex`);
@@ -115,12 +115,15 @@ function validateData(data) {
     assert(details.num_convocatorias_disponibles === PENDING, `No debe inventarse el número de convocatorias en ${entry.slug}`);
 
     assert(Array.isArray(entry.source_ids) && entry.source_ids.length === 2, `Cada ficha debe tener dos fuentes en ${entry.slug}`);
-    assert(entry.source_ids[0] === 'murcia-pau-2026-general', `Falta la fuente general de duración en ${entry.slug}`);
+    const expectedGeneralSource = entry.comunidad === 'Región de Murcia'
+      ? 'murcia-pau-2026-general'
+      : 'madrid-pau-2026-modelos';
+    assert(entry.source_ids[0] === expectedGeneralSource, `Falta la fuente general correspondiente en ${entry.slug}`);
     assert(entry.source_ids.every((id) => sourceIds.has(id)), `Referencia de fuente inexistente en ${entry.slug}`);
-    assert(entry.source_ids[1] !== 'murcia-pau-2026-general', `Falta la fuente específica de ${entry.slug}`);
+    assert(entry.source_ids[1] !== expectedGeneralSource, `Falta la fuente específica de ${entry.slug}`);
   }
 
-  assert([...unique.priority].sort((a, b) => a - b).join(',') === '1,2,3,4,5,6,7,8,9,10', 'Las prioridades deben ser exactamente 1-10');
+  assert([...unique.priority].sort((a, b) => a - b).join(',') === Array.from({ length: 30 }, (_, index) => index + 1).join(','), 'Las prioridades deben ser exactamente 1-30');
   validateDistinctIntros(data.entries);
   return data;
 }
@@ -157,6 +160,12 @@ function renderSources(data, entry) {
 function renderProfile(data, entry) {
   const details = entry.contenido.datos_comunidad_asignatura;
   const canonical = `https://miebau.es${entry.url}`;
+  const officialContext = entry.comunidad === 'Región de Murcia'
+    ? 'del Distrito Universitario de la Región de Murcia'
+    : 'de la Comunidad de Madrid';
+  const communityWithArticle = entry.comunidad === 'Región de Murcia'
+    ? 'la Región de Murcia'
+    : 'la Comunidad de Madrid';
   const officialName = entry.nombre_oficial_vigente && entry.nombre_oficial_vigente !== entry.asignatura
     ? `\n        <p><strong>Denominación oficial vigente:</strong> ${escapeHtml(entry.nombre_oficial_vigente)}.</p>`
     : '';
@@ -182,7 +191,7 @@ function renderProfile(data, entry) {
     <header class="content-hero">
       <span class="eyebrow">Estructura oficial · ${escapeHtml(details.curso_referencia)}</span>
       <h1>${escapeHtml(entry.seo.h1)}</h1>
-      <p>Formato, duración y criterios comprobados en documentación oficial del Distrito Universitario de la Región de Murcia.</p>
+      <p>Formato, duración y criterios comprobados en documentación oficial ${officialContext}.</p>
     </header>
 
     <section class="contact-grid profile-page-grid">
@@ -211,7 +220,7 @@ ${renderSources(data, entry)}
 
         <h2>Exámenes y ponderaciones</h2>
         <p><strong>Banco de exámenes:</strong> la integración del visor externo permanece pendiente de verificar, por lo que todavía no se incrusta ningún widget.</p>
-        <p><strong>Ponderaciones 2026-2027:</strong> pendiente de verificar. Esta ficha no asigna coeficientes hasta disponer de una tabla oficial comprobada para la Región de Murcia.</p>
+        <p><strong>Ponderaciones 2026-2027:</strong> pendiente de verificar. Esta ficha no asigna coeficientes hasta disponer de una tabla oficial comprobada para ${communityWithArticle}.</p>
         <p class="profile-global-link"><a href="/examenes">Ver todos los exámenes</a> · <a href="/ponderaciones#comunidades">Consultar ponderaciones por comunidad</a></p>
       </article>
 

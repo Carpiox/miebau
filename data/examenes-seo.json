@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "checkedAt": "2026-09-05",
-  "scope": "Primer lote: prioridades 1-10 de la Región de Murcia",
+  "scope": "Primeros lotes: prioridades 1-30 de Región de Murcia y Comunidad de Madrid",
   "sources": [
     {
       "id": "murcia-pau-2026-general",
@@ -123,6 +123,237 @@
       "name": "PAU 2026 Historia de la Filosofía: estructura, criterios y contenidos",
       "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-320-historia-de-la-filosofia-estructura-criterios-y-contenidos-pdf",
       "scope": "Fija tres ejercicios sin elección: análisis y relación, disertación y desarrollo temático."
+    },
+    {
+      "id": "murcia-pau-2026-dibujo-tecnico-ii",
+      "community": "Región de Murcia",
+      "subject": "Dibujo Técnico II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Dibujo Técnico II: modelo y estructura de examen",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-313-dibujo-tecnico-ii-acta-reunion-11-9-25-modelo-y-estructura-examen-pdf",
+      "scope": "Define seis ejercicios ofertados en tres bloques, las cuatro respuestas exigidas, sus pesos y la duración."
+    },
+    {
+      "id": "murcia-pau-2026-geografia",
+      "community": "Región de Murcia",
+      "subject": "Geografía",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Geografía: estructura, criterios y modelo de examen",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-317-geografia-estructura-y-modelo-de-examen-pdf",
+      "scope": "Establece cuatro preguntas de 2,5 puntos, dos competenciales obligatorias y dos con optatividad."
+    },
+    {
+      "id": "murcia-pau-2026-historia-del-arte",
+      "community": "Región de Murcia",
+      "subject": "Historia del Arte",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Historia del Arte: estructura y contenidos",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-321-historia-del-arte-estructura-y-contenidos-pdf",
+      "scope": "Detalla cuatro preguntas, su carácter competencial o cerrado, opciones y puntuaciones."
+    },
+    {
+      "id": "murcia-pau-2026-latin-ii",
+      "community": "Región de Murcia",
+      "subject": "Latín II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Latín II: ejemplo de examen y criterios",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-308-latin-ii-eemplo-de-examen-y-criterios-pdf",
+      "scope": "Fija cinco cuestiones, elección coherente de texto para las tres primeras y puntuación de cada parte."
+    },
+    {
+      "id": "murcia-pau-2026-griego-ii",
+      "community": "Región de Murcia",
+      "subject": "Griego II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Griego II: estructura y criterios de corrección",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-319-griego-estructura-de-examen-y-criterios-correccion-pdf",
+      "scope": "Organiza la prueba en traducción y morfosintaxis, léxico y literatura, con opciones y puntos."
+    },
+    {
+      "id": "madrid-pau-2026-modelos",
+      "community": "Comunidad de Madrid",
+      "subject": "Todas las materias",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Portal oficial",
+      "name": "Modelos de examen PAU 2026 de las universidades públicas de Madrid",
+      "sourceUrl": "https://www.ucm.es/modelos-de-examen-y-criterios-generales-de-evaluacion-",
+      "scope": "Índice oficial del distrito de Madrid que publica los modelos orientativos PAU 2026 por materia."
+    },
+    {
+      "id": "madrid-pau-2026-matematicas-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Matemáticas II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Matemáticas II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-matematicas-ii",
+      "scope": "Fija cinco preguntas de dos puntos, tres obligatorias, dos elecciones y 90 minutos."
+    },
+    {
+      "id": "madrid-pau-2026-matematicas-ccss-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Matemáticas Aplicadas a las Ciencias Sociales II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Matemáticas Aplicadas a las Ciencias Sociales II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "scope": "Define cuatro ejercicios de 2,5 puntos: el primero obligatorio y los otros tres con elección."
+    },
+    {
+      "id": "madrid-pau-2026-lengua",
+      "community": "Comunidad de Madrid",
+      "subject": "Lengua Castellana y Literatura II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Lengua Castellana y Literatura II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-leng-y-lit-ort-2025",
+      "scope": "Detalla elección de texto, tres bloques, ocho respuestas, extensiones, puntuaciones y duración."
+    },
+    {
+      "id": "madrid-pau-2026-historia",
+      "community": "Comunidad de Madrid",
+      "subject": "Historia de España",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Historia de España en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-historia-de-espana-1",
+      "scope": "Estructura la prueba en cuestiones, fuentes y elección entre análisis de texto o tema."
+    },
+    {
+      "id": "madrid-pau-2026-ingles",
+      "community": "Comunidad de Madrid",
+      "subject": "Inglés II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Inglés en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-ingles",
+      "scope": "Establece cinco preguntas, opciones en comprensión, transformación y escritura, puntos y tiempo."
+    },
+    {
+      "id": "madrid-pau-2026-fisica",
+      "community": "Comunidad de Madrid",
+      "subject": "Física",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Física en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-fisica",
+      "scope": "Exige cuatro preguntas de 2,5 puntos: una obligatoria y una elección en cada bloque restante."
+    },
+    {
+      "id": "madrid-pau-2026-quimica",
+      "community": "Comunidad de Madrid",
+      "subject": "Química",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Química en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-quimica-1",
+      "scope": "Fija una pregunta obligatoria y tres elecciones A/B, con 2,5 puntos por pregunta."
+    },
+    {
+      "id": "madrid-pau-2026-biologia",
+      "community": "Comunidad de Madrid",
+      "subject": "Biología",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Biología en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-biologia",
+      "scope": "Define cinco preguntas de dos puntos: una competencial obligatoria y cuatro elecciones A/B."
+    },
+    {
+      "id": "madrid-pau-2026-empresa",
+      "community": "Comunidad de Madrid",
+      "subject": "Empresa y Diseño de Modelos de Negocio",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Empresa y Diseño de Modelos de Negocio en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-empresa-y-diseno-de-modelos-de-negocio",
+      "scope": "Distribuye el examen en cuatro preguntas de dos y tres puntos con optatividad interna."
+    },
+    {
+      "id": "madrid-pau-2026-filosofia",
+      "community": "Comunidad de Madrid",
+      "subject": "Historia de la Filosofía",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Historia de la Filosofía en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-historia-de-la-filosofia",
+      "scope": "Exige elegir un texto y responder cuatro preguntas de 2,5 puntos con opciones temáticas."
+    },
+    {
+      "id": "madrid-pau-2026-dibujo-tecnico-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Dibujo Técnico II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Dibujo Técnico II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-dibujo-tecnico-ii",
+      "scope": "Presenta cuatro preguntas de 2,5 puntos; las tres primeras con elección y la cuarta obligatoria."
+    },
+    {
+      "id": "madrid-pau-2026-geografia",
+      "community": "Comunidad de Madrid",
+      "subject": "Geografía",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Geografía en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-geografia-v1",
+      "scope": "Organiza cuatro preguntas de 2,5 puntos: tema, mapa, figura o fotografía y conceptos."
+    },
+    {
+      "id": "madrid-pau-2026-historia-del-arte",
+      "community": "Comunidad de Madrid",
+      "subject": "Historia del Arte",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Historia del Arte en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-historia-del-arte",
+      "scope": "Fija cuatro preguntas sobre términos, tema, artistas y comentario de obra, con sus opciones."
+    },
+    {
+      "id": "madrid-pau-2026-latin-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Latín II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Latín II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-latin-ii",
+      "scope": "Ordena cinco preguntas en traducción y lengua, etimología y literatura, con elección por bloques."
+    },
+    {
+      "id": "madrid-pau-2026-griego-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Griego II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo PAU 2026 de Griego II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-griego-ii-1",
+      "scope": "Estructura cinco respuestas en comprensión y traducción, etimología y literatura."
     }
   ],
   "entries": [
@@ -436,6 +667,629 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-filosofia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/filosofia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 11,
+      "slug": "region-de-murcia/dibujo-tecnico-ii",
+      "url": "/examenes/region-de-murcia/dibujo-tecnico-ii",
+      "asignatura": "Dibujo Técnico II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Dibujo Técnico II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Dibujo Técnico II · PAU Región de Murcia",
+        "meta_description": "Consulta el modelo oficial PAU 2026 de Dibujo Técnico II en Murcia: seis ejercicios ofertados, cuatro respuestas, bloques y pesos."
+      },
+      "contenido": {
+        "intro": "Dibujo Técnico II presenta en la PAU 2026 de Murcia seis ejercicios repartidos en tres bloques, aunque el estudiante resuelve cuatro. En el bloque I se ofrecen dos propuestas y se selecciona una; el bloque II contiene dos ejercicios obligatorios, uno de normalización y otro de sistema diédrico; el bloque III vuelve a plantear dos alternativas para escoger una. La nota se obtiene mediante una media ponderada: el ejercicio elegido del primer bloque aporta el 30 %, normalización el 20 %, diédrico el 30 % y la elección final el 20 %. El documento oficial fija una duración máxima de 90 minutos y exige resolver sobre los formatos impresos. Los trazados se realizan a lápiz, manteniendo visibles las construcciones auxiliares y reforzando las soluciones. No se admite sustituir el procedimiento gráfico por cálculo numérico ni utilizar colores para distinguir líneas. Si se contestan más ejercicios de los solicitados, únicamente se corrigen los primeros hasta completar el máximo permitido. Esta ficha conserva pendientes las ponderaciones universitarias 2026-2027 porque todavía no hay una tabla regional incorporada y validada en la base de Miebau.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Seis ejercicios en tres bloques; se elige uno del bloque I, se resuelven los dos obligatorios del II y se elige uno del III.",
+          "numero_ejercicios": "6 ejercicios ofertados; se responden 4",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Fundamentos geométricos (30 %)", "Normalización (20 %)", "Sistema diédrico (30 %)", "Sistemas de representación (20 %)"],
+          "notas_especificas": "La prueba se resuelve a lápiz sobre los formatos entregados, sin colores y dejando visibles las construcciones auxiliares.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-dibujo-tecnico-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/dibujo-tecnico-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 12,
+      "slug": "region-de-murcia/geografia",
+      "url": "/examenes/region-de-murcia/geografia",
+      "asignatura": "Geografía",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Geografía PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Geografía · PAU Región de Murcia",
+        "meta_description": "Revisa la estructura oficial de Geografía PAU 2026 en Murcia: cuatro preguntas de 2,5 puntos, parte competencial y opciones."
+      },
+      "contenido": {
+        "intro": "La prueba murciana de Geografía para la PAU 2026 se compone de cuatro preguntas, valoradas con 2,5 puntos cada una. Las cuestiones 1 y 2 son competenciales, obligatorias y sin posibilidad de elección. La primera trabaja con saberes de los bloques A y B; la segunda relaciona el bloque A con el C mediante materiales como textos, infografías o imágenes. La cuestión 3 tiene carácter práctico: ofrece dos propuestas, vinculadas respectivamente a los bloques B y C, y solo se desarrolla una. La cuarta evalúa definición, identificación o redacción a partir de conceptos geográficos básicos y también permite escoger entre dos opciones. Por tanto, al menos la mitad de la puntuación procede de tareas competenciales no optativas, mientras la opcionalidad queda limitada a la otra mitad. Los estímulos pueden ser mapas, planos, fotografías, gráficos, tablas o documentos habituales en el análisis geográfico. El tiempo común de la materia es de 90 minutos. Resulta importante ensayar la lectura de fuentes y la explicación causal, además de memorizar terminología. Los coeficientes de admisión 2026-2027 permanecen sin publicar aquí hasta que exista soporte oficial regional comprobado.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas de 2,5 puntos: las dos primeras obligatorias y competenciales; la tercera y la cuarta con dos opciones.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Cuestión competencial de bloques A/B", "Cuestión competencial de bloques A/C", "Ejercicio práctico sobre bloque B o C", "Conceptos geográficos"],
+          "notas_especificas": "La optatividad alcanza como máximo el 50 % y queda concentrada en las preguntas 3 y 4.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-geografia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/geografia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 13,
+      "slug": "region-de-murcia/historia-del-arte",
+      "url": "/examenes/region-de-murcia/historia-del-arte",
+      "asignatura": "Historia del Arte",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia del Arte PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Historia del Arte · PAU Murcia",
+        "meta_description": "Conoce el formato oficial PAU 2026 de Historia del Arte en Murcia: cuatro preguntas, temas, comparativas, imágenes y términos."
+      },
+      "contenido": {
+        "intro": "Historia del Arte adopta en Murcia una prueba de cuatro preguntas para la PAU 2026. La primera, competencial y valorada con tres puntos, pide construir un tema a partir de un enunciado, texto o estudio de caso; se ofrecen dos alternativas y se elige una. La segunda propone una comparación de imágenes, también con dos opciones, por dos puntos. La tercera exige analizar dos imágenes entre tres y suma otros tres puntos. La última es cerrada: presenta diez definiciones e identificaciones de obras, de las que deben contestarse ocho, hasta completar dos puntos. El reparto global reserva ocho puntos a tareas competenciales y dos a respuestas cerradas o semiconstruidas. La coordinación recomienda temas que abarcan desde el templo griego y la arquitectura romana hasta las vanguardias, además de arte medieval, Renacimiento, Barroco y siglo XIX. La duración general del examen es de 90 minutos. Al preparar esta asignatura conviene combinar desarrollo escrito, comparación formal, reconocimiento visual y vocabulario técnico, ya que ninguna destreza aislada cubre toda la prueba. Las ponderaciones universitarias del siguiente proceso de admisión siguen marcadas como pendientes mientras no se incorpore una fuente murciana verificable.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas: tema competencial, comparación de imágenes, análisis de dos imágenes y definiciones o identificación de obras.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Tema a elegir (3 puntos)", "Comparativa visual (2 puntos)", "Análisis de 2 entre 3 imágenes (3 puntos)", "8 entre 10 términos u obras (2 puntos)"],
+          "notas_especificas": "Las preguntas competenciales representan ocho puntos y la parte cerrada o semiconstruida, dos.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-historia-del-arte"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/historia-del-arte",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 14,
+      "slug": "region-de-murcia/latin-ii",
+      "url": "/examenes/region-de-murcia/latin-ii",
+      "asignatura": "Latín II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Latín II PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Latín II · PAU Región de Murcia",
+        "meta_description": "Consulta la estructura oficial de Latín II PAU 2026 en Murcia: texto, traducción, análisis, evolución fonética y mitología."
+      },
+      "contenido": {
+        "intro": "El examen de Latín II de la PAU 2026 en la Región de Murcia se divide en cinco cuestiones. Al comenzar se selecciona uno de dos textos, A o B, y esa misma elección debe mantenerse en las preguntas 1, 2 y 3. La traducción con diccionario vale cuatro puntos; el análisis morfológico de las palabras señaladas suma uno y el análisis sintáctico del periodo propuesto aporta otro. La cuestión 4 es común y examina la evolución fonética de cuatro términos latinos al castellano, junto con sus derivados, por dos puntos. En la quinta se muestran dos imágenes mitológicas: se escoge una, se identifican personajes y atributos y se narra el mito o la historia legendaria correspondiente, con un máximo de dos puntos. No está permitido combinar las tres primeras respuestas entre textos distintos. Cuando se supera el número admitido en un apartado, se corrigen únicamente las primeras contestaciones. La prueba dispone de 90 minutos según las reglas generales del distrito murciano. La preparación debe equilibrar traducción, gramática, historia de la lengua y cultura clásica. Los datos de ponderación se dejan pendientes al no figurar todavía una tabla 2026-2027 verificada para esta comunidad.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco cuestiones; se elige un texto A o B para traducción, morfología y sintaxis, seguidas de evolución fonética y una opción mitológica.",
+          "numero_ejercicios": "5 cuestiones",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Traducción (4 puntos)", "Morfología (1 punto)", "Sintaxis (1 punto)", "Evolución fonética (2 puntos)", "Mitología clásica (2 puntos)"],
+          "notas_especificas": "Las preguntas 1, 2 y 3 deben resolverse sobre el mismo texto y no pueden mezclarse las opciones A y B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-latin-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/latin-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 15,
+      "slug": "region-de-murcia/griego-ii",
+      "url": "/examenes/region-de-murcia/griego-ii",
+      "asignatura": "Griego II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Griego II PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Griego II · PAU Región de Murcia",
+        "meta_description": "Revisa el formato oficial de Griego II PAU 2026 en Murcia: traducción, comentario morfosintáctico, léxico y literatura."
+      },
+      "contenido": {
+        "intro": "Griego II organiza su examen murciano de 2026 en tres bloques. El primero concentra seis puntos y parte de la elección entre dos textos. Sobre el fragmento seleccionado se realizan tres tareas inseparables: traducción con ayuda del diccionario por cuatro puntos, comentario morfológico de dos términos por uno y análisis sintáctico de un pasaje por otro. El bloque II se dedica al léxico y contiene dos cuestiones de un punto cada una. Una solicita derivados castellanos de términos griegos y la explicación de sus significados; la otra pide comentar helenismos, identificando sentido y componentes de origen. El bloque III, valorado con dos puntos, ofrece dos temas de literatura griega y su legado, de los que se desarrolla uno. La coherencia, cohesión, corrección gramatical y ortográfica también forman parte de la calificación. El marco PAU regional establece 90 minutos, de modo que la traducción requiere una gestión cuidadosa del tiempo antes de pasar a lengua y literatura. Para reproducir el formato real conviene practicar siempre las tres respuestas sobre un único texto. Esta página no presupone coeficientes universitarios: la ponderación 2026-2027 continúa pendiente hasta disponer de datos oficiales contrastados.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres bloques: texto elegido con traducción, morfología y sintaxis; dos cuestiones de léxico; y un tema literario entre dos.",
+          "numero_ejercicios": "3 bloques y 6 respuestas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Traducción y comentario morfosintáctico (6 puntos)", "Léxico (2 puntos)", "Literatura griega y legado (2 puntos)"],
+          "notas_especificas": "Las tres cuestiones del primer bloque deben contestarse sobre el mismo texto A o B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-griego-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/griego-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 16,
+      "slug": "comunidad-de-madrid/matematicas-ii",
+      "url": "/examenes/comunidad-de-madrid/matematicas-ii",
+      "asignatura": "Matemáticas II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Matemáticas II PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Matemáticas II · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el modelo oficial PAU 2026 de Matemáticas II en Madrid: cinco preguntas de dos puntos, obligatoriedad y opciones."
+      },
+      "contenido": {
+        "intro": "El modelo orientativo de Matemáticas II para la PAU 2026 de Madrid contiene cinco preguntas, todas valoradas con dos puntos. Las tres primeras son obligatorias y las dos últimas introducen elección: en la pregunta 4 se responde una de dos propuestas y en la 5 se repite el mismo sistema. El ejemplo oficial sitúa geometría en la primera cuestión, análisis en la segunda, probabilidad en la tercera, álgebra en las alternativas de la cuarta y de nuevo análisis en la quinta. Dentro de una pregunta puede existir además una elección limitada entre apartados, como sucede en el caso competencial inicial, pero las instrucciones determinan exactamente qué debe contestarse. Todas las soluciones han de justificarse de forma razonada; un resultado aislado no sustituye el procedimiento. La duración es de 90 minutos. Esta distribución aconseja reservar una primera fase a las cuestiones comunes y comparar después las opciones completas de cada tramo electivo antes de decidir. La ficha se basa en el modelo publicado por las universidades públicas madrileñas para el curso 2025-2026. No se muestran ponderaciones de admisión porque ese campo permanece pendiente de una verificación específica para 2026-2027.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco preguntas de dos puntos: las tres primeras obligatorias y elección entre dos propuestas tanto en la pregunta 4 como en la 5.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Geometría", "Análisis", "Probabilidad y estadística", "Álgebra", "Análisis con opción"],
+          "notas_especificas": "Todas las respuestas deben estar razonadamente justificadas y cada pregunta aporta dos puntos.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-matematicas-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/matematicas-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 17,
+      "slug": "comunidad-de-madrid/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "url": "/examenes/comunidad-de-madrid/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "asignatura": "Matemáticas Aplicadas a las Ciencias Sociales II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Matemáticas CCSS II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Matemáticas Aplicadas a las CCSS II · PAU Madrid",
+        "meta_description": "Revisa el modelo PAU 2026 de Matemáticas Aplicadas a las Ciencias Sociales II en Madrid: cuatro ejercicios, opciones y duración."
+      },
+      "contenido": {
+        "intro": "Matemáticas Aplicadas a las Ciencias Sociales II se evalúa en el modelo PAU 2026 madrileño mediante cuatro ejercicios de 2,5 puntos. El primero carece de apartados optativos y debe resolverse completo. En los ejercicios 2, 3 y 4 aparecen dos preguntas alternativas, numeradas como opción 1 y opción 2, de las que se contesta únicamente una por ejercicio. La propuesta publicada utiliza probabilidad y estadística en el bloque obligatorio; después plantea alternativas de álgebra, análisis y nuevamente probabilidad. Cada respuesta necesita una justificación razonada. El formato permite escoger tres de los seis problemas ofrecidos en la parte electiva, pero no mezclar fragmentos de dos opciones dentro de un mismo ejercicio. El tiempo disponible es de 90 minutos y la calificación se reparte por igual entre las cuatro unidades. Para practicar de manera eficaz conviene dominar primero la tarea común y entrenar una comparación rápida del coste de cálculo y de los apartados de cada pareja. Las cifras de ponderación universitaria no se infieren del uso habitual de la materia: siguen etiquetadas como pendientes hasta contar con una fuente madrileña 2026-2027 incorporada y revisada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro ejercicios de 2,5 puntos: el primero sin opcionalidad y los ejercicios 2, 3 y 4 con elección entre dos preguntas.",
+          "numero_ejercicios": "4 ejercicios",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Probabilidad y estadística obligatoria", "Álgebra con elección", "Análisis con elección", "Probabilidad con elección"],
+          "notas_especificas": "En cada uno de los tres ejercicios optativos se elige una pregunta completa; no se mezclan sus apartados.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-matematicas-ccss-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 18,
+      "slug": "comunidad-de-madrid/lengua-castellana-y-literatura-ii",
+      "url": "/examenes/comunidad-de-madrid/lengua-castellana-y-literatura-ii",
+      "asignatura": "Lengua Castellana y Literatura II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Lengua Castellana II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Lengua Castellana y Literatura II · PAU Madrid",
+        "meta_description": "Conoce la estructura PAU 2026 de Lengua Castellana y Literatura II en Madrid: elección de texto, tres bloques y puntuaciones."
+      },
+      "contenido": {
+        "intro": "La prueba de Lengua Castellana y Literatura II de Madrid comienza con dos textos no especializados: se escoge uno y sobre él se contestan las tres tareas del bloque de Comunicación. Ese apartado suma cuatro puntos mediante comentario, resumen de 40 a 50 palabras y argumentación de 100 a 150. Reflexión sobre la lengua y sus hablantes aporta tres puntos. Primero se elige entre análisis sintáctico y una actividad lingüística de 1,4 puntos; después se responden dos cuestiones entre tres, dedicadas a morfología, léxico-semántica o lenguas de España. Educación literaria completa los tres puntos restantes: una respuesta entre comentario vinculado al temario y desarrollo de un tema, más otra sobre una obra leída y su contexto. En conjunto se producen ocho respuestas organizadas en tres bloques, siempre respetando las elecciones indicadas. El límite temporal es de 90 minutos. La corrección considera contenido, expresión, sintaxis, riqueza léxica y ortografía, por lo que las extensiones orientativas ayudan a distribuir el esfuerzo. Este perfil reproduce el modelo 2026 publicado para Madrid y deja cualquier coeficiente de admisión como pendiente hasta su comprobación documental independiente.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Se elige uno de dos textos y se completan tres bloques con elecciones internas en Lengua y Literatura.",
+          "numero_ejercicios": "3 bloques y 8 respuestas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comunicación (4 puntos)", "Reflexión sobre la lengua y sus hablantes (3 puntos)", "Educación literaria (3 puntos)"],
+          "notas_especificas": "El resumen debe tener 40-50 palabras y el texto argumentativo, 100-150; se elige un único texto para todo el bloque 1.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-lengua"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/lengua-castellana-y-literatura-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 19,
+      "slug": "comunidad-de-madrid/historia-de-espana",
+      "url": "/examenes/comunidad-de-madrid/historia-de-espana",
+      "asignatura": "Historia de España",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia de España PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Historia de España · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el modelo PAU 2026 de Historia de España en Madrid: cuestiones, fuentes y elección entre análisis de texto o tema."
+      },
+      "contenido": {
+        "intro": "Historia de España distribuye el examen PAU 2026 de Madrid en tres partes. La sección A vale tres puntos y exige contestar tres cuestiones breves, una por cada bloque cronológico propuesto: Prehistoria y Edad Antigua, Edad Media y Edad Moderna hasta 1788. En cada grupo se escoge una de dos preguntas. La sección B presenta dos fuentes históricas del mismo periodo y obliga a seleccionar una; sobre ella se responde una identificación breve de medio punto y una relación histórica de 2,5. La sección C aporta cuatro puntos y plantea una elección entre análisis de texto y desarrollo de un tema. Si se opta por el documento, se resume, se explican sus ideas y se aborda la cuestión contextual indicada. Las instrucciones recomiendan aproximadamente 10-15 líneas por cuestión inicial, 25 para la fuente y 50 para la última parte. La prueba dura 90 minutos. Cuando la fuente pertenece al siglo XIX, el análisis o tema se sitúa en los siglos XX-XXI, y viceversa. La página no traslada ponderaciones de otras convocatorias: los coeficientes 2026-2027 quedan pendientes de una fuente madrileña específica y comprobable.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres partes: tres cuestiones breves, una fuente entre dos y elección final entre análisis de texto o tema.",
+          "numero_ejercicios": "3 partes",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Cuestiones hasta 1788 (3 puntos)", "Fuente histórica (3 puntos)", "Análisis de texto o tema (4 puntos)"],
+          "notas_especificas": "La fuente y la última parte alternan periodos: siglo XIX frente a siglos XX-XXI.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-historia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/historia-de-espana",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 20,
+      "slug": "comunidad-de-madrid/ingles",
+      "url": "/examenes/comunidad-de-madrid/ingles",
+      "asignatura": "Inglés",
+      "nombre_oficial_vigente": "Inglés II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Inglés II PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Inglés · PAU Comunidad de Madrid",
+        "meta_description": "Revisa el modelo oficial de Inglés PAU 2026 en Madrid: cinco preguntas, comprensión, léxico, transformación y writing."
+      },
+      "contenido": {
+        "intro": "El modelo madrileño de Inglés para 2026 reúne cinco preguntas que deben contestarse en esta lengua. La primera trabaja comprensión mediante tres afirmaciones y exige elegir dos, clasificarlas como verdaderas, falsas o no dadas y aportar evidencia cuando corresponda. La segunda pide dos respuestas redactadas con palabras propias a partir del texto. La tercera localiza cinco términos equivalentes y suma un punto. En la cuarta se escogen cuatro de seis transformaciones gramaticales. La quinta ofrece dos temas de escritura, de los que se desarrolla uno entre 140 y 180 palabras. La puntuación es de dos puntos para las preguntas 1, 2 y 4, uno para la 3 y tres para la composición. Hay 90 minutos disponibles. Si se responden más opciones de las solicitadas, solo se corrigen las primeras, así que conviene marcar la selección antes de redactar. El documento identifica la asignatura como Inglés y exige un nivel de dominio B1, con comprensión, producción y mediación escrita. Las ponderaciones de acceso no se completan a partir de usos anteriores; permanecerán pendientes hasta verificar la publicación correspondiente a 2026-2027.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco preguntas sobre comprensión, respuesta propia, léxico, transformación gramatical y escritura, con optatividad en 1, 4 y 5.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión y evidencia (2 puntos)", "Respuestas propias (2 puntos)", "Léxico (1 punto)", "Transformaciones (2 puntos)", "Writing de 140-180 palabras (3 puntos)"],
+          "notas_especificas": "Se responden 2 de 3 ítems en la pregunta 1, 4 de 6 en la 4 y 1 de 2 propuestas en la 5.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-ingles"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/ingles",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 21,
+      "slug": "comunidad-de-madrid/fisica",
+      "url": "/examenes/comunidad-de-madrid/fisica",
+      "asignatura": "Física",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Física PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Física · PAU Comunidad de Madrid",
+        "meta_description": "Consulta la estructura PAU 2026 de Física en Madrid: cuatro bloques, pregunta obligatoria, opciones y 90 minutos."
+      },
+      "contenido": {
+        "intro": "Física plantea en el modelo PAU 2026 de Madrid cuatro preguntas de 2,5 puntos. La primera pertenece al bloque de Vibraciones y Ondas y no tiene opcionalidad; el ejemplo oficial utiliza un sistema óptico y combina demostración, cálculo y trazado de rayos. Para Campo gravitatorio se presentan las preguntas 2.A y 2.B, de las que se escoge una. El mismo mecanismo se aplica a Campo electromagnético con 3.A o 3.B y a Física relativista, cuántica, nuclear y de partículas con 4.A o 4.B. En total se resuelve una cuestión obligatoria y una alternativa completa de cada uno de los otros tres bloques. La resolución completa dispone de noventa minutos. Los criterios premian el razonamiento, la identificación de principios y leyes, el detalle de los pasos, los esquemas y el uso correcto de unidades del Sistema Internacional. Cada apartado lleva indicada su fracción de la nota. Este diseño requiere practicar problemas completos y decidir opciones según el dominio del bloque, no según un único apartado atractivo. Las ponderaciones de Física para admisión 2026-2027 no se incorporan hasta disponer de una matriz oficial madrileña verificada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas de 2,5 puntos: Vibraciones y Ondas obligatoria y elección A/B en los otros tres bloques.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Vibraciones y Ondas", "Campo gravitatorio", "Campo electromagnético", "Física relativista, cuántica, nuclear y de partículas"],
+          "notas_especificas": "La pregunta 1 no tiene opcionalidad; en las preguntas 2, 3 y 4 se elige una alternativa A o B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-fisica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/fisica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 22,
+      "slug": "comunidad-de-madrid/quimica",
+      "url": "/examenes/comunidad-de-madrid/quimica",
+      "asignatura": "Química",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Química PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Química · PAU Comunidad de Madrid",
+        "meta_description": "Revisa el modelo PAU 2026 de Química en Madrid: cuatro preguntas de 2,5 puntos, una obligatoria y tres elecciones A/B."
+      },
+      "contenido": {
+        "intro": "Química se organiza en la PAU 2026 madrileña alrededor de cuatro preguntas, cada una con un máximo de 2,5 puntos. La pregunta 1 es obligatoria y parte de una situación contextualizada para relacionar enlace químico, estructuras de Lewis, geometría molecular y equilibrio ácido-base. Después se elige entre 2A y 2B, entre 3A y 3B y entre 4A y 4B. El modelo distribuye esas alternativas entre estructura atómica y propiedades, formulación y reacciones orgánicas, termoquímica, equilibrio, oxidación-reducción y cálculos de disoluciones. Solo se entrega una respuesta completa por cada pareja. El ejercicio tiene una duración de 90 minutos. La rúbrica considera la comprensión y exposición de conceptos, el lenguaje químico, la nomenclatura, el análisis de relaciones, el desarrollo coherente de los cálculos y las unidades. Las puntuaciones de los apartados aparecen desglosadas, pero la suma de cada pregunta se mantiene en 2,5. Para preparar el formato conviene alternar justificación teórica, formulación y problema numérico bajo tiempo limitado. Esta ficha no asigna coeficientes de ponderación por analogía con cursos anteriores: el dato de admisión 2026-2027 continúa pendiente de una fuente oficial contrastada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas de 2,5 puntos: pregunta 1 obligatoria y elección entre A o B en las preguntas 2, 3 y 4.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Enlace, estructura y ácido-base", "Estructura atómica y propiedades", "Química orgánica y termoquímica", "Equilibrio, redox y disoluciones"],
+          "notas_especificas": "Se responde una única alternativa completa en cada pareja 2A/2B, 3A/3B y 4A/4B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-quimica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/quimica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 23,
+      "slug": "comunidad-de-madrid/biologia",
+      "url": "/examenes/comunidad-de-madrid/biologia",
+      "asignatura": "Biología",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Biología PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Biología · PAU Comunidad de Madrid",
+        "meta_description": "Conoce el formato PAU 2026 de Biología en Madrid: cinco preguntas, una competencial obligatoria y cuatro opciones A/B."
+      },
+      "contenido": {
+        "intro": "El examen de Biología publicado para la PAU 2026 en Madrid limita la respuesta a cinco preguntas de dos puntos. La primera es competencial, obligatoria y sin alternativa; el modelo la construye alrededor de biotecnología y genética molecular mediante interpretación de un proceso de obtención de una vacuna de ARN. Las preguntas 2, 3, 4 y 5 contienen cada una dos propuestas, A y B, y el alumno selecciona una en cada caso. Los contenidos recorren biomoléculas y agua, biología celular, metabolismo y fotosíntesis, genética, microorganismos, biotecnología, inmunidad y enfermedades infecciosas. Los apartados combinan definición, relación, explicación causal e interpretación de imágenes o esquemas. El tiempo total es de 90 minutos. Como todas las preguntas tienen igual valor, una planificación equilibrada evita dedicar demasiado a la cuestión inicial. La elección posterior debe hacerse por propuesta completa, considerando todos sus subapartados. La estructura procede del modelo oficial de las universidades públicas de la Comunidad de Madrid y no se extrapola a otras regiones. Tampoco se deducen ponderaciones universitarias: los coeficientes de Biología 2026-2027 quedan pendientes hasta que la base disponga de una publicación verificable.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco preguntas de dos puntos: la primera competencial y obligatoria; las preguntas 2-5 con elección entre A y B.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Biotecnología y genética molecular", "Biomoléculas", "Biología celular", "Metabolismo y fotosíntesis", "Inmunología y microorganismos"],
+          "notas_especificas": "El estudiante debe responder como máximo cinco preguntas y escoger solo una propuesta de cada pareja A/B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-biologia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/biologia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 24,
+      "slug": "comunidad-de-madrid/economia-de-la-empresa",
+      "url": "/examenes/comunidad-de-madrid/economia-de-la-empresa",
+      "asignatura": "Economía de la Empresa",
+      "nombre_oficial_vigente": "Empresa y Diseño de Modelos de Negocio",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Empresa PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Economía de la Empresa · PAU Madrid",
+        "meta_description": "Consulta el modelo PAU 2026 de Empresa y Diseño de Modelos de Negocio en Madrid: cuatro preguntas y optatividad interna."
+      },
+      "contenido": {
+        "intro": "La asignatura buscada habitualmente como Economía de la Empresa figura en el modelo madrileño de 2026 con su denominación vigente: Empresa y Diseño de Modelos de Negocio. La prueba contiene cuatro preguntas. Las preguntas 1 y 3 valen dos puntos cada una: el primer apartado es obligatorio y, en el segundo, se escoge una de dos cuestiones. Las preguntas 2 y 4 aportan tres puntos por unidad; sus dos primeros apartados suman 1,5 puntos y deben resolverse, mientras el tercero ofrece dos alternativas para seleccionar una, también por 1,5. El modelo combina análisis PEST o PESTEL, entorno empresarial, inventarios, DAFO, marketing, costes, financiación, inversión y otros cálculos aplicados. Hay 90 minutos para completar las cuatro preguntas. Los resultados numéricos necesitan planteamiento, operaciones e interpretación cuando lo solicita el enunciado. La URL mantiene el término histórico previsto por el proyecto para conservar coherencia, pero el encabezado de datos identifica la materia oficial. No se incorpora ninguna ponderación universitaria sin su matriz de admisión: el campo 2026-2027 permanece pendiente de verificar para Madrid.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas con optatividad interna: 1 y 3 valen dos puntos; 2 y 4 valen tres puntos.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Entorno y estrategia", "Inventarios y análisis económico", "DAFO y marketing", "Costes, financiación e inversión"],
+          "notas_especificas": "En todas las preguntas hay apartados obligatorios y una elección entre dos alternativas en el tramo indicado.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-empresa"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/economia-de-la-empresa",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 25,
+      "slug": "comunidad-de-madrid/filosofia",
+      "url": "/examenes/comunidad-de-madrid/filosofia",
+      "asignatura": "Filosofía",
+      "nombre_oficial_vigente": "Historia de la Filosofía",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia de la Filosofía PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Filosofía · PAU Comunidad de Madrid",
+        "meta_description": "Revisa el modelo PAU 2026 de Historia de la Filosofía en Madrid: elección de texto y cuatro preguntas de 2,5 puntos."
+      },
+      "contenido": {
+        "intro": "Historia de la Filosofía propone en Madrid un único examen de cuatro preguntas, cada una valorada con 2,5 puntos. Primero se elige uno de los textos A o B y se responde la cuestión 1 sobre ese fragmento: identificar y explicar su tesis y poner el problema en diálogo con otro autor, autora o corriente. La pregunta 2 permite escoger entre el problema del ser humano y el de la sociedad o política en filosofía antigua o medieval. La tercera ofrece realidad y conocimiento frente a ética y moral en época moderna. La cuarta plantea ética o moral frente al problema de Dios dentro del pensamiento contemporáneo. Las tres selecciones temáticas son independientes del texto inicial, pero en cada pregunta se contesta solo una alternativa. El tiempo fijado es de 90 minutos. La evaluación atiende a la identificación precisa de tesis y problemas, el análisis crítico, la exposición del autor elegido y el vocabulario filosófico. El perfil conserva una ruta breve de Filosofía, mientras muestra la denominación oficial completa. Los coeficientes de ponderación no forman parte del modelo de examen y se mantienen como pendientes hasta verificar datos de admisión madrileños para 2026-2027.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Elección de un texto A o B y cuatro preguntas de 2,5 puntos; las preguntas 2, 3 y 4 ofrecen dos alternativas temáticas.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Texto, tesis y diálogo filosófico", "Filosofía antigua o medieval", "Filosofía moderna", "Filosofía contemporánea"],
+          "notas_especificas": "La materia oficial es Historia de la Filosofía; tras elegir texto se responde una opción en cada pregunta temática.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-filosofia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/filosofia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 26,
+      "slug": "comunidad-de-madrid/dibujo-tecnico-ii",
+      "url": "/examenes/comunidad-de-madrid/dibujo-tecnico-ii",
+      "asignatura": "Dibujo Técnico II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Dibujo Técnico II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Dibujo Técnico II · PAU Madrid",
+        "meta_description": "Consulta el modelo PAU 2026 de Dibujo Técnico II en Madrid: cuatro preguntas de 2,5 puntos, tres con elección y una obligatoria."
+      },
+      "contenido": {
+        "intro": "Dibujo Técnico II se presenta en el modelo PAU 2026 de Madrid mediante cuatro preguntas de 2,5 puntos. Las preguntas 1, 2 y 3 ofrecen dos alternativas cada una y se resuelve solamente una propuesta completa de cada pareja. La pregunta 4 es obligatoria. El recorrido del modelo comprende geometría plana —con tangencias, transformaciones y curvas—, sistema diédrico, representación axonométrica y documentación gráfica o normalización. Las soluciones deben delinearse a lápiz y conservar todas las construcciones necesarias. Cuando se solicita explicación, la justificación razonada se escribe junto al trazado, de modo que no basta con aportar la figura final. La prueba dura 90 minutos y los criterios desglosan tanto la construcción geométrica como la ejecución, visibilidad, elección de cotas o precisión del dibujo, según el ejercicio. Al tener idéntico peso cada pregunta, interesa examinar rápidamente las alternativas de los tres primeros bloques y reservar tiempo suficiente para la parte obligatoria. Esta ficha recoge solo el formato acreditado por el modelo oficial madrileño; las ponderaciones para acceder a grados en 2026-2027 permanecen pendientes hasta localizar y validar su fuente propia.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas de 2,5 puntos: las tres primeras permiten elegir entre dos propuestas y la cuarta es obligatoria.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Geometría plana", "Sistema diédrico", "Axonometría", "Documentación gráfica y normalización"],
+          "notas_especificas": "Las respuestas se delinean a lápiz, dejando visibles las construcciones y justificando por escrito cuando se solicita.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-dibujo-tecnico-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/dibujo-tecnico-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 27,
+      "slug": "comunidad-de-madrid/geografia",
+      "url": "/examenes/comunidad-de-madrid/geografia",
+      "asignatura": "Geografía",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Geografía PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Geografía · PAU Comunidad de Madrid",
+        "meta_description": "Revisa la estructura PAU 2026 de Geografía en Madrid: tema, mapa, figura o fotografía y cinco conceptos, con 90 minutos."
+      },
+      "contenido": {
+        "intro": "Geografía distribuye la prueba PAU 2026 de Madrid en cuatro preguntas de 2,5 puntos. La primera exige desarrollar de forma sintética un tema siguiendo los epígrafes indicados y recomienda aproximadamente página y media. La segunda muestra dos mapas: se elige uno, se identifican las provincias numeradas y se explican causas y consecuencias del fenómeno representado. En la tercera se selecciona entre una figura acompañada de texto y una fotografía de paisaje, atendiendo a los aspectos señalados en el enunciado. La cuarta presenta diez conceptos y pide definir con precisión cinco; las definiciones pueden complementarse con un dibujo explicativo. El tiempo total asciende a 90 minutos. Tema, mapa, material gráfico y vocabulario tienen el mismo valor, por lo que la preparación debe cubrir exposición ordenada, localización espacial, interpretación causal y precisión conceptual. Las extensiones recomendadas son orientativas, pero ayudan a equilibrar la prueba. El modelo y los criterios proceden del portal oficial de las universidades públicas madrileñas. Esta página no adjudica ponderaciones a Geografía mientras los coeficientes del proceso 2026-2027 no estén respaldados por una tabla de admisión verificada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas de 2,5 puntos: desarrollo de tema, elección de mapa, elección de figura o fotografía y definición de cinco conceptos.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Tema geográfico", "Mapa y localización provincial", "Figura o paisaje", "5 definiciones entre 10 conceptos"],
+          "notas_especificas": "Se recomienda página y media para el tema, una página para mapa y figura y media página para conceptos.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-geografia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/geografia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 28,
+      "slug": "comunidad-de-madrid/historia-del-arte",
+      "url": "/examenes/comunidad-de-madrid/historia-del-arte",
+      "asignatura": "Historia del Arte",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia del Arte PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Historia del Arte · PAU Madrid",
+        "meta_description": "Conoce el modelo PAU 2026 de Historia del Arte en Madrid: términos, tema, artistas y comentario de una obra."
+      },
+      "contenido": {
+        "intro": "El modelo de Historia del Arte para Madrid consta de cuatro preguntas y combina reconocimiento, exposición y comentario visual. La primera es de respuesta única: a partir de cuatro imágenes hay que identificar cuatro términos artísticos y definirlos brevemente; vale dos puntos. La segunda ofrece dos temas, de los que se desarrolla uno explicando características, artistas y obras representativas, también por dos puntos. En la tercera aparecen cinco artistas y se escogen tres para situar su época, rasgos y producción principal; cada respuesta aporta un punto. La cuarta presenta dos obras y exige analizar una mediante identificación, cronología y estilo, seguida de comentario formal y estilístico; suma tres puntos. La duración establecida es de 90 minutos. Solo la cuestión inicial carece de opcionalidad, mientras las otras tres limitan de manera explícita la selección. El entrenamiento debería alternar terminología asociada a imágenes, esquemas temáticos, fichas de autores y análisis completo de láminas. Los criterios valoran precisión cronológica, vocabulario técnico, claridad y organización. Las ponderaciones universitarias de 2026-2027 quedan fuera de esta descripción hasta que puedan verificarse en documentación madrileña de admisión.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas: términos obligatorios, un tema entre dos, tres artistas entre cinco y comentario de una obra entre dos.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Cuatro términos visuales (2 puntos)", "Tema a elegir (2 puntos)", "3 artistas entre 5 (3 puntos)", "Comentario de obra (3 puntos)"],
+          "notas_especificas": "La primera pregunta es única; las otras tres incorporan elección entre temas, artistas u obras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-historia-del-arte"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/historia-del-arte",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 29,
+      "slug": "comunidad-de-madrid/latin-ii",
+      "url": "/examenes/comunidad-de-madrid/latin-ii",
+      "asignatura": "Latín II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Latín II PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Latín II · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el modelo PAU 2026 de Latín II en Madrid: traducción, morfología, sintaxis, etimología y literatura en tres bloques."
+      },
+      "contenido": {
+        "intro": "Latín II se articula en Madrid en tres bloques y cinco preguntas para la PAU 2026. En el bloque I se elige un texto A o B y se mantienen asociadas sus tres tareas: traducción por cinco puntos, análisis morfológico de cinco palabras por uno y análisis sintáctico por otro. El bloque II ofrece una cuestión de etimología y evolución del latín al español entre las opciones A.4 y B.4, con valor de un punto. El bloque III plantea dos alternativas literarias y obliga a desarrollar una, hasta dos puntos. Está permitido utilizar el apéndice gramatical incluido en el diccionario, pero se prohíben los diccionarios que incorporen información sobre literatura latina, composición o derivación. La duración máxima es de 90 minutos. La puntuación concentra la mitad del examen en traducir, de modo que conviene reservar después tiempo específico para lengua histórica y literatura. La opción seleccionada en la primera parte debe conservarse para morfología y sintaxis; las elecciones posteriores son independientes. Esta ficha transcribe la configuración del modelo oficial y mantiene las ponderaciones 2026-2027 como pendientes mientras no haya una fuente de admisión enlazada y validada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres bloques y cinco preguntas: texto A/B con traducción, morfología y sintaxis; una opción de etimología; y una de literatura.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Texto, traducción y análisis (7 puntos)", "Etimología y evolución (1 punto)", "Literatura latina (2 puntos)"],
+          "notas_especificas": "Se permite el apéndice gramatical del diccionario, pero no diccionarios con literatura, composición o derivación.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-latin-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/latin-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 30,
+      "slug": "comunidad-de-madrid/griego-ii",
+      "url": "/examenes/comunidad-de-madrid/griego-ii",
+      "asignatura": "Griego II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Griego II PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Griego II · PAU Comunidad de Madrid",
+        "meta_description": "Revisa el modelo PAU 2026 de Griego II en Madrid: texto, traducción, morfología, sintaxis, etimología y literatura."
+      },
+      "contenido": {
+        "intro": "El examen madrileño de Griego II para 2026 se divide en tres bloques que suman cinco respuestas. En el primero se selecciona un texto A o B y se trabaja siempre sobre esa elección: traducción por cinco puntos, análisis morfológico de cinco términos por uno y una tarea sintáctica aplicada a un fragmento, también por un punto. El bloque II vale un punto y plantea etimologías ligadas al mismo pasaje, relacionando palabras griegas con vocablos españoles y explicando el vínculo semántico. El bloque III aporta dos puntos y permite desarrollar uno de dos temas de literatura, como épica o comedia en el modelo publicado. La prueba se realiza en 90 minutos. Los criterios priorizan la corrección de estructuras y formas, el sentido general de la traducción, la identificación de funciones sintácticas y la organización coherente del tema literario. La respuesta etimológica debe respetar el texto escogido, mientras la selección literaria se hace aparte. Esta combinación deja siete puntos asociados directamente a comprensión y análisis lingüístico. El perfil no completa ponderaciones a partir de convocatorias anteriores ni de otras comunidades: cualquier coeficiente de acceso para 2026-2027 permanece pendiente hasta comprobar una tabla oficial de Madrid.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres bloques y cinco respuestas: texto A/B con traducción, morfología y sintaxis; etimología asociada; y un tema literario entre dos.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión, traducción y análisis (7 puntos)", "Etimología (1 punto)", "Literatura griega (2 puntos)"],
+          "notas_especificas": "El bloque II debe corresponder al texto A o B elegido en el bloque I; el tema literario se escoge entre dos.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-griego-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/griego-ii",
       "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
     }
   ]

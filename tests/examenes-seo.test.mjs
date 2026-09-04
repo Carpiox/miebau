@@ -12,11 +12,12 @@ const data = validateData(JSON.parse(readFileSync(path.join(ROOT, 'data', 'exame
 const redirects = readFileSync(path.join(ROOT, '_redirects'), 'utf8');
 const sitemap = readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 
-test('el lote contiene exactamente las prioridades 1-10 y once fuentes oficiales', () => {
-  assert.deepEqual(data.entries.map((entry) => entry.prioridad), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  assert.equal(data.sources.length, 11);
+test('los lotes contienen exactamente las prioridades 1-30 y sus fuentes oficiales', () => {
+  assert.deepEqual(data.entries.map((entry) => entry.prioridad), Array.from({ length: 30 }, (_, index) => index + 1));
+  assert.equal(data.entries.slice(10).length, 20);
+  assert.equal(data.sources.length, 32);
   assert(data.sources.every((source) => source.status === 'verified'));
-  assert(data.sources.every((source) => /^https:\/\/(?:www\.)?(?:um\.es|carm\.es)\//.test(source.sourceUrl)));
+  assert(data.sources.every((source) => /^https:\/\/(?:www\.)?(?:um\.es|carm\.es|ucm\.es)\//.test(source.sourceUrl)));
 });
 
 test('las introducciones son originales, completas y no contienen marcadores', () => {
@@ -41,11 +42,14 @@ test('duración, estructura y fuentes están verificadas sin inventar datos pend
   }
 });
 
-test('las denominaciones oficiales actuales se conservan en Empresa y Filosofía', () => {
-  const empresa = data.entries.find((entry) => entry.prioridad === 9);
-  const filosofia = data.entries.find((entry) => entry.prioridad === 10);
-  assert.equal(empresa.nombre_oficial_vigente, 'Empresa y Diseño de Modelos de Negocio');
-  assert.equal(filosofia.nombre_oficial_vigente, 'Historia de la Filosofía');
+test('las denominaciones oficiales actuales se conservan en Empresa, Filosofía e Inglés', () => {
+  for (const priority of [9, 24]) {
+    assert.equal(data.entries.find((entry) => entry.prioridad === priority).nombre_oficial_vigente, 'Empresa y Diseño de Modelos de Negocio');
+  }
+  for (const priority of [10, 25]) {
+    assert.equal(data.entries.find((entry) => entry.prioridad === priority).nombre_oficial_vigente, 'Historia de la Filosofía');
+  }
+  assert.equal(data.entries.find((entry) => entry.prioridad === 20).nombre_oficial_vigente, 'Inglés II');
 });
 
 test('el build está actualizado y es reproducible', () => {
@@ -65,6 +69,11 @@ test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
     assert(html.includes(entry.contenido.intro));
     assert(html.includes(entry.contenido.datos_comunidad_asignatura.modelo_examen_vigente));
     assert.match(html, /Fuente oficial verificada · PAU 2026/);
+    for (const sourceId of entry.source_ids) {
+      const source = data.sources.find((item) => item.id === sourceId);
+      assert(html.includes(source.sourceUrl.replace(/&/g, '&amp;')), `Falta la fuente ${sourceId} en ${entry.slug}`);
+    }
+    assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert(!html.includes('TODO'));
     assert(!html.includes('<meta name="robots" content="index'));
   }
