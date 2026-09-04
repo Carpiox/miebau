@@ -1,0 +1,96 @@
+import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import test from 'node:test';
+
+import { outputPathFor, validateData, wordCount } from '../scripts/build-examenes-profiles.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const data = validateData(JSON.parse(readFileSync(path.join(ROOT, 'data', 'examenes-seo.json'), 'utf8')));
+const redirects = readFileSync(path.join(ROOT, '_redirects'), 'utf8');
+const sitemap = readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
+
+test('el lote contiene exactamente las prioridades 1-10 y once fuentes oficiales', () => {
+  assert.deepEqual(data.entries.map((entry) => entry.prioridad), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  assert.equal(data.sources.length, 11);
+  assert(data.sources.every((source) => source.status === 'verified'));
+  assert(data.sources.every((source) => /^https:\/\/(?:www\.)?(?:um\.es|carm\.es)\//.test(source.sourceUrl)));
+});
+
+test('las introducciones son originales, completas y no contienen marcadores', () => {
+  assert(data.entries.every((entry) => {
+    const count = wordCount(entry.contenido.intro);
+    return count >= 150 && count <= 200;
+  }));
+  assert(!JSON.stringify(data).includes('TODO'));
+});
+
+test('duración, estructura y fuentes están verificadas sin inventar datos pendientes', () => {
+  for (const entry of data.entries) {
+    const details = entry.contenido.datos_comunidad_asignatura;
+    assert.equal(details.duracion_minutos, 90);
+    assert.notEqual(details.modelo_examen_vigente, 'pendiente_de_verificar');
+    assert.notEqual(details.numero_ejercicios, 'pendiente_de_verificar');
+    assert(details.bloques_o_temario_destacado.length > 0);
+    assert.equal(details.ponderaciones_2026_2027, 'pendiente_de_verificar');
+    assert.equal(details.num_convocatorias_disponibles, 'pendiente_de_verificar');
+    assert.equal(entry.widget_embed_url, 'pendiente_de_verificar');
+    assert.equal(entry.source_ids.length, 2);
+  }
+});
+
+test('las denominaciones oficiales actuales se conservan en Empresa y Filosofía', () => {
+  const empresa = data.entries.find((entry) => entry.prioridad === 9);
+  const filosofia = data.entries.find((entry) => entry.prioridad === 10);
+  assert.equal(empresa.nombre_oficial_vigente, 'Empresa y Diseño de Modelos de Negocio');
+  assert.equal(filosofia.nombre_oficial_vigente, 'Historia de la Filosofía');
+});
+
+test('el build está actualizado y es reproducible', () => {
+  const result = spawnSync(process.execPath, ['scripts/build-examenes-profiles.mjs', '--check'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+  });
+  assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
+});
+
+test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
+  for (const entry of data.entries) {
+    const html = readFileSync(outputPathFor(entry), 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex,follow">/);
+    assert(html.includes(`<link rel="canonical" href="https://miebau.es${entry.url}">`));
+    assert(html.includes(`<h1>${entry.seo.h1}</h1>`));
+    assert(html.includes(entry.contenido.intro));
+    assert(html.includes(entry.contenido.datos_comunidad_asignatura.modelo_examen_vigente));
+    assert.match(html, /Fuente oficial verificada · PAU 2026/);
+    assert(!html.includes('TODO'));
+    assert(!html.includes('<meta name="robots" content="index'));
+  }
+});
+
+test('las URLs limpias usan rewrites 200 exactos y sin reglas inversas', () => {
+  const rules = redirects.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  for (const entry of data.entries) {
+    const expected = `${entry.url} ${entry.url}.html 200`;
+    assert.equal(rules.filter((line) => line === expected).length, 1, `Rewrite incorrecto para ${entry.url}`);
+    assert(!rules.some((line) => line.startsWith(`${entry.url}.html ${entry.url} `)), `Regla inversa con riesgo de bucle para ${entry.url}`);
+  }
+});
+
+test('ninguna ruta del lote aparece todavía en el sitemap', () => {
+  for (const entry of data.entries) {
+    assert(!sitemap.includes(`https://miebau.es${entry.url}`));
+    assert(!sitemap.includes(`https://miebau.es${entry.url}.html`));
+  }
+});
+
+test('las fichas no dependen de un framework ni de contenido renderizado por JavaScript', () => {
+  for (const entry of data.entries) {
+    const html = readFileSync(outputPathFor(entry), 'utf8');
+    assert.match(html, /<article class="card prose">[\s\S]*<h2>Cómo es el examen<\/h2>/);
+    assert.match(html, /<h2>Estructura verificada para 2026<\/h2>[\s\S]*<dl class="profile-facts">/);
+    assert(!/astro|__next|react/i.test(html));
+  }
+});

@@ -1,0 +1,442 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkedAt": "2026-09-05",
+  "scope": "Primer lote: prioridades 1-10 de la Región de Murcia",
+  "sources": [
+    {
+      "id": "murcia-pau-2026-general",
+      "community": "Región de Murcia",
+      "subject": "Todas las materias",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "Jornada informativa PAU 2026 del Distrito Universitario de la Región de Murcia",
+      "sourceUrl": "https://www.carm.es/web/servlet/descarga?ALIAS=ARCH&ARCHIVO=Jornadas+para+Centros+y+Orientadores+PAU2026+febrero.pdf&IDCONTENIDO=204963",
+      "scope": "Verifica que cada materia tiene un examen único de 90 minutos y remite a los documentos de coordinación para la estructura específica."
+    },
+    {
+      "id": "murcia-pau-2026-matematicas-ii",
+      "community": "Región de Murcia",
+      "subject": "Matemáticas II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Matemáticas II: estructura y contenidos",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-306-mateematicas-ii-estructura-y-contenidos-pdf",
+      "scope": "Define cinco preguntas, obligatoriedad de P1-P3, elección en P4-P5 y distribución por áreas matemáticas."
+    },
+    {
+      "id": "murcia-pau-2026-matematicas-ccss-ii",
+      "community": "Región de Murcia",
+      "subject": "Matemáticas Aplicadas a las Ciencias Sociales II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Matemáticas Aplicadas a las Ciencias Sociales II: modelo de examen",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau-2026-307-matematicas-aplicadas-a-las-cc-ss-modelo-de-examen-pdf",
+      "scope": "Muestra cuatro preguntas: dos obligatorias y dos con opción A o B, además de su puntuación."
+    },
+    {
+      "id": "murcia-pau-2026-lengua",
+      "community": "Región de Murcia",
+      "subject": "Lengua Castellana y Literatura II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Lengua Castellana y Literatura II: estructura y criterios",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-301-lengua-castellana-y-literatura-estructura-y-criterios-v2-pdf",
+      "scope": "Detalla tres bloques, siete preguntas numeradas, puntuaciones y los puntos con opcionalidad."
+    },
+    {
+      "id": "murcia-pau-2026-historia",
+      "community": "Región de Murcia",
+      "subject": "Historia de España",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Historia de España: estructura y contenidos",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-302-historia-de-espana-estructura-y-contenidos-v2-pdf",
+      "scope": "Fija las partes A, B y C, sus puntuaciones, las preguntas propuestas y las elecciones permitidas."
+    },
+    {
+      "id": "murcia-pau-2026-ingles",
+      "community": "Región de Murcia",
+      "subject": "Primera Lengua Extranjera II (Inglés)",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Inglés: ejemplo de examen",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-303-ingles-ejemplo-de-examen-pdf",
+      "scope": "Detalla tres secciones, seis tareas, puntuación y elecciones dentro de Use of English y Writing."
+    },
+    {
+      "id": "murcia-pau-2026-fisica",
+      "community": "Región de Murcia",
+      "subject": "Física",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Física: especificaciones para la materia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-316-fisica-especificaciones-para-la-materia-pdf",
+      "scope": "Establece cuatro apartados A-D, su puntuación y la obligatoriedad del apartado A de Campo Gravitatorio."
+    },
+    {
+      "id": "murcia-pau-2026-quimica",
+      "community": "Región de Murcia",
+      "subject": "Química",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Química: estructura y criterios de valoración",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-322-quimica-estructura-y-criterios-de-valoracion-pdf",
+      "scope": "Fija cinco bloques de dos puntos, la pregunta obligatoria de Química Orgánica y la elección A/B en los demás."
+    },
+    {
+      "id": "murcia-pau-2026-biologia",
+      "community": "Región de Murcia",
+      "subject": "Biología",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Biología: estructura y criterios",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-311-biologia-estructura-y-criterios-pdf",
+      "scope": "Establece cinco preguntas de dos puntos: dos competenciales obligatorias y tres con elección."
+    },
+    {
+      "id": "murcia-pau-2026-empresa",
+      "community": "Región de Murcia",
+      "subject": "Empresa y Diseño de Modelos de Negocio",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Empresa y Diseño de Modelos de Negocio: orientaciones",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-315-empresa-orientaciones-pdf",
+      "scope": "Define dos bloques: seis respuestas entre ocho cuestiones y dos problemas obligatorios con un apartado opcional."
+    },
+    {
+      "id": "murcia-pau-2026-filosofia",
+      "community": "Región de Murcia",
+      "subject": "Historia de la Filosofía",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Documento oficial",
+      "name": "PAU 2026 Historia de la Filosofía: estructura, criterios y contenidos",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-320-historia-de-la-filosofia-estructura-criterios-y-contenidos-pdf",
+      "scope": "Fija tres ejercicios sin elección: análisis y relación, disertación y desarrollo temático."
+    }
+  ],
+  "entries": [
+    {
+      "prioridad": 1,
+      "slug": "region-de-murcia/matematicas-ii",
+      "url": "/examenes/region-de-murcia/matematicas-ii",
+      "asignatura": "Matemáticas II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Matemáticas II EvAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Matemáticas II · PAU Región de Murcia",
+        "meta_description": "Consulta la estructura oficial PAU 2026 de Matemáticas II en la Región de Murcia: cinco preguntas, opciones, bloques y duración verificados."
+      },
+      "contenido": {
+        "intro": "La prueba PAU 2026 de Matemáticas II en la Región de Murcia abandona el esquema de cuatro bloques usado en 2025 y pasa a cinco preguntas con el mismo valor. Las tres primeras, P1, P2 y P3, son obligatorias; P4 y P5 ofrecen dos opciones y exigen escoger una en cada caso. La coordinación murciana distribuye el examen entre dos cuestiones de análisis, una de álgebra, una de geometría y otra de probabilidad y estadística. Una de las preguntas de análisis aparece dentro de P1-P3 y la restante en el tramo P4-P5. Además, P1 se dedica a modelización y garantiza una parte competencial de la prueba. Como el resto de materias del distrito, el ejercicio dispone de 90 minutos. Conviene practicar el cambio de formato respetando la elección limitada: no se trata de combinar apartados libremente, sino de resolver todas las preguntas obligatorias y seleccionar una alternativa completa donde se permita. Las ponderaciones de admisión para esta materia no se trasladan aquí porque la fuente murciana 2026-2027 sigue pendiente de verificación en la base del proyecto.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco preguntas con idéntica puntuación: P1, P2 y P3 obligatorias; P4 y P5 con dos opciones y elección de una.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Análisis (2 preguntas)", "Álgebra", "Geometría", "Probabilidad y estadística"],
+          "notas_especificas": "P1 es una pregunta de modelización. Una pregunta de análisis se sitúa entre P1-P3 y la otra entre P4-P5.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-matematicas-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/matematicas-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 2,
+      "slug": "region-de-murcia/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "url": "/examenes/region-de-murcia/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "asignatura": "Matemáticas Aplicadas a las Ciencias Sociales II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Matemáticas CCSS II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Matemáticas Aplicadas a las CCSS II · PAU Murcia",
+        "meta_description": "Revisa el modelo oficial PAU 2026 de Matemáticas Aplicadas a las Ciencias Sociales II en Murcia: preguntas, opciones y 90 minutos."
+      },
+      "contenido": {
+        "intro": "El modelo oficial de Matemáticas Aplicadas a las Ciencias Sociales II para la PAU 2026 murciana propone cuatro preguntas. Las dos iniciales se responden obligatoriamente: en el ejemplo publicado, la primera vale tres puntos y trabaja probabilidad, mientras la segunda suma dos y plantea programación lineal. Las preguntas tercera y cuarta incluyen alternativas A y B; el estudiante escoge una opción completa en cada una, sin mezclar sus apartados. El modelo asigna tres puntos a la tercera y dos a la cuarta, con contenidos de análisis y álgebra respectivamente. Se admite una calculadora que no sea gráfica ni programable. El tiempo común establecido por el Distrito Universitario de la Región de Murcia es de 90 minutos, por lo que resulta útil entrenar tanto la lectura del contexto como la decisión entre opciones antes de desarrollar cálculos. Esta ficha describe exclusivamente la configuración acreditada para 2026 y enlaza el documento universitario del que procede cada cifra. No se atribuye un coeficiente de admisión habitual a la asignatura: las ponderaciones murcianas del curso 2026-2027 continúan sin una tabla estable verificada dentro de Miebau.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas: las dos primeras obligatorias y las preguntas 3 y 4 con opción A o B.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Probabilidad", "Programación lineal", "Análisis", "Álgebra"],
+          "notas_especificas": "El modelo oficial permite calculadora no gráfica ni programable y asigna 3, 2, 3 y 2 puntos a las cuatro preguntas.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-matematicas-ccss-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/matematicas-aplicadas-a-las-ciencias-sociales-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 3,
+      "slug": "region-de-murcia/lengua-castellana-y-literatura-ii",
+      "url": "/examenes/region-de-murcia/lengua-castellana-y-literatura-ii",
+      "asignatura": "Lengua Castellana y Literatura II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Lengua Castellana II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Lengua Castellana y Literatura II · PAU Murcia",
+        "meta_description": "Conoce la estructura oficial PAU 2026 de Lengua Castellana y Literatura II en Murcia: tres bloques, siete preguntas y criterios."
+      },
+      "contenido": {
+        "intro": "Lengua Castellana y Literatura II se articula en Murcia en tres bloques para la PAU 2026. Comunicación escrita aporta cuatro puntos y reúne tema e ideas, una redacción argumentativa y el análisis justificado de tipologías textuales y funciones del lenguaje; esta parte no ofrece elección. Reflexión sobre la lengua vale tres puntos e incorpora sintaxis, morfología y cohesión textual. En la cuestión de cohesión aparecen dos propuestas entre las que se selecciona una. Educación literaria completa los tres puntos restantes mediante la pregunta 7: se presentan dos textos, se elige uno y se responde sobre autor, obra y contexto, argumento, temas o personajes, y características formales. En total, el documento de coordinación enumera siete preguntas dentro de los tres apartados. El examen se realiza durante 90 minutos, de acuerdo con las normas generales PAU 2026 del distrito. Para preparar esta materia conviene medir por separado la escritura extensa, el comentario lingüístico y el desarrollo literario, pues sus puntuaciones y extensiones orientativas son diferentes. La ficha no asigna ponderaciones universitarias mientras ese dato regional permanezca pendiente de una publicación verificable para 2026-2027.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres bloques y siete preguntas numeradas; Comunicación escrita no tiene opcionalidad y Educación literaria permite elegir uno de dos textos.",
+          "numero_ejercicios": "7 preguntas agrupadas en 3 bloques",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comunicación escrita (4 puntos)", "Reflexión sobre la lengua (3 puntos)", "Educación literaria (3 puntos)"],
+          "notas_especificas": "La pregunta 6 ofrece elección en cohesión textual y la pregunta 7 exige escoger un texto y contestar sus tres apartados.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-lengua"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/lengua-castellana-y-literatura-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 4,
+      "slug": "region-de-murcia/historia-de-espana",
+      "url": "/examenes/region-de-murcia/historia-de-espana",
+      "asignatura": "Historia de España",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia de España PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Historia de España · PAU Región de Murcia",
+        "meta_description": "Consulta la estructura oficial PAU 2026 de Historia de España en Murcia: tres partes, documento histórico, desarrollo y opciones."
+      },
+      "contenido": {
+        "intro": "Historia de España presenta en la PAU 2026 de Murcia una estructura de tres partes que suma diez puntos. La parte A ofrece cuatro cuestiones cortas y obliga a responder dos, valoradas con 1,5 puntos cada una. La parte B propone el análisis de un documento histórico mediante cuatro preguntas dirigidas de un punto, hasta alcanzar cuatro. La parte C contiene dos temas de desarrollo y se escoge uno, con un máximo de tres puntos. El periodo de esa última respuesta se coordina con el documento anterior: si la fuente de la parte B pertenece al siglo XIX, el desarrollo corresponde al XX, o a la inversa. El conjunto plantea diez enunciados principales y requiere contestar siete. Los aspirantes disponen de 90 minutos, igual que en las demás materias del distrito murciano. Esta distribución aconseja practicar respuestas breves con precisión cronológica, lectura guiada de fuentes y exposición extensa, sin confundir la elección permitida en A y C con la parte documental, que se completa entera. Los posibles coeficientes para acceder a grados concretos no se publican aquí porque las ponderaciones regionales 2026-2027 todavía no están verificadas.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Parte A: responder 2 de 4 preguntas cortas; parte B: análisis documental con 4 preguntas; parte C: elegir 1 de 2 desarrollos.",
+          "numero_ejercicios": "3 partes; 10 preguntas propuestas y 7 respuestas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Preguntas cortas (3 puntos)", "Análisis de documento (4 puntos)", "Pregunta de desarrollo (3 puntos)"],
+          "notas_especificas": "Las partes B y C alternan los siglos XIX y XX: el desarrollo pertenece al periodo distinto del documento.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-historia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/historia-de-espana",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 5,
+      "slug": "region-de-murcia/ingles",
+      "url": "/examenes/region-de-murcia/ingles",
+      "asignatura": "Inglés",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Inglés PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Inglés · PAU Región de Murcia",
+        "meta_description": "Revisa el modelo oficial PAU 2026 de Inglés en Murcia: Reading, Use of English, Writing, seis tareas y duración de 90 minutos."
+      },
+      "contenido": {
+        "intro": "El examen murciano de Primera Lengua Extranjera II en Inglés se divide en tres secciones durante la PAU 2026. Reading Comprehension vale tres puntos y parte de un único texto con las tareas 1, 2 y 3; todas sus cuestiones deben resolverse. Overall Language Ability, también con tres puntos, comprende las tareas 4 y 5: la primera contiene quince huecos obligatorios y la segunda pide completar solo tres de las cinco transformaciones propuestas. Writing aporta cuatro puntos mediante la tarea 6, donde se elige uno de dos textos de 150 a 175 palabras. Por tanto, el modelo oficial reúne seis tareas, aunque la opcionalidad opera dentro de las dos últimas y no permite omitir una sección completa. La duración ordinaria es de 90 minutos. Al practicar conviene repartir el tiempo considerando que la producción escrita concentra el 40 % de la nota y que las instrucciones limitan cuántas respuestas se corrigen cuando se contesta de más. Miebau mantiene aparte los coeficientes de admisión: para Murcia no hay todavía una tabla 2026-2027 estable que permita asociar a Inglés una ponderación verificada por grado y universidad.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres secciones y seis tareas: Reading (1-3), Use of English (4-5) y Writing (6).",
+          "numero_ejercicios": "6 tareas agrupadas en 3 secciones",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Reading Comprehension (3 puntos)", "Use of English (3 puntos)", "Writing (4 puntos)"],
+          "notas_especificas": "En la tarea 5 se responden 3 de 5 transformaciones y en la tarea 6 se elige 1 de 2 propuestas de 150-175 palabras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-ingles"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/ingles",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 6,
+      "slug": "region-de-murcia/fisica",
+      "url": "/examenes/region-de-murcia/fisica",
+      "asignatura": "Física",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Física PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Física · PAU Región de Murcia",
+        "meta_description": "Consulta las especificaciones oficiales de Física PAU 2026 en Murcia: cuatro apartados, puntuación, obligatoriedad y 90 minutos."
+      },
+      "contenido": {
+        "intro": "Física adopta para la PAU 2026 de la Región de Murcia cuatro apartados vinculados a los bloques A, B, C y D del currículo. El bloque A, Campo Gravitatorio, suma dos puntos y se responde sin preguntas opcionales. Los apartados B y C reciben tres puntos cada uno y corresponden, respectivamente, al Campo Electromagnético y a Vibraciones y Ondas; el D, Física Relativista, Cuántica, Nuclear y de Partículas, completa los dos puntos restantes. Las especificaciones permiten que una cuestión necesite un saber elemental de otro bloque, aunque cada apartado permanezca relacionado mayoritariamente con el suyo. La norma general concede 90 minutos para resolver el ejercicio. Se puede utilizar regla y calculadora científica siempre que esta no transmita datos, almacene documentos, sea programable o realice cálculo simbólico. Más que memorizar una cifra fija de subpreguntas, la preparación debe atender a los cuatro apartados y a su reparto 2-3-3-2, porque el documento no establece un número invariable de cuestiones internas. Las ponderaciones de Física para grados y universidades murcianas quedan marcadas como pendientes hasta disponer de una fuente oficial 2026-2027 estable y comprobable.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Un ejercicio con cuatro apartados A-D; el apartado A de Campo Gravitatorio no ofrece preguntas opcionales.",
+          "numero_ejercicios": "1 ejercicio dividido en 4 apartados; número interno de preguntas no fijado",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Campo Gravitatorio (2 puntos)", "Campo Electromagnético (3 puntos)", "Vibraciones y Ondas (3 puntos)", "Física Relativista, Cuántica, Nuclear y de Partículas (2 puntos)"],
+          "notas_especificas": "Se admite regla y calculadora científica sin transmisión de datos, documentos almacenados, programación ni cálculo simbólico.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-fisica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/fisica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 7,
+      "slug": "region-de-murcia/quimica",
+      "url": "/examenes/region-de-murcia/quimica",
+      "asignatura": "Química",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Química PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Química · PAU Región de Murcia",
+        "meta_description": "Conoce la estructura oficial de Química PAU 2026 en Murcia: cinco bloques, pregunta obligatoria, elecciones A/B y duración."
+      },
+      "contenido": {
+        "intro": "Química mantiene una organización muy definida en la PAU 2026 de Murcia: cinco bloques de preguntas, cada uno con un máximo de dos puntos. Los ámbitos principales son estructura atómica y enlace químico; termodinámica, equilibrio y cinética; ácido-base; redox; y química orgánica. La cuestión del bloque orgánico es obligatoria. En los otros cuatro se presentan alternativas A y B, y debe escogerse una por bloque; si se responden ambas, únicamente se corrige la contestada primero. El máximo evaluable es, por ello, cinco cuestiones. Cada una puede contener varios apartados y cruzar contenidos generales como nomenclatura o estequiometría. El documento específico confirma una hora y treinta minutos para completar la prueba. La práctica debería reproducir tanto la selección A/B como la exigencia de mostrar cálculos, ajustar reacciones y expresar correctamente las unidades, porque un resultado aislado no siempre permite obtener toda la puntuación. Esta página separa la estructura académica de los criterios de admisión universitaria. Mientras la publicación murciana de ponderaciones 2026-2027 no pueda verificarse de manera estable, no se adjudica a Química ningún coeficiente supuesto ni se extrapolan valores de otras comunidades.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco bloques de dos puntos; Química Orgánica es obligatoria y en los otros cuatro se elige A o B.",
+          "numero_ejercicios": "5 cuestiones, una por bloque",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Estructura atómica y enlace", "Termodinámica, equilibrio y cinética", "Ácido-base", "Redox", "Química orgánica"],
+          "notas_especificas": "Si se contestan A y B del mismo bloque, solo se corrige la primera respuesta. Cada cuestión puede incluir varios apartados.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-quimica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/quimica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 8,
+      "slug": "region-de-murcia/biologia",
+      "url": "/examenes/region-de-murcia/biologia",
+      "asignatura": "Biología",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Biología PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Biología · PAU Región de Murcia",
+        "meta_description": "Revisa la estructura oficial de Biología PAU 2026 en Murcia: cinco preguntas, dos obligatorias, tres con elección y seis bloques."
+      },
+      "contenido": {
+        "intro": "Biología se evalúa en la PAU 2026 murciana mediante cinco preguntas de dos puntos. Las dos primeras son obligatorias y tienen carácter competencial: pueden exigir interpretar datos, resolver un problema, analizar una figura o relacionar procesos. Las otras tres permiten elegir una de dos opciones. El temario se ordena en seis bloques de saberes: biomoléculas, genética molecular —con genética mendeliana en el currículo regional—, biología celular, metabolismo, ingeniería genética y biotecnología, e inmunología. La propuesta aprobada concreta que la segunda pregunta incluye un problema mendeliano de 1,5 puntos más una cuestión competencial de medio punto. Los bloques aparecen combinados en distintas preguntas, de modo que una respuesta puede movilizar más de un área. El ejercicio dura 90 minutos y las respuestas deben ceñirse a lo solicitado; cuando se pide razonamiento, una conclusión sin justificación pierde valor. Para entrenar con fidelidad, interesa practicar esquemas, gráficas, textos científicos y problemas, no solo definiciones. La ficha evita completar por semejanza los coeficientes de admisión: hasta verificar la tabla regional 2026-2027, las ponderaciones de Biología continúan expresamente pendientes.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cinco preguntas de dos puntos: dos competenciales obligatorias y tres con elección de una entre dos opciones.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Biomoléculas", "Genética molecular y mendeliana", "Biología celular", "Metabolismo", "Ingeniería genética y biotecnología", "Inmunología"],
+          "notas_especificas": "La pregunta 2 incluye un problema de genética mendeliana de 1,5 puntos y una cuestión competencial de 0,5.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-biologia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/biologia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 9,
+      "slug": "region-de-murcia/economia-de-la-empresa",
+      "url": "/examenes/region-de-murcia/economia-de-la-empresa",
+      "asignatura": "Economía de la Empresa",
+      "nombre_oficial_vigente": "Empresa y Diseño de Modelos de Negocio",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Economía de la Empresa PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Economía de la Empresa · PAU Murcia",
+        "meta_description": "Consulta el formato oficial PAU 2026 de Empresa y Diseño de Modelos de Negocio en Murcia, antes Economía de la Empresa."
+      },
+      "contenido": {
+        "intro": "La materia que muchas búsquedas aún denominan Economía de la Empresa aparece oficialmente en la PAU 2026 de Murcia como Empresa y Diseño de Modelos de Negocio. Su examen consta de dos bloques. El primero presenta ocho cuestiones cortas de carácter teórico-práctico relacionadas con una situación empresarial; se responden seis y cada una vale un punto. El segundo exige resolver dos problemas de dos puntos. En cada problema, 1,5 puntos corresponden a apartados obligatorios y los 0,5 restantes ofrecen dos alternativas para escoger una. Los cálculos pueden abordar productividad, inversiones, umbral de rentabilidad, decisión entre comprar o producir, ratios o elaboración de balances. El modelo suma diez propuestas principales y el alumno completa ocho: seis cuestiones más los dos problemas. El marco común del distrito reserva 90 minutos. La corrección atiende especialmente al planteamiento, los pasos, las unidades y la interpretación, por lo que mostrar únicamente el resultado no se valora. Se conserva el slug histórico para no alterar la arquitectura prevista, pero la ficha muestra la denominación vigente con claridad. Las ponderaciones murcianas 2026-2027 siguen pendientes de comprobación oficial y no se deducen a partir del nombre anterior.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Dos bloques: responder 6 de 8 cuestiones cortas y resolver 2 problemas obligatorios con un apartado opcional en cada uno.",
+          "numero_ejercicios": "10 propuestas principales; se responden 8",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Cuestiones teórico-prácticas (6 puntos)", "Problemas empresariales (4 puntos)"],
+          "notas_especificas": "La denominación oficial vigente es Empresa y Diseño de Modelos de Negocio. Los resultados numéricos deben incluir planteamiento y operaciones.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-empresa"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/economia-de-la-empresa",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    },
+    {
+      "prioridad": 10,
+      "slug": "region-de-murcia/filosofia",
+      "url": "/examenes/region-de-murcia/filosofia",
+      "asignatura": "Filosofía",
+      "nombre_oficial_vigente": "Historia de la Filosofía",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Filosofía PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Filosofía · PAU Región de Murcia",
+        "meta_description": "Conoce la estructura oficial PAU 2026 de Historia de la Filosofía en Murcia: tres ejercicios, cuatro respuestas y sin opciones."
+      },
+      "contenido": {
+        "intro": "La ruta de Filosofía corresponde en la documentación PAU 2026 de Murcia a la asignatura oficial Historia de la Filosofía. El examen contiene tres ejercicios y no permite escoger entre modelos cerrados ni entre ejercicios. El primero vale cuatro puntos y obliga a contestar dos cuestiones: analizar un fragmento de los textos del programa y relacionar sus ideas o las de su autor con otra posición filosófica. El segundo pide una disertación de 350 palabras sobre la actualidad del pensamiento examinado y aporta tres puntos. El tercero, también con valor de tres, desarrolla el contenido temático vinculado al fragmento. En la práctica se producen cuatro respuestas dentro de esos tres ejercicios. La duración general es de 90 minutos, lo que convierte la planificación de la disertación y del desarrollo en una parte importante del entrenamiento. La rúbrica valora identificación del problema, tesis, contexto, relación argumentada, estructura expositiva y precisión conceptual. Esta ficha conserva la URL breve prevista en el proyecto, pero identifica la materia vigente para evitar equívocos. No se atribuyen ponderaciones de admisión a Filosofía hasta que los coeficientes 2026-2027 del distrito murciano puedan verificarse en una publicación oficial estable.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres ejercicios sin elección: análisis y relación filosófica, disertación de 350 palabras y desarrollo temático.",
+          "numero_ejercicios": "3 ejercicios y 4 respuestas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Análisis de texto y relación filosófica (4 puntos)", "Disertación (3 puntos)", "Desarrollo temático (3 puntos)"],
+          "notas_especificas": "La denominación oficial es Historia de la Filosofía y el documento descarta opciones entre modelos o ejercicios.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-filosofia"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/filosofia",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+    }
+  ]
+}
