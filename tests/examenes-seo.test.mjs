@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import test from 'node:test';
 
-import { outputPathFor, validateData, wordCount } from '../scripts/build-examenes-profiles.mjs';
+import { outputPathFor, renderProfile, validateData, wordCount } from '../scripts/build-examenes-profiles.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = validateData(JSON.parse(readFileSync(path.join(ROOT, 'data', 'examenes-seo.json'), 'utf8')));
@@ -37,9 +37,43 @@ test('duración, estructura y fuentes están verificadas sin inventar datos pend
     assert(details.bloques_o_temario_destacado.length > 0);
     assert.equal(details.ponderaciones_2026_2027, 'pendiente_de_verificar');
     assert.equal(details.num_convocatorias_disponibles, 'pendiente_de_verificar');
-    assert.equal(entry.widget_embed_url, 'pendiente_de_verificar');
+    assert(
+      entry.widget_embed_url === 'pendiente_de_verificar' || /^https:\/\/[^\s]+$/.test(entry.widget_embed_url),
+      `widget_embed_url inválido en ${entry.slug}`,
+    );
     assert.equal(entry.source_ids.length, 2);
   }
+});
+
+test('los enlaces oficiales confirmados se muestran y los estados sin URL no generan botones', () => {
+  for (const entry of data.entries) {
+    const html = readFileSync(outputPathFor(entry), 'utf8');
+    for (const [key, label] of [['ordinaria', 'Ordinaria'], ['extraordinaria', 'Extraordinaria']]) {
+      const url = entry.enlace_oficial_examen?.[key];
+      if (/^https:\/\/[^\s]+$/.test(url || '')) {
+        assert(
+          html.includes(`href="${url.replace(/&/g, '&amp;')}"`),
+          `Falta el enlace oficial ${key} en ${entry.slug}`,
+        );
+        assert(html.includes(`Ver examen oficial (PDF) — ${label}`));
+      } else {
+        assert(!html.includes(`Ver examen oficial (PDF) — ${label}`), `Botón ${key} incorrecto en ${entry.slug}`);
+      }
+    }
+    assert(!html.includes('no_disponible'));
+    assert(!html.includes('pendiente_de_verificar'));
+  }
+
+  const dataWithUnavailableLinks = structuredClone(data);
+  const withoutLinks = dataWithUnavailableLinks.entries[0];
+  withoutLinks.enlace_oficial_examen = {
+    ordinaria: 'no_disponible',
+    extraordinaria: 'pendiente_de_verificar',
+  };
+  assert.doesNotThrow(() => validateData(dataWithUnavailableLinks));
+  const htmlWithoutLinks = renderProfile(data, withoutLinks);
+  assert(!htmlWithoutLinks.includes('official-exam-links'));
+  assert(!htmlWithoutLinks.includes('Ver examen oficial (PDF)'));
 });
 
 test('las denominaciones oficiales actuales se conservan en Empresa, Filosofía e Inglés', () => {

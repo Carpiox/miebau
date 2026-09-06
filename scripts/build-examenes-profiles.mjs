@@ -6,6 +6,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
 const OUTPUT_DIR = path.join(ROOT, 'examenes');
 const PENDING = 'pendiente_de_verificar';
+const UNAVAILABLE = 'no_disponible';
 
 function escapeHtml(value = '') {
   return String(value)
@@ -31,6 +32,17 @@ function normalizeText(value = '') {
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
+}
+
+function isConfirmedUrl(value) {
+  return typeof value === 'string' && /^https:\/\/[^\s]+$/.test(value);
+}
+
+function validateOptionalUrl(value, label, slug) {
+  assert(
+    value === undefined || value === PENDING || value === UNAVAILABLE || isConfirmedUrl(value),
+    `${label} inválido en ${slug}`,
+  );
 }
 
 function validateDistinctIntros(entries) {
@@ -88,7 +100,15 @@ function validateData(data) {
     assert(entry.url === `/examenes/${entry.slug}`, `URL incoherente para ${entry.slug}`);
     assert(entry.estado_datos === 'estructura_verificada', `Estado no verificado en ${entry.slug}`);
     assert(entry.indexacion === 'noindex', `La ficha ${entry.slug} debe permanecer en noindex`);
-    assert(entry.widget_embed_url === PENDING, `El widget de ${entry.slug} todavía debe estar pendiente`);
+    validateOptionalUrl(entry.widget_embed_url, 'widget_embed_url', entry.slug);
+
+    const officialExamLinks = entry.enlace_oficial_examen;
+    assert(
+      officialExamLinks === undefined || (officialExamLinks && typeof officialExamLinks === 'object' && !Array.isArray(officialExamLinks)),
+      `enlace_oficial_examen debe ser un objeto en ${entry.slug}`,
+    );
+    validateOptionalUrl(officialExamLinks?.ordinaria, 'enlace_oficial_examen.ordinaria', entry.slug);
+    validateOptionalUrl(officialExamLinks?.extraordinaria, 'enlace_oficial_examen.extraordinaria', entry.slug);
 
     for (const [field, value] of [
       ['slug', entry.slug],
@@ -157,6 +177,24 @@ function renderSources(data, entry) {
   }).join('\n');
 }
 
+function renderOfficialExamLinks(entry) {
+  const links = [
+    ['Ordinaria', entry.enlace_oficial_examen?.ordinaria],
+    ['Extraordinaria', entry.enlace_oficial_examen?.extraordinaria],
+  ].filter(([, url]) => isConfirmedUrl(url));
+
+  if (links.length === 0) return '';
+
+  return [
+    '        <section aria-labelledby="official-exam-links">',
+    '          <h3 id="official-exam-links">Examen oficial en PDF</h3>',
+    '          <div class="hero-actions">',
+    ...links.map(([label, url]) => `            <a class="btn btn-primary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Ver examen oficial (PDF) — ${label}</a>`),
+    '          </div>',
+    '        </section>',
+  ].join('\n');
+}
+
 function renderProfile(data, entry) {
   const details = entry.contenido.datos_comunidad_asignatura;
   const canonical = `https://miebau.es${entry.url}`;
@@ -219,6 +257,7 @@ ${renderSources(data, entry)}
         </ul>
 
         <h2>Exámenes y ponderaciones</h2>
+${renderOfficialExamLinks(entry)}
         <p><strong>Banco de exámenes:</strong> la integración del visor externo permanece pendiente de verificar, por lo que todavía no se incrusta ningún widget.</p>
         <p><strong>Ponderaciones 2026-2027:</strong> pendiente de verificar. Esta ficha no asigna coeficientes hasta disponer de una tabla oficial comprobada para ${communityWithArticle}.</p>
         <p class="profile-global-link"><a href="/examenes">Ver todos los exámenes</a> · <a href="/ponderaciones#comunidades">Consultar ponderaciones por comunidad</a></p>
