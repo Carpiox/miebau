@@ -386,7 +386,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-matematicas-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/matematicas-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/306-matematicas-ii-pau-2026-junio-examen-resuelto-v2-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/306-matematicas-ii-1-pdf"
     },
     {
       "prioridad": 2,
@@ -417,7 +420,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-matematicas-ccss-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/matematicas-aplicadas-a-las-ciencias-sociales-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-307-matematicas-aplicadas-a-las-cc-ss-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/307-matematicas-aplicadas-a-las-ciencias-sociales-pdf"
     },
     {
       "prioridad": 3,
@@ -448,7 +454,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-lengua"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/lengua-castellana-y-literatura-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-301-lengua-castellana-y-literatura-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/301-lengua-castellana-y-literatura-ii-2-pdf"
     },
     {
       "prioridad": 4,
@@ -479,7 +488,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-historia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/historia-de-espana",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-302-historia-de-espana-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/302-historia-de-espana-1-pdf"
     },
     {
       "prioridad": 5,
@@ -510,7 +522,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-ingles"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/ingles",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-303-ingles-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/303-ingles-1-pdf"
     },
     {
       "prioridad": 6,
@@ -541,7 +556,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-fisica"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/fisica",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-316-fisica-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/316-fisica-1-pdf"
     },
     {
       "prioridad": 7,
@@ -572,7 +590,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-quimica"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/quimica",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-322-quimica-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/322-quimica-pau2026-julio-resuelto-pdf"
     },
     {
       "prioridad": 8,
@@ -603,7 +624,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-biologia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/biologia",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-311-biologia-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/311-biologia-1-pdf"
     },
     {
       "prioridad": 9,
@@ -635,7 +659,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-empresa"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/economia-de-la-empresa",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-315-empresa-y-diseno-de-modelos-de-negocio-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/315-empresa-y-diseno-de-modelos-de-negocio-1-pdf"
     },
     {
       "prioridad": 10,
@@ -667,7 +694,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-filosofia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/filosofia",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-320-historia-de-la-filosofia-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/320-historia-de-la-filosofia-pdf-2"
     },
     {
       "prioridad": 11,
@@ -698,7 +728,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-dibujo-tecnico-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/dibujo-tecnico-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-313-dibujo-tecnico-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/313-dibujo-tecnico-ii-pdf"
     },
     {
       "prioridad": 12,
@@ -729,7 +762,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-geografia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/geografia",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-317-geografia-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/317-geografia-1-pdf"
     },
     {
       "prioridad": 13,
@@ -760,7 +796,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-historia-del-arte"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/historia-del-arte",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-321-historia-del-arte-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/321-historia-del-arte-1-pdf"
     },
     {
       "prioridad": 14,
@@ -791,7 +830,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-latin-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/latin-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-308-latin-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/308-latin-ii-pdf"
     },
     {
       "prioridad": 15,
@@ -822,7 +864,10 @@
       "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-griego-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/region-de-murcia/griego-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-319-griego-junio-pdf",
+        "extraorinaria":"https://www.um.es/documents/d/estudios/319-griego-1-pdf"
     },
     {
       "prioridad": 16,
@@ -853,7 +898,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-matematicas-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/matematicas-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/matem%C3%81ticas-ii-26",
+        "extraorinaria":"https://www.ucm.es/file/matem%C3%81ticas-ii-28"
     },
     {
       "prioridad": 17,
@@ -884,7 +932,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-matematicas-ccss-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/matematicas-aplicadas-a-las-ciencias-sociales-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/maccss-ii-3",
+        "extraorinaria":"https://www.ucm.es/file/matem%C3%81ticas-aplicadas-a-las-ciencias-sociales-ii-1"
     },
     {
       "prioridad": 18,
@@ -915,7 +966,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-lengua"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/lengua-castellana-y-literatura-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/lengua-castellana-y-literatura-ii-22",
+        "extraorinaria":"https://www.ucm.es/file/lengua-castellana-y-literatura-ii-25"
     },
     {
       "prioridad": 19,
@@ -946,7 +1000,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-historia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/historia-de-espana",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/historia-de-espa%C3%91a-27",
+        "extraorinaria":"https://www.ucm.es/file/historia-de-espa%C3%91a-24"
     },
     {
       "prioridad": 20,
@@ -978,7 +1035,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-ingles"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/ingles",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/ingl%C3%89s-28",
+        "extraorinaria":"https://www.ucm.es/file/ingl%C3%89s-31"
     },
     {
       "prioridad": 21,
@@ -1009,7 +1069,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-fisica"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/fisica",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/fisica-25",
+        "extraorinaria":"https://www.ucm.es/file/fisica-26"
     },
     {
       "prioridad": 22,
@@ -1040,7 +1103,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-quimica"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/quimica",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/qu%C3%8Dmica-27",
+        "extraorinaria":"https://www.ucm.es/file/qu%C3%8Dmica-28"
     },
     {
       "prioridad": 23,
@@ -1071,7 +1137,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-biologia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/biologia",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/biolog%C3%8Da-27",
+        "extraorinaria":"https://www.ucm.es/file/biolog%C3%8Da-28"
     },
     {
       "prioridad": 24,
@@ -1103,7 +1172,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-empresa"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/economia-de-la-empresa",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/empresa-y-diseno-de-modelos-de-negocio-10",
+        "extraorinaria":"https://www.ucm.es/file/empresa-y-dise%C3%91o-de-modelos-de-negocio-12"
     },
     {
       "prioridad": 25,
@@ -1135,7 +1207,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-filosofia"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/filosofia",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/historia-de-la-filosof%C3%8Da-25",
+        "extraorinaria":"https://www.ucm.es/file/historia-de-la-filosof%C3%8Da-27"
     },
     {
       "prioridad": 26,
@@ -1166,7 +1241,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-dibujo-tecnico-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/dibujo-tecnico-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/dibujo-t%C3%89cnico-ii-18",
+        "extraorinaria":"https://www.ucm.es/file/dibujo-t%C3%89cnico-ii-20"
     },
     {
       "prioridad": 27,
@@ -1198,6 +1276,9 @@
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/geografia",
       "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/geografia-23",
+        "extraorinaria":"https://www.ucm.es/file/geograf%C3%8Da-24"
     },
     {
       "prioridad": 28,
@@ -1229,6 +1310,9 @@
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/historia-del-arte",
       "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/historia-del-arte-23",
+        "extraorinaria":"https://www.ucm.es/file/historia-del-arte-24"
     },
     {
       "prioridad": 29,
@@ -1259,7 +1343,10 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-latin-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/latin-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/lat%C3%8Dn-ii-23",
+        "extraorinaria":"https://www.ucm.es/file/lat%C3%8Dn-ii-24"
     },
     {
       "prioridad": 30,
@@ -1290,7 +1377,12 @@
       "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-griego-ii"],
       "widget_embed_url": "pendiente_de_verificar",
       "cta_pack_slug": "/packs/comunidad-de-madrid/griego-ii",
-      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"]
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen":{
+        "ordinaria": "https://www.ucm.es/file/griego-ii-14",
+        "extraorinaria":"https://www.ucm.es/file/griego-ii-15"
+      }
     }
   ]
 }
+
