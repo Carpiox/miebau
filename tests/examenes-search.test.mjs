@@ -47,3 +47,34 @@ test('examenes.html carga el buscador real y no conserva la generación de ejemp
   assert(!pageHtml.includes("pdf: '#'"));
   assert(!pageHtml.includes('href="${r.pdf}"'));
 });
+
+test('la sección estática de últimos exámenes respeta prioridad, límite y rutas internas', () => {
+  const startMarker = '<!-- examenes-latest:generated:start -->';
+  const endMarker = '<!-- examenes-latest:generated:end -->';
+  const latestBlock = pageHtml.slice(
+    pageHtml.indexOf(startMarker) + startMarker.length,
+    pageHtml.indexOf(endMarker),
+  );
+  const expectedEntries = [...data.entries]
+    .sort((left, right) => right.prioridad - left.prioridad)
+    .slice(0, 30);
+  const hrefs = [...latestBlock.matchAll(/<a class="exam-link" href="([^"]+)">/g)]
+    .map((match) => match[1]);
+
+  assert(latestBlock.includes('Últimos exámenes añadidos'));
+  assert.equal(hrefs.length, 30);
+  assert.deepEqual(hrefs, expectedEntries.map((entry) => entry.url));
+  assert(!latestBlock.includes('href="#"'));
+
+  for (const entry of expectedEntries) {
+    assert(latestBlock.includes(entry.asignatura), `No se muestra la asignatura ${entry.asignatura}`);
+    assert(latestBlock.includes(entry.comunidad), `No se muestra la comunidad ${entry.comunidad}`);
+    assert(existsSync(path.join(ROOT, `${entry.url.slice(1)}.html`)), `No existe la ficha estática de ${entry.url}`);
+
+    for (const officialUrl of Object.values(entry.enlace_oficial_examen || {})) {
+      if (/^https:\/\//.test(officialUrl)) {
+        assert(!latestBlock.includes(officialUrl), `La sección enlaza directamente al examen oficial de ${entry.slug}`);
+      }
+    }
+  }
+});

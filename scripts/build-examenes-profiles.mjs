@@ -5,6 +5,9 @@ import path from 'node:path';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
 const OUTPUT_DIR = path.join(ROOT, 'examenes');
+const EXAM_INDEX_PATH = path.join(ROOT, 'examenes.html');
+const LATEST_EXAMS_START = '<!-- examenes-latest:generated:start -->';
+const LATEST_EXAMS_END = '<!-- examenes-latest:generated:end -->';
 const PENDING = 'pendiente_de_verificar';
 const UNAVAILABLE = 'no_disponible';
 
@@ -286,11 +289,52 @@ function outputPathFor(entry) {
   return path.join(OUTPUT_DIR, `${entry.slug}.html`);
 }
 
+function renderLatestExamSection(entries) {
+  const latestEntries = [...entries]
+    .sort((left, right) => right.prioridad - left.prioridad)
+    .slice(0, 30);
+
+  const items = latestEntries.map((entry) => `
+        <article class="exam-row" data-priority="${entry.prioridad}">
+          <div class="exam-icon" aria-hidden="true">📄</div>
+          <div class="exam-info">
+            <div class="exam-title">${escapeHtml(entry.asignatura)}</div>
+            <div class="exam-meta">${escapeHtml(entry.comunidad)}</div>
+          </div>
+          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha →</a>
+        </article>`).join('');
+
+  return `    <section class="card" aria-labelledby="latestExamsTitle" style="margin-top: 0.5rem;">
+      <h2 class="card-title" id="latestExamsTitle">Últimos exámenes añadidos</h2>
+      <div class="exam-list">${items}
+      </div>
+    </section>`;
+}
+
+function renderExamIndex(source, entries) {
+  const startIndex = source.indexOf(LATEST_EXAMS_START);
+  const endIndex = source.indexOf(LATEST_EXAMS_END);
+  assert(startIndex >= 0, `Falta el marcador ${LATEST_EXAMS_START} en examenes.html`);
+  assert(endIndex > startIndex, `Falta el marcador ${LATEST_EXAMS_END} en examenes.html`);
+
+  const contentStart = startIndex + LATEST_EXAMS_START.length;
+  return `${source.slice(0, contentStart)}\n${renderLatestExamSection(entries)}\n    ${source.slice(endIndex)}`;
+}
+
 async function expectedFiles(data) {
-  return data.entries.map((entry) => ({
+  const profileFiles = data.entries.map((entry) => ({
     filePath: outputPathFor(entry),
     content: renderProfile(data, entry),
   }));
+  const examIndex = await readFile(EXAM_INDEX_PATH, 'utf8');
+
+  return [
+    ...profileFiles,
+    {
+      filePath: EXAM_INDEX_PATH,
+      content: renderExamIndex(examIndex, data.entries),
+    },
+  ];
 }
 
 async function main() {
@@ -315,7 +359,7 @@ async function main() {
     }
   }
 
-  console.log(`OK: ${files.length} fichas de exámenes generadas o verificadas.`);
+  console.log(`OK: ${data.entries.length} fichas y la sección de últimos exámenes generadas o verificadas.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -325,4 +369,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { expectedFiles, outputPathFor, renderProfile, validateData, wordCount };
+export { expectedFiles, outputPathFor, renderLatestExamSection, renderProfile, validateData, wordCount };
