@@ -1,74 +1,138 @@
-let boton = document.getElementById("boton");
-let resultado = document.getElementById("resultado");
-let progresoInterval = null;
+(function initExamSearchModule(globalScope) {
+  'use strict';
 
-// Función que hace la barra de carga
-function cargarPDF(url, asignatura, comunidad, anyo) {
+  const DATA_URL = '/data/examenes-seo.json';
+  const EMPTY_RESULTS_HTML = `
+          <div class="empty-state">
+            <div class="empty-icon">🔍</div>
+            <p>No se han encontrado exámenes con esos filtros.<br>Prueba con otra combinación.</p>
+          </div>`;
 
-    // limpiar si había una barra previa
-    if (progresoInterval) clearInterval(progresoInterval);
+  let entriesPromise;
 
-    resultado.innerHTML = `
-        <div style="width:100%;background:#ddd;border-radius:8px;overflow:hidden;height:22px;margin:12px 0;">
-            <div id="barra" style="width:0%;height:100%;background:#4A90E2;"></div>
-        </div>
-        <p>Cargando PDF examen ${asignatura} ${anyo}, ${comunidad}, espera un momento...</p>
-    `;
+  function normalize(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLocaleLowerCase('es')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
 
-    let barra = resultado.querySelector("#barra");
-    let progreso = 0;
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
 
-    progresoInterval = setInterval(() => {
-        progreso++;
-        barra.style.width = progreso + "%";
+  function entryYear(entry) {
+    const reference = entry.contenido?.datos_comunidad_asignatura?.curso_referencia || '';
+    return String(reference).match(/\b20\d{2}\b/)?.[0] || '';
+  }
 
-        if (progreso >= 100) {
-            clearInterval(progresoInterval);
-            resultado.innerHTML = `
-                <iframe src="${url}" width="100%" height="600px" style="border:none;"></iframe>
-            `;
-        }
+  function matchesCommunity(entry, selectedCommunity) {
+    if (!selectedCommunity) return true;
+    const aliases = {
+      madrid: 'comunidad de madrid',
+      murcia: 'region de murcia',
+    };
+    const selected = normalize(selectedCommunity);
+    return normalize(entry.comunidad) === (aliases[selected] || selected);
+  }
 
-    }, 50); // 100 pasos × 50 ms = 5 segundos
-}
+  function matchesSubject(entry, selectedSubject) {
+    if (!selectedSubject) return true;
+    const selected = normalize(selectedSubject);
+    return [entry.asignatura, entry.nombre_oficial_vigente].filter(Boolean).some((candidate) => {
+      const normalizedCandidate = normalize(candidate);
+      return normalizedCandidate === selected || normalizedCandidate === `${selected} ii`;
+    });
+  }
 
-// Cuando le das al botón
-boton.addEventListener("click", ()=>{
-    
-    let asignatura = document.getElementById("asignatura").value.trim();
-    let comunidad  = document.getElementById("comunidad").value.trim();
-    let anyo       = document.getElementById("anyo").value;
+  function filterExamEntries(entries, filters = {}) {
+    return entries
+      .filter((entry) => matchesSubject(entry, filters.subject))
+      .filter((entry) => matchesCommunity(entry, filters.community))
+      .filter((entry) => !filters.year || entryYear(entry) === String(filters.year))
+      .map((entry) => ({
+        asignatura: entry.nombre_oficial_vigente || entry.asignatura,
+        comunidad: entry.comunidad,
+        anio: entryYear(entry),
+        url: entry.url,
+      }));
+  }
 
+  function renderExamCards(results) {
+    if (!results.length) return EMPTY_RESULTS_HTML;
 
+    return results.map((result) => `
+          <div class="exam-row">
+            <div class="exam-icon">📄</div>
+            <div class="exam-info">
+              <div class="exam-title">${escapeHtml(result.asignatura)}</div>
+              <div class="exam-meta">${escapeHtml(result.comunidad)}</div>
+            </div>
+            <div class="exam-tags">
+              <span class="tag year">${escapeHtml(result.anio)}</span>
+              <span class="tag">${escapeHtml(result.comunidad)}</span>
+            </div>
+            <a class="exam-link" href="${escapeHtml(result.url)}">Ver ficha →</a>
+          </div>`).join('');
+  }
 
-    let datos = examenes?.[anyo]?.[asignatura]?.[comunidad];
+  async function loadEntries(fetchImpl) {
+    if (!entriesPromise) {
+      entriesPromise = fetchImpl(DATA_URL)
+        .then((response) => {
+          if (!response.ok) throw new Error(`No se pudo cargar ${DATA_URL}`);
+          return response.json();
+        })
+        .then((data) => Array.isArray(data.entries) ? data.entries : [])
+        .catch((error) => {
+          entriesPromise = undefined;
+          throw error;
+        });
+    }
+    return entriesPromise;
+  }
 
-    if(!datos){
-        resultado.innerHTML = `
-            <p style="color:red;margin-top:20px;">
-                ❌ No hay exámenes disponibles para esta combinación.
-            </p>
-        `;
-        return;
+  function showResults(doc, results, filters) {
+    doc.getElementById('resultTitle').textContent =
+      [filters.subject, filters.community, filters.year ? `Año ${filters.year}` : ''].filter(Boolean).join(' · ') || 'Todos los resultados';
+    doc.getElementById('countBadge').textContent = `${results.length} ${results.length === 1 ? 'examen' : 'exámenes'}`;
+    doc.getElementById('examList').innerHTML = renderExamCards(results);
+    const area = doc.getElementById('resultArea');
+    area.classList.add('visible');
+    area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  async function searchExams(doc, fetchImpl) {
+    const filters = {
+      subject: doc.getElementById('selAsignatura').value,
+      community: doc.getElementById('selComunidad').value,
+      year: doc.getElementById('selAnio').value,
+    };
+
+    if (!filters.subject && !filters.community) {
+      globalScope.alert('Selecciona al menos una asignatura o comunidad autónoma.');
+      return;
     }
 
-    // Mostrar los botones en lugar de los iframes
-    resultado.innerHTML = `
-        <h3>Exámenes disponibles</h3>
+    try {
+      const entries = await loadEntries(fetchImpl);
+      showResults(doc, filterExamEntries(entries, filters), filters);
+    } catch {
+      showResults(doc, [], filters);
+    }
+  }
 
-        <p>Examenes de ${asignatura}, ${comunidad}, ${anyo}</p>
-        <button id="btnOrd"
-            style="padding:10px;margin:10px 0;width:100%;font-size:16px;text-align:center">
-            Descargar convocatoria Ordinaria
-        </button>
+  const api = { entryYear, filterExamEntries, renderExamCards };
 
-        <button id="btnExt"
-            style="padding:10px;margin:10px 0;width:100%;font-size:16px;">
-            Descargar convocatoria Extraordinaria
-        </button>
-    `;
-
-    // Eventos de los botones
-    document.getElementById("btnOrd").onclick = () => cargarPDF(datos.ordinaria , asignatura, comunidad, anyo);
-    document.getElementById("btnExt").onclick = () => cargarPDF(datos.extraordinaria, asignatura, comunidad, anyo);
-});
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (globalScope?.document) {
+    globalScope.buscarExamenes = () => searchExams(globalScope.document, globalScope.fetch.bind(globalScope));
+  }
+})(typeof window !== 'undefined' ? window : null);

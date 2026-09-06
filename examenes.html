@@ -305,6 +305,7 @@
           <label class="form-label" for="selAnio">Año</label>
           <select class="form-select" id="selAnio">
             <option value="">Todos</option>
+            <option>2026</option>
             <option>2025</option>
             <option>2024</option>
             <option>2023</option>
@@ -372,76 +373,7 @@
 
   <footer><div class="footer-inner"><div><div class="footer-brand">miebau</div><span>Tu EvAU, con todo claro.</span></div><div class="footer-links"><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a></div><span>© 2026 Miebau</span></div></footer>
 
-  <script>
-    // Este array debe llenarse con tus datos reales de exámenes.
-    // Estructura: { asignatura, comunidad, anio, pdf (URL al archivo) }
-    // Por ahora genera resultados de ejemplo para demostrar la UI.
-    function buscarExamenes() {
-      const asig = document.getElementById('selAsignatura').value;
-      const com  = document.getElementById('selComunidad').value;
-      const anio = document.getElementById('selAnio').value;
-
-      if (!asig && !com) {
-        alert('Selecciona al menos una asignatura o comunidad autónoma.');
-        return;
-      }
-
-      // --- Reemplaza esta lógica con tu fuente de datos real ---
-      // Ejemplo: fetch a tu JSON o llamada a tu API/backend
-      const anios = anio ? [anio] : ['2025', '2024', '2023'];
-      const comunidades = com ? [com] : ['Madrid', 'Andalucía', 'Murcia'];
-      const asignaturas = asig ? [asig] : [];
-
-      const resultados = [];
-      anios.forEach(a => {
-        comunidades.forEach(c => {
-          if (asignaturas.length > 0) {
-            asignaturas.forEach(s => {
-              resultados.push({ asignatura: s, comunidad: c, anio: a, pdf: '#' });
-            });
-          } else {
-            resultados.push({ asignatura: asig || '(asignatura)', comunidad: c, anio: a, pdf: '#' });
-          }
-        });
-      });
-      // --- Fin de ejemplo ---
-
-      const list = document.getElementById('examList');
-      const area = document.getElementById('resultArea');
-
-      document.getElementById('resultTitle').textContent =
-        [asig, com, anio ? 'Año ' + anio : ''].filter(Boolean).join(' · ') || 'Todos los resultados';
-      document.getElementById('countBadge').textContent = resultados.length + ' exámenes';
-
-      if (resultados.length === 0) {
-        list.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">🔍</div>
-            <p>No se han encontrado exámenes con esos filtros.<br>Prueba con otra combinación.</p>
-          </div>`;
-      } else {
-        list.innerHTML = resultados.map(r => `
-          <div class="exam-row">
-            <div class="exam-icon">📄</div>
-            <div class="exam-info">
-              <div class="exam-title">${r.asignatura}</div>
-              <div class="exam-meta">${r.comunidad}</div>
-            </div>
-            <div class="exam-tags">
-              <span class="tag year">${r.anio}</span>
-              <span class="tag">${r.comunidad}</span>
-            </div>
-            <a class="exam-link" href="${r.pdf}" target="_blank" rel="noopener">
-              PDF →
-            </a>
-          </div>
-        `).join('');
-      }
-
-      area.classList.add('visible');
-      area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  </script>
+  <script src="/js/examenes.js"></script>
 
 </body>
 </html>
