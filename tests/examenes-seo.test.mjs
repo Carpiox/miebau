@@ -97,7 +97,7 @@ test('el build está actualizado y es reproducible', () => {
 test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
   for (const entry of data.entries) {
     const html = readFileSync(outputPathFor(entry), 'utf8');
-    assert.match(html, /<meta name="robots" content="noindex,follow">/);
+    assert.doesNotMatch(html, /<meta\s+name="robots"[^>]*content="[^"]*noindex/i);
     assert(html.includes(`<link rel="canonical" href="https://miebau.es${entry.url}">`));
     assert(html.includes(`<h1>${entry.seo.h1}</h1>`));
     assert(html.includes(entry.contenido.intro));
@@ -109,7 +109,6 @@ test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
     }
     assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert(!html.includes('TODO'));
-    assert(!html.includes('<meta name="robots" content="index'));
   }
 });
 
@@ -122,9 +121,10 @@ test('las URLs limpias usan rewrites 200 exactos y sin reglas inversas', () => {
   }
 });
 
-test('ninguna ruta del lote aparece todavía en el sitemap', () => {
+test('las 30 rutas limpias del lote aparecen una vez en el sitemap', () => {
   for (const entry of data.entries) {
-    assert(!sitemap.includes(`https://miebau.es${entry.url}`));
+    const expected = `  <url><loc>https://miebau.es${entry.url}</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>`;
+    assert.equal(sitemap.split(expected).length - 1, 1, `Entrada de sitemap ausente o duplicada para ${entry.url}`);
     assert(!sitemap.includes(`https://miebau.es${entry.url}.html`));
   }
 });

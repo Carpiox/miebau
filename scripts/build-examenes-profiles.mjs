@@ -217,7 +217,6 @@ function renderProfile(data, entry) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5a43f2">
-  <meta name="robots" content="noindex,follow">
   <title>${escapeHtml(entry.seo.title)}</title>
   <meta name="description" content="${escapeHtml(entry.seo.meta_description)}">
   <link rel="canonical" href="${canonical}">
