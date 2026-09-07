@@ -30,6 +30,7 @@
       "reason": "",
       "validFor": "2026-2027 y siguientes",
       "checkedAt": "2026-08-31",
+      "cursoVigente": "2027",
       "datasetId": "aragon-2026-2027",
       "institutionIds": [
         "unizar"
@@ -113,6 +114,7 @@
       "reason": "",
       "validFor": "Admisión 2026 (curso 2026-2027)",
       "checkedAt": "2026-08-31",
+      "cursoVigente": "2027",
       "datasetId": "cataluna-2026-2027",
       "institutionIds": [
         "ub",
@@ -139,6 +141,7 @@
       "reason": "",
       "validFor": "Preinscripción 2026 (admisión al curso 2026-2027)",
       "checkedAt": "2026-08-31",
+      "cursoVigente": "2027",
       "datasetId": "comunidad-valenciana-2026-2027",
       "institutionIds": [
         "ua",
@@ -191,6 +194,7 @@
       "reason": "",
       "validFor": "Año académico 2026-2027",
       "checkedAt": "2026-08-31",
+      "cursoVigente": "2027",
       "datasetId": "islas-baleares-2026-2027",
       "institutionIds": [
         "uib"

@@ -5,12 +5,15 @@ import path from 'node:path';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
 const PROFILE_DIR = path.join(ROOT, 'ponderaciones');
+const PONDERACIONES_INDEX_PATH = path.join(ROOT, 'ponderaciones.html');
 const GENERATED_START = '<!-- ponderaciones-profile:generated:start -->';
 const GENERATED_END = '<!-- ponderaciones-profile:generated:end -->';
 const FAQ_START = '<!-- ponderaciones-faq:generated:start -->';
 const FAQ_END = '<!-- ponderaciones-faq:generated:end -->';
 const FAQ_JSON_LD_START = '<!-- ponderaciones-faq-jsonld:generated:start -->';
 const FAQ_JSON_LD_END = '<!-- ponderaciones-faq-jsonld:generated:end -->';
+const LATEST_START = '<!-- ponderaciones-latest:generated:start -->';
+const LATEST_END = '<!-- ponderaciones-latest:generated:end -->';
 
 const FIXED_FAQS = [
   {
@@ -82,6 +85,59 @@ function classifyUniversityCoverage(data, university) {
   if (university.status === 'blocked') return 'blocked';
   if (university.status === 'no_publication') return 'no_publication';
   return 'pending';
+}
+
+function latestCurrentUniversities(data) {
+  const sources = new Map(data.sources.map((source) => [source.id, source]));
+  const universities = new Map(data.universities.map((university) => [university.id, university]));
+  const latestByUniversity = new Map();
+
+  for (const dataset of data.datasets) {
+    const source = sources.get(dataset.sourceId);
+    if (source?.cursoVigente !== '2027') continue;
+    const universityIds = new Set(dataset.rows.flatMap((row) => row.universityIds));
+    for (const universityId of universityIds) {
+      const university = universities.get(universityId);
+      if (!university) continue;
+      const current = latestByUniversity.get(universityId);
+      if (!current || source.checkedAt > current.checkedAt) {
+        latestByUniversity.set(universityId, { university, checkedAt: source.checkedAt });
+      }
+    }
+  }
+
+  return [...latestByUniversity.values()]
+    .sort((left, right) => right.checkedAt.localeCompare(left.checkedAt)
+      || left.university.name.localeCompare(right.university.name, 'es', { sensitivity: 'base' }))
+    .slice(0, 30);
+}
+
+function displayDate(value) {
+  const [year, month, day] = String(value).split('-');
+  return year && month && day ? `${day}/${month}/${year}` : value;
+}
+
+function renderLatestPonderacionesSection(data) {
+  const entries = latestCurrentUniversities(data);
+  const content = entries.length
+    ? `<div class="exam-list">${entries.map(({ university, checkedAt }) => `
+        <article class="exam-row" data-checked-at="${escapeHtml(checkedAt)}">
+          <div class="exam-icon" aria-hidden="true">🎓</div>
+          <div class="exam-info">
+            <div class="exam-title">${escapeHtml(university.name)}</div>
+            <div class="exam-meta">${escapeHtml(university.region)} · Verificado el ${escapeHtml(displayDate(checkedAt))}</div>
+          </div>
+          <a class="exam-link" href="${escapeHtml(university.profile)}">Ver ficha →</a>
+        </article>`).join('')}
+      </div>`
+    : '<p class="catalog-empty-state">Pendiente de publicación: todavía no hay ponderaciones verificadas vigentes para 2027.</p>';
+
+  return `${LATEST_START}
+    <section class="card" aria-labelledby="latestPonderacionesTitle" style="margin-top: 0.5rem;">
+      <h2 class="card-title" id="latestPonderacionesTitle">Últimas ponderaciones publicadas (2027)</h2>
+      ${content}
+    </section>
+    ${LATEST_END}`;
 }
 
 function uniqueHighWeightSubjects(records) {
@@ -437,6 +493,10 @@ async function expectedFiles(data) {
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
     files.push({ filePath, content: withSchema });
   }
+  const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
+  const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));
+  if (nextIndex === null) throw new Error(`Falta el marcador ${LATEST_START} en ponderaciones.html`);
+  files.push({ filePath: PONDERACIONES_INDEX_PATH, content: nextIndex });
   return files;
 }
 
@@ -452,7 +512,7 @@ async function main() {
   } else {
     await Promise.all(files.map((file) => writeFile(file.filePath, file.content, 'utf8')));
   }
-  console.log(`OK: ${files.length} fichas generadas o verificadas.`);
+  console.log(`OK: ${data.universities.length} fichas y la sección de últimas ponderaciones generadas o verificadas.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -462,4 +522,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { buildFaqEntries, classifyUniversityCoverage, recordsForUniversity, renderPublicProfile, renderVerifiedSection };
+export { buildFaqEntries, classifyUniversityCoverage, latestCurrentUniversities, recordsForUniversity, renderLatestPonderacionesSection, renderPublicProfile, renderVerifiedSection };

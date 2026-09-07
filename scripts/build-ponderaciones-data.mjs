@@ -8,6 +8,7 @@ const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
 const REPORT_PATH = path.join(ROOT, 'reports', 'ponderaciones-coverage.md');
 const VALID_STATUSES = new Set(['verified', 'pending', 'blocked', 'no_publication']);
 const VALID_COEFFICIENTS = new Set([0.1, 0.2]);
+const VALID_CURRENT_COURSES = new Set(['2026', '2027']);
 
 export function normalizeText(value = '') {
   return String(value)
@@ -53,11 +54,13 @@ export function validateFixture(fixture) {
       assert(universities.has(universityId), `Fuente ${source.id}: universidad inexistente ${universityId}`);
     }
     if (source.status === 'verified') {
+      assert(VALID_CURRENT_COURSES.has(source.cursoVigente), `Fuente verificada ${source.id}: cursoVigente debe ser 2026 o 2027`);
       assert(/^https:\/\//.test(source.sourceUrl || ''), `Fuente verificada ${source.id}: URL oficial ausente`);
       assert(source.validFor.includes('2026'), `Fuente verificada ${source.id}: validFor no acredita 2026`);
       assert(source.datasetId, `Fuente verificada ${source.id}: dataset ausente`);
       assert(datasets.get(source.datasetId).rows.length > 0, `Fuente verificada ${source.id}: filas ausentes`);
     } else {
+      assert(source.cursoVigente === undefined, `Fuente no verificada ${source.id}: cursoVigente debe omitirse hasta verificar coeficientes`);
       assert(source.reason, `Fuente ${source.id}: falta explicar el estado ${source.status}`);
     }
   }

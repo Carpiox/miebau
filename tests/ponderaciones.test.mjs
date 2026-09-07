@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { validateFixture } from '../scripts/build-ponderaciones-data.mjs';
-import { buildFaqEntries, classifyUniversityCoverage, recordsForUniversity } from '../scripts/build-ponderaciones-profiles.mjs';
+import { buildFaqEntries, classifyUniversityCoverage, latestCurrentUniversities, recordsForUniversity, renderLatestPonderacionesSection } from '../scripts/build-ponderaciones-profiles.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
@@ -75,6 +75,14 @@ test('5. curso 2026-2027 sin contaminación', () => {
   const serializedDatasets = JSON.stringify(data.datasets);
   assert(!serializedDatasets.includes('2025-2026'));
   assert(!serializedDatasets.includes('2027-2028'));
+});
+
+test('5b. cursoVigente solo etiqueta fuentes verificadas', () => {
+  const verifiedSources = data.sources.filter((source) => source.status === 'verified');
+  const unverifiedSources = data.sources.filter((source) => source.status !== 'verified');
+  assert.equal(verifiedSources.length, 4);
+  assert(verifiedSources.every((source) => source.cursoVigente === '2027'));
+  assert(unverifiedSources.every((source) => !Object.hasOwn(source, 'cursoVigente')));
 });
 
 test('6. solo coeficientes 0,1 y 0,2', () => {
@@ -315,6 +323,44 @@ test('24b. el catálogo no publica estados internos y usa un CTA único', () => 
   assert(!catalogSource.includes('reason'));
   assert(!catalogSource.includes('Ver ficha informativa'));
   assert(!catalogSource.includes('Ver ficha y ponderaciones'));
+});
+
+test('24c. últimas ponderaciones 2027 se prerenderizan y enlazan a fichas existentes', () => {
+  const startMarker = '<!-- ponderaciones-latest:generated:start -->';
+  const endMarker = '<!-- ponderaciones-latest:generated:end -->';
+  const block = html.slice(html.indexOf(startMarker), html.indexOf(endMarker) + endMarker.length);
+  const latest = latestCurrentUniversities(data);
+  const hrefs = [...block.matchAll(/<a class="exam-link" href="([^"]+)">/g)].map((match) => match[1]);
+
+  assert.equal(latest.length, 18);
+  assert(latest.length <= 30);
+  assert(block.includes('Últimas ponderaciones publicadas (2027)'));
+  assert.deepEqual(hrefs, latest.map(({ university }) => university.profile));
+  assert(hrefs.every((href) => /^\/ponderaciones\/[a-z0-9-]+$/.test(href)));
+  assert(hrefs.every((href) => existsSync(path.join(ROOT, `${href.slice(1)}.html`))));
+  assert(html.indexOf(startMarker) > html.indexOf('id="comunidades"'));
+  assert(html.indexOf(endMarker) < html.indexOf('id="tabla-global"'));
+
+  const withoutCurrentCourse = {
+    ...data,
+    sources: data.sources.map(({ cursoVigente, ...source }) => source),
+  };
+  const fallback = renderLatestPonderacionesSection(withoutCurrentCourse);
+  assert(fallback.includes('Pendiente de publicación'));
+  assert(!fallback.includes('class="exam-row"'));
+
+  const syntheticUniversities = Array.from({ length: 31 }, (_, index) => ({
+    id: `universidad-${index}`,
+    name: `Universidad ${String(index).padStart(2, '0')}`,
+    profile: `/ponderaciones/universidad-${index}`,
+    region: 'Prueba',
+  }));
+  const syntheticData = {
+    sources: [{ id: 'fuente-2027', cursoVigente: '2027', checkedAt: '2026-09-01' }],
+    universities: syntheticUniversities,
+    datasets: [{ sourceId: 'fuente-2027', rows: syntheticUniversities.map((university) => ({ universityIds: [university.id] })) }],
+  };
+  assert.equal(latestCurrentUniversities(syntheticData).length, 30);
 });
 
 test('25. FAQ visible y FAQPage coinciden sin inventar ponderaciones', () => {
