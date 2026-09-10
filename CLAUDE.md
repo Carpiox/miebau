@@ -77,4 +77,21 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
 
 - 2026-09-10: Sesión inicial. Se crea este archivo `CLAUDE.md` a partir del contexto
   de proyecto que el usuario traía de una sesión anterior (también trabajado con
-  Codex). Sin cambios de código todavía.
+  Codex). Sin cambios de código todavía. (PR #1, mergeado)
+- 2026-09-10: Se reescribe `README.md` con la visión del proyecto (SEO de exámenes →
+  packs de pago → apuntes gratuitos compartidos → membresías) y la parte técnica real
+  (stack sin build, `_redirects`, pipeline `data/` + `scripts/*.mjs`, cómo correr
+  tests). Se corrige en `CLAUDE.md` el nombre del JSON de exámenes
+  (`data/examenes-seo.json`, no `examenes-seo-fase1.json`). (PR #1, mergeado)
+- 2026-09-10: Se investiga un fallo intermitente en `tests/ponderaciones.test.mjs`.
+  Causa: el test 20 (`alcance de archivos respetado`) mira *todo* el estado de git
+  (`git diff`/`git ls-files --others`) y falla si hay cualquier archivo fuera de su
+  lista blanca de ponderaciones modificado sin commitear — daba falso positivo con
+  `README.md`/`CLAUDE.md` tocados por trabajo en paralelo. Se añade una lista de
+  documentos ignorados (`README.md`, `CLAUDE.md`) para que no bloqueen ese check.
+  Verificado con el árbol sucio a propósito y con la suite completa (17/17). (PR #2,
+  mergeado)
+- Flujo de trabajo confirmado con el usuario: cuando termina un PR, se reinicia la
+  rama de sesión desde `origin/main` (`git fetch origin main && git checkout -B
+  claude/miebau-project-context-lnlu7q origin/main`) antes de seguir con el próximo
+  cambio, para no apilar commits sobre historial ya mergeado.
