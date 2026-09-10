@@ -309,7 +309,6 @@ ${renderRelatedExamLinks(data.entries, entry)}        <p class="profile-global-l
           <div><dt>Comunidad autónoma</dt><dd>${escapeHtml(entry.comunidad)}</dd></div>
           <div><dt>Asignatura</dt><dd>${escapeHtml(entry.nombre_oficial_vigente || entry.asignatura)}</dd></div>
           <div><dt>Referencia</dt><dd>${escapeHtml(details.curso_referencia)}</dd></div>
-          <div><dt>Indexación</dt><dd>Vista previa · no indexable</dd></div>
         </dl>
         <span class="source-status source-status-verified">Estructura verificada</span>
         <a class="btn btn-primary" href="/examenes">Volver a Exámenes</a>

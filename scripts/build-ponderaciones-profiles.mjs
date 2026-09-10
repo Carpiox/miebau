@@ -14,6 +14,8 @@ const FAQ_JSON_LD_START = '<!-- ponderaciones-faq-jsonld:generated:start -->';
 const FAQ_JSON_LD_END = '<!-- ponderaciones-faq-jsonld:generated:end -->';
 const LATEST_START = '<!-- ponderaciones-latest:generated:start -->';
 const LATEST_END = '<!-- ponderaciones-latest:generated:end -->';
+const RELATED_START = '<!-- ponderaciones-related:generated:start -->';
+const RELATED_END = '<!-- ponderaciones-related:generated:end -->';
 
 const FIXED_FAQS = [
   {
@@ -138,6 +140,25 @@ function renderLatestPonderacionesSection(data) {
       ${content}
     </section>
     ${LATEST_END}`;
+}
+
+function renderRelatedUniversitiesSection(data, university) {
+  const siblings = data.universities
+    .filter((other) => other.region === university.region && other.id !== university.id)
+    .sort((left, right) => left.name.localeCompare(right.name, 'es'));
+
+  if (siblings.length === 0) return `${RELATED_START}${RELATED_END}`;
+
+  const links = siblings
+    .map((other) => `          <a class="region-quick-link" href="/ponderaciones/${escapeHtml(other.id)}">${escapeHtml(other.name)}</a>`)
+    .join('\n');
+
+  return `${RELATED_START}
+        <h2>Más universidades de ${escapeHtml(university.region)}</h2>
+        <div class="region-quick-links">
+${links}
+        </div>
+        ${RELATED_END}`;
 }
 
 function uniqueHighWeightSubjects(records) {
@@ -406,6 +427,7 @@ ${faqSchema}
 ${sourceLink ? `        ${sourceLink}\n` : ''}
 ${decision}
 ${faqSection}
+${renderRelatedUniversitiesSection(data, university)}
       </article>
 
       <aside class="card profile-sidebar">
@@ -474,6 +496,14 @@ function upsertPrivateFaqJsonLd(html, schema) {
   return `${html.slice(0, headEnd)}${schema}\n${html.slice(headEnd)}`;
 }
 
+function upsertPrivateRelatedSection(html, section) {
+  const replaced = replaceGeneratedBlock(html, RELATED_START, RELATED_END, section.trim());
+  if (replaced !== null) return replaced;
+  const articleEnd = html.indexOf('      </article>');
+  if (articleEnd === -1) throw new Error('No se encontró el final del contenido principal en ficha privada');
+  return `${html.slice(0, articleEnd)}${section.trim()}\n${html.slice(articleEnd)}`;
+}
+
 async function expectedFiles(data) {
   const files = [];
   for (const university of data.universities) {
@@ -491,7 +521,8 @@ async function expectedFiles(data) {
       : current;
     const withFaq = upsertPrivateFaqSection(withDecision, renderFaqSection(faqEntries));
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
-    files.push({ filePath, content: withSchema });
+    const withRelated = upsertPrivateRelatedSection(withSchema, renderRelatedUniversitiesSection(data, university));
+    files.push({ filePath, content: withRelated });
   }
   const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
   const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));
