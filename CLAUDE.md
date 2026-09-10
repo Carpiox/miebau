@@ -58,6 +58,19 @@ no 200; 4 simulacros; análisis histórico ponderado por recencia; evitar la pal
   tengan contenido suficiente — no añadir rutas "vacías" al sitemap.
 - Preguntar antes de asumir datos de ponderaciones/estructura de examen no verificados.
 
+## Flujo de trabajo con git/PRs (preferencia explícita del usuario)
+Cuando el usuario pida hacer cambios/modificar archivos, el flujo por defecto es:
+1. Hacer el cambio en la rama de trabajo de la sesión (el entorno la asigna; no se
+   commitea directo en `main`).
+2. Verificarlo (revisar el diff, ejecutar cualquier check/test relevante que exista
+   en `tests/`/`scripts/`, comprobar que no se rompe nada evidente).
+3. Una vez verificado, mergear el PR a `main` sin esperar aprobación manual en
+   GitHub para cada cambio — el usuario quiere que esto se haga de forma autónoma,
+   no que se quede el PR esperando su clic.
+- Excepción: si el cambio es arriesgado, ambiguo, toca datos de examen/ponderaciones
+  no verificados, o afecta a algo con impacto grande (borrar contenido, cambiar
+  estructura de precios, etc.), preguntar antes de mergear.
+
 ## Historial de sesiones
 (Cada sesión de Claude Code debe añadir aquí un resumen breve de qué se hizo,
 para que la siguiente sesión no tenga que releer todo el proyecto.)
