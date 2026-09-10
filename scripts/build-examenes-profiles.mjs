@@ -198,6 +198,43 @@ function renderOfficialExamLinks(entry) {
   ].join('\n');
 }
 
+function slugParts(entry) {
+  const [comunidadSlug, asignaturaSlug] = entry.slug.split('/');
+  return { comunidadSlug, asignaturaSlug };
+}
+
+function renderRelatedExamLinks(entries, entry) {
+  const { asignaturaSlug } = slugParts(entry);
+
+  const sameComunidad = entries
+    .filter((other) => other.comunidad === entry.comunidad && other.slug !== entry.slug)
+    .sort((left, right) => left.asignatura.localeCompare(right.asignatura, 'es'));
+
+  const sameAsignatura = entries
+    .filter((other) => slugParts(other).asignaturaSlug === asignaturaSlug && other.comunidad !== entry.comunidad)
+    .sort((left, right) => left.comunidad.localeCompare(right.comunidad, 'es'));
+
+  if (sameComunidad.length === 0 && sameAsignatura.length === 0) return '';
+
+  const renderLinks = (list, textFor) => `        <div class="region-quick-links">
+${list.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(textFor(other))}</a>`).join('\n')}
+        </div>`;
+
+  const sections = [];
+  if (sameComunidad.length > 0) {
+    sections.push(`        <h3>Más asignaturas de ${escapeHtml(entry.comunidad)}</h3>
+${renderLinks(sameComunidad, (other) => other.asignatura)}`);
+  }
+  if (sameAsignatura.length > 0) {
+    sections.push(`        <h3>${escapeHtml(entry.asignatura)} en otras comunidades</h3>
+${renderLinks(sameAsignatura, (other) => other.comunidad)}`);
+  }
+
+  return `        <h2>Sigue explorando exámenes</h2>
+${sections.join('\n')}
+`;
+}
+
 function renderProfile(data, entry) {
   const details = entry.contenido.datos_comunidad_asignatura;
   const canonical = `https://miebau.es${entry.url}`;
@@ -262,7 +299,8 @@ ${renderSources(data, entry)}
 ${renderOfficialExamLinks(entry)}
         <p><strong>Banco de exámenes:</strong> la integración del visor externo permanece pendiente de verificar, por lo que todavía no se incrusta ningún widget.</p>
         <p><strong>Ponderaciones 2026-2027:</strong> pendiente de verificar. Esta ficha no asigna coeficientes hasta disponer de una tabla oficial comprobada para ${communityWithArticle}.</p>
-        <p class="profile-global-link"><a href="/examenes">Ver todos los exámenes</a> · <a href="/ponderaciones#comunidades">Consultar ponderaciones por comunidad</a></p>
+
+${renderRelatedExamLinks(data.entries, entry)}        <p class="profile-global-link"><a href="/examenes">Ver todos los exámenes</a> · <a href="/ponderaciones#comunidades">Consultar ponderaciones por comunidad</a></p>
       </article>
 
       <aside class="card profile-sidebar">
