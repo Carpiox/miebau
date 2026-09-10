@@ -17,7 +17,7 @@ ventas de packs de pago (~3,99-4,99 €) y, en el futuro, membresías.
 - Antes: `/examenes` era un filtro client-side (dropdowns), sin URLs indexables → 0 páginas
   reales para long-tail SEO.
 - Ahora: se están generando rutas estáticas reales `/examenes/[comunidad]/[asignatura]`
-  a partir de un JSON de datos (`examenes-seo-fase1.json`), con contenido único por
+  a partir de un JSON de datos (`data/examenes-seo.json`), con contenido único por
   combinación (nunca plantilla repetida) y el widget de examenesdepau.com embebido.
 - Fase 1 en marcha: 15 asignaturas troncales × 5 comunidades (Murcia, Madrid, Andalucía,
   Comunidad Valenciana, Cataluña) = 75 combinaciones. Solo Cataluña y Comunidad Valenciana
