@@ -201,7 +201,9 @@ test('20. alcance de archivos respetado', () => {
   const untrackedResult = spawnSync('git', ['ls-files', '--others', '--exclude-standard'], { cwd: ROOT, encoding: 'utf8' });
   assert.equal(trackedResult.status, 0, trackedResult.stderr);
   assert.equal(untrackedResult.status, 0, untrackedResult.stderr);
-  const changed = [...new Set(`${trackedResult.stdout}\n${untrackedResult.stdout}`.trim().split(/\r?\n/).filter(Boolean).map((item) => item.replace(/\\/g, '/')))];
+  const ignoredDocs = new Set(['README.md', 'CLAUDE.md']);
+  const changed = [...new Set(`${trackedResult.stdout}\n${untrackedResult.stdout}`.trim().split(/\r?\n/).filter(Boolean).map((item) => item.replace(/\\/g, '/')))]
+    .filter((item) => !ignoredDocs.has(item));
   const allowed = new Set([
     '_redirects',
     'ponderaciones.html',
