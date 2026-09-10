@@ -129,3 +129,29 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
      `index.html` sigue con el placeholder `REEMPLAZA_CON_EL_CODIGO_DE_SEARCH_CONSOLE`
      sin reemplazar (aunque Search Console ya está verificado por otra vía, según el
      usuario).
+- 2026-09-10: Bloque **P0** de la lista de prioridades, dos de los tres puntos resueltos:
+  1. **`js/seo.js`**: el `noindex` de `/notas-de-corte` y `/calendario-ebau`, y el
+     schema `FAQPage` de `/preguntas-frecuentes`, nunca se aplicaban en la URL limpia
+     (canónica) porque el lookup comparaba `location.pathname` (sin `.html`) contra
+     claves del mapa `routes` que sí llevaban `.html`. Se normaliza la clave antes de
+     comparar. Verificado sirviendo copias sin extensión con Playwright (truco: sin
+     esto, Python http.server no sabe qué Content-Type servir a un archivo sin
+     extensión — usar `guess_type` override o similar si se repite este tipo de test).
+     (PR #7, mergeado)
+  2. **Newsletter del footer**: ahora envía de verdad a Netlify Forms (antes
+     `preventDefault()` + mensaje de éxito falso sin guardar nada). Se añadió un
+     formulario estático oculto en `index.html` con `data-netlify="true"` — necesario
+     porque Netlify solo detecta formularios en el HTML estático servido, no en los
+     que inyecta JavaScript en tiempo de ejecución (el formulario real vive en
+     `js/site.js`, generado dinámicamente para el footer de todas las páginas).
+     Incluye honeypot y texto de consentimiento con enlace a la política de
+     privacidad. **Pendiente**: la política de privacidad todavía no menciona el
+     tratamiento de estos correos (MIE-013 en `AUDITORIA_MIEBAU.md`) — esto resuelve
+     el engaño de "decir que funciona sin funcionar", no sustituye una revisión legal
+     del consentimiento. (PR #7, mergeado)
+  3. **P0.1 (GA4) queda pendiente**: el usuario confirmó que ya tiene una propiedad
+     GA4 pero todavía no ha pasado el Measurement ID (`G-XXXXXXXXXX`). En cuanto lo
+     dé, conectar en `js/integrations.js` (hoy vacío) con el snippet estándar de
+     gtag.js, respetando que no hay banner de cookies/consentimiento todavía en el
+     sitio (revisar si hace falta uno antes o junto con GA4, dado el contexto legal
+     pendiente de MIE-013).
