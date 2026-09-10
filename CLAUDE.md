@@ -57,6 +57,14 @@ no 200; 4 simulacros; análisis histórico ponderado por recencia; evitar la pal
 - Cualquier cambio en `sitemap.xml` debe ir acompañado de páginas que realmente
   tengan contenido suficiente — no añadir rutas "vacías" al sitemap.
 - Preguntar antes de asumir datos de ponderaciones/estructura de examen no verificados.
+- **Ciclo EvAU y el año en el copy**: cada vez que empiece un curso nuevo (septiembre),
+  revisar si portada (`index.html`) y `/examenes` siguen anunciando el año EvAU
+  correcto (hoy: "2027" a secas, decisión del usuario — ver historial de sesiones).
+  No es automático, hay que cambiarlo a mano cada año. No tocar por esto:
+  `/ponderaciones` (usa rango "20XX-20XX", se mantiene correcto todo el ciclo), las
+  fechas de "Verificado el ..." (registro histórico), el `<option>` de años del
+  filtro de exámenes pasados en `/examenes` (solo gana opción cuando exista un
+  examen real de ese año), ni el copyright del footer (año natural, no ciclo EvAU).
 
 ## Flujo de trabajo con git/PRs (preferencia explícita del usuario)
 Cuando el usuario pida hacer cambios/modificar archivos, el flujo por defecto es:
@@ -149,9 +157,41 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
      tratamiento de estos correos (MIE-013 en `AUDITORIA_MIEBAU.md`) — esto resuelve
      el engaño de "decir que funciona sin funcionar", no sustituye una revisión legal
      del consentimiento. (PR #7, mergeado)
-  3. **P0.1 (GA4) queda pendiente**: el usuario confirmó que ya tiene una propiedad
-     GA4 pero todavía no ha pasado el Measurement ID (`G-XXXXXXXXXX`). En cuanto lo
-     dé, conectar en `js/integrations.js` (hoy vacío) con el snippet estándar de
-     gtag.js, respetando que no hay banner de cookies/consentimiento todavía en el
-     sitio (revisar si hace falta uno antes o junto con GA4, dado el contexto legal
-     pendiente de MIE-013).
+  3. **P0.1 (GA4)**: el usuario dio el Measurement ID real (`G-PC072KNFRT`). Conectado
+     en `js/integrations.js` (antes vacío a propósito), cargado vía el mismo loader
+     dinámico que `js/site.js` ya usaba para `seo.js`. Inicializado con **Google
+     Consent Mode denegado por defecto** (no hay banner de cookies real todavía,
+     solo `/politica-cookies` informativa) — recoge datos ya, en modo
+     cookieless/modelado, sin escribir cookies de analítica sin consentimiento
+     explícito. Cuando exista un banner real, hay que llamar a `gtag('consent',
+     'update', { analytics_storage: 'granted' })` tras la aceptación. **Bloque P0
+     completo.** (PR #9, mergeado)
+- 2026-09-10: Bloque **P1**, los 4 puntos resueltos en un solo PR:
+  1. 44 fichas privadas de ponderaciones enlazaban a `/politica-privacidad.html`
+     (no canónico) en un bloque de contenido editorial manual que el generador
+     nunca regenera para universidades privadas — corregido a mano en las 44.
+  2. Quitado el texto "Vista previa · no indexable" del sidebar de `/examenes/*`:
+     era un string fijo sin conexión al dato real, y la página sí es indexable
+     (confirmado en la sesión anterior: está en sitemap, sin `noindex`, sin bloqueo
+     en `robots.txt`).
+  3. Meta OG/Twitter añadidas en HTML estático en las 14 páginas de nivel superior
+     indexables (antes solo por JS vía `js/seo.js`, invisibles para bots que no
+     ejecutan JavaScript). No se tocó `404.html` ni `proximamente.html` (noindex).
+  4. Enlazado interno real en las 82 fichas de ponderaciones (mismo problema
+     MIE-005 ya resuelto para `/examenes` en la sesión anterior): sección "Más
+     universidades de `<comunidad>`" en cada ficha, pública y privada, reutilizando
+     `.region-quick-link`. Nuevo marcador `ponderaciones-related:generated:start/end`
+     para las fichas privadas.
+  (PR #10, mergeado)
+- 2026-09-10: El usuario señaló que hay que anticipar el cambio de año EvAU 2026→2027
+  para SEO (quien busque ahora piensa en el examen de junio de 2027, no en el de
+  2026 que ya pasó). Se encontró que **ya estaba desalineado hoy, no solo de cara a
+  futuro**: `/ponderaciones` decía correctamente "Curso 2026-2027", pero portada y
+  `/examenes` decían "EvAU 2026" a secas en título, meta description, badge del hero
+  y texto de compartir. Preguntado el criterio al usuario: eligió **año suelto (no
+  rango "2026-2027")**. Aplicado en portada y `/examenes`. **Regla para el año que
+  viene**: cuando toque, hay que volver a cambiar "2027" → "2028" a mano en esos
+  mismos sitios (no es automático); no tocar `/ponderaciones` (usa rango, ya
+  correcto todo el ciclo), ni el `<option>` de años del filtro de exámenes pasados
+  en `/examenes` (ese solo debe ganar una opción nueva cuando exista un examen real
+  de ese año), ni el copyright del footer (sigue el año natural, no el ciclo EvAU).
