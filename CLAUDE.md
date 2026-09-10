@@ -95,3 +95,37 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   rama de sesión desde `origin/main` (`git fetch origin main && git checkout -B
   claude/miebau-project-context-lnlu7q origin/main`) antes de seguir con el próximo
   cambio, para no apilar commits sobre historial ya mergeado.
+- 2026-09-10: A petición del usuario, tres cambios más:
+  1. **Diseño de `.exam-row`** (usado en "Últimas ponderaciones publicadas" de
+     `/ponderaciones` y en "Últimos exámenes añadidos"/resultados de `/examenes`):
+     esas clases no tenían ningún CSS propio, se veían como texto plano apilado.
+     Se añadió diseño de tarjeta con icono/título/meta/botón en `css/style.css`.
+     Verificado con Playwright (no con el CLI de Chromium a pelo, que dio falsos
+     positivos de overflow por no esperar a que cargara la página). (PR #4, mergeado)
+  2. **Enlazado interno real en `/examenes/<comunidad>/<asignatura>`**: cada ficha
+     solo enlazaba a `/examenes` y `/ponderaciones`, sin ningún enlace a las otras
+     29 fichas del lote. Se añadió una sección "Sigue explorando exámenes" en
+     `scripts/build-examenes-profiles.mjs`, generada desde el propio dataset
+     (15 asignaturas × 2 comunidades → 15 enlaces reales por ficha). (PR #5, mergeado)
+  3. Se investigó por qué las 30 fichas de examen dicen en el sidebar "Vista previa ·
+     no indexable" pero están en `sitemap.xml`, sin meta `robots` y sin bloqueo en
+     `robots.txt` — **no es un bug**: `tests/examenes-seo.test.mjs` prueba
+     explícitamente que NO debe haber meta `noindex`. El campo `indexacion:
+     'noindex'` del JSON parece ser solo una marca de estado interno, no una
+     directriz real. El texto del sidebar "no indexable" es engañoso/desactualizado
+     y debería corregirse o aclararse, pero no se tocó la indexación real sin que el
+     usuario lo confirme explícitamente (afecta a páginas ya publicadas).
+  4. Se detectó un **overflow horizontal de 26px a ~900px de ancho** en las fichas de
+     `/examenes/*`, ya presente antes de estos cambios (probablemente el `::after`
+     decorativo del banner CTA inferior, similar al patrón de `.career-cta::after`
+     con `right:-6%` en otras páginas). Pendiente de diagnosticar y arreglar en una
+     sesión futura.
+  5. Sin conectores de Search Console/Analytics en esta cuenta de Claude
+     (`ListConnectors` solo mostró Google Drive e Indeed) — cualquier auditoría SEO
+     en sesiones futuras se hace leyendo el código/HTML directamente, no con datos
+     reales de posiciones/impresiones/CTR salvo que el usuario los pegue a mano.
+  6. Confirmado que no hay Google Analytics/GA4 ni código de AdSense en el sitio
+     todavía (`js/integrations.js` vacío). El meta `google-site-verification` en
+     `index.html` sigue con el placeholder `REEMPLAZA_CON_EL_CODIGO_DE_SEARCH_CONSOLE`
+     sin reemplazar (aunque Search Console ya está verificado por otra vía, según el
+     usuario).
