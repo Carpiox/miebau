@@ -195,3 +195,50 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   correcto todo el ciclo), ni el `<option>` de años del filtro de exámenes pasados
   en `/examenes` (ese solo debe ganar una opción nueva cuando exista un examen real
   de ese año), ni el copyright del footer (sigue el año natural, no el ciclo EvAU).
+- 2026-09-10: El usuario compartió capturas reales de Google Search Console
+  (18 ago - 8 sep 2026, ~60 impresiones totales, prácticamente 0 clics — el sitio
+  está en la fase más temprana de indexación). Hallazgos accionables:
+  - Ninguna consulta de calculadora/simulador lleva año explícito ("calculadora
+    evau", "simulador ebau", "ebau calculadora"...) — refuerza que el cambio a
+    "EvAU 2027" no arriesga tráfico por año, la gente no busca por año para estas
+    herramientas.
+  - **"calcular nota de corte" es la consulta con más impresiones de todas (7)**,
+    y `/notas-de-corte` hoy no tiene ningún dato real (estado vacío). Justo en esta
+    sesión se corrigió el bug que hacía indexable esa URL por accidente (ver bloque
+    P0 arriba) — con el fix, la página dejará de aparecer para esa búsqueda en
+    cuanto Google re-rastree, en el peor momento posible (cuando hay prueba de
+    demanda real). **Candidato fuerte para la próxima sesión**: valorar con el
+    usuario si merece la pena construir un dataset real (aunque sea parcial, unas
+    pocas carreras/universidades) para poder quitar el noindex con contenido
+    honesto, en vez de dejarlo noindex para siempre. Es una decisión de producto,
+    no se tomó unilateralmente.
+  - "examenes historia del arte"/"examen historia del arte" (4 impresiones) valida
+    esa asignatura; "abat oliba precios" y "alfonso x el sabio malaga" confirman
+    que las fichas de universidades privadas ya reciben búsquedas long-tail reales.
+- 2026-09-10: Bloque **P2** completo, los 3 puntos de la auditoría/sesión anterior:
+  1. **Overflow horizontal sitewide de hasta 146px entre 761-950px de ancho**
+     (afecta a TODAS las páginas, no solo `/examenes` como se pensaba al
+     detectarlo): la navbar colapsaba a hamburguesa en `@media (max-width:760px)`,
+     pero los enlaces inline + el botón "Calcular mi nota" necesitan hasta ~950px
+     para caber en una fila sin `flex-wrap`. Se sube el punto de corte a 960px
+     (verificado con Playwright: overflow 0 en todo el rango 760-980px).
+  2. **MIE-004**: nunca existió una regla global `[hidden] { display: none
+     !important; }` — `.btn`, `.mode-note` e `.inverse-result` declaran su propio
+     `display` y ganaban la cascada sobre el atributo `hidden`, así que varios
+     controles de la calculadora (`#calculateButton`, `#inverseResult`,
+     `#clearHistory`, `#previousStep`, `#comparisonPanel`, aviso de modo no-EvAU)
+     aparecían visibles en la carga inicial pese a tener `hidden`. Regla global
+     añadida; verificado que los 6 elementos ahora resuelven a `display:none` real,
+     y que el overflow de 46px a 360px de la auditoría original desapareció.
+  3. **MIE-009**: el service worker usaba cache-first puro con un nombre de cache
+     que nunca cambiaba (`miebau-static-v1`) y sin limpieza de caches viejas —
+     un usuario recurrente podía quedarse con CSS/JS desactualizado
+     indefinidamente pese a nuevos deploys. Pasa a stale-while-revalidate (sirve
+     la copia en caché al instante, pero siempre revalida en segundo plano con
+     `cache:'no-store'` para no toparse con la caché HTTP heurística del
+     navegador) más versionado de caché (v2) con limpieza de versiones antiguas en
+     `activate()`, y `/404.html` añadido a `CORE` para que el fallback offline
+     funcione de verdad. Verificado con Playwright simulando un cambio de archivo
+     entre peticiones: primera petición tras el cambio sirve stale (rápido),
+     segunda sirve la versión nueva ya revalidada.
+  (PR pendiente de crear en esta sesión)
