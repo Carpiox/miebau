@@ -22,6 +22,7 @@
             <li><a class="${active('calculadora.html')}" href="/calculadora">Calculadora</a></li>
             <li><a class="${active('ponderaciones.html')}" href="/ponderaciones">Ponderaciones</a></li>
             <li><a class="${active('examenes.html')}" href="/examenes">Exámenes</a></li>
+            <li><a class="${active('notas-de-corte.html')}" href="/notas-de-corte">Notas de corte</a></li>
             <li><a class="${active('guias.html')}" href="/guias">Guías</a></li>
             <li><a class="${active('premium.html')}" href="/premium">Premium</a></li>
             <li><a class="${active('sobre-nosotros.html')}" href="/sobre-nosotros">Sobre nosotros</a></li>

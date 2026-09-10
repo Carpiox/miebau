@@ -4,6 +4,7 @@
   <url><loc>https://miebau.es/calculadora</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://miebau.es/ponderaciones</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://miebau.es/examenes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://miebau.es/guias</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://miebau.es/sobre-nosotros</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://miebau.es/contacto</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -125,4 +126,42 @@
   <url><loc>https://miebau.es/examenes/comunidad-de-madrid/historia-del-arte</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://miebau.es/examenes/comunidad-de-madrid/latin-ii</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://miebau.es/examenes/comunidad-de-madrid/griego-ii</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-biologia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-bioquimica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-biotecnologia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-ciencias-de-la-actividad-fisica-y-del-deporte-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-ciencia-e-ingenieria-de-datos-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-comunicacion-audiovisual-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-criminologia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-derecho-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-educacion-infantil-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-educacion-primaria-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-enfermeria-cartagena-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-enfermeria-lorca-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-enfermeria-murcia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-farmacia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-fisica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-fisioterapia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-ingenieria-en-informatica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-ingenieria-quimica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-lengua-y-literatura-espanolas-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-logopedia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-marketing-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-matematicas-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-medicina-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-odontologia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-pedagogia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-psicologia-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-publicidad-y-relaciones-publicas-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-quimica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-traduccion-e-interpretacion-lengua-b-ingles-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/grado-en-veterinaria-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-administracion-y-direccion-de-empresas-y-derecho-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-ciencias-de-la-actividad-fisica-y-del-deporte-y-nutricion-humana-y-dietetica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-criminologia-y-seguridad-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-educacion-infantil-y-educacion-primaria-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-educacion-primaria-y-ciencias-de-la-actividad-fisica-y-del-deporte-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-matematicas-e-ingenieria-informatica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-matematicas-y-fisica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://miebau.es/notas-de-corte/doble-grado-en-quimica-e-ingenieria-quimica-um</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

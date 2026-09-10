@@ -1,10 +1,9 @@
 /*
- * Notas de corte · módulo de presentación preparado para datos futuros.
+ * Notas de corte · filtro sobre los datos ya verificados y publicados.
  *
- * Contrato esperado para conectar una fuente más adelante:
- * { grado, universidad, comunidad, nota, curso, turno }
- * Este módulo trabaja con un array local vacío para no inventar datos ni
- * realizar scraping o peticiones externas.
+ * Contrato: { grado, universidad, comunidad, nota, curso, turno, url }
+ * window.MIEBAU_CUTOFF_DATA lo rellena scripts/build-notas-corte-profiles.mjs
+ * a partir de data/notas-corte-2026.json — nunca a mano, para no inventar datos.
  */
 (function (window, document) {
   'use strict';
@@ -33,13 +32,13 @@
     $('cutoffCount').textContent = results.length + (results.length === 1 ? ' resultado' : ' resultados');
     container.replaceChildren();
     if (!results.length) {
-      container.innerHTML = '<div class="empty-state"><div class="empty-icon" aria-hidden="true">◌</div><strong>' + (DATA.length ? 'No hay coincidencias' : 'Todavía no hay datos conectados') + '</strong><p>' + (DATA.length ? 'Prueba a cambiar los filtros.' : 'Cuando exista una fuente oficial, este listado podrá recibirla sin cambiar la experiencia de usuario.') + '</p></div>';
+      container.innerHTML = '<div class="empty-state"><div class="empty-icon" aria-hidden="true">◌</div><strong>' + (DATA.length ? 'No hay coincidencias' : 'Todavía no hay notas de corte verificadas') + '</strong><p>' + (DATA.length ? 'Prueba a cambiar los filtros.' : 'Iremos añadiendo universidades a medida que verifiquemos cada fuente oficial.') + '</p></div>';
       return;
     }
     results.forEach((item) => {
       const card = document.createElement('article');
       card.className = 'cutoff-card';
-      card.innerHTML = '<div class="cutoff-card-top"><span class="eyebrow">' + (item.curso || 'Curso pendiente') + '</span><strong>' + Number(item.nota).toLocaleString('es-ES', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + '</strong></div><h3>' + item.grado + '</h3><p>' + item.universidad + ' · ' + item.comunidad + '</p>';
+      card.innerHTML = '<div class="cutoff-card-top"><span class="eyebrow">' + (item.curso || 'Curso pendiente') + '</span><strong>' + Number(item.nota).toLocaleString('es-ES', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + '</strong></div><h3>' + item.grado + '</h3><p>' + item.universidad + ' · ' + item.comunidad + '</p>' + (item.url ? '<a class="cutoff-card-link" href="' + item.url + '">Ver ficha →</a>' : '');
       container.appendChild(card);
     });
   }
