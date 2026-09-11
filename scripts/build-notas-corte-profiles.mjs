@@ -86,6 +86,19 @@ function renderBreadcrumb(entry) {
   }).replace(/</g, '\\u003c');
 }
 
+function cupoNote(turno) {
+  const isSegundoPlazo = turno.includes('2º plazo');
+  const isNoPrioritariaFP = turno.includes('no prioritaria de FP');
+  if (!isSegundoPlazo && !isNoPrioritariaFP) return '';
+  if (isSegundoPlazo && isNoPrioritariaFP) {
+    return ' <strong>Importante:</strong> este dato corresponde al segundo plazo de preinscripción y a la opción no prioritaria de Formación Profesional, no a la nota de corte ordinaria del cupo general en primer plazo.';
+  }
+  if (isSegundoPlazo) {
+    return ' <strong>Importante:</strong> este dato corresponde al segundo plazo de preinscripción, no a la nota de corte ordinaria del cupo general en primer plazo (que la fuente oficial no publicó sin esa anotación para este grado).';
+  }
+  return ' <strong>Importante:</strong> este dato corresponde a la opción no prioritaria de Formación Profesional dentro del cupo general.';
+}
+
 function renderProfile(data, entry) {
   const source = data.sources.find((item) => item.id === entry.sourceId);
   const canonical = `https://miebau.es${entry.url}`;
@@ -123,7 +136,7 @@ function renderProfile(data, entry) {
           <div><dt>Cupo</dt><dd>${escapeHtml(entry.turno)}</dd></div>
           <div><dt>Curso</dt><dd>${escapeHtml(entry.curso)}</dd></div>
         </dl>
-        <p>Recuerda que la nota de corte es un dato retrospectivo: la marcó el último estudiante admitido el curso citado, no un mínimo fijado de antemano. Sirve como referencia, no como garantía para el curso siguiente.</p>
+        <p>Recuerda que la nota de corte es un dato retrospectivo: la marcó el último estudiante admitido el curso citado, no un mínimo fijado de antemano. Sirve como referencia, no como garantía para el curso siguiente.${cupoNote(entry.turno)}</p>
 
         <h2>Fuente oficial</h2>
         <ul class="profile-source-list">
