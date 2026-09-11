@@ -282,3 +282,37 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     instalarlo en la conversación) — la verificación visual se hizo con
     Playwright + Chromium ya preinstalado, como en el resto de la sesión.
   (PR #13, mergeado)
+- 2026-09-11: **`/notas-de-corte` completado y auditado antes de añadir otra
+  universidad** (a petición explícita del usuario — buen hábito a repetir con
+  cualquier fuente de datos nueva).
+  - Se publican los **68 grados** del PDF de la Universidad de Murcia: los 38
+    ya publicados (cupo general sin anotación) + 30 más que en el PDF llevan
+    "(S)" segundo plazo y/o "(NP)" opción no prioritaria de FP en la columna de
+    Cupo General. Estos 30 **no se etiquetan como cupo general normal** —
+    `turno: "General (2º plazo)"` / `"General (2º plazo, opción no prioritaria
+    de FP)"`, y cada ficha añade una nota "Importante" explicando qué significa
+    (vía `cupoNote()` en `scripts/build-notas-corte-profiles.mjs`).
+  - El usuario preguntó directamente si `/notas-de-corte` tenía el mismo nivel
+    de SEO/enlazado interno que `/examenes` y `/ponderaciones`. Auditoría
+    honesta, 2 gaps reales encontrados y arreglados en el mismo PR:
+    1. **Cero enlazado interno entre las 68 fichas** (cada una solo enlazaba
+       al hub y a `/calculadora`) — mismo problema MIE-005 ya resuelto para
+       examenes/ponderaciones en sesiones anteriores, no aplicado aquí por
+       descuido. Se añadió "Más notas de corte de `<universidad>`" con las
+       67 fichas hermanas, mismo patrón `.region-quick-link`.
+    2. **Faltaban meta OG/Twitter estáticas** en las 68 fichas (mismo gap del
+       fix de P1, no extendido aquí). Añadidas.
+  - Un tercer punto se revisó y **no era un problema nuevo**: el párrafo
+    "la nota de corte es un dato retrospectivo..." se repite igual en las 68
+    fichas, pero 64 de las 82 fichas de ponderaciones ya hacen lo mismo con su
+    aviso de "sin datos verificados" — es el patrón establecido del proyecto
+    para contenido de aviso/estado de una ficha de datos, no una violación de
+    la regla de intros únicos (esa regla, según su propia redacción en este
+    archivo, es específicamente para el contenido narrativo largo de
+    `/examenes`, no para cada ficha de dato individual del proyecto).
+  - **Lección para cuando se añada una segunda universidad**: repetir esta
+    misma auditoría (enlazado interno + OG/Twitter + sitemap/redirects) antes
+    de dar por "terminada" cualquier fuente de datos nueva — no asumir que el
+    patrón de otra sección del proyecto se copió completo solo porque la
+    estructura de generador es la misma.
+  (PR #15, mergeado)
