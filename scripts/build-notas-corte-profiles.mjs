@@ -99,6 +99,24 @@ function cupoNote(turno) {
   return ' <strong>Importante:</strong> este dato corresponde a la opción no prioritaria de Formación Profesional dentro del cupo general.';
 }
 
+function renderRelatedEntriesSection(data, entry) {
+  const siblings = data.entries
+    .filter((other) => other.universidad === entry.universidad && other.slug !== entry.slug)
+    .sort((left, right) => left.grado.localeCompare(right.grado, 'es'));
+
+  if (siblings.length === 0) return '';
+
+  const links = siblings
+    .map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(other.grado)}</a>`)
+    .join('\n');
+
+  return `        <h2>Más notas de corte de ${escapeHtml(entry.universidad)}</h2>
+        <div class="region-quick-links">
+${links}
+        </div>
+`;
+}
+
 function renderProfile(data, entry) {
   const source = data.sources.find((item) => item.id === entry.sourceId);
   const canonical = `https://miebau.es${entry.url}`;
@@ -114,6 +132,7 @@ function renderProfile(data, entry) {
   <title>${title}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${canonical}">
+  <meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Miebau"><meta property="og:title" content="${title}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://miebau.es/assets/miniatura.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="https://miebau.es/assets/miniatura.jpg">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
@@ -146,6 +165,7 @@ function renderProfile(data, entry) {
           </li>
         </ul>
 
+${renderRelatedEntriesSection(data, entry)}
         <p class="profile-global-link"><a href="/notas-de-corte">Ver todas las notas de corte</a> · <a href="/calculadora">Calcular mi nota</a></p>
       </article>
 
