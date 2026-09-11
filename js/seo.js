@@ -8,7 +8,7 @@
     'calculadora': { path: '/calculadora', crumb: 'Calculadora EvAU' },
     'ponderaciones': { path: '/ponderaciones', crumb: 'Ponderaciones' },
     'examenes': { path: '/examenes', crumb: 'Exámenes EvAU' },
-    'notas-de-corte': { path: '/notas-de-corte', crumb: 'Notas de corte', noindex: true },
+    'notas-de-corte': { path: '/notas-de-corte', crumb: 'Notas de corte' },
     'calendario-ebau': { path: '/calendario-ebau', crumb: 'Calendario EBAU', noindex: true },
     'guias': { path: '/guias', crumb: 'Guías' },
     'sobre-nosotros': { path: '/sobre-nosotros', crumb: 'Sobre nosotros' },
