@@ -241,4 +241,44 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
      funcione de verdad. Verificado con Playwright simulando un cambio de archivo
      entre peticiones: primera petición tras el cambio sirve stale (rápido),
      segunda sirve la versión nueva ya revalidada.
-  (PR pendiente de crear en esta sesión)
+  (PR #12, mergeado)
+- 2026-09-11: **`/notas-de-corte` implementado con datos reales**, a petición del
+  usuario (brief detallado con copy SEO ya redactado). Puntos importantes para
+  sesiones futuras:
+  - **Este entorno no tiene salida de red a dominios externos** (`WebFetch` a
+    `um.es` devuelve `EGRESS_BLOCKED`) — confirmado también antes con miebau.es.
+    Para cualquier fuente oficial futura que haya que descargar (PDFs, páginas),
+    hay que pedirle al usuario que suba el archivo directamente al chat (Read
+    funciona con PDFs sin red) o que pegue los datos/URL a mano. No asumir que se
+    puede hacer scraping ni descarga directa desde esta sesión.
+  - El usuario subió el PDF oficial "Notas de corte estudios de grado, curso
+    2025-2026" de la Universidad de Murcia. Se extrajeron **38 grados** (de ~65
+    filas totales) que no llevaban ninguna anotación ambigua en el documento
+    ("(S)" segundo plazo, "(NP)" opción no prioritaria, "(OD)" otros distritos) —
+    quedan ~27 grados pendientes de añadir en una futura ronda, con la etiqueta de
+    cupo/plazo correcta si se decide incluirlos.
+  - `data/notas-corte-2026.json` + `scripts/build-notas-corte-profiles.mjs` +
+    `tests/notas-de-corte.test.mjs`, mismo patrón que ponderaciones/exámenes:
+    fichas estáticas en `/notas-de-corte/<slug>-um`, marcador
+    `notas-corte-latest:generated:start/end` para el bloque "Últimas notas de
+    corte publicadas" en el hub, y `notas-corte-coverage:generated:start/end`
+    para el badge de cobertura (¡cuidado! `replaceGeneratedBlock` consume los
+    marcadores — cualquier función de reemplazo debe reincluirlos en su propio
+    return, si no el siguiente `--check` falla).
+  - El hub (`notas-de-corte.html`) ya no es un placeholder "Próximamente": tiene
+    contenido real y sustancial (definición, cómo se calcula la nota de admisión,
+    mini FAQ con `FAQPage` JSON-LD), así que se quitó `noindex: true` de
+    `js/seo.js` para esa ruta. Los 38 grados y el hub ya están en `sitemap.xml`
+    y `_redirects`.
+  - **Pendiente del usuario**: el `sourceUrl` de la fuente cita `https://www.um.es`
+    (el dominio, verificado en el propio PDF) en vez del enlace directo al
+    documento — si el usuario pasa la URL exacta del PDF, actualizar
+    `data/notas-corte-2026.json`.
+  - Añadido un 7º enlace a la navbar principal ("Notas de corte") y una 4ª
+    tarjeta en la portada — la navbar necesitó subir su punto de corte a
+    hamburguesa de 960px a 1020px para no reintroducir overflow (verificado con
+    Playwright en todo el rango 760-1200px).
+  - No se usó chrome-devtools-mcp (el usuario decidió explícitamente no
+    instalarlo en la conversación) — la verificación visual se hizo con
+    Playwright + Chromium ya preinstalado, como en el resto de la sesión.
+  (PR #13, mergeado)
