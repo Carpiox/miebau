@@ -376,3 +376,50 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     Access Key para migrar el formulario de contacto/newsletter (hoy en
     Netlify Forms) — sustituir el `data-netlify` por un `fetch()` POST a
     `https://api.web3forms.com/submit`, manteniendo el honeypot.
+- 2026-09-12: **Migración de Netlify Forms a Web3Forms completada** (el
+  usuario ya expandió los DNS a Cloudflare y confirmó que todo carga bien;
+  pasó el Access Key `c4fda362-0900-4250-89ee-9dc680092943`).
+  - El alcance real era mayor que "contacto + newsletter": había **82 fichas
+    de `/ponderaciones/*.html`** con un tercer formulario Netlify ("avísame
+    cuando se publiquen las ponderaciones"), 44 de ellas con contenido
+    editorial congelado que `scripts/build-ponderaciones-profiles.mjs` nunca
+    regenera para universidades privadas sin registros (ver nota de la
+    sesión del PR #15). Antes de tocar nada hay que buscar **todas** las
+    apariciones de `data-netlify`/`netlify-honeypot`/`form-name` en el repo,
+    no asumir que solo hay uno o dos formularios.
+  - Arreglo: `js/forms.js` (nuevo) — capa compartida que engancha cualquier
+    `form[data-web3forms="<contexto>"]`, comprueba el honeypot `bot-field`
+    en el cliente (ya no lo procesa Netlify) y hace `fetch` JSON a
+    `https://api.web3forms.com/submit` con `access_key` + los campos del
+    formulario + un `subject` calculado por contexto (incluye el nombre de
+    la universidad si el formulario lleva un campo oculto `universidad`).
+    Muestra la confirmación/error en un `<p class="form-note">` propio (o
+    reutiliza `.newsletter-note` en el footer) sin recargar la página. Se
+    carga sitewide vía el mismo loader dinámico de `js/site.js` que ya
+    usaba `integrations.js`/`seo.js` — no hace falta tocar el `<head>` de
+    cada página.
+  - Para las 44 fichas con el aviso congelado: se comprobó primero (con
+    `grep -c`) que el bloque de formulario era **byte-idéntico** en las 44
+    salvo el nombre de la universidad, y se parcheó con un pequeño script
+    Python de reemplazo literal en vez de tocarlas a mano una por una. Para
+    el resto (universidades públicas, regeneradas por completo en cada
+    build), bastó con arreglar la plantilla `renderNotice()` del generador
+    y volver a ejecutar `node scripts/build-ponderaciones-profiles.mjs`
+    (sin `--check`) para que se regeneraran solas.
+  - **Límite de esta sesión, otra vez**: no se pudo consultar la
+    documentación de Web3Forms ni verificar que el correo llega de verdad —
+    `api.web3forms.com` también da `EGRESS_BLOCKED`/403 desde este sandbox,
+    igual que `cloudflare.com`/`pages.dev`/`um.es`. La implementación sigue
+    el formato de integración por fetch/JSON públicamente documentado de
+    Web3Forms (`access_key` + campos + `subject`; respuesta JSON con
+    `success`/`message`), con manejo defensivo de la respuesta (solo se
+    trata como fallo un `response.ok` falso o `success === false` explícito)
+    para no depender de que su forma exacta coincida al 100%. Verificado en
+    su lugar con Playwright contra un servidor estático local, interceptando
+    la petición a `api.web3forms.com/submit` (17/17 comprobaciones: payload
+    correcto sin campos internos de Netlify, mensaje de éxito/error en
+    pantalla sin recargar, botón reactivado tras un fallo para poder
+    reintentar, honeypot relleno = cero peticiones de red). **Pendiente del
+    usuario**: probar el envío real en `miebau.es` ya desplegado y confirmar
+    que el correo le llega a la bandeja de Web3Forms/su email.
+  (PR #19, mergeado)
