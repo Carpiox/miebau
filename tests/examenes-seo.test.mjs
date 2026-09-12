@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import test from 'node:test';
@@ -112,12 +112,17 @@ test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
   }
 });
 
-test('las URLs limpias usan rewrites 200 exactos y sin reglas inversas', () => {
+test('las URLs limpias no llevan rewrites explícitos a .html (Cloudflare ya las sirve así)', () => {
   const rules = redirects.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
   for (const entry of data.entries) {
-    const expected = `${entry.url} ${entry.url}.html 200`;
-    assert.equal(rules.filter((line) => line === expected).length, 1, `Rewrite incorrecto para ${entry.url}`);
-    assert(!rules.some((line) => line.startsWith(`${entry.url}.html ${entry.url} `)), `Regla inversa con riesgo de bucle para ${entry.url}`);
+    assert(existsSync(outputPathFor(entry)), `Falta la ficha estática de ${entry.url}`);
+    const forbiddenForward = `${entry.url} ${entry.url}.html 200`;
+    const forbiddenReverse = `${entry.url}.html ${entry.url} `;
+    assert(
+      !rules.includes(forbiddenForward),
+      `_redirects no debe rewritear ${entry.url} a su .html: Cloudflare Pages ya sirve *.html en la ruta limpia automáticamente y redirige lo contrario, así que una regla explícita aquí produce un bucle de redirección`,
+    );
+    assert(!rules.some((line) => line.startsWith(forbiddenReverse)), `Regla inversa con riesgo de bucle para ${entry.url}`);
   }
 });
 

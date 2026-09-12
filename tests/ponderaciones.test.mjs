@@ -282,7 +282,7 @@ test('22b. la cobertura propia no se deduce de filas conjuntas', () => {
   });
 });
 
-test('23. SEO, canonical, sitemap y rewrites cubren las 82 rutas', () => {
+test('23. SEO, canonical y sitemap cubren las 82 rutas, sin rewrites que Cloudflare ya resuelve solo', () => {
   const titles = new Set();
   const descriptions = new Set();
   data.universities.forEach((university) => {
@@ -299,7 +299,11 @@ test('23. SEO, canonical, sitemap y rewrites cubren las 82 rutas', () => {
     assert(!/noindex/i.test(profileHtml), `Noindex presente en ${university.id}`);
     assert(sitemap.includes(`<loc>${canonical}</loc>`), `Falta ${canonical} en sitemap`);
     assert(!sitemap.includes(`<loc>${canonical}.html</loc>`), `Versión .html incluida en sitemap para ${university.id}`);
-    assert(redirects.includes(`${university.profile} /ponderaciones/${university.id}.html 200`), `Falta rewrite limpio para ${university.id}`);
+    assert(existsSync(path.join(ROOT, 'ponderaciones', `${university.id}.html`)), `Falta la ficha ${university.id}`);
+    assert(
+      !redirects.includes(`${university.profile} /ponderaciones/${university.id}.html 200`),
+      `_redirects no debe rewritear ${university.profile} a su .html: Cloudflare Pages ya sirve *.html en la ruta limpia automáticamente, y una regla explícita aquí causa un bucle de redirección`,
+    );
   });
 });
 

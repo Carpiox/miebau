@@ -51,11 +51,15 @@ test('cada ficha existe, tiene SEO propio y cita la fuente oficial', () => {
   }
 });
 
-test('las rutas limpias tienen rewrite 200 y están una vez en el sitemap', () => {
+test('las rutas limpias no llevan rewrite explícito a .html y están una vez en el sitemap', () => {
   const rules = redirects.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
   for (const entry of data.entries) {
-    const expectedRule = `${entry.url} ${entry.url}.html 200`;
-    assert.equal(rules.filter((line) => line === expectedRule).length, 1, `Rewrite ausente o duplicado para ${entry.url}`);
+    assert(existsSync(outputPathFor(entry)), `Falta la ficha estática de ${entry.url}`);
+    const forbiddenRule = `${entry.url} ${entry.url}.html 200`;
+    assert(
+      !rules.includes(forbiddenRule),
+      `_redirects no debe rewritear ${entry.url} a su .html: Cloudflare Pages ya sirve *.html en la ruta limpia automáticamente y una regla explícita aquí produce un bucle de redirección`,
+    );
 
     const expectedSitemapEntry = `<loc>https://miebau.es${entry.url}</loc>`;
     assert.equal(sitemap.split(expectedSitemapEntry).length - 1, 1, `Entrada de sitemap ausente o duplicada para ${entry.url}`);
