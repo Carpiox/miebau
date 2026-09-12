@@ -316,3 +316,63 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     patrón de otra sección del proyecto se copió completo solo porque la
     estructura de generador es la misma.
   (PR #15, mergeado)
+- 2026-09-11/12: **Descubierto que el sitio nunca llegó a producción pese a
+  meses de PRs en verde**: Netlify tiene dos proyectos conectados al mismo
+  repo — "miebau" (no es el que sirve `miebau.es`, un red herring que llevó a
+  falsas confirmaciones de "ya está en producción" toda la sesión) y
+  `astonishing-torrone-1d9db7` (el real, atado al dominio). Los *previews* de
+  PR seguían saliendo en verde porque usan un cupo de crédito distinto al de
+  los *despliegues de producción*; estos últimos llevaban semanas
+  "skipped — Skipped due to account credit usage exceeded" en silencio, sin
+  ningún check en rojo que lo delatara. **Lección de proceso**: un PR en
+  verde certifica que el build/preview funcionó, nunca que el contenido llegó
+  a servirse en el dominio real — si hay dudas, hay que pedir al usuario que
+  lo compruebe en el propio dominio (incógnito + hard refresh), no fiarse de
+  los checks. Decisión del usuario: migrar el hosting a **Cloudflare Pages**
+  (tier gratuito sin límite de créditos) y las suscripciones/contacto de
+  Netlify Forms a **Web3Forms**.
+- 2026-09-12: **Bug de bucle de redirección en Cloudflare Pages, encontrado y
+  arreglado con evidencia de repo, no suposición** (el usuario exigió
+  explícitamente verificar antes de tocar nada más, ver contexto en el propio
+  PR #17): tras apuntar el dominio a Cloudflare Pages, la home cargaba pero
+  `/notas-de-corte`, `/ponderaciones`, `/calculadora` y `/examenes/*` daban
+  "too many redirects".
+  - Evidencia reunida antes de tocar nada: `git ls-files` confirma que las
+    fichas de `notas-de-corte/`, `ponderaciones/` y `examenes/*/*.html` están
+    commiteadas tal cual (no se generan en build/deploy — los scripts
+    `scripts/build-*.mjs` son herramientas de desarrollo local, su salida se
+    commitea como cualquier otro archivo). No existe `package.json` ni
+    `netlify.toml` en el repo: la configuración de Netlify vivía enteramente
+    en su panel (build command vacío, publish directory = raíz del repo).
+  - **Causa real**: `_redirects` tenía 195 reglas `"/ruta /ruta.html 200"`
+    (necesarias en Netlify, que NO sirve URLs limpias de forma automática).
+    Cloudflare Pages sí lo hace de forma nativa: cualquier `archivo.html` se
+    sirve automáticamente en `/archivo`, y una petición a `/archivo.html` se
+    redirige (308) a `/archivo`. Al tener además una regla explícita que
+    reescribe `/archivo` → `/archivo.html`, la resolución interna de ese
+    destino `.html` vuelve a disparar la redirección automática de Cloudflare
+    hacia la ruta limpia, que vuelve a matchear la misma regla: bucle
+    infinito. La home no tiene ninguna regla propia en el archivo (se sirve
+    directamente desde `index.html`), por eso era la única ruta que cargaba.
+  - **Arreglo**: se vació `_redirects` (con comentario explicando el porqué,
+    para que nadie vuelva a añadir reglas `"ruta ruta.html 200"` sin saber que
+    rompen Cloudflare). Se actualizaron los tests de `ponderaciones`,
+    `examenes-seo` y `notas-de-corte` que antes exigían esas reglas: ahora
+    comprueban que **no** existen y que la ficha estática sigue existiendo.
+    23/23 archivos de test en verde. (PR #17, mergeado)
+  - **Nota para el futuro**: si algún día se vuelve a Netlify, hay que
+    reintroducir manualmente las reglas de rewrite en `_redirects` (Netlify sí
+    las necesita); en Cloudflare Pages, no añadirlas nunca para rutas que
+    apuntan a un `.html` con el mismo nombre.
+  - **Límite de esta sesión, aplicado también en el futuro**: este entorno
+    sandbox no tiene salida de red a dominios externos reales (confirmado con
+    403 en `cloudflare.com`/`pages.dev`, igual que antes con `miebau.es` y
+    `um.es`), y no hay ninguna herramienta/API de Cloudflare conectada — no se
+    puede configurar el panel de Cloudflare Pages ni verificar el deployment
+    en vivo con Playwright desde esta sesión. Cualquier verificación de la URL
+    real la tiene que hacer el usuario (o pegar el HTML/capturas para que
+    Claude las revise).
+  - **Pendiente**: el usuario va a crear la cuenta de Web3Forms y pasar el
+    Access Key para migrar el formulario de contacto/newsletter (hoy en
+    Netlify Forms) — sustituir el `data-netlify` por un `fetch()` POST a
+    `https://api.web3forms.com/submit`, manteniendo el honeypot.
