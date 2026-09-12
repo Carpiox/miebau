@@ -53,33 +53,13 @@
             <div class="footer-column"><div class="footer-heading">Sobre nosotros</div><a href="/sobre-nosotros">Sobre nosotros</a><a href="/guias">Guías</a><a href="/contacto">Contacto</a></div>
             <div class="footer-column"><div class="footer-heading">Legal</div><a href="/aviso-legal">Aviso legal</a><a href="/politica-privacidad">Privacidad</a><a href="/politica-cookies">Cookies</a></div>
           </div>
-          <section class="newsletter" aria-labelledby="newsletterTitle"><div><h3 id="newsletterTitle">Una nota menos de incertidumbre</h3><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-newsletter name="newsletter"><input type="hidden" name="form-name" value="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section>
+          <section class="newsletter" aria-labelledby="newsletterTitle"><div><h3 id="newsletterTitle">Una nota menos de incertidumbre</h3><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-web3forms="newsletter" name="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section>
           <div class="footer-bottom"><span>© 2026 Miebau. Todos los derechos reservados.</span><span>Hecho para estudiantes que quieren decidir mejor.</span></div>
         </div>
       </footer>`;
-    const newsletterForm = document.querySelector('[data-newsletter]');
-    newsletterForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const note = form.parentElement.querySelector('.newsletter-note');
-      const submitButton = form.querySelector('button[type="submit"]');
-      if (form.querySelector('[name="bot-field"]').value) return;
-      const body = new URLSearchParams(new FormData(form)).toString();
-      submitButton.disabled = true;
-      note.textContent = 'Enviando...';
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
-        .then((response) => {
-          if (!response.ok) throw new Error('newsletter submit failed');
-          note.textContent = '¡Gracias! Te avisaremos por email de las novedades.';
-          form.reset();
-        })
-        .catch(() => {
-          note.textContent = 'No hemos podido guardar tu correo. Inténtalo de nuevo en unos minutos.';
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-        });
-    });
+    // El envío real del formulario lo conecta js/forms.js (Web3Forms), cargado
+    // más abajo junto al resto de scripts dinámicos: para cuando se ejecuta,
+    // este formulario ya existe en el DOM.
   }
 
   function addCalculatorCta() {
@@ -100,7 +80,7 @@
   footer();
   addCalculatorCta();
   optimizeImages();
-  ['/js/integrations.js', '/js/seo.js'].forEach((src) => {
+  ['/js/forms.js', '/js/integrations.js', '/js/seo.js'].forEach((src) => {
     const script = document.createElement('script');
     script.src = src;
     script.async = false;
