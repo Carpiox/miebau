@@ -423,3 +423,73 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     usuario**: probar el envío real en `miebau.es` ya desplegado y confirmar
     que el correo le llega a la bandeja de Web3Forms/su email.
   (PR #19, mergeado)
+- 2026-09-13: **Auditoría de enlazado interno pedida por el usuario tras un
+  reporte de Ahrefs** (9 páginas huérfanas, 13 con solo 1 enlace entrante
+  dofollow, 1 canónica sin entrantes, 2 redirigidas sin entrantes —
+  coincide con la indexación pobre en Search Console: 24/194 páginas,
+  posición media ~52). Sin CSV de Ahrefs disponible, se reconstruyó el
+  grafo de enlaces internos leyendo `sitemap.xml` + los 197 HTML del repo.
+  - **Causa raíz #1 (la grande), diagnosticada y arreglada**: `<nav
+    class="navbar">` y `<footer>` llegaban **vacíos** en el HTML crudo de
+    las 197 páginas; `js/site.js` los rellenaba enteros con `outerHTML` en
+    runtime. Cualquier crawler que no ejecute JavaScript (Ahrefs por
+    defecto, y el primer pase de Googlebot antes de su cola de renderizado)
+    veía el sitio prácticamente sin navegación. Prueba de esto: simulando
+    un rastreo sin JS contra el propio repo salieron **9 huérfanas y 14 con
+    1 solo enlace** — casi idéntico a lo que reportó Ahrefs. Arreglado: nav
+    y footer ahora se sirven como HTML estático real en las 197 páginas,
+    generados en build time.
+    - Nuevo `scripts/build-nav-footer.mjs`: fuente única de
+      `renderNav(activeKey)`/`renderFooter()`, con el mismo patrón
+      `--check`/escritura que ya usan los demás generadores. Aplica el
+      nav/footer real a las 17 páginas de nivel superior (mapa de
+      `activeKey` por página, confirmado con el usuario antes de generar
+      nada). `applyNavFooter()` usa regex que reconocen tanto el
+      placeholder vacío como el nav/footer ya renderizado — necesario para
+      que `--check` y una re-ejecución sean idempotentes (el primer intento
+      sin esto rompía `--check` en cuanto se escribía una vez).
+    - Los 3 generadores existentes (examenes, ponderaciones,
+      notas-de-corte) importan esas mismas funciones. **Otra vez** las 46
+      fichas privadas de ponderaciones necesitaron trato aparte: su bloque
+      de nav/footer vive fuera de los marcadores `GENERATED_START/END` que
+      el generador sí regenera, así que hubo que añadir un paso de upsert
+      dedicado en `expectedFiles()` para ellas (mismo punto ciego,
+      tercera vez, que ya había pasado con los enlaces de privacidad y con
+      los formularios de aviso — **lección repetida**: cualquier cambio
+      estructural en ponderaciones tiene que revisar explícitamente si
+      toca también las fichas privadas sin registros, no asumir que un
+      generador "regenera todo").
+    - `js/site.js`: `header()`/`footer()` (construían markup con
+      `outerHTML`) → `wireNav()` (solo engancha el toggle móvil sobre el
+      `#navToggle`/`#siteMenu` que ya existen). Mismas clases/IDs que
+      antes en todos los sitios → cero cambios en `css/style.css`, cero
+      riesgo de regresión visual.
+    - Verificación en tres capas, pedidas explícitamente por el usuario
+      antes de cada paso siguiente: (1) `node --test tests/*.test.mjs`
+      35/35, incluido el nuevo `tests/nav-footer.test.mjs`; (2) Playwright
+      antes/después (chrome-devtools-mcp sigue sin estar disponible en
+      esta sesión) comparando home, una ficha de examen, una ficha privada
+      de ponderaciones y una página top-level — texto y capturas
+      pixel-idénticas, toggle móvil con el mismo comportamiento exacto
+      (14/14); (3) `curl` puro (sin motor JS) sobre esas mismas 4 páginas,
+      confirmando que los `<a href>` reales ya están en el HTML tal como
+      lo entrega el servidor, antes de que se ejecute ningún script — el
+      único punto que Playwright no garantiza del todo, porque compara el
+      DOM después de renderizar.
+    - **Nota técnica para el futuro**: Playwright con `waitUntil:
+      'networkidle'` se queda colgado en este sandbox porque el sitio
+      carga Google Fonts y `googletagmanager.com`, ambos bloqueados por el
+      proxy de red (`EGRESS_BLOCKED`/conexión rechazada) — la conexión a
+      `fonts.googleapis.com` no falla rápido, se queda a medias. Usar
+      `waitUntil: 'domcontentloaded'` y bloquear esos dominios con
+      `page.route()` antes de navegar.
+  - **Causa raíz #2 (más pequeña, todavía sin arreglar)**: el patrón "Más
+    universidades de tu comunidad" en `/ponderaciones` deja huérfanas o
+    con solo 1 entrante a las universidades en regiones de 1-2
+    universidades (`uniovi`, `uclm`, `uex` sin ningún entrante; 6 pares
+    aislados con 1 cada uno). Diagnosticada pero no implementada todavía —
+    pendiente de decidir con el usuario si se aborda haciendo estático el
+    directorio de universidades por comunidad en `ponderaciones.html`
+    (hoy `#regionQuickLinks` se rellena solo por JS, igual que el nav/footer
+    antes de este arreglo).
+  (PR #21, mergeado)
