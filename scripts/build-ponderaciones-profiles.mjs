@@ -2,6 +2,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+import { applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
 const PROFILE_DIR = path.join(ROOT, 'ponderaciones');
@@ -411,7 +413,7 @@ ${scripts}  <script type="application/ld+json">${breadcrumb}</script>
 ${faqSchema}
 </head>
 <body>
-  <nav class="navbar" aria-label="Navegación principal"></nav>
+  ${renderNav('ponderaciones')}
   <main class="page">
     <header class="content-hero">
       <span class="eyebrow">${university.id.endsWith('-publicas') ? 'Cobertura pública regional' : 'Universidad pública'} · ${escapeHtml(university.region)}</span>
@@ -442,7 +444,7 @@ ${renderRelatedUniversitiesSection(data, university)}
       </aside>
     </section>
   </main>
-  <footer></footer>
+  ${renderFooter()}
 </body>
 </html>
 `;
@@ -522,7 +524,8 @@ async function expectedFiles(data) {
     const withFaq = upsertPrivateFaqSection(withDecision, renderFaqSection(faqEntries));
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
     const withRelated = upsertPrivateRelatedSection(withSchema, renderRelatedUniversitiesSection(data, university));
-    files.push({ filePath, content: withRelated });
+    const withNavFooter = applyNavFooter(withRelated, 'ponderaciones');
+    files.push({ filePath, content: withNavFooter });
   }
   const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
   const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));

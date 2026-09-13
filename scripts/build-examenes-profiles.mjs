@@ -2,6 +2,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+import { renderFooter, renderNav } from './build-nav-footer.mjs';
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
 const OUTPUT_DIR = path.join(ROOT, 'examenes');
@@ -263,7 +265,7 @@ function renderProfile(data, entry) {
   <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
 </head>
 <body>
-  <nav class="navbar" aria-label="Navegación principal"></nav>
+  ${renderNav('examenes')}
   <main class="page">
     <header class="content-hero">
       <span class="eyebrow">Estructura oficial · ${escapeHtml(details.curso_referencia)}</span>
@@ -315,7 +317,7 @@ ${renderRelatedExamLinks(data.entries, entry)}        <p class="profile-global-l
       </aside>
     </section>
   </main>
-  <footer></footer>
+  ${renderFooter()}
 </body>
 </html>
 `;

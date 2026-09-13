@@ -2,6 +2,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+import { renderFooter, renderNav } from './build-nav-footer.mjs';
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'notas-corte-2026.json');
 const OUTPUT_DIR = path.join(ROOT, 'notas-de-corte');
@@ -139,7 +141,7 @@ function renderProfile(data, entry) {
   <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
 </head>
 <body>
-  <nav class="navbar" aria-label="Navegación principal"></nav>
+  ${renderNav('notas-de-corte')}
   <main class="page">
     <header class="content-hero">
       <span class="eyebrow">Nota de corte verificada · ${escapeHtml(entry.curso)}</span>
@@ -181,7 +183,7 @@ ${renderRelatedEntriesSection(data, entry)}
       </aside>
     </section>
   </main>
-  <footer></footer>
+  ${renderFooter()}
 </body>
 </html>
 `;
