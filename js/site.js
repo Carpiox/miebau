@@ -1,65 +1,24 @@
-/* Miebau shared frontend components: header, footer, newsletter and global CTA. */
+/* Miebau shared frontend components: nav toggle, newsletter and global CTA.
+   El nav y el footer ya llegan como HTML estático real en cada página
+   (generados por scripts/build-nav-footer.mjs y los demás generadores) —
+   antes se construían aquí mismo con outerHTML, invisibles para cualquier
+   crawler que no ejecute JavaScript. Este archivo ahora solo añade
+   comportamiento sobre el markup que ya existe: abrir/cerrar el menú móvil. */
 (function () {
   const path = location.pathname.replace(/\/+$/, '') || '/';
   const page = path.split('/').pop() || 'index.html';
   const pageKey = page.replace(/\.html$/, '');
-  const isPonderaciones = pageKey === 'ponderaciones' || path.indexOf('/ponderaciones/') === 0;
-  const active = (file) => {
-    const fileKey = file.replace(/\.html$/, '');
-    return fileKey === 'ponderaciones' ? (isPonderaciones ? 'active' : '') : (pageKey === fileKey ? 'active' : '');
-  };
-  const logo = '<span class="brand-mark" aria-hidden="true">✓</span><span>mi<span style="color:var(--primary)">ebau</span></span>';
 
-  function header() {
-    const oldHeader = document.querySelector('.navbar');
-    if (!oldHeader) return;
-    oldHeader.outerHTML = `
-      <nav class="navbar site-nav" aria-label="Navegación principal">
-        <div class="navbar-inner">
-          <a class="navbar-brand" href="/" aria-label="Miebau, inicio">${logo}</a>
-          <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
-          <ul class="navbar-links" id="siteMenu">
-            <li><a class="${active('calculadora.html')}" href="/calculadora">Calculadora</a></li>
-            <li><a class="${active('ponderaciones.html')}" href="/ponderaciones">Ponderaciones</a></li>
-            <li><a class="${active('examenes.html')}" href="/examenes">Exámenes</a></li>
-            <li><a class="${active('notas-de-corte.html')}" href="/notas-de-corte">Notas de corte</a></li>
-            <li><a class="${active('guias.html')}" href="/guias">Guías</a></li>
-            <li><a class="${active('premium.html')}" href="/premium">Premium</a></li>
-            <li><a class="${active('sobre-nosotros.html')}" href="/sobre-nosotros">Sobre nosotros</a></li>
-          </ul>
-          <div class="nav-actions"><a class="btn btn-primary nav-cta" href="/calculadora">Calcular mi nota</a></div>
-        </div>
-      </nav>`;
+  function wireNav() {
     const toggle = document.getElementById('navToggle');
     const menu = document.getElementById('siteMenu');
+    if (!toggle || !menu) return;
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
       toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
       menu.classList.toggle('open', !open);
     });
-  }
-
-  function footer() {
-    const oldFooter = document.querySelector('footer');
-    if (!oldFooter) return;
-    oldFooter.outerHTML = `
-      <footer class="site-footer">
-        <div class="site-footer-inner">
-          <div class="footer-top">
-            <div class="footer-intro"><a class="navbar-brand" href="/">${logo}</a><p>Herramientas claras para tomar decisiones con calma antes, durante y después de la EvAU.</p><div class="social-links" aria-label="Redes sociales"><a href="/proximamente" aria-label="Instagram">IG</a><a href="/proximamente" aria-label="TikTok">TT</a><a href="/proximamente" aria-label="X">X</a></div></div>
-            <div class="footer-column"><div class="footer-heading">Herramientas</div><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a><a href="/notas-de-corte">Notas de corte</a><a href="/calendario-ebau">Calendario EBAU</a></div>
-            <div class="footer-column"><div class="footer-heading">Premium</div><a href="/premium">Miebau Premium</a><a href="/precios">Precios</a><a href="/preguntas-frecuentes">Preguntas frecuentes</a></div>
-            <div class="footer-column"><div class="footer-heading">Sobre nosotros</div><a href="/sobre-nosotros">Sobre nosotros</a><a href="/guias">Guías</a><a href="/contacto">Contacto</a></div>
-            <div class="footer-column"><div class="footer-heading">Legal</div><a href="/aviso-legal">Aviso legal</a><a href="/politica-privacidad">Privacidad</a><a href="/politica-cookies">Cookies</a></div>
-          </div>
-          <section class="newsletter" aria-labelledby="newsletterTitle"><div><h3 id="newsletterTitle">Una nota menos de incertidumbre</h3><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-web3forms="newsletter" name="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section>
-          <div class="footer-bottom"><span>© 2026 Miebau. Todos los derechos reservados.</span><span>Hecho para estudiantes que quieren decidir mejor.</span></div>
-        </div>
-      </footer>`;
-    // El envío real del formulario lo conecta js/forms.js (Web3Forms), cargado
-    // más abajo junto al resto de scripts dinámicos: para cuando se ejecuta,
-    // este formulario ya existe en el DOM.
   }
 
   function addCalculatorCta() {
@@ -76,8 +35,7 @@
     });
   }
 
-  header();
-  footer();
+  wireNav();
   addCalculatorCta();
   optimizeImages();
   ['/js/forms.js', '/js/integrations.js', '/js/seo.js'].forEach((src) => {
