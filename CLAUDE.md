@@ -493,3 +493,33 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     (hoy `#regionQuickLinks` se rellena solo por JS, igual que el nav/footer
     antes de este arreglo).
   (PR #21, mergeado)
+- 2026-09-14: **Causa raíz #2 arreglada**: el directorio de universidades por
+  comunidad autónoma de `/ponderaciones` (`#pdfGrid`) también se generaba
+  100% en el cliente (`js/ponderaciones.js`, función `render()`) — el HTML
+  estático solo dejaba `<p class="catalog-empty-state">Elige una comunidad
+  autónoma...</p>`, sin ningún `<a href>` real. El propio JS de cliente,
+  encima, solo muestra esa lista tras seleccionar una comunidad — con la
+  carga inicial y sin JS, un crawler no veía ni un enlace, ni siquiera a las
+  18 universidades con datos verificados.
+  - Nuevo `scripts/build-ponderaciones-directory.mjs` (mismo patrón
+    `--check`/escritura que el resto de generadores): agrupa las 82
+    universidades por comunidad (públicas y privadas por separado dentro
+    de cada una, mismo markup `.university-group`/`.pdf-grid`/`.pdf-card`
+    que ya usaba el JS, cero CSS nuevo) y escribe los enlaces reales dentro
+    de un marcador `ponderaciones-directory:generated:start/end` en
+    `ponderaciones.html`. `js/ponderaciones.js` no se tocó: el filtro y el
+    buscador siguen sustituyendo ese contenido en cuanto alguien interactúa,
+    exactamente igual que antes para una persona con JS.
+  - **Resultado**: 82/82 universidades con enlace real (antes 18). Las 3
+    huérfanas de la causa raíz #2 (`uniovi`, `uclm`, `uex`, sin ninguna
+    hermana en su comunidad) pasan a tener enlace entrante real. Verificado
+    con `curl` puro (sin JS) contra el HTML servido, no solo con Playwright.
+  - **Nota**: los 6 pares aislados (`unizar`/`san-jorge`,
+    `unican`/`universidad-europea-del-atlantico`, etc., comunidades con
+    solo 2 universidades) ahora tienen 2 entrantes en vez de 1 (el nuevo
+    directorio + el enlace mutuo de siempre) — mejor, aunque siguen sin ser
+    un enlazado especialmente rico. No se ha tocado el patrón "Más
+    universidades de tu comunidad" en sí; si hiciera falta reforzarlo más
+    (p. ej. enlazar también a universidades de comunidades vecinas), es una
+    decisión de producto para una sesión futura, no se ha hecho aquí.
+  (PR #23, mergeado)
