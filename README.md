@@ -1,141 +1,179 @@
 # Miebau
 
-**Miebau** es una web para estudiantes que se preparan para la **EvAU / EBAU** (Selectividad)
-en España. Nace de la idea de que preparar la Selectividad no debería significar buscar
-por 20 sitios distintos qué examen te toca, qué pondera tu carrera, o si aprobarás con
-la nota que sacas en un simulacro.
+**Miebau** es un sitio de recursos para estudiantes que preparan la **EvAU / EBAU**
+(Selectividad) en España: calculadora de nota de admisión, ponderaciones oficiales por
+universidad, un buscador de exámenes oficiales por asignatura y comunidad autónoma, y
+notas de corte verificadas por universidad y grado.
 
-El proyecto lo llevamos dos personas, a tiempo parcial, con la idea de hacerlo crecer
-poco a poco: primero consolidando las herramientas gratuitas y el SEO, después
-metiendo producto de pago, y más adelante una comunidad donde los propios estudiantes
-compartan apuntes.
-
-🔗 Producción: **https://miebau.es**
-📦 Repo: `Carpiox/miebau`
-🚀 Deploy: Netlify (autodeploy desde `main`, previews automáticos en cada PR)
+- 🔗 Producción: **https://miebau.es**
+- 📦 Repositorio: [`Carpiox/miebau`](https://github.com/Carpiox/miebau)
+- 🚀 Deploy: **Cloudflare Pages** (autodeploy desde `main`)
 
 ---
 
-## Qué hay ya hecho
+## Stack técnico
 
-- **Calculadora de nota de admisión** (`/calculadora`) — EvAU/EBAU, CFGS y Mayores de 25,
-  con historial, comparación de simulaciones y resultado compartible por URL.
-- **Ponderaciones oficiales** (`/ponderaciones` + fichas por universidad) — más de 8.000
-  registros con fuente oficial, cobertura marcada como `verified` / `partial` / `pending`
-  / `blocked` (nunca se rellenan huecos por "parecido" a otra universidad).
-- **Buscador de exámenes por asignatura y comunidad** (`/examenes/[comunidad]/[asignatura]`)
-  — páginas estáticas reales (no un filtro sin URL propia) pensadas para posicionar en
-  Google por búsquedas de tipo "examen selectividad [asignatura] [comunidad] resuelto".
+El sitio es **HTML + CSS + JavaScript vanilla, sin framework ni backend**:
 
-## Hacia dónde vamos
+- No hay `package.json` ni paso de build. Los `.html` que ves en el repo son
+  exactamente los que se sirven en producción.
+- El único uso de Node es en `scripts/*.mjs` (ESM): generadores de línea de comandos
+  que se ejecutan a mano en desarrollo para producir o verificar páginas HTML a partir
+  de los JSON de `data/`. No corren en producción — su salida se commitea como
+  cualquier otro archivo estático.
+- Los tests usan el **test runner nativo de Node** (`node --test`), sin Jest ni
+  ninguna otra dependencia de testing.
+- Sin librerías de frontend: cada página tiene su propio `<script>` (o los comparte
+  vía un pequeño loader dinámico en `js/site.js`), manipulando el DOM directamente.
+- **Service worker** propio (`sw.js`) con estrategia *stale-while-revalidate* y
+  versionado de caché, más un `manifest.webmanifest` (PWA instalable).
 
-La hoja de ruta, de más cercana a más futura:
+## Arquitectura: páginas generadas a partir de datos
 
-1. **Terminar el SEO de exámenes.** Completar las combinaciones asignatura × comunidad
-   con contenido único y datos verificados, y arreglar el enlazado interno para que
-   Google descubra las páginas nuevas sin depender solo del sitemap.
-2. **Packs de pago por asignatura + comunidad** (lanzamiento ~3,99 €, precio normal
-   ~4,95-4,99 €): preguntas de examen organizadas, simulacros y un análisis de qué
-   contenido ha sido históricamente más frecuente (sin usar la palabra "predicción" —
-   se habla de "relevancia histórica" o "contenido prioritario").
-3. **Apuntes gratuitos.** Espacio para subir y compartir apuntes por asignatura, tanto
-   nuestros como de la propia comunidad de estudiantes, como gancho de tráfico y
-   confianza antes de la compra de un pack.
-4. **Membresías.** Una vez haya suficiente producto (packs + apuntes + herramientas),
-   una suscripción que dé acceso a todo en vez de comprarlo suelto por asignatura.
+Las fichas de ponderaciones, exámenes y notas de corte **no se escriben a mano una por
+una**: se generan (y se verifican) a partir de un JSON normalizado en `data/`, mediante
+scripts en `scripts/` que siguen todos el mismo patrón:
 
-No hay fechas cerradas para estos puntos — se van desarrollando según el tiempo y los
-datos (tráfico, indexación, qué compran los usuarios) lo permitan. Lo que sí es una
-regla fija del proyecto: **nunca lanzar contenido que aparente ser más de lo que es**
-(ni exámenes de mentira, ni ponderaciones inventadas, ni packs vacíos).
+```bash
+node scripts/build-XXX.mjs          # escribe/regenera el HTML a partir del JSON
+node scripts/build-XXX.mjs --check  # falla si el HTML commiteado no coincide con el JSON (usado en CI/tests)
+```
 
----
+| Script | Qué genera |
+|---|---|
+| `build-ponderaciones-data.mjs` | Valida y normaliza el dataset fuente de ponderaciones antes de publicarlo. |
+| `build-ponderaciones-profiles.mjs` | Genera las 82 fichas de `/ponderaciones/<universidad>` (tabla completa para las que tienen datos verificados, aviso "avísame" para las que no) y el bloque "Últimas ponderaciones publicadas" del hub. |
+| `build-ponderaciones-directory.mjs` | Genera el directorio de universidades agrupadas por comunidad autónoma dentro de `ponderaciones.html`, como HTML estático real (no depende de que se ejecute JavaScript). |
+| `build-examenes-profiles.mjs` | Genera las 30 fichas de `/examenes/<comunidad>/<asignatura>` y su enlazado interno cruzado ("Sigue explorando exámenes"). |
+| `build-notas-corte-profiles.mjs` | Genera las 68 fichas de `/notas-de-corte/<grado>-<universidad>`, el bloque "Últimas notas de corte publicadas" y el badge de cobertura del hub. |
+| `build-nav-footer.mjs` | Fuente única del `<nav>`/`<footer>` del sitio; los demás generadores lo importan para que las 197 páginas compartan exactamente el mismo HTML estático. |
 
-## Parte técnica
-
-### Stack
-
-- **HTML + CSS + JavaScript vanilla**, sin framework ni backend. No hay build step ni
-  `package.json`: los `.html` que ves en el repo son los que se sirven tal cual.
-- El único uso de Node es en `scripts/*.mjs`, generadores que se ejecutan a mano para
-  producir/actualizar páginas HTML a partir de los JSON de datos (no corren en
-  producción, son herramientas de desarrollo).
-- Enrutado con `_redirects` (rewrites 200 de Netlify): una URL "limpia" como
-  `/ponderaciones/uam` sirve el contenido de `ponderaciones/uam.html` sin cambiar la
-  URL visible ni redirigir. Cada página fija su propia URL limpia como `canonical`.
-- Migración a **Astro** para la capa de exámenes SEO: valorada/en curso, aún no
-  aplicada al resto del sitio.
+Cada bloque generado vive entre marcadores HTML (`<!-- xxx:generated:start -->` /
+`:end`), así que se puede regenerar sin tocar el resto de la página a mano. Si tocas un
+dato, el flujo correcto es: editar el JSON en `data/` → ejecutar el generador
+correspondiente → revisar el diff → correr los tests.
 
 ### Estructura del repo
 
 ```
-├── index.html, calculadora.html, ponderaciones.html, examenes.html, ...  → páginas de nivel superior
-├── examenes/<comunidad>/<asignatura>.html     → fichas de examen (SEO, una por combinación)
-├── ponderaciones/<Universidad>/...            → fichas de ponderaciones por universidad
-├── ponderaciones/<universidad>.html           → fichas de universidad individuales
+├── index.html, calculadora.html, ponderaciones.html, examenes.html, ...  → páginas de nivel superior (17)
+├── examenes/<comunidad>/<asignatura>.html      → 30 fichas de examen, generadas
+├── ponderaciones/<universidad>.html            → 82 fichas de universidad, generadas
+├── notas-de-corte/<grado>-<universidad>.html   → 68 fichas de nota de corte, generadas
 ├── data/
-│   ├── ponderaciones-2026-2027.json           → dataset normalizado de ponderaciones
-│   └── examenes-seo.json                      → dataset de las combinaciones asignatura+comunidad
-├── scripts/
-│   ├── build-ponderaciones-data.mjs           → valida/normaliza el JSON de ponderaciones
-│   ├── build-ponderaciones-profiles.mjs       → genera/verifica las fichas HTML de universidad
-│   ├── build-examenes-profiles.mjs            → genera las fichas HTML de examen
-│   └── fixtures/                              → datos fuente de ejemplo para los generadores
-├── js/                                        → lógica de cada página (calculadora, ponderaciones, exámenes, core)
-├── css/style.css                              → única hoja de estilos del sitio
-├── tests/*.test.mjs                           → pruebas con el test runner nativo de Node
-├── reports/                                   → informes de cobertura/estado (ej. ponderaciones-coverage.md)
-├── _redirects                                 → rewrites de rutas limpias
+│   ├── ponderaciones-2026-2027.json            → dataset de ponderaciones (universidades, datasets, fuentes)
+│   ├── examenes-seo.json                       → dataset de exámenes por comunidad+asignatura
+│   └── notas-corte-2026.json                   → dataset de notas de corte por grado
+├── scripts/*.mjs                               → generadores (ver tabla arriba) + scripts/fixtures/
+├── js/                                         → lógica de cada página (calculadora, ponderaciones, exámenes, notas de corte, forms, seo, site)
+├── css/style.css                               → única hoja de estilos del sitio
+├── tests/*.test.mjs                            → pruebas con el test runner nativo de Node
+├── _redirects                                  → reescrituras de rutas limpias para Cloudflare Pages
 └── sitemap.xml, robots.txt                     → SEO técnico
 ```
 
-### Cómo se generan las fichas
+## Funcionalidades clave
 
-Las fichas de ponderaciones y de exámenes **no se escriben a mano una por una**: se
-generan (o verifican) a partir del JSON en `data/` mediante los scripts en `scripts/`.
-Si tocas un dato, el flujo correcto es:
+- **Calculadora de nota de admisión** (`/calculadora`) — modos EvAU/EBAU, CFGS y
+  Mayores de 25 años, con historial y simulaciones guardadas en `localStorage` y
+  resultado compartible codificado en la URL (sin backend).
+- **Ponderaciones oficiales** (`/ponderaciones`) — **82 universidades** (36 públicas y
+  46 privadas) de **17 comunidades autónomas**, con **912 titulaciones** y **8.397
+  pares materia-coeficiente** verificados en **4 datasets** con **23 fuentes**
+  oficiales citadas. Cada universidad marca su cobertura como `verified`, `partial`,
+  `pending` o `blocked` — nunca se completa un hueco por parecido con otra
+  universidad.
+- **Buscador de exámenes oficiales** (`/examenes`) — **30 fichas** reales
+  (15 asignaturas troncales × 2 comunidades: Región de Murcia y Comunidad de Madrid),
+  cada una con estructura de examen verificada y enlazado cruzado a exámenes de la
+  misma asignatura en otras comunidades.
+- **Notas de corte** (`/notas-de-corte`) — **68 grados** de la Universidad de Murcia
+  (curso 2025-2026), con fuente oficial citada por entrada y aviso explícito cuando el
+  cupo corresponde a segunda plaza o admisión no prioritaria de FP.
+- **Formularios** (contacto, newsletter, aviso de ponderaciones) enviados vía
+  **Web3Forms** (`js/forms.js`), con honeypot anti-spam y confirmación en pantalla sin
+  recargar la página.
 
-1. Editar el JSON fuente correspondiente en `data/` (o su fixture en `scripts/fixtures/`).
-2. Ejecutar el generador con Node, por ejemplo:
-   ```bash
-   node scripts/build-ponderaciones-profiles.mjs
-   node scripts/build-examenes-profiles.mjs
-   ```
-3. Revisar el HTML generado y correr los tests antes de commitear.
+## SEO técnico
 
-No editar a mano el HTML generado si el dato viene de un JSON — se perdería en la
-siguiente regeneración.
+- **JSON-LD** por tipo de página: `BreadcrumbList` en todas las fichas,
+  `FAQPage`/`Question`/`Answer` en ponderaciones y notas de corte,
+  `WebApplication` en la calculadora, `Organization`/`EducationalOrganization` en la
+  portada.
+- **`sitemap.xml`** (194 URLs) y `robots.txt` mantenidos junto al contenido; los tests
+  de cada sección (`examenes-seo`, `ponderaciones`, `notas-de-corte`) verifican que
+  cada URL nueva aparece exactamente una vez en el sitemap y que su ficha estática
+  existe de verdad.
+- **Nav y footer servidos como HTML estático real** en las 197 páginas (generados por
+  `build-nav-footer.mjs`): antes se inyectaban vacíos y se rellenaban con JavaScript en
+  el navegador, invisibles para cualquier crawler que no ejecute JS. Mismo arreglo
+  aplicado al directorio de universidades por comunidad de `/ponderaciones`
+  (`build-ponderaciones-directory.mjs`) — ambos eran la causa de páginas huérfanas
+  detectadas por una auditoría de enlazado interno.
+- **`_redirects`** vacío intencionadamente: Cloudflare Pages ya sirve cualquier
+  `archivo.html` en su ruta sin extensión de forma nativa (y redirige en sentido
+  contrario), así que no lleva las reglas de rewrite que sí hacían falta en Netlify.
 
-### Tests
+## Desarrollo local
+
+No hay dependencias que instalar (no hay `package.json`). Basta con:
 
 ```bash
+git clone https://github.com/Carpiox/miebau.git
+cd miebau
+python3 -m http.server 8000   # o cualquier servidor de archivos estáticos
+```
+
+Y abrir `http://localhost:8000/index.html` (las URLs limpias tipo `/ponderaciones/uam`
+solo las resuelve Cloudflare Pages en producción; en local se sirven con su nombre de
+archivo, p. ej. `ponderaciones/uam.html`).
+
+### Scripts disponibles
+
+```bash
+# Regenerar/verificar fichas a partir de los JSON de data/
+node scripts/build-ponderaciones-data.mjs [--check]
+node scripts/build-ponderaciones-profiles.mjs [--check]
+node scripts/build-ponderaciones-directory.mjs [--check]
+node scripts/build-examenes-profiles.mjs [--check]
+node scripts/build-notas-corte-profiles.mjs [--check]
+node scripts/build-nav-footer.mjs [--check]
+
+# Suite de tests completa
 node --test tests/*.test.mjs
 ```
 
-Cubren: validación del fixture de ponderaciones, coherencia del generador de fichas,
-SEO de las páginas de examen (títulos, canonicals, ausencia de contenido duplicado),
-y el formulario de contacto.
+Los tests cubren: validación de los datasets, que el HTML generado coincida con el
+JSON fuente (modo `--check` de cada generador), SEO de cada tipo de ficha (títulos,
+canonicals, JSON-LD, ausencia de contenido duplicado o inventado), el envío de
+formularios, y la consistencia del nav/footer estático en las 197 páginas.
 
-### Desarrollo local
+## Despliegue
 
-Al no haber build step, cualquier servidor de archivos estáticos sirve:
+**Cloudflare Pages**, con autodeploy en cada push a `main`:
 
-```bash
-python -m http.server 8765
-```
+- Framework preset: `None`
+- Build command: *(vacío)* — no hay paso de build
+- Root directory / Build output directory: `/`
 
-Luego abre `http://localhost:8765/index.html` (o la página que quieras probar).
+El proyecto vivió antes en Netlify; la migración fue por el límite de créditos de
+despliegue del plan gratuito, no por ninguna limitación técnica de Netlify en sí.
 
-### Deploy
+## Roadmap
 
-Netlify despliega automáticamente `main` a producción y genera un *deploy preview*
-por cada pull request. La configuración de rutas vive en `_redirects`; no hay
-`netlify.toml` en el repo.
+1. **Terminar el SEO de exámenes**: ampliar las combinaciones asignatura × comunidad
+   con contenido único y datos verificados (hoy solo Región de Murcia y Comunidad de
+   Madrid).
+2. **Packs de pago** por asignatura y comunidad: preguntas de examen organizadas,
+   simulacros y análisis de qué contenido ha sido históricamente más frecuente.
+3. **Apuntes gratuitos** compartidos por la propia comunidad de estudiantes.
+4. **Membresías**: acceso conjunto a packs + apuntes + herramientas en vez de comprarlo
+   suelto.
+
+Regla fija del proyecto en todos estos pasos: **nunca publicar como verificado un dato
+que no lo esté** (ni ponderaciones, ni estructura de examen, ni notas de corte).
 
 ---
 
-## Contexto para quien retome el proyecto (o para Claude Code)
-
-Ver [`CLAUDE.md`](./CLAUDE.md) para las reglas de contenido SEO, el estado de
-verificación de datos por comunidad, el flujo de trabajo con ramas/PRs y el
-historial de qué se ha hecho en cada sesión.
+Para el contexto completo de decisiones de producto, reglas de contenido SEO y el
+historial sesión a sesión del desarrollo, ver [`CLAUDE.md`](./CLAUDE.md).
