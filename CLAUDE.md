@@ -523,3 +523,27 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     (p. ej. enlazar también a universidades de comunidades vecinas), es una
     decisión de producto para una sesión futura, no se ha hecho aquí.
   (PR #23, mergeado)
+- 2026-09-30: **Auditoría y mejora del enlazado interno de `/examenes`** (petición
+  del usuario; el repo es HTML estático, sin React ni prerender, y solo hay 2
+  comunidades con fichas: Murcia y Madrid). Auditoría con script propio sobre los
+  197 HTML: 0 enlaces rotos, 0 enlaces `.html`, canonical autorreferente en todas,
+  sitemap coherente con los archivos, solo 3 `noindex` (404, proximamente,
+  calendario-ebau; ninguna en sitemap). Las fichas de examen ya tenían 16
+  enlaces de cuerpo cada una (no los 4-5 que muestra Search Console, que
+  probablemente reflejan un rastreo anterior a PR #21), pero ninguno desde home,
+  `/ponderaciones`, `/notas-de-corte` ni `/guias`.
+  - Nuevos índices `/examenes/region-de-murcia` y `/examenes/comunidad-de-madrid`
+    (archivos hermanos `examenes/<comunidad>.html`, NO `index.html` dentro de la
+    carpeta, para que Cloudflare los sirva sin barra final), en sitemap.
+  - Taxonomía editorial en `scripts/examenes-taxonomia.mjs`: grupos Comunes
+    (Lengua, Inglés, Historia de España, Filosofía), Ciencias, Sociales, Artes y
+    Humanidades; asignaturas relacionadas con una frase propia por materia. No es
+    dato de examen, no afecta a datos verificados.
+  - Fichas: bloque "Otras asignaturas de <comunidad>" por grupo, párrafo
+    "Asignaturas relacionadas" con enlaces a calculadora, relacionadas y
+    ponderaciones, breadcrumb con nivel de comunidad. Home: bloque de troncales
+    generado entre marcadores `home-examenes:generated:start/end`.
+  - `tests/examenes-enlazado.test.mjs` vigila enlaces, anchors genéricos, ≥5
+    entrantes por ficha y párrafos sin repetir.
+  - Nota: el test 20 de `ponderaciones.test.mjs` falla con el árbol sucio (ver
+    sesión anterior); pasa con los cambios commiteados.
