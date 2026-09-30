@@ -3,11 +3,25 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { renderFooter, renderNav } from './build-nav-footer.mjs';
+import {
+  HOME_FEATURED_END,
+  HOME_FEATURED_START,
+  asignaturaSlug,
+  communityKeys,
+  communityOutputPath,
+  communitySlug,
+  communityUrl,
+  examAnchor,
+  renderCommunityPage,
+  renderHomeFeatured,
+} from './examenes-comunidades.mjs';
+import { COMMUNITIES, GROUPS, RELATED, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
 const OUTPUT_DIR = path.join(ROOT, 'examenes');
 const EXAM_INDEX_PATH = path.join(ROOT, 'examenes.html');
+const HOME_PATH = path.join(ROOT, 'index.html');
 const LATEST_EXAMS_START = '<!-- examenes-latest:generated:start -->';
 const LATEST_EXAMS_END = '<!-- examenes-latest:generated:end -->';
 const PENDING = 'pendiente_de_verificar';
@@ -160,7 +174,8 @@ function renderBreadcrumb(entry) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://miebau.es/' },
       { '@type': 'ListItem', position: 2, name: 'Exámenes', item: 'https://miebau.es/examenes' },
-      { '@type': 'ListItem', position: 3, name: `${entry.asignatura} · ${entry.comunidad}`, item: `https://miebau.es${entry.url}` },
+      { '@type': 'ListItem', position: 3, name: entry.comunidad, item: `https://miebau.es${communityUrl(communitySlug(entry))}` },
+      { '@type': 'ListItem', position: 4, name: entry.asignatura, item: `https://miebau.es${entry.url}` },
     ],
   }).replace(/</g, '\\u003c');
 }
@@ -205,32 +220,73 @@ function slugParts(entry) {
   return { comunidadSlug, asignaturaSlug };
 }
 
-function renderRelatedExamLinks(entries, entry) {
-  const { asignaturaSlug } = slugParts(entry);
+function findEntry(entries, comunidadSlug, asignaturaSlug) {
+  return entries.find((other) => {
+    const parts = slugParts(other);
+    return parts.comunidadSlug === comunidadSlug && parts.asignaturaSlug === asignaturaSlug;
+  });
+}
 
-  const sameComunidad = entries
-    .filter((other) => other.comunidad === entry.comunidad && other.slug !== entry.slug)
-    .sort((left, right) => left.asignatura.localeCompare(right.asignatura, 'es'));
+function joinList(items) {
+  if (items.length <= 1) return items.join('');
+  return `${items.slice(0, -1).join(', ')} y ${items[items.length - 1]}`;
+}
+
+function renderContextParagraph(entries, entry) {
+  const { comunidadSlug, asignaturaSlug } = slugParts(entry);
+  const related = RELATED[asignaturaSlug];
+  const community = COMMUNITIES[comunidadSlug];
+  assert(related && community, `Falta taxonomía de enlazado para ${entry.slug}`);
+
+  const links = related.relacionadas.map((slug) => {
+    const target = findEntry(entries, comunidadSlug, slug);
+    assert(target, `Asignatura relacionada inexistente: ${slug} en ${comunidadSlug}`);
+    return `<a href="${escapeHtml(target.url)}">${escapeHtml(target.asignatura)}</a>`;
+  });
+  const universities = community.ponderaciones
+    .map((uni) => `<a href="${escapeHtml(uni.href)}">${escapeHtml(uni.name)}</a>`);
+
+  return `        <h2>Asignaturas relacionadas</h2>
+        <p>${related.frase(links)} Para ver cuánto suma cada materia en tu nota de acceso, usa la <a href="/calculadora">calculadora de nota de admisión</a> y consulta el estado de las ponderaciones de ${joinList(universities)}.</p>
+`;
+}
+
+function renderRelatedExamLinks(entries, entry) {
+  const { comunidadSlug, asignaturaSlug } = slugParts(entry);
+  const ownGroup = groupOf(asignaturaSlug);
 
   const sameAsignatura = entries
     .filter((other) => slugParts(other).asignaturaSlug === asignaturaSlug && other.comunidad !== entry.comunidad)
     .sort((left, right) => left.comunidad.localeCompare(right.comunidad, 'es'));
 
-  if (sameComunidad.length === 0 && sameAsignatura.length === 0) return '';
-
-  const renderLinks = (list, textFor) => `        <div class="region-quick-links">
-${list.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(textFor(other))}</a>`).join('\n')}
+  // Mismo grupo primero, después el resto, para reforzar el enlazado temático.
+  const orderedGroups = [ownGroup, ...GROUPS.filter((group) => group !== ownGroup)];
+  const groupBlocks = orderedGroups.map((group) => {
+    const members = group.slugs
+      .filter((slug) => slug !== asignaturaSlug)
+      .map((slug) => findEntry(entries, comunidadSlug, slug))
+      .filter(Boolean);
+    if (members.length === 0) return '';
+    return `        <h4>${escapeHtml(group.label)}</h4>
+        <div class="region-quick-links">
+${members.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(examAnchor(other))}</a>`).join('\n')}
         </div>`;
+  }).filter(Boolean);
 
   const sections = [];
-  if (sameComunidad.length > 0) {
-    sections.push(`        <h3>Más asignaturas de ${escapeHtml(entry.comunidad)}</h3>
-${renderLinks(sameComunidad, (other) => other.asignatura)}`);
+  if (groupBlocks.length > 0) {
+    sections.push(`        <h3>Otras asignaturas de ${escapeHtml(entry.comunidad)}</h3>
+${groupBlocks.join('\n')}
+        <p class="profile-global-link"><a href="${communityUrl(comunidadSlug)}">Índice de exámenes PAU en ${escapeHtml(COMMUNITIES[comunidadSlug].withArticle)}</a></p>`);
   }
   if (sameAsignatura.length > 0) {
     sections.push(`        <h3>${escapeHtml(entry.asignatura)} en otras comunidades</h3>
-${renderLinks(sameAsignatura, (other) => other.comunidad)}`);
+        <div class="region-quick-links">
+${sameAsignatura.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(examAnchor(other))} en ${escapeHtml(COMMUNITIES[slugParts(other).comunidadSlug].withArticle)}</a>`).join('\n')}
+        </div>`);
   }
+
+  if (sections.length === 0) return '';
 
   return `        <h2>Sigue explorando exámenes</h2>
 ${sections.join('\n')}
@@ -302,6 +358,7 @@ ${renderOfficialExamLinks(entry)}
         <p><strong>Banco de exámenes:</strong> la integración del visor externo permanece pendiente de verificar, por lo que todavía no se incrusta ningún widget.</p>
         <p><strong>Ponderaciones 2026-2027:</strong> pendiente de verificar. Esta ficha no asigna coeficientes hasta disponer de una tabla oficial comprobada para ${communityWithArticle}.</p>
 
+${renderContextParagraph(data.entries, entry)}
 ${renderRelatedExamLinks(data.entries, entry)}        <p class="profile-global-link"><a href="/examenes">Ver todos los exámenes</a> · <a href="/ponderaciones#comunidades">Consultar ponderaciones por comunidad</a></p>
       </article>
 
@@ -327,6 +384,17 @@ function outputPathFor(entry) {
   return path.join(OUTPUT_DIR, `${entry.slug}.html`);
 }
 
+function renderCommunityIndexLinks(entries) {
+  const keys = [...new Set(entries.map(communitySlug))];
+  const links = keys
+    .map((key) => `          <a class="region-quick-link" href="${communityUrl(key)}">Exámenes PAU en ${escapeHtml(COMMUNITIES[key].withArticle)}</a>`)
+    .join('\n');
+  return `      <h3>Índices por comunidad</h3>
+      <div class="region-quick-links">
+${links}
+      </div>`;
+}
+
 function renderLatestExamSection(entries) {
   const latestEntries = [...entries]
     .sort((left, right) => right.prioridad - left.prioridad)
@@ -344,6 +412,7 @@ function renderLatestExamSection(entries) {
 
   return `    <section class="card" aria-labelledby="latestExamsTitle" style="margin-top: 0.5rem;">
       <h2 class="card-title" id="latestExamsTitle">Últimos exámenes añadidos</h2>
+${renderCommunityIndexLinks(entries)}
       <div class="exam-list">${items}
       </div>
     </section>`;
@@ -359,15 +428,33 @@ function renderExamIndex(source, entries) {
   return `${source.slice(0, contentStart)}\n${renderLatestExamSection(entries)}\n    ${source.slice(endIndex)}`;
 }
 
+function renderHome(source, data) {
+  const startIndex = source.indexOf(HOME_FEATURED_START);
+  const endIndex = source.indexOf(HOME_FEATURED_END);
+  assert(startIndex >= 0, `Falta el marcador ${HOME_FEATURED_START} en index.html`);
+  assert(endIndex > startIndex, `Falta el marcador ${HOME_FEATURED_END} en index.html`);
+  return `${source.slice(0, startIndex)}${renderHomeFeatured(data)}${source.slice(endIndex + HOME_FEATURED_END.length)}`;
+}
+
 async function expectedFiles(data) {
   const profileFiles = data.entries.map((entry) => ({
     filePath: outputPathFor(entry),
     content: renderProfile(data, entry),
   }));
+  const communityFiles = communityKeys(data).map((key) => ({
+    filePath: communityOutputPath(key),
+    content: renderCommunityPage(data, key),
+  }));
   const examIndex = await readFile(EXAM_INDEX_PATH, 'utf8');
+  const home = await readFile(HOME_PATH, 'utf8');
 
   return [
     ...profileFiles,
+    ...communityFiles,
+    {
+      filePath: HOME_PATH,
+      content: renderHome(home, data),
+    },
     {
       filePath: EXAM_INDEX_PATH,
       content: renderExamIndex(examIndex, data.entries),
@@ -397,7 +484,7 @@ async function main() {
     }
   }
 
-  console.log(`OK: ${data.entries.length} fichas y la sección de últimos exámenes generadas o verificadas.`);
+  console.log(`OK: ${data.entries.length} fichas, índices por comunidad, bloque de la home y sección de últimos exámenes generados o verificadas.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
