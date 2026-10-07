@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_SCRIPT, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
@@ -411,6 +411,7 @@ function renderPublicProfile(data, university, records) {
   <script src="/js/site.js" defer></script>
 ${scripts}  <script type="application/ld+json">${breadcrumb}</script>
 ${faqSchema}
+  ${ADSENSE_SCRIPT}
 </head>
 <body>
   ${renderNav('ponderaciones')}

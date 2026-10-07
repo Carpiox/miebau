@@ -51,10 +51,21 @@ export function renderFooter() {
   return `<footer class="site-footer"><div class="site-footer-inner"><div class="footer-top"><div class="footer-intro"><a class="navbar-brand" href="/">${LOGO}</a><p>Herramientas claras para tomar decisiones con calma antes, durante y después de la EvAU.</p><div class="social-links" aria-label="Redes sociales"><a href="/proximamente" aria-label="Instagram">IG</a><a href="/proximamente" aria-label="TikTok">TT</a><a href="/proximamente" aria-label="X">X</a></div></div><div class="footer-column"><div class="footer-heading">Herramientas</div><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a><a href="/notas-de-corte">Notas de corte</a><a href="/calendario-ebau">Calendario EBAU</a></div><div class="footer-column"><div class="footer-heading">Premium</div><a href="/premium">Miebau Premium</a><a href="/precios">Precios</a><a href="/preguntas-frecuentes">Preguntas frecuentes</a></div><div class="footer-column"><div class="footer-heading">Sobre nosotros</div><a href="/sobre-nosotros">Sobre nosotros</a><a href="/guias">Guías</a><a href="/contacto">Contacto</a></div><div class="footer-column"><div class="footer-heading">Legal</div><a href="/aviso-legal">Aviso legal</a><a href="/politica-privacidad">Privacidad</a><a href="/politica-cookies">Cookies</a></div></div><section class="newsletter" aria-labelledby="newsletterTitle"><div><h3 id="newsletterTitle">Una nota menos de incertidumbre</h3><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-web3forms="newsletter" name="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section><div class="footer-bottom"><span>© 2026 Miebau. Todos los derechos reservados.</span><span>Hecho para estudiantes que quieren decidir mejor.</span></div></div></footer>`;
 }
 
+// Cargador de Google AdSense. Va en el <head> estático de TODAS las páginas.
+export const ADSENSE_CLIENT = 'ca-pub-2269622537984613';
+export const ADSENSE_SCRIPT = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`;
+
+// Idempotente: añade el cargador justo antes de </head> si la página aún no lo tiene.
+export function ensureAdsScript(html) {
+  if (html.includes(ADSENSE_SCRIPT)) return html;
+  if (!html.includes('</head>')) throw new Error('No se encontró </head> para insertar el script de AdSense');
+  return html.replace(/\n?<\/head>/, `\n  ${ADSENSE_SCRIPT}\n</head>`);
+}
+
 export function applyNavFooter(html, activeKey) {
   if (!NAV_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <nav> en el HTML');
   if (!FOOTER_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <footer> en el HTML');
-  return html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter());
+  return ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter()));
 }
 
 // Páginas de nivel superior que no genera ningún otro script: activeKey debe
