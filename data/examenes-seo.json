@@ -354,6 +354,116 @@
       "name": "Modelo PAU 2026 de Griego II en Madrid",
       "sourceUrl": "https://www.ucm.es/file/2026-modelo-griego-ii-1",
       "scope": "Estructura cinco respuestas en comprensión y traducción, etimología y literatura."
+    },
+    {
+      "id": "madrid-pau-2026-aleman",
+      "community": "Comunidad de Madrid",
+      "subject": "Alemán",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Alemán en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-aleman",
+      "scope": "El modelo orientativo PAU 2026 detalla seis preguntas de comprensión, lengua y producción escrita, con sus elecciones y puntuaciones."
+    },
+    {
+      "id": "madrid-pau-2026-analisis-musical-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Análisis Musical II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Análisis Musical II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-analisis-musical-ii",
+      "scope": "El modelo orientativo PAU 2026 organiza teoría, audición sin partitura y audición con partitura, e indica opciones, escuchas y puntos."
+    },
+    {
+      "id": "madrid-pau-2026-artes-escenicas-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Artes Escénicas II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Artes Escénicas II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/artes-esc%C3%89nicas-13",
+      "scope": "El examen ordinario PAU 2026 acredita una propuesta de puesta en escena, tres cuestiones teóricas y una crítica o creación, con elecciones y puntos."
+    },
+    {
+      "id": "madrid-pau-2026-ciencias-generales",
+      "community": "Comunidad de Madrid",
+      "subject": "Ciencias Generales",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Ciencias Generales en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/ciencias-generales-5",
+      "scope": "El examen ordinario PAU 2026 contiene cuatro preguntas de 2,5 puntos: una obligatoria y tres elecciones A/B sobre biología, física y química."
+    },
+    {
+      "id": "madrid-pau-2026-coro-y-tecnica-vocal-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Coro y Técnica Vocal II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Coro y Técnica Vocal II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-coro-y-tecnica-vocal-ii-1",
+      "scope": "El modelo orientativo PAU 2026 distribuye cuatro partes entre análisis auditivo con partitura, escucha breve, conceptos vocales y test."
+    },
+    {
+      "id": "madrid-pau-2026-dibujo-artistico-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Dibujo Artístico II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Dibujo Artístico II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/dibujo-art%C3%8Dstico-ii-12",
+      "scope": "El examen ordinario PAU 2026 plantea un boceto y un dibujo final, permite elegir propuesta en ambos ejercicios y fija técnicas y criterios."
+    },
+    {
+      "id": "madrid-pau-2026-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/dibujo-t%C3%89cnico-aplicado-1",
+      "scope": "El examen ordinario PAU 2026 reúne tres ejercicios gráficos sobre modulación, perspectiva y representación de una pieza, con dos elecciones delimitadas."
+    },
+    {
+      "id": "madrid-pau-2026-diseno",
+      "community": "Comunidad de Madrid",
+      "subject": "Diseño",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Diseño en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/dise%C3%91o-18",
+      "scope": "El examen ordinario PAU 2026 combina dos respuestas de conocimiento con la elección de un bloque competencial de análisis y proyecto."
+    },
+    {
+      "id": "madrid-pau-2026-frances",
+      "community": "Comunidad de Madrid",
+      "subject": "Francés",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Francés en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-frances",
+      "scope": "El modelo orientativo PAU 2026 concreta tres bloques de comprensión y expresión, competencia lingüística y redacción en francés."
+    },
+    {
+      "id": "madrid-pau-2026-fundamentos-artisticos",
+      "community": "Comunidad de Madrid",
+      "subject": "Fundamentos Artísticos",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Fundamentos Artísticos en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-fundamentos-artisticos",
+      "scope": "El modelo orientativo PAU 2026 fija cuatro preguntas con dos secciones alternativas sobre reconocimiento, respuestas breves, desarrollo y análisis visual."
     }
   ],
   "entries": [
@@ -1410,6 +1520,346 @@
       "enlace_oficial_examen":{
         "ordinaria": "https://www.ucm.es/file/griego-ii-14",
         "extraordinaria":"https://www.ucm.es/file/griego-ii-15"
+      }
+    },
+    {
+      "prioridad": 31,
+      "slug": "comunidad-de-madrid/aleman",
+      "url": "/examenes/comunidad-de-madrid/aleman",
+      "asignatura": "Alemán",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Alemán PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Alemán · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el modelo orientativo PAU 2026 de Alemán en Madrid: comprensión, vocabulario, gramática, expresión escrita y elecciones."
+      },
+      "contenido": {
+        "intro": "El modelo orientativo de Alemán para la PAU 2026 madrileña reúne seis preguntas y debe responderse íntegramente en alemán. La primera solicita cinco decisiones entre seis enunciados de comprensión, siempre acompañadas de una cita del texto, y vale dos puntos. En la segunda se eligen dos preguntas entre tres y se redactan al menos cuatro frases propias por respuesta, sin copiar el pasaje. La tercera trabaja vocabulario mediante cinco términos entre siete. Después llegan dos apartados de lengua: en la pregunta 4 se completan tres opciones de cada grupo de cuatro, mientras que la 5 exige dos de cada grupo de tres. Sus valores son 1,2 y 0,8 puntos respectivamente. La producción escrita cierra la prueba con un tema entre dos, tres puntos y evaluación de estructura, contenido, extensión, léxico, ortografía y gramática. Hay 90 minutos. La preparación puede separar lectura con evidencia, reformulación, selección léxica, estructuras gramaticales y redacción, pero durante el examen resulta esencial respetar el número máximo de respuestas, porque solo se corrigen las primeras cuando se excede la elección indicada.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Seis preguntas en alemán con elecciones internas en comprensión, respuesta propia, vocabulario, gramática y producción escrita.",
+          "numero_ejercicios": "6 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión textual (4 puntos)", "Vocabulario (1 punto)", "Lengua y gramática (2 puntos)", "Producción escrita (3 puntos)"],
+          "notas_especificas": "La redacción ofrece dos temas para escoger uno; si se contestan más opciones de las pedidas, solo se evalúan las primeras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-aleman"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/aleman",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/alem%C3%81n-repertorio-1"
+      }
+    },
+    {
+      "prioridad": 32,
+      "slug": "comunidad-de-madrid/analisis-musical-ii",
+      "url": "/examenes/comunidad-de-madrid/analisis-musical-ii",
+      "asignatura": "Análisis Musical II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Análisis Musical II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Análisis Musical II · PAU Madrid",
+        "meta_description": "Revisa el modelo orientativo PAU 2026 de Análisis Musical II en Madrid: teoría, dos audiciones, partitura, opciones y puntos."
+      },
+      "contenido": {
+        "intro": "Análisis Musical II presenta en el modelo orientativo madrileño de 2026 tres partes, valoradas con dos, cuatro y cuatro puntos. La sección A es teórica: propone cuatro cuestiones y se desarrollan dos, a razón de un punto cada una. La sección B utiliza una audición sin partitura y exige responder todos sus apartados. Cuatro ítems objetivos suman dos puntos y dos explicaciones breves añaden otros dos. En la sección C, una segunda escucha incorpora partitura de apoyo; se seleccionan cuatro preguntas entre seis, con un punto máximo por respuesta. Antes de reproducir las piezas se conceden cinco minutos de lectura. Ambas suenan una primera vez de manera consecutiva, hay una pausa de cinco minutos y después se escuchan de nuevo; cada fragmento dura como máximo cinco minutos. Los contenidos combinan conceptos musicales y tecnológicos, percepción de textura, forma y género, análisis melódico, rítmico, armónico o dinámico y relación con el contexto interpretativo. La prueba completa dispone de 90 minutos. Conviene entrenar la toma de notas auditivas y decidir las cuatro respuestas de la última parte solo después de reconocer qué rasgos permite justificar mejor la partitura.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres partes: dos respuestas teóricas, análisis completo de una audición sin partitura y cuatro preguntas entre seis sobre otra audición con partitura.",
+          "numero_ejercicios": "3 partes",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Teoría musical (2 puntos)", "Audición sin partitura (4 puntos)", "Audición con partitura de apoyo (4 puntos)"],
+          "notas_especificas": "Las dos audiciones se reproducen dos veces; la parte C permite escoger 4 de 6 cuestiones.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-analisis-musical-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/analisis-musical-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/analisis-musical-ii-7"
+      }
+    },
+    {
+      "prioridad": 33,
+      "slug": "comunidad-de-madrid/artes-escenicas-ii",
+      "url": "/examenes/comunidad-de-madrid/artes-escenicas-ii",
+      "asignatura": "Artes Escénicas II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Artes Escénicas II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Artes Escénicas II · PAU Madrid",
+        "meta_description": "Conoce el examen ordinario PAU 2026 de Artes Escénicas II en Madrid: puesta en escena, teoría y crítica o creación escénica."
+      },
+      "contenido": {
+        "intro": "En el examen ordinario de 2026, Artes Escénicas II se organizó en tres preguntas de cuatro, tres y tres puntos. La primera fue obligatoria y pidió diseñar una puesta en escena a partir de un fragmento dramático. El alumnado debía escoger cuatro aspectos entre conflicto, espacio, tiempo, personajes, lenguaje o adaptación, vestuario, iluminación y sonido, justificando cada decisión artística. La segunda ofreció seis cuestiones teóricas y exigió contestar tres; aparecieron contenidos como mimo, efecto de distanciamiento, Heiner Müller, funciones del equipo artístico, danza-teatro y método Stanislavski. Para la tercera se eligió una de dos vías: elaborar la crítica de un espectáculo visto o explicar una creación escénica propia y su proceso. En la opción crítica, los criterios repartieron la nota entre contexto, análisis del montaje y recursos no verbales. La duración fue de 90 minutos. Esta ficha describe únicamente lo acreditado por aquella convocatoria ordinaria, sin convertir sus temas concretos en una estructura permanente. Como estrategia de práctica, interesa relacionar teoría teatral con decisiones realizables sobre escena y ensayar argumentos que conecten interpretación, espacio, cuerpo, luz y sonido.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo una propuesta escénica obligatoria, tres respuestas teóricas entre seis y una elección final entre crítica o creación propia.",
+          "numero_ejercicios": "3 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Puesta en escena (4 puntos)", "Teoría escénica: 3 de 6 (3 puntos)", "Crítica o creación escénica (3 puntos)"],
+          "notas_especificas": "La estructura y los temas descritos corresponden al examen ordinario PAU 2026, no a un modelo orientativo general.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-artes-escenicas-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/artes-escenicas-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/artes-esc%C3%89nicas-13"
+      }
+    },
+    {
+      "prioridad": 34,
+      "slug": "comunidad-de-madrid/ciencias-generales",
+      "url": "/examenes/comunidad-de-madrid/ciencias-generales",
+      "asignatura": "Ciencias Generales",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Ciencias Generales PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Ciencias Generales · PAU Madrid",
+        "meta_description": "Consulta el examen ordinario PAU 2026 de Ciencias Generales en Madrid: cuatro preguntas, una obligatoria y tres elecciones A/B."
+      },
+      "contenido": {
+        "intro": "Ciencias Generales tuvo en el examen ordinario madrileño de 2026 cuatro preguntas de 2,5 puntos y 90 minutos de duración. La primera fue común y planteó una situación competencial sobre obesidad, ambiente y genotipo, con interpretación de datos y explicación biológica. En cada una de las tres cuestiones restantes se debía escoger la opción A o la B completa. La pregunta 2 recorrió genética y biología molecular mediante cruces, herencia o síntesis de proteínas. La 3 se centró en física: una alternativa trató movimiento orbital y fuerzas fundamentales, mientras la otra trabajó dinámica con rozamiento. La última abordó química, bien a través de enlaces, puentes de hidrógeno y procesos exotérmicos o endotérmicos, bien mediante un diagrama de fases y cálculos térmicos. Estos contenidos pertenecen al examen ordinario de 2026 y no se presentan aquí como repertorio fijo para futuras pruebas. El documento sí permite verificar cómo se distribuyeron los puntos y la opcionalidad de esa convocatoria. Para entrenar un formato semejante conviene practicar lectura científica, razonamiento cuantitativo y respuestas justificadas, además de comparar rápidamente las dos alternativas antes de comprometerse con cada elección.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 se plantearon cuatro preguntas de 2,5 puntos: la primera obligatoria y las otras tres con elección A/B.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Situación científica competencial", "Biología y genética", "Física", "Química"],
+          "notas_especificas": "Los temas y opciones reseñados proceden del examen ordinario de 2026 y no se extrapolan como regla general.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-ciencias-generales"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/ciencias-generales",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/ciencias-generales-5"
+      }
+    },
+    {
+      "prioridad": 35,
+      "slug": "comunidad-de-madrid/coro-y-tecnica-vocal-ii",
+      "url": "/examenes/comunidad-de-madrid/coro-y-tecnica-vocal-ii",
+      "asignatura": "Coro y Técnica Vocal II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Coro y Técnica Vocal II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Coro y Técnica Vocal II · PAU Madrid",
+        "meta_description": "Revisa el modelo orientativo PAU 2026 de Coro y Técnica Vocal II en Madrid: audiciones, partitura, técnica vocal y test."
+      },
+      "contenido": {
+        "intro": "El modelo orientativo de Coro y Técnica Vocal II para Madrid reparte diez puntos entre cuatro partes: tres, tres, tres y uno. La primera combina audición y partitura. Se contestan seis cuestiones entre ocho, con medio punto por respuesta y una extensión orientativa de tres a ocho líneas; se examinan agrupación musical, voces, textura, forma, respiración, fraseo, estilo, bajo continuo o género. La segunda utiliza una escucha breve reproducida dos veces y pide resolver tres de cuatro preguntas, valoradas con un punto cada una. En sus ítems de selección múltiple, acertar todas las opciones suma el punto, dos aciertos aportan medio y uno no puntúa. La tercera exige definir seis términos vinculados con técnica, fisiología vocal y práctica coral, a medio punto por concepto. La cuarta cierra con cinco respuestas entre seis preguntas tipo test, cada una por 0,2. Los cuatro apartados deben resolverse dentro de 90 minutos. Si se escriben más respuestas de las permitidas, se consideran únicamente las primeras. Para prepararla resulta útil alternar escucha analítica, lectura de partitura, vocabulario preciso sobre producción de la voz y discriminación rápida de conceptos, cuidando especialmente qué opciones se entregan como definitivas.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro partes: análisis auditivo con partitura, escucha breve, seis definiciones vocales y cinco respuestas tipo test.",
+          "numero_ejercicios": "4 partes",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Audición con partitura (3 puntos)", "Escucha breve (3 puntos)", "Técnica y fisiología vocal (3 puntos)", "Test coral (1 punto)"],
+          "notas_especificas": "Se responden 6 de 8 cuestiones en la primera parte, 3 de 4 en la segunda y 5 de 6 en la cuarta.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-coro-y-tecnica-vocal-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/coro-y-tecnica-vocal-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/coro-y-t%C3%89cnica-vocal-ii-6"
+      }
+    },
+    {
+      "prioridad": 36,
+      "slug": "comunidad-de-madrid/dibujo-artistico-ii",
+      "url": "/examenes/comunidad-de-madrid/dibujo-artistico-ii",
+      "asignatura": "Dibujo Artístico II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Dibujo Artístico II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Dibujo Artístico II · PAU Madrid",
+        "meta_description": "Consulta el examen ordinario PAU 2026 de Dibujo Artístico II en Madrid: boceto, dibujo final, opciones, técnicas y criterios."
+      },
+      "contenido": {
+        "intro": "En el examen ordinario de Dibujo Artístico II de 2026 se realizaron dos ejercicios durante 90 minutos: un boceto de tres puntos y un dibujo final de siete. Para el primero se escogía la propuesta A o B y se trabajaba en papel A4 con técnicas secas; no se admitían ceras, rotuladores ni procedimientos húmedos. Las alternativas pedían interpretar un conjunto de objetos desde el surrealismo o situarlo en un invernadero. En el segundo ejercicio también se elegía una opción. La A solicitaba representación analítica mediante claroscuro, incluidos valores tonales y sombras, y la B combinaba análisis y síntesis utilizando la línea como único recurso expresivo. El soporte final era papel Ingres de 50 por 70 centímetros, con carboncillo, lápiz carbón o materiales Conté. El boceto se calificó por adecuación, composición y creatividad. En la obra final se valoraron encuadre, encaje y proporción, expresividad, resolución del claroscuro o carácter de las líneas y destreza técnica. Estos asuntos describen la convocatoria ordinaria de 2026, no un catálogo invariable. Para practicarla conviene cronometrar por separado la exploración inicial y la ejecución de mayor formato.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 se eligió una propuesta de boceto de 3 puntos y otra de dibujo final de 7 puntos.",
+          "numero_ejercicios": "2 ejercicios prácticos",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Boceto en A4 (3 puntos)", "Dibujo final en papel Ingres 50 × 70 cm (7 puntos)", "Interpretación, claroscuro o línea", "Técnicas secas"],
+          "notas_especificas": "Las propuestas y criterios reseñados corresponden al examen ordinario de 2026; cada ejercicio permitió elegir A o B.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-dibujo-artistico-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/dibujo-artistico-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/dibujo-art%C3%8Dstico-ii-12"
+      }
+    },
+    {
+      "prioridad": 37,
+      "slug": "comunidad-de-madrid/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "url": "/examenes/comunidad-de-madrid/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "asignatura": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Dibujo Técnico Aplicado II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II · PAU Madrid",
+        "meta_description": "Revisa el examen ordinario PAU 2026 de Dibujo Técnico Aplicado II en Madrid: modulación, perspectiva, vistas, cotas y puntos."
+      },
+      "contenido": {
+        "intro": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II presentó en el examen ordinario de 2026 tres respuestas gráficas, puntuadas con tres, cuatro y tres puntos. La primera partía del diseño modular de una baldosa cuadrada: había que construir el módulo superior o el situado a la derecha, señalando vértices, puntos medios y centros de arcos. Si se resolvían ambas opciones, solo contaba la A. La segunda pregunta fue común. A partir de un paralelepípedo en perspectiva cónica de dos puntos de fuga se representaba una figura mostrada en perspectiva caballera y se localizaban los focos F y F prima asociados a la sombra arrojada. La tercera ofreció dos tareas sobre el croquis isométrico de una vivienda: acotarlo tomando la unidad como módulo o dibujar a mano alzada alzado, perfil y planta; de nuevo, contestar las dos hacía prevalecer la A. El tiempo disponible fue de 90 minutos y debían conservarse las construcciones auxiliares. Esta descripción queda limitada al examen ordinario de 2026. Su práctica exige precisión geométrica, lectura entre sistemas de representación, orden gráfico y una elección consciente en las preguntas con alternativa.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo tres preguntas gráficas: la primera y la tercera con opción A/B, y la segunda obligatoria.",
+          "numero_ejercicios": "3 preguntas gráficas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Modulación cuadrada (3 puntos)", "Perspectiva y sombra (4 puntos)", "Acotación o vistas de una vivienda (3 puntos)"],
+          "notas_especificas": "Las respuestas debían mantener visibles las construcciones auxiliares; si se contestaban A y B en una elección, solo se valoraba A.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/dibujo-t%C3%89cnico-aplicado-1"
+      }
+    },
+    {
+      "prioridad": 38,
+      "slug": "comunidad-de-madrid/diseno",
+      "url": "/examenes/comunidad-de-madrid/diseno",
+      "asignatura": "Diseño",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Diseño PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Diseño · PAU Comunidad de Madrid",
+        "meta_description": "Conoce el examen ordinario PAU 2026 de Diseño en Madrid: conocimientos, análisis crítico, proyecto gráfico o de producto y puntuación."
+      },
+      "contenido": {
+        "intro": "El examen ordinario madrileño de Diseño de 2026 combinó dos preguntas de conocimientos con un bloque competencial completo. En la primera se escogía 1.1 o 1.2 sobre historia, concepto y campos del diseño; en la segunda, 2.1 o 2.2 acerca de configuración formal y metodología. Cada una valía 1,5 puntos. Después se elegía el bloque I o el II y se mantenía esa decisión para las preguntas 3 y 4. El bloque I propuso comparar dos sillas y plantear una mejora, antes de crear un cartel a color. El II pidió analizar dos portadas y mejorar una, seguido del diseño de una mesilla con cargador de móvil. La parte analítica aportaba 2,5 puntos y el proyecto, 4,5. En este último se exigían estudios previos, bocetos y presentación final, además de justificar las decisiones; el enunciado indicaba técnica libre y color. Había 90 minutos. Son tareas documentadas para el examen ordinario de 2026, no ejemplos que deban repetirse. La preparación puede centrarse en vocabulario histórico y perceptivo, comparación razonada, ergonomía, comunicación visual y desarrollo de una solución coherente desde los croquis hasta la lámina final.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 se eligieron dos preguntas de conocimientos y un bloque competencial completo con análisis y proyecto.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Historia y campos del diseño (1,5 puntos)", "Forma y metodología (1,5 puntos)", "Análisis crítico (2,5 puntos)", "Proyecto de diseño (4,5 puntos)"],
+          "notas_especificas": "Las preguntas 3 y 4 debían pertenecer al mismo bloque I o II; las propuestas concretas son las del examen ordinario de 2026.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-diseno"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/diseno",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/dise%C3%91o-18"
+      }
+    },
+    {
+      "prioridad": 39,
+      "slug": "comunidad-de-madrid/frances",
+      "url": "/examenes/comunidad-de-madrid/frances",
+      "asignatura": "Francés",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Francés PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Francés · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el modelo orientativo PAU 2026 de Francés en Madrid: comprensión, léxico, gramática y redacción de 120 a 150 palabras."
+      },
+      "contenido": {
+        "intro": "Francés se estructura en el modelo orientativo PAU 2026 de Madrid en tres bloques que suman cuatro, tres y tres puntos. El primero combina comprensión y expresión: se juzgan afirmaciones como verdaderas o falsas y se justifican con evidencia del texto por 1,5 puntos; otras tres preguntas de elección múltiple aportan 1,5; además, se explica una frase con palabras propias por un punto. El bloque II evalúa competencia lingüística. Incluye sinónimos o antónimos por 0,4 puntos, definiciones de vocabulario por 0,6 y dos ejercicios gramaticales entre tres propuestas por los dos puntos restantes. El bloque III ofrece dos temas de expresión escrita, de los que se desarrolla uno en francés con una extensión de 120 a 150 palabras. Toda la prueba debe contestarse en esta lengua y dura 90 minutos. El formato exige localizar pruebas literales sin limitarse a copiarlas, comprender matices léxicos, aplicar transformaciones gramaticales y sostener una redacción cohesionada. Para ensayarlo conviene reservar un tramo final a revisar acuerdos, tiempos verbales, conectores y recuento de palabras, después de haber marcado con claridad las dos tareas de gramática y el tema elegidos.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres bloques en francés: comprensión y expresión sobre un texto, competencia lingüística y una redacción entre dos temas.",
+          "numero_ejercicios": "3 bloques",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión y expresión escrita (4 puntos)", "Competencia lingüística (3 puntos)", "Redacción de 120-150 palabras (3 puntos)"],
+          "notas_especificas": "En gramática se contestan 2 de 3 propuestas y en expresión final se elige 1 de 2 temas.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-frances"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/frances",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/franc%C3%89s-repertorio"
+      }
+    },
+    {
+      "prioridad": 40,
+      "slug": "comunidad-de-madrid/fundamentos-artisticos",
+      "url": "/examenes/comunidad-de-madrid/fundamentos-artisticos",
+      "asignatura": "Fundamentos Artísticos",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Fundamentos Artísticos PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Fundamentos Artísticos · PAU Madrid",
+        "meta_description": "Revisa el modelo orientativo PAU 2026 de Fundamentos Artísticos en Madrid: reconocimiento, respuestas breves, desarrollo y análisis visual."
+      },
+      "contenido": {
+        "intro": "Fundamentos Artísticos propone en el modelo orientativo madrileño de 2026 cuatro preguntas y dos secciones alternativas dentro de cada una. La primera vale dos puntos y relaciona cinco elementos con imágenes o referencias, a 0,4 por acierto y sin penalización por error. La segunda reúne cuatro cuestiones semiabiertas de respuesta breve, valoradas con medio punto. En la tercera se elige una sección y se desarrollan sus tres propuestas, con un punto por cada una y una extensión recomendada de ocho a diez líneas. La cuarta muestra una imagen en color; tras seleccionar A o B, se responde un apartado de identificación, contexto y datación aproximada y otro de análisis formal, técnico e iconográfico. Cada parte aporta 1,5 puntos y también sugiere entre ocho y diez líneas. El total se resuelve en 90 minutos. La materia combina periodos, movimientos, autores, disciplinas y técnicas, junto con comparación y lectura argumentada de obras. Al practicar interesa no mezclar secciones dentro de una misma pregunta, reconocer primero los datos visuales comprobables y después relacionarlos con su marco artístico. Los errores de la asociación inicial no restan, pero la precisión escrita resulta decisiva en los desarrollos y el comentario final.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas, cada una con elección de sección A o B: asociación, respuestas breves, tres desarrollos y análisis de una imagen.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Asociación y reconocimiento (2 puntos)", "Cuestiones breves (2 puntos)", "Desarrollo de tres propuestas (3 puntos)", "Análisis de obra (3 puntos)"],
+          "notas_especificas": "En cada pregunta se responde una sección completa; la asociación inicial no penaliza los errores.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-fundamentos-artisticos"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/fundamentos-artisticos",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/fundamentos-art%C3%8Dsticos-13"
       }
     }
   ]
