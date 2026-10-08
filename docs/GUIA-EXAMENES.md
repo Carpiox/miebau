@@ -98,16 +98,59 @@ exactamente 2 `source_ids`: la general de la comunidad y la de la asignatura.
 4. Revisar el diff: solo deben cambiar las fichas de la tanda.
 5. Commit y PR. Fusionar antes de empezar la siguiente tanda.
 
-## B. Asignaturas nuevas
+## B. Asignaturas nuevas (caso actual: ampliar Comunidad de Madrid)
 
-Hay que cambiar todo esto a la vez, o los tests fallan:
+Madrid tiene 15 fichas (prioridades 16-30). Faltan las asignaturas restantes de la
+PAU de Madrid (en torno a 35, optativas incluidas). La lista exacta NO está en el
+repo: hay que sacarla del listado oficial de modelos de examen PAU 2026 de las
+universidades públicas madrileñas (ucm.es) y confirmarla antes de generar nada.
 
-- Añadir `entries[]` y `sources[]`.
-- Cambiar los literales `30` y `32` en `build-examenes-profiles.mjs` (`validateData`) y
-  en `tests/examenes-seo.test.mjs`.
-- Añadir la asignatura a un grupo de `examenes-taxonomia.mjs`, con su frase de
-  "relacionadas".
-- Añadir al sitemap solo fichas con contenido suficiente.
+### Paso 0: preparar el generador (un único PR, antes de crear fichas)
+
+Hoy el código asume exactamente 30 fichas. Hay que quitar esas suposiciones sin
+aflojar el resto de validaciones:
+
+- `scripts/build-examenes-profiles.mjs`, `validateData()`: los literales
+  `sources.length === 32`, `entries.length === 30`, `prioridad <= 30` y
+  "prioridades exactamente 1-30". Sustituir por comprobaciones derivadas de los datos
+  (prioridades únicas, enteras, ≥ 1 y sin huecos).
+- `renderLatestExamSection()`: `.slice(0, 30)`; decidir un tope razonable para
+  "Últimos exámenes añadidos".
+- `tests/examenes-seo.test.mjs`: test de "prioridades 1-30", `sources.length`, "las 30
+  rutas en el sitemap" (pasar a recorrer todas las entradas), y cualquier otro
+  literal numérico.
+- `tests/examenes-enlazado.test.mjs`: comprobar que sigue válido con más fichas.
+- `scripts/examenes-taxonomia.mjs`: el texto `intro` de `comunidad-de-madrid` dice
+  "las 15 asignaturas troncales"; debe dejar de ser cifra fija y de decir "troncales"
+  cuando entren optativas.
+- Mantener intactas: `indexacion: "noindex"` requerido por el generador, fuente
+  general de Madrid `madrid-pau-2026-modelos`, 2 `source_ids` por ficha, intros únicas,
+  `ponderaciones`/`num_convocatorias` en `pendiente_de_verificar`.
+- Si alguna fuente no está en `ucm.es`, `um.es` o `carm.es`, ampliar el regex de
+  dominios de forma explícita (y avisar), no relajarlo.
+
+### Por cada asignatura nueva (tandas de 10)
+
+1. `sources[]`: nueva fuente oficial (id `madrid-pau-2026-<asignatura>`).
+2. `entries[]`: nueva entrada con `prioridad` = siguiente número libre (31, 32, ...),
+   mismo esquema que las existentes. Usar una ficha de Madrid ya existente como
+   plantilla de forma y tono.
+3. `scripts/examenes-taxonomia.mjs`: añadir el slug a un grupo de `GROUPS` (crear un
+   grupo nuevo, p. ej. "Optativas", si no encaja) y una entrada en `RELATED` con 2-3
+   asignaturas relacionadas y una frase propia. Sin esto el generador no puede
+   enlazar la ficha.
+4. Intro 150-200 palabras, escrita desde el documento oficial concreto de esa
+   asignatura (bloques, puntuaciones, elecciones). Nunca una plantilla con palabras
+   cambiadas.
+5. Datos no verificables en `pendiente_de_verificar`. Si el documento oficial no
+   permite rellenar con certeza `numero_ejercicios`, `modelo_examen_vigente` o
+   `notas_especificas`, NO crear la ficha: anotarla como bloqueada y seguir.
+6. Regenerar, pasar `node --test tests/*.test.mjs`, comprobar el diff (las fichas
+   nuevas, sitemap, índice de Madrid y bloque de la home).
+
+Nota para Murcia más adelante: las prioridades son globales. Quien amplíe Murcia debe
+partir del último número usado tras mergear Madrid, y sus intros no pueden repetir
+frases ni secuencias de 10 palabras de ninguna ficha ya publicada (Madrid incluido).
 
 ## Trabajo en paralelo (Murcia y Madrid)
 
@@ -116,4 +159,5 @@ Hay que cambiar todo esto a la vez, o los tests fallan:
 - Murcia toca solo entradas `region-de-murcia/*`; Madrid solo `comunidad-de-madrid/*`.
 - Los archivos generados no se resuelven a mano: ante conflicto, aceptar `main` y
   volver a ejecutar el generador.
-- Los literales 30/32 (caso B) los cambia una sola persona, primero.
+- Los literales 30/32 (caso B, paso 0) los cambia una sola persona, primero. Mientras
+  Madrid se amplía, Murcia no toca el generador ni los tests.
