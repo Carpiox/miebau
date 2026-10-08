@@ -53,6 +53,10 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+function normalizeNewlines(value) {
+  return value.replace(/\r\n/g, '\n');
+}
+
 function isConfirmedUrl(value) {
   return typeof value === 'string' && /^https:\/\/[^\s]+$/.test(value);
 }
@@ -89,8 +93,8 @@ function validateDistinctIntros(entries) {
 
 function validateData(data) {
   assert(data && typeof data === 'object', 'El JSON raíz debe ser un objeto');
-  assert(Array.isArray(data.sources) && data.sources.length === 32, 'Los dos primeros lotes deben declarar 32 fuentes oficiales');
-  assert(Array.isArray(data.entries) && data.entries.length === 30, 'Los dos primeros lotes deben contener exactamente 30 fichas');
+  assert(Array.isArray(data.sources) && data.sources.length > 0, 'Debe declararse al menos una fuente oficial');
+  assert(Array.isArray(data.entries) && data.entries.length > 0, 'Debe declararse al menos una ficha');
   assert(!JSON.stringify(data).includes('TODO'), 'No se permiten marcadores TODO');
 
   const sourceIds = new Set();
@@ -110,9 +114,11 @@ function validateData(data) {
     h1: new Set(),
     description: new Set(),
   };
+  const referencedSourceIds = new Set();
+  const specificSourceIds = new Set();
 
   for (const entry of data.entries) {
-    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1 && entry.prioridad <= 30, `Prioridad inválida: ${entry.prioridad}`);
+    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1, `Prioridad inválida: ${entry.prioridad}`);
     assert(!unique.priority.has(entry.prioridad), `Prioridad duplicada: ${entry.prioridad}`);
     unique.priority.add(entry.prioridad);
     assert(/^(?:region-de-murcia|comunidad-de-madrid)\/[a-z0-9-]+$/.test(entry.slug), `Slug inválido: ${entry.slug}`);
@@ -160,9 +166,17 @@ function validateData(data) {
     assert(entry.source_ids[0] === expectedGeneralSource, `Falta la fuente general correspondiente en ${entry.slug}`);
     assert(entry.source_ids.every((id) => sourceIds.has(id)), `Referencia de fuente inexistente en ${entry.slug}`);
     assert(entry.source_ids[1] !== expectedGeneralSource, `Falta la fuente específica de ${entry.slug}`);
+    assert(!specificSourceIds.has(entry.source_ids[1]), `Fuente específica compartida por varias fichas: ${entry.source_ids[1]}`);
+    specificSourceIds.add(entry.source_ids[1]);
+    entry.source_ids.forEach((id) => referencedSourceIds.add(id));
   }
 
-  assert([...unique.priority].sort((a, b) => a - b).join(',') === Array.from({ length: 30 }, (_, index) => index + 1).join(','), 'Las prioridades deben ser exactamente 1-30');
+  const sortedPriorities = [...unique.priority].sort((a, b) => a - b);
+  assert(sortedPriorities.every((priority, index) => priority === index + 1), 'Las prioridades deben empezar en 1 y continuar sin huecos');
+  assert(
+    sourceIds.size === referencedSourceIds.size && [...sourceIds].every((id) => referencedSourceIds.has(id)),
+    'Todas las fuentes declaradas deben estar referenciadas por alguna ficha',
+  );
   validateDistinctIntros(data.entries);
   return data;
 }
@@ -398,8 +412,7 @@ ${links}
 
 function renderLatestExamSection(entries) {
   const latestEntries = [...entries]
-    .sort((left, right) => right.prioridad - left.prioridad)
-    .slice(0, 30);
+    .sort((left, right) => right.prioridad - left.prioridad);
 
   const items = latestEntries.map((entry) => `
         <article class="exam-row" data-priority="${entry.prioridad}">
@@ -476,7 +489,9 @@ async function main() {
       } catch {
         throw new Error(`${path.relative(ROOT, file.filePath)} no existe`);
       }
-      if (current !== file.content) throw new Error(`${path.relative(ROOT, file.filePath)} no coincide con el generador`);
+      if (normalizeNewlines(current) !== normalizeNewlines(file.content)) {
+        throw new Error(`${path.relative(ROOT, file.filePath)} no coincide con el generador`);
+      }
     }
   } else {
     for (const file of files) {

@@ -120,7 +120,7 @@ export const COMMUNITIES = {
       { name: 'Universidad Carlos III de Madrid', href: '/ponderaciones/uc3m' },
       { name: 'Universidad Politécnica de Madrid', href: '/ponderaciones/upm' },
     ],
-    intro: 'En Madrid la prueba se organiza a nivel de distrito universitario, y las fichas de este índice se apoyan en los modelos de examen de la PAU 2026 que publican las universidades públicas madrileñas. Para cada una de las 15 asignaturas troncales recogemos el formato del ejercicio, el reparto de puntos entre preguntas, las opciones entre las que hay que elegir y los 90 minutos de los que dispones. Es útil para comparar de un vistazo qué materias piden más redacción, cuáles más cálculo y cuáles combinan ambas cosas antes de decidir tu plan de repaso. Las tablas de ponderaciones madrileñas para 2026-2027 siguen pendientes de verificar y por eso no se trasladan a estas páginas.',
+    intro: 'En Madrid la prueba se organiza a nivel de distrito universitario, y las fichas de este índice se apoyan en documentación oficial de la PAU 2026 publicada por las universidades públicas madrileñas. Para cada asignatura recogemos el formato del ejercicio, el reparto de puntos entre preguntas, las opciones entre las que hay que elegir y los 90 minutos de los que dispones. Es útil para comparar de un vistazo qué materias piden más redacción, cuáles más cálculo y cuáles combinan ambas cosas antes de decidir tu plan de repaso. Las tablas de ponderaciones madrileñas para 2026-2027 siguen pendientes de verificar y por eso no se trasladan a estas páginas.',
   },
 };
 

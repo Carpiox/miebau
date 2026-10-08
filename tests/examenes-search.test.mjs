@@ -11,8 +11,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(readFileSync(path.join(ROOT, 'data', 'examenes-seo.json'), 'utf8'));
 const pageHtml = readFileSync(path.join(ROOT, 'examenes.html'), 'utf8');
 
-test('el buscador usa las 30 entradas reales y conserva los alias de los selects', () => {
-  assert.equal(data.entries.length, 30);
+test('el buscador usa todas las entradas reales y conserva los alias de los selects', () => {
+  assert(data.entries.length > 0);
   assert.equal(api.filterExamEntries(data.entries, { subject: 'Matemáticas II', community: 'Murcia', year: '2026' }).length, 1);
   assert.equal(api.filterExamEntries(data.entries, { subject: 'Matemáticas Aplicadas a las Ciencias Sociales', community: 'Madrid', year: '2026' }).length, 1);
   assert.equal(api.filterExamEntries(data.entries, { subject: 'Historia de la Filosofía', community: 'Madrid', year: '2026' }).length, 1);
@@ -31,8 +31,8 @@ test('todas las cards enlazan a fichas internas existentes y ninguna usa href="#
   const cards = api.renderExamCards(results);
   const hrefs = [...cards.matchAll(/<a class="exam-link" href="([^"]+)">/g)].map((match) => match[1]);
 
-  assert.equal(results.length, 30);
-  assert.equal(hrefs.length, 30);
+  assert.equal(results.length, data.entries.length);
+  assert.equal(hrefs.length, data.entries.length);
   assert(!cards.includes('href="#"'));
   for (const href of hrefs) {
     assert.match(href, /^\/examenes\/(?:region-de-murcia|comunidad-de-madrid)\/[a-z0-9-]+$/);
@@ -48,7 +48,7 @@ test('examenes.html carga el buscador real y no conserva la generación de ejemp
   assert(!pageHtml.includes('href="${r.pdf}"'));
 });
 
-test('la sección estática de últimos exámenes respeta prioridad, límite y rutas internas', () => {
+test('la sección estática de últimos exámenes respeta prioridad y rutas internas', () => {
   const startMarker = '<!-- examenes-latest:generated:start -->';
   const endMarker = '<!-- examenes-latest:generated:end -->';
   const latestBlock = pageHtml.slice(
@@ -56,13 +56,12 @@ test('la sección estática de últimos exámenes respeta prioridad, límite y r
     pageHtml.indexOf(endMarker),
   );
   const expectedEntries = [...data.entries]
-    .sort((left, right) => right.prioridad - left.prioridad)
-    .slice(0, 30);
+    .sort((left, right) => right.prioridad - left.prioridad);
   const hrefs = [...latestBlock.matchAll(/<a class="exam-link" href="([^"]+)">/g)]
     .map((match) => match[1]);
 
   assert(latestBlock.includes('Últimos exámenes añadidos'));
-  assert.equal(hrefs.length, 30);
+  assert.equal(hrefs.length, expectedEntries.length);
   assert.deepEqual(hrefs, expectedEntries.map((entry) => entry.url));
   assert(!latestBlock.includes('href="#"'));
 

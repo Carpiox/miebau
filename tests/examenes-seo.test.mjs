@@ -12,12 +12,49 @@ const data = validateData(JSON.parse(readFileSync(path.join(ROOT, 'data', 'exame
 const redirects = readFileSync(path.join(ROOT, '_redirects'), 'utf8');
 const sitemap = readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 
-test('los lotes contienen exactamente las prioridades 1-30 y sus fuentes oficiales', () => {
-  assert.deepEqual(data.entries.map((entry) => entry.prioridad), Array.from({ length: 30 }, (_, index) => index + 1));
-  assert.equal(data.entries.slice(10).length, 20);
-  assert.equal(data.sources.length, 32);
+test('las prioridades son consecutivas y todas las fuentes oficiales están referenciadas', () => {
+  assert.deepEqual(
+    data.entries.map((entry) => entry.prioridad),
+    Array.from({ length: data.entries.length }, (_, index) => index + 1),
+  );
+  const referencedSourceIds = new Set(data.entries.flatMap((entry) => entry.source_ids));
+  assert.deepEqual(
+    data.sources.map((source) => source.id).sort(),
+    [...referencedSourceIds].sort(),
+  );
   assert(data.sources.every((source) => source.status === 'verified'));
   assert(data.sources.every((source) => /^https:\/\/(?:www\.)?(?:um\.es|carm\.es|ucm\.es)\//.test(source.sourceUrl)));
+});
+
+test('el validador admite nuevas prioridades consecutivas y rechaza los huecos', () => {
+  const extendedData = structuredClone(data);
+  const sourceId = 'madrid-pau-2026-prueba-infraestructura';
+  extendedData.sources.push({
+    ...structuredClone(extendedData.sources.at(-1)),
+    id: sourceId,
+  });
+  extendedData.entries.push({
+    ...structuredClone(extendedData.entries.at(-1)),
+    prioridad: extendedData.entries.length + 1,
+    slug: 'comunidad-de-madrid/prueba-infraestructura',
+    url: '/examenes/comunidad-de-madrid/prueba-infraestructura',
+    asignatura: 'Prueba de infraestructura',
+    seo: {
+      title: 'Prueba de infraestructura PAU Madrid | MIEBAU',
+      h1: 'Prueba de infraestructura · PAU Comunidad de Madrid',
+      meta_description: 'Entrada sintética usada para comprobar que el validador admite ampliar el dataset sin límites numéricos fijos.',
+    },
+    contenido: {
+      ...structuredClone(extendedData.entries.at(-1).contenido),
+      intro: Array.from({ length: 150 }, (_, index) => `terminoinfra${index + 1}`).join(' '),
+    },
+    source_ids: ['madrid-pau-2026-modelos', sourceId],
+  });
+  assert.doesNotThrow(() => validateData(extendedData));
+
+  const dataWithGap = structuredClone(data);
+  dataWithGap.entries.at(-1).prioridad = dataWithGap.entries.length + 1;
+  assert.throws(() => validateData(dataWithGap), /continuar sin huecos/);
 });
 
 test('las introducciones son originales, completas y no contienen marcadores', () => {
@@ -126,7 +163,7 @@ test('las URLs limpias no llevan rewrites explícitos a .html (Cloudflare ya las
   }
 });
 
-test('las 30 rutas limpias del lote aparecen una vez en el sitemap', () => {
+test('todas las rutas limpias del lote aparecen una vez en el sitemap', () => {
   for (const entry of data.entries) {
     const expected = `  <url><loc>https://miebau.es${entry.url}</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>`;
     assert.equal(sitemap.split(expected).length - 1, 1, `Entrada de sitemap ausente o duplicada para ${entry.url}`);
