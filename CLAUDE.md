@@ -565,3 +565,26 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   4. `cta_pack_slug` apunta a `/packs/...`, que no existe ni lo lee el generador;
      `widget_embed_url` está `pendiente_de_verificar` en las 48 y el generador solo
      lo valida, no pinta iframe.
+- 2026-10-09/10: **Murcia completada con 16 fichas nuevas (prioridades 49-64)** a partir de
+  `data/murcia/pau2026_murcia.json` (33 materias de la UMU), en la rama `murcia-fichas`.
+  - **Verificación de enlaces** (`scripts/verificar-enlaces-murcia.mjs`, se ejecuta en local
+    porque este sandbox no llega a `um.es`): descarga cada PDF, comprueba 200 y `%PDF-`, y
+    valida año, convocatoria (junio = ordinaria, julio = extraordinaria) y materia en la
+    primera página. Guarda `data/murcia/textos/*.txt`, `verificacion.json` y `verificacion.md`.
+    `--revalidar` reevalúa sin red. Resultado: 61 ✅, 1 ⚠️ (portada de los criterios de 301,
+    no usada), 0 ❌. El año se valida sobre la cabecera con límites de dígito: la UMU escribe
+    `PAU2026 – JUNIO`, que un `\b2026\b` no reconoce (así salieron 58 falsos ⚠️ y 4 falsos ❌).
+  - **Composición** extraída solo de los textos: `data/murcia/composicion.json`, cada dato con
+    fuente y cita literal; `tests/murcia-composicion.test.mjs` comprueba las citas contra el
+    texto del PDF. La duración de 90 minutos cita `estructura-pruebas.txt` ("Cada examen
+    tendrá una duración de 90 minutos").
+  - Fichas: Alemán, Análisis Musical II, Artes Escénicas II, Coro y Técnica Vocal II, Dibujo
+    Artístico II, Dibujo Técnico Aplicado, Diseño, Francés, Fundamentos Artísticos, Geología,
+    Hª de la Música y la Danza, Italiano, Literatura Dramática (solo ordinaria), Movimientos
+    Culturales (solo ordinaria), Técnicas de Expresión Gráfico-Plástica y Tecnología e
+    Ingeniería II. Quedan fuera Portugués (334) y Ciencias Generales (332): el JSON no trae
+    enlaces. Los 3 conflictos de enlaces (306, 313, 322) entre el JSON y las fichas existentes
+    siguen sin resolver: no se tocaron las fichas existentes.
+  - Slugs iguales a los de Madrid para que se enlacen entre comunidades. Las páginas
+    existentes (Murcia y Madrid) solo cambian en enlaces generados entre materias/comunidades.
+  - Sin FAQ: ninguna de las 64 fichas la lleva (patrón de Madrid).
