@@ -562,7 +562,7 @@
       "asignatura": "Matemáticas II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Matemáticas II EvAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Matemáticas II · PAU Región de Murcia",
@@ -597,7 +597,7 @@
       "asignatura": "Matemáticas Aplicadas a las Ciencias Sociales II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Matemáticas CCSS II PAU Murcia | MIEBAU",
         "h1": "Exámenes de Matemáticas Aplicadas a las CCSS II · PAU Murcia",
@@ -632,7 +632,7 @@
       "asignatura": "Lengua Castellana y Literatura II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Lengua Castellana II PAU Murcia | MIEBAU",
         "h1": "Exámenes de Lengua Castellana y Literatura II · PAU Murcia",
@@ -667,7 +667,7 @@
       "asignatura": "Historia de España",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia de España PAU Murcia | MIEBAU",
         "h1": "Exámenes de Historia de España · PAU Región de Murcia",
@@ -702,7 +702,7 @@
       "asignatura": "Inglés",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Inglés PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Inglés · PAU Región de Murcia",
@@ -737,7 +737,7 @@
       "asignatura": "Física",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Física PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Física · PAU Región de Murcia",
@@ -772,7 +772,7 @@
       "asignatura": "Química",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Química PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Química · PAU Región de Murcia",
@@ -807,7 +807,7 @@
       "asignatura": "Biología",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Biología PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Biología · PAU Región de Murcia",
@@ -843,7 +843,7 @@
       "nombre_oficial_vigente": "Empresa y Diseño de Modelos de Negocio",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Economía de la Empresa PAU Murcia | MIEBAU",
         "h1": "Exámenes de Economía de la Empresa · PAU Murcia",
@@ -879,7 +879,7 @@
       "nombre_oficial_vigente": "Historia de la Filosofía",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Filosofía PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Filosofía · PAU Región de Murcia",
@@ -914,7 +914,7 @@
       "asignatura": "Dibujo Técnico II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Dibujo Técnico II PAU Murcia | MIEBAU",
         "h1": "Exámenes de Dibujo Técnico II · PAU Región de Murcia",
@@ -949,7 +949,7 @@
       "asignatura": "Geografía",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Geografía PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Geografía · PAU Región de Murcia",
@@ -984,7 +984,7 @@
       "asignatura": "Historia del Arte",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia del Arte PAU Murcia | MIEBAU",
         "h1": "Exámenes de Historia del Arte · PAU Murcia",
@@ -1019,7 +1019,7 @@
       "asignatura": "Latín II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Latín II PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Latín II · PAU Región de Murcia",
@@ -1054,7 +1054,7 @@
       "asignatura": "Griego II",
       "comunidad": "Región de Murcia",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Griego II PAU Región de Murcia | MIEBAU",
         "h1": "Exámenes de Griego II · PAU Región de Murcia",
@@ -1089,7 +1089,7 @@
       "asignatura": "Matemáticas II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Matemáticas II PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Matemáticas II · PAU Comunidad de Madrid",
@@ -1124,7 +1124,7 @@
       "asignatura": "Matemáticas Aplicadas a las Ciencias Sociales II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Matemáticas CCSS II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Matemáticas Aplicadas a las CCSS II · PAU Madrid",
@@ -1159,7 +1159,7 @@
       "asignatura": "Lengua Castellana y Literatura II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Lengua Castellana II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Lengua Castellana y Literatura II · PAU Madrid",
@@ -1194,7 +1194,7 @@
       "asignatura": "Historia de España",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia de España PAU Madrid | MIEBAU",
         "h1": "Exámenes de Historia de España · PAU Comunidad de Madrid",
@@ -1230,7 +1230,7 @@
       "nombre_oficial_vigente": "Inglés II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Inglés II PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Inglés · PAU Comunidad de Madrid",
@@ -1265,7 +1265,7 @@
       "asignatura": "Física",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Física PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Física · PAU Comunidad de Madrid",
@@ -1300,7 +1300,7 @@
       "asignatura": "Química",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Química PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Química · PAU Comunidad de Madrid",
@@ -1335,7 +1335,7 @@
       "asignatura": "Biología",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Biología PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Biología · PAU Comunidad de Madrid",
@@ -1371,7 +1371,7 @@
       "nombre_oficial_vigente": "Empresa y Diseño de Modelos de Negocio",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Empresa PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Economía de la Empresa · PAU Madrid",
@@ -1407,7 +1407,7 @@
       "nombre_oficial_vigente": "Historia de la Filosofía",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia de la Filosofía PAU Madrid | MIEBAU",
         "h1": "Exámenes de Filosofía · PAU Comunidad de Madrid",
@@ -1442,7 +1442,7 @@
       "asignatura": "Dibujo Técnico II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Dibujo Técnico II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Dibujo Técnico II · PAU Madrid",
@@ -1477,7 +1477,7 @@
       "asignatura": "Geografía",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Geografía PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Geografía · PAU Comunidad de Madrid",
@@ -1512,7 +1512,7 @@
       "asignatura": "Historia del Arte",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia del Arte PAU Madrid | MIEBAU",
         "h1": "Exámenes de Historia del Arte · PAU Madrid",
@@ -1547,7 +1547,7 @@
       "asignatura": "Latín II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Latín II PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Latín II · PAU Comunidad de Madrid",
@@ -1582,7 +1582,7 @@
       "asignatura": "Griego II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Griego II PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Griego II · PAU Comunidad de Madrid",
@@ -1617,7 +1617,7 @@
       "asignatura": "Alemán",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Alemán PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Alemán · PAU Comunidad de Madrid",
@@ -1651,7 +1651,7 @@
       "asignatura": "Análisis Musical II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Análisis Musical II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Análisis Musical II · PAU Madrid",
@@ -1685,7 +1685,7 @@
       "asignatura": "Artes Escénicas II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Artes Escénicas II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Artes Escénicas II · PAU Madrid",
@@ -1719,7 +1719,7 @@
       "asignatura": "Ciencias Generales",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Ciencias Generales PAU Madrid | MIEBAU",
         "h1": "Exámenes de Ciencias Generales · PAU Madrid",
@@ -1753,7 +1753,7 @@
       "asignatura": "Coro y Técnica Vocal II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Coro y Técnica Vocal II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Coro y Técnica Vocal II · PAU Madrid",
@@ -1787,7 +1787,7 @@
       "asignatura": "Dibujo Artístico II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Dibujo Artístico II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Dibujo Artístico II · PAU Madrid",
@@ -1821,7 +1821,7 @@
       "asignatura": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Dibujo Técnico Aplicado II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II · PAU Madrid",
@@ -1855,7 +1855,7 @@
       "asignatura": "Diseño",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Diseño PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Diseño · PAU Comunidad de Madrid",
@@ -1889,7 +1889,7 @@
       "asignatura": "Francés",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Francés PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Francés · PAU Comunidad de Madrid",
@@ -1923,7 +1923,7 @@
       "asignatura": "Fundamentos Artísticos",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Fundamentos Artísticos PAU Madrid | MIEBAU",
         "h1": "Exámenes de Fundamentos Artísticos · PAU Madrid",
@@ -1957,7 +1957,7 @@
       "asignatura": "Geología y Ciencias Ambientales",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Geología y Ciencias Ambientales PAU Madrid | MIEBAU",
         "h1": "Exámenes de Geología y Ciencias Ambientales · PAU Madrid",
@@ -1991,7 +1991,7 @@
       "asignatura": "Historia de la Música y de la Danza",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Historia de la Música y de la Danza PAU Madrid | MIEBAU",
         "h1": "Exámenes de Historia de la Música y de la Danza · PAU Madrid",
@@ -2025,7 +2025,7 @@
       "asignatura": "Italiano",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Italiano PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Italiano · PAU Comunidad de Madrid",
@@ -2059,7 +2059,7 @@
       "asignatura": "Literatura Dramática",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Literatura Dramática PAU Madrid | MIEBAU",
         "h1": "Exámenes de Literatura Dramática · PAU Madrid",
@@ -2093,7 +2093,7 @@
       "asignatura": "Movimientos Culturales y Artísticos",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Movimientos Culturales y Artísticos PAU Madrid | MIEBAU",
         "h1": "Exámenes de Movimientos Culturales y Artísticos · PAU Madrid",
@@ -2127,7 +2127,7 @@
       "asignatura": "Portugués",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Portugués PAU Comunidad de Madrid | MIEBAU",
         "h1": "Exámenes de Portugués · PAU Comunidad de Madrid",
@@ -2161,7 +2161,7 @@
       "asignatura": "Técnicas de Expresión Gráfico-Plástica",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Técnicas de Expresión Gráfico-Plástica PAU Madrid | MIEBAU",
         "h1": "Exámenes de Técnicas de Expresión Gráfico-Plástica · PAU Madrid",
@@ -2195,7 +2195,7 @@
       "asignatura": "Tecnología e Ingeniería II",
       "comunidad": "Comunidad de Madrid",
       "estado_datos": "estructura_verificada",
-      "indexacion": "noindex",
+      "indexacion": "index",
       "seo": {
         "title": "Exámenes de Tecnología e Ingeniería II PAU Madrid | MIEBAU",
         "h1": "Exámenes de Tecnología e Ingeniería II · PAU Madrid",

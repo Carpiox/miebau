@@ -124,7 +124,7 @@ function validateData(data) {
     assert(/^(?:region-de-murcia|comunidad-de-madrid)\/[a-z0-9-]+$/.test(entry.slug), `Slug inválido: ${entry.slug}`);
     assert(entry.url === `/examenes/${entry.slug}`, `URL incoherente para ${entry.slug}`);
     assert(entry.estado_datos === 'estructura_verificada', `Estado no verificado en ${entry.slug}`);
-    assert(entry.indexacion === 'noindex', `La ficha ${entry.slug} debe permanecer en noindex`);
+    assert(entry.indexacion === 'index', `La ficha ${entry.slug} debe declarar indexacion: "index" (se publica en el sitemap y sin meta noindex)`);
     validateOptionalUrl(entry.widget_embed_url, 'widget_embed_url', entry.slug);
 
     const officialExamLinks = entry.enlace_oficial_examen;
