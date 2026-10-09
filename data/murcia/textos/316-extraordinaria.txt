@@ -1,0 +1,160 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 -  JULIO 
+NOTA IMPORTANTE:  Todas las preguntas del bloque 1 son obligatorias. En los bloques 2, 3 y
+4, elija solo una de las dos opciones (A o B). La opción que elija en un bloque es independiente
+de la elección en los otros. En la hoja de respuestas, indique el número de bloque, opción y
+pregunta. En el caso de responder a más de una opción en un mismo bloque solo se corregirá la
+que primero se haya respondido. 
+Bloque 1: Campo gravitatorio [2 puntos] 
+El programa Artemis de la NASA tiene como principal objetivo llevar de nuevo seres humanos a la
+Luna tras más de cincuenta años. En estas misiones, la nave Orion transporta a la tripulación desde
+la Tierra hasta la órbita lunar, mientras que el módulo lunar HLS (Human Landing System) (de masa 
+10 !  kg) realiza el descenso y posterior ascenso desde la superficie de la Luna. 
+a) [1p]  Calcule el módulo del campo gravitatorio resultante en el punto medio de la línea que
+une los centros de la Tierra y la Luna. Indique también su sentido. 
+b) [1p]  Tras alunizar, el módulo HLS despega desde la superficie lunar y se coloca en una
+órbita  circular  estable  a  una  altura  h = 100 km  sobre  la  superficie  lunar,  donde  se
+reencuentra con la nave Orion. Suponiendo que solo actúa el campo gravitatorio lunar,
+calcule el cambio de energía mecánica del módulo entre la superficie lunar y dicha órbita.
+Datos:  G = 6.67 × 10 "##  N ⋅ m 2 /kg 2 ,  masa de la Luna  = 7.35 × 10 $$  kg, masa de la Tierra
+=  5.97 × 10 $%  kg ,  radio de la Luna  = 1740  km, distancia Tierra-Luna =  3.8 × 10 !  km. 
+Bloque 2: Campo electromagnético [3 puntos]
+Opción 2-A 
+a)  [1.5p]  Enuncie el teorema de Gauss en electrostática (no es necesario demostralo) y aplíquelo
+razonadamente para explicar por qué el campo eléctrico en cualquier punto del exterior de una
+esfera maciza con carga total Q uniformemente distribuida es igual al creado por una carga
+puntual de igual valor Q situada en su centro. 
+b)  [1.5p]  Una espira cuadrada de lado 20 cm está situada en el plano XY  en presencia de un
+campo magnético uniforme dirigido en el sentido positivo del eje Z, cuyo módulo varía con el
+tiempo  𝑡  según  𝐵(𝑡) = 3𝑡 '  + 2 , donde  𝐵  está dado en teslas y  𝑡  en segundos. Calcule la fuerza
+electromotriz inducida en la espira en función del tiempo y represente con un dibujo el sentido
+de la corriente inducida para  𝑡 > 0 , justificando brevemente su respuesta.
+Opción 2-B 
+Dos protones y un electrón se encuentran situados en los vértices de un
+triángulo equilátero de 2 nm de lado, como muestra la figura. El punto A
+representa el punto medio entre los protones. Determine: 
+a) [1.5p]  El potencial eléctrico en el punto A. 
+b) [1.5p]  El trabajo realizado por el campo eléctrico si trasladamos el
+electrón desde el vértice superior del triángulo hasta el punto A.
+Datos:  |𝑒| = 1.6 × 10 "#(  C,  #
+%)* ! 
+= 9 × 10  (  N·m 2 C -2 
+Bloque 3: Vibraciones y Ondas [3 puntos]
+Opción 3-A 
+La figura representa, en el instante inicial  𝑡 = 0 , la velocidad
+de vibración  𝑣(𝑥)  para una onda armónica transversal de 
+10  cm de amplitud que se propaga en el sentido positivo del
+eje x. Halle: 
+a) [1.5p]  La longitud de onda, frecuencia y velocidad de
+propagación. 
+b) [1.5p]  La diferencia de fase entre dos puntos del eje x separados 2 m. 
+Opción 3-B 
+a)  [1.5p]  Explique razonadamente, en base a su clasificación como ondas mecánicas o no, por qué
+la luz puede propagarse en el vacío mientras que el sonido no. Además, mencione en cada caso
+qué magnitudes físicas oscilan y cómo se orientan dichas oscilaciones respecto a la dirección de
+propagación. 
+b)  [1.5p]  La gráfica adjunta representa la distancia imagen  𝑠′  en
+función de la distancia objeto  𝑠  de una lente delgada. A partir de
+dicha  gráfica,  determine  la  potencia  de  la  lente  e  indique
+razonadamente si es  convergente o divergente.  (Nota: Se utiliza
+el criterio de signos habitual en óptica; distancias negativas a la
+izquierda de la lente y positivas a la derecha).
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 -  JULIO 
+Bloque 4: Física relativista, cuántica, nuclear y de partículas [2 puntos]
+Opción 4-A 
+Los detectores de radiación ultravioleta utilizados en satélites meteorológicos incorporan a menudo
+cátodos de wolframio, cuya  función de trabajo  (o  trabajo de extracción ) es 4.5 eV. Para calibrar uno
+de estos detectores en tierra se ilumina con una lámpara de mercurio que emite radiación de 200
+nm de longitud de onda. Calcular: 
+a) [1p]  La velocidad máxima con la que son emitidos los electrones desde la superficie del cátodo. 
+b) [1p]  El potencial de frenado necesario para anular completamente la corriente fotoeléctrica.
+Datos:  ℎ = 6.6 × 10 "'%  J·s, masa del electrón=  9.1 × 10 "'#  kg, carga del electrón : |𝑒| =
+1.6 × 10 "#(  C 
+Opción 4-B 
+a)  [1p]  El núcleo de helio-4 (⁴He) está formado por 2 protones y 2 neutrones. Calcule su energía
+de enlace por nucleón (en MeV).
+Datos: masa del protón  = 1.0073  u, masa del neutrón  = 1.0087  u, masa del  ⁴He = 4.0015  u, 
+1  u  = 931.5  MeV/c 2 
+b)  [1p]  Para cada una de las siguientes partículas elementales indique si es un fermión o un bosón
+y si son constituyentes de la materia o mediadores de interacciones: electrón, fotón,  W , quark up
+( 𝑢 ).
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 
+CRITERIOS GENERALES DE EVALUACIÓN 
+•  Los criterios se basan en un principio de evaluación justa de las competencias y habilidades en
+Física del alumno, valorando la comprensión, exposición y manejo de los conceptos físicos, así
+como el desarrollo lógico de la resolución de los problemas propuestos. 
+•  La prueba constará de 4 apartados correspondientes a  cada uno de los bloques de saberes
+básicos establecidos en el Real Decreto 243/2022, de 5 de abril, por el que se establecen la
+ordenación y las enseñanzas mínimas del Bachillerato; y el Decreto n.º 251/2022, de 22
+diciembre, por el que se establece la ordenación y el currículo de Bachillerato en la Comunidad
+Autónoma de la Región de Murcia: 1- Campo gravitatorio ; 2- Campo electromagnético ; 3- 
+Vibraciones y ondas ; y 4- Física relativista, cuántica, nuclear y de partículas . En uno de los
+apartados todas las preguntas serán obligatorias. En el resto de apartados se ofrecerá dos
+opciones, de las cuales el alumnado deberá elegir una. Las opciones de cada apartado
+contendrán dos preguntas en forma de cuestiones independientes o un problema con dos
+apartados. Cada uno de las preguntas se valorará entre 1 y 1.5 puntos, resultando un valor total
+de 2 o 3 puntos para cada apartado, y en 10 puntos el total del examen, según la siguiente
+distribución:  1- Campo  gravitatorio  [2  puntos] ;  2- Campo  electromagnético  [3  puntos] ;  3- 
+Vibraciones y ondas [3 puntos] ; y 4- Física relativista, cuántica, nuclear y de partículas [2 puntos] . 
+•  Si un apartado depende de la respuesta de uno anterior, se corregirá usando las respuestas
+dadas por el alumno, de manera que un error previo no afecte a la calificación de los apartados
+posteriores, a menos que resulte en respuestas físicamente absurdas. (Por ejemplo, si un
+alumno presenta un índice de refracción inferior a uno como resultado de una pregunta y lo
+necesita para la siguiente pregunta, ésta también será penalizada). 
+•  Las respuestas numéricas deben justificarse con el planteamiento del problema y los cálculos
+realizados. Las respuestas cualitativas deben mencionar la ley aplicada y/o el razonamiento
+que lleva a la solución. 
+•  Para los evaluadores de las pruebas se establecerán criterios específicos detallados, puntuando
+cada etapa de la resolución, con el objetivo de asegurar una corrección lo más unificada posible. 
+•  El anteriormente mencionado Real Decreto estipula que “ En aquellos ejercicios en los que las
+preguntas o tareas propuestas requieran la producción de textos por parte del alumnado, la
+valoración correspondiente a los aspectos contemplados en el apartado b) [b) la coherencia, la
+cohesión, la corrección gramatical, léxica y ortográfica de los textos producidos, así como su
+presentación] no podrá ser inferior a un 10 por ciento de la calificación de la correspondiente
+pregunta o tarea ”. 
+•  Se establecen tres niveles de  errores , de menor a mayor gravedad: leve, medio y grave. Debido
+a la amplia casuística posible, la siguiente lista no es exhaustiva y cualquier otra circunstancia
+se evaluará de acuerdo a la filosofía general de este documento y a los criterios específicos
+acordados con los evaluadores, pero contempla un conjunto de errores que típicamente se
+localizan de forma habitual por los correctores de las pruebas.
+1.  Error leve  (penalización de  0.1 puntos  por error. La suma de todos los errores leves de un
+mismo tipo en un apartado no podrá superar el 20% del valor de dicho apartado). Son
+ejemplos de errores leves:
+-  Unidades:  Ausencia  o  incorrección  de  unidades  de  una  magnitud  física  en  datos  o
+resultados. Si no se pide explícitamente dar el resultado en una unidad en particular, será
+válida cualquier unidad dimensionalmente correcta. No se considerará error omitir unidades
+al sustituir valores numéricos en ecuaciones.
+-  Vectores: Omitir el símbolo de vector en una magnitud vectorial, inhomogeneidad vectorial
+en una ecuación, etc. No debe confundirse este tipo de error simbólico con la asignación de
+carácter vectorial a una magnitud escalar (y viceversa), lo que, bajo ninguna circunstancia,
+podrá ser considerado como un error leve.
+-  Múltiplos y submúltiplos de unidades. El alumno debe conocer el significado y nomenclatura
+de los prefijos al menos desde  pico  (10 -12 ) a  Tera  (10 12 ).
+-  Errores en potencias de 10: (por múltiplos de unidades, en cálculos intermedios, al transcribir
+de la calculadora, cifras correctas pero con coma decimal en mala posición, etc).
+-  Error al transcribir dato del enunciado (siempre que no implique un error conceptual).
+-  Uso inadecuado o excesivo de cifras significativas. (Como norma general el número de cifras
+significativas  en  el  resultado  final  debe  ser  del  mismo  orden  que  el  de  los  datos
+proporcionados).
+-  Error de cálculo leve. Ya sea en la manipulación analítica o numérica.
+2.  Error medio  (penalización máxima del  50%  del valor del concepto evaluado). Son ejemplos
+de errores medios:
+-  Manipulación matemática incorrecta (si no puede considerarse error leve) partiendo de
+expresiones bien planteadas.
+-  Interpretación o uso incorrecto del signo en magnitudes o expresiones físicas, cuando no
+constituya un error conceptual grave.
+3.  Error grave  (penalización del  100%  del valor del concepto evaluado). Ejemplo de este tipo
+de errores son:
+-  No razonar o justificar en los casos en los que se pida explícitamente (por ejemplo, en
+preguntas teóricas que impliquen un desarrollo, en preguntas de verdadero o falso, etc.)
+-  No explicitar suficientemente el desarrollo o razonamiento que lleva a la obtención de un
+resultado analítico o numérico.
+-  La aplicación incorrecta de una expresión física que muestre error conceptual.
+Las anteriores valoraciones son de carácter general y orientativas y pueden ser matizadas en los
+criterios específicos acordados para los evaluadores, atendiendo a la especificidad de una
+pregunta concreta.

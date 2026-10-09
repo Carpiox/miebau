@@ -1,0 +1,245 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+1 
+NOTA IMPORTANTE:  El examen consta de  5 BLOQUES , numerados de  1 a 5,  con dos cuestiones en cada
+bloque,  A  y  B , para  elegir una de ellas, SALVO EL BLOQUE 5 que es de respuesta obligatoria . Cada cuestión
+tiene una puntuación de 2 puntos. Se puede elegir en un bloque la opción A y en otro la B. 
+Algunos datos y constantes que pueden ser de utilidad durante el examen. 
+NA  = 6,022·10 23 mol ‒ 1 ;  Kw  = 10 -14 ;  R  = 0,082 atm·L·mol -1 · K -1 = 8,31 J·K -1 ·mol -1 ;  F  = 96.500 C·mol -1 
+BLOQUE 1: ESTRUCTURA ATÓMICA Y ENLACE QUÍMICO.  Elegir una cuestión,  1A  o  1B 
+1A.  Los números atómicos y másicos de tres elementos A, B y C son: A (Z=19, A=39), B (Z=15, A=31)
+y C (Z=35, A=80) 
+a)  Escriba sus configuraciones electrónicas y explique cuál es el ion más estable para cada uno de
+ellos  (0,75 puntos) 
+A: 1s 2 2s 2 2p 6 3s 2 3p 6 4s 1 (o [Ar] 4s 1 ) 
+Ion más estable: A + (o K + ) ya que, al perder un electrón, el ion formado adquiere configuración
+electrónica de gas noble (octeto completo). 
+B: 1s 2 2s 2 2p 6 3s 2 3p 3 (o [Ne] 3s 2 3p 3 ) 
+Ion más estable: B 3- (o P 3- ) ya que, al ganar tres electrones, el ion formado presenta la configuración
+de gas noble con el octeto completo (Si perdiera 3 electrones, la configuración sería 1s 2 2s 2 2p 6 3s 2 ,
+no alcanzando el octeto). 
+C: 1s 2 2s 2 2p 6 3s 2 3p 6 4s 2 3d 10 4p 5 (o [Ar] 4s 2 3d 10 4p 5 ) 
+Ion más estable: C - (o Br - ) ya que, al ganar un electrón, el ion formado presenta la configuración
+electrónica de gas noble (octeto completo). 
+b)  Indique, para cada uno de ellos: nombre, número de neutrones y número de protones  (0,75 puntos) 
+(El número de protones coincide con Z y el número de neutrones se calcula restando al número 
+másico el número atómico: N = A ‒ Z ) 
+A: potasio, 19 protones y 20 neutrones. 
+B: fósforo,15 protones y 16 neutrones. 
+C: bromo, 35 protones y 45 neutrones. 
+c)  Razone cuál de ellos tendrá una primera energía de ionización mayor  (0,5 puntos) 
+C (o Br) 
+La energía de ionización aumenta hacia la derecha en la tabla periódica, es decir, al avanzar en un
+periodo, debido al aumento de la carga nuclear efectiva (debido a su vez a que aumenta el número
+de protones en el núcleo). Como el Br (C) está más a la derecha su energía de ionización será
+mayor.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+2 
+1B. I)  Dibuje el ciclo de Born-Haber para la formación del MgCl2 (s) a partir de Mg (s) y Cl2 (g), y determine su
+entalpía de formación ( ∆ H°f (MgCl2 (s)) a partir de los siguientes datos:  (1,5 puntos) 
+Entalpía de red del MgCl2 (s):  ∆ Hred =  ‒ 2526 kJ·mol -1 
+Entalpía de sublimación del Mg (s) : ∆H sub = 148 kJ·mol -1 
+Entalpía de disociación del Cl2 (g) : ∆Hdisoc =  243 kJ·mol -1 
+Primera energía de ionización del Mg (g): EI1 = 738 kJ·mol -1 
+Segunda energía de ionización del Mg (g): EI2= 1451 kJ·mol -1 
+Afinidad electrónica del Cl (g) : AE = ‒ 348 kJ·mol -1 
+∆ H°f  = ∆H sub  + ∆H disoc  + EI1 + EI2 + 2 AE1 + ∆H red 
+∆ H°f = 148 + 243 + 738 + 1451 – 2·348 – 2526 
+∆ H°f = -642 kJ·mol -1 
+II)  Justifique si la energía de red del MgCl2 (s) será mayor o menor (en valor absoluto) que la del
+CaBr2(s).  (0,5 puntos) 
+Será mayor la energía de red de MgCl2, porque las cargas de los iones son iguales en ambos
+compuestos, pero el tamaño de los iones es menor, tanto para anión como para catión, en MgCl2,
+por lo que la distancia entre los iones será menor y, por tanto, la energía reticular será mayor (según
+la ecuación de Born-Landé).
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+3 
+BLOQUE 2: TERMOQUÍMICA, EQUILIBRIO Y CINÉTICA.  Elegir una cuestión,  2A  o  2B 
+2A.  En un recipiente cerrado de 2 L de capacidad tenemos PCl5 (g) a 25 ºC y 4,9 atm. Calentamos el
+sistema hasta 250 ºC y, a esta temperatura, el PCl5 se disocia de acuerdo con el siguiente equilibrio: 
+PCl5 (g)  ↔  PCl3 (g) + Cl2 (g) 
+Si Kc= 0,19 a 250 ºC: 
+a)  Calcule las concentraciones en el equilibrio de todas las especies presentes  (1 punto) 
+En primer lugar, calculamos los moles de reactivo al inicio: 
+P V = n R T 
+4,9 · 2 = n · 0,082 · 298  n = 0,40 moles 
+La concentración inicial de PCl5 será 0,2 M 
+Establecemos el equilibrio: 
+PCl5 (g)  ↔  PCl3 (g) + Cl2 (g) 
+Concentraciones iniciales:  0,2  0  0 
+Concentraciones equilibrio:  0,2-x  x  x 
+Kc = x 2 /(0,2 -x) =0,19 
+Resolviendo la ecuación de segundo grado: x = 0,122 M 
+Por tanto, en el equilibrio: 
+[PCl5]= 0,2 – x = 0,078 M 
+[PCl3]= x = 0,122 M 
+[Cl2] = x = 0,122 M 
+b)  Calcule Kp  (0,5 puntos) 
+𝐾𝐾𝐾𝐾  =  𝐾𝐾𝐾𝐾  ( 𝑅𝑅𝑅𝑅 ) ∆𝑛𝑛 
+𝐾𝐾𝐾𝐾  = 0,19 (0,082  ∙  523) 1 
+𝐾𝐾𝐾𝐾  = 8,15 
+c)  Razone si aumentará la producción de PCl3 si: 
+c.I) se aumenta el volumen del sistema hasta 4 L  (0,25 puntos) 
+Sí aumentará la producción de PCl3. Si se aumenta el volumen, el equilibrio se desplaza hacia la
+derecha, donde hay mayor número de moles gaseosos. Por tanto, aumentará la concentración
+de PCl3 y su producción. 
+II.c) se añade un catalizador  (0,25 puntos) 
+No aumentará la producción de PCl3. La adición de un catalizador no produce ningún cambio en
+el estado de equilibrio (su efecto es el aumento de la velocidad de la reacción, se alcanzará
+antes el estado de equilibrio). Por tanto, no afectará a la concentración de PCl3, aunque sí se
+producirá antes.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+4 
+2B.  La siguiente reacción química permite obtener plata metálica de alta pureza: 
+2 Ag2O (s ) →  4 Ag (s) + O2 (g) 
+a)  Calcule el calor transferido cuando se descomponen 4,62 g del óxido metálico a 1 atm y 25 ºC,
+justificando si se absorbe o se desprende calor en el proceso  (0,75 puntos) 
+Calculamos los moles de Ag2O= 4,62/231,8=0,02 
+Ahora calculamos la entalpía de la reacción: 
+Teniendo en cuenta que las entalpías de formación de los productos son igual a cero: 
+Δ Hr 0 = 0 - 2 • (-30,6) = 61,2 kJ 
+Dado que para descomponer 2 mol de Ag2O se necesitan 61,2 kJ, para descomponer 0,02 moles
+se transferirán 0,61 kJ. 
+Siendo ΔH>0, el calor será absorbido. 
+b)  Razone el signo que tiene  Δ S 0 en esta reacción  (0,5 puntos) 
+El signo de  Δ S 0 será positivo. 
+El concepto de entropía se asocia con el grado de desorden que alcanza el sistema. Debido a
+que en esta reacción se parte de un sólido y se obtiene un gas, el grado de desorden aumentará. 
+c)  Mediante los cálculos pertinentes explique si la reacción será espontánea a 1000 ºC  (0,75
+puntos) 
+En primer lugar, calculamos la variación de entropía estándar de la reacción, según: 
+ΔS o r= 4 · 42 + 1 · 205 – 2 · 121 = 131 J K -1 
+Para que la reacción sea espontánea ΔG<0 ; 
+ΔG =  Δ H - T  Δ S 
+ΔG = 61,2 – 1273 · 0,131 = -105,5 kJ 
+Dado que  ΔG  es negativa, a 1000 ºC la reacción es espontánea. 
+Datos:  Δ Hf° (Ag2O (s)) = -30,6 kJ mol -1 ; S° (O2 (g)) = 205 J mol -1 K -1 ; S° (Ag (s)) = 42 J mol -1 K -1 ; 
+S° (Ag2O (s)) = 121 J mol -1 K -1 .  Pesos atómicos (g mol -1 ): Ag=107,9; O= 16.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+5 
+BLOQUE 3: ÁCIDO-BASE.  Elegir una cuestión,  3A  o  3B 
+3A.  a) Se mezclan 25 mL de una disolución de HNO3 0,2 M con 30 mL de una disolución de KOH. La
+disolución resultante pH = 2. Calcule la concentración de la disolución inicial de KOH. Suponga que los
+volúmenes son aditivos  (1 punto) 
+Se mezcla un ácido fuerte con una base fuerte: HNO3 (aq) + KOH (aq)  →  H2O (l) + KNO3 (aq) 
+Moles iniciales de HNO3: 0,025 L·0,2 mol·L -1 = 0,005 moles de HNO3. 
+Tras la reacción el pH=2, existe una [H3O + ] = 10 -2 M, 
+que en un V total de 55 mL suponen: 0,055 L·10 -2 mol·L -1 = 5,5·10 -4 moles de H3O + 
+Moles de ácido que han reaccionado: 0,005 - 5,5·10 -4 = 4,45·10 -3 
+Por tanto, esos son los moles de KOH que había en la disolución inicial de KOH. 
+Como su V era 30 mL, su concentración sería: 4,45·10 -3 moles / 0,03 L = 0,148 M 
+b) El anión HPO ₄ ² ⁻  es anfótero, lo que significa que puede actuar como un ácido (Ka = 4,8·10 ‒ 13 ) y como
+una base (Kb = 1,6·10 ‒ 7 ). Escriba sus reacciones de hidrólisis ácida y básica y, sin necesidad de hacer
+cálculos, explique si, como resultado de ambas reacciones, una disolución de HPO ₄ ² ⁻  será neutra, ácida
+o básica.  (1 punto) 
+Hidrólisis ácida: HPO ₄ ² ⁻  (aq)  + H2O (l)  ↔  PO ₄ 3 ⁻  (aq)  + H3O + (aq)  Ka = 4,8·10 ‒ 13 
+Hidrólisis básica: HPO ₄ ² ⁻  (aq)  + H2O (l)  ↔  H2PO ₄⁻ (aq)  + OH ‒  (aq)  Kb = 1,6·10 ‒ 7 
+Como Kb  > K a, la disolución será básica (el segundo equilibrio estará más desplazado hacia la derecha
+que el primero, y en el medio predominarán los aniones hidróxido) 
+3B.  I)  Calcule el grado de disociación del ácido fluorhídrico (HF) en una disolución preparada al diluir 10
+mL de una disolución 0,22 M en HF hasta un volumen final de 100 mL. Dato: Ka(HF)= 6,8·10 -4  (1,5 puntos) 
+En primer lugar, calculamos la concentración de la disolución preparada por dilución: teniendo en
+cuenta el volumen inicial y final, la nueva concentración será de 0,022 M. 
+Ahora establecemos el equilibrio de disociación: 
+HF (aq) + H2O (l)  ↔  F - (aq) + H3O + (aq) 
+Conc.iniciales:  c  0  0 
+Conc. equilib:  c(1- α)  cα  cα 
+La expresión para Ka es:  𝐾𝐾𝑎𝑎  =  𝑐𝑐 2 α 2
+𝑐𝑐 ( 1−α )  =  𝑐𝑐  α 2
+1−α  =  0 , 022  α 2
+1−α  = 0,00068 
+Resolviendo la ecuación de segundo grado:  α  = 0,161 (16,1%)
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+6 
+II)  Se dispone de una disolución de NH3 y otra de piridina (C5H5N), ambas de concentración 0,1 M.
+Explique razonadamente cual presentará un valor menor de pH, sabiendo que Kb(NH3)=1,8 ‧ 10 -5 y
+Kb(C5H5N)=1,7 ‧ 10 -9 . No es necesario hacer cálculos.  (0,5 puntos) 
+NH3 (aq) + H2O (l)  ↔  NH4 + (aq) + OH −  (aq)  Kb=1,8 ‧ 10 -5 
+C5H5N (aq) + H2O (l)  ↔  C5H6N + (aq) + OH −  (aq)  Kb=1,7 ‧ 10 -9 
+Dado que Kb(C5H5N) es menor que Kb(NH3), la disolución de piridina tendrá una concentración menor
+de OH - y por tanto su pH será menor. 
+BLOQUE 4: REDOX.  Elegir una cuestión,  4A  o  4B 
+4A.  En el ámbito de la metalurgia la siguiente reacción de oxidación-reducción se utiliza para disolver el
+cobre: 
+CuS + HNO3  → S + NO  + H2O + Cu(NO3)2 
+a)  Explique cuál es el agente oxidante y cuál el agente reductor, y qué cambios se producen en sus
+números de oxidación  (0,5 puntos) 
+El agente oxidante es el NO3 - (o el HNO3) porque gana electrones (o porque se reduce, o porque
+se reduce a NO). El N pasa de número de oxidación +5 a +2. 
+El agente reductor es el S 2−  (o el CuS) porque pierde electrones (o porque se oxida, o porque se
+oxida a S). El S pasa de número de oxidación -2 a 0. 
+b)  Ajuste la reacción mediante el método del ion electrón, escribiendo correctamente las semirreacciones
+de oxidación y reducción  (1,5 puntos) 
+Semirreacción de reducción: NO3 −  +  4 H + + 3 e −  → NO  + 2 H2O 
+Semirreacción de oxidación: S 2−  →  S + 2 e − 
+Para igualar el número de electrones intercambiados, multiplicamos la semirreacción de oxidación por
+3 y la de reducción por 2: 
+2 NO3 −  + 8 H + + 6 e −  → 2 NO  + 4 H2O 
+3 S 2−  → 3  S + 6 e − 
+y sumamos las dos semirreacciones: 
+2 NO3 −  + 8 H + + 3 S 2− → 3 S +  2 NO+ 4 H2O 
+Ahora ponemos en forma molecular: 
+3 CuS + 8 HNO3  →  3 S + 2 NO+ 4 H2O + 3 Cu(NO3)2
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+7 
+4B. I)  Se dispone de dos disoluciones acuosas: una de NaCl 1 M y otra de NaI 1 M. Si a cada una de ellas
+añadimos bromo elemental (Br2), escriba la posible reacción química que podría ocurrir y mediante los
+cálculos pertinentes justifique si dichas reacciones son o no posibles  (1,4 puntos) 
+Datos:  E°(Br2/Br - )= 1,06 V; E°(Cl2/Cl - )= 1,36 V; E°(I2/I - )= 0,54 V 
+Las hipotéticas reacciones químicas serían: 
+-  Para la disolución de NaCl 1 M: Br2 + 2 Cl -  → 2 Br - + Cl2 
+También serían válidas: Br2  + 2 NaCl → 2 NaBr + Cl 2 
+Br2 + 2 NaCl  →  2 Br - + Cl2 + 2 Na + 
+E° = E°(reducción) – E° (oxidación) 
+E° = E°(Br2/Br-) – E° (Cl2/Cl - ) = 1,06 – 1,36 = – 0,3 V 
+Dado que Eº<0, el proceso no será espontáneo. 
+No ocurrirá ninguna reacción química. 
+-  Para la disolución de NaI 1 M: Br2 + 2 I -  → 2 Br - + l2 
+También serían válidas: Br2  + 2 NaI → 2 NaBr + l 2 
+Br2 + 2  Nal → 2 Br - + l2 + 2 Na + 
+Eº = Eº(reducción) − Eº (oxidación) = Eº(Br 2/Br - ) − Eº (I 2/I - ) = 1,06 – 0,54 = 0,52 V. 
+Dado que Eº>0, el proceso será espontáneo. 
+Sí ocurrirá la reacción química indicada. 
+II)  Complete las siguientes frases (no es necesario copiarlas en el cuadernillo).  (0,6 puntos) 
+a)  Para que una pila galvánica funcione, las disoluciones de los electrodos han de
+conectarse mediante un _puente___ (1)  __salino_________(2) 
+b)  En una celda __electrolítica____________ (3) tiene lugar una reacción redox no
+espontánea. Los electrones se desplazan desde el _ánodo ____________ (4) hacia el
+_cátodo____________ (5). Se _consume_____________ (6) electricidad
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JULIO 
+8 
+BLOQUE 5: QUÍMICA ORGÁNICA 
+5.  I) Formule o nombre los siguientes compuestos: ( 1 punto ) 
+a) Pentan-2-ona  b) Ciclohexeno  c) CH3-CH2-CH2-NH-CH3  d) CH3- C≡CH  e) C 6H5-COOH 
+a) CH3-CO-CH2-CH2-CH3 
+b) 
+c)  N-metilpropan-1-amina; N-metilpropanamina; Metilpropilamina; Metil-n-propilamina; N-metilpropilamina 
+d)  Propino; Prop-1-ino; 1-Propino; Metilacetileno 
+e)  Ácido benzoico;  Ácido bencenocarboxílico 
+II) Indique qué tipo y subtipo de isomería presentan los siguientes pares de compuestos orgánicos: ( 0,5
+puntos ) 
+a)  CH3-C(CH3)2-CH2-CH2-CH3 y CH3-CH2-CH(CH2-CH3)-CH2-CH3 
+Isomería estructural (o constitucional) de cadena. 
+(Sólo cambia la disposición del esqueleto carbonado). 
+b)  Isomería espacial (o estereoisomería) óptica (son enantiómeros) 
+(Son imágenes especulares no superponibles, debido a la presencia
+de un C quiral) 
+III)  Teniendo en cuenta el tipo de reacción indicado en cada caso, escriba los productos
+mayoritarios esperados para las siguientes reacciones: ( 0,5 puntos ) 
+a)  Adición:  CH3-CH2-CH=CH2 + HBr  CH3-CH2-CHBr-CH3 
+b)  Sustitución:  CH3-CH2-CH2Br + KCN  CH3-CH2-CH2-CN + KBr

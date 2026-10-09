@@ -1,0 +1,288 @@
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+330- TECNOLOGÍA E INGENIERÍA II 
+PAU2026 –  JUNIO 
+1 
+NOTA IMPORTANTE:  El examen consta de cuatro apartados (2,5 puntos cada uno). El
+Apartado 1 es un problema competencial sin opcionalidad. El Apartado 2 consta de dos
+cuestiones (1,25 puntos cada una) que se elegirán de entre las tres cuestiones teórico-
+prácticas que se formulan en el Bloque I. Los Apartados 3 y 4 serán dos problemas (2,5
+puntos cada uno) que se elegirán entre los tres problemas que se formulan en el Bloque II.
+Si el estudiante responde a un número de cuestiones/problemas, superior al exigido, solo se
+corregirá la cuestión/problema que haya contestado primero en cada bloque. 
+Apartado  1.  (2,5  puntos).  Problema  competencial  sin  opcionalidad.  Diseño  e
+implementación de un sistema electrónico combinacional con puertas lógicas. 
+Se quiere diseñar un sistema electrónico mediante puertas lógicas para controlar la puesta en
+marcha de un grupo motobomba para evacuar el agua de un aparcamiento subterráneo en caso
+de inundación. El grupo motobomba está instalado en una arqueta (similar a un pequeño pozo)
+dentro del propio aparcamiento, y se pondrá en marcha dependiendo de la combinación de 3
+variables M, P, T según se indica a continuación: 
+-  Siempre que el sensor “M” que detecta el nivel máximo de agua en la arqueta esté activado, y
+simultáneamente se encuentre abierta la válvula de descarga del caudal bombeado a la red de
+alcantarillado exterior, en cuyo caso el sensor “P” estará desactivado. Indistintamente de la
+actuación o no sobre un pulsador manual “T” que pone en marcha el grupo motobomba 
+-  Adicionalmente el grupo motobomba también se pondrá en marcha al actuar sobre el pulsador
+manual “T” (pulsador activado), siempre que la válvula de descarga esté abierta (sensor “P”
+desactivado), e indistintamente de que el sensor de nivel detecte o no detecte que se ha
+alcanzado el nivel máximo de agua en la arqueta
+Se pide, obtener:
+a) La  tabla  de  verdad  y  la  función
+lógica  de  salida  en  su  primera
+forma  canónica  desarrollada  y
+compacta (0,75 p.)
+b) Representar la tabla de verdad en
+un “mapa de Karnaugh” y obtener
+la  función  lógica  simplificada  en
+forma de “Minterms”. (1 p.)
+c) Diseñar el circuito lógico utilizando
+el  “mínimo”  número  de  puertas
+lógicas NAND de dos entradas y
+simbología normalizada ANSI-IEC.
+Indicar  la  salida  en  cada  puerta
+lógica del circuito diseñado. (0,75 p)
+Nota: Reproducir las tablas adjuntas en el cuadernillo de examen con las variables en el
+orden indicado 
+!!  ! 
+!"#$%"
+&'(  )  *  +  , 
+!
+"
+#
+$
+%
+&
+'
+( 
+-./0"%"1
+)2*3+  !  "
+!!
+!"
+""
+"!
+2 
+Apartado 2. BLOQUE I (2,5 puntos). Elegir dos de las tres cuestiones teórico-prácticas
+propuestas (1,25 p. cada una)
+Cuestión  I.1  (1,25  puntos)  Responder  a  las  siguientes  cuestiones  sobre  materiales,
+propiedades y ensayos mecánicos 
+Los raíles de las vías de tren se fabrican normalmente mediante un proceso de laminación en
+caliente con aceros de elevado contenido en carbono (típicamente entre 0,6 y 0,9% en C) y
+aleados, entre otros metales, con Manganeso y Silicio, para ser capaces de soportar cargas
+dinámicas pesadas con desgaste mínimo, ya que estos aceros presentan alta resistencia
+mecánica, dureza y tenacidad. Se pide:
+a)  Definir “tenacidad” e indicar que ensayo se puede realizar para medirla (0,25 p.)
+b)  Representar la forma típica del diagrama tensión-deformación del ensayo de tracción de
+un acero. Indicar los puntos y zonas características (0,25 p.)
+c)  Al realizar un ensayo de tracción sobre una probeta cilíndrica de dicho acero de 20 mm
+de diámetro y 200 mm de longitud, se miden deformaciones elásticas hasta una fuerza de
+220 kN. Al seguir aumentando la fuerza de tracción aplicada, se mide una fuerza máxima
+de rotura de 314 kN. Se pide, calcular (0,25 p. cada subapartado):
+c.1) La tensión límite elástica (en MPa)
+c.2) El módulo de Young (en GPa), considerando que la tensión límite elástica es igual
+a la proporcional, y que el alargamiento medido en la probeta es de 0,4 mm
+c.3) Las tensiones de rotura y trabajo para un coeficiente de seguridad 2 (en MPa) 
+Cuestión I.2 (1,25 puntos). Responder de forma breve y concisa a las siguientes cuestiones
+sobre circuitos frigoríficos. 
+En un local comercial se dispone de una cámara frigorífica para conservación de fruta. Se pide,
+considerando que idealmente funciona según un ciclo de Carnot:
+a)  Explicar el funcionamiento de la cámara frigorífica, indicar sus componentes y representar
+el ciclo termodinámico en un diagrama  𝑝  −  𝑣 . (0,75 p.)
+b)  Calcular la eficiencia sabiendo que la temperatura del interior de la cámara es 2ºC y que la
+temperatura ambiente media en el exterior de la cámara es de 25ºC. (0,25 p.)
+c)  Calcular la potencia del compresor (en watios) y el calor cedido por unidad de tiempo al
+foco caliente, sabiendo que el calor absorbido por unidad de tiempo del interior de la cámara
+es 200 J/s (0,25 p.)
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+330- TECNOLOGÍA E INGENIERÍA II 
+PAU2026 –  JUNIO 
+3 
+Cuestión I.3 (1,25 puntos). Análisis de un sistema de control en lazo cerrado.  Se pide analizar
+el sistema de control en lazo cerrado de un proceso industrial en el que se requiere controlar el
+régimen de giro de un ventilador para mantener su caudal constante. En la figura se representa el
+diagrama de bloques simplificado de dicho sistema de control. Se pide: 
+a) Explicar la diferencia principal entre un sistema en lazo abierto y en lazo cerrado. Enumerar
+los componentes principales de un sistema en lazo cerrado. (0,25 puntos)
+b) Obtener la función de transferencia del sistema  𝐶(𝑠) 𝑅(𝑠) ⁄  (0,75 puntos)
+c) Enumerar algunos tipos de transductores para medida del régimen de giro del ventilador que
+podrían utilizarse como señal de realimentación (0,25 puntos) 
+Apartados 3 y 4. BLOQUE II (5 puntos). Elegir dos de los tres problemas propuestos (2,5
+puntos cada uno). 
+Problema II.1 (2,5 puntos) Cálculo de fuerzas cortantes y momentos flectores en vigas
+simples.  Se quiere analizar una viga soldada que forma parte de una estructura. Se pide, para
+los datos indicados en la figura adjunta, calcular: 
+a)  Las reacciones en los apoyos A y B. (0,75 p.)
+b)  La ecuación de fuerzas cortantes y momentos flectores en cada tramo de la viga en función
+de la coordenada “x” (según se indica en la figura). (1,25 p.)
+c)  Representar gráficamente dichas ecuaciones para cada tramo, e indicar en que sección o
+tramo intermedio de la viga se tiene momento flector máximo e indicar su valor. (0,5 p.)
+4 
+Problema II.2 (2,5 puntos) Análisis de sistemas de potencia fluida neumáticos.  Se quiere
+analizar  un  sistema  neumático  cuyo  circuito  se  representa  en  la  figura  adjunta  mediante
+simbología normalizada. Se pide: 
+a) Identificar y describir la función de los siguientes componentes: 0.1, 1.3, 1.01, 1.1, 1.03 y 1.0.
+(0,5 p.)
+b) Explicar el funcionamiento del circuito, y que condiciones deben cumplirse para que el cilindro
+realice las carreras de extensión y retracción. (1 p.)
+c) Calcular la fuerza neta (o efectiva) que podría ejercer el vástago del cilindro durante la carrera
+de extensión, sabiendo que la presión de entrada al cilindro (en el lado del émbolo) es 7
+bar(rel), la contrapresión en la cámara del vástago es nula, y la fuerza de rozamiento
+representa un 10% de la fuerza neta (o efectiva) de extensión. (0,5 p.)
+Nota: Considerar que el diámetro del émbolo es 100 mm, y el del vástago es 25 mm
+d) Calcular el consumo de aire del cilindro (en m 3 /h referido a condiciones normales), sabiendo
+que el sistema realiza 5 ciclos (extensión/retracción) por minuto, y que la carrera es 200 mm.
+(0,5 p.). Nota: Considerar que la presión atmosférica es 1 bar. 
+Problema II.3 (2,5 puntos) Análisis de circuitos de CA monofásicos.  Se quiere analizar un
+sistema eléctrico cuyo circuito simplificado es el representado en la figura adjunta. El sistema
+consta de dos bobinas  𝐿 !  y  𝐿 " , un condensador, y una resistencia, todo conectado en serie. Se
+pide, para los datos indicados en la figura, calcular:
+a) La impedancia total equivalente del circuito, y
+expresarla  en  forma  binómica  y  polar.
+Razonar sobre si es un circuito inductivo o
+capacitivo, y obtener el ángulo de desfase y el
+factor de potencia. (1 p.)
+b)  Las  intensidades:  eficaz,  máxima  e
+instantánea. (0,5 p.)
+c) Las potencias: aparente, activa, y reactiva.
+Representar el diagrama fasorial. (0,5 p.)
+d) Calcular la tensión eficaz entre los extremos de la bobina  𝐿 !  y entre los extremos del
+condensador. (0,5 puntos)
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+330 – TECNOLOGÍA E INGENIERÍA II 
+PAU2026. JUNIO Criterios 
+Criterios generales y específicos de corrección y evaluación 
+1) Criterios generales 
+De forma general, en la corrección y evaluación de las preguntas del examen se valorará:
+-  El  planteamiento  general del problema: explicación del fenómeno, identificación de las
+leyes a utilizar, identificación de las variables aportadas en el enunciado y las que se pide
+determinar, y el uso de esquemas descriptivos que aclaren la resolución del problema.
+-  El  desarrollo  del  planteamiento:  uso  de  los  términos  científicos  y  tecnológicos
+apropiados, el lenguaje matemático (operaciones algebraicas y cálculos) correcto, la
+homogeneidad dimensional y el uso de unidades adecuadas (cambios de unidades), y la
+claridad en la exposición.
+-  El  resultado final : expresión correcta de lo solicitado, incluyendo el valor numérico y
+las unidades adecuadas, y su valoración e interpretación en los casos que se pida. 
+o  El planteamiento del problema es la parte de la resolución donde el alumnado
+demuestra en mayor medida sus competencias en la materia, interpretando el
+enunciado y traduciéndolo al formalismo que permite entender y racionalizar el
+fenómeno que se pregunta. El desarrollo y resultado final son igualmente importantes
+para llegar a la solución del problema. 
+o  En un problema de resolución numérica se valorará un planteamiento correcto con
+hasta el 40% de la puntuación del apartado o pregunta, un desarrollo correcto con
+hasta el 30% y un resultado correcto con hasta el 30% de la puntuación del apartado.
+Para los problemas no numéricos y las cuestiones teórico- prácticas se adaptarán
+estos porcentajes al tipo de pregunta, concretándose en caso necesario en los
+criterios específicos de corrección y calificación de cada examen concreto. 
+o  Una realización incorrecta de las preguntas disminuirá la puntuación en un valor
+acorde con la importancia del error u omisión. 
+o  Las respuestas deben estar suficientemente justificadas en todo su desarrollo. Todos
+los resultados analíticos y gráficos deben estar justificados paso a paso. En los
+problemas deberán figurar explícitamente las operaciones no triviales, de modo que
+se pueda reconstruir la argumentación lógica y los cálculos efectuados por el
+alumnado. 
+o  La resolución de las preguntas se podrá realizar por cualquier método que sea
+correcto y que lleve al resultado correcto, a no ser que la pregunta pida la utilización
+de un método concreto. En este caso, la penalización por la utilización de un método
+diferente se especificará en los criterios específicos. 
+o  Cuando dentro de un mismo apartado aparezcan preguntas encadenadas, no se
+penalizarán los errores debidos exclusivamente a fallos cometidos en apartados
+anteriores, siempre que no representen un error conceptual. 
+o  Si como consecuencia del error se obtiene un resultado incorrecto absolutamente
+incompatible  con  el  conocimiento  de  los  conceptos  básicos,  se  valorará
+positivamente que el alumnado reconozca el error en el resultado. 
+o  En los casos en que el error en un apartado simplifique la resolución del siguiente
+apartado, se podrá ajustar la puntuación otorgada al siguiente apartado para que esa
+equivocación no suponga una ventaja respecto al alumnado que haya realizado la
+pregunta correctamente. 
+o  La cuantía exacta de las valoraciones se adaptará al tipo de pregunta (problema de
+resolución numérica o cuestión teórico-práctica) y se concretará en los criterios
+específicos de corrección y calificación de cada examen concreto.
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+330 – TECNOLOGÍA E INGENIERÍA II 
+PAU2026. Criterios 
+De forma general, en la corrección y evaluación de las preguntas del examen se valorará 
+la coherencia, cohesión, corrección gramatical, léxica, ortográfica y la presentación
+de la respuesta  dada por el alumnado. Se tendrán en cuenta los siguientes aspectos:  i)  la
+ortografía (grafías, tildes y puntuación), y  ii)  la coherencia, la cohesión, la corrección
+gramatical, la corrección léxica de los textos producidos, así como su presentación.
+Se aplicarán los siguientes criterios de corrección y distribución de penalizaciones para
+evaluar estos dos aspectos: 
+o  Los dos primeros errores ortográficos no se penalizan. Cuando se repita la misma
+falta de ortografía se contará como una sola. 
+o  A partir de la tercera falta de ortografía se penalizará cada falta con 0,1 punto, hasta
+un máximo de 1 punto (10% de la nota total del ejercicio). 
+o  Por errores en la redacción, falta de coherencia, cohesión, incorrección léxica y/o
+gramatical y la presentación se podrá deducir un máximo de 0,5 puntos (5% del total
+del ejercicio). 
+o  La penalización total por estos dos criterios no debe superar el 10%, y no se aplicará
+en los casos de dislexia y disortografía. 
+2) Criterios de evaluación específicos
+Cuestiones teórico-prácticas 
+-  Cuando  se  pidan  definiciones,  se  admitirán  definiciones  no  totalmente  rigurosas,
+siempre que no haya errores significativos. Si hay errores se penalizará en función del
+error.
+-  Cuando en el enunciado de un apartado se formulen diferentes preguntas, deberá
+responderse de forma claramente diferenciada a cada una de ellas
+-  Cuando se pida explicar una gráfica o figura proporcionada en el enunciado, se
+representará esta en el cuadernillo del estudiante (puede ser de forma esquemática), y
+sobre esta, si es posible, se responderá a las preguntas planteadas
+-  En los apartados o subapartados de cuestiones teórico-prácticas en los que sea
+necesario aplicar ecuaciones y realizar cálculos numéricos: 
+o  Si hay un error en la ecuación a aplicar se penalizará significativamente la puntuación 
+o  Si las ecuaciones son correctas, pero hay error de cálculo en un subapartado, se
+penalizará ligeramente solo en ese subapartado, y si los resultados en subapartados
+posteriores también son erróneos, pero coherentes con sus resultados anteriores, no se
+penalizará 
+o  Si hay errores relacionados con las unidades se penalizará ligeramente por cada tipo
+de error (el mismo error repetidas veces solo penaliza una vez) 
+Problemas 
+Ejercicio tipo 1. Cálculo de cortantes y momentos flectores en vigas con cargas
+puntuales. 
+-  Deberá  representarse  en  el  cuadernillo  de  examen  la  viga  propuesta  utilizando
+exactamente la misma nomenclatura y datos. Si se modifican los datos se penalizará
+significativamente
+-  Se penalizará significativamente la puntuación de cada apartado o subapartado mal
+resuelto, o resuelto de forma incoherente con los datos del enunciado, o con los resultados
+de apartados anteriores
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+330 – TECNOLOGÍA E INGENIERÍA II 
+PAU2026. Criterios 
+-  Se penalizará ligeramente la puntuación por cada apartado o subapartado si solo es un
+fallo de signo (criterio) o de unidades 
+Ejercicio tipo 2. Análisis de sistemas de potencia fluida neumáticos. 
+-  No será necesario reproducir en el cuadernillo el circuito proporcionado en el enunciado,
+pero si, utilizar la nomenclatura de componentes indicada
+-  Cuando se pida identificar y describir componentes, se penalizará por cada componente
+incorrectamente definido, especialmente en los más importantes
+-  Cuando se pida explicar el funcionamiento de un sistema completo o la función de un
+componente  concreto,  esta  explicación  debe  ser  lo  más  concisa  posible  haciendo
+referencia a cada componente por su denominación en el esquema.
+-  En los apartados en los que se pida realizar algún cálculo numérico se penalizará por
+cada error cometido (por ejemplo, no considerar bien la fuerza de rozamiento, incoherencia
+en las unidades de la presión, fuerza, o área, etc.) o errores de cálculo 
+Ejercicio tipo 3. Análisis de circuitos de corriente alterna. 
+-  Se  penalizará  ligeramente  por  cada  error  de  conversión  de  unidades  o  en  la
+interpretación del signo o las unidades del ángulo de desfase
+-  Cuando se pida la representación fasorial de cualquier magnitud, esta debe ser
+coherente con los resultados obtenidos 
+Ejercicio tipo 4. Diseño e implementación de un sistema electrónico combinacional
+con puertas lógicas. 
+-  El estudiante deberá reproducir en su cuadernillo la tabla de verdad y el mapa de
+Karnaugh proporcionado en el enunciado, manteniendo exactamente la nomenclatura de
+variables propuesta en dicho enunciado.
+-  Cuando se pida generar la Tabla de Verdad, se penalizará significativamente por cada
+error en la función de salida de dicha tabla
+-  Cuando se pida simplificar la función de salida mediante el “mapa de Karnaugh”, se
+penalizará significativamente que la generación de este no sea coherente con la Tabla de
+Verdad (independientemente de que esta tenga fallos)
+-  Si los agrupamientos en el mapa de Karnaugh no son correctos (por ejemplo, si se toma
+un grupo menor, habiendo otro mayor que daría una función de salida más compacta) se
+penalizará la puntuación de este apartado significativamente
+-  Se penalizará significativamente por errores de tipo lógico en las variables directas y
+negadas al extraer la función simplificada, y cuando sea incoherente con los agrupamientos
+realizados
+-  Se penalizará significativamente si no se simplifica la función de salida (aplicando
+propiedades del álgebra de Boole, cuando así se pida)
+-  Cuando se pida diseñar el circuito lógico utilizando un tipo de puertas lógicas específico,
+se penalizará significativamente que el circuito no sea coherente con la función de salida
+obtenida, o la utilización de puertas diferentes (o con diferente número de entradas) a las
+indicadas en el enunciado. Se penalizarán ligeramente los errores de simbología, o la
+utilización de un mayor número de puertas de las mínimas necesarias
+-  Deberá escribirse la función parcial a la salida de cada puerta del circuito

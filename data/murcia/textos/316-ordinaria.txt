@@ -1,0 +1,153 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 -  JUNIO 
+NOTA IMPORTANTE:  Todas las preguntas del bloque 1 son obligatorias.  En los bloques 2, 3 y 4, elija
+solo una de las dos opciones (A o B).  La opción que elija en un bloque es independiente de la elección en
+los otros. En la hoja de respuestas, indique el número de bloque, opción y pregunta. En el caso de
+responder a más de una opción en un mismo bloque solo se corregirá la que primero se haya respondido. 
+Bloque 1: Campo gravitatorio [2 puntos] 
+Los satélites de observación terrestre Sentinel operan en órbitas bajas a una altura  ℎ 1  = 700 km  sobre la
+superficie terrestre. Los satélites de navegación GPS orbitan a una altura mucho mayor,  ℎ 2  = 22000 km ,
+para garantizar cobertura global. Ambos describen órbitas circulares alrededor de la Tierra. 
+a) [1p]  Calcule el cociente  𝑣 1 /𝑣 2  entre la velocidad orbital de un satélite Sentinel y la de un satélite GPS. 
+b) [1p] (i)  Deduzca razonadamente la expresión de la energía mecánica  𝐸  de un satélite de masa  𝑚  que
+orbita en una trayectoria circular de radio  𝑟  alrededor de la Tierra.  (ii)  Utilice dicha expresión para hallar
+el cociente  𝐸 1 /𝐸 2  entre la energía mecánica de un Sentinel y la de un GPS. 
+Dato: radio terrestre  = 6400 km 
+Bloque 2: Campo electromagnético [3 puntos] 
+Opción 2-A 
+En ciertas impresoras, el papel se sitúa en el punto medio entre dos placas metálicas paralelas separadas 
+𝑑 = 2.0 cm , entre las que se aplica una diferencia de potencial de  3.0 kV , con el fin de acelerar partículas de
+tinta hacia el papel. Una partícula de tinta, de carga  𝑞 = −1.5 × 10 −12  C  y masa  𝑚 = 2.0 × 10 −9  kg , parte del
+reposo desde la placa negativa. 
+a)  [1.5p]  Calcule la velocidad con la que la partícula de tinta llega al papel, suponiendo que solo actúa el
+campo eléctrico. 
+b)  [1.5p]  Si, además del campo eléctrico, se añade un campo magnético uniforme en cualquier
+orientación, razone si este modifica o no la energía cinética con la que la partícula llega al papel. 
+Opción 2-B 
+a)  [1.5p]  Dos cargas iguales  𝑄 = +4 μC  están fijas y separadas entre sí una distancia  𝑑 = 3.0 cm . Una
+tercera carga  𝑞 = −2 μC  se sitúa en el punto medio entre ellas. Calcule el trabajo que debe realizar una
+fuerza externa para llevar la carga  𝑞  desde ese punto hasta el infinito .  Dato:  1
+4𝜋𝜀 𝑜 
+= 9 × 10 9  N·m 2 
+C -2 
+b)  [1.5p ]  Una espira circular de radio  𝑅 = 1.63 cm  se encuentra inmersa en un campo magnético uniforme
+de intensidad  𝐵 = 0.6 T .  Inicialmente el campo es perpendicular al plano de la espira. Después gira hasta
+que el campo forma un ángulo de  45 ∘  con la normal a la espira. Calcule el flujo magnético en ambas
+posiciones y razone si durante el giro se induce una fuerza electromotriz.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 -  JUNIO 
+Bloque 3: Vibraciones y Ondas [3 puntos] 
+Opción 3-A 
+Las ballenas jorobadas son famosas por sus complejos cantos que emiten bajo el agua para comunicarse.
+Un biólogo marino, en su barco en reposo, detecta mediante un micrófono subacuático un sonido de una
+ballena sumergida con una frecuencia de 85 Hz. 
+a)  [1.5p ]  Con la ballena también en reposo, el biólogo mide un nivel sonoro de  103 dB  a una distancia de
+10 m de ella.  Calcule  la  potencia sonora emitida por la ballena. 
+b)  [1.5p ]  Posteriormente la ballena empieza a moverse  y el biólogo detecta el mismo sonido a  85.5 Hz. 
+Razone  si la ballena se acerca o se aleja del barco y calcule su  velocidad. 
+Datos:  𝐼 𝑜  = 10 −12  W/m 2 , velocidad del sonido en el agua de mar = 1500 m/s 
+Opción 3-B 
+a)  [1.5p ]  Una  masa  𝑚 = 2.0 kg  ,  unida  a  un  muelle  de  constante  elástica  𝑘 = 400 N/m  ,  oscila
+horizontalmente describiendo un movimiento armónico simple de amplitud  𝐴 = 5 cm . Calcule la energía
+mecánica total del sistema y el módulo de la velocidad de la masa cuando se encuentra a una distancia 
+𝑥 = 3.0 cm  de la posición de equilibrio. 
+b)  [1.5p ]  Un  cubo  de  vidrio,  de  índice  de  refracción  𝑛 𝑣  = 1.5,  está  casi
+totalmente sumergido en agua, de índice de refracción  𝑛 𝑎  = 1.33 , de modo
+que solo su cara superior está en contacto con el aire. Sobre dicha cara incide
+desde el aire un rayo de luz con un ángulo  α  respecto a la normal, como
+muestra la figura. Determine el valor máximo de  α  para que se produzca
+reflexión total en una cara lateral del cubo, en contacto con el agua. 
+Bloque 4: Física relativista, cuántica, nuclear y de partículas [2 puntos] 
+Opción 4-A 
+a)  [1p ]  Enuncie la hipótesis de  De Broglie  y calcule la longitud de onda asociada a un electrón cuya energía
+cinética es 100 eV.  Datos:  1 eV = 1.6 × 10 −19  J,  masa del electrón=  9.1 × 10 −31  kg,  ℎ = 6.6 × 10 −34  J·s 
+b)  [1p ]  Un astronauta de 70 kg viaja desde la Tierra hasta Alfa Centauri, la estrella más cercana a nuestro
+Sistema Solar, a una velocidad constante  v = 0.8c . La distancia entre la Tierra y Alfa Centauri, medida
+desde la Tierra, es de 4 años-luz. Calcule el tiempo de viaje medido por el astronauta (en años) así como
+la energía cinética relativista del astronauta . 
+Opción 4-B 
+a)  [1p ]  Aplique el principio de indeterminación de Heisenberg posición-momento para estimar (en eV) la
+energía cinética mínima de un protón confinado en una distancia  𝑑 ≈ 10 −14  m , (diámetro nuclear típico). 
+Datos:  1  eV = 1.6 × 10 −19  J,  masa del protón =  1.7 × 10 −27  kg,  ℎ = 6.6 × 10 −34  J·s 
+b)  [1p ]  El isótopo radiactivo  𝐼 131  se utiliza en medicina. Su periodo de semidesintegración (o semivida) es
+de 8 días .  Si una muestra tiene una actividad inicial de  3.44 × 10 6  Bq , calcule cuántos núcleos de  𝐼 131  se
+han desintegrado tras 24 días.
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+316 - FÍSICA 
+PAU2026 
+CRITERIOS GENERALES DE EVALUACIÓN 
+•  Los criterios se basan en un principio de evaluación justa de las competencias y habilidades en
+Física del alumno, valorando la comprensión, exposición y manejo de los conceptos físicos, así
+como el desarrollo lógico de la resolución de los problemas propuestos. 
+•  La prueba constará de 4 apartados correspondientes a  cada uno de los bloques de saberes
+básicos establecidos en el Real Decreto 243/2022, de 5 de abril, por el que se establecen la
+ordenación y las enseñanzas mínimas del Bachillerato; y el Decreto n.º 251/2022, de 22
+diciembre, por el que se establece la ordenación y el currículo de Bachillerato en la Comunidad
+Autónoma de la Región de Murcia: 1- Campo gravitatorio ; 2- Campo electromagnético ; 3- 
+Vibraciones y ondas ; y 4- Física relativista, cuántica, nuclear y de partículas . En uno de los
+apartados todas las preguntas serán obligatorias. En el resto de apartados se ofrecerá dos
+opciones, de las cuales el alumnado deberá elegir una. Las opciones de cada apartado
+contendrán dos preguntas en forma de cuestiones independientes o un problema con dos
+apartados. Cada uno de las preguntas se valorará entre 1 y 1.5 puntos, resultando un valor total
+de 2 o 3 puntos para cada apartado, y en 10 puntos el total del examen, según la siguiente
+distribución:  1- Campo  gravitatorio  [2  puntos] ;  2- Campo  electromagnético  [3  puntos] ;  3- 
+Vibraciones y ondas [3 puntos] ; y 4- Física relativista, cuántica, nuclear y de partículas [2 puntos] . 
+•  Si un apartado depende de la respuesta de uno anterior, se corregirá usando las respuestas
+dadas por el alumno, de manera que un error previo no afecte a la calificación de los apartados
+posteriores, a menos que resulte en respuestas físicamente absurdas. (Por ejemplo, si un
+alumno presenta un índice de refracción inferior a uno como resultado de una pregunta y lo
+necesita para la siguiente pregunta, ésta también será penalizada). 
+•  Las respuestas numéricas deben justificarse con el planteamiento del problema y los cálculos
+realizados. Las respuestas cualitativas deben mencionar la ley aplicada y/o el razonamiento
+que lleva a la solución. 
+•  Para los evaluadores de las pruebas se establecerán criterios específicos detallados, puntuando
+cada etapa de la resolución, con el objetivo de asegurar una corrección lo más unificada posible. 
+•  El anteriormente mencionado Real Decreto estipula que “ En aquellos ejercicios en los que las
+preguntas o tareas propuestas requieran la producción de textos por parte del alumnado, la
+valoración correspondiente a los aspectos contemplados en el apartado b) [b) la coherencia, la
+cohesión, la corrección gramatical, léxica y ortográfica de los textos producidos, así como su
+presentación] no podrá ser inferior a un 10 por ciento de la calificación de la correspondiente
+pregunta o tarea ”. 
+•  Se establecen tres niveles de  errores , de menor a mayor gravedad: leve, medio y grave. Debido
+a la amplia casuística posible, la siguiente lista no es exhaustiva y cualquier otra circunstancia
+se evaluará de acuerdo a la filosofía general de este documento y a los criterios específicos
+acordados con los evaluadores, pero contempla un conjunto de errores que típicamente se
+localizan de forma habitual por los correctores de las pruebas. 
+1.  Error leve  (penalización de  0.1 puntos  por error. La suma de todos los errores leves de un
+mismo tipo en un apartado no podrá superar el 20% del valor de dicho apartado). Son
+ejemplos de errores leves:
+-  Unidades:  Ausencia  o  incorrección  de  unidades  de  una  magnitud  física  en  datos  o 
+resultados. Si no se pide explícitamente dar el resultado en una unidad en particular, será
+válida cualquier unidad dimensionalmente correcta. No se considerará error omitir unidades
+al sustituir valores numéricos en ecuaciones. 
+-  Vectores: Omitir el símbolo de vector en una magnitud vectorial, inhomogeneidad vectorial 
+en una ecuación, etc. No debe confundirse este tipo de error simbólico con la asignación de
+carácter vectorial a una magnitud escalar (y viceversa), lo que, bajo ninguna circunstancia,
+podrá ser considerado como un error leve. 
+-  Múltiplos y submúltiplos de unidades. El alumno debe conocer el significado y nomenclatura
+de los prefijos al menos desde  pico  (10 -12 ) a  Tera  (10 12 ). 
+-  Errores en potencias de 10: (por múltiplos de unidades, en cálculos intermedios, al transcribir
+de la calculadora, cifras correctas pero con coma decimal en mala posición, etc). 
+-  Error al transcribir dato del enunciado (siempre que no implique un error conceptual). 
+-  Uso inadecuado o excesivo de cifras significativas. (Como norma general el número de cifras
+significativas  en  el  resultado  final  debe  ser  del  mismo  orden  que  el  de  los  datos
+proporcionados). 
+-  Error de cálculo leve. Ya sea en la manipulación analítica o numérica. 
+2.  Error medio  (penalización máxima del  50%  del valor del concepto evaluado). Son ejemplos
+de errores medios: 
+-  Manipulación matemática incorrecta (si no puede considerarse error leve) partiendo de
+expresiones bien planteadas. 
+-  Interpretación o uso incorrecto del signo en magnitudes o expresiones físicas, cuando no
+constituya un error conceptual grave. 
+3.  Error grave  (penalización del  100%  del valor del concepto evaluado). Ejemplo de este tipo
+de errores son: 
+-  No razonar o justificar en los casos en los que se pida explícitamente (por ejemplo, en
+preguntas teóricas que impliquen un desarrollo, en preguntas de verdadero o falso, etc.) 
+-  No explicitar suficientemente el desarrollo o razonamiento que lleva a la obtención de un
+resultado analítico o numérico. 
+-  La aplicación incorrecta de una expresión física que muestre error conceptual. 
+Las anteriores valoraciones son de carácter general y orientativas y pueden ser matizadas en los
+criterios específicos acordados para los evaluadores, atendiendo a la especificidad de una
+pregunta concreta.

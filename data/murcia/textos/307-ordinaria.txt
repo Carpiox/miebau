@@ -1,0 +1,280 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+307 - MATEMÁTICAS CCSS 
+PAU2026 -  JUNIO 
+NOTA IMPORTANTE:  Las dos primeras preguntas son obligatorias. En las preguntas tres y
+cuatro, debe seleccionar una opción (A o B) y contestar a todos los apartados. Cada cuestión
+tiene una puntuación de entre 2 y 3 puntos. Se permite una calculadora no gráfica ni
+programable. 
+PREGUNTA 1: (3 puntos) 
+Para celebrar el fin de la PAU, Lorena, Ana y Sofía planean un interrail por Italia. En Roma dudan entre dos
+rutas en tren: Roma Trastévere–La Giustiniana (ruta 1) y La Giustiniana–Bracciano (ruta 2). Para decidir qué
+ruta hacer consultan en  www.interrail.eu  los resultados de un estudio realizado a 2.000 jóvenes, de los cuales 
+800 eligieron la ruta 1, 1.400 la ruta 2 y 300 hicieron ambas rutas. Seleccionando al azar a uno de estos
+jóvenes: 
+a) Calcule la probabilidad de que el joven seleccionado haya realizado al menos una de las dos rutas.  [0,25
+puntos] 
+b) Calcule la probabilidad de que no haya hecho ninguna de las dos rutas.  [0,5 puntos] 
+c) Calcule la probabilidad de que haya hecho únicamente la ruta 1.  [0,5 puntos] 
+d) Si el joven seleccionado no realizó la ruta 1, calcule la probabilidad de que tampoco haya realizado la ruta
+2.  [0,5 puntos] 
+El gasto diario por joven en Roma sigue una distribución Normal de media desconocida y desviación típica 
+σ=27 euros. Tomando una muestra aleatoria de 81 jóvenes, se ha obtenido el siguiente intervalo de 
+confianza para la media poblacional (94,12, 105,88). 
+e) Calcule el nivel de confianza del intervalo y el valor de la media muestral.  [0,75 puntos] 
+f) ¿Cuál sería el error máximo admisible si se hubiera utilizado una muestra de tamaño 100 y un nivel de
+confianza del 93,42%?  [0,5 puntos] 
+PREGUNTA 2: (3 puntos) 
+Wiam podrá acceder a una importante cantidad de dinero si consigue desbloquear una caja fuerte con un
+PIN de cinco dígitos, resolviendo un reto de análisis matemático. Para ello, y dada la función 
+𝑓𝑓(𝑥𝑥) = 2𝑥𝑥 2 + 6
+𝑥𝑥 − 1 
+tiene que: 
+a)  Calcular el dominio de  𝑓𝑓(𝑥𝑥).  [0,25 puntos] 
+b)  Estudiar la existencia de asíntotas .  [0,5 puntos] 
+c)  Determinar los intervalos de crecimiento y decrecimiento de  𝑓𝑓(𝑥𝑥).  Identificar los extremos relativos
+utilizando el criterio de la primera derivada.  [0,75 puntos] 
+d)  Escribir la recta tangente a la curva  𝑓𝑓(𝑥𝑥)  en el punto de abscisa  𝑥𝑥 = 0.  [0,5 puntos] 
+Por último: 
+e)  Hallar el área de la región limitada por la curva  𝑦𝑦 = 𝑥𝑥 2 + 2  y las rectas  𝑦𝑦 = 𝑥𝑥 ,  𝑥𝑥 = 0  y  𝑥𝑥 = 1.  [1
+punto]
+PREGUNTA 3: (2 puntos) 
+OPCIÓN A 
+Una panadería artesana de Murcia proveerá el pan para The Champions Burger Murcia 2026. Produce dos
+tipos de panes: el pan Premium y el pan Clásico. Cada hornada de pan Premium genera un beneficio de 
+900 euros, y cada hornada de pan Clásico, de 700 euros.  Una hornada de pan Premium requiere 1 hora de
+horno, mientras que el pan clásico requiere 2 horas. La panadería tiene disponibles un máximo de 8 horas
+de horno al día. Por otro lado, cada hornada de pan premium requiere 3 kg de masa madre, y cada hornada
+de pan clásico, 2 kg. La panadería dispone de un máximo de 12 kg de masa madre preparada diariamente.
+Se pide: 
+a). Si la panadería quiere maximizar el beneficio diario, formule el problema identificando la función objetivo
+y las restricciones.  [0,5 puntos] 
+b) Represente la región factible.  [0,5 puntos] 
+c) Encuentre los vértices de esta región.  [0,25 puntos] 
+d) ¿Cuántas hornadas de cada tipo de pan debe hacer la panadería para maximizar el beneficio diario?
+Calcule el beneficio máximo diario.  [0,5 puntos] 
+e) Justifique razonadamente si la panadería puede hacer 4 hornadas de pan Premium y 2 hornadas de pan
+Clásico por día.  [0,25 puntos] 
+OPCIÓN B 
+Resuelva el siguiente problema de programación lineal: 
+Minimizar  𝑓𝑓(𝑥𝑥, 𝑦𝑦) = 𝑥𝑥 + 𝑦𝑦  sujeta a:  �
+3𝑥𝑥 + 2𝑦𝑦  ≥  12
+𝑥𝑥 + 2𝑦𝑦  ≥  8
+𝑥𝑥  ≥  0
+𝑦𝑦  ≥  0 
+a) Represente la región factible.  [0,75 puntos] 
+b) Encuentre los vértices de esta región.  [0,25 puntos] 
+c) Dibuje la línea de nivel 0 y las líneas de nivel que pasan por los vértices de la región factible.  [0,5
+puntos] 
+d) Identifique el punto de la región factible donde la función objetivo alcanza el mínimo y el valor mínimo de
+dicha función.  [0,5 puntos] 
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+307 - MATEMÁTICAS CCSS 
+PAU2026 -  JUNIO
+PREGUNTA 4: (2 puntos) 
+OPCIÓN A 
+Dadas las matrices 
+𝐴𝐴 = �
+3  𝑘𝑘  −𝑘𝑘
+2  −1  −4
+1  0  −2
+�  𝐵𝐵 = �
+1  −1
+0  2
+−1  0
+�  𝐶𝐶 = � −2  0  1
+0  −1  1 � 
+a)  Averigüe para qué valores de  k  la matriz A es regular.  [0,5 puntos] 
+b)  Para k=1,  calcule  𝐴𝐴 −1 .  [0,75 puntos] 
+c)  Para k=1, resuelva  𝐴𝐴𝐴𝐴 − 𝐴𝐴 = 5(𝐵𝐵 ∙ 𝐶𝐶) 𝑡𝑡 .  [0,75 puntos] 
+OPCIÓN B 
+Haroun se ha propuesto seguir un plan de entrenamiento mensual que combine rutinas de tres influencers
+de fitness: Sergio Peinado, Patry Jordán y Coco Constans. En total, deben ser 18 rutinas al mes. Las rutinas
+de Sergio Peinado incluyen 4 ejercicios de cardio, las de Patry Jordán, 3, y las de Coco Constans, 2. Haroun
+ha decidido hacer exactamente 59 ejercicios de cardio en total. Además, quiere que el número de rutinas de
+Sergio Peinado sea el doble que el número de rutinas de Coco Constans. 
+a) Plantee un sistema de ecuaciones que nos permita saber cuántas rutinas de cada influencer de fitness
+debe incluir Juan en su plan de entrenamiento.  [1 punto] 
+b) Resuelva razonadamente el sistema planteado.  [1 punto] 
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+307 - MATEMÁTICAS CCSS 
+PAU2026 -  JUNIO
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+CRITERIOS DE VALORACIÓN 
+CRITERIOS GENERALES 
+Como criterios de evaluación generales, las respuestas deben realizarse expresando de forma
+razonada el proceso seguido en su resolución, con el rigor y la precisión necesarios, usando el
+lenguaje,  la  notación  y  los  símbolos  matemáticos  adecuados,  y  utilizando  argumentos,
+justificaciones, explicaciones y razonamientos explícitos y coherentes. La mera descripción del
+planteamiento, sin que se lleve a cabo la resolución de manera efectiva, no es suficiente para
+obtener una valoración completa de la pregunta o tarea.
+Cada error de cálculo trivial se penalizará con 0,1 puntos y cada error de cálculo no trivial con 0,2
+puntos. Son ejemplos de errores triviales: un error en la trascripción numérica desde los datos del
+enunciado, en los resultados parciales que se obtienen en la resolución del problema o desde la
+calculadora, un intercambio de valores siempre que no se deba a un error conceptual, etc.
+Son ejemplos de errores no triviales: despejar mal la incógnita de una ecuación, simplificar de forma
+errónea y, en general, realizar incorrectamente en expresiones algebraicas operaciones aritméticas
+elementales como sumas, productos, cocientes, potencias, etc.
+Si se comete un error que pueda influir en resultados posteriores en la misma pregunta, se tendrá
+en cuenta si existe coherencia de la respuesta final con ese resultado erróneo intermedio obtenido.
+En caso de tal coherencia, se valorará el resto de las cuestiones de la misma pregunta, aunque si
+el error ha llevado a un problema más simple que el propuesto, disminuirá la calificación. Otros
+errores frecuentes, que se deben evitar son: poner los extremos de integración a la izquierda del
+símbolo de integral y diversos errores de escritura, como seguir escribiendo el símbolo de integral
+cuando se ha integrado, no escribir correctamente la regla de Barrow, o en un problema de
+programación lineal igualar los vértices a su valoración en la función objetivo.
+Según lo establecido en el artículo 13 del Real Decreto 534/2024, concretado en los acuerdos
+alcanzados por la CRUE el 27 de septiembre 2024, el criterio de valoración relativo a la coherencia,
+la cohesión, la corrección gramatical, léxica y ortográfica de los textos producidos, así como su
+presentación,  se  tendrán  en  cuenta  para  aquellos  ejercicios  o  tareas  que  requieran  de  la
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+composición de un texto prolijo. En tanto que esta materia no requiere de la elaboración de textos
+prolijos, dicho criterio de valoración no se tendrá en cuenta en la corrección de la prueba ni para el
+alumnado general ni para el alumnado con necesidad específica de apoyo educativo. 
+RECOMENDACIONES GENERALES 
+Las cuestiones deben incorporar una pequeña justificación de las respuestas aportadas. Por
+ejemplo, se debe justificar que un punto crítico es máximo o mínimo mediante el criterio del
+comportamiento de la derivada en su entorno o bien a través de la derivada segunda.
+Se deben escribir las expresiones generales que utilicen: intervalo de confianza, término de error,
+tamaño mínimo de la muestra, probabilidad condicionada, probabilidad de la unión de sucesos o
+teorema de la probabilidad total.
+Es deseable asimismo un mínimo de corrección en la escritura matemática. Por ejemplo, no
+relacionar con el símbolo = dos cosas que no son iguales.
+La simplificación exigida en la derivada es dejar un único denominador y en el numerador dejar la
+expresión más reducida, es decir, agrupando los términos comunes. 
+CRITERIOS ESPECÍFICOS 
+PREGUNTA 1 (OBLIGATORIA)
+SENTIDO ESTOCÁSTICO 
+•  Apartado a): Planteamiento correcto de la probabilidad. (0,15 puntos)
+Cálculo correcto de la probabilidad. (0,1 puntos) 
+•  Apartado b): Planteamiento correcto de la probabilidad. (0,25 puntos)
+Cálculo correcto de la probabilidad. (0,25 puntos) 
+•  Apartado c): Planteamiento correcto de la probabilidad. (0,25 puntos)
+Cálculo correcto de la probabilidad. (0,25 puntos) 
+•  Apartado d): Planteamiento correcto de la probabilidad. (0,25 puntos)
+Cálculo correcto de la probabilidad. (0,25 puntos)
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+•  Apartado e): Planteamiento correcto. (0,5 puntos)
+Cálculo correcto de  𝑥̅ . (0,1 puntos)
+Cálculo correcto de  𝑧 !/# . (0,15 puntos) 
+•  Apartado f): Expresión correcta del error máximo. (0,25 puntos)
+Cálculo correcto del error máximo admisible. (0,25 puntos) 
+NOTA 1:  Iniciado ya el examen se recibieron diversas consultas sobre el enunciado de esta
+pregunta, a pesar de que su redacción no contenía error alguno. No obstante, se optó por realizar
+la siguiente aclaración, que se comunicó a todas las sedes y aulas: “puede haber estudiantes que
+no han hecho ninguna de las dos rutas”. Al final de este documento se incluye un análisis detallado
+del ejercicio ( Anexo I ): el enunciado no contenía error alguno y la aclaración se hizo con el fin de
+facilitar la respuesta. 
+NOTA 2:  En las aulas de dos sedes, perfectamente localizadas, por una lamentable confusión se
+trasladó indebidamente al alumnado la indicación de que la cifra de 2000 estudiantes debía
+sustituirse  por  2200.  La  corrección  de  esos  ejercicios  se  ha  ceñido  a  la  validez  de  los
+procedimientos y la coherencia de los resultados con los datos en cada versión del enunciado. En
+consecuencia, dicha discrepancia numérica no ha sido considerada como un error imputable al
+estudiante, garantizándose en todo caso una evaluación ajustada a criterios de equidad, objetividad
+y no penalización. 
+PREGUNTA 2 (OBLIGATORIA)
+SENTIDO DE LA MEDIDA 
+•  Apartado a): Cálculo correcto del dominio. (0,25 puntos) 
+•  Apartado b): Asíntota vertical (0,25 puntos: 0,15 puntos por escribir x=1; 0,1 puntos por
+límites laterales); Asíntota oblicua (0,25 puntos). Si en el cálculo de la asíntota oblicua, se
+comete un error al calcular m o n, se resta 0,1. Si se calculan m y n pero falta la expresión
+y=mx+n se resta 0.05 puntos. 
+•  Apartado c): Cálculo de la derivada (0,25 puntos). Cálculo de los puntos críticos (0,15
+puntos). Intervalos de crecimiento (0,1 puntos); Intervalos de decrecimiento (0,1 puntos).
+Se puede razonar con flechas pero se debe escribir bien los intervalos. Identificar el
+máximo relativo (0,1 puntos) y el mínimo relativo (0,1 puntos). Si solo se escribe el valor de
+x en la identificación del extremo relativo, se resta 0,05 puntos. 
+•  Apartado d): Cálculo de la pendiente de la recta tangente (0,2 puntos). Cálculo de f(0) (0,2
+puntos). Expresión correcta de la recta tangente (0,1 puntos). 
+•  Apartado e): Representación gráfica o análisis equivalente (0,25 puntos). Definir
+correctamente el área (0,25 puntos), cálculo de la primitiva (0,25 puntos) y aplicación
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+correcta de la regla de Barrow (0,25 puntos). Se resta 0,1 si no aparecen las unidades de
+área. 
+PREGUNTA 3:
+SENTIDO NUMÉRICO Y ALGEBRAICO.
+OPCIÓN A: 
+•  Apartado a): Expresión correcta de la función objetivo (0,2 puntos), de la primera
+restricción (0,1 puntos), de la segunda restricción (0,1 puntos) y de las condiciones de no
+negatividad (0,1 puntos). 
+•  Apartado b): Representación correcta de la región factible (0,5 puntos): 0,15 puntos por
+cada recta y 0,2 por sombrear o identificar la región factible. 
+•  Apartado c): Identificación correcta de los vértices (0,25 puntos): 0,05 puntos por identificar
+A, B y D; 0,1 por identificar C=(2,3). 
+•  Apartado d): 0,25 puntos por identificar cuántas hornadas de cada tipo de pan debe hacer
+la panadería y 0,25 puntos por calcular el beneficio máximo diario. 
+•  Apartado e): Justificación correcta de la cuestión (0,25 puntos) 
+OPCIÓN B: 
+•  Apartado a): Representación correcta de la región factible (0,75 puntos): 0,15 puntos por
+cada recta y 0,45 puntos por sombrear o identificar la región factible. 
+•  Apartado b): Identificación correcta de los vértices (0,25 puntos): 0,15 puntos por identificar
+A, 0,05 puntos por identificar B y 0,05 puntos por identificar C. 
+•  Apartado c): Expresión correcta de la línea de nivel 0 (0,2 puntos) y dibujar correctamente
+cada una de las líneas de nivel que pasan por los vértices (0,1 puntos) 
+•  Apartado d): 0,25 puntos identificar el punto mínimo y 0,25 puntos por calcular el valor
+mínimo de la función. 
+PREGUNTA 4:
+SENTIDO NUMÉRICO Y ALGEBRAICO
+OPCIÓN A: 
+•  Apartado a): Cálculo correcto del determinante (0,3 puntos); Cálculo del valor del
+parámetro para el que la matriz es regular (0,2 puntos) 
+•  Apartado b): Cálculo de la inversa de A (0,75 puntos). Por cada error de cálculo se resta
+0,1 puntos. 
+•  Apartado c): Expresión correcta de la ecuación matricial (0,5 puntos); Cálculo correcto de
+la solución (0,25 puntos).
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+OPCIÓN B: 
+•  Apartado a): Plantemiento correcto del sistema de ecuaciones (1 punto): Definir las
+incógnitas (0,25 puntos) y 0,25 puntos por cada ecuación bien expresada. 
+•  Apartado b): Solución correcta (1 punto). No puede haber valores de x, y, z negativos ni
+decimales. Esto puntuaría como 0 en este apartado. 
+ANEXO I
+Análisis coplementario del ejercicio 1 
+El enunciado de la primera pregunta está correctamente planteado y escrito. El contexto no
+introduce elementos distractores ni interfiere en la identificación de los datos esenciales. Es
+coherente y no presenta contradicciones matemáticas. Ofrece todos los datos necesarios para
+resolver las cuestiones planteadas: 
+-  Total de jóvenes estudiados: 2000
+-  Número de jóvenes que hicieron la ruta 1: 800
+-  Número de jóvenes que hicieron la ruta 2: 1400
+-  Número de jóvenes que hicieron ambas rutas: 300.
+Con esta información se pueden definir los sucesos: 
+A: “Haber realizado la ruta 1”.
+B: “Haber realizado la ruta 2”. 
+No hay contradicción en los valores dados, puesto que la unión de ambos sucesos, 800+1400-
+300=1900, es menor que el total de jóvenes (2000). Por tanto, hay 100 jóvenes que no han hecho
+ninguna de las dos rutas. Esto confirma que el enunciado no incurre en error, aportando toda la
+información necesaria para responder de manera unívoca a las cuatro cuestiones planteadas, sin
+necesidad de realizar suposiciones adicionales:
+-  La probabilidad de haber realizado al menos una de las dos rutas.
+-  La probabilidad de no haber realizado ninguna.
+-  La probabilidad de haber realizado únicamente la ruta 1.
+-  Una probabilidad condicionada referida a quienes no realizaron la ruta 1.
+Esas cuatro cuestiones permiten evaluar contenidos fundamentales del bloque de probabilidad,
+como son la probabilidad de la unión de dos sucesos, la probabilidad del complementario de un
+suceso, la probabilidad de una diferencia de sucesos y la probabilidad condicionada.
+Además, la secuencia de cuestiones es progresiva, ya que parte de cuestiones más elementales y
+termina con una probabilidad condicional. El nivel de exigencia conceptual es adecuado, puesto
+que los estudiantes que han cursado segundo de Bachillerato están totalmente familiarizados con
+las expresiones “al menos una”, “ninguna”, “únicamente” y “si no realizó la ruta 1” y objetivamente
+no inducen a ambigüedad. Saben que la expresión “al menos una de las dos rutas” remite a la
+unión de sucesos; “ninguna de las dos rutas” al complementario de dicha unión; “únicamente la ruta
+1” a la diferencia entre sucesos; y que “si el joven seleccionado no realizó la ruta 1” se refiere a una
+condición para el cálculo de una probabilidad condicionada.
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JUNIO 
+A la vista de lo anterior, se concluye que el enunciado del ejercicio está correctamente planteado,
+bien redactado y ajustado a los criterios de validez matemática, claridad expositiva y adecuación
+didáctica. Los datos son coherentes y suficientes, los apartados están formulados con precisión
+conceptual y la situación descrita permite una resolución objetiva y no ambigua. En consecuencia,
+no se aprecia defecto de formulación ni imprecisión.

@@ -1,0 +1,436 @@
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+El examen continúa por detrás 
+IMPORTANTE:  En las preguntas 1, 2 y 3 no hay optatividad. En las preguntas 4 y 5 hay
+optatividad, teniendo que contestar solo una de las dos opciones. Si se responden las 2
+opciones, solo se corregirá la primera opción contestada. La puntuación máxima de cada
+cuestión es 2 puntos. Solo se podrán usar las tablas estadísticas que se adjuntan. No se
+podrán usar calculadoras gráficas ni programables. 
+PREGUNTA 1:  Una empresa produce pequeñas cajas con piezas de fruta. Hay tres tipos
+de cajas,  A ,  B  y  C . En las cajas de tipo  A  hay 1 manzana, 1 pera y 1 naranja. En las cajas
+de tipo de  B  hay 2 manzanas, 1 pera y 1 naranja. En las cajas de tipo  C  hay 1 manzana, 2
+peras y 1 naranja. Un día prepararon  x  cajas de tipo  A ,  y  cajas de tipo  B  y  z  cajas de tipo 
+C , y en total se usaron  400  manzanas,  500  peras y  k  naranjas.
+a)  [1 pto.]  Plantee un sistema de ecuaciones para averiguar cuántas cajas de cada tipo
+se prepararon.
+b)  [1 pto.]  Discuta y resuelva, si se puede, el sistema, dando la solución en términos
+del parámetro  k . 
+PREGUNTA 2:  Sea  P ( x ,  y )  un punto del primer cuadrante que está en la gráfica de la
+función  g ( x ) =  → x  +  1 .
+a)  [0,5 ptos.]  Demuestre que la distancia de  P ( x ,  y )  al punto  A ( 2 ,  0 )  viene dada por la
+función  f  ( x ) =  → x 2  ↑  3 x  +  5 .
+b)  [1 pto.]  Determine el valor de  x  para que la distancia a  A  sea mínima.
+c)  [0,5 ptos.]  Calcule esa distancia mínima. 
+PREGUNTA 3:  [2 ptos.]  Determine la ecuación del plano que contiene al punto  P ( ↑ 2 ,  2 ,  ↑ 2 ) 
+y a la recta  r  dada como intersección de dos planos: 
+r  : 
+{  2 x  +  y  ↑  z  =  4 
+x  +  y  ↑  2 z  =  3 
+PREGUNTA 4 (a elegir entre 4.1 y 4.2): 
+4.1)  [2 ptos.]  Justifique que la derivada la función  f  ( x ) =  x  ln ( x 2  +  1 )  alcanza el valor 
+ln 
+( 25
+2 
+) 
+en algún punto del intervalo  ( 1 ,  2 ) .
+4.2) Considere la función  f  ( x ) =  1
+2  +  cos ( x ) , donde la variable  x  está expresada en radia-
+nes.
+a)  [0,5 ptos.]  Calcule la integral indefinida 
+∫ 
+f  ( x ) dx .
+b)  [1,5 ptos.]  Determine el área del recinto del plano limitado por la gráfica de la
+función  f  ( x )  con el eje  X  y las rectas  x  =  0  y  x  =  ! .
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+PREGUNTA 5 (a elegir entre 5.1 y 5.2): 
+5.1) En la urna  U 1  hay 5 bolas negras y 3 bolas blancas. En la urna  U 2  hay 6 bolas negras
+y 2 bolas blancas. Se escoge una urna al azar y se extrae una bola.
+a)  [1 pto.]  Calcule la probabilidad de que la bola sea blanca.
+b)  [1 pto.]  Sabiendo que la bola ha salido blanca, calcule la probabilidad de que
+se haya extraído de la urna  U 1  .
+5.2)  [2 ptos.]  La distribución de edades de un cierto conjunto de personas sigue una
+distribución normal  N ( μ ,  !  ) . Sabiendo que el 94,52  %  tiene menos de 32 años, y un
+21,19  %  tiene menos de 20 años, calcule su media y su desviación típica. 
+2
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+El examen continúa por detrás 
+IMPORTANTE:  En las preguntas 1, 2 y 3 no hay optatividad. En las preguntas 4 y 5 hay
+optatividad, teniendo que contestar solo una de las dos opciones. Si se responden las 2
+opciones, solo se corregirá la primera opción contestada. La puntuación máxima de cada
+cuestión es 2 puntos. Solo se podrán usar las tablas estadísticas que se adjuntan. No se
+podrán usar calculadoras gráficas ni programables. 
+PREGUNTA 1:  Una empresa produce pequeñas cajas con piezas de fruta. Hay tres tipos
+de cajas,  A ,  B  y  C . En las cajas de tipo  A  hay 1 manzana, 1 pera y 1 naranja. En las cajas
+de tipo de  B  hay 2 manzanas, 1 pera y 1 naranja. En las cajas de tipo  C  hay 1 manzana, 2
+peras y 1 naranja. Un día prepararon  x  cajas de tipo  A ,  y  cajas de tipo  B  y  z  cajas de tipo 
+C , y en total se usaron  400  manzanas,  500  peras y  k  naranjas.
+a)  [1 pto.]  Plantee un sistema de ecuaciones para averiguar cuántas cajas de cada tipo
+se prepararon.
+b)  [1 pto.]  Discuta y resuelva, si se puede, el sistema, dando la solución en términos
+del parámetro  k . 
+PREGUNTA 2:  Sea  P ( x ,  y )  un punto del primer cuadrante que está en la gráfica de la
+función  g ( x ) =  → x  +  1 .
+a)  [0,5 ptos.]  Demuestre que la distancia de  P ( x ,  y )  al punto  A ( 2 ,  0 )  viene dada por la
+función  f  ( x ) =  → x 2  ↑  3 x  +  5 .
+b)  [1 pto.]  Determine el valor de  x  para que la distancia a  A  sea mínima.
+c)  [0,5 ptos.]  Calcule esa distancia mínima. 
+PREGUNTA 3:  [2 ptos.]  Determine la ecuación del plano que contiene al punto  P ( ↑ 2 ,  2 ,  ↑ 2 ) 
+y a la recta  r  dada como intersección de dos planos: 
+r  : 
+{  2 x  +  y  ↑  z  =  4 
+x  +  y  ↑  2 z  =  3 
+PREGUNTA 4 (a elegir entre 4.1 y 4.2): 
+4.1)  [2 ptos.]  Justifique que la derivada la función  f  ( x ) =  x  ln ( x 2  +  1 )  alcanza el valor 
+ln 
+( 25
+2 
+) 
+en algún punto del intervalo  ( 1 ,  2 ) .
+4.2) Considere la función  f  ( x ) =  1
+2  +  cos ( x ) , donde la variable  x  está expresada en radia-
+nes.
+a)  [0,5 ptos.]  Calcule la integral indefinida 
+∫ 
+f  ( x ) dx .
+b)  [1,5 ptos.]  Determine el área del recinto del plano limitado por la gráfica de la
+función  f  ( x )  con el eje  X  y las rectas  x  =  0  y  x  =  ! .
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+PREGUNTA 5 (a elegir entre 5.1 y 5.2): 
+5.1) En la urna  U 1  hay 5 bolas negras y 3 bolas blancas. En la urna  U 2  hay 6 bolas negras
+y 2 bolas blancas. Se escoge una urna al azar y se extrae una bola.
+a)  [1 pto.]  Calcule la probabilidad de que la bola sea blanca.
+b)  [1 pto.]  Sabiendo que la bola ha salido blanca, calcule la probabilidad de que
+se haya extraído de la urna  U 1  .
+5.2)  [2 ptos.]  La distribución de edades de un cierto conjunto de personas sigue una
+distribución normal  N ( μ ,  !  ) . Sabiendo que el 94,52  %  tiene menos de 32 años, y un
+21,19  %  tiene menos de 20 años, calcule su media y su desviación típica. 
+2
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+CRITERIOS DE CALIFICACIÓN
+OBSERVACIONES GENERALES: 
+El corrector deberá ajustarse a los criterios de evaluación establecidos en este documen-
+to y en la reunión correspondiente. En ningún caso se podrá puntuar por encima de la
+valoración indicada en cada apartado. Se procurará que, en lo posible, los errores en un
+apartado no afecten a otros apartados.
+Los errores simples de cálculo restarán entre 0,1 y 0,25 puntos. Los errores importantes
+de cálculo o errores simples reiterados pueden conllevar puntuación 0 en ese apartado. Si
+un error simple ha llevado a un problema más sencillo se disminuirá la puntuación.
+Las preguntas contestadas correctamente sin incluir el desarrollo necesario para llegar a
+su resolución serán valoradas con 0 puntos.
+Se valorará el correcto uso del vocabulario y de la notación. El alumno puede elegir el
+método que considere más oportuno para la resolución de una cuestión pero, si esto
+demuestra la falta de comprensión de conocimientos básicos, la puntuación final puede
+ser menor que la indicada para dicha cuestión. 
+OBSERVACIONES PARTICULARES:
+PREGUNTA 1:  [2 ptos.] 
+Apartado a)  Planteamiento correcto del sistema.  [1 pto.]
+Apartado b)  Justificación de que el sistema es compatible determinado.  [0,5 ptos.] . Cálcu-
+lo de la solución en función de  k .  [0,5 ptos.] . 
+PREGUNTA 2:  [2 p.] 
+Apartado a)  Cálculo de la función distancia  [0,5 ptos.]
+Apartado b)  Cálculo correcto de la derivada  [0,5 ptos.] . Cálculo correcto del valor de  x 
+que minimiza  [0,5 ptos.] . 
+Apartado c)  Cálculo correcto de la distancia mínima  [0,5 ptos.] . 
+PREGUNTA 3:  [2 ptos.] Determinación del plano pedido.  [2 ptos.]
+PREGUNTA 4.1:  [2 ptos.] Justificación de que la función cumple las condiciones del teo-
+rema de Lagrange.  [1 pto.] . Uso del teorema de Lagrange para concluir la existencia del
+punto pedido.  [1 pto.] . 
+PREGUNTA 4.2:  [2 ptos.] 
+Apartado a)  Cálculo correcto de una primitiva  [0,25 ptos.] . Cálculo correcto de la integral
+indefinida, es decir, una primitiva más una constante arbitraria  [0,25 ptos.] . 
+Apartado b)  Estudio correcto del signo de la función en el intervalo  [ 0 ,  ! ]  [0,75 ptos.] 
+Cálculo correcto del área pedida  [0,75 ptos.]
+PREGUNTA 5.1:  [2 ptos.] 
+Apartado a)  Cálculo correcto de la probabilidad pedida.  [1 pto.]
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JULIO 
+Apartado b)  Cálculo correcto de la probabilidad pedida.  [1 pto.]
+PREGUNTA 5.2:  [2 ptos.]
+Cálculo correcto de una ecuación lineal en función de  μ  y  !  a partir de  P ( X  <  32 ) .  [0,5
+ptos.] 
+Cálculo correcto de una ecuación lineal en función de  μ  y  !  a partir de  P ( X  <  20 ) .  [1 pto.] 
+Cálculo correcto de  μ  y  !  a partir de las dos ecuaciones lineales.  [0,5 ptos.]
+RESOLUCI ´ ON DEL EXAMEN PAU JULIO 2026 
+Matem´ aticas II 
+Por la propia naturaleza de la disciplina, una misma pregunta puede admitir diferentes so-
+luciones correctas. Por supuesto, cualquier soluci´ on de cualquiera de las preguntas del examen
+que sea correcta y est´ e bien argumentada deber´ a ser considerada como v´ alida en el proceso
+de correcci´ on, aunque no est´ e incluida en este documento.
+El examen consta de un total de cinco preguntas. Las tres primeras preguntas sin opciones.
+Las dos ´ ultimas preguntas con dos opciones cada una, para hacer solo una de esas opciones.
+La elecci´ on de la primera o la segunda opci´ on puede cambiar de una pregunta a otra. Si se
+responden las 2 opciones de una pregunta, solo se corregir´ a la primera opci´ on contestada. Las
+preguntas se pueden hacer en cualquier orden. La puntuaci´ on m´ axima de cada pregunta es
+de 2 puntos. Las cinco preguntas son: 
+Pregunta 1:  Sentido num´ erico y algebraico (2 puntos). 
+Pregunta 2:  Sentido de la medida (2 puntos). 
+Pregunta 3:  Sentido espacial (2 puntos). 
+Pregunta 4 (opciones 4.1 y 4.2):  Sentido de la medida (2 puntos). 
+Pregunta 5 (opciones 5.1 y 5.2):  Sentido estoc´ astico (2 puntos).
+Solo se pueden usar las tablas estad´ ısticas que se proporcionan con el examen y, seg´ un la
+normativa vigente, no se puden usar calculadoras gr´ aficas ni programables.
+En Murcia, a 6 de julio de 2026.
+Pedro Nicol´ as Zaragoza
+Coordinador Matem´ aticas II
+Departamento de Did´ actica de las CC. Matem´ aticas y Sociales
+Universidad de Murcia
+2 
+Pregunta 1: Sentido num´ erico y algebraico (2 puntos) 
+Una empresa produce peque˜ nas cajas con piezas de fruta. Hay tres tipos de cajas,  A, B  y  C .
+En las cajas de tipo  A  hay 1 manzana, 1 pera y 1 naranja. En las cajas de tipo de  B  hay 2
+manzanas, 1 pera y 1 naranja. En las cajas de tipo  C  hay 1 manzana, 2 peras y 1 naranja. Un
+d´ ıa prepararon  x  cajas de tipo  A ,  y  cajas de tipo  B  y  z  cajas de tipo  C , y en total se usaron
+400 manzanas, 500 peras y  k  naranjas.
+a)  (1 pto.)  Plantee un sistema de ecuaciones para averiguar cu´ antas cajas de cada tipo se
+prepararon.
+b)  (1 pto.)  Discuta y resuelva, si se puede, el sistema, dando la soluci´ on en t´ erminos del
+par´ ametro  k . 
+Soluci´ on:
+a)  En las  x  cajas de tipo  A  habr´ a  x  manzanas,  x  peras y  x  naranjas. En las  y  cajas de tipo 
+B  habr´ a 2 y  manzanas,  y  peras e  y  naranjas. En las  z  cajas de tipo  C  habr´ a  z  manzanas, 2 z 
+peras y  z  naranjas. En total, habr´ a  x  + 2 y  +  z  manzanas,  x  +  y  + 2 z  peras, y  x  +  y  +  z  naranjas,
+as´ ı es que el sistema de ecuaciones es 
+
+ 
+  
+x  + 2 y  +  z  = 400 
+x  +  y  + 2 z  = 500 
+x  +  y  +  z  =  k 
+b)  El determinante de la matriz de coeficientes es 
+1  2  1
+1  1  2
+1  1  1 
+= 1 , 
+as´ ı es que el rango es 3 y, por el teorema de Roch´ e – Frobenius, el sistema es compatible
+determinado. Para calcular la ´ unica soluci´ on podemos usar la regla de Cramer: 
+x  = 
+400  2  1
+500  1  2 
+k  1  1 
+= 3 k  −  900 , y  = 
+1  400  1
+1  500  2
+1  k  1 
+= 400  −  k, z  = 
+1  2  400
+1  1  500
+1  1  k 
+= 500  −  k. 
+Pregunta 2: sentido de la medida (2 puntos) 
+Sea  P  ( x, y ) un punto del primer cuadrante que est´ a en la gr´ afica de la funci´ on  g ( x ) =  √ x  + 1.
+a)  (0,5 ptos.)  Demuestre que la distancia de  P  ( x, y ) al punto  A (2 ,  0) viene dada por la
+funci´ on  f  ( x ) =  √ x 2  −  3 x  + 5.
+b)  (1 pto.)  Determine el valor de  x  para que la distancia a  A  sea m´ ınima.
+c)  (0,5 ptos.)  Calcule esa distancia m´ ınima. 
+Resoluci´ on PAU Junio 2026. Pedro Nicol´ as Zaragoza, Coordinador Matem´ aticas II
+3 
+Soluci´ on: a)  El punto  P  se puede escribir como  P  ( x,  √ x  + 1). La distancia entre  A (2 ,  0) y 
+P  es 
+d ( P, A ) = 
+q 
+( x  −  2) 2  + ( √ x  + 1) 2  =  √ x 2  −  4 x  + 4 +  x  + 1 =  √ x 2  −  3 x  + 5 =  f  ( x ) . 
+b)  La derivada de  f  ( x ) es 
+f  ′ ( x ) =  2 x  −  3
+2 √ x 2  −  3 x  + 5 , 
+que se anula si, y solo si,  x  =  3
+2  . Como  f  ′ ( x )  <  0 en    0 ,  3
+2 
+  (t´ omese, por ejemplo,  f  ′ (1)) y 
+f  ′ ( x )  >  0 en    3
+2  ,  + ∞   (t´ omese, por ejemplo,  f  ′ (2)), entonces  x  =  3
+2  minimiza la distancia. 
+c)  La distancia es 
+f 
+ 3
+2 
+ 
+= 
+r 9
+4  −  9
+2 + 5 = 
+r 11
+4  = 
+√ 11
+2  . 
+Pregunta 3: sentido espacial (2 puntos) 
+Determine la ecuaci´ on del plano que contiene al punto  P  ( − 2 ,  2 ,  − 2) y a la recta  r  dada como
+intersecci´ on de dos planos: 
+r  : 
+  2 x  +  y  −  z  =  4 
+x  +  y  −  2 z  =  3 
+Soluci´ on:  El vector director de  r  se puede calcular mediante el producto vectorial de los
+vectores normales a los planos: ⃗
+v  r  = 
+i  j  k 
+2  1  − 1
+1  1  − 2 
+=  − i  + 3 j  +  k  = ( − 1 ,  3 ,  1) . 
+Es f´ acil ver que  R (1 ,  2 ,  0) satisface la ecuaci´ on de los dos planos, de modo que  R  ∈  r . Podemos
+usar el punto  R (1 ,  2 ,  0), el vector vector ⃗ v  r  = ( − 1 ,  3 ,  1) y el vector  −→ 
+P R  = (3 ,  0 ,  2) para calcular
+la ecuaci´ on del plano pedido: 
+x  −  1  y  −  2  z 
+− 1  3  1
+3  0  2 
+= 6 x  + 5 y  −  9 z  −  16 = 0 . 
+Pregunta 4: sentido de la medida (a elegir entre 4.1 y 4.2, de 2
+puntos cada una) 
+Opci´ on 4.1 (2 ptos.):  Justifique que la derivada la funci´ on  f  ( x ) =  x  ln( x 2  + 1) alcanza el
+valor ln 
+ 25
+2 
+ 
+en alg´ un punto del intervalo (1 ,  2). 
+Resoluci´ on PAU Junio 2026. Pedro Nicol´ as Zaragoza, Coordinador Matem´ aticas II
+4 
+Soluci´ on:  f  ( x ) es continua en [1 ,  2] y derivable en (1 ,  2) de modo que, por el teorema de
+Lagrange, existe un punto  c  ∈  (1 ,  2) tal que 
+f  ′ ( c ) =  f  (2)  −  f  (1) = 2 ln(5)  −  ln(2) = ln(25)  −  ln(2) = ln 
+ 25
+2 
+ 
+. 
+Opci´ on 4.2 (2 ptos.):  Considere la funci´ on  f  ( x ) = 1
+2 + cos( x ), donde la variable  x  est´ a
+expresada en radianes.
+a)  (0,5 ptos.)  Calcule la integral indefinida 
+Z 
+f  ( x ) dx .
+b)  (1,5 ptos.)  Determine el ´ area del recinto del plano limitado por la gr´ afica de la funci´ on 
+f  ( x ) con el eje  X  y las rectas  x  = 0 y  x  =  π . 
+Soluci´ on:
+a)  La integral es inmediata: 
+Z   1
+2 + cos( x ) 
+ 
+dx  = 1
+2 x  + sen( x ) +  C. 
+b)  Observemos que  f  (0) =  3
+2  >  0 y  f  ( π ) =  − 1
+2  <  0, y que  x  =  2 π 
+3  es soluci´ on de  f  ( x ) = 0, de
+modo que el ´ area pedida es: 
+Z  2 π 
+3 
+0 
+f  ( x ) dx  − 
+Z  π 
+2 π 
+3 
+f  ( x ) dx  = 
+ 1
+2 x  + sen( x ) 
+ 2 π 
+3 
+0 
+− 
+ 1
+2 x  + sen( x ) 
+ π 
+2 π 
+3 
+=
+=  π 
+3 + sen 
+ 2 π 
+3 
+ 
+− 
+ π 
+2  −  π 
+3  −  sen 
+ 2 π 
+3 
+ 
+=  π 
+6 + 2 sen 
+ 2 π 
+3 
+ 
+=  π 
+6 + 2 
+√ 3
+2  =  π 
+6 +  √ 3 . 
+Pregunta 5: sentido estoc´ astico (a elegir entre 5.1 y 5.2, de 2 pun-
+tos cada una) 
+Opci´ on 5.1 (2 ptos.):  En la urna  U 1  hay 5 bolas negras y 3 bolas blancas. En la urna  U 2 
+hay 6 bolas negras y 2 bolas blancas. Se escoge una urna al azar y se extrae una bola.
+a)  (1 pto.)  Calcule la probabilidad de que la bola sea blanca.
+b)  (1 pto.)  Sabiendo que la bola ha salido blanca, calcule la probabilidad de que se haya
+extra´ ıdo de la urna  U 1  . 
+Soluci´ on: 
+Llamamos:
+a)  U 1  al suceso correspondiente a extraer la bola de  U 1 ,
+b)  U 2  al suceso correspondiente a extraer la bola de  U 2 , 
+Resoluci´ on PAU Junio 2026. Pedro Nicol´ as Zaragoza, Coordinador Matem´ aticas II
+5
+c)  N  al suceso correspondiente a extraer una bola negra,
+d)  B  al suceso correspondiente a extraer una bola blanca.
+Tenemos entonces que  P  ( U 1 ) =  P  ( U 2 ) =  1
+2  , P  ( N  | U 1 ) =  5
+8  , P  ( B | U 1 ) =  3
+8  , P  ( N  | U 2 ) =  6
+8  y 
+P  ( B | U 2 ) =  2
+8  . 
+a)  Usando el Teorema de la Probabilidad Total, se tiene que 
+P  ( B ) =  P  ( B | U 1 ) P  ( U 1 ) +  P  ( B | U 2 ) P  ( U 2 ) = 3
+8  ·  1
+2 + 2
+8  ·  1
+2 = 3 + 2
+16  =  5
+16 . 
+b)  Usando el Teorema de Bayes, se tiene que 
+P  ( U 1 | B ) =  P  ( B | U 1 ) P  ( U 1 ) 
+P  ( B )  = 
+3
+8  ·  1
+2
+5
+16 
+= 3
+5 . 
+Opci´ on 5.2 (2 ptos.):  La distribuci´ on de edades de un cierto conjunto de personas sigue
+una distribuci´ on normal  N  ( μ, σ ). Sabiendo que el 94,52 % tiene menos de 32 a˜ nos, y un 21,19
+% tiene menos de 20 a˜ nos, calcule su media y su desviaci´ on t´ ıpica. 
+Soluci´ on:  Llamamos  X  a la variable aleatoria correspondiente a la edad. Llamamos  Z  a una
+variable aleatoria que sigue una distribuci´ on normal  N  (0 ,  1). Entonces, tenemos que
+0 ,  9452 =  P  ( X <  32) =  P 
+ 
+Z <  32  −  μ
+σ 
+ 
+, 
+y la tabla nos dice que  32 − μ
+σ  = 1 ,  6, es decir,  μ  + 1 ,  6  ·  σ  = 32. Por otro lado, como  P  ( X < 
+20) = 0 ,  2119, tenemos que
+0 ,  7881 = 1  −  0 ,  2119 =  P  ( X  ≥  20) =  P 
+ 
+Z  ≥  20  −  μ
+σ 
+ 
+=  P 
+ 
+Z  ≤  μ  −  20 
+σ 
+ 
+, 
+y la tabla nos dice que  μ − 20 
+σ  = 0 ,  8, es decir,  μ  −  0 ,  8  ·  σ  = 20. Resolviendo el sistema de
+ecuaciones  ( 
+μ  + 1 ,  6  ·  σ  = 32 
+μ  −  0 ,  8  ·  σ  = 20
+tenemos  μ  = 24 y  σ  = 5. 
+Resoluci´ on PAU Junio 2026. Pedro Nicol´ as Zaragoza, Coordinador Matem´ aticas II
