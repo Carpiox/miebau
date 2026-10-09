@@ -57,7 +57,12 @@ test('cada ficha enlaza a su índice, a la calculadora, a relacionadas y a ponde
     assert(html.includes(`<h3>Otras asignaturas de ${entry.comunidad}</h3>`));
     for (const uni of COMMUNITIES[key].ponderaciones.slice(0, 1)) assert(links.includes(uni.href));
     const siblings = links.filter((href) => href.startsWith(`/examenes/${key}/`) && href !== entry.url);
-    assert.equal(new Set(siblings).size, 14, `${entry.slug}: deben enlazarse las otras 14 asignaturas`);
+    const communityEntryCount = data.entries.filter((item) => item.slug.startsWith(`${key}/`)).length;
+    assert.equal(
+      new Set(siblings).size,
+      communityEntryCount - 1,
+      `${entry.slug}: deben enlazarse todas las demás asignaturas de su comunidad`,
+    );
   }
 });
 
