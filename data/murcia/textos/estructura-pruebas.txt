@@ -1,0 +1,139 @@
+PAU2026 
+ESTRUCTURA DE LAS PRUEBAS DE ACCESO (PAU2026) 
+Las  Pruebas de Acceso a la Universidad  (PAU) se definen, y se establecen sus características
+generales, en el Real Decreto 534/2024, de 11 de junio. Otros aspectos de su organización en el
+Distrito Universitario de la Región de Murcia (DURM) los establecen los acuerdos de su Comisión
+Organizadora.
+La PAU contiene dos fases: Fase General (FG) y Fase Voluntaria (FV). 
+FASE GENERAL (FG) 
+§  obligatoria  para bachilleres que deseen obtener el  requisito de acceso . 
+§  voluntaria  para quienes deseen  mejorar su nota de acceso , con prueba de acceso superada. 
+Estructura: 
+Consta de  cuatro exámenes  que se corresponden con tres de las cuatro materias comunes de 2º de
+Bachillerato (dentro de ellas se elige una de las lenguas extranjeras, SE HAYA CURSADO O NO), y se
+ha de optar además entre Historia de España e Historia de la Filosofía) y la específica escogida para
+la prueba de la modalidad cursada (AUNQUE LA MATERIA EN CONCRETO NO SE HAYA CURSADO),
+según el esquema siguiente:
+En el bloque de  materias comunes , se deberá matricular obligatoriamente: 
+§  en Lengua Extranjera, a elegir entre Inglés, Francés, Alemán, Italiano o Portugués. 
+§  de Historia de España o de Historia de la Filosofía, a elegir una de ellas para esta fase. 
+MATEMÁTICAS II (306)  MATEMÁTICAS APLICADAS A
+LAS CIENCIAS SOCIALES (307) 
+HISTORIA DE ESPAÑA  (302)  ARTES ESCÉNICAS II (310)  ANÁLISIS MUSICAL II (325) 
+o
+HISTORIA DE LA FILOSOFÍA  (320) 
+OBLIGATORIO 
+(elegir una de las
+dos "historias") 
+MATEMÁTICAS APLICADAS A
+LAS CIENCIAS SOCIALES (307)
+LATÍN II (308) 
+LENGUA CASTELLANA Y
+LITERATURA (301)
+OBLIGATORIA
+LENGUA EXTRANJERA  (Inglés,
+Francés, Alemán, Italiano,
+Portugués) 
+OBLIGATORIA 
+(se haya cursado
+o no) 
+ARTES Vía Plásticas, Imagen y Diseño 
+DIBUJO ARTÍSTICO II (327) 
+ARTES Vía Música y Artes escénicas 
+(a elegir una para la Fase General) 
+GENERAL 
+CIENCIAS GENERALES (332)
+(de la modalidad cursada en Bachillerato: si esa modalidad tiene
+dos materias posibles, de cualquiera de ellas, se haya cursado o
+no la materia) 
+CIENCIA Y TECNOLOGÍA 
+(a elegir una para la Fase General) 
+MATERIAS COMUNES (TRES) 
+HUMANIDADES Y CIENCIAS SOCIALES 
+(a elegir una para la Fase General) 
+MATERIAS ESPECÍFICAS DE MODALIDAD (UNA) 
+MATERIAS DE LA FASE GENERAL (TRES + UNA)
+PAU2026 
+En cuanto a la  materia específica de modalidad : 
+§  cuando solo haya una materia específica de la modalidad cursada, deberá matricularse de esa
+(Bachillerato de Artes-vía Plásticas, Imagen y Diseño; y Bachillerato General). 
+§  cuando haya más de una materia específica de la modalidad cursada (Bachillerato de Ciencias
+y Tecnología; Bachillerato de Humanidades y Ciencias Sociales; Bachillerato de Artes-vía
+Música y Artes Escénicas), deberá escoger una de las dos posibles, cursada o no, para esta
+Fase General. 
+§  para el alumnado que haya obtenido el título de Bachiller conforme a lo establecido en el artº
+23 del RD 243/2022, de 5 de abril, podrá sustituir la materia obligatoria de modalidad por la
+no escogida como común obligatoria entre Historia de España e Historia de la Filosofía. No
+obstante, podrá sustituir esta materia, en función del título obtenido, por: Ciencias Generales
+(Técnico/a de Formación Profesional); Dibujo Artístico II (Técnico/a en Artes Plásticas y
+Diseño), Análisis Musical II o Artes Escénicas II, a elección del alumnado (Enseñanzas
+Profesionales de Música y Danza). 
+§  podrá matricularse de cualquiera que figure como tal, y por tanto de libre elección, para
+quienes posean un título de Bachiller anterior a la LOE. 
+Calificaciones: 
+§  Cada examen se calificará entre 0 y 10 puntos. 
+§  La  nota de la Fase General  (NFG) será la media de las calificaciones obtenidas en las cuatro
+materias de las que se haya examinado, expresada con tres decimales (no se exige un mínimo
+en ninguna materia). 
+§  Si la NFG alcanza los 4 puntos se calculará la  nota de acceso a la universidad  (NAcceso)
+ponderando un 40% la nota de la FG y un 60% la Nota Media de Bachillerato (NMB). 
+§  Se  superará la Fase General de la PAU  (y se obtendrá por tanto el requisito de acceso) cuando
+el resultado de esta ponderación sea de al menos 5 puntos: 
+Nota Fase General (NFG)  Nota de Acceso (NAcceso) 
+NFG = (suma de las 4 notas) / 4  NAcceso = 0.4* NFG + 0.6 *NMB
+Requisito: NFG  ≥  4  Requisito Apto: NAcceso  ≥  5 
+Ejemplos: 
+§  Una persona con NMB=7.55 obtiene en las materias de la FG: 1.0 / 3.5 / 4.5 / 6.8. Entonces
+NFG = 15.8 / 4 = 3.950. Al ser NFG < 4 no supera la FG de la PAU y  no obtiene el acceso . 
+§  Una persona con NMB=5.50 obtiene en las materias de la FG: 1.0 / 3.5 / 4.5 / 7.25. Entonces
+NFG=16.25/4=4.063. Al ser NFG ≥ 4, se calcula NAcceso = 0.4 * 4.063 + 0.6 * 5.50 = 4.926.
+Al ser NAcceso < 5 no supera la FG de la PAU y  no obtiene el acceso . 
+§  Una persona con NMB = 5.67 obtiene en la FG: 0.0 / 2.5 / 5.5 / 8.0. Entonces NFG = 16/4 =
+4. Al ser NFG  ≥  4 se calcula NAcceso = 0.4 * 4 + 0.6 * 5.67 = 5.002, por lo que supera la FG
+de la PAU y  obtiene el acceso . 
+§  Una persona con NMB = 10 y con cuatro dieces en la FG obtiene NAcceso = 10, el máximo
+posible.
+PAU2026 
+FASE VOLUNTARIA (FV) 
+Esta fase permite  mejorar la valoración  en los procesos de admisión a estudios de Grado de quienes
+posean títulos de  Bachiller o  de  Técnico Superior  realizando  hasta cuatro exámenes  de las materias
+específicas de modalidad y optativas de segundo curso: 
+Cuando se realicen en la misma convocatoria ambas fases, General y Voluntaria,  la materia de
+modalidad de la Fase General  no se podrá incluir en la Fase Voluntaria, pero la nota obtenida  se
+valorará en los procesos de admisión 1 .
+Cada examen se califica entre 0 y 10 puntos. La nota sólo se tiene en cuenta para la admisión a un
+Grado si es de  5 o más puntos  y si la materia está  ponderada en ese Grado y universidad.  Cuando 
+1  Es decir, se hace un único examen de esa materia que se valora como parte de la Fase General y también (sin necesidad de
+solicitarlo ni de hacerla de nuevo en la Fase Voluntaria) para la mejora de nota como si se hubiese hecho en la Fase Voluntaria.
+PAU2026 
+se dan estas condiciones, las notas se multiplican por el  factor de ponderación establecido  en cada
+universidad para cada Grado, resultando la nota de admisión (NAdmisión) que puede incrementar
+hasta en 4 puntos la de acceso.
+En los procesos de admisión de 2026 se tendrán en cuenta las notas de la  Fase Voluntaria de la
+PAU2026, PAU2025 y EBAU2024 , pero no se tendrán en cuenta las de la  Fase Voluntaria de la EBAU 
+de 2023 o anteriores. 
+GENERALIDADES SOBRE LOS EXÁMENES 
+Cada examen tendrá una duración de  90 minutos  (salvo las adaptaciones por necesidades educativas
+especiales que especifiquen lo contrario) y serán en todos los casos un examen único. La estructura
+y criterios generales de cada examen se publican en la Web de las Pruebas, por acuerdo de la
+Comisión, acompañándose además de ejemplos de examen. 
+Cada examen será corregido conforme a los criterios establecidos, y será valorado con una puntuación
+entre 0 y 10 puntos, con posibilidad de incluir hasta 2 decimales. 
+REVISIÓN DE CALIFICACIONES 
+Tras la publicación de las calificaciones, se dispondrá de tres días hábiles para solicitar al Tribunal,
+por vía telemática, la  revisión  de las calificaciones obtenidas en uno o más exámenes. 
+Las exámenes para los que se haya solicitado revisión serán sometidos a una  segunda corrección  por
+un miembro del tribunal especialista en la materia y distinto de quien haya realizado la primera
+corrección. Si la diferencia entre las notas de ambas correcciones es inferior a dos puntos,  la nota
+resultante de la revisión será la media aritmética de dichas notas . Si difieren en dos o más puntos,
+se efectuará una tercera corrección por parte de dos vocales distintos de quienes hayan corregido ese
+examen, siendo la calificación final la consensuada por estas dos personas.  La nota resultante de este
+proceso podrá, por tanto, ser  superior, igual o inferior  a la nota inicial. 
+Quien realice la segunda corrección revisará también si en la primera se han producido errores
+materiales en el cálculo de la nota, en su transcripción al sistema informático o por clara aplicación
+incorrecta de los criterios de corrección .  En su caso, se subsanarán dichos errores y modificará la nota
+en la primera corrección, antes de calcular la diferencia y la media de ambas.  Esa primera nota
+modificada por error material no podrá ser inferior a la inicialmente otorgada.  Una vez finalizado el
+proceso de revisión, la Comisión Organizadora de las pruebas adoptará la resolución que establezca
+las calificaciones definitivas y las notificará a los interesados, que tendrán derecho a ver las pruebas
+sobre las que se haya solicitado revisión una vez finalizado el proceso.

@@ -552,6 +552,182 @@
       "name": "Examen ordinario PAU 2026 de Tecnología e Ingeniería II en Madrid",
       "sourceUrl": "https://www.ucm.es/file/tecnologiaingenieriaii-1",
       "scope": "El examen ordinario PAU 2026 presenta cinco bloques de dos puntos: uno obligatorio y cuatro con elección entre dos preguntas completas."
+    },
+    {
+      "id": "murcia-pau-2026-aleman",
+      "community": "Región de Murcia",
+      "subject": "Alemán",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Alemán en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-305-aleman-junio-pdf",
+      "scope": "Fija tres bloques de 3, 3 y 4 puntos con 25, 20 y 45 minutos de trabajo, e indica las elecciones de cada uno."
+    },
+    {
+      "id": "murcia-pau-2026-analisis-musical-ii",
+      "community": "Región de Murcia",
+      "subject": "Análisis Musical II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Análisis Musical II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-325-analisis-musical-ii-junio-pdf",
+      "scope": "Describe tres partes de 6, 2 y 2 puntos con supuesto práctico, texto y conceptos, y sus elecciones."
+    },
+    {
+      "id": "murcia-pau-2026-artes-escenicas-ii",
+      "community": "Región de Murcia",
+      "subject": "Artes Escénicas II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Artes Escénicas II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-310-artes-escenicas-junio-pdf",
+      "scope": "Detalla tres bloques de 4, 3 y 3 puntos: vídeo, tres cuestiones a elegir y un espectáculo del curso."
+    },
+    {
+      "id": "murcia-pau-2026-coro-y-tecnica-vocal-ii",
+      "community": "Región de Murcia",
+      "subject": "Coro y Técnica Vocal II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Coro y Técnica Vocal II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-326-coro-y-tecnica-vocal-ii-junio-pdf",
+      "scope": "Fija tres partes de 4, 3 y 3 puntos con treinta minutos estimados cada una y sus elecciones."
+    },
+    {
+      "id": "murcia-pau-2026-dibujo-artistico-ii",
+      "community": "Región de Murcia",
+      "subject": "Dibujo Artístico II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Dibujo Artístico II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-327-dibujo-artistico-ii-junio-pdf",
+      "scope": "Describe un único ejercicio de 10 puntos con seis criterios de valoración, materiales admitidos y excluidos."
+    },
+    {
+      "id": "murcia-pau-2026-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "community": "Región de Murcia",
+      "subject": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-328-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii-junio-pdf",
+      "scope": "Fija tres apartados de 4, 4 y 2 puntos, con opción solo en el A, y detalla tiempo y materiales."
+    },
+    {
+      "id": "murcia-pau-2026-diseno",
+      "community": "Región de Murcia",
+      "subject": "Diseño",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Diseño en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-314-diseno-junio-pdf",
+      "scope": "Describe un único ejercicio con dos partes de 6 y 4 puntos, criterios de valoración y materiales permitidos."
+    },
+    {
+      "id": "murcia-pau-2026-frances",
+      "community": "Región de Murcia",
+      "subject": "Francés",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Francés en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-304-frances-junio-pdf",
+      "scope": "Fija tres secciones de 5, 2 y 3 puntos con sus ejercicios, elecciones y límites de respuesta."
+    },
+    {
+      "id": "murcia-pau-2026-fundamentos-artisticos",
+      "community": "Región de Murcia",
+      "subject": "Fundamentos Artísticos",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Fundamentos Artísticos en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-309-fundamentos-artisticos-junio-pdf",
+      "scope": "Detalla cuatro bloques de 2, 4, 2 y 2 puntos y el número de opciones que se eligen en cada uno."
+    },
+    {
+      "id": "murcia-pau-2026-geologia-y-ciencias-ambientales",
+      "community": "Región de Murcia",
+      "subject": "Geología y Ciencias Ambientales",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Geología y Ciencias Ambientales en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-318-geologia-y-ciencias-ambientales-junio-pdf",
+      "scope": "Describe nueve preguntas en cinco partes, con la primera de 2 puntos y el resto de 1 punto con opciones A y B."
+    },
+    {
+      "id": "murcia-pau-2026-historia-de-la-musica-y-de-la-danza",
+      "community": "Región de Murcia",
+      "subject": "Historia de la Música y de la Danza",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Historia de la Música y de la Danza en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-324-historia-de-la-musica-y-de-la-danza-junio-pdf",
+      "scope": "Fija tres partes de 4, 3 y 3 puntos con una audición y dos bloques de dos preguntas a elegir entre tres."
+    },
+    {
+      "id": "murcia-pau-2026-italiano",
+      "community": "Región de Murcia",
+      "subject": "Italiano",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Italiano en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-323-italiano-junio-pdf",
+      "scope": "Describe tres secciones de 3, 3 y 4 puntos con seis ejercicios y las elecciones de cada sección."
+    },
+    {
+      "id": "murcia-pau-2026-literatura-dramatica",
+      "community": "Región de Murcia",
+      "subject": "Literatura Dramática",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Literatura Dramática en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-312-literatura-dramatica-junio-pdf",
+      "scope": "Describe tres bloques de 4, 3 y 3 puntos: análisis de un fragmento, una cuestión a elegir y creación de un texto teatral."
+    },
+    {
+      "id": "murcia-pau-2026-movimientos-culturales-y-artisticos",
+      "community": "Región de Murcia",
+      "subject": "Movimientos Culturales y Artísticos",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Movimientos Culturales y Artísticos en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-331-movimientos-culturales-y-artisticos-junio-pdf",
+      "scope": "Fija cuatro bloques de 3, 4, 1 y 2 puntos con el número de opciones que se eligen en cada uno."
+    },
+    {
+      "id": "murcia-pau-2026-tecnicas-de-expresion-grafico-plastica",
+      "community": "Región de Murcia",
+      "subject": "Técnicas de Expresión Gráfico-Plástica",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Técnicas de Expresión Gráfico-Plástica en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-329-tecnicas-de-expresion-grafico-plastica-juniok-pdf",
+      "scope": "Detalla dos partes de 3 y 7 puntos, sus criterios de valoración, el reparto orientativo del tiempo y los materiales."
+    },
+    {
+      "id": "murcia-pau-2026-tecnologia-e-ingenieria-ii",
+      "community": "Región de Murcia",
+      "subject": "Tecnología e Ingeniería II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Tecnología e Ingeniería II en Murcia",
+      "sourceUrl": "https://www.um.es/documents/d/estudios/pau2026-330-tecnologia-e-ingenieria-pau2026-junio-pdf",
+      "scope": "Detalla cuatro apartados de 2,5 puntos con un problema obligatorio y elecciones en los bloques I y II."
     }
   ],
   "entries": [
@@ -2220,6 +2396,564 @@
       "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
       "enlace_oficial_examen": {
         "ordinaria": "https://www.ucm.es/file/tecnologiaingenieriaii-1"
+      }
+    },
+    {
+      "prioridad": 49,
+      "slug": "region-de-murcia/aleman",
+      "url": "/examenes/region-de-murcia/aleman",
+      "asignatura": "Alemán",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Alemán PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Alemán · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Alemán en Murcia: tres bloques con tiempo propio (25, 20 y 45 minutos), elecciones y puntuación."
+      },
+      "contenido": {
+        "intro": "La prueba de Alemán de la PAU 2026 en Murcia es un único examen que reparte sus diez puntos en tres bloques y anota junto a cada uno el tiempo de trabajo recomendado. La comprensión lectora vale tres puntos y se estima en veinticinco minutos: combina decisiones de verdadero o falso respaldadas por una cita, preguntas de opción múltiple, frases que se completan con palabras propias y la localización de cuatro términos a partir de su definición. La competencia gramatical vale otros tres puntos y veinte minutos; reúne diez ítems de elección entre tres opciones y dos ejercicios de sintaxis y morfología en los que se escoge una de las dos propuestas. La expresión escrita pesa cuatro puntos, dispone de cuarenta y cinco minutos y pide un texto de entre 120 y 150 palabras a partir de una de dos tareas. Las tres cifras suman los noventa minutos oficiales, de modo que entrenar con ese reparto ayuda a no gastar en la lectura el tiempo de la redacción.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen único con tres bloques: comprensión lectora, competencia gramatical y expresión escrita, cada uno con su tiempo de trabajo indicado.",
+          "numero_ejercicios": "3 bloques (3, 3 y 4 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión lectora (3 puntos, 25 minutos)", "Competencia gramatical (3 puntos, 20 minutos)", "Expresión escrita (4 puntos, 45 minutos)"],
+          "notas_especificas": "En la expresión escrita se elige una de dos tareas y se redacta entre 120 y 150 palabras; en la gramática hay diez ítems de opción múltiple y dos ejercicios con elección de uno entre dos.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-aleman"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/aleman",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-305-aleman-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/305-aleman-1-pdf"
+      }
+    },
+    {
+      "prioridad": 50,
+      "slug": "region-de-murcia/analisis-musical-ii",
+      "url": "/examenes/region-de-murcia/analisis-musical-ii",
+      "asignatura": "Análisis Musical II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Análisis Musical II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Análisis Musical II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Análisis Musical II en Murcia: supuesto práctico de 6 puntos, texto y conceptos, con sus elecciones."
+      },
+      "contenido": {
+        "intro": "Análisis Musical II se examina en Murcia con tres partes que no pesan lo mismo. La primera concentra seis puntos y parte de una obra para analizar: en la pregunta I.1 se identifican y describen cuatro de seis elementos a razón de 0,75 puntos cada uno; en la I.2 y la I.3 se contesta una de dos opciones, y la I.4 pide asociar razonadamente la obra con un estilo y un contexto de creación. La segunda parte, de dos puntos, ofrece un texto y tres preguntas de las que se responden dos, a un punto cada respuesta. La tercera, también de dos puntos, se divide en un apartado de conceptos fundamentales y otro de formas musicales, y en cada uno de ellos se eligen dos de tres preguntas que valen 0,5 puntos. Por la distribución, la mayor parte de la nota depende del análisis de la obra, así que conviene practicar ese comentario completo antes que repasar definiciones sueltas. Si se contesta más de lo exigido, solo cuentan las primeras respuestas.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en tres partes: análisis de una obra como supuesto práctico, dos preguntas de tres sobre un texto y dos apartados de conceptos y formas musicales.",
+          "numero_ejercicios": "3 partes (6, 2 y 2 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Parte I: análisis de una obra (6 puntos)", "Parte II: texto y dos preguntas de tres (2 puntos)", "Parte III: conceptos fundamentales y formas musicales (2 puntos)"],
+          "notas_especificas": "En la pregunta I.1 se comentan cuatro de seis elementos; en las preguntas I.2 e I.3 se elige entre dos opciones; las faltas de ortografía pueden restar hasta 1 punto.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-analisis-musical-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/analisis-musical-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-325-analisis-musical-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/325-analisis-musical-pdf-1"
+      }
+    },
+    {
+      "prioridad": 51,
+      "slug": "region-de-murcia/artes-escenicas-ii",
+      "url": "/examenes/region-de-murcia/artes-escenicas-ii",
+      "asignatura": "Artes Escénicas II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Artes Escénicas II PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Artes Escénicas II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Artes Escénicas II en Murcia: comentario de un vídeo, tres cuestiones a elegir y un espectáculo del curso."
+      },
+      "contenido": {
+        "intro": "El examen de Artes Escénicas II en la PAU murciana de 2026 mezcla análisis audiovisual, teoría escénica y experiencia propia como espectador. El primer bloque, de cuatro puntos, consiste en comentar el fragmento de un espectáculo que se visiona en el aula; el vídeo no excede los cuatro minutos y se proyecta tres veces a lo largo de la prueba, y el enunciado propone pautas sobre contextualización, personajes, interpretación y escenografía. El segundo bloque, de tres puntos, ofrece cinco cuestiones, desde las tareas de un tramoyista hasta las partes de un teatro griego o los corrales de comedias, y se responden tres. El tercero, también de tres puntos, pide valorar un espectáculo que el alumno haya visto durante el curso, con dos puntos para el comentario del montaje y medio punto para cada uno de los aspectos sobre iluminación y espacio escénico. Cada respuesta debe llevar en el cuadernillo su número, como I.a o III.c, y si se contesta de más se corrigen solo las primeras.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en tres bloques: comentario de un fragmento de espectáculo en vídeo, tres cuestiones a elegir y valoración de un espectáculo visto durante el curso.",
+          "numero_ejercicios": "3 bloques (4, 3 y 3 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Bloque I: análisis de un fragmento en vídeo (4 puntos)", "Bloque II: tres cuestiones de cinco (3 puntos)", "Bloque III: espectáculo visionado durante el curso (3 puntos)"],
+          "notas_especificas": "El vídeo dura como máximo cuatro minutos y se proyecta tres veces durante el examen; en el cuadernillo hay que indicar siempre el número de cada pregunta.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-artes-escenicas-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/artes-escenicas-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-310-artes-escenicas-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/310-artes-escenicas-1-pdf"
+      }
+    },
+    {
+      "prioridad": 52,
+      "slug": "region-de-murcia/coro-y-tecnica-vocal-ii",
+      "url": "/examenes/region-de-murcia/coro-y-tecnica-vocal-ii",
+      "asignatura": "Coro y Técnica Vocal II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Coro y Técnica Vocal II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Coro y Técnica Vocal II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Coro y Técnica Vocal II en Murcia: tres partes de 30 minutos estimados, vídeo, partitura y cuestiones."
+      },
+      "contenido": {
+        "intro": "Coro y Técnica Vocal II divide la PAU 2026 de Murcia en tres partes y propone una estimación de treinta minutos para cada una, lo que reproduce el reloj completo de la prueba. La parte A, de cuatro puntos, analiza una pieza vocal grabada de entre tres y cinco minutos que se visualiza dos veces, al comenzar y cuando han pasado quince; la guía de análisis reparte la puntuación entre contexto histórico, análisis musical con atención a la relación entre música y texto, formación coral y puesta en escena. La parte B, de tres puntos, obliga a elegir una de dos opciones, comentar una partitura que se escucha dos veces y plantear un proyecto artístico con sus participantes, ensayos y difusión. La parte C, de otros tres puntos, plantea cuatro cuestiones de las que se responden tres en unas cincuenta palabras, sobre interpretación, presentación escénica, actitudes profesionales y propiedad intelectual. Las faltas de ortografía pueden restar hasta un punto en total.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en tres partes con treinta minutos estimados cada una: análisis de una pieza vocal en vídeo, partitura con proyecto artístico y tres cuestiones breves.",
+          "numero_ejercicios": "3 partes (4, 3 y 3 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Parte A: análisis de una pieza vocal en vídeo (4 puntos, 30 minutos)", "Parte B: partitura y proyecto artístico, una opción de dos (3 puntos, 30 minutos)", "Parte C: tres cuestiones de cuatro (3 puntos, 30 minutos)"],
+          "notas_especificas": "El vídeo de la parte A y el audio de la parte B se reproducen dos veces, al inicio y pasados 15 minutos; las respuestas de la parte C son de unas cincuenta palabras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-coro-y-tecnica-vocal-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/coro-y-tecnica-vocal-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-326-coro-y-tecnica-vocal-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/326-coro-y-tecnica-vocal-ii-1-pdf"
+      }
+    },
+    {
+      "prioridad": 53,
+      "slug": "region-de-murcia/dibujo-artistico-ii",
+      "url": "/examenes/region-de-murcia/dibujo-artistico-ii",
+      "asignatura": "Dibujo Artístico II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Dibujo Artístico II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Dibujo Artístico II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Dibujo Artístico II en Murcia: un ejercicio de 10 puntos, criterios, materiales y qué no se permite."
+      },
+      "contenido": {
+        "intro": "Dibujo Artístico II es en Murcia la prueba más cercana a un taller: la PAU 2026 consta de un único ejercicio de diez puntos. El estudiante recibe una imagen de referencia y debe dibujarla según el estilo de una de dos opciones, la uno o la dos, de modo que elegir bien la propuesta forma parte del examen. La nota se desglosa en seis criterios: encuadre y encajado y configuración y proporciones suman dos puntos cada uno, mientras que la línea, la mancha y el claroscuro o color, la expresividad, la ordenación del espacio y el uso adecuado de procedimientos y materiales aportan hasta un punto y medio. El dibujo final se hace en papel de tamaño A3 sobre un soporte rígido que lleva el propio examinado, con pinzas para sujetarlo; los estudios previos van al cuadernillo. Se admiten lápices, pastel, ceras, rotuladores y acuarela con pincel y depósito de agua, pero no aerosoles fijadores, reglas ni plantillas. Se permite dibujar recursos que den contexto, aunque no se evalúan.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Un único ejercicio de 10 puntos: dibujar la imagen de referencia según el estilo de una de las dos opciones propuestas.",
+          "numero_ejercicios": "1 ejercicio",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Encuadre y encajado (hasta 2 puntos)", "Configuración y proporciones (hasta 2 puntos)", "Línea, mancha y claroscuro o color (hasta 1,5 puntos)", "Expresividad e intencionalidad gráfica (hasta 1,5 puntos)", "Ordenación del espacio representado (hasta 1,5 puntos)", "Procedimientos y materiales (hasta 1,5 puntos)"],
+          "notas_especificas": "El dibujo final se realiza en papel A3 sobre un soporte rígido que aporta el estudiante; no se permiten aerosoles fijadores, reglas ni plantillas.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-dibujo-artistico-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/dibujo-artistico-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-327-dibujo-artistico-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/327-dibujo-artistico-ii-2-pdf"
+      }
+    },
+    {
+      "prioridad": 54,
+      "slug": "region-de-murcia/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "url": "/examenes/region-de-murcia/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "asignatura": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Dibujo Técnico Aplicado PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II en Murcia: apartados A, B y C y materiales."
+      },
+      "contenido": {
+        "intro": "Esta materia artística se evalúa en Murcia mediante tres apartados con pesos desiguales y una sola decisión de elección. El apartado A, de cuatro puntos, trabaja geometría, arte y entorno con dos opciones, A.1 y A.2, de las que hay que escoger una indicándolo con claridad; si se resuelven las dos, solo se evalúa la que aparece primero. El apartado B, también de cuatro puntos, combina los sistemas de representación del espacio con la normalización y el diseño de proyectos, y en esta convocatoria parte de un frasco del que se dibujan vistas y se propone un rediseño en isométrica. El apartado C vale dos puntos y trabaja con un punto de fuga y el punto de vista del observador. Los dibujos se resuelven sobre los formatos impresos que se entregan, dentro de un A4, y se puede usar regla, compás y lapiceros de distinta dureza, pero no colores para diferenciar trazados. El texto recomienda dedicar los cinco primeros minutos a leer los enunciados.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres apartados: A con dos opciones a elegir una, y B y C obligatorios, resueltos sobre formatos impresos.",
+          "numero_ejercicios": "3 apartados (4, 4 y 2 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Apartado A: geometría, arte y entorno, opción A.1 o A.2 (4 puntos)", "Apartado B: sistemas de representación y normalización (4 puntos)", "Apartado C: sistemas de representación del espacio (2 puntos)"],
+          "notas_especificas": "Los dibujos van dentro del formato A4; se permiten regla, compás y lapiceros de distinta dureza, y no se pueden usar colores para diferenciar las líneas de trazado.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-328-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/328-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii-1-pdf"
+      }
+    },
+    {
+      "prioridad": 55,
+      "slug": "region-de-murcia/diseno",
+      "url": "/examenes/region-de-murcia/diseno",
+      "asignatura": "Diseño",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Diseño PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Diseño · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Diseño en Murcia: un ejercicio con dos partes (6 y 4 puntos), criterios de valoración y materiales."
+      },
+      "contenido": {
+        "intro": "La prueba de Diseño en la PAU 2026 de Murcia es un único ejercicio con dos partes que parten del mismo supuesto práctico. En la primera, de seis puntos, se resuelve gráficamente una de dos opciones, de diseño gráfico o de diseño tridimensional, y la nota se reparte entre la adecuación estética a lo pedido, con 2,75 puntos, el conocimiento y aplicación de los sistemas de representación, con 1,25, y el nivel expresivo, productivo e innovador de la propuesta, con dos. La segunda parte, de cuatro puntos, es una memoria justificativa del diseño realizado junto con el enmarque del periodo y del autor que indica el supuesto, y se valora a partes iguales la justificación y la caracterización del movimiento. Se entregan los estudios previos que muestran el proceso creativo y se señala cuál es el diseño final. Las técnicas pueden ser secas o húmedas con depósito de agua propio, y la organización facilita los folios DIN A4 necesarios; el papel traído por el estudiante puede no ser blanco.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Un único ejercicio con dos partes a partir de un supuesto práctico: una propuesta de diseño a elegir entre dos y una memoria justificativa.",
+          "numero_ejercicios": "1 ejercicio en 2 partes (6 y 4 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Primera parte: resolución gráfica de una opción entre dos (6 puntos)", "Segunda parte: memoria justificativa y enmarque del periodo y el autor (4 puntos)"],
+          "notas_especificas": "Se entregan los estudios previos del diseño; se pueden usar los materiales que se consideren, con técnicas secas o húmedas con depósito de agua propio.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-diseno"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/diseno",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-314-diseno-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/314-diseno-1-pdf"
+      }
+    },
+    {
+      "prioridad": 56,
+      "slug": "region-de-murcia/frances",
+      "url": "/examenes/region-de-murcia/frances",
+      "asignatura": "Francés",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Francés PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Francés · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Francés en Murcia: tres secciones (5, 2 y 3 puntos), ejercicios, elecciones y extensión de la redacción."
+      },
+      "contenido": {
+        "intro": "El examen de Francés de la PAU 2026 en Murcia se organiza en tres secciones cuyos pesos son de cinco, dos y tres puntos. La comprensión escrita es la mayor: seis ítems de medio punto, con tres de verdadero o falso que exigen justificar con un fragmento del texto y tres de elección entre A, B y C, más dos preguntas que se contestan con palabras propias, en un máximo de treinta palabras, a un punto cada una. La sección de dominio de la lengua propone cinco cuestiones de las que se responden cuatro, a medio punto, con sinónimos, palabras que se buscan a partir de su definición, una frase que se completa con un término del texto, una reformulación en passé composé y la elección de palabras entre varias propuestas. En la producción escrita se elige entre un texto de opinión y un correo electrónico de entre 120 y 150 palabras, y la corrección advierte de que un texto de menos de 60 palabras no se evalúa. Cuando se responde a más cuestiones de las pedidas, solo se corrigen las cuatro primeras de la segunda sección.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen único en francés con tres secciones: comprensión escrita, dominio de la lengua francesa y producción escrita.",
+          "numero_ejercicios": "4 ejercicios en 3 secciones (5, 2 y 3 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión escrita (5 puntos)", "Dominio de la lengua francesa (2 puntos)", "Producción escrita (3 puntos)"],
+          "notas_especificas": "En la segunda sección se responden cuatro de las cinco cuestiones y en la producción escrita se elige entre un texto de opinión y un correo de 120 a 150 palabras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-frances"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/frances",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-304-frances-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/304-frances-2-pdf"
+      }
+    },
+    {
+      "prioridad": 57,
+      "slug": "region-de-murcia/fundamentos-artisticos",
+      "url": "/examenes/region-de-murcia/fundamentos-artisticos",
+      "asignatura": "Fundamentos Artísticos",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Fundamentos Artísticos PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Fundamentos Artísticos · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Fundamentos Artísticos en Murcia: cuatro bloques (2, 4, 2 y 2 puntos) y cuántas opciones se eligen en cada uno."
+      },
+      "contenido": {
+        "intro": "Fundamentos Artísticos reparte la PAU 2026 de Murcia en cuatro bloques comunes y en todos ellos hay que elegir. El primero es un tema de desarrollo que vale dos puntos y se escoge entre tres propuestas; en la convocatoria de junio van de la arquitectura religiosa y civil de la antigua Roma a la escultura del Renacimiento o el arte ecológico. El segundo es el más pesado, con cuatro puntos: se analizan cuatro de seis imágenes a punto por imagen. El tercero consiste en seis cuestiones semiabiertas, de las que se responden cuatro a medio punto cada una, y el cuarto en seis preguntas de imágenes cruzadas o de opción múltiple, también con cuatro respuestas a medio punto. El enunciado avisa de que, si se responde a más cuestiones de las exigidas, solo se corregirán las primeras hasta el máximo de cada bloque. En total son un tema, cuatro comentarios y ocho respuestas breves, lo que premia reconocer obras y estilos con rapidez antes que redactar largo.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen único con cuatro bloques comunes: un tema, comentario de imágenes, cuestiones semiabiertas y preguntas de imágenes cruzadas u opción múltiple.",
+          "numero_ejercicios": "4 bloques (2, 4, 2 y 2 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Bloque I: un tema entre tres (2 puntos)", "Bloque II: comentario de cuatro imágenes de seis (4 puntos)", "Bloque III: cuatro cuestiones semiabiertas de seis (2 puntos)", "Bloque IV: cuatro preguntas de imágenes cruzadas u opción múltiple de seis (2 puntos)"],
+          "notas_especificas": "Si se responde a más cuestiones de las exigidas en un bloque, solo se corrigen las primeras hasta alcanzar el máximo de ese bloque.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-fundamentos-artisticos"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/fundamentos-artisticos",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-309-fundamentos-artisticos-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/309-fundamentos-artisticos-1-pdf"
+      }
+    },
+    {
+      "prioridad": 58,
+      "slug": "region-de-murcia/geologia-y-ciencias-ambientales",
+      "url": "/examenes/region-de-murcia/geologia-y-ciencias-ambientales",
+      "asignatura": "Geología y Ciencias Ambientales",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Geología PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Geología y Ciencias Ambientales · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Geología y Ciencias Ambientales en Murcia: nueve preguntas en cinco partes, opciones A/B y puntuación."
+      },
+      "contenido": {
+        "intro": "La prueba de Geología y Ciencias Ambientales de Murcia ordena sus nueve preguntas en cinco partes que siguen los saberes básicos de la materia. La pregunta uno, de dos puntos y sin opciones, interpreta un corte geológico; en las ocho restantes, de un punto cada una, hay que elegir entre las opciones A y B, y si se responden ambas solo se corrige la primera. La segunda parte aborda tectónica de placas y geodinámica interna con las preguntas dos y tres, la tercera los procesos geológicos externos con la cuatro y la cinco, la cuarta los minerales y las rocas con la seis y la siete, y la quinta las capas fluidas de la Tierra y los recursos con la ocho y la nueve. El enunciado señala la valoración parcial de cada apartado y advierte de que, cuando se redacta, cada error ortográfico o gramatical resta un diez por ciento de la pregunta: 0,2 puntos en la primera y 0,1 en el resto. ",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Nueve preguntas agrupadas en cinco partes por saberes básicos; en todas menos en la primera se elige entre las opciones A y B.",
+          "numero_ejercicios": "9 preguntas en 5 partes",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Parte 1: experimentación en Geología y Ciencias Ambientales (pregunta 1, 2 puntos)", "Parte 2: tectónica de placas y geodinámica interna (preguntas 2 y 3)", "Parte 3: procesos geológicos externos (preguntas 4 y 5)", "Parte 4: minerales y rocas (preguntas 6 y 7)", "Parte 5: capas fluidas de la Tierra y recursos (preguntas 8 y 9)"],
+          "notas_especificas": "La pregunta 1 vale 2 puntos y no tiene opciones; las demás valen 1 punto y se elige A o B. En los apartados de redacción, cada error ortográfico o gramatical penaliza un 10 % de la pregunta.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-geologia-y-ciencias-ambientales"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/geologia-y-ciencias-ambientales",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-318-geologia-y-ciencias-ambientales-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/318-geologia-y-ciencias-ambientales-1-pdf"
+      }
+    },
+    {
+      "prioridad": 59,
+      "slug": "region-de-murcia/historia-de-la-musica-y-de-la-danza",
+      "url": "/examenes/region-de-murcia/historia-de-la-musica-y-de-la-danza",
+      "asignatura": "Historia de la Música y de la Danza",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Historia de la Música PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Historia de la Música y de la Danza · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Historia de la Música y de la Danza en Murcia: tres partes (4, 3 y 3 puntos), audición y elecciones."
+      },
+      "contenido": {
+        "intro": "Historia de la Música y de la Danza se examina en Murcia con tres partes que suman diez puntos y empiezan por escuchar. La primera, de cuatro puntos, es un supuesto práctico: se comenta una audición, en la convocatoria de junio el «Aleluya» de Haendel, respondiendo a cuatro cuestiones de un punto sobre el contexto histórico-artístico, los rasgos del estilo, los rasgos de la obra que la sitúan en esa corriente y la importancia del autor en la historia de la música. En la segunda parte, de tres puntos, se contestan dos de tres preguntas, a punto y medio cada una. La tercera, con el mismo valor, parte de un texto y se responde igualmente a dos de tres preguntas. Si se contesta a más opciones de las pedidas, solo se tienen en cuenta las primeras hasta alcanzar la cifra exigida. Los criterios de corrección piden valorar cada respuesta globalmente y establecen que las faltas ortográficas pueden restar hasta un punto, el diez por ciento de la nota.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en tres partes: comentario de una audición, dos preguntas de tres y, sobre un texto, otras dos preguntas de tres.",
+          "numero_ejercicios": "3 partes (4, 3 y 3 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Parte I: comentario de una audición, cuatro cuestiones (4 puntos)", "Parte II: dos preguntas de tres (3 puntos)", "Parte III: texto y dos preguntas de tres (3 puntos)"],
+          "notas_especificas": "En las partes II y III cada respuesta correcta vale 1,5 puntos; las faltas de ortografía pueden restar hasta 1 punto (10 %).",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-historia-de-la-musica-y-de-la-danza"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/historia-de-la-musica-y-de-la-danza",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-324-historia-de-la-musica-y-de-la-danza-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/324-historia-de-la-musica-y-la-danza-pdf"
+      }
+    },
+    {
+      "prioridad": 60,
+      "slug": "region-de-murcia/italiano",
+      "url": "/examenes/region-de-murcia/italiano",
+      "asignatura": "Italiano",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Italiano PAU Región de Murcia | MIEBAU",
+        "h1": "Exámenes de Italiano · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Italiano en Murcia: tres secciones (3, 3 y 4 puntos), seis ejercicios y qué cuestiones se eligen."
+      },
+      "contenido": {
+        "intro": "El examen de Italiano de la PAU 2026 en Murcia es único y se divide en tres secciones de tres, tres y cuatro puntos, con seis ejercicios numerados. La primera, de comprensión de lectura, parte de un texto y exige tres ejercicios completos: cuatro ítems de 0,4 puntos, con dos de vero o falso justificados con un fragmento y dos de opción múltiple, dos frases que se completan con palabras propias a 0,5 puntos y cuatro términos que se buscan en el texto a partir de su definición, a 0,1 cada uno. La segunda sección trata gramática y uso de la lengua: la cuestión cuatro es única y consiste en completar quince palabras a 0,1 puntos, mientras que en la cinco se eligen dos de cuatro cuestiones gramaticales, como pasar frases al pasado prossimo, al imperfetto o al futuro, con 0,75 puntos cada una. La tercera, de expresión escrita, ofrece una opinión o un correo informal de entre 120 y 150 palabras. Si se responde a más de lo exigido, solo cuentan las primeras respuestas.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen único con tres secciones: comprensión de lectura, cuestiones de gramática y uso de la lengua, y producción escrita.",
+          "numero_ejercicios": "6 ejercicios en 3 secciones (3, 3 y 4 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión de lectura (3 puntos)", "Gramática y uso de la lengua (3 puntos)", "Producción escrita (4 puntos)"],
+          "notas_especificas": "En la segunda sección la cuestión 4 es única y en la 5 se eligen dos de cuatro; la producción escrita ofrece una opinión o un correo informal de 120 a 150 palabras.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-italiano"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/italiano",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-323-italiano-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/323-italiano-1-pdf"
+      }
+    },
+    {
+      "prioridad": 61,
+      "slug": "region-de-murcia/literatura-dramatica",
+      "url": "/examenes/region-de-murcia/literatura-dramatica",
+      "asignatura": "Literatura Dramática",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Literatura Dramática PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Literatura Dramática · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Literatura Dramática en Murcia: análisis de un texto, una cuestión a elegir y un texto teatral propio."
+      },
+      "contenido": {
+        "intro": "Literatura Dramática combina en Murcia análisis, teoría y creación en una prueba de tres bloques. El primero, de cuatro puntos, propone analizar un fragmento teatral con cuatro apartados de un punto: resumen del argumento y temas, contextualización del fragmento en la obra, rasgos y tipología de los personajes y rasgos del lenguaje con su significación en el género. El segundo, de tres puntos, ofrece dos cuestiones y se responde una: explicar la dramaturgia de la tragedia clásica con un ejemplo de lo leído, o definir tres términos teatrales de entre cuatro, como melodrama, proscenio, deus ex machina o cuarta pared, con un punto como máximo por término. El tercero, también de tres puntos, es de escritura: un breve texto teatral de hasta trescientas palabras con al menos dos personajes, evidencia del conflicto dramático y dos acotaciones sobre el estado anímico de un personaje, sobre uno de los temas propuestos. En el cuadernillo se indica siempre el número de pregunta, y si se contesta de más se corrigen las primeras.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en tres bloques: análisis de un texto dramático, una cuestión a elegir entre dos y composición de un breve texto teatral.",
+          "numero_ejercicios": "3 bloques (4, 3 y 3 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Bloque I: análisis de un fragmento teatral, cuatro apartados de 1 punto (4 puntos)", "Bloque II: una cuestión a elegir entre dos (3 puntos)", "Bloque III: texto teatral de hasta 300 palabras (3 puntos)"],
+          "notas_especificas": "El texto del bloque III debe incluir al menos dos personajes con conflicto dramático y dos acotaciones sobre el estado anímico de un personaje.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-literatura-dramatica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/literatura-dramatica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-312-literatura-dramatica-junio-pdf"
+      }
+    },
+    {
+      "prioridad": 62,
+      "slug": "region-de-murcia/movimientos-culturales-y-artisticos",
+      "url": "/examenes/region-de-murcia/movimientos-culturales-y-artisticos",
+      "asignatura": "Movimientos Culturales y Artísticos",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Movimientos Culturales PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Movimientos Culturales y Artísticos · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Movimientos Culturales y Artísticos en Murcia: cuatro bloques (3, 4, 1 y 2 puntos) y sus elecciones."
+      },
+      "contenido": {
+        "intro": "Movimientos Culturales y Artísticos propone en Murcia cuatro bloques comunes con una distribución muy visual. En el primero, de tres puntos, se desarrollan dos temas de tres posibles, a punto y medio cada uno; en la convocatoria de junio se mueven entre el arte acción y el body art, el arte mural urbano y el videoarte. El segundo es el más extenso, con cuatro puntos: se comentan cuatro de seis imágenes, a un punto por imagen. El tercero reúne ocho cuestiones semiabiertas de las que se responden cinco, y cada una vale solo 0,20 puntos, de modo que el bloque entero suma un punto. El cuarto son seis preguntas de tipo test, de las que se eligen cuatro, a medio punto cada una. El aviso inicial recuerda que, si se contesta a más cuestiones de las exigidas, se corrigen solo las primeras hasta el máximo de cada bloque. Conviene entrenar el reconocimiento de imágenes y corrientes, porque el comentario de imágenes y las preguntas tipo test suman seis de los diez puntos.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen con cuatro bloques comunes: temas, comentario de imágenes, cuestiones semiabiertas y preguntas tipo test.",
+          "numero_ejercicios": "4 bloques (3, 4, 1 y 2 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Bloque I: dos temas de tres (3 puntos)", "Bloque II: comentario de cuatro imágenes de seis (4 puntos)", "Bloque III: cinco cuestiones semiabiertas de ocho (1 punto)", "Bloque IV: cuatro preguntas tipo test de seis (2 puntos)"],
+          "notas_especificas": "Cada cuestión semiabierta vale 0,20 puntos y solo se corrigen cinco de las ocho propuestas; en el test, cada pregunta vale 0,5.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-movimientos-culturales-y-artisticos"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/movimientos-culturales-y-artisticos",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-331-movimientos-culturales-y-artisticos-junio-pdf"
+      }
+    },
+    {
+      "prioridad": 63,
+      "slug": "region-de-murcia/tecnicas-de-expresion-grafico-plastica",
+      "url": "/examenes/region-de-murcia/tecnicas-de-expresion-grafico-plastica",
+      "asignatura": "Técnicas de Expresión Gráfico-Plástica",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Expresión Gráfico-Plástica PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Técnicas de Expresión Gráfico-Plástica · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Técnicas de Expresión Gráfico-Plástica en Murcia: teoría de 3 puntos, práctica de 7, tiempos y materiales."
+      },
+      "contenido": {
+        "intro": "Técnicas de Expresión Gráfico-Plástica concede a la práctica más del doble que a la teoría en la PAU 2026 de Murcia. La parte teórica vale tres puntos: se responden tres de cuatro preguntas, cada una con un máximo de un punto y de ocho líneas. La parte práctica vale siete y se elige entre las opciones A y B; se valora la adecuación del procedimiento, técnica y material con dos puntos, la resolución de la composición y el uso del color o del valor tonal con otros dos, la originalidad y la creatividad con dos más, y un último punto para una reflexión de seis líneas como máximo y el grado de acabado. La organización entrega el papel en formato A3, similar al de acuarela, y las técnicas deben secar en sesenta minutos, por lo que se descartan el óleo y el acrílico. El tiempo orientativo es de unos veinte minutos para la teoría y sesenta para la práctica, y se aconseja empezar por la práctica si se usan técnicas al agua.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Examen en dos partes: una teórica con tres preguntas a elegir entre cuatro y una práctica con una opción a elegir entre dos.",
+          "numero_ejercicios": "2 partes (3 y 7 puntos)",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Parte teórica: tres preguntas de cuatro (3 puntos)", "Parte práctica: opción A o B (7 puntos)"],
+          "notas_especificas": "El papel A3 lo facilita la organización; las técnicas deben secar en 60 minutos, y se aconseja empezar por la práctica si se emplean procedimientos al agua.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-tecnicas-de-expresion-grafico-plastica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/tecnicas-de-expresion-grafico-plastica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-329-tecnicas-de-expresion-grafico-plastica-juniok-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/329-tecnicas-de-expresion-grafico-plastica-pdf-1"
+      }
+    },
+    {
+      "prioridad": 64,
+      "slug": "region-de-murcia/tecnologia-e-ingenieria-ii",
+      "url": "/examenes/region-de-murcia/tecnologia-e-ingenieria-ii",
+      "asignatura": "Tecnología e Ingeniería II",
+      "comunidad": "Región de Murcia",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "index",
+      "seo": {
+        "title": "Exámenes de Tecnología e Ingeniería II PAU Murcia | MIEBAU",
+        "h1": "Exámenes de Tecnología e Ingeniería II · PAU Región de Murcia",
+        "meta_description": "Estructura del examen PAU 2026 de Tecnología e Ingeniería II en Murcia: cuatro apartados de 2,5 puntos, un problema obligatorio y elecciones."
+      },
+      "contenido": {
+        "intro": "Tecnología e Ingeniería II se examina en Murcia con cuatro apartados de 2,5 puntos cada uno y un primer apartado sin elección. El apartado uno es un problema competencial sin opcionalidad, que en la convocatoria de junio pide diseñar un sistema electrónico combinacional con puertas lógicas. El apartado dos pertenece al bloque I: se eligen dos de tres cuestiones teórico-prácticas, a 1,25 puntos, sobre materiales, termodinámica y sistemas de control en lazo cerrado. Los apartados tres y cuatro forman el bloque II, de cinco puntos: se escogen dos de tres problemas de 2,5 puntos, de vigas, de neumática y de circuitos de corriente alterna monofásica. El examen avisa de que, si se contesta a más cuestiones o problemas de los pedidos, solo se corrige lo respondido primero en cada bloque. Los criterios reparten la nota de un problema entre planteamiento, desarrollo y resultado, con hasta el 40, el 30 y el 30 por ciento, de modo que un resultado final correcto no basta sin el proceso.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro apartados de 2,5 puntos: un problema competencial obligatorio, dos cuestiones a elegir de tres y dos problemas a elegir de tres.",
+          "numero_ejercicios": "4 apartados de 2,5 puntos",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Apartado 1: problema competencial sin opcionalidad (2,5 puntos)", "Apartado 2, bloque I: dos cuestiones teórico-prácticas de tres (2,5 puntos)", "Apartados 3 y 4, bloque II: dos problemas de tres (5 puntos)"],
+          "notas_especificas": "Si se responde a más cuestiones o problemas de los exigidos, solo se corrige lo contestado primero en cada bloque; en un problema se valora planteamiento, desarrollo y resultado.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["murcia-pau-2026-general", "murcia-pau-2026-tecnologia-e-ingenieria-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/region-de-murcia/tecnologia-e-ingenieria-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-330-tecnologia-e-ingenieria-pau2026-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/330-tecnologia-e-ingenieria-ii-1-pdf"
       }
     }
   ]

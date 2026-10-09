@@ -1,0 +1,409 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+307-MATEMÁTICAS APLICADAS A LAS CCSS 
+PAU2026 -  JULIO 
+NOTA IMPORTANTE:  Las dos primeras preguntas son obligatorias. En las preguntas tres
+y cuatro, debe seleccionar una opción (A o B) y contestar a todos los apartados. Cada
+cuestión tiene una puntuación de entre 2 y 3 puntos. Se permite una calculadora no
+gráfica ni programable. 
+PREGUNTA 1: (3 puntos) 
+De los 200 estudiantes de segundo de Bachillerato de un instituto de Molina de Segura, 75
+practican taekwondo, 100 hapkido y 50 ambas artes marciales coreanas. Si se elige un
+alumno al azar, calcular la probabilidad de que:
+a)  Practique al menos algún arte marcial coreano.  [0,25 puntos] 
+b)  Practique únicamente hapkido.  [0,5 puntos] 
+c)  No practique ningún arte marcial coreano.  [0,5 puntos] 
+d)  Practique solo una de las dos artes marciales coreanas.  [0,5 puntos] 
+e)  Si el estudiante seleccionado no practica hapkido, calcule la probabilidad de que
+practique taekwondo.  [0,25 puntos] 
+El salario bruto mensual (en euros) de los profesores de artes marciales se distribuye según
+una distribución Normal de media desconocida y desviación típica 450 euros. Se preguntó a
+81 profesores de artes marciales elegidos al azar y se estableció que el salario medio oscila
+entre 1383,5 euros y 1616,5 euros.
+f)  ¿Cuál ha sido el salario medio de los profesores de la muestra si el nivel de confianza
+que se ha utilizado en el intervalo anterior es del 98%?  [0,5 puntos] 
+g)  Si se quiere estimar el salario medio poblacional, con un error máximo de 74,5 euros y
+con un nivel de confianza del 90%, ¿cuál será el tamaño muestral necesario para
+determinarlo?  [0,5 puntos] 
+PREGUNTA 2: (3 puntos) 
+Dada la función: 
+𝑓(𝑥) = 𝑥 !  ∙ (𝑥 − 5) " 
+Se pide:
+a) Determine el dominio de  𝑓(𝑥).  [0,25 puntos] 
+b) Calcule la función derivada  𝑓 # (𝑥)  y determine los puntos críticos.  [0,75 puntos] 
+c) Estudie la monotonía de  𝑓(𝑥) , indicando los intervalos de crecimiento y decrecimiento.  [1 p] 
+d) Determine el valor o valores de  𝑥  donde la función tiene un extremo relativo. Calcule el valor
+de la función en dichos puntos.  [0,5 puntos] 
+e) Calcule  ∫ 𝑓(𝑥)𝑑𝑥.  [0,5 puntos]
+PREGUNTA 3: (2 puntos) 
+OPCIÓN A 
+Un fabricante importante de patinetes eléctricos en España produce dos modelos: el SmartGyro
+Rockway EVO y el SmartGyro Speedway. El fabricante obtiene 150 euros de beneficio por cada
+Rockway EVO y 120 euros por cada Speedway. El modelo Rockway EVO requiere 3 horas de
+ensamblaje y media hora de pintura, mientras que el modelo Speedway necesita 2 horas de
+ensamblaje y una hora de pintura. El número máximo de horas de ensamblaje disponibles es
+de 24 al día y el de pintura, de 8. Además, deben fabricarse al menos 3 unidades del modelo
+Speedway al día. Se pide:
+a) Si el fabricante quiere maximizar el beneficio diario, formule el problema, identificando la
+función objetivo y las restricciones.  [0,75 puntos] 
+b) Represente la región factible.  [0,5 puntos] 
+c) Encuentre los vértices de esta región.  [0,25 puntos] 
+d) ¿Cuántos patinetes de cada modelo debe producir el fabricante para maximizar el
+beneficio diario? Calcule el beneficio máximo diario posible.  [0,5 puntos] 
+OPCIÓN B 
+Considere la función objetivo  𝑓(𝑥, 𝑦) = 3𝑥 − 2𝑦  y la región del plano definida por las siguientes
+inecuaciones: 
+⎩
+⎪
+⎨
+⎪
+⎧  𝑦  ≤  7
+3𝑥 − 𝑦  ≤  3
+𝑥 + 𝑦  ≥  5
+𝑥  ≥  0
+𝑦  ≥  0 
+a) Represente la región factible.  [0,75 puntos] 
+b) Encuentre los vértices de esta región.  [0,5 puntos] 
+c) Obtenga los puntos de la región factible donde la función objetivo alcanza el máximo y el
+mínimo y calcule sus correspondientes valores.  [0,75 puntos]
+PREGUNTA 4: (2 puntos) 
+OPCIÓN A 
+Para celebrar el cumpleaños de Bruno, Carmen quiere invitar a merendar a sus amigos en la
+Pizzería La Romana. Esta pizzería ofrece tres tipos de pizzas: de base fina, de base gruesa y
+de base rellena de queso. El precio de la pizza de base rellena de queso es 2 euros más que
+el de las otras dos juntas. Si encarga 6 pizzas de base gruesa se gasta lo mismo que
+encargando 4 pizzas de base rellena de queso. Y si pide 3 pizzas de base fina, 3 de base
+gruesa y 7 de base rellena de queso se gastará 204 euros.
+a) Plantee el sistema de ecuaciones que le permita averiguar a Carmen cuánto cuesta
+cada tipo de pizza.  [1 punto] 
+b) Resuelva razonadamente el sistema planteado.  [1 punto]
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+307-MATEMÁTICAS APLICADAS A LAS CCSS 
+PAU2026 -  JULIO 
+OPCIÓN B 
+Dadas las matrices: 
+𝐴 = :
+1  1  2
+1  𝑚  3
+1  1  2 − 𝑚
+=  𝐵 = (0  1  𝑚) 
+a)  Estudie el rango de A dependiendo del valor de m.  [1 punto] 
+b)  Para m=-1, resuelva  𝐴𝑋 = 𝐵 $ .  [1 punto]
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JULIO 
+CRITERIOS DE VALORACIÓN 
+CRITERIOS GENERALES 
+Como  criterios  de  evaluación  generales,  las  respuestas  a  las  preguntas  deben  realizarse 
+expresando de forma razonada el proceso seguido en su resolución, con el rigor y la precisión 
+necesarios, usando el lenguaje, la notación y los símbolos matemáticos adecuados, y utilizando 
+argumentos, justificaciones, explicaciones y razonamientos explícitos y coherentes. La mera 
+descripción del planteamiento, sin que se lleve a cabo la resolución de manera efectiva, no es 
+suficiente para obtener una valoración completa de la pregunta o tarea. 
+Cada error de cálculo trivial se penalizará con 0,1 puntos y cada error de cálculo no trivial con 0,2 
+puntos.  Son ejemplos de errores triviales: un error en la trascripción numérica desde los datos del 
+enunciado, en los resultados parciales que se obtienen en la resolución del problema o desde la 
+calculadora, un intercambio de valores siempre que no se deba a un error conceptual, etc. 
+Son ejemplos de errores no triviales: despejar mal la incógnita de una ecuación, simplificar de forma 
+errónea y, en general, realizar incorrectamente en expresiones algebraicas operaciones aritméticas 
+elementales como sumas, productos, cocientes, potencias, etc. 
+Si se comete un error que pueda influir en resultados posteriores en la misma pregunta, se tendrá 
+en cuenta si existe coherencia de la respuesta final con ese resultado erróneo intermedio obtenido. 
+En caso de tal coherencia, se valorará el resto de las cuestiones de la misma pregunta, aunque si 
+el error ha llevado a un problema más simple que el propuesto, disminuirá la calificación. Otros 
+errores frecuentes, que se deben evitar son: poner los extremos de integración a la izquierda del 
+símbolo de integral y diversos errores de escritura, como seguir escribiendo el símbolo de integral 
+cuando se ha integrado, no escribir correctamente la regla de Barrow, o en un problema de 
+programación lineal igualar los vértices a su valoración en la función objetivo. 
+Según lo establecido en el artículo 13 del Real Decreto 534/2024, concretado en los acuerdos 
+alcanzados por la CRUE el 27 de septiembre 2024, el criterio de valoración relativo a la coherencia, 
+la cohesión, la corrección gramatical, léxica y ortográfica de los textos producidos, así como su 
+presentación,  se  tendrán  en  cuenta  para  aquellos  ejercicios  o  tareas  que  requieran  de  la
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JULIO 
+composición de un texto prolijo. En tanto que esta materia no requiere de la elaboración de textos 
+prolijos, dicho criterio de valoración no se tendrá en cuenta en la corrección de la prueba ni para el 
+alumnado general ni para el alumnado con necesidad específica de apoyo educativo. 
+RECOMENDACIONES GENERALES 
+Las cuestiones deben incorporar una pequeña justificación de las respuestas aportadas. Por 
+ejemplo, se debe justificar que un punto crítico es máximo o mínimo mediante el criterio del 
+comportamiento de la derivada en su entorno o bien a través de la derivada segunda. 
+Se deben escribir las expresiones generales que utilicen: intervalo de confianza, término de error, 
+tamaño mínimo de la muestra, probabilidad condicionada, probabilidad de la unión de sucesos o 
+teorema de la probabilidad total. 
+Es deseable asimismo un mínimo de corrección en la escritura matemática. Por ejemplo, no 
+relacionar con el símbolo = dos cosas que no son iguales. 
+La simplificación exigida en la derivada es dejar un único denominador y en el numerador dejar la 
+expresión más reducida, es decir, agrupando los términos comunes. 
+CRITERIOS ESPECÍFICOS 
+PREGUNTA 1 (OBLIGATORIA) 
+SENTIDO ESTOCÁSTICO 
+•  Apartado a): Planteamiento correcto de la probabilidad. (0,15 puntos) 
+Cálculo correcto de la probabilidad. (0,1 puntos) 
+•  Apartado b): Planteamiento correcto de la probabilidad. (0,25 puntos) 
+Cálculo correcto de la probabilidad. (0,25 puntos) 
+•  Apartado c): Planteamiento correcto de la probabilidad. (0,25 puntos) 
+Cálculo correcto de la probabilidad. (0,25 puntos) 
+•  Apartado d): Planteamiento correcto de la probabilidad. (0,25 puntos) 
+Cálculo correcto de la probabilidad. (0,25 puntos) 
+•  Apartado e): Planteamiento correcto de la probabilidad. (0,15 puntos) 
+Cálculo correcto de la probabilidad. (0,1 puntos)
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JULIO 
+•  Apartado f): Cálculo correcto de  𝑧𝑧𝛼𝛼/2 . (0,2 puntos) 
+Planeamiento y cálculo correcto de  𝑥𝑥̅ . (0,1+0,2 puntos) 
+•  Apartado g): Planteamiento (0,25 puntos) 
+Cálculo correcto del tamaño muestral. (0,25 puntos) 
+PREGUNTA 2 (OBLIGATORIA) 
+SENTIDO DE LA MEDIDA 
+•  Apartado a): Cálculo correcto del dominio. (0,25 puntos) 
+•  Apartado b): Cálculo de la derivada (0,5 puntos). Cálculo de los puntos críticos (0,25
+puntos). 
+•  Apartado c): Intervalos de crecimiento (0,5 puntos); Intervalos de decrecimiento (0,5
+puntos). Se puede razonar con flechas pero se debe escribir bien los intervalos. 
+•  Apartado d): Identificar el máximo relativo (0,25 puntos) y el mínimo relativo (0,25 puntos).
+Si solo se escribe el valor de x en la identificación del extremo relativo, se resta 0,1 puntos. 
+•  Apartado e): Cálculo de la primitiva (0,5 puntos). Se resta 0,2 si no aparece la constante C. 
+PREGUNTA 3: 
+SENTIDO NUMÉRICO Y ALGEBRAICO. 
+OPCIÓN A: 
+•  Apartado a): Expresión correcta de la función objetivo (0,15 puntos), de la primera
+restricción (0,15 puntos), de la segunda restricción (0,15 puntos), de la tercera restricción
+(0,15 puntos) y de la condición de no negatividad (0,15 puntos). 
+•  Apartado b): Representación correcta de la región factible (0,5 puntos): 0,1 puntos por
+cada recta y 0,2 por sombrear o identificar la región factible. 
+•  Apartado c): Identificación correcta de los vértices (0,25 puntos): 0,05 puntos por identificar
+A, B y D; 0,1 por identificar C=(4,6). 
+•  Apartado d): 0,25 puntos por identificar el número de patinetes de cada modelo y 0,25
+puntos por calcular el beneficio máximo diario. 
+OPCIÓN B: 
+•  Apartado a): Representación correcta de la región factible (0,75 puntos): 0,15 puntos por
+cada recta y 0,45 puntos por sombrear o identificar la región factible. 
+•  Apartado b): Identificación correcta de los vértices (0,5 puntos): 0,15 puntos por identificar
+B y D y 0,1 puntos por identificar A y C.
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+307 – MATEMÁTICAS APLICADAS A LAS CIENCIAS SOCIALES II 
+PAU2026 JULIO 
+•  Apartado c): 0,2 puntos por identificar el punto mínimo y 0,15 puntos por calcular el valor
+mínimo de la función; 0,2 puntos por identificar el punto máximo y 0,15 puntos por calcular
+el valor máximo de la función 
+PREGUNTA 4: 
+SENTIDO NUMÉRICO Y ALGEBRAICO 
+OPCIÓN A: 
+•  Apartado a): Planteamiento correcto del sistema de ecuaciones (1 punto): Definir las
+incógnitas (0,25 puntos) y 0,25 puntos por cada ecuación bien expresada. 
+•  Apartado b): Solución correcta (1 punto). No puede haber valores de x, y, z negativos ni
+decimales. Esto puntuaría como 0 en este apartado. 
+OPCIÓN B: 
+•  Apartado a): Identificar m=0 y m=1 (0,5 puntos). Estudio del rango de la matriz (0,5
+puntos). 
+•  Apartado b): Cálculo de la inversa de A (0, 5 puntos). Por cada error de cálculo se resta 0,1
+puntos. Expresión correcta de  X  (0,25 puntos). Cálculo correcto de la solución (0,25
+puntos).
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+NOTA IMPORTANTE:  Las dos primeras preguntas son obligatorias. En las preguntas tres y
+cuatro, debe seleccionar una opción (A o B) y contestar a todos los apartados. Cada cuestión
+tiene una puntuación de entre 2 y 3 puntos. Se permite una calculadora no gráfica ni
+programable. 
+PREGUNTA 1: (3 puntos) 
+De los 200 estudiantes de segundo de Bachillerato de un instituto de Molina de Segura, 75 practican
+taekwondo, 100 hapkido y 50 ambas artes marciales coreanas. Si se elige un alumno al azar, calcular la
+probabilidad de que: 
+a)  Practique al menos algún arte marcial coreano.  [0,25 puntos] 
+A: practicar taekwondo. 
+B: practicar hapkido. 
+𝑃𝑃(𝐴𝐴 ∪ 𝐵𝐵) = 𝑃𝑃(𝐴𝐴) + 𝑃𝑃(𝐵𝐵) − 𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵) = 75
+200  + 100
+200  − 50
+200  = 0,625. 
+b)  Practique únicamente hapkido.  [0,5 puntos] 
+𝑃𝑃(𝐵𝐵 ∩ 𝐴𝐴̅) = 𝑃𝑃(𝐵𝐵) − 𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵) = 0,5 − 0,25 = 0,25. 
+c)  No practique ningún arte marcial coreano.  [0,5 puntos] 
+𝑃𝑃(𝐴𝐴̅ ∩ 𝐵𝐵 �) = 1 − 𝑃𝑃(𝐴𝐴 ∪ 𝐵𝐵) = 1 − 0,625 = 0,375. 
+d)  Practique solo una de las dos artes marciales coreanas.  [0,5 puntos] 
+𝑃𝑃(𝐵𝐵 ∩ 𝐴𝐴̅) + 𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵 �) = 𝑃𝑃(𝐴𝐴) + 𝑃𝑃(𝐵𝐵) − 2𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵) = 0,375 + 0,5 − 2 ∙ 0,25 = 0,375. 
+e)  Si  el  estudiante  seleccionado  no  practica  hapkido,  calcule  la  probabilidad  de  que  practique
+taekwondo.  [0,25 puntos] 
+𝑃𝑃(𝐴𝐴|𝐵𝐵 �) = 𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵) � � � �
+𝑃𝑃(𝐵𝐵 �)  = 𝑃𝑃(𝐴𝐴 ∩ 𝐵𝐵) � � � �
+1 − 𝑃𝑃(𝐵𝐵)  = 0,125
+0,5  = 0,25 
+El salario bruto mensual (en euros) de los profesores de artes marciales se distribuye según una distribución
+Normal de media desconocida y desviación típica 450 euros. Se preguntó a 81 profesores de artes marciales
+elegidos al azar y se estableció que el salario medio oscila entre 1383,5 euros y 1616,5 euros. 
+f)  ¿Cuál ha sido el salario medio de los profesores de la muestra si el nivel de confianza que se ha
+utilizado en el intervalo anterior es del 98%?  [0,5 puntos] 
+𝐼𝐼𝐼𝐼 = (1383,5; 1616,5) 
+𝑧𝑧𝛼𝛼/2 = 2,33 
+𝑥𝑥̅ − 𝑧𝑧𝛼𝛼
+2 
+450
+9  = 1383,5 → 𝑥𝑥̅ − 2,33 ∙ 450
+9  = 1383,5 → 𝑥𝑥̅ = 1500 𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+g)  Si se quiere estimar el salario medio poblacional, con un error máximo de 74,5 euros y con un nivel
+de confianza del 90%, ¿cuál será el tamaño muestral necesario para determinarlo?  [0,5 puntos] 
+𝑧𝑧𝛼𝛼/2 ∙ 450
+√𝑁𝑁  = 74,5 → 1,645 ∙ 450
+√𝑁𝑁  = 74,5 → 𝑁𝑁 = 99 
+PREGUNTA 2: (3 puntos) 
+Dada la función: 
+𝑓𝑓(𝑥𝑥) = 𝑥𝑥 3 ∙ (𝑥𝑥 − 5) 2 
+Se pide: 
+a)  Determine el dominio de  𝑓𝑓(𝑥𝑥).  [0,25 puntos] 
+𝐷𝐷 𝑒𝑒 𝐷𝐷 𝑓𝑓 = 𝑅𝑅 
+b)  Calcule la función derivada  𝑓𝑓 ′ (𝑥𝑥)  y determine los puntos críticos.  [0,75 puntos] 
+𝑓𝑓 ′ (𝑥𝑥) = 𝑥𝑥 2 ∙ (𝑥𝑥 − 5) ∙ (5𝑥𝑥 − 15) 
+𝑓𝑓 ′ (𝑥𝑥) = 0 → 𝑥𝑥 = 0; 𝑥𝑥 = 5. 
+c)  Estudie la monotonía de  𝑓𝑓(𝑥𝑥) , indicando los intervalos de crecimiento y decrecimiento.  [1 punto] 
+Crece en  (−∞, 0) ∪ (0,3) ∪ (5, +∞). 
+Decrece en  (3,5). 
+d)  Determine el valor o valores de  𝑥𝑥  donde la función tiene un extremo relativo. Calcule el valor de la
+función en dichos puntos.  [0,5 puntos] 
+Máximo relativo:  (3,108) . 
+Mínimo relativo:  (5,0) . 
+e)  Calcule  ∫ 𝑓𝑓(𝑥𝑥)𝑑𝑑 𝑥𝑥 .  [0,5 puntos] 
+� 𝑥𝑥 3 ∙ (𝑥𝑥 − 5) 2 𝑑𝑑 𝑥𝑥  = 𝑥𝑥 6
+6 − 2𝑥𝑥 5 + 25
+4 𝑥𝑥 4 +  𝐼𝐼
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+PREGUNTA 3: (2 puntos) 
+OPCIÓN A 
+Un fabricante importante de patinetes eléctricos en España produce dos modelos: el SmartGyro Rockway
+EVO y el SmartGyro Speedway. El fabricante obtiene 150 euros de beneficio por cada Rockway EVO y 120
+euros por cada Speedway. El modelo Rockway EVO requiere 3 horas de ensamblaje y media hora de pintura,
+mientras que el modelo Speedway necesita 2 horas de ensamblaje y una hora de pintura. El número máximo
+de horas de ensamblaje disponibles es de 24 al día y el de pintura, de 8. Además, deben fabricarse al menos
+3 unidades del modelo Speedway al día. Se pide: 
+a)  Si el fabricante quiere maximizar el beneficio diario, formule el problema, identificando la función
+objetivo y las restricciones.  [0,75 puntos] 
+x:  número de patinetes modelo Rockway EVO. 
+y:  número de patinetes modelo SmartGyro Speedway. 
+𝑀𝑀𝑀𝑀 𝑥𝑥  𝑓𝑓(𝑥𝑥, 𝑦𝑦) = 150𝑥𝑥 + 120𝑦𝑦 
+3𝑥𝑥 + 2𝑦𝑦  ≤  24
+1
+2 𝑥𝑥 + 𝑦𝑦  ≤  8
+𝑥𝑥 ≥ 0  ;  𝑦𝑦 ≥ 3 
+b)  Represente la región factible.  [0,5 puntos] 
+c)  Encuentre los vértices de esta región.  [0,25 puntos] 
+A=(0,3); B=(6,3); C=(4,6); D=(0,8) 
+d) ¿Cuántos patinetes de cada modelo debe producir el fabricante para maximizar el beneficio diario?
+Calcule el beneficio máximo diario posible.  [0,5 puntos] 
+𝑓𝑓(0,3) = 360  ;  𝑓𝑓(6,3) = 1260
+𝒇𝒇(𝟒𝟒, 𝟔𝟔) = 𝟏𝟏𝟏𝟏𝟏𝟏𝟏𝟏  ;  𝑓𝑓(0,8) = 960
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+OPCIÓN B 
+Considere la función objetivo  𝑓𝑓(𝑥𝑥, 𝑦𝑦) = 3𝑥𝑥 − 2𝑦𝑦  y la región del plano definida por las siguientes
+inecuaciones: 
+⎩
+⎪
+⎨
+⎪
+⎧  𝑦𝑦  ≤  7
+3𝑥𝑥 − 𝑦𝑦  ≤  3
+𝑥𝑥 + 𝑦𝑦  ≥  5
+𝑥𝑥  ≥  0
+𝑦𝑦  ≥  0 
+a)  Represente la región factible.  [0,75 puntos] 
+b)  Encuentre los vértices de esta región.  [0,5 puntos] 
+A=(0,5); B=(0,7); C=(10/3,7); D=(2,3) 
+c) Obtenga los puntos de la región factible donde la función objetivo alcanza el máximo y el mínimo y
+calcule sus correspondientes valores.  [0,75 puntos] 
+𝑓𝑓(0,5) = −10  ;  𝒇𝒇( 𝟏𝟏 , 𝟕𝟕) = −𝟏𝟏 𝟒𝟒 
+𝑓𝑓(10/3,7) = −4  ;  𝒇𝒇( 𝟏𝟏 ,  𝟏𝟏 ) =  𝟏𝟏
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+PREGUNTA 4: (2 puntos) 
+OPCIÓN A 
+Para celebrar el cumpleaños de Bruno, Carmen quiere invitar a merendar a sus amigos en la Pizzería La
+Romana. Esta pizzería ofrece tres tipos de pizzas: de base fina, de base gruesa y de base rellena de queso.
+El precio de la pizza de base rellena de queso es 2 euros más que el de las otras dos juntas. Si encarga 6
+pizzas de base gruesa se gasta lo mismo que encargando 4 pizzas de base rellena de queso. Y si pide 3
+pizzas de base fina, 3 de base gruesa y 7 de base rellena de queso se gastará 204 euros. 
+a)  Plantee el sistema de ecuaciones que le permita averiguar a Carmen cuánto cuesta cada tipo de
+pizza.  [1 punto] 
+x:  precio pizza base fina. 
+y : precio pizza base gruesa. 
+z: precio pizza base rellena. 
+𝑧𝑧  =  𝑥𝑥 + 𝑦𝑦 + 2
+6𝑦𝑦  =  4𝑧𝑧
+3𝑥𝑥 + 3𝑦𝑦 + 7𝑧𝑧  =  204
+� 
+b)  Resuelva razonadamente el sistema planteado.  [1 punto] 
+𝑧𝑧  =  𝑥𝑥 + 𝑦𝑦 + 2
+6𝑦𝑦  =  4𝑧𝑧
+3𝑥𝑥 + 3𝑦𝑦 + 7𝑧𝑧  =  204
+� → �
+𝑥𝑥 = 5
+𝑦𝑦 = 14
+𝑧𝑧 = 21 
+OPCIÓN B 
+Dadas las matrices: 
+𝐴𝐴 = �
+1  1  2
+1  𝐷𝐷  3
+1  1  2 −  𝐷𝐷 
+�  𝐵𝐵 = (0  1  𝐷𝐷 ) 
+a)  Estudie el rango de A dependiendo del valor de m.  [1 punto] 
+|𝐴𝐴| = �
+1  1  2
+1  𝐷𝐷  3
+1  1  2 −  𝐷𝐷 
+� =  𝐷𝐷 (1 −  𝐷𝐷 ) = 0 ↔  𝐷𝐷  = 0 ó  𝐷𝐷  = 1. 
+Para  𝐷𝐷  = 0  y  𝐷𝐷  = 1  ⟹ rg(A)=2. 
+Para  𝐷𝐷  ≠ 0  y  𝐷𝐷  ≠ 1  ⟹ rg(A)=3.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+CÓDIGO- 307 
+PAU2026 -  JULIO 
+b)  Para m=-1, resuelva  𝐴𝐴𝐴𝐴 = 𝐵𝐵 𝑡𝑡 .  [1 punto] 
+�
+1  1  2
+1  −1  3
+1  1  3
+� �
+𝑥𝑥
+𝑦𝑦
+𝑧𝑧
+� = �
+0
+1
+−1
+� 
+|𝐴𝐴| − 2 
+𝐴𝐴 𝑑𝑑 𝐴𝐴𝐴𝐴 𝑡𝑡 = �
+−6  −1  5
+0  1  −1
+2  0  −2
+� 
+𝐴𝐴 −1 = �
+3  1/2  −5/2
+0  −1/2  1/2
+−1  0  1
+� 
+�
+𝑥𝑥
+𝑦𝑦
+𝑧𝑧
+� = �
+3  1/2  −5/2
+0  −1/2  1/2
+−1  0  1
+� ∙ �
+0
+1
+−1
+� = �
+3
+−1
+−1
+�

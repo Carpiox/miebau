@@ -28,13 +28,14 @@ test('las prioridades son consecutivas y todas las fuentes oficiales están refe
 
 test('el validador admite nuevas prioridades consecutivas y rechaza los huecos', () => {
   const extendedData = structuredClone(data);
+  const lastMadrid = extendedData.entries.findLast((entry) => entry.comunidad === 'Comunidad de Madrid');
   const sourceId = 'madrid-pau-2026-prueba-infraestructura';
   extendedData.sources.push({
     ...structuredClone(extendedData.sources.at(-1)),
     id: sourceId,
   });
   extendedData.entries.push({
-    ...structuredClone(extendedData.entries.at(-1)),
+    ...structuredClone(lastMadrid),
     prioridad: extendedData.entries.length + 1,
     slug: 'comunidad-de-madrid/prueba-infraestructura',
     url: '/examenes/comunidad-de-madrid/prueba-infraestructura',
@@ -45,7 +46,7 @@ test('el validador admite nuevas prioridades consecutivas y rechaza los huecos',
       meta_description: 'Entrada sintética usada para comprobar que el validador admite ampliar el dataset sin límites numéricos fijos.',
     },
     contenido: {
-      ...structuredClone(extendedData.entries.at(-1).contenido),
+      ...structuredClone(lastMadrid.contenido),
       intro: Array.from({ length: 150 }, (_, index) => `terminoinfra${index + 1}`).join(' '),
     },
     source_ids: ['madrid-pau-2026-modelos', sourceId],

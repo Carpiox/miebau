@@ -1,0 +1,275 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO 
+NOTA IMPORTANTE 
+El examen consta de dos bloques. En el primero (6 puntos) se debe responder a seis
+preguntas de un conjunto de ocho; en el segundo (4 puntos) a los dos problemas planteados. 
+•  Lea detenidamente  todas las cuestiones antes de comenzar. 
+•  Exprésese con claridad y preste mucha atención para no cometer faltas de ortografía. 
+IMPORTANTE : Si se responde a más preguntas de las solicitadas en el bloque, solo se
+corregirán las que se hayan respondido primero hasta llegar al número indicado. 
+BLOQUE I. Responda a SEIS de las ocho preguntas siguientes (6 x 1 punto).
+1.  Europamur Alimentación, S.A., empresa familiar murciana conocida por su enseña Cash
+Europa, fue fundada en 1989 por Antonio Navarro García. Se dedica a la distribución
+mayorista bajo el formato  cash & carry 1 , orientado principalmente a profesionales de la
+hostelería, la restauración y el pequeño comercio. Según SABI, la empresa facturó en 2024
+algo más de 333 millones de euros y empleó a 244 personas. Cifras que se elevan
+notablemente si se añaden las correspondientes a Nagarmur, S.L., la filial que explota los
+supermercados  Dumbo.  El  grupo  mantiene  políticas  de  colaboración  con  bancos  de
+alimentos y entidades sociales en las zonas donde opera, donando excedentes aptos para
+el consumo. También ha implantado medidas de eficiencia energética en sus centros, como
+iluminación  LED  y  la  optimización  de  cámaras  frigoríficas.  Clasifique  a  Europamur
+Alimentación según propiedad, dimensión, forma jurídica y sector. Justifique sus
+respuestas (1 p). 
+2. Identifique, en el texto anterior, las actividades relacionadas con la responsabilidad
+social corporativa de este grupo y defina qué es la responsabilidad social corporativa
+(1 p).
+3.  En los últimos años, la compañía ha realizado inversiones en modernización logística,
+incorporando sistemas informatizados de control de stock y trazabilidad de productos frescos
+(de hecho, recientemente se ha trasladado a sus nuevas instalaciones en Cabezo de Torres
+de 43.000 m 2 ), lo que ha permitido reducir mermas y mejorar la rotación. Asimismo, ha
+ampliado su gama de referencias incluyendo productos ecológicos y formatos específicos
+para pequeños negocios de hostelería.  ¿Qué tipos de innovación se identifican en este
+párrafo? Justifique su respuesta (1 p). 
+4.  Cash Europa compite en un sector de gran rivalidad dominado por grandes cadenas de
+distribución mayorista. Por este motivo, hay quien dice que el reducido tamaño de Cash
+Europa respecto a sus competidores es un aspecto que la empresa debe mejorar. Por otro
+lado, cabe destacar que Cash Europa tiene un profundo conocimiento del cliente profesional.
+Además, cuenta con relaciones estables con muchos negocios familiares. Finalmente,
+algunos estudios señalan que en el futuro los productos ecológicos tendrán una gran
+demanda.  Elabore la matriz DAFO (1 p). 
+5.  Imagine que la empresa se organiza en torno a los departamentos siguientes: compras,
+marketing y ventas, logística, recursos humanos y administración.  ¿Qué tipo de agrupación
+sigue? Justifique su respuesta. Ventajas e inconvenientes de la misma (1 p). 
+1  Un Cash and Carry (en español, "pague y llévese") se define como un modelo de negocio de venta mayorista basado en el
+autoservicio, dirigido a clientes profesionales (hosteleros, minoristas, pequeñas empresas), los cuales acuden a un almacén,
+seleccionan sus productos, los pagan y los transportan ellos mismos a sus negocios.
+6.  Suponga que la empresa dispone de un departamento de marketing y ventas encargado del
+desarrollo de la función comercial.  ¿Cuál es el cometido de esta función? (1 p). 
+7.  Si la empresa quisiera mantener motivados a sus trabajadores aplicando únicamente
+medidas salariales y otras relacionadas con el ambiente de trabajo,  ¿lo conseguiría según
+el enfoque de Herzberg? Justifique su respuesta (1 p).
+8.  Piense que debe elaborar un lienzo de modelo de negocio (Canvas) para un  cash and carry 
+como el que nos ocupa.  Rellene los bloques “segmento de clientes” y “canales” (1 p).
+BLOQUE II. Responda a los DOS problemas siguientes (2 x 2 puntos). 
+En las respuestas a los ejercicios numéricos  deberá incluir tanto el planteamiento como
+las operaciones realizadas. En caso contrario, no serán valoradas. 
+9.  La Murciana  es una empresa industrial que se dedica a la fabricación de envases metálicos
+especiales. En 2025 las ventas ascendieron a 2.500.000 €. La cantidad de unidades
+producidas y vendidas fue de 1.000.000. El coste variable total se elevó a 1.500.000 € y el
+coste fijo ascendió a 800.000 €.
+a) Calcule el punto muerto (0,8 p).
+b) Calcule el beneficio en 2025 (0,7 p).
+c) Responda a  UNA de las dos cuestiones  siguientes (0,5 p):
+c.1) Represente las curvas de ingresos y costes y las zonas de beneficios y pérdidas
+(0,5 p).
+c.2) ¿Cuántas unidades adicionales tendría que vender la empresa para aumentar el
+beneficio en 50.000 euros, suponiendo que la estructura de costes no varía? (0,5
+p). 
+10.  La Murciana II  presenta la siguiente información correspondiente a 2025 (datos en
+unidades monetarias): 
+•  Activo no corriente
+2.000 
+•  Recursos propios  3.000 
+•  Activo corriente  4.000  •  Deuda a largo  1.000 
+•  Deuda a corto  2.000
+Se sabe también que ha pagado un tipo de interés medio por la deuda total del 5%, que la
+cuota del impuesto sobre sociedades asciende a 250 u. m., que tiene existencias por un
+valor de 1.000 u. m. y que el resultado de explotación ha sido de 1.200 u. m.
+a)  Calcule la ratio de liquidez e interprete el resultado (0,8 p).
+b)  Calcule la ratio de garantía a largo plazo e interprete el resultado (0,7 p).
+c)  Responda a  UNA de las dos cuestiones  siguientes (0,5 p):
+c.1) Calcule la rentabilidad económica e interprete el resultado (0,5 p).
+c.2) ¿Está de acuerdo con la siguiente afirmación: “La rentabilidad financiera
+informa sobre la rentabilidad de los recursos propios de la empresa”? Justifique
+su respuesta (0,5 p).
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO 
+NOTA IMPORTANTE 
+El examen consta de dos bloques. En el primero (6 puntos) se debe responder a seis preguntas de un conjunto de
+ocho; en el segundo (4 puntos) a los dos problemas planteados. 
+•  Lea detenidamente  todas las cuestiones antes de comenzar. 
+•  Exprésese con claridad y preste mucha atención para no cometer faltas de ortografía. 
+IMPORTANTE : Si se responde a más preguntas de las solicitadas en el bloque, solo se corregirán las que se
+hayan respondido primero hasta llegar al número indicado. 
+BLOQUE I. Responda a SEIS de las ocho preguntas siguientes (6 x 1 punto).
+1.  Europamur Alimentación, S.A., empresa familiar murciana conocida por su enseña Cash Europa, fue
+fundada en 1989 por Antonio Navarro García. Se dedica a la distribución mayorista bajo el formato
+cash
+& carry  1  , orientado principalmente a profesionales de la hostelería, la restauración y el pequeño
+comercio. Según SABI, la empresa facturó en 2024 algo más de 333 millones de euros y empleó a 244
+personas. Cifras que se elevan notablemente si se añaden las correspondientes a Nagarmur, S.L., la filial
+que explota los supermercados Dumbo. El grupo mantiene políticas de colaboración con bancos de
+alimentos y entidades sociales en las zonas donde opera, donando excedentes aptos para el consumo.
+También ha implantado medidas de eficiencia energética en sus centros, como iluminación LED y la
+optimización de cámaras frigoríficas.  Clasifique a Europamur Alimentación según propiedad,
+dimensión, forma jurídica y sector. Justifique sus respuestas (1 p). Propiedad: privada (pertenece a la familia de Antonio Navarro).
+Dimensión: -por ventas grande (333 millones).
+-por trabajadores mediana (tiene 244).
+Considerando la elevada cifra de ventas y que el número de trabajadores es de 244, muy
+próximo a 250 —cifra que representa el límite para ser considerada una empresa grande—,
+se puede calificar como una empresa grande. Además, al sumar los trabajadores de otra
+empresa del grupo, la cifra aumenta sensiblemente.
+Forma jurídica: Sociedad Anónima.
+Sector: terciario (se dedica a la distribución mayorista) 
+2.  Identifique, en el texto anterior, las actividades relacionadas con la responsabilidad social
+corporativa de este grupo y defina qué es la responsabilidad social corporativa (1 p). 
+Actividades relacionadas con la RSC: 1) “El grupo mantiene políticas de colaboración con bancos de alimentos
+y entidades sociales en las zonas donde opera, donando excedentes aptos para el consumo”. 2) “También ha
+implantado medidas de eficiencia energética en sus centros, como iluminación LED y optimización de cámaras
+frigoríficas”.
+La responsabilidad social representa el compromiso de la empresa de contribuir al desarrollo económico, a la
+vez que a la mejora de la calidad de vida de los trabajadores y de sus familias, de la comunidad local donde
+actúa, de la sociedad en su conjunto y del medio ambiente. A través de la responsabilidad social, las empresas
+se conciencian del impacto de su acción sobre todos sus grupos de interés (trabajadores, clientes, proveedores,
+socios, sociedad y medio ambiente). 
+1  Un Cash and Carry (en español, "pague y llévese") se define como un modelo de negocio de venta mayorista basado en el
+autoservicio, dirigido a clientes profesionales (hosteleros, minoristas, pequeñas empresas), los cuales acuden a un almacén,
+seleccionan sus productos, los pagan y los transportan ellos mismos a sus negocios.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO Responsabilidad social es esencialmente un concepto por el cual las empresas deciden contribuir voluntariamente
+a mejorar la sociedad y a preservar el medio ambiente. 
+3.  En los últimos años, la compañía ha realizado inversiones en modernización logística, incorporando
+sistemas informatizados de control de stock y trazabilidad de productos frescos (de hecho, recientemente
+se ha trasladado a sus nuevas instalaciones en Cabezo de Torres de 43.000 m 2 ), lo que ha permitido
+reducir mermas y mejorar la rotación. Asimismo, ha ampliado su gama de referencias incluyendo
+productos ecológicos y formatos específicos para pequeños negocios de hostelería.  ¿Qué tipos de
+innovación se identifican en este párrafo? Justifique su respuesta (1 p). 
+Según área de mejora, innovación de procesos: “inversiones en modernización logística…”. Ha mejorado la forma
+de hacer las cosas y eso se ha traducido en beneficios para la empresa.
+Según área de mejora, innovación de productos: “ha ampliado su gama de referencias incluyendo productos
+ecológicos y formatos para pequeños negocios de hostelería”. Lanza nuevos productos. 
+4.  Cash Europa compite en un sector de gran rivalidad dominado por grandes cadenas de distribución
+mayorista. Por este motivo, hay quien dice que el reducido tamaño de Cash Europa respecto a sus
+competidores es un aspecto que la empresa debe mejorar. Por otro lado, cabe destacar que Cash Europa
+tiene un profundo conocimiento del cliente profesional. Además, cuenta con relaciones estables con
+muchos negocios familiares. Finalmente, algunos estudios señalan que en el futuro los productos
+ecológicos tendrán una gran demanda.  Elabore la matriz DAFO (1 p). 
+Debilidad: 
+• 
+Tamaño reducido de la empresa.
+Amenaza: 
+• 
+Sector de gran rivalidad.
+Fortaleza: 
+• 
+Conocimiento del cliente profesional. 
+• 
+Cuenta con relaciones estables con muchos negocios familiares.
+Oportunidad: 
+• 
+Demanda de productos ecológicos en el futuro. 
+5.  Imagine que la empresa se organiza en torno a los departamentos siguientes: compras, marketing y
+ventas, logística, recursos humanos y administración.  ¿Qué tipo de agrupación sigue? Justifique
+su respuesta. Ventajas e inconvenientes de la misma (1 p). 
+Sigue una agrupación funcional. Agrupa dentro de la misma unidad actividades relacionadas con la misma
+función (compras, marketing…).
+Ventajas: especialización y eficiencia.
+Inconvenientes: entre los posibles problemas destacan las dificultades para adaptarse a los cambios, los
+problemas de coordinación, los conflictos, la visión de túnel, los vacíos y las duplicidades.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO 
+6.  Suponga que la empresa dispone de un departamento de marketing y ventas encargado del desarrollo
+de la función comercial.  ¿Cuál es el cometido de esta función? (1 p). 
+La función comercial tiene como cometido principal conectar la empresa con el mercado. Corresponde a esta
+función el estudio de las oportunidades de mercado y el establecimiento de un plan de actuación para que el
+aprovechamiento de dichas oportunidades permita el cumplimiento de los objetivos comerciales. Es decir, se
+trata  de  identificar  oportunidades  y,  posteriormente,  tomar  una  serie  de  medidas  que  posibiliten  su
+aprovechamiento. Como indica Santesmases, el subsistema comercial deberá “analizar las necesidades de los
+consumidores, planificar los objetivos que desea conseguir y las acciones que hay que llevar a cabo para
+alcanzarlos, organizar los medios humanos y materiales para ejecutar las acciones previstas y controlar el
+desarrollo del programa comercial”.
+Son muchas las variables sobre las que se puede actuar. Siguiendo la propuesta de McCarthy, se identifican
+cuatro categorías básicas, conocidas como las “cuatro Ps”: producto, precio, comunicación y distribución
+(product, price, promotion, place). 
+7.  Si la empresa quisiera mantener motivados a sus trabajadores aplicando únicamente medidas salariales
+y otras relacionadas con el ambiente de trabajo,  ¿lo conseguiría según el enfoque de Herzberg?
+Justifique su respuesta (1 p). 
+De acuerdo con la teoría bifactorial de Herzberg, la empresa no lograría motivar a los trabajadores, ya que está
+actuando sobre factores higiénicos; esto es, sobre factores vinculados al contexto del trabajo, como son el
+salario y el ambiente de trabajo. Estos factores previenen la insatisfacción, pero no generan motivación. Para
+motivar realmente al personal sería necesario intervenir sobre los factores motivadores, que están asociados al
+contenido del trabajo y a la responsabilidad y crecimiento del trabajador. 
+8.  Piense que debe elaborar un lienzo de modelo de negocio (Canvas) para un
+cash and carry como el que
+nos ocupa.  Rellene los bloques “segmento de clientes” y “canales” (1 p). 
+En el modelo Canvas, el bloque “segmentos de clientes” se centra en identificar a qué grupos concretos se
+dirige la empresa, diferenciando perfiles según sus necesidades, comportamientos o capacidad de compra.
+Permite definir con claridad el público objetivo y adaptar la oferta a cada tipo de cliente. Posible respuesta:
+profesionales de la hostelería, la restauración y el pequeño comercio.
+Por su parte, el bloque “canales” analiza los medios a través de los cuales la empresa se comunica con esos
+segmentos y les hace llegar su propuesta de valor. Incluye los canales de venta, distribución y atención al
+cliente, así como los mecanismos de seguimiento y servicio posventa. Se pueden incluir en la respuesta:
+productos distribuidos en la tienda física, venta por internet, por teléfono, fuerza de ventas, redes sociales,
+página web, reparto a domicilio para clientes habituales, atención al cliente en el punto de venta…
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO 
+BLOQUE II. Responda a los DOS problemas siguientes (2 x 2 puntos). 
+En las respuestas a los ejercicios numéricos  deberá incluir tanto el planteamiento como las
+operaciones realizadas. En caso contrario, no serán valoradas. 
+9. 
+La Murciana es una empresa industrial que se dedica a la fabricación de envases metálicos especiales.
+En 2025 las ventas ascendieron a 2.500.000 €. La cantidad de unidades producidas y vendidas fue de
+1.000.000. El coste variable total se elevó a 1.500.000 € y el coste fijo ascendió a 800.000 €.
+a)  Calcule el punto muerto (0,8 p). 
+Precio unitario = Ingresos / Nº unidades vendidas = 2.500.000 / 1.000.000 = 2,5 € unidad.
+Coste variable unitario = Coste variable total / nº unidades producidas = 1.500.000 / 1.000.000 = 1,5 €
+unidad. 
+𝑃𝑢𝑛𝑡𝑜 𝑚𝑢𝑒𝑟𝑡𝑜 𝑢. 𝑓. =  𝐶𝑜𝑠𝑡𝑒𝑠 𝑓𝑖𝑗𝑜𝑠
+𝑃𝑟𝑒𝑐𝑖𝑜 𝑢𝑛𝑖𝑡𝑎𝑟𝑖𝑜 − 𝐶𝑜𝑠𝑡𝑒 𝑣𝑎𝑟𝑖𝑎𝑏𝑙𝑒 𝑢𝑛𝑖𝑡𝑎𝑟𝑖𝑜 = 800.000
+2,5 − 1,5 = 800.000 𝑢𝑛𝑖𝑑𝑎𝑑𝑒𝑠 
+b)  Calcule el beneficio en 2025 (0,7 p). 
+Bº = Ingresos – costes = P·Q – (CVu.Q + CF) = 2.500.000 – (1.500.000 + 800.000) = 200.000 €
+También:
+Bº = (Nº unidades vendidas – punto muerto) · margen = (1.000.000 – 800.000) · 1 = 200.000 € 
+c)  Responda a  UNA de las dos cuestiones  siguientes (0,5 p):
+c.1) Represente las curvas de ingresos y costes y las zonas de beneficios y pérdidas (0,5 p). 
+REPRESENTACIÓN GRÁFICA DEL PUNTO MUERTO
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO 
+c.2) ¿Cuántas unidades adicionales tendría que vender la empresa para aumentar el beneficio en
+50.000 euros, suponiendo que la estructura de costes no varía? (0,5 p). De acuerdo con lo calculado en el apartado a, el margen unitario (precio de venta – coste variable
+unitario) es 1 euro. Por tanto, para aumentar el beneficio en 50.000 euros será necesario vender
+50.000 / 1 = 50.000 unidades adicionales, dado que los costes fijos no cambian. 
+10. 
+La Murciana II  presenta la siguiente  información correspondiente  a 2025 (datos en unidades
+monetarias): 
+•  Activo no corriente  2.000  •  Recursos propios  3.000 
+•  Activo corriente  4.000  •  Deuda a largo  1.000 
+•  Deuda a corto  2.000
+Se sabe también que ha pagado un tipo de interés medio por la deuda total del 5%, que la cuota del
+impuesto sobre sociedades asciende a 250 u. m., que tiene existencias por un valor de 1.000 u. m. y
+que el resultado de explotación ha sido de 1.200 u. m.
+a)  Calcule la ratio de liquidez e interprete el resultado (0,8 p). 
+𝐿𝑖𝑞𝑢𝑖𝑑𝑒𝑧 𝑎 𝑐𝑜𝑟𝑡𝑜 𝑝𝑙𝑎𝑧𝑜 = 𝐴𝑐𝑡𝑖𝑣𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒 − 𝐸𝑥𝑖𝑠𝑡𝑒𝑛𝑐𝑖𝑎𝑠
+𝑃𝑎𝑠𝑖𝑣𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒  · 100 = 4.000 − 1.000
+2.000  · 100 = 150 % 
+El resultado de la ratio es 150 %, valor sensiblemente superior al valor de referencia (70 %). Por tanto,
+la liquidez de esta empresa se puede calificar de buena. 
+b)  Calcule la ratio de garantía a largo plazo e interprete el resultado (0,7 p). 
+𝐺𝑎𝑟𝑎𝑛𝑡í𝑎 𝑎 𝑙𝑎𝑟𝑔𝑜 𝑝𝑙𝑎𝑧𝑜 = 𝐴𝑐𝑡𝑖𝑣𝑜 𝑛𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒 + 𝐴𝑐𝑡𝑖𝑣𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒
+𝑃𝑎𝑠𝑖𝑣𝑜 𝑛𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒 + 𝑃𝑎𝑠𝑖𝑣𝑜 𝑐𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒 · 100 = 2.000 + 4.000
+1.000 + 2.000 · 100 = 200 % 
+El resultado de la ratio es 200 %, claramente por encima del valor de referencia (120 %). En consecuencia,
+la garantía a largo plazo se puede considerar satisfactoria. 
+c)  Responda a  UNA de las dos cuestiones  siguientes (0,5 p):
+c.1) Calcule la rentabilidad económica e interprete el resultado (0,5 p). 
+𝑅𝑒𝑛𝑡𝑎𝑏𝑖𝑙𝑖𝑑𝑎𝑑 𝑒𝑐𝑜𝑛ó𝑚𝑖𝑐𝑎 = 𝐵𝑒𝑛𝑒𝑓𝑖𝑐𝑖𝑜 𝑑𝑒 𝑒𝑥𝑝𝑙𝑜𝑡𝑎𝑐𝑖𝑜𝑛 (𝐵𝐴𝐼𝐼)
+𝐴𝑐𝑡𝑖𝑣𝑜 𝑡𝑜𝑡𝑎𝑙  · 100 = 1.200
+6.000 · 100 = 20 %
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+315 – EMPRESA Y DISEÑO DE MODELOS DE NEGOCIO 
+PAU2026 -  JULIO La actividad de la empresa durante el ejercicio considerado ha generado un beneficio de explotación
+(BAII) igual al 20 % del valor de la inversión (activo). Se puede calificar de satisfactoria, ya que es
+superior al valor de referencia (8 %). 
+c.2) ¿Está de acuerdo con la siguiente afirmación: “La rentabilidad financiera informa sobre
+la rentabilidad de los recursos propios de la empresa”? Justifique su respuesta (0,5 p). Sí, la frase es correcta. La rentabilidad financiera es la relación existente entre el beneficio obtenido
+por la empresa y los recursos propios de esta. Se calcula con la expresión siguiente:
+Rentabilidad financiera = Beneficio neto / Recursos propios
+En otras palabras, es correcta ya que mide el rendimiento que obtienen los propietarios por los recursos
+que tienen invertidos en la empresa.

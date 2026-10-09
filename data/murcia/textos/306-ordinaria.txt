@@ -1,0 +1,113 @@
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JUNIO 
+El examen continúa por detrás 
+IMPORTANTE:  En las preguntas 1, 2 y 3 no hay optatividad. En las preguntas 4 y 5 hay
+optatividad, teniendo que contestar solo una de las dos opciones. Si se responden las 2
+opciones, solo se corregirá la primera opción contestada. La puntuación máxima de cada
+pregunta es 2 puntos. Solo se podrán usar las tablas estadísticas que se adjuntan. No se
+podrán usar calculadoras gráficas ni programables. 
+PREGUNTA 1:  Darío y Cayetana están organizando un pequeño negocio y deciden invertir
+dinero en tres cosas:  x  miles de euros en publicidad,  y  miles de euros en materiales,  z  miles
+de euros en logística. El reparto depende de un parámetro positivo,  k , que representa una
+estrategia de ajuste económico según la situación del mercado. Se sabe que la suma de
+todo lo invertido es en total  12  mil euros. Darío propone que la inversión en publicidad más
+el doble de la inversión en materiales sea igual a la inversión en logística más  k . Cayetana
+quiere que el doble de la inversión en publicidad menos la inversión en materiales más la
+inversión en logística sea igual a  4  mil euros.
+a)  [0,75 ptos.]  Plantee un sistema de 3 ecuaciones con 3 incógnitas que refleje los
+datos del problema.
+b)  [1,25 ptos.]  Discuta el correspondiente sistema. En caso de existir solución única,
+encuéntrela y exprésela en función de  k  si es necesario. 
+PREGUNTA 2:  Considere un punto  P  de coordenadas  ( a ,  b )  que está en el primer cua-
+drante, sobre una circunferencia de radio  10  centrada en el origen  O ( 0 ,  0 ) . Sea  x  el ángulo
+que forma el radio  OP  con el eje horizontal (o eje  X ), medido en radianes.
+a)  [0,75 ptos.]  Demuestre que el área del rectángulo de vértices  O ( 0 ,  0 ) ,  A ( a ,  0 ) ,  B ( 0 ,  b ) 
+y  P ( a ,  b )  viene dada por la función  f  ( x ) =  100  ·  sen ( x )  ·  cos ( x ) .
+b)  [1,25 ptos.]  Calcule el ángulo  x  (en radianes) para que el área de dicho rectángulo
+sea máxima. 
+PREGUNTA 3:  Considere el plano  !  : 2 x  →  y  +  3 z  →  5  =  0  y la recta 
+r  :  x  →  1
+2  =  y  +  1
+1  =  z  →  2 
+→ 1  . 
+a)  [0,75 ptos.]  Estudie la posición relativa de  r  y  ! .
+b)  [1,25 ptos.]  Si  r  corta a  !  en un solo punto, calcule dicho punto y el ángulo que
+forma  r  con  ! . Si  r  es paralela a  ! , calcule la distancia de  r  a  ! . 
+PREGUNTA 4 (a elegir entre 4.1 y 4.2): 
+4.1)  [2 ptos.]  Justifique que la derivada de la función  f  ( x ) =  e x ( x  →  1 ) +  1  →  x  se anula en
+algún punto del intervalo  ( 0 ,  1 ) .
+4.2)  a)  [1,5 ptos.]  Calcule la integral indefinida 
+∫  1 
+x ( ln  x ) 2  dx .
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JUNIO 
+b)  [0,5 ptos.]  Determine la primitiva de la función  f  ( x ) =  1 
+x ( ln  x ) 2  cuya gráfica pasa
+por el punto de coordenadas  ( e ,  1 ) . 
+PREGUNTA 5 (a elegir entre 5.1 y 5.2): 
+5.1) En una fábrica hay tres máquinas,  A ,  B  y  C , que producen el mismo tipo de pieza.
+La máquina  A  fabrica el  50 %  de las piezas, y el  3 %  de ellas son defectuosas. La
+máquina  B  fabrica el  30 %  de las piezas, y el  4 %  de ellas son defectuosas. La máquina 
+C  fabrica el  20 %  de las piezas, y el  5 %  de ellas son defectuosas. Se elige una pieza
+al azar de la producción total.
+a)  [0,75 ptos.]  Calcule la probabilidad de que la pieza sea defectuosa.
+b)  [0,75 ptos.]  Sabiendo que la pieza elegida es defectuosa, calcule la probabili-
+dad de que haya sido fabricada por la máquina  B .
+c)  [0,5 ptos.]  Calcule la probabilidad de que la pieza no sea defectuosa sabiendo
+que procede de la máquina  C .
+5.2) Una fábrica produce bombillas y se sabe que el  5 %  son defectuosas.
+a)  [0,75 ptos.]  Calcule la probabilidad de que en  9  bombillas escogidas al azar
+haya exactamente  3  bombillas defectuosas.
+b)  [1,25 ptos.]  Calcule la probabilidad de que en  200  bombillas escogidas al azar
+haya al menos  10  bombillas defectuosas. 
+2
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JUNIO 
+CRITERIOS DE CALIFICACIÓN
+OBSERVACIONES GENERALES: 
+El corrector deberá ajustarse a los criterios de evaluación establecidos en este documen-
+to y en la reunión correspondiente. En ningún caso se podrá puntuar por encima de la
+valoración indicada en cada apartado. Se procurará que, en lo posible, los errores en un
+apartado no afecten a otros apartados.
+Los errores simples de cálculo restarán entre 0,1 y 0,25 puntos. Los errores importantes
+de cálculo o errores simples reiterados pueden conllevar puntuación 0 en ese apartado. Si
+un error simple ha llevado a un problema más sencillo se disminuirá la puntuación.
+Las preguntas contestadas correctamente sin incluir el desarrollo necesario para llegar a
+su resolución serán valoradas con 0 puntos.
+Se valorará el correcto uso del vocabulario y de la notación. El alumno puede elegir el
+método que considere más oportuno para la resolución de una cuestión pero, si esto
+demuestra la falta de comprensión de conocimientos básicos, la puntuación final puede
+ser menor que la indicada para dicha cuestión. 
+OBSERVACIONES PARTICULARES:
+PREGUNTA 1:  [2 ptos.] 
+Apartado a)  Planteamiento correcto del sistema.  [0,75 ptos.]
+Apartado b)  Justificación de que el sistema es compatible determinado.  [0,25 ptos.] .
+Cálculo de la solución en función de  k .  [1 pto.] . 
+PREGUNTA 2:  [2 ptos.] 
+Apartado a)  Cálculo del área del rectángulo en función del ángulo  [0,75 ptos.]
+Apartado b)  Cálculo correcto de la derivada  [0,5 ptos.] . Cálculo correcto del ángulo que
+maximiza  [0,75 ptos.] . 
+PREGUNTA 3:  [2 ptos.] 
+Apartado a)  Justificación de que la recta es paralela al plano (y no está contenida en él). 
+[0.75 ptos.]
+Apartado b)  Cálculo correcto de la distancia de la recta al plano.  [1,25 ptos.] . 
+PREGUNTA 4.1:  [2 ptos.] Justificación de que la función cumple las condiciones del teo-
+rema de Lagrange (o de Rolle).  [1 pto.] . Uso del teorema de Lagrange (o de Rolle) para
+concluir la existencia del punto pedido.  [1 pto.] . 
+PREGUNTA 4.2:  [2 ptos.] 
+Apartado a)  Cálculo correcto de una primitiva  [1 pto.] . Cálculo correcto de la integral in-
+definida, es decir, una primitiva más una constante arbitraria  [0,5 ptos.] . 
+Apartado b)  Cálculo correcto de la primitiva pedida.  [0,5 ptos.]
+PREGUNTA 5.1:  [2 ptos.] 
+Apartado a)  Cálculo correcto de la probabilidad pedida.  [0,75 ptos.]
+EVALUACIÓN DE BACHILLERATO PARA EL ACCESO A LA UNIVERSIDAD 
+306 – MATEMÁTICAS II 
+PAU2026 -  JUNIO 
+Apartado b)  Cálculo correcto de la probabilidad pedida.  [0,75 ptos.]
+Apartado c)  Cálculo correcto de la probabilidad pedida.  [0,5 ptos.]
+PREGUNTA 5.2:  [2 ptos.] 
+Apartado a)  Cálculo correcto de la probabilidad pedida.  [0,75 ptos.]
+Apartado b)  Cálculo correcto de la probabilidad pedida.  [1,25 ptos.]

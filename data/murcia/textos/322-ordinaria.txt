@@ -1,0 +1,233 @@
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+NOTA IMPORTANTE:  El examen consta de  5 BLOQUES , numerados de  1 a 5,  con dos cuestiones en cada
+bloque,  A  y  B , para  elegir una de ellas, SALVO EL BLOQUE 5 que es de respuesta obligatoria . Cada cuestión
+tiene una puntuación de 2 puntos. Se puede elegir en un bloque la opción A y en otro la B. 
+Algunos datos y constantes que pueden ser de utilidad durante el examen: 
+NA  = 6,022·10 23 mol -1 ;  Kw  = 10 -14 ;  R  = 0,082 atm·L·mol -1 · K -1 = 8,31 J·K -1 ·mol -1 ;  F  = 96.500 C·mol -1 
+BLOQUE 1: ESTRUCTURA ATÓMICA Y ENLACE QUÍMICO 
+1A.  Considere tres elementos químicos (A, B y C) cuyas configuraciones electrónicas son [Ne] 3s 2 3p 5
+para A, [Ar] 4s 2 3d 10 4p 4 para B y [Kr] 5s 2 para C. 
+a)  Indique en qué periodo y grupo se halla situado cada uno de ellos en la Tabla Periódica  (0,6 puntos) 
+A: Tercer periodo, Grupo 17, 7A o grupo de los halógenos 
+B: Cuarto periodo, Grupo 16, 6A o grupo de los calcógenos o anfígenos 
+C: Quinto periodo, Grupo 2, 2A o grupo de los alcalinotérreos 
+b)  Indique el nombre y símbolo químico  de cada uno de ellos  (0,6 puntos) 
+A: cloro, Cl 
+B: selenio, Se 
+C: estroncio, Sr 
+c)  Indique el estado de oxidación más probable para cada uno de ellos  (0,3 puntos) 
+A: -1 
+B: -2 
+C: +2 
+d)  Explique el orden esperado en sus afinidades electrónicas  (0,5 puntos) 
+Cl > Se > Sr  o  Sr < Se < Cl 
+La afinidad electrónica aumenta (en valor absoluto) en la tabla periódica hacia arriba en un grupo y 
+hacia la derecha en un periodo, por el aumento de la carga nuclear efectiva (Z*) y la disminución del
+radio atómico. 
+1B.  Para cada una de las siguientes moléculas: SF2, NH4 + , PCl3, SCO 
+a)  Represente su estructura de Lewis  (0,8 puntos) 
+b)  Justifique su geometría según la teoría de repulsión de pares de electrones en la capa de valencia  (0,6
+puntos) 
+SF2: AB2E2, Átomo central rodeado de 4 dominios electrónicos: dos pares de electrones enlazantes
+y dos pares solitarios (o antienlazantes). La disposición de mínima repulsión es angular. 
+F  S  F 
+S = C = O
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+NH4 + : AB4E0, Átomo central rodeado de 4 dominios electrónicos: 4 pares de electrones enlazantes y
+ningún par de electrones solitarios. La disposición de mínima repulsión será la tetraédrica. 
+PCl3: AB3E1, Átomo central rodeado de 4 dominios electrónicos: tres pares de electrones enlazantes
+y un par solitario. La disposición de mínima repulsión es pirámide trigonal. 
+SCO: AB2E0, Átomo central rodeado de 4 pares de electrones que forman 2 dominios de electrones
+enlazantes y ningún par solitario. La disposición de mínima repulsión será la lineal. 
+c)  Explique sin son polares o apolares  (0,6 puntos) 
+SF2: Polar: Los enlaces S-F son polares, pero al ser la geometría angular los momentos dipolares no
+se anulan entre sí. 
+NH4 + : Apolar: Los enlaces N-H son polares pero la geometría tetraédrica hace que se contrarresten
+los momentos dipolares entre sí. 
+PCl3: Polar: Los enlaces P-Cl son polares, y al ser la geometría piramidal trigonal los momentos
+dipolares no se anulan entre sí. 
+SCO: Polar: Los enlaces C-O y C-S son ambos polares, pero de distinta intensidad (ya que la
+electronegatividad de O y S es diferente), por lo que, aunque la geometría sea lineal, no se
+anulan. 
+BLOQUE 2: TERMOQUÍMICA, EQUILIBRIO Y CINÉTICA.  Elegir una cuestión,  2A  o  2B 
+2A.  La reacción química: 
+2 NO (g) + 2 H2 (g) ↔ N2 (g) + 2 H2O (g) 
+es muy útil en contextos ambientales ya que permite reducir el nivel de óxido nítrico, contaminante
+común de la combustión de combustibles fósiles. 
+En un recipiente de 1 L se coloca una mezcla compuesta por 0,10 moles de NO, 0,05 moles de H2 y
+0,10 moles de H2O y se mantiene el sistema a 27 ºC, estableciéndose el citado equilibrio. Si la
+concentración de NO en el equilibrio es 0,062 M: 
+a)  Calcule las concentraciones en el equilibrio de H2, N2 y H2O.  (1 punto) 
+Establecemos el equilibrio: 
+2 NO (g) + 2 H2 (g) ↔ N2 (g) + 2 H2O (g) 
+Concentraciones iniciales:  0,1  0,05  0  0,1 
+Dado que en el equilibrio la concentración de NO baja desde 0,1 a 0,062 M, el equilibrio se habrá
+desplazado hacia la derecha desde las condiciones iniciales. 
+Concentraciones equilibrio:  0,1-2x  0,05-2x  x  0,1+2x 
+Dado que 0,1-2x = 0,062;  x = 0,019 
+Por tanto, en el equilibrio: 
+[H2] = 0,05-0,038 = 0,012 M; [N2] = 0,019 M; [H2O] = 0,1+0,038 = 0,138 M
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+b)  Calcule Kc  (0,5 puntos) 
+𝐾𝐾𝐾𝐾 = [𝑁𝑁2] [𝐻𝐻2𝑂𝑂] 2
+[𝑁𝑁 𝑂𝑂 ] 2 [𝐻𝐻2] 2 =  0,019 ∙ 0,138 2
+0,062 2 ∙ 0,012 2 = 3,62 ∙ 10 −4
+5,53 ∙ 10 −7 = 654,6 
+c)  Calcule Kp  (0,5 puntos) 
+𝐾𝐾𝐾𝐾 = 𝐾𝐾𝐾𝐾 (𝑅𝑅𝑅𝑅) ∆𝑛𝑛 
+𝐾𝐾𝐾𝐾 = 654,6 (0,082 ∙ 300) −1 
+𝐾𝐾𝐾𝐾 = 26,61 
+2B.  Sean  las entalpías de formación estándar (en kJ·mol -1 ) para H2O(l) = ‒285,5 y para CO2(g)= ‒393,5. 
+a)  Escriba las reacciones a las que se refieren estos datos  (0,5 puntos) 
+H2 (g) + ½ O2 (g) → H2O (l) 
+C (s) + O2 (g) → CO2 (g) 
+b)  Calcule la entalpía de formación estándar de la acetona, sabiendo que la combustión completa de
+1 mol de acetona libera 1790 kJ:  (1 punto) 
+C3H6O (l) + 4 O2 (g) → 3 CO2 (g) + 3 H2O (l) 
+ΔH 0 r = -1790 kJ 
+ΔH 0 r = 3 ΔH 0 f (CO2) + 3 ΔH 0 f (H2O) – 4 · 0 – ΔH 0 f (C3H6O) = -1790 
+3 · (‒393,5) + 3 (‒285,5) -  Δ H 0 f (C3H6O) = ‒1790 
+‒1180,5 – 856,5 ‒  Δ H 0 f (C3H6O) = -1790 
+Δ H 0 f (C3H6O) = ‒247 kJ mol -1 
+c)  ¿Es espontánea la reacción de combustión de la acetona a 298 K? Justifique su respuesta
+sabiendo que la entropía de la reacción a dicha temperatura es igual a ‒170,0 J mol -1 K -1  (0,5
+puntos) 
+Para saber si es espontánea tenemos que calcular ΔG 0 = ΔH 0 – T· ΔS 0 
+ΔG 0 = –1790 – 298 ·(‒ 0,17)= –1790 + 50,66 = –1739,34 kJ 
+Puesto que ΔG 0 < 0, la reacción es espontánea.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+BLOQUE 3: ÁCIDO-BASE.  Elegir una cuestión,  3A  o  3B 
+3A.  La CH3-NH2 se emplea en la fabricación de algunos productos fitosanitarios. Se quiere preparar 1 L de
+una disolución acuosa de CH3-NH2 de pH=11. Datos: Kb=4,4·10 ‒4 ; Masas atómicas (g mol -1 ): C=12; H=1;
+N=14 
+a)  Escriba el equilibrio de disociación que tiene lugar y calcule la masa necesaria de CH3-NH2  (1,4
+puntos) 
+CH3-NH2 (aq) + H2O (l) ↔ CH3-NH3 + (aq) + OH − (aq) 
+Concentraciones, inicio:  c  0  0 
+Concent. equilibrio:  c‒x  x  x 
+Como pH=11, pH+pOH = 14; pOH=14-11=3, 
+[OH - ] = 0,001 M = x 
+𝐾𝐾𝑏𝑏 =  x 2 
+𝐾𝐾  − x =  0,001 2 
+𝐾𝐾  − 0,001 
+c= 3,27·10 ‒3 M 
+Para preparar 1 L se necesitarán 3,27·10 ‒3 moles, que dado que el peso molecular es igual a 31 g mol -1 , se
+necesitarán 0,1 g de CH3-NH2. 
+b)  Calcule el grado de disociación de esta base  (0,3 puntos) 
+x=c·α 
+0,001 = 3,27·10 ‒3 α; α = 0,3 
+c)  Indique cual será el ácido conjugado de CH3-NH2 y calcule su constante de acidez  (0,3 puntos) 
+CH3-NH3 + 
+Ka= Kw/Kb  = 10 -14 /4,4·10 ‒4 = 2,27·10 ‒11 
+3B.  Sea la valoración de 20 mL de una disolución de NaOH 0,15 M con una disolución de HNO3 0,3 M: 
+a)  Escriba la reacción que tiene lugar y explique cómo será el pH en el punto de equivalencia.  (0,5
+puntos) 
+La reacción que tiene lugar es: NaOH (aq) + HNO3 (aq) → NaNO3 (aq) + H2O (l) 
+El pH será neutro en el punto de equivalencia, pues se trata de una valoración de base fuerte con
+ácido fuerte, donde se forma una sal y agua. En la disolución acuosa solo estará la sal NaNO3, que
+no sufre hidrólisis porque está formada por un ácido conjugado débil (Na + ) y una base conjugada
+débil (NO3 - ). 
+b)  ¿Qué volumen de la disolución de HNO3 será necesario para llegar al punto de equivalencia?  (0,5
+puntos)
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+Como la reacción es mol a mol, se alcanzará el punto de equivalencia cuando se hayan adicionado
+tantos moles de HNO3 como moles hay de NaOH había inicialmente: 
+moles (HNO3) = moles (NaOH) 
+Va ·Ma = Vb · Mb 
+Va · 0,3 = 20 · 0,15 
+V(HNO3) = 10 mL 
+c)  Si se utiliza como indicador azul de bromotimol (amarillo en su forma ácida y azul en su forma
+básica; intervalo de viraje: pH 6,0−7,6), explique brevemente de qué color estará la disolución
+valorada antes de alcanzar el punto de equivalencia.  (0,3 puntos) 
+La disolución estará de color azul, porque el pH será básico (habrá NaOH en exceso). 
+d)  Suponiendo que los volúmenes son aditivos, calcule el pH de la disolución resultante cuando se
+ha añadido un total de 12 mL de valorante.  (0,7 puntos) 
+Si se añaden 12 mL de HNO3 0,3 M se ha sobrepasado el punto de equivalencia en 2 mL de ácido. 
+El HNO3 en exceso permanecerá en la disolución y estará completamente disociado: 
+HNO3 (aq) → NO3 - (aq) + H + (aq) 
+En los 2 mL de HNO3 0,3 M añadidos en exceso habrá 6·10 -4 moles de HNO3. 
+Estos moles estarán en un volumen de disolución total de 20 + 12 = 32 mL,  por tanto: 
+[HNO3]= 6·10 -4 /0,032 = 1,87  ‧  10 -2 M. 
+[H + ] = 1,87  ‧  10 -2 M;  pH=1,7 
+--------------------------------------------------------------------------------------------------------------------------------- 
+Otro modo de resolver: Si se hace desde el principio de la valoración: 
+Inicialmente hay 20 mL de NaOH 0,15 M, es decir, 0,003 moles de NaOH. 
+Si se añaden 12 mL de HNO3 0,3 M, se han añadido 0,0036 moles de HNO3. 
+Como la reacción es mol a mol, habrá un exceso de 0,0006 moles de HNO3 
+que estará completamente disociado, por lo que la [H + ] será 1,87  ‧  10 -2 M 
+El pH=1,7  (0,1 pto)
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+BLOQUE 4: REDOX.  Elegir una cuestión,  4A  o  4B 
+4A.  Sea la siguiente reacción de oxidación-reducción: 
+K2Cr2O7 + SnCl2 + HCl → CrCl3 + SnCl4 + H2O + KCl 
+a)  Explique cuál es el agente oxidante y cuál el agente reductor, y qué cambios se producen en sus
+números de oxidación  (0,5 puntos) 
+El agente oxidante es el Cr2O7 2- (o el K2Cr2O7)  porque gana electrones (se reduce a CrCl3). El Cr
+pasa de número de oxidación +6 a +3. 
+El agente reductor es el Sn 2+ (o el SnCl2)  porque pierde electrones (se oxida a SnCl4). El Sn pasa de
+número de oxidación +2 a +4. 
+b)  Ajuste la reacción mediante el método del ion electrón, escribiendo correctamente las semirreacciones
+de oxidación y reducción  (1,5 puntos) 
+Semirreacción de reducción: Cr2O7 2- + 14 H + + 6 e − → 2 Cr 3+ + 7 H2O 
+Semirreacción de oxidación: Sn 2+ → Sn 4+ + 2 e − 
+Para igualar el número de electrones intercambiados, multiplicamos la semirreacción de oxidación por
+3 y sumamos las dos semirreacciones: 
+Cr2O7 2- + 14 H + + 3 Sn 2+ → 2 Cr 3+ + 7 H2O + 3 Sn 4+ 
+Ahora  ponemos  en  forma  molecular  incluyendo  los  iones  potasio  que  participan  como  iones
+espectadores: 
+K2Cr2O7 + 3 SnCl2 + 14 HCl → 2 CrCl3 + 3 SnCl4 + 7 H2O + 2 KCl 
+4B.  Considere los siguientes sistemas para los que se proporcionan sus potenciales estándar de reducción: 
+E° (Pb 2+ /Pb) = −0,13 V; E° (Ag + /Ag) = 0,80 V; E° (Na + /Na) = −2,71 V; E° (Fe 3+ /Fe 2+ ) = +0,77 V;
+E° (Mn 2+ /Mn) = −1,18 V 
+a)  Explique qué metal es más oxidante  (0,5 puntos) 
+El metal más oxidante es la plata, porque es el que tiene un mayor potencial de reducción (es decir,
+es el que tiene mayor tendencia a reducirse y por tanto más tendencia a oxidar a otras especies). 
+b)  Explique si se producirá alguna reacción redox espontánea al adicionar virutas de plomo a una
+disolución de NaOH, en condiciones estándar  (0,5 puntos) 
+La posible reacción redox sería: Pb + 2 Na + → Pb 2+ + 2 Na 
+Eº = Eº(reducción) − Eº(oxidación) 
+Eº = Eº(Na + /Na) − Eº(Pb 2+ /Pb) = –2,71 – (–0,13) = – 2,58 V 
+Como el Eº de la hipotética reacción redox es < 0, no es una reacción espontánea 
+No se producirá ninguna reacción redox espontánea.
+PRUEBA DE ACCESO A LA UNIVERSIDAD 
+322 - QUÍMICA 
+PAU2026 –  JUNIO 
+c)  ¿Qué dos sistemas conectaría para obtener la pila más eficiente, en términos de fuerza electromotriz?
+Escriba la reacción que tendría lugar, calcule el valor de dicha fuerza electromotriz y calcule la
+variación de energía libre  (1 punto) 
+(La pila más eficiente se obtendrá conectando los electrodos con potenciales de reducción más
+diferentes. En este caso la mayor fuerza electromotriz se obtendrá conectando los electrodos que
+tienen los potenciales de reducción más diferentes), los sistemas Ag + /Ag y Na + /Na. 
+La reacción que tendría lugar es: Na + Ag + → Na + + Ag 
+Fuerza electromotriz: E 0 pila = E 0 (cátodo) – E 0 (ánodo)  = 0,80 – (‒2,71) = 3,51 V 
+ΔGº = ‒ n  ‧  E 0  ‧  F  = ‒ 1  ‧  3,51  ‧  96.500 = ‒ 338.715 J = ‒ 338,715 kJ 
+BLOQUE 5: QUÍMICA ORGÁNICA 
+5.  I) Formule o nombre los siguientes compuestos: ( 1 punto ) 
+a) Ácido fórmico:  HCOOH 
+b) N-metilacetamida: CH3-CO-NH-CH3 
+c) CH3-CH2-CH=CH-CH=CH-CH3: Hepta-2,4-dieno; 2,4-Heptadieno 
+d) CH3-O-CH(CH3)2: 2-Metoxipropano; Isopropil metil éter; Éter metil isopropílico 
+II)  Indique qué tipo y subtipo de isomería presentan los siguientes pares de compuestos orgánicos: ( 0,5 puntos ) 
+a) CH3-COO-CH2-CH3 y CH3-CH2-CH2-COOH 
+Isomería estructural de función (el grupo funcional cambia de éster a ácido carboxílico) 
+b) 
+Isomería espacial geométrica (cis-trans o Z/E) (cambia la disposición espacial de los sustituyentes en el
+cicloalcano). 
+II) Teniendo en cuenta el tipo de reacción indicado en cada caso, escriba los productos mayoritarios
+esperados para las siguientes reacciones: ( 0,5 puntos ) 
+Pd(cat.) 
+a) Adición:  CH3-CH2-CHO + H2  CH3-CH2-CH2OH 
+b) Eliminación:  CH3-CHOH-CH2-CH3 
+H + (cat.) , 180 ºC  CH3-CH=CH-CH3  + H2O
