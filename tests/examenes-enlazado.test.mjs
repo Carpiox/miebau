@@ -128,3 +128,37 @@ test('cada ficha recibe al menos 5 enlaces entrantes desde el cuerpo de otras pÃ
   }
   for (const [url, sources] of inbound) assert(sources.size >= 5, `${url}: solo ${sources.size} entrantes`);
 });
+
+test('cada asignatura comÃºn enlaza con la misma asignatura de la otra comunidad, con anchors variados', () => {
+  const bySubject = new Map();
+  for (const entry of data.entries) {
+    const subject = entry.slug.split('/')[1];
+    bySubject.set(subject, [...(bySubject.get(subject) || []), entry]);
+  }
+  const shared = [...bySubject.values()].filter((entries) => entries.length > 1);
+  assert(shared.length >= 15, `Se esperaban al menos 15 asignaturas comunes, hay ${shared.length}`);
+
+  const anchorPatterns = new Set();
+  for (const entries of shared) {
+    for (const entry of entries) {
+      const other = entries.find((item) => item !== entry);
+      const html = read(`examenes/${entry.slug}.html`);
+      const match = html.match(new RegExp(`<a class="region-quick-link" href="${other.url}">([^<]+)</a>`));
+      assert(match, `${entry.slug}: sin enlace a ${other.url}`);
+      assert(match[1].includes(other.asignatura), `${entry.slug}: el anchor "${match[1]}" no nombra la asignatura`);
+      anchorPatterns.add(match[1].replace(other.asignatura, '{asignatura}'));
+    }
+  }
+  assert(anchorPatterns.size >= 4, `Anchors demasiado uniformes: ${[...anchorPatterns].join(' | ')}`);
+});
+
+test('las asignaturas exclusivas de una comunidad no muestran bloque de otras comunidades', () => {
+  const counts = new Map();
+  for (const entry of data.entries) {
+    const subject = entry.slug.split('/')[1];
+    counts.set(subject, (counts.get(subject) || 0) + 1);
+  }
+  for (const entry of data.entries.filter((item) => counts.get(item.slug.split('/')[1]) === 1)) {
+    assert(!read(`examenes/${entry.slug}.html`).includes('en otras comunidades</h3>'), `${entry.slug}: bloque cruzado sin contraparte`);
+  }
+});

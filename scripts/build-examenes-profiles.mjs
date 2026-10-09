@@ -265,6 +265,27 @@ function renderContextParagraph(entries, entry) {
 `;
 }
 
+// Textos de enlace entre comunidades: varias fórmulas para que no todas las fichas
+// repitan el mismo anchor. La fórmula depende de la asignatura (orden alfabético
+// entre las asignaturas presentes en más de una comunidad), así que es estable
+// entre ejecuciones y las dos fichas de una misma asignatura se enlazan igual.
+const CROSS_COMMUNITY_ANCHORS = [
+  (name, community) => `Examen de ${name} en ${community.withArticle}`,
+  (name, community) => `Cómo se plantea ${name} en ${community.withArticle}`,
+  (name, community) => `${name}: estructura de la prueba en ${community.short}`,
+  (name, community) => `La prueba de ${name} en ${community.withArticle}`,
+  (name, community) => `Ver ${name} en la PAU de ${community.short}`,
+];
+
+function crossCommunityAnchor(entries, target) {
+  const { comunidadSlug, asignaturaSlug } = slugParts(target);
+  const shared = [...new Set(entries.map((item) => slugParts(item).asignaturaSlug))]
+    .filter((slug) => new Set(entries.filter((item) => slugParts(item).asignaturaSlug === slug).map((item) => item.comunidad)).size > 1)
+    .sort();
+  const index = Math.max(0, shared.indexOf(asignaturaSlug));
+  return CROSS_COMMUNITY_ANCHORS[index % CROSS_COMMUNITY_ANCHORS.length](target.asignatura, COMMUNITIES[comunidadSlug]);
+}
+
 function renderRelatedExamLinks(entries, entry) {
   const { comunidadSlug, asignaturaSlug } = slugParts(entry);
   const ownGroup = groupOf(asignaturaSlug);
@@ -296,7 +317,7 @@ ${groupBlocks.join('\n')}
   if (sameAsignatura.length > 0) {
     sections.push(`        <h3>${escapeHtml(entry.asignatura)} en otras comunidades</h3>
         <div class="region-quick-links">
-${sameAsignatura.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(examAnchor(other))} en ${escapeHtml(COMMUNITIES[slugParts(other).comunidadSlug].withArticle)}</a>`).join('\n')}
+${sameAsignatura.map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(crossCommunityAnchor(entries, other))}</a>`).join('\n')}
         </div>`);
   }
 
