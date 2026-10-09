@@ -588,3 +588,17 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   - Slugs iguales a los de Madrid para que se enlacen entre comunidades. Las páginas
     existentes (Murcia y Madrid) solo cambian en enlaces generados entre materias/comunidades.
   - Sin FAQ: ninguna de las 64 fichas la lleva (patrón de Madrid).
+- 2026-10-10: **Mantenimiento de Murcia sin Claude Code** (rama `murcia-mantenimiento`).
+  - **Sitemap**: en el repo `sitemap.xml` tiene 230 URLs (31 de Murcia) y es coherente con las páginas
+    (nuevo `tests/sitemap.test.mjs`). El usuario veía 95 URLs en producción: es exactamente el sitemap
+    del commit `d70e16f` (2026-08-31), así que **producción sirve un despliegue antiguo, no `main`**.
+    No es un fallo de build (no hay build; el sitemap es un archivo estático). Causas probables, a
+    comprobar en el panel/DNS (este sandbox no llega a `miebau.es`): el dominio sigue apuntando a
+    Netlify (despliegues de producción parados por créditos), o la rama de producción de Cloudflare
+    Pages no es `main`. Pasos en `docs/mantenimiento-murcia.md`.
+  - **Conflictos 306/313/322** (enlace de la ficha frente al del JSON de la UMU):
+    `verificar-enlaces-murcia.mjs --solo-fichas` verifica el de la ficha y
+    `resolver-conflictos-murcia.mjs [--aplicar]` aplica la regla del usuario (ficha ✅ y JSON otro
+    archivo → campo aparte `enlace_oficial_resuelto`; versión `-vN` del mismo archivo → la del JSON;
+    ficha ❌ y JSON ✅ → sustituir). El generador ya valida y pinta `enlace_oficial_resuelto`.
+    **Pendiente de ejecutar** (necesita red): hoy las fichas siguen con sus enlaces.
