@@ -547,3 +547,21 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     entrantes por ficha y párrafos sin repetir.
   - Nota: el test 20 de `ponderaciones.test.mjs` falla con el árbol sucio (ver
     sesión anterior); pasa con los cambios commiteados.
+- 2026-10-09: **Madrid ampliada a 33 fichas** (PR #28-#30, hechos con Codex: 15 + 18
+  nuevas, prioridades 31-48; 10 de las 18 usan el examen ordinario PAU 2026 como
+  fuente porque UCM retiró el modelo orientativo) y **bloques de coherencia SEO**:
+  1. `indexacion` pasa de `"noindex"` a `"index"` en las 48 entradas (era una marca
+     interna sin efecto real: sin meta robots, en sitemap, sin bloqueo en robots.txt).
+     El validador y un test nuevo exigen `"index"`.
+  2. Enlazado Madrid <-> Murcia: el generador ya enlazaba la misma asignatura entre
+     comunidades, pero con un anchor idéntico en todas; ahora hay 5 fórmulas
+     estables (`crossCommunityAnchor`). `paginas_relacionadas` del JSON es un dato
+     que el generador NO lee. Tests nuevos en `tests/examenes-enlazado.test.mjs`.
+  3. **Murcia sin ampliar**: desde este sandbox no hay salida a `um.es`/`ucm.es`
+     (403 en `curl`, `ENOTFOUND` en WebFetch). Hay que pasar la lista de asignaturas
+     y enlaces a mano. Ojo: el portal oficial de exámenes anteriores es
+     `examenesacceso.um.es` (subdominio), que el regex de dominios de
+     `build-examenes-profiles.mjs` y de `tests/examenes-seo.test.mjs` hoy NO admite.
+  4. `cta_pack_slug` apunta a `/packs/...`, que no existe ni lo lee el generador;
+     `widget_embed_url` está `pendiente_de_verificar` en las 48 y el generador solo
+     lo valida, no pinta iframe.

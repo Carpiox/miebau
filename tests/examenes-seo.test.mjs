@@ -131,6 +131,18 @@ test('el build está actualizado y es reproducible', () => {
   assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
 });
 
+test('todas las fichas declaran indexacion "index" y no llevan noindex ni bloqueo en robots.txt', () => {
+  const robots = readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
+  for (const entry of data.entries) {
+    assert.equal(entry.indexacion, 'index', `indexacion incoherente en ${entry.slug}`);
+    assert.doesNotMatch(readFileSync(outputPathFor(entry), 'utf8'), /noindex/i, `noindex en ${entry.slug}`);
+    assert(!/^\s*Disallow:\s*\/examenes/im.test(robots), 'robots.txt bloquea /examenes');
+  }
+  for (const url of ['/examenes', '/examenes/region-de-murcia', '/examenes/comunidad-de-madrid']) {
+    assert.equal(sitemap.split(`<loc>https://miebau.es${url}</loc>`).length - 1, 1, `Falta ${url} en el sitemap`);
+  }
+});
+
 test('cada ficha entrega SEO y contenido completo en el HTML inicial', () => {
   for (const entry of data.entries) {
     const html = readFileSync(outputPathFor(entry), 'utf8');
