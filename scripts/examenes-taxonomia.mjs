@@ -198,6 +198,17 @@ export const RELATED = {
   },
 };
 
+// Relaciones propias de una comunidad cuando alguna asignatura relacionada no existe allí
+// (p. ej. Ciencias Generales no tiene ficha en Murcia). Sustituyen a RELATED solo en esa comunidad.
+export const RELATED_OVERRIDES = {
+  'region-de-murcia': {
+    'geologia-y-ciencias-ambientales': {
+      relacionadas: ['biologia', 'quimica'],
+      frase: ([a, b]) => `Geología y Ciencias Ambientales comparte con ${a} el estudio de los ecosistemas y con ${b} el de la composición de minerales y rocas.`,
+    },
+  },
+};
+
 // Universidades con ficha de ponderaciones en el proyecto, por comunidad.
 export const COMMUNITIES = {
   'region-de-murcia': {
@@ -208,7 +219,7 @@ export const COMMUNITIES = {
       { name: 'Universidad de Murcia', href: '/ponderaciones/umu' },
       { name: 'UCAM', href: '/ponderaciones/ucam' },
     ],
-    intro: 'Este índice reúne las 15 asignaturas troncales de las que Miebau tiene ya verificada la estructura de la PAU 2026 en el Distrito Universitario de la Región de Murcia. Cada ficha resume cuántas preguntas tiene el examen, cuáles son obligatorias y cuáles admiten elección, qué puntuación lleva cada bloque y cuánto dura; todas se cotejan con documentación oficial murciana. Si estás decidiendo a qué materias dedicar tus horas de estudio, empieza por las comunes, que cursa todo el alumnado, y baja después a las de tu modalidad. Las ponderaciones de admisión de las universidades murcianas todavía no se publican en Miebau porque falta verificarlas contra la fuente oficial.',
+    intro: 'Este índice reúne las asignaturas de la PAU 2026 en el Distrito Universitario de la Región de Murcia de las que Miebau tiene ya verificada la estructura del examen: las materias comunes, las de las modalidades de Ciencias, Sociales y Artes y Humanidades, y varias optativas de idiomas, artes y tecnología. Cada ficha resume cuántas preguntas tiene el examen, cuáles son obligatorias y cuáles admiten elección, qué puntuación lleva cada bloque y cuánto dura; todas se cotejan con documentación oficial murciana. Si estás decidiendo a qué materias dedicar tus horas de estudio, empieza por las comunes, que cursa todo el alumnado, y baja después a las de tu modalidad. Las ponderaciones de admisión de las universidades murcianas todavía no se publican en Miebau porque falta verificarlas contra la fuente oficial.',
   },
   'comunidad-de-madrid': {
     name: 'Comunidad de Madrid',

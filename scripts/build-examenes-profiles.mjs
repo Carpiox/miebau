@@ -15,7 +15,7 @@ import {
   renderCommunityPage,
   renderHomeFeatured,
 } from './examenes-comunidades.mjs';
-import { COMMUNITIES, GROUPS, RELATED, groupOf } from './examenes-taxonomia.mjs';
+import { COMMUNITIES, GROUPS, RELATED, RELATED_OVERRIDES, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
@@ -248,7 +248,7 @@ function joinList(items) {
 
 function renderContextParagraph(entries, entry) {
   const { comunidadSlug, asignaturaSlug } = slugParts(entry);
-  const related = RELATED[asignaturaSlug];
+  const related = RELATED_OVERRIDES[comunidadSlug]?.[asignaturaSlug] ?? RELATED[asignaturaSlug];
   const community = COMMUNITIES[comunidadSlug];
   assert(related && community, `Falta taxonomía de enlazado para ${entry.slug}`);
 
