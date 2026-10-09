@@ -464,6 +464,94 @@
       "name": "Modelo orientativo PAU 2026 de Fundamentos Artísticos en Madrid",
       "sourceUrl": "https://www.ucm.es/file/2026-modelo-fundamentos-artisticos",
       "scope": "El modelo orientativo PAU 2026 fija cuatro preguntas con dos secciones alternativas sobre reconocimiento, respuestas breves, desarrollo y análisis visual."
+    },
+    {
+      "id": "madrid-pau-2026-geologia-y-ciencias-ambientales",
+      "community": "Comunidad de Madrid",
+      "subject": "Geología y Ciencias Ambientales",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Geología y Ciencias Ambientales en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/geologia-y-ciencias-ambientales-9",
+      "scope": "El examen ordinario PAU 2026 reúne cinco preguntas con elección entre dos alternativas completas y concreta su reparto de puntuación."
+    },
+    {
+      "id": "madrid-pau-2026-historia-de-la-musica-y-de-la-danza",
+      "community": "Comunidad de Madrid",
+      "subject": "Historia de la Música y de la Danza",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Historia de la Música y de la Danza en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-historia-de-la-musica-y-de-la-danza",
+      "scope": "El modelo orientativo PAU 2026 distribuye la prueba entre audiciones, términos musicales y un desarrollo elegido entre tema o imagen y texto."
+    },
+    {
+      "id": "madrid-pau-2026-italiano",
+      "community": "Comunidad de Madrid",
+      "subject": "Italiano",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Italiano en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/italiano-8",
+      "scope": "El examen ordinario PAU 2026 contiene cinco preguntas de comprensión, gramática, léxico y producción escrita, con sus puntuaciones verificadas."
+    },
+    {
+      "id": "madrid-pau-2026-literatura-dramatica",
+      "community": "Comunidad de Madrid",
+      "subject": "Literatura Dramática",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Literatura Dramática en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-literatura-dramatica",
+      "scope": "El modelo orientativo PAU 2026 establece tres preguntas con elección sobre comentario dramático, terminología y escritura o proceso creativo."
+    },
+    {
+      "id": "madrid-pau-2026-movimientos-culturales-y-artisticos",
+      "community": "Comunidad de Madrid",
+      "subject": "Movimientos Culturales y Artísticos",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Movimientos Culturales y Artísticos en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/movimientos-culturales-y-art%C3%8Dsticos-3",
+      "scope": "El examen ordinario PAU 2026 organiza cuatro preguntas de análisis visual, selección, relaciones y desarrollo breve, con elecciones delimitadas."
+    },
+    {
+      "id": "madrid-pau-2026-portugues",
+      "community": "Comunidad de Madrid",
+      "subject": "Portugués",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Portugués en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/portugu%C3%89s-lea-9",
+      "scope": "El examen ordinario PAU 2026 distribuye tres bloques entre comprensión y expresión, competencia lingüística y redacción en portugués europeo."
+    },
+    {
+      "id": "madrid-pau-2026-tecnicas-de-expresion-grafico-plastica",
+      "community": "Comunidad de Madrid",
+      "subject": "Técnicas de Expresión Gráfico-Plástica",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Modelo oficial",
+      "name": "Modelo orientativo PAU 2026 de Técnicas de Expresión Gráfico-Plástica en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/2026-modelo-tecnicas-de-expresion-grafico-plastica-1",
+      "scope": "El modelo orientativo PAU 2026 combina una serie pictórica, su justificación y dos cuestiones sobre técnicas, materiales y conceptos."
+    },
+    {
+      "id": "madrid-pau-2026-tecnologia-e-ingenieria-ii",
+      "community": "Comunidad de Madrid",
+      "subject": "Tecnología e Ingeniería II",
+      "period": "PAU 2026",
+      "status": "verified",
+      "sourceType": "Examen oficial",
+      "name": "Examen ordinario PAU 2026 de Tecnología e Ingeniería II en Madrid",
+      "sourceUrl": "https://www.ucm.es/file/tecnologiaingenieriaii-1",
+      "scope": "El examen ordinario PAU 2026 presenta cinco bloques de dos puntos: uno obligatorio y cuatro con elección entre dos preguntas completas."
     }
   ],
   "entries": [
@@ -1860,6 +1948,278 @@
       "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
       "enlace_oficial_examen": {
         "ordinaria": "https://www.ucm.es/file/fundamentos-art%C3%8Dsticos-13"
+      }
+    },
+    {
+      "prioridad": 41,
+      "slug": "comunidad-de-madrid/geologia-y-ciencias-ambientales",
+      "url": "/examenes/comunidad-de-madrid/geologia-y-ciencias-ambientales",
+      "asignatura": "Geología y Ciencias Ambientales",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Geología y Ciencias Ambientales PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Geología y Ciencias Ambientales · PAU Madrid",
+        "meta_description": "Consulta el examen ordinario PAU 2026 de Geología y Ciencias Ambientales en Madrid: cinco preguntas, opciones y puntuación."
+      },
+      "contenido": {
+        "intro": "Geología y Ciencias Ambientales presentó en el examen ordinario de 2026 cinco preguntas y 90 minutos de trabajo. En cada pregunta se escogía una de dos alternativas completas. La primera, valorada con cuatro puntos, era competencial y dividía la respuesta elegida en cuatro apartados de un punto; sus propuestas utilizaban un corte geológico o distintos entornos fluviales para interpretar procesos y datos. Las otras cuatro preguntas aportaban 1,5 puntos cada una. En la segunda se trataron capas fluidas y procesos geológicos externos; la tercera se dedicó a recursos y gestión sostenible; la cuarta abordó tectónica de placas y geodinámica interna; y la quinta trabajó minerales y rocas. El documento valoró el razonamiento, la estructura de las respuestas, el uso correcto de terminología y la expresión escrita. Tanto esa distribución como los asuntos concretos pertenecen al examen ordinario de 2026 y no se formulan aquí como norma para otras convocatorias. Para practicar una prueba semejante conviene entrenar la lectura de gráficos, mapas y cortes, justificar cada inferencia y decidir la alternativa de cada pregunta solo después de comparar todos sus apartados.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo cinco preguntas, cada una con elección entre dos alternativas completas; la primera valió 4 puntos y las demás, 1,5.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Interpretación geológica competencial (4 puntos)", "Capas fluidas y procesos externos (1,5 puntos)", "Recursos y sostenibilidad (1,5 puntos)", "Geodinámica interna (1,5 puntos)", "Minerales y rocas (1,5 puntos)"],
+          "notas_especificas": "La estructura, las alternativas y los contenidos descritos son los del examen ordinario PAU 2026 y no se extrapolan a futuras convocatorias.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-geologia-y-ciencias-ambientales"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/geologia-y-ciencias-ambientales",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/geologia-y-ciencias-ambientales-9"
+      }
+    },
+    {
+      "prioridad": 42,
+      "slug": "comunidad-de-madrid/historia-de-la-musica-y-de-la-danza",
+      "url": "/examenes/comunidad-de-madrid/historia-de-la-musica-y-de-la-danza",
+      "asignatura": "Historia de la Música y de la Danza",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Historia de la Música y de la Danza PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Historia de la Música y de la Danza · PAU Madrid",
+        "meta_description": "Revisa el modelo PAU 2026 de Historia de la Música y de la Danza en Madrid: audiciones, conceptos y desarrollo con opciones."
+      },
+      "contenido": {
+        "intro": "Historia de la Música y de la Danza distribuye el modelo orientativo PAU 2026 de Madrid en tres partes de cuatro, tres y tres puntos. La primera reproduce cuatro fragmentos breves dos veces y exige escoger dos audiciones. En cada una se seleccionan tres palabras correctas entre nueve y se añade un comentario contextual de unas cinco líneas; cada audición aporta dos puntos. La segunda parte combina cinco preguntas tipo test, a 0,2 por acierto, con la definición o caracterización de cuatro términos, a medio punto cada uno. Para cerrar, se elige entre desarrollar un tema musical o interpretar una propuesta de imagen y texto. Ambas vías tienen tres puntos, sugieren una extensión aproximada de una página y piden argumentos históricamente fundamentados, además de referencias a autores, intérpretes u obras. La prueba completa dura 90 minutos. Las escuchas miden entre dos y tres minutos y hay una pausa de cinco minutos entre las dos rondas. La preparación puede alternar reconocimiento auditivo, vocabulario técnico y redacciones breves, practicando especialmente la selección de rasgos sonoros y su conexión con un contexto histórico preciso.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres partes: dos audiciones entre cuatro, términos y definiciones, y un desarrollo elegido entre tema o imagen y texto.",
+          "numero_ejercicios": "3 partes",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Dos audiciones entre cuatro (4 puntos)", "Test y cuatro definiciones (3 puntos)", "Tema o imagen y texto (3 puntos)"],
+          "notas_especificas": "Cada audición se escucha dos veces; la última parte propone una extensión aproximada de una página.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-historia-de-la-musica-y-de-la-danza"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/historia-de-la-musica-y-de-la-danza",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/historia-de-la-musica-y-de-la-danza-2026"
+      }
+    },
+    {
+      "prioridad": 43,
+      "slug": "comunidad-de-madrid/italiano",
+      "url": "/examenes/comunidad-de-madrid/italiano",
+      "asignatura": "Italiano",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Italiano PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Italiano · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el examen ordinario PAU 2026 de Italiano en Madrid: comprensión, gramática, vocabulario y composición escrita."
+      },
+      "contenido": {
+        "intro": "Italiano se resolvió en el examen ordinario madrileño de 2026 mediante cinco preguntas contestadas en esa lengua durante 90 minutos. La primera pidió resumir el texto en unas cien palabras y valió dos puntos. La segunda presentó dos afirmaciones que debían marcarse como verdaderas o falsas y justificarse, con medio punto por cada una. En la tercera se escogía una de dos propuestas gramaticales por dos puntos: completar participios pasados o transformar formas verbales al futuro. La cuarta ofrecía otra elección de dos puntos, esta vez sobre sinónimos o antónimos tomados del texto. La quinta proponía dos temas y exigía desarrollar uno con la extensión señalada por el enunciado; aportaba tres puntos. Los criterios agruparon la evaluación en comprensión, uso de la lengua y producción escrita, y advirtieron que copiar literalmente fragmentos en el resumen o la composición anulaba esas respuestas. Esta organización describe exclusivamente el examen ordinario de 2026. Para preparar un ejercicio comparable es útil sintetizar sin reproducir frases, repasar concordancia y tiempos verbales, deducir vocabulario por contexto y reservar minutos para revisar cohesión, ortografía y número de palabras.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo cinco preguntas: resumen, verdadero o falso, una elección gramatical, una léxica y una composición entre dos temas.",
+          "numero_ejercicios": "5 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Resumen (2 puntos)", "Comprensión verdadero o falso (1 punto)", "Gramática con elección (2 puntos)", "Léxico con elección (2 puntos)", "Composición (3 puntos)"],
+          "notas_especificas": "Las tareas y su opcionalidad corresponden al examen ordinario de 2026; el resumen y la composición no admitieron copia literal del texto.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-italiano"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/italiano",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/italiano-8"
+      }
+    },
+    {
+      "prioridad": 44,
+      "slug": "comunidad-de-madrid/literatura-dramatica",
+      "url": "/examenes/comunidad-de-madrid/literatura-dramatica",
+      "asignatura": "Literatura Dramática",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Literatura Dramática PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Literatura Dramática · PAU Madrid",
+        "meta_description": "Conoce el modelo orientativo PAU 2026 de Literatura Dramática en Madrid: comentario, términos y creación teatral con elección."
+      },
+      "contenido": {
+        "intro": "Literatura Dramática consta en el modelo orientativo PAU 2026 de Madrid de tres preguntas, todas con posibilidad de elección, y una duración de 90 minutos. La primera vale cuatro puntos: se selecciona uno de dos textos y se estudian obra, autor y género, contexto, conflicto, personajes, espacio, tiempo, forma, diálogo o acotaciones, tradición e interés actual. La segunda pide definir tres términos teatrales entre cinco y aportar para cada uno un ejemplo procedente de las obras de referencia. Cada pareja de definición y ejemplo suma hasta un punto; si se responden más de tres, solo cuentan los primeros. La última pregunta ofrece dos rutas de tres puntos y un máximo de trescientas palabras. Una consiste en escribir una escena a partir de una situación dada, cuidando conflicto, caracterización, didascalias y expresividad. La otra explica el proceso de creación de un texto dramático, sus fases, la participación, el aprendizaje crítico y su diferencia frente a otros géneros. Además de dominar contenidos, conviene ensayar comentarios ordenados y piezas breves capaces de hacer visible la acción teatral, controlando antes de entregar tanto la selección realizada como el límite de extensión.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Tres preguntas con elección: comentario de un texto, tres términos teatrales entre cinco y creación escénica o reflexión sobre el proceso creativo.",
+          "numero_ejercicios": "3 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comentario dramático (4 puntos)", "Tres términos y ejemplos (3 puntos)", "Escena o proceso de creación (3 puntos)"],
+          "notas_especificas": "La tercera respuesta tiene un máximo de 300 palabras; si se definen más de tres términos, se corrigen únicamente los tres primeros.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-literatura-dramatica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/literatura-dramatica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/literatura-dram%C3%81tica-10"
+      }
+    },
+    {
+      "prioridad": 45,
+      "slug": "comunidad-de-madrid/movimientos-culturales-y-artisticos",
+      "url": "/examenes/comunidad-de-madrid/movimientos-culturales-y-artisticos",
+      "asignatura": "Movimientos Culturales y Artísticos",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Movimientos Culturales y Artísticos PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Movimientos Culturales y Artísticos · PAU Madrid",
+        "meta_description": "Revisa el examen ordinario PAU 2026 de Movimientos Culturales y Artísticos en Madrid: análisis visual, relaciones y desarrollo."
+      },
+      "contenido": {
+        "intro": "Movimientos Culturales y Artísticos reunió en el examen ordinario de 2026 cuatro preguntas para 90 minutos. La primera era obligatoria y valía dos puntos: partía de una imagen, pedía identificar y analizar la obra o manifestación, situarla en su movimiento y explicar su relevancia para lenguajes contemporáneos, con una extensión recomendada de doce a quince líneas. La segunda sumaba tres puntos y exigía seis respuestas, tres elegidas del apartado A y otras tres del B, a medio punto cada una. La tercera proponía relaciones entre términos, nombres y obras; se resolvían dos, una de cada apartado, por 1,5 puntos cada relación correcta. En la cuarta se desarrollaban brevemente dos cuestiones, también una de A y otra de B, con un punto por respuesta y una recomendación de no superar seis líneas. El arte contemporáneo, la arquitectura, los medios visuales y las instituciones culturales aparecieron entre los contenidos concretos de aquel ejercicio. Esta ficha los atribuye únicamente al examen ordinario de 2026, sin convertirlos en temario invariable. Para entrenarlo conviene practicar identificación visual, asociaciones justificadas y definiciones concisas, respetando siempre el reparto entre apartados.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo una pregunta visual obligatoria, seis respuestas breves, dos relaciones y dos desarrollos seleccionados entre apartados.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Análisis de imagen (2 puntos)", "Seis respuestas seleccionadas (3 puntos)", "Dos relaciones entre conceptos (3 puntos)", "Dos desarrollos breves (2 puntos)"],
+          "notas_especificas": "Las selecciones y contenidos indicados corresponden al examen ordinario de 2026; en las preguntas 3 y 4 se eligió una respuesta de cada apartado.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-movimientos-culturales-y-artisticos"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/movimientos-culturales-y-artisticos",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/movimientos-culturales-y-art%C3%8Dsticos-3"
+      }
+    },
+    {
+      "prioridad": 46,
+      "slug": "comunidad-de-madrid/portugues",
+      "url": "/examenes/comunidad-de-madrid/portugues",
+      "asignatura": "Portugués",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Portugués PAU Comunidad de Madrid | MIEBAU",
+        "h1": "Exámenes de Portugués · PAU Comunidad de Madrid",
+        "meta_description": "Consulta el examen ordinario PAU 2026 de Portugués en Madrid: comprensión, lengua y redacción en tres bloques de 4+3+3."
+      },
+      "contenido": {
+        "intro": "Portugués organizó el examen ordinario de 2026 en tres bloques que se contestaban en portugués europeo durante 90 minutos. El bloque I, de cuatro puntos, partía de un texto: incluía tres afirmaciones de verdadero o falso justificadas con una frase, tres preguntas de elección múltiple y la propuesta razonada de un título. El bloque II evaluó la competencia lingüística por tres puntos. Solicitó localizar un sinónimo y un antónimo, completar seis preposiciones y resolver dos de tres ejercicios gramaticales sobre formas verbales, cambios de número o transformación al pasado. El bloque III ofreció dos temas de redacción; se elegía uno y se escribían aproximadamente entre 190 y 200 palabras por otros tres puntos. Los criterios valoraron adecuación, coherencia, riqueza léxica, construcción morfosintáctica y corrección, y penalizaron la copia del texto inicial. Estos detalles describen el examen ordinario de 2026, no una pauta permanente para próximas pruebas. Para prepararlo resulta práctico combinar lectura precisa, ejercicios gramaticales contextualizados y textos cronometrados, comprobando al final las elecciones realizadas, la variedad de vocabulario y la extensión de la composición.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 se distribuyeron tres bloques de 4, 3 y 3 puntos entre comprensión y expresión, competencia lingüística y redacción.",
+          "numero_ejercicios": "3 bloques",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Comprensión y expresión sobre un texto (4 puntos)", "Competencia lingüística (3 puntos)", "Redacción de 190-200 palabras (3 puntos)"],
+          "notas_especificas": "La estructura corresponde al examen ordinario de 2026; en gramática se resolvieron 2 de 3 propuestas y en redacción se eligió 1 de 2 temas.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-portugues"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/portugues",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/portugu%C3%89s-lea-9"
+      }
+    },
+    {
+      "prioridad": 47,
+      "slug": "comunidad-de-madrid/tecnicas-de-expresion-grafico-plastica",
+      "url": "/examenes/comunidad-de-madrid/tecnicas-de-expresion-grafico-plastica",
+      "asignatura": "Técnicas de Expresión Gráfico-Plástica",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Técnicas de Expresión Gráfico-Plástica PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Técnicas de Expresión Gráfico-Plástica · PAU Madrid",
+        "meta_description": "Consulta el modelo PAU 2026 de Técnicas de Expresión Gráfico-Plástica en Madrid: serie pictórica, justificación y conceptos."
+      },
+      "contenido": {
+        "intro": "Técnicas de Expresión Gráfico-Plástica plantea en el modelo orientativo PAU 2026 de Madrid cuatro preguntas de seis, dos, uno y un punto. La primera permite escoger entre una imagen de partida o el tema de la metamorfosis de un paisaje. En ambos casos se entrega en una hoja DIN A3 un boceto y tres dibujos de una misma serie: uno con técnica húmeda, otro con técnica seca y el tercero con técnica mixta, cada pieza valorada con 1,5 puntos. La segunda pide justificar en un máximo de ocho líneas la relación entre dibujos, sus diferencias, el color y la profundidad, a medio punto por apartado. Después se define la técnica del pastel, incluidos proceso y materiales, en hasta cuatro líneas. La última pregunta solicita cinco definiciones sintéticas de dos líneas sobre papel, rodillo, rotulador, pigmento natural y degradado. El conjunto dispone de 90 minutos. Se valoran ejecución, composición, creatividad, expresividad, dominio técnico, color y claridad conceptual. Las orientaciones aclaran que no se permiten collage ni plantillas industrializadas. Para prepararla interesa planificar la serie antes de ejecutar, diferenciar con intención cada procedimiento y ensayar explicaciones técnicas breves que empleen vocabulario exacto.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "Cuatro preguntas: una serie pictórica elegida entre dos propuestas, su justificación, la técnica del pastel y cinco definiciones breves.",
+          "numero_ejercicios": "4 preguntas",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Serie pictórica en DIN A3 (6 puntos)", "Justificación de la serie (2 puntos)", "Técnica del pastel (1 punto)", "Cinco conceptos gráfico-plásticos (1 punto)"],
+          "notas_especificas": "La serie reúne un boceto y tres dibujos con técnicas húmeda, seca y mixta; no se admiten collage ni plantillas industrializadas.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-tecnicas-de-expresion-grafico-plastica"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/tecnicas-de-expresion-grafico-plastica",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/tecnicas-de-expresion-g-p-4"
+      }
+    },
+    {
+      "prioridad": 48,
+      "slug": "comunidad-de-madrid/tecnologia-e-ingenieria-ii",
+      "url": "/examenes/comunidad-de-madrid/tecnologia-e-ingenieria-ii",
+      "asignatura": "Tecnología e Ingeniería II",
+      "comunidad": "Comunidad de Madrid",
+      "estado_datos": "estructura_verificada",
+      "indexacion": "noindex",
+      "seo": {
+        "title": "Exámenes de Tecnología e Ingeniería II PAU Madrid | MIEBAU",
+        "h1": "Exámenes de Tecnología e Ingeniería II · PAU Madrid",
+        "meta_description": "Revisa el examen ordinario PAU 2026 de Tecnología e Ingeniería II en Madrid: cinco bloques, uno obligatorio y cuatro elecciones."
+      },
+      "contenido": {
+        "intro": "Tecnología e Ingeniería II distribuyó el examen ordinario madrileño de 2026 en cinco bloques de dos puntos y 90 minutos. El primero fue único y obligatorio: planteó una situación competencial relacionada con investigación, desarrollo y tecnología sostenible. En cada uno de los cuatro bloques restantes se elegía una de dos preguntas completas; cuando se respondían ambas, el documento indicaba que solo se corregía la primera. El bloque 2 abordó materiales y fabricación, mientras que el 3 reunió sistemas mecánicos. El 4 se dedicó a sistemas eléctricos y electrónicos, y el 5 a sistemas informáticos emergentes y automatización. Los problemas concretos combinaron interpretación técnica, cálculos, esquemas y justificación de resultados. La organización y los enunciados señalados solo quedan acreditados para la convocatoria ordinaria celebrada en 2026; no se trasladan como pauta fija a pruebas posteriores. Al practicar una prueba de este tipo conviene leer todas las alternativas antes de empezar, anotar unidades y datos, acompañar cada cálculo con su razonamiento y reservar tiempo para comprobar que diagramas, signos y resultados responden exactamente a la opción seleccionada en cada bloque.",
+        "datos_comunidad_asignatura": {
+          "curso_referencia": "PAU 2026",
+          "duracion_minutos": 90,
+          "modelo_examen_vigente": "En el examen ordinario de 2026 hubo cinco bloques de 2 puntos: el primero obligatorio y los otros cuatro con elección entre dos preguntas completas.",
+          "numero_ejercicios": "5 bloques",
+          "num_convocatorias_disponibles": "pendiente_de_verificar",
+          "bloques_o_temario_destacado": ["Tecnología sostenible e I+D (2 puntos)", "Materiales y fabricación (2 puntos)", "Sistemas mecánicos (2 puntos)", "Sistemas eléctricos y electrónicos (2 puntos)", "Automatización y sistemas informáticos (2 puntos)"],
+          "notas_especificas": "La organización descrita es la del examen ordinario PAU 2026; si se contestaban las dos preguntas de un bloque optativo, solo se corregía la primera.",
+          "ponderaciones_2026_2027": "pendiente_de_verificar"
+        }
+      },
+      "source_ids": ["madrid-pau-2026-modelos", "madrid-pau-2026-tecnologia-e-ingenieria-ii"],
+      "widget_embed_url": "pendiente_de_verificar",
+      "cta_pack_slug": "/packs/comunidad-de-madrid/tecnologia-e-ingenieria-ii",
+      "paginas_relacionadas": ["/examenes", "/ponderaciones#comunidades"],
+      "enlace_oficial_examen": {
+        "ordinaria": "https://www.ucm.es/file/tecnologiaingenieriaii-1"
       }
     }
   ]

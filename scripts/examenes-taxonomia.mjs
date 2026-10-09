@@ -13,7 +13,16 @@ export const GROUPS = [
     key: 'ciencias',
     label: 'Ciencias',
     description: 'Materias de la modalidad de Ciencias y Tecnología.',
-    slugs: ['matematicas-ii', 'fisica', 'quimica', 'biologia', 'ciencias-generales', 'dibujo-tecnico-ii'],
+    slugs: [
+      'matematicas-ii',
+      'fisica',
+      'quimica',
+      'biologia',
+      'ciencias-generales',
+      'geologia-y-ciencias-ambientales',
+      'tecnologia-e-ingenieria-ii',
+      'dibujo-tecnico-ii',
+    ],
   },
   {
     key: 'sociales',
@@ -38,6 +47,12 @@ export const GROUPS = [
       'diseno',
       'frances',
       'fundamentos-artisticos',
+      'historia-de-la-musica-y-de-la-danza',
+      'italiano',
+      'literatura-dramatica',
+      'movimientos-culturales-y-artisticos',
+      'portugues',
+      'tecnicas-de-expresion-grafico-plastica',
     ],
   },
 ];
@@ -148,6 +163,38 @@ export const RELATED = {
   'fundamentos-artisticos': {
     relacionadas: ['historia-del-arte', 'dibujo-artistico-ii', 'diseno'],
     frase: ([a, b, c]) => `Fundamentos Artísticos aporta contexto para ${a}, referentes visuales para ${b} y criterios de análisis útiles en ${c}.`,
+  },
+  'geologia-y-ciencias-ambientales': {
+    relacionadas: ['ciencias-generales', 'biologia', 'quimica'],
+    frase: ([a, b, c]) => `Los procesos terrestres de Geología y Ciencias Ambientales se conectan con la visión integrada de ${a}, los ecosistemas de ${b} y el estudio de materiales en ${c}.`,
+  },
+  'historia-de-la-musica-y-de-la-danza': {
+    relacionadas: ['analisis-musical-ii', 'coro-y-tecnica-vocal-ii', 'artes-escenicas-ii'],
+    frase: ([a, b, c]) => `El recorrido histórico de esta materia se escucha con más detalle en ${a}, se lleva a la práctica vocal en ${b} y dialoga con cuerpo y escena en ${c}.`,
+  },
+  italiano: {
+    relacionadas: ['frances', 'aleman', 'ingles'],
+    frase: ([a, b, c]) => `Italiano comparte estrategias de comprensión y escritura con ${a} y ${b}; contrastarlas con el formato de ${c} ayuda a afinar la gestión del tiempo.`,
+  },
+  'literatura-dramatica': {
+    relacionadas: ['artes-escenicas-ii', 'lengua-castellana-y-literatura-ii', 'fundamentos-artisticos'],
+    frase: ([a, b, c]) => `El texto teatral de Literatura Dramática cobra dimensión práctica en ${a}, exige la precisión escrita de ${b} y puede enriquecerse con los referentes de ${c}.`,
+  },
+  'movimientos-culturales-y-artisticos': {
+    relacionadas: ['fundamentos-artisticos', 'historia-del-arte', 'diseno'],
+    frase: ([a, b, c]) => `Para situar los lenguajes contemporáneos, combina esta ficha con las bases de ${a}, la perspectiva cronológica de ${b} y la aplicación proyectual de ${c}.`,
+  },
+  portugues: {
+    relacionadas: ['italiano', 'frances', 'aleman'],
+    frase: ([a, b, c]) => `Portugués puede prepararse junto a ${a}, ${b} y ${c} para comparar cómo cada lengua reparte comprensión, gramática y producción escrita.`,
+  },
+  'tecnicas-de-expresion-grafico-plastica': {
+    relacionadas: ['dibujo-artistico-ii', 'diseno', 'fundamentos-artisticos'],
+    frase: ([a, b, c]) => `La experimentación material de esta asignatura amplía los recursos de ${a}, fortalece la presentación de proyectos en ${b} y se apoya en los conceptos visuales de ${c}.`,
+  },
+  'tecnologia-e-ingenieria-ii': {
+    relacionadas: ['dibujo-tecnico-ii', 'fisica', 'matematicas-ii'],
+    frase: ([a, b, c]) => `Los sistemas de Tecnología e Ingeniería II requieren la representación precisa de ${a}, los principios de ${b} y las herramientas de cálculo de ${c}.`,
   },
 };
 
