@@ -89,8 +89,8 @@ function validateDistinctIntros(entries) {
 
 function validateData(data) {
   assert(data && typeof data === 'object', 'El JSON raíz debe ser un objeto');
-  assert(Array.isArray(data.sources) && data.sources.length === 32, 'Los dos primeros lotes deben declarar 32 fuentes oficiales');
-  assert(Array.isArray(data.entries) && data.entries.length === 30, 'Los dos primeros lotes deben contener exactamente 30 fichas');
+  assert(Array.isArray(data.sources) && data.sources.length > 0, 'El JSON debe declarar al menos una fuente oficial');
+  assert(Array.isArray(data.entries) && data.entries.length > 0, 'El JSON debe contener al menos una ficha');
   assert(!JSON.stringify(data).includes('TODO'), 'No se permiten marcadores TODO');
 
   const sourceIds = new Set();
@@ -112,7 +112,7 @@ function validateData(data) {
   };
 
   for (const entry of data.entries) {
-    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1 && entry.prioridad <= 30, `Prioridad inválida: ${entry.prioridad}`);
+    assert(Number.isInteger(entry.prioridad) && entry.prioridad >= 1 && entry.prioridad <= data.entries.length, `Prioridad inválida: ${entry.prioridad}`);
     assert(!unique.priority.has(entry.prioridad), `Prioridad duplicada: ${entry.prioridad}`);
     unique.priority.add(entry.prioridad);
     assert(/^(?:region-de-murcia|comunidad-de-madrid)\/[a-z0-9-]+$/.test(entry.slug), `Slug inválido: ${entry.slug}`);
@@ -162,7 +162,7 @@ function validateData(data) {
     assert(entry.source_ids[1] !== expectedGeneralSource, `Falta la fuente específica de ${entry.slug}`);
   }
 
-  assert([...unique.priority].sort((a, b) => a - b).join(',') === Array.from({ length: 30 }, (_, index) => index + 1).join(','), 'Las prioridades deben ser exactamente 1-30');
+  assert([...unique.priority].sort((a, b) => a - b).join(',') === Array.from({ length: data.entries.length }, (_, index) => index + 1).join(','), `Las prioridades deben ser exactamente 1-${data.entries.length}`);
   validateDistinctIntros(data.entries);
   return data;
 }
@@ -398,8 +398,7 @@ ${links}
 
 function renderLatestExamSection(entries) {
   const latestEntries = [...entries]
-    .sort((left, right) => right.prioridad - left.prioridad)
-    .slice(0, 30);
+    .sort((left, right) => right.prioridad - left.prioridad);
 
   const items = latestEntries.map((entry) => `
         <article class="exam-row" data-priority="${entry.prioridad}">
