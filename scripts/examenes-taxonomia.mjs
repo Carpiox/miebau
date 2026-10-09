@@ -13,7 +13,7 @@ export const GROUPS = [
     key: 'ciencias',
     label: 'Ciencias',
     description: 'Materias de la modalidad de Ciencias y Tecnología.',
-    slugs: ['matematicas-ii', 'fisica', 'quimica', 'biologia', 'dibujo-tecnico-ii'],
+    slugs: ['matematicas-ii', 'fisica', 'quimica', 'biologia', 'ciencias-generales', 'dibujo-tecnico-ii'],
   },
   {
     key: 'sociales',
@@ -25,7 +25,20 @@ export const GROUPS = [
     key: 'artes-humanidades',
     label: 'Artes y Humanidades',
     description: 'Materias de las modalidades de Humanidades y Artes.',
-    slugs: ['historia-del-arte', 'latin-ii', 'griego-ii'],
+    slugs: [
+      'historia-del-arte',
+      'latin-ii',
+      'griego-ii',
+      'aleman',
+      'analisis-musical-ii',
+      'artes-escenicas-ii',
+      'coro-y-tecnica-vocal-ii',
+      'dibujo-artistico-ii',
+      'dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii',
+      'diseno',
+      'frances',
+      'fundamentos-artisticos',
+    ],
   },
 ];
 
@@ -95,6 +108,46 @@ export const RELATED = {
   'griego-ii': {
     relacionadas: ['latin-ii', 'historia-del-arte'],
     frase: ([a, b]) => `Griego II y ${a} comparten método de traducción y análisis morfológico; el mundo clásico se completa con ${b}.`,
+  },
+  aleman: {
+    relacionadas: ['frances', 'ingles'],
+    frase: ([a, b]) => `Alemán comparte con ${a} el trabajo de comprensión, gramática y redacción; ${b} permite contrastar otro formato de lengua extranjera.`,
+  },
+  'analisis-musical-ii': {
+    relacionadas: ['coro-y-tecnica-vocal-ii', 'artes-escenicas-ii'],
+    frase: ([a, b]) => `La escucha y lectura de Análisis Musical II se complementan con la práctica vocal de ${a} y con el estudio del sonido escénico en ${b}.`,
+  },
+  'artes-escenicas-ii': {
+    relacionadas: ['coro-y-tecnica-vocal-ii', 'fundamentos-artisticos'],
+    frase: ([a, b]) => `Para ampliar los recursos de una puesta en escena, consulta el trabajo corporal y sonoro de ${a} y los contextos creativos de ${b}.`,
+  },
+  'ciencias-generales': {
+    relacionadas: ['biologia', 'fisica', 'quimica'],
+    frase: ([a, b, c]) => `Ciencias Generales integra cuestiones que se desarrollan con más profundidad en ${a}, ${b} y ${c}; comparar sus pruebas ayuda a ordenar cada razonamiento.`,
+  },
+  'coro-y-tecnica-vocal-ii': {
+    relacionadas: ['analisis-musical-ii', 'artes-escenicas-ii'],
+    frase: ([a, b]) => `La audición y la partitura enlazan Coro y Técnica Vocal II con ${a}, mientras la expresión interpretativa encuentra continuidad en ${b}.`,
+  },
+  'dibujo-artistico-ii': {
+    relacionadas: ['fundamentos-artisticos', 'historia-del-arte', 'diseno'],
+    frase: ([a, b, c]) => `La práctica gráfica de Dibujo Artístico II gana referencias con ${a} y ${b}, y puede aplicarse a la resolución de proyectos en ${c}.`,
+  },
+  'dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii': {
+    relacionadas: ['diseno', 'dibujo-artistico-ii', 'dibujo-tecnico-ii'],
+    frase: ([a, b, c]) => `Esta materia lleva la geometría al proyecto de ${a}, dialoga con la representación expresiva de ${b} y comparte precisión constructiva con ${c}.`,
+  },
+  diseno: {
+    relacionadas: ['dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii', 'dibujo-artistico-ii'],
+    frase: ([a, b]) => `Los proyectos de Diseño se apoyan en la representación constructiva de ${a} y en los recursos gráficos y compositivos de ${b}.`,
+  },
+  frances: {
+    relacionadas: ['aleman', 'ingles'],
+    frase: ([a, b]) => `Francés puede compararse con ${a} por su combinación de lengua y escritura, y con ${b} por las estrategias de comprensión textual.`,
+  },
+  'fundamentos-artisticos': {
+    relacionadas: ['historia-del-arte', 'dibujo-artistico-ii', 'diseno'],
+    frase: ([a, b, c]) => `Fundamentos Artísticos aporta contexto para ${a}, referentes visuales para ${b} y criterios de análisis útiles en ${c}.`,
   },
 };
 
