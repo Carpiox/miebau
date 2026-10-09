@@ -15,7 +15,8 @@
 //   node scripts/verificar-enlaces-murcia.mjs                 # todo, reanudando lo ya verificado
 //   node scripts/verificar-enlaces-murcia.mjs --only 301,306  # solo esos códigos
 //   node scripts/verificar-enlaces-murcia.mjs --force         # vuelve a verificar todo
-//   node scripts/verificar-enlaces-murcia.mjs --report-only   # regenera verificacion.md sin descargar
+//   node scripts/verificar-enlaces-murcia.mjs --revalidar     # reevalúa data/murcia/textos SIN descargar y regenera informe y estado
+//   node scripts/verificar-enlaces-murcia.mjs --report-only   # regenera verificacion.md sin descargar ni reevaluar
 //
 // Opciones: --json <ruta>  --out-dir <dir>  --delay <ms, 1500>  --report <ruta>
 //           --keep-pdf (guarda los PDF en <out-dir>/pdf)  --engine auto|pdftotext|pdfjs
@@ -149,15 +150,25 @@ async function download(url) {
 }
 
 // ------------------------------------------------------------------ validaciones
-function checkYear(first) {
-  const text = norm(first);
-  const years = [...new Set(text.match(/\b20\d\d\b/g) || [])];
-  if (years.includes('2026')) return { result: 'ok', note: years.length > 1 ? `menciona también ${years.filter((y) => y !== '2026').join(', ')}` : null };
-  if (years.length) return { result: 'fail', note: `no consta 2026; aparece ${years.join(', ')}` };
+const YEAR = /(?<!\d)20\d\d(?!\d)/g;
+const HEADER_CHARS = 300;
+
+// El año se valida sobre la cabecera (primeros ~300 caracteres), donde la UMU escribe "PAU2026 – JUNIO".
+// Límites de dígito, no de palabra: "PAU2026" no tiene límite de palabra antes del 2026.
+export function checkYear(first) {
+  const header = first.slice(0, HEADER_CHARS);
+  const yearsOf = (text) => [...new Set(text.match(YEAR) || [])];
+  const headerYears = yearsOf(header);
+  const pageYears = yearsOf(first);
+  if (/PAU\s*2026(?!\d)/i.test(header)) return { result: 'ok', note: null };
+  if (headerYears.includes('2026')) return { result: 'ok', note: null };
+  if (headerYears.length) return { result: 'fail', note: `la cabecera indica ${headerYears.join(', ')} y no 2026` };
+  if (pageYears.includes('2026')) return { result: 'ok', note: 'consta 2026 fuera de la cabecera' };
+  if (pageYears.length) return { result: 'warn', note: `la cabecera no indica año; el cuerpo menciona ${pageYears.join(', ')}` };
   return { result: 'warn', note: 'la primera página no contiene ningún año' };
 }
 
-function checkConvocatoria(first, expected) {
+export function checkConvocatoria(first, expected) {
   const text = norm(first);
   const ordinaria = hasWord(text, 'junio') || hasWord(text, 'ordinaria');
   const extraordinaria = hasWord(text, 'julio') || hasWord(text, 'extraordinaria');
@@ -170,13 +181,16 @@ function checkConvocatoria(first, expected) {
   return { result: 'warn', note: `no consta ${label} en la primera página` };
 }
 
-function checkMateria(first, materia) {
+export function checkMateria(first, materia) {
   const text = ` ${norm(first)} `;
   const ratio = (tokens) => (tokens.length ? tokens.filter((token) => text.includes(` ${token}`)).length / tokens.length : 0);
   const byName = ratio(tokensOf(materia.materia));
   const bySlug = ratio(tokensOf(materia.slug.replace(/-/g, ' ')));
   const best = Math.max(byName, bySlug);
   if (best >= 0.75) return { result: 'ok', note: null };
+  // El código oficial de la materia ("307 - MATEMÁTICAS CCSS") junto a una coincidencia parcial del nombre basta.
+  const codeInHeader = new RegExp(`(?<!\\d)${materia.codigo}(?!\\d)`).test(first.slice(0, HEADER_CHARS));
+  if (best >= 0.5 && codeInHeader) return { result: 'ok', note: null };
   if (best >= 0.5) return { result: 'warn', note: `coincidencia parcial con "${materia.materia}"` };
   return { result: 'fail', note: `no aparece "${materia.materia}" en la primera página` };
 }
@@ -230,22 +244,31 @@ async function verifyLink(target, engine, keepPdf) {
   result.textChars = extracted.full.length;
   result.snippet = extracted.first.replace(/\s+/g, ' ').slice(0, 200);
 
-  if (extracted.first.replace(/\s+/g, '').length < 40) {
-    return { ...result, status: 'warn', checks: {}, notes: [...result.notes, 'la primera página casi no tiene texto (¿PDF escaneado?): revisión manual'] };
+  const evaluation = evaluateText(target, extracted.first);
+  return { ...result, ...evaluation, notes: [...result.notes, ...evaluation.notes] };
+}
+
+// Evalúa la primera página ya extraída. Se usa al descargar y en --revalidar.
+export function evaluateText(target, first) {
+  const out = { notes: [] };
+  out.snippet = first.replace(/\s+/g, ' ').slice(0, 200);
+  if (first.replace(/\s+/g, '').length < 40) {
+    return { ...out, status: 'warn', checks: {}, notes: ['la primera página casi no tiene texto (¿PDF escaneado?): revisión manual'] };
   }
-  const year = checkYear(extracted.first);
-  let convocatoria = target.convocatoria ? checkConvocatoria(extracted.first, target.convocatoria) : { result: 'ok', note: null };
+  const year = checkYear(first);
+  let convocatoria = target.convocatoria ? checkConvocatoria(first, target.convocatoria) : { result: 'ok', note: null };
   // Los criterios suelen ser comunes a ambas convocatorias: que no mencionen junio/julio no es un fallo.
   if (target.tipoEnlace === 'criterios') {
     if (convocatoria.result === 'warn' && !/ambas/.test(convocatoria.note || '')) convocatoria = { result: 'ok', note: null };
     else if (convocatoria.result === 'fail') convocatoria = { ...convocatoria, result: 'warn' };
   }
-  const materia = target.materia ? checkMateria(extracted.first, target.materiaRef) : { result: 'ok', note: null };
-  result.checks = { anio: year.result, convocatoria: convocatoria.result, materia: materia.result };
-  result.detectado = detectKinds(extracted.first, target.url);
-  for (const check of [year, convocatoria, materia]) if (check.note) result.notes.push(check.note);
-  if (target.tipoEnlace === 'examen' && /criterios/.test(norm(target.url))) result.notes.push('la URL contiene "criterios": confirmar que incluye el enunciado del examen');
-  return { ...result, status: target.estructura ? (year.result === 'fail' ? 'fail' : 'pass') : combine(year, convocatoria, materia) };
+  const materia = target.materia ? checkMateria(first, target.materiaRef) : { result: 'ok', note: null };
+  out.checks = { anio: year.result, convocatoria: convocatoria.result, materia: materia.result };
+  out.detectado = detectKinds(first, target.url);
+  for (const check of [year, convocatoria, materia]) if (check.note) out.notes.push(check.note);
+  if (target.tipoEnlace === 'examen' && /criterios/.test(norm(target.url))) out.notes.push('la URL contiene "criterios": confirmar que incluye el enunciado del examen');
+  out.status = target.estructura ? (year.result === 'fail' ? 'fail' : 'pass') : combine(year, convocatoria, materia);
+  return out;
 }
 
 // ------------------------------------------------------------------ objetivos
@@ -366,12 +389,46 @@ function renderReport(data, targets, state, engine) {
   out('## Cómo se valida');
   out();
   out('- **HTTP 200** tras seguir redirecciones, y cabecera `%PDF-` (no basta el content-type).');
-  out('- **Año**: la primera página debe contener 2026. Si solo aparecen otros años (p. ej. 2025) falla; si no aparece ninguno, se pide revisión.');
+  out('- **Año**: se mira la cabecera (primeros 300 caracteres). "PAU2026" o 2026 (con límites de dígito) = ✔ aunque el cuerpo cite otros años. Falla solo si la cabecera indica otro año; si no hay año, revisar.');
   out('- **Convocatoria**: ordinaria = "junio"/"ordinaria"; extraordinaria = "julio"/"extraordinaria". Falla si solo consta la otra; revisar si constan ambas o ninguna.');
   out('- **Materia**: al menos el 75% de las palabras significativas del nombre (o del slug) deben aparecer en la primera página; 50-75% = revisar.');
   out('- "Contenido detectado" (criterios, resuelto, enunciado) es orientativo y no cuenta para el resultado.');
   out();
   return `${lines.join('\n')}\n`;
+}
+
+
+// Reevalúa todo desde los textos ya guardados, sin red. La primera página es lo anterior al primer salto
+// de página (\f) que escriben tanto pdftotext como el extractor de pdfjs de este script.
+function revalidate(targets, state) {
+  let done = 0;
+  let missing = 0;
+  for (const target of targets) {
+    if (!target.url) continue;
+    const file = path.join(textDir, `${target.key}.txt`);
+    const previous = state.resultados[target.key] && state.resultados[target.key].url === target.url ? state.resultados[target.key] : null;
+    if (!existsSync(file)) {
+      // Sin texto no hay nada que reevaluar; se conservan los fallos de descarga (404, no PDF) ya registrados.
+      if (!previous) missing += 1;
+      continue;
+    }
+    const full = readFileSync(file, 'utf8');
+    const first = full.split('\f')[0];
+    const evaluation = evaluateText(target, first);
+    const base = previous ?? { key: target.key, url: target.url, codigo: target.codigo, materia: target.materia, convocatoria: target.convocatoria, tipoEnlace: target.tipoEnlace, http: null, isPdf: true, notes: [] };
+    const carried = (base.notes || []).filter((note) => /^content-type inesperado|^estado reconstruido/.test(note));
+    if (!previous) carried.push('estado reconstruido desde el texto guardado (sin datos de la descarga)');
+    state.resultados[target.key] = {
+      ...base,
+      pages: full.split('\f').length - (full.trimEnd().endsWith('\f') ? 1 : 0),
+      textChars: full.length,
+      ...evaluation,
+      notes: [...carried, ...evaluation.notes],
+      revalidatedAt: new Date().toISOString(),
+    };
+    done += 1;
+  }
+  return { done, missing };
 }
 
 // ------------------------------------------------------------------ main
@@ -383,6 +440,17 @@ async function main() {
   const engine = pickEngine();
   const writeReport = () => { mkdirSync(path.dirname(reportPath), { recursive: true }); writeFileSync(reportPath, renderReport(data, targets, state, engine), 'utf8'); };
 
+  if (flag('--revalidar')) {
+    const { done, missing } = revalidate(targets, state);
+    state.actualizado = new Date().toISOString();
+    writeJsonAtomic(statePath, state);
+    writeReport();
+    const counts = summarize(targets, state);
+    console.log(`Revalidados ${done} textos${missing ? `; ${missing} enlaces sin texto guardado` : ''}`);
+    console.log(`✅ pasan: ${counts.pass} · ⚠️ revisar: ${counts.warn} · ❌ fallan: ${counts.fail} · 🔁 error de red: ${counts.error} · ⏳ pendientes: ${counts.pendiente} · sin enlace: ${counts.sinEnlace}`);
+    console.log(`Informe: ${path.relative(ROOT, reportPath)} · Estado: ${path.relative(ROOT, statePath)}`);
+    return;
+  }
   if (flag('--report-only')) {
     writeReport();
     console.log(`Informe regenerado: ${path.relative(ROOT, reportPath)}`);
@@ -422,7 +490,9 @@ async function main() {
   process.exitCode = counts.fail || counts.error || counts.pendiente ? 1 : 0;
 }
 
-main().catch((error) => {
-  console.error(`ERROR: ${error.message}`);
-  process.exitCode = 2;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(`ERROR: ${error.message}`);
+    process.exitCode = 2;
+  });
+}
