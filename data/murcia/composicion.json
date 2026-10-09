@@ -1,0 +1,978 @@
+{
+  "generado": "2026-10-09",
+  "nota": "Composición de los exámenes de Murcia extraída solo de lo escrito en data/murcia/textos. Cada dato lleva su fuente y una cita literal que tests/murcia-composicion.test.mjs comprueba contra el texto. null = no consta.",
+  "materias": [
+    {
+      "codigo": 305,
+      "materia": "Alemán",
+      "slug": "aleman",
+      "prioridad": 49,
+      "texto_fuente": "data/murcia/textos/305-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-305-aleman-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/305-aleman-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Teil 1: Lesen (comprensión lectora)",
+          "puntos": 3,
+          "estructura": "Ejercicio 1: 4 ítems x 0,4 (2 verdadero/falso con cita y 2 opción múltiple); ejercicio 2: 2 frases x 0,5; ejercicio 3: 4 palabras x 0,1",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/305-ordinaria.txt",
+          "cita": "Teil 1: LESEN Arbeitszeit: 25 Minuten 3 Punkte"
+        },
+        {
+          "nombre": "Teil 2: Grammatische Kompetenz (competencia gramatical)",
+          "puntos": 3,
+          "estructura": "10 ítems de opción múltiple x 0,15 y dos ejercicios de gramática de 0,75 puntos",
+          "eleccion": "En cada uno de los dos ejercicios finales se elige uno de dos",
+          "fuente": "data/murcia/textos/305-ordinaria.txt",
+          "cita": "Teil 2: GRAMMATISCHE KOMPETENZ Arbeitszeit: 20 Minuten. 3 Punkte"
+        },
+        {
+          "nombre": "Schreiben (expresión escrita)",
+          "puntos": 4,
+          "estructura": "Un texto de 120 a 150 palabras",
+          "eleccion": "Una de dos tareas (a o b)",
+          "fuente": "data/murcia/textos/305-ordinaria.txt",
+          "cita": "SCHREIBEN Arbeitszeit: 45 Minuten 4 Punkte"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Un único examen: un texto para el primer bloque, un segundo bloque único de competencia gramatical y un tercer bloque con dos opciones a elegir una",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/305-ordinaria.txt",
+        "cita": "Se trata de un único examen que contiene un texto para el primer bloque, un segundo bloque único de competencia gramatical y un tercer bloque con dos opciones a elegir una."
+      },
+      "tiempo_por_parte": {
+        "valor": "25 + 20 + 45 minutos",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/305-ordinaria.txt",
+        "cita": "Teil 1: LESEN Arbeitszeit: 25 Minuten 3 Punkte"
+      },
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/305-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 325,
+      "materia": "Análisis Musical II",
+      "slug": "analisis-musical-ii",
+      "prioridad": 50,
+      "texto_fuente": "data/murcia/textos/325-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-325-analisis-musical-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/325-analisis-musical-pdf-1"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Parte I: supuesto práctico (obra para analizar)",
+          "puntos": 6,
+          "estructura": "I.1: 3 puntos (0,75 por respuesta); I.2: 1 punto; I.3: 1 punto; I.4: 1 punto",
+          "eleccion": "I.1: 4 de 6 elementos; I.2 y I.3: una de dos opciones cada una",
+          "fuente": "data/murcia/textos/325-ordinaria.txt",
+          "cita": "Parte I. 6 puntos"
+        },
+        {
+          "nombre": "Parte II: texto y preguntas",
+          "puntos": 2,
+          "estructura": "1 punto por respuesta",
+          "eleccion": "Dos de tres preguntas",
+          "fuente": "data/murcia/textos/325-ordinaria.txt",
+          "cita": "Parte II. 2 puntos (1 punto por respuesta)"
+        },
+        {
+          "nombre": "Parte III: conceptos fundamentales (III.1) y formas musicales (III.2)",
+          "puntos": 2,
+          "estructura": "III.1: 1 punto (0,5 por respuesta); III.2: 1 punto (0,5 por respuesta)",
+          "eleccion": "En cada apartado, dos de tres preguntas",
+          "fuente": "data/murcia/textos/325-ordinaria.txt",
+          "cita": "Parte III. 2 puntos (0,5 puntos por respuesta correcta)"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se tiene en cuenta lo primero respondido hasta alcanzar la cifra exigida",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/325-ordinaria.txt",
+        "cita": "En el caso de que se responda a más opciones solo se tendrá en cuenta las que primero se hayan respondido, hasta alcanzar la cifra exigida."
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/325-ordinaria.txt"
+      },
+      "penalizacion_ortografia": {
+        "valor": "Penalización de hasta 1 punto (10 %)",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/325-ordinaria.txt",
+        "cita": "Se penalizará con hasta 1 punto (10%) las faltas ortográficas."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 310,
+      "materia": "Artes Escénicas",
+      "slug": "artes-escenicas-ii",
+      "prioridad": 51,
+      "texto_fuente": "data/murcia/textos/310-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-310-artes-escenicas-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/310-artes-escenicas-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Bloque I: análisis y comentario de un fragmento de espectáculo (vídeo)",
+          "puntos": 4,
+          "estructura": "Pautas a) a d): contextualización, personajes, interpretación y escenografía",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/310-ordinaria.txt",
+          "cita": "puede tener en cuenta las siguientes pautas [4 puntos]"
+        },
+        {
+          "nombre": "Bloque II: cuestiones",
+          "puntos": 3,
+          "estructura": "Cinco cuestiones (a a e)",
+          "eleccion": "Tres de las cinco",
+          "fuente": "data/murcia/textos/310-ordinaria.txt",
+          "cita": "BLOQUE II. Responda a TRES de las cuestiones siguientes [3 puntos]"
+        },
+        {
+          "nombre": "Bloque III: comentario de un espectáculo visionado durante el curso",
+          "puntos": 3,
+          "estructura": "a) 2 puntos; b) 0,5; c) 0,5",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/310-ordinaria.txt",
+          "cita": "BLOQUE III. Comente y valore un espectáculo que usted haya visionado a lo largo del curso [3 puntos]"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrigen las primeras contestadas",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/310-ordinaria.txt",
+        "cita": "únicamente se corregirán las que primero haya contestado"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/310-ordinaria.txt"
+      },
+      "video": {
+        "valor": "Duración máxima de cuatro minutos; se proyecta tres veces a lo largo del examen",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/310-ordinaria.txt",
+        "cita": "La duración del vídeo no excederá los cuatro minutos y se proyectará tres veces a lo largo del examen."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 326,
+      "materia": "Coro y Técnica Vocal II",
+      "slug": "coro-y-tecnica-vocal-ii",
+      "prioridad": 52,
+      "texto_fuente": "data/murcia/textos/326-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-326-coro-y-tecnica-vocal-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/326-coro-y-tecnica-vocal-ii-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Parte A: análisis de una pieza vocal (vídeo de 3 a 5 minutos)",
+          "puntos": 4,
+          "estructura": "Se visualiza dos veces (al inicio y pasados 15 minutos); estimación de 30 minutos",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/326-ordinaria.txt",
+          "cita": "Puntuación: 4 puntos. Estimación temporal: 30’."
+        },
+        {
+          "nombre": "Parte B: comentario de una partitura y propuesta de proyecto artístico",
+          "puntos": 3,
+          "estructura": "Se escucha dos veces (al inicio y pasados 15 minutos); estimación de 30 minutos",
+          "eleccion": "Una de dos opciones",
+          "fuente": "data/murcia/textos/326-ordinaria.txt",
+          "cita": "Puntuación: 3 puntos. Estimación temporal: 30’."
+        },
+        {
+          "nombre": "Parte C: cuestiones (respuesta de unas 50 palabras)",
+          "puntos": 3,
+          "estructura": "Cuatro cuestiones; estimación de 30 minutos",
+          "eleccion": "Tres de las cuatro",
+          "fuente": "data/murcia/textos/326-ordinaria.txt",
+          "cita": "Responde (en aproximadamente cincuenta palabras) a TRES de las cuatro cuestiones planteadas."
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": {
+        "valor": "30 + 30 + 30 minutos",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/326-ordinaria.txt",
+        "cita": "Puntuación: 4 puntos. Estimación temporal: 30’."
+      },
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/326-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 327,
+      "materia": "Dibujo Artístico II",
+      "slug": "dibujo-artistico-ii",
+      "prioridad": 53,
+      "texto_fuente": "data/murcia/textos/327-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-327-dibujo-artistico-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/327-dibujo-artistico-ii-2-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Único ejercicio: dibujo a partir de la imagen de referencia",
+          "puntos": 10,
+          "estructura": "Criterios: encuadre y encajado (2), configuración y proporciones (2), línea/mancha/claroscuro-color (1,5), expresividad (1,5), ordenación del espacio (1,5), procedimientos y materiales (1,5)",
+          "eleccion": "Estilo de una de dos opciones (Opción 1 u Opción 2)",
+          "fuente": "data/murcia/textos/327-ordinaria.txt",
+          "cita": "habrá que dibujarla según el estilo de una de las dos opciones (Opción 1 u Opción 2)"
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": "Papel A3 sobre soporte rígido, pinzas, lápiz de grafito, compuesto y de color, pastel, ceras blandas, pilot, bolígrafo y rotuladores; acuarelas, lápices acuarelables y tinta china solo con pincel con depósito de agua. No se permiten aerosoles fijadores, reglas ni plantillas",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/327-ordinaria.txt",
+        "cita": "No está permitido el uso de aerosoles fijadores, reglas o plantillas tipográficas o de formas."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 328,
+      "materia": "Dibujo Técnico Aplicado a las Artes Plásticas y al Diseño II",
+      "slug": "dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii",
+      "prioridad": 54,
+      "texto_fuente": "data/murcia/textos/328-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-328-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/328-dibujo-tecnico-aplicado-a-las-artes-plasticas-y-al-diseno-ii-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Apartado A: Bloque A (Geometría, Arte y Entorno)",
+          "puntos": 4,
+          "estructura": "Opción A.1 u Opción A.2",
+          "eleccion": "Una de las dos opciones; si se contestan las dos solo se evalúa la primera",
+          "fuente": "data/murcia/textos/328-ordinaria.txt",
+          "cita": "La puntuación máxima por apartados es A: 4 puntos, B: 4 puntos y C: 2 puntos."
+        },
+        {
+          "nombre": "Apartado B: Bloque B (Sistemas de Representación del Espacio Aplicados) y Bloque C (Normalización y Diseño de Proyectos)",
+          "puntos": 4,
+          "estructura": "Ejercicio de combinación",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/328-ordinaria.txt",
+          "cita": "APARTADO B (4 PUNTOS)"
+        },
+        {
+          "nombre": "Apartado C: Bloque B (Sistemas de Representación del Espacio Aplicados)",
+          "puntos": 2,
+          "estructura": "Ejercicio con punto de fuga y punto de vista del observador",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/328-ordinaria.txt",
+          "cita": "APARTADO C (2 PUNTOS)"
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": {
+        "valor": "90 minutos; la prueba práctica se entrega al comienzo",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/328-ordinaria.txt",
+        "cita": "TIEMPO: 90 minutos."
+      },
+      "material_permitido": {
+        "valor": "Utensilios propios del dibujo técnico como reglas y compás; lapiceros de distinta dureza; sin colores para diferenciar líneas; ejercicios sobre los formatos impresos entregados",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/328-ordinaria.txt",
+        "cita": "El alumno puede utilizar utensilios propios del dibujo técnico como reglas y compas."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 314,
+      "materia": "Diseño",
+      "slug": "diseno",
+      "prioridad": 55,
+      "texto_fuente": "data/murcia/textos/314-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-314-diseno-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/314-diseno-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Primera parte: ejercicio práctico",
+          "puntos": 6,
+          "estructura": "Adecuación estética (2,75), conocimiento y aplicación de los sistemas de representación (1,25), nivel expresivo, productivo e innovador (2)",
+          "eleccion": "Una de dos opciones: diseño gráfico o diseño tridimensional",
+          "fuente": "data/murcia/textos/314-ordinaria.txt",
+          "cita": "La puntuación máxima es de 6 puntos"
+        },
+        {
+          "nombre": "Segunda parte: memoria justificativa",
+          "puntos": 4,
+          "estructura": "Justificación del ejercicio realizado (2) y autor representativo, temáticas y características principales del movimiento (2)",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/314-ordinaria.txt",
+          "cita": "La puntuación máxima es de 4 puntos"
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": "Los utensilios y materiales que se consideren; técnicas secas (grafito, lápices de colores, rotuladores) o húmedas con depósito de agua propio; la organización aporta folios DIN A4; el papel propio puede ser de otro color",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/314-ordinaria.txt",
+        "cita": "Se pueden utilizar los utensilios y los materiales que se consideren."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 304,
+      "materia": "Francés",
+      "slug": "frances",
+      "prioridad": 56,
+      "texto_fuente": "data/murcia/textos/304-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-304-frances-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/304-frances-2-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Section I: compréhension écrite",
+          "puntos": 5,
+          "estructura": "Ejercicio 1: 6 ítems x 0,5 = 3 puntos (1.1 a 1.3 verdadero/falso con fragmento; 1.4 a 1.6 elección A, B o C); ejercicio 2: 2 preguntas con palabras propias (máx. 30 palabras) x 1 = 2 puntos",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/304-ordinaria.txt",
+          "cita": "SECTION I : COMPRÉHENSION ÉCRITE (5 points)"
+        },
+        {
+          "nombre": "Section II: maîtrise de la langue française",
+          "puntos": 2,
+          "estructura": "Ejercicio 3: 4 x 0,5 = 2 puntos",
+          "eleccion": "Cuatro de las cinco cuestiones; si se responden las cinco, solo se corrigen las cuatro primeras",
+          "fuente": "data/murcia/textos/304-ordinaria.txt",
+          "cita": "SECTION II : MAÎTRISE DE LA LANGUE FRANÇAISE (2 points)"
+        },
+        {
+          "nombre": "Section III: production écrite",
+          "puntos": 3,
+          "estructura": "Ejercicio 4: texto de 120 a 150 palabras",
+          "eleccion": "Una de dos opciones (a o b): texto de opinión o correo electrónico",
+          "fuente": "data/murcia/textos/304-ordinaria.txt",
+          "cita": "SECTION III. PRODUCTION ÉCRITE (3 points)"
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/304-ordinaria.txt"
+      },
+      "avisos": [
+        "El encabezado de los criterios de corrección rotula la sección II como \"(3 points)\", mientras que el enunciado del examen la valora en 2 puntos (5 + 2 + 3 = 10). Se ha usado el valor del enunciado."
+      ]
+    },
+    {
+      "codigo": 309,
+      "materia": "Fundamentos Artísticos",
+      "slug": "fundamentos-artisticos",
+      "prioridad": 57,
+      "texto_fuente": "data/murcia/textos/309-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-309-fundamentos-artisticos-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/309-fundamentos-artisticos-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Bloque I: tema",
+          "puntos": 2,
+          "estructura": "2 puntos por tema",
+          "eleccion": "Un tema de tres",
+          "fuente": "data/murcia/textos/309-ordinaria.txt",
+          "cita": "Bloque I. TEMA (2 puntos: 2 puntos por tema). Desarrolle un tema de estas tres opciones."
+        },
+        {
+          "nombre": "Bloque II: comentario de imágenes",
+          "puntos": 4,
+          "estructura": "1 punto por imagen",
+          "eleccion": "Cuatro imágenes de seis",
+          "fuente": "data/murcia/textos/309-ordinaria.txt",
+          "cita": "Bloque II. COMENTARIO DE IMÁGENES (4 puntos: 1 por imagen)."
+        },
+        {
+          "nombre": "Bloque III: cuestiones semiabiertas",
+          "puntos": 2,
+          "estructura": "0,5 por cuestión semiabierta",
+          "eleccion": "Cuatro de seis",
+          "fuente": "data/murcia/textos/309-ordinaria.txt",
+          "cita": "Bloque III. CUESTIONES SEMIABIERTAS (2 punto: 0,5 por cuestión semiabierta)"
+        },
+        {
+          "nombre": "Bloque IV: preguntas de imágenes cruzadas o de opción múltiple",
+          "puntos": 2,
+          "estructura": "0,5 por pregunta",
+          "eleccion": "Cuatro de seis",
+          "fuente": "data/murcia/textos/309-ordinaria.txt",
+          "cita": "Bloque IV. PREGUNTAS DE IMÁGENES CRUZADAS O DE OPCIÓN MÚLTIPLE (2 puntos: 0,5 por pregunta)."
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrigen las primeras hasta el máximo de cada bloque",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/309-ordinaria.txt",
+        "cita": "solo se corregirán las primeras que haya contestado hasta alcanzar el número máximo establecido para cada bloque"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/309-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 318,
+      "materia": "Geología y Ciencias Ambientales",
+      "slug": "geologia-y-ciencias-ambientales",
+      "prioridad": 58,
+      "texto_fuente": "data/murcia/textos/318-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-318-geologia-y-ciencias-ambientales-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/318-geologia-y-ciencias-ambientales-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Parte 1: experimentación en Geología y Ciencias Ambientales",
+          "puntos": 2,
+          "estructura": "Pregunta 1 (corte geológico), 2 puntos",
+          "eleccion": "Sin opciones",
+          "fuente": "data/murcia/textos/318-ordinaria.txt",
+          "cita": "Cada pregunta tiene una puntuación de 1 punto, salvo la primera, que no tiene opciones, 2 p."
+        },
+        {
+          "nombre": "Parte 2: la tectónica de placas y geodinámica interna",
+          "puntos": 2,
+          "estructura": "Preguntas 2 y 3, 1 punto cada una",
+          "eleccion": "Opción A o B en cada pregunta",
+          "fuente": "data/murcia/textos/318-ordinaria.txt",
+          "cita": "PARTE 2 (Predominan saberes Básicos: B-La Tectónica de placas y geodinámica interna)"
+        },
+        {
+          "nombre": "Parte 3: procesos geológicos externos",
+          "puntos": 2,
+          "estructura": "Preguntas 4 y 5, 1 punto cada una",
+          "eleccion": "Opción A o B en cada pregunta",
+          "fuente": "data/murcia/textos/318-ordinaria.txt",
+          "cita": "PARTE 3 (Predominan Saberes Básicos: C-Procesos geológicos externos)"
+        },
+        {
+          "nombre": "Parte 4: minerales y rocas",
+          "puntos": 2,
+          "estructura": "Preguntas 6 y 7, 1 punto cada una",
+          "eleccion": "Opción A o B en cada pregunta",
+          "fuente": "data/murcia/textos/318-ordinaria.txt",
+          "cita": "PARTE 4 (Predominan Saberes Básicos: D-Minerales, los componentes de las rocas y E- Rocas ígneas, sedimentarias y metamórficas.)"
+        },
+        {
+          "nombre": "Parte 5: capas fluidas de la Tierra y recursos",
+          "puntos": 2,
+          "estructura": "Preguntas 8 y 9, 1 punto cada una",
+          "eleccion": "Opción A o B en cada pregunta",
+          "fuente": "data/murcia/textos/318-ordinaria.txt",
+          "cita": "PARTE 5 (Predominan preguntas de Saberes Básicos: F-Las capas fluidas de la Tierra y G- Recursos y su gestión sostenible)"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Una opción (A o B) de cada pregunta; si se responden las dos solo se corrige la primera",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/318-ordinaria.txt",
+        "cita": "Hay que elegir una opción (A o B) de cada pregunta, en el caso de responder las dos opciones sólo se corregirá la primera."
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/318-ordinaria.txt"
+      },
+      "penalizacion_ortografia": {
+        "valor": "Penalización del 10 % de la pregunta: 0,2 puntos (pregunta 1) y 0,1 (resto)",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/318-ordinaria.txt",
+        "cita": "cada error ortográfico o gramatical penaliza un 10 % de la calificación de la pregunta, 0,2 p. (pregunta 1) y 0,1 p. (resto de preguntas)"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 324,
+      "materia": "Historia de la Música y de la Danza",
+      "slug": "historia-de-la-musica-y-de-la-danza",
+      "prioridad": 59,
+      "texto_fuente": "data/murcia/textos/324-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-324-historia-de-la-musica-y-de-la-danza-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/324-historia-de-la-musica-y-la-danza-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Parte I: comentario de una audición (supuesto práctico)",
+          "puntos": 4,
+          "estructura": "Cuatro cuestiones (I.1 a I.4) de 1 punto",
+          "eleccion": "Se responde a todas",
+          "fuente": "data/murcia/textos/324-ordinaria.txt",
+          "cita": "Parte I. 4 puntos"
+        },
+        {
+          "nombre": "Parte II: preguntas",
+          "puntos": 3,
+          "estructura": "1,5 puntos por respuesta correcta",
+          "eleccion": "Dos de tres preguntas",
+          "fuente": "data/murcia/textos/324-ordinaria.txt",
+          "cita": "Parte II. 3 puntos (1,5 puntos por respuesta correcta)."
+        },
+        {
+          "nombre": "Parte III: texto y preguntas",
+          "puntos": 3,
+          "estructura": "1,5 puntos por respuesta correcta",
+          "eleccion": "Dos de tres preguntas",
+          "fuente": "data/murcia/textos/324-ordinaria.txt",
+          "cita": "Parte III. 3 puntos (1,5 puntos por respuesta correcta)."
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se tienen en cuenta las primeras respondidas hasta alcanzar la cifra exigida",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/324-ordinaria.txt",
+        "cita": "solo se tendrá en cuenta las que primero se hayan respondido, hasta alcanzar la cifra exigida"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/324-ordinaria.txt"
+      },
+      "penalizacion_ortografia": {
+        "valor": "Penalización de hasta 1 punto (10 %)",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/324-ordinaria.txt",
+        "cita": "Se penalizará con hasta 1 punto (10%) las faltas ortográficas."
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 323,
+      "materia": "Italiano",
+      "slug": "italiano",
+      "prioridad": 60,
+      "texto_fuente": "data/murcia/textos/323-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-323-italiano-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/323-italiano-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Prima sezione: comprensione di lettura",
+          "puntos": 3,
+          "estructura": "Ejercicio 1: 4 ítems x 0,4 = 1,6; ejercicio 2: 2 x 0,5 = 1; ejercicio 3: 4 x 0,1 = 0,4",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/323-ordinaria.txt",
+          "cita": "PRIMA SEZIONE: COMPRENSIONE DI LETTURA [3 PUNTI]"
+        },
+        {
+          "nombre": "Seconda sezione: questioni di grammatica e uso linguistico",
+          "puntos": 3,
+          "estructura": "Ejercicio 4: 15 elementos x 0,1 = 1,5; ejercicio 5: 2 elementos x 0,75 = 1,5",
+          "eleccion": "Cuestión 4 única; en la 5 se eligen dos de cuatro",
+          "fuente": "data/murcia/textos/323-ordinaria.txt",
+          "cita": "SECONDA SEZIONE: Questioni di grammatica e uso linguistico [3 PUNTI]"
+        },
+        {
+          "nombre": "Terza sezione: produzione scritta",
+          "puntos": 4,
+          "estructura": "Ejercicio 6: texto de 120 a 150 palabras",
+          "eleccion": "Una de dos opciones (opinión o correo informal)",
+          "fuente": "data/murcia/textos/323-ordinaria.txt",
+          "cita": "TERZA SEZIONE: PRODUZIONE SCRITTA [4 PUNTI]"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrigen las primeras respondidas hasta alcanzar el número indicado",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/323-ordinaria.txt",
+        "cita": "solo se corregirán las primeras respondidas hasta alcanzar el número de las indicadas en cada caso"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/323-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 312,
+      "materia": "Literatura Dramática",
+      "slug": "literatura-dramatica",
+      "prioridad": 61,
+      "texto_fuente": "data/murcia/textos/312-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-312-literatura-dramatica-junio-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Bloque I: análisis de un texto",
+          "puntos": 4,
+          "estructura": "Apartados a) a d), 1 punto cada uno: argumento y temas, contextualización, personajes y lenguaje",
+          "eleccion": null,
+          "fuente": "data/murcia/textos/312-ordinaria.txt",
+          "cita": "Analice el texto considerando los elementos siguientes"
+        },
+        {
+          "nombre": "Bloque II: cuestión",
+          "puntos": 3,
+          "estructura": "a) rasgos de la tragedia clásica con un ejemplo (3 puntos) o b) tres términos teatrales de cuatro con ejemplo (1 punto por término)",
+          "eleccion": "Una de las dos cuestiones",
+          "fuente": "data/murcia/textos/312-ordinaria.txt",
+          "cita": "BLOQUE II. Responda una de las siguientes cuestiones"
+        },
+        {
+          "nombre": "Bloque III: texto teatral",
+          "puntos": 3,
+          "estructura": "Máximo 300 palabras, con dos personajes como mínimo, conflicto dramático y al menos dos acotaciones",
+          "eleccion": "Uno de los temas propuestos",
+          "fuente": "data/murcia/textos/312-ordinaria.txt",
+          "cita": "Componga un breve texto teatral de máximo trescientas palabras"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrigen las primeras respondidas",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/312-ordinaria.txt",
+        "cita": "únicamente se corregirán las que primero haya respondido"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/312-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 331,
+      "materia": "Movimientos Culturales y Artísticos",
+      "slug": "movimientos-culturales-y-artisticos",
+      "prioridad": 62,
+      "texto_fuente": "data/murcia/textos/331-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-331-movimientos-culturales-y-artisticos-junio-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Bloque I: temas",
+          "puntos": 3,
+          "estructura": "1,5 puntos por tema",
+          "eleccion": "Dos temas de tres",
+          "fuente": "data/murcia/textos/331-ordinaria.txt",
+          "cita": "Bloque I. TEMAS (3 puntos = 1,5 puntos por tema). Desarrolle dos temas de estas tres opciones."
+        },
+        {
+          "nombre": "Bloque II: comentario de imágenes",
+          "puntos": 4,
+          "estructura": "1 punto por imagen",
+          "eleccion": "Cuatro imágenes de seis",
+          "fuente": "data/murcia/textos/331-ordinaria.txt",
+          "cita": "Bloque II. COMENTARIO DE IMÁGENES (4 puntos: 1 punto por imagen)."
+        },
+        {
+          "nombre": "Bloque III: cuestiones semiabiertas",
+          "puntos": 1,
+          "estructura": "0,20 por cuestión semiabierta",
+          "eleccion": "Cinco de ocho",
+          "fuente": "data/murcia/textos/331-ordinaria.txt",
+          "cita": "Bloque III. CUESTIONES SEMIABIERTAS (1 punto: 0,20 por cuestión semiabierta)"
+        },
+        {
+          "nombre": "Bloque IV: preguntas tipo test",
+          "puntos": 2,
+          "estructura": "0,5 por pregunta",
+          "eleccion": "Cuatro de seis",
+          "fuente": "data/murcia/textos/331-ordinaria.txt",
+          "cita": "Bloque IV. PREGUNTAS TIPO TEST (2 puntos: 0,5 por pregunta)."
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrigen las primeras hasta el máximo de cada bloque",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/331-ordinaria.txt",
+        "cita": "solo se corregirán las primeras hasta alcanzar el número máximo establecido para cada bloque"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/331-ordinaria.txt"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 329,
+      "materia": "Técnicas de Expresión Gráfico-Plástica",
+      "slug": "tecnicas-de-expresion-grafico-plastica",
+      "prioridad": 63,
+      "texto_fuente": "data/murcia/textos/329-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-329-tecnicas-de-expresion-grafico-plastica-juniok-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/329-tecnicas-de-expresion-grafico-plastica-pdf-1"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Primera parte teórica",
+          "puntos": 3,
+          "estructura": "Máximo 1 punto por pregunta acertada; respuestas de máximo 8 líneas",
+          "eleccion": "Tres de las cuatro preguntas",
+          "fuente": "data/murcia/textos/329-ordinaria.txt",
+          "cita": "PRIMERA PARTE TEÓRICA (Total máximo bloque 3 puntos)"
+        },
+        {
+          "nombre": "Segunda parte práctica",
+          "puntos": 7,
+          "estructura": "Adecuación del procedimiento (2), resolución de la composición y color o valor tonal (2), originalidad y creatividad (2), reflexión y grado de acabado (1)",
+          "eleccion": "Opción A u Opción B",
+          "fuente": "data/murcia/textos/329-ordinaria.txt",
+          "cita": "SEGUNDA PARTE PRÁCTICA (Total máximo bloque 7 puntos)"
+        }
+      ],
+      "eleccion_general": null,
+      "tiempo_por_parte": {
+        "valor": "Unos 20 minutos para la teoría y 60 para la práctica, dentro de 90 minutos",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/329-ordinaria.txt",
+        "cita": "Orientativamente el tiempo necesario para cada parte rondará los 20 minutos para teoría y los 60 minutos para la práctica."
+      },
+      "material_permitido": {
+        "valor": "Soporte de papel A3 facilitado por la organización; materiales y técnicas que sequen en 60 minutos (acuarela, gouache, tinta china, pastel, ceras, lápices de color, grafito, rotuladores, collage); se descartan óleo y acrílica",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/329-ordinaria.txt",
+        "cita": "descartamos pintura al óleo y acrílica por no adecuarse a la duración del examen"
+      },
+      "avisos": []
+    },
+    {
+      "codigo": 330,
+      "materia": "Tecnología e Ingeniería",
+      "slug": "tecnologia-e-ingenieria-ii",
+      "prioridad": 64,
+      "texto_fuente": "data/murcia/textos/330-ordinaria.txt",
+      "enlaces_publicados": {
+        "ordinaria": "https://www.um.es/documents/d/estudios/pau2026-330-tecnologia-e-ingenieria-pau2026-junio-pdf",
+        "extraordinaria": "https://www.um.es/documents/d/estudios/330-tecnologia-e-ingenieria-ii-1-pdf"
+      },
+      "duracion_minutos": {
+        "valor": 90,
+        "fuente": "data/murcia/textos/estructura-pruebas.txt",
+        "cita": "Cada examen tendrá una duración de 90 minutos"
+      },
+      "puntuacion_total": {
+        "valor": 10,
+        "derivado": "suma de los puntos de los bloques"
+      },
+      "bloques": [
+        {
+          "nombre": "Apartado 1: problema competencial",
+          "puntos": 2.5,
+          "estructura": "Problema sin opcionalidad (diseño de un sistema electrónico combinacional con puertas lógicas en esta convocatoria)",
+          "eleccion": "Sin opcionalidad",
+          "fuente": "data/murcia/textos/330-ordinaria.txt",
+          "cita": "Apartado 1. (2,5 puntos). Problema competencial sin opcionalidad."
+        },
+        {
+          "nombre": "Apartado 2: bloque I, cuestiones teórico-prácticas",
+          "puntos": 2.5,
+          "estructura": "Dos cuestiones de 1,25 puntos",
+          "eleccion": "Dos de las tres cuestiones del bloque I",
+          "fuente": "data/murcia/textos/330-ordinaria.txt",
+          "cita": "Apartado 2. BLOQUE I (2,5 puntos). Elegir dos de las tres cuestiones teórico-prácticas"
+        },
+        {
+          "nombre": "Apartados 3 y 4: bloque II, problemas",
+          "puntos": 5,
+          "estructura": "Dos problemas de 2,5 puntos",
+          "eleccion": "Dos de los tres problemas del bloque II",
+          "fuente": "data/murcia/textos/330-ordinaria.txt",
+          "cita": "Apartados 3 y 4. BLOQUE II (5 puntos). Elegir dos de los tres problemas propuestos"
+        }
+      ],
+      "eleccion_general": {
+        "valor": "Solo se corrige lo contestado primero en cada bloque",
+        "puntos": null,
+        "eleccion": null,
+        "fuente": "data/murcia/textos/330-ordinaria.txt",
+        "cita": "solo se corregirá la cuestión/problema que haya contestado primero en cada bloque"
+      },
+      "tiempo_por_parte": null,
+      "material_permitido": {
+        "valor": null,
+        "fuente": "no consta en data/murcia/textos/330-ordinaria.txt"
+      },
+      "avisos": []
+    }
+  ]
+}
