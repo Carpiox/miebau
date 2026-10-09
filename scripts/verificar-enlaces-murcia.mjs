@@ -20,6 +20,7 @@
 //
 // Opciones: --json <ruta>  --out-dir <dir>  --delay <ms, 1500>  --report <ruta>
 //           --keep-pdf (guarda los PDF en <out-dir>/pdf)  --engine auto|pdftotext|pdfjs
+//           --solo-fichas (solo los enlaces que hoy tienen las fichas y difieren del JSON de la UMU)
 //           --structure-url <url> (solo para pruebas)
 //
 // Extracción de texto: usa `pdftotext` (poppler) si está instalado; si no, `pdfjs-dist`
@@ -51,6 +52,9 @@ const delayMs = Number(option('--delay', '1500'));
 const only = option('--only', null)?.split(',').map((code) => code.trim()).filter(Boolean) ?? null;
 const engineOption = option('--engine', 'auto');
 const STRUCTURE_URL = option('--structure-url', DEFAULT_STRUCTURE_URL);
+const SEO_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
+// Slugs de las fichas que no coinciden con el slug del JSON de la UMU.
+const SLUG_ALIAS = { filosofia: 'historia-de-la-filosofia' };
 const textDir = path.join(outDir, 'textos');
 const pdfDir = path.join(outDir, 'pdf');
 const statePath = path.join(outDir, 'verificacion.json');
@@ -283,7 +287,27 @@ function buildTargets(data) {
       }
     }
   }
+  targets.push(...fichaTargets(data));
   if (!only) targets.push({ key: STRUCTURE_KEY, url: STRUCTURE_URL, codigo: null, materia: null, convocatoria: null, tipoEnlace: 'estructura', estructura: true });
+  return targets;
+}
+
+// Enlaces de examen que hoy publican las fichas de Murcia y que difieren de los del JSON de la UMU.
+// Clave: <codigo>-<convocatoria>-ficha. Las materias se casan por slug (con alias) y se resuelve el código.
+export function fichaTargets(data, seoPath = SEO_PATH) {
+  if (!existsSync(seoPath)) return [];
+  const seo = JSON.parse(readFileSync(seoPath, 'utf8'));
+  const targets = [];
+  for (const entry of seo.entries.filter((item) => item.slug.startsWith('region-de-murcia/'))) {
+    const slug = entry.slug.split('/')[1];
+    const materia = data.materias.find((item) => item.slug === (SLUG_ALIAS[slug] ?? slug));
+    if (!materia || (only && !only.includes(String(materia.codigo)))) continue;
+    for (const [convocatoria, bloque] of [['ordinaria', materia.ordinaria_junio_2026], ['extraordinaria', materia.extraordinaria_julio_2026]]) {
+      const urlFicha = entry.enlace_oficial_examen?.[convocatoria];
+      if (!urlFicha || urlFicha === bloque?.examen) continue;
+      targets.push({ key: `${materia.codigo}-${convocatoria}-ficha`, url: urlFicha, codigo: materia.codigo, materia: materia.materia, materiaRef: materia, convocatoria, tipoEnlace: 'examen', ficha: true, urlJson: bloque?.examen || null });
+    }
+  }
   return targets;
 }
 
@@ -359,6 +383,22 @@ function renderReport(data, targets, state, engine) {
     out();
   }
   if (!attention) { out('Ninguno.'); out(); }
+  const conflictos = targets.filter((t) => t.ficha);
+  if (conflictos.length) {
+    out('## Conflictos: enlace de la ficha frente al del JSON de la UMU');
+    out();
+    out('| Clave | Enlace de la ficha (repo) | Resultado | Enlace del JSON | Resultado |');
+    out('|---|---|---|---|---|');
+    for (const target of conflictos) {
+      const json = targets.find((t) => t.key === target.key.replace(/-ficha$/, ''));
+      const resFicha = result(target);
+      const resJson = json ? result(json) : null;
+      out(`| ${target.key} | ${shortUrl(target.url)} | ${resFicha ? ICON[resFicha.status] : '⏳ pendiente'} | ${shortUrl(target.urlJson)} | ${resJson ? ICON[resJson.status] : '⏳ pendiente'} |`);
+    }
+    out();
+    out('Para aplicar la regla de resolución: `node scripts/resolver-conflictos-murcia.mjs` (muestra el diff) y `--aplicar`.');
+    out();
+  }
   out('## Enlaces sin URL en el JSON');
   out();
   const missing = data.materias.filter((m) => (!only || only.includes(String(m.codigo))) && (!m.ordinaria_junio_2026?.examen || !m.extraordinaria_julio_2026?.examen));
@@ -459,7 +499,8 @@ async function main() {
   if (engine === 'pdftotext' && !pdftotextAvailable()) throw new Error('pdftotext no está instalado. Instala poppler o usa: npm install --no-save pdfjs-dist');
   if (engine === 'pdfjs') await loadPdfjs().catch(() => { throw new Error('Falta pdftotext y pdfjs-dist. Instala poppler (brew install poppler / apt install poppler-utils) o ejecuta: npm install --no-save pdfjs-dist'); });
 
-  const pending = targets.filter((target) => {
+  // --solo-fichas verifica solo los enlaces de las fichas, pero el informe sigue cubriendo todo.
+  const pending = targets.filter((target) => !flag('--solo-fichas') || target.ficha).filter((target) => {
     if (!target.url) return false;
     const previous = state.resultados[target.key];
     const done = previous && previous.url === target.url && previous.status !== 'error';

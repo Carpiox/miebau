@@ -135,6 +135,15 @@ function validateData(data) {
     validateOptionalUrl(officialExamLinks?.ordinaria, 'enlace_oficial_examen.ordinaria', entry.slug);
     validateOptionalUrl(officialExamLinks?.extraordinaria, 'enlace_oficial_examen.extraordinaria', entry.slug);
 
+    // Examen resuelto o criterios oficiales cuando son otro archivo distinto del examen (campo opcional).
+    const solvedLinks = entry.enlace_oficial_resuelto;
+    assert(
+      solvedLinks === undefined || (solvedLinks && typeof solvedLinks === 'object' && !Array.isArray(solvedLinks)),
+      `enlace_oficial_resuelto debe ser un objeto en ${entry.slug}`,
+    );
+    validateOptionalUrl(solvedLinks?.ordinaria, 'enlace_oficial_resuelto.ordinaria', entry.slug);
+    validateOptionalUrl(solvedLinks?.extraordinaria, 'enlace_oficial_resuelto.extraordinaria', entry.slug);
+
     for (const [field, value] of [
       ['slug', entry.slug],
       ['url', entry.url],
@@ -213,8 +222,10 @@ function renderSources(data, entry) {
 
 function renderOfficialExamLinks(entry) {
   const links = [
-    ['Ordinaria', entry.enlace_oficial_examen?.ordinaria],
-    ['Extraordinaria', entry.enlace_oficial_examen?.extraordinaria],
+    ['Ordinaria', entry.enlace_oficial_examen?.ordinaria, 'Ver examen oficial (PDF)', 'btn-primary'],
+    ['Extraordinaria', entry.enlace_oficial_examen?.extraordinaria, 'Ver examen oficial (PDF)', 'btn-primary'],
+    ['Ordinaria', entry.enlace_oficial_resuelto?.ordinaria, 'Ver solución o criterios oficiales (PDF)', 'btn-outline'],
+    ['Extraordinaria', entry.enlace_oficial_resuelto?.extraordinaria, 'Ver solución o criterios oficiales (PDF)', 'btn-outline'],
   ].filter(([, url]) => isConfirmedUrl(url));
 
   if (links.length === 0) return '';
@@ -223,7 +234,7 @@ function renderOfficialExamLinks(entry) {
     '        <section aria-labelledby="official-exam-links">',
     '          <h3 id="official-exam-links">Examen oficial en PDF</h3>',
     '          <div class="hero-actions">',
-    ...links.map(([label, url]) => `            <a class="btn btn-primary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Ver examen oficial (PDF) — ${label}</a>`),
+    ...links.map(([label, url, text, style]) => `            <a class="btn ${style}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${text} — ${label}</a>`),
     '          </div>',
     '        </section>',
   ].join('\n');
