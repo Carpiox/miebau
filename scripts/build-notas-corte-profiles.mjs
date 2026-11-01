@@ -4,6 +4,7 @@ import path from 'node:path';
 
 import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { socialMetaBlock } from './seo-meta.mjs';
+import { pickDescription, pickTitle } from './seo-text.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'notas-corte-2026.json');
@@ -120,11 +121,55 @@ ${links}
 `;
 }
 
+// Abreviaturas habituales, solo para los títulos/descripciones que no caben en
+// el límite de caracteres con el nombre completo del grado. El H1 y el resto de
+// la ficha usan siempre el nombre oficial completo.
+const GRADO_ABBREVIATIONS = [
+  ['Administración y Dirección de Empresas', 'ADE'],
+  ['Ciencias de la Actividad Física y del Deporte', 'CAFD'],
+  ['Educación Infantil y Educación Primaria', 'Educación Infantil y Primaria'],
+  ['Nutrición Humana y Dietética', 'Nutrición y Dietética'],
+  ['Ingeniería Informática', 'Ing. Informática'],
+  ['Gobierno y Administración Pública', 'Gobierno y Admin. Pública'],
+];
+const UNIVERSITY_ABBREVIATIONS = { 'Universidad de Murcia': 'UMU' };
+
+function gradoVariants(grado) {
+  const plain = grado.replace(/^Doble Grado en /, 'Doble grado ').replace(/^Grado en /, '');
+  const short = GRADO_ABBREVIATIONS.reduce((text, [long, abbr]) => text.replace(long, abbr), plain);
+  return short === plain ? [plain] : [plain, short];
+}
+
+// Título (≤60) y descripción (120-155) con la palabra clave «Nota de corte» y el
+// grado al principio. Cada ficha es única porque lleva el nombre del grado.
+function seoTextFor(entry) {
+  const uni = UNIVERSITY_ABBREVIATIONS[entry.universidad] || entry.universidad;
+  const grados = gradoVariants(entry.grado);
+  const nota = formatNota(entry.nota);
+  const titles = grados.flatMap((g) => [
+    `Nota de corte ${g} · ${uni} ${entry.curso} · Miebau`,
+    `Nota de corte ${g} · ${uni} ${entry.curso}`,
+    `Nota de corte ${g} · ${uni}`,
+    `Nota de corte ${g}`,
+  ]);
+  const descriptions = grados.flatMap((g) => [
+    `Nota de corte de ${g} en ${entry.universidad}: ${nota} en el cupo ${entry.turno}, curso ${entry.curso}. Fuente oficial verificada.`,
+    `Nota de corte de ${g} en ${uni}: ${nota} en el cupo ${entry.turno}, curso ${entry.curso}. Fuente oficial verificada.`,
+    `Nota de corte de ${g} en ${uni}: ${nota}, cupo ${entry.turno}, curso ${entry.curso}. Fuente oficial verificada.`,
+    `Nota de corte de ${g} (${uni}): ${nota}, cupo ${entry.turno}, ${entry.curso}. Fuente oficial verificada.`,
+    `Nota de corte de ${g} (${uni}): ${nota} en ${entry.curso}. Fuente oficial verificada.`,
+  ]);
+  return {
+    title: pickTitle(titles, { label: `título de ${entry.slug}` }),
+    description: pickDescription(descriptions, { label: `descripción de ${entry.slug}` }),
+  };
+}
+
 function renderProfile(data, entry) {
   const source = data.sources.find((item) => item.id === entry.sourceId);
   const canonical = `https://miebau.es${entry.url}`;
-  const title = `Nota de corte ${escapeHtml(entry.grado)} en ${escapeHtml(entry.universidad)} · Miebau`;
-  const description = `${entry.grado} en ${entry.universidad} (${entry.comunidad}): nota de corte ${formatNota(entry.nota)} en el cupo ${entry.turno}, curso ${entry.curso}. Fuente oficial verificada.`;
+  const { title: rawTitle, description } = seoTextFor(entry);
+  const title = escapeHtml(rawTitle);
 
   return `<!doctype html>
 <html lang="es">

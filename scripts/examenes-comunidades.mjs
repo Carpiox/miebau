@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 
 import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { socialMetaBlock } from './seo-meta.mjs';
+import { pickDescription, pickTitle } from './seo-text.mjs';
 import { COMMUNITIES, FEATURED_HOME, GROUPS, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -90,8 +91,15 @@ export function renderCommunityPage(data, key) {
   if (!community) throw new Error(`Comunidad sin configurar: ${key}`);
   const entries = entriesOfCommunity(data, key);
   const url = `https://miebau.es${communityUrl(key)}`;
-  const title = `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas | MIEBAU`;
-  const description = `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, agrupadas en comunes, ciencias, sociales y artes y humanidades.`;
+  const title = pickTitle([
+    `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas | MIEBAU`,
+    `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas`,
+  ], { label: `título del índice de ${key}` });
+  const description = pickDescription([
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, agrupadas en comunes, ciencias, sociales y artes y humanidades.`,
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, por ramas: comunes, ciencias, sociales y artes.`,
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas por ramas.`,
+  ], { label: `descripción del índice de ${key}` });
   const others = Object.entries(COMMUNITIES).filter(([otherKey]) => otherKey !== key);
   const groups = GROUPS.map((group) => renderGroup(data, community, group, entries)).join('\n\n');
   const ponderacionLinks = community.ponderaciones
