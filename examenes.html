@@ -889,10 +889,11 @@
       <p>Comparte esta herramienta con tus compañeros para que también puedan preparar la EvAU 2027.</p>
       <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
         <a href="/calculadora" class="btn btn-primary">Calcular mi nota</a>
-        <button class="btn btn-outline" onclick="navigator.share ? navigator.share({title:'Exámenes EvAU 2027', url: location.href}) : navigator.clipboard.writeText(location.href)">
+        <button class="btn btn-outline" type="button" data-share data-share-title="Exámenes EvAU 2027" data-share-text="Exámenes oficiales de la EvAU por asignatura y comunidad." data-share-status="#shareStatusExamenes">
           Compartir página
         </button>
       </div>
+      <p class="share-feedback" id="shareStatusExamenes" role="status" aria-live="polite"></p>
     </div>
 
   </div>

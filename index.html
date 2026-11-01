@@ -128,7 +128,8 @@
     <section class="share-section">
       <h2>Una buena nota se prepara en equipo.</h2>
       <p>Comparte Miebau con esa persona que también está calculando opciones para su futuro.</p>
-      <button class="btn btn-primary" onclick="navigator.share ? navigator.share({title:'Miebau · EvAU 2027', url: location.href}) : navigator.clipboard.writeText(location.href)">Compartir Miebau</button>
+      <button class="btn btn-primary" type="button" data-share data-share-title="Miebau · EvAU 2027" data-share-text="Calcula tu nota EvAU, consulta ponderaciones y prepara tus exámenes con Miebau." data-share-status="#shareStatusHome">Compartir Miebau</button>
+      <p class="share-feedback" id="shareStatusHome" role="status" aria-live="polite"></p>
     </section>
   </main>
 
