@@ -588,3 +588,27 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   - Slugs iguales a los de Madrid para que se enlacen entre comunidades. Las páginas
     existentes (Murcia y Madrid) solo cambian en enlaces generados entre materias/comunidades.
   - Sin FAQ: ninguna de las 64 fichas la lleva (patrón de Madrid).
+- 2026-11-01: **LOTE 1 de la auditoría SEO (`AUDITORIA-SEO.md`)**, 7 commits en la rama
+  `claude/miebau-seo-audit-lx1qvy`, sin tocar rastreo/indexación (ni sitemap, ni noindex,
+  ni canonicals, ni enlazado interno, ni estructura de páginas):
+  1. **Consentimiento**: `js/consent.js` (Consent Mode v2 todo denegado, banner con
+     Aceptar/Rechazar/Configurar iguales, decisión en `localStorage` `miebau-consent`) +
+     `js/integrations.js` (solo cargadores). GA4 y AdSense **no se cargan** hasta aceptar;
+     el `<head>` solo lleva `<meta name="google-adsense-account">`. Botón «Configurar
+     cookies» en el footer (`renderFooter`). `CONFIG.googleCmp` en `consent.js` es el
+     enganche para un CMP certificado por Google (por defecto `false`; no activar sin
+     publicar antes el mensaje en AdSense → Privacidad y mensajes). Política de cookies
+     reescrita. La política de **privacidad** sigue pendiente (MIE-013).
+  2. Quitado el meta `google-site-verification` con placeholder (verificar por DNS).
+  3. OG/Twitter estáticos en las 146 fichas desde `scripts/seo-meta.mjs`; imagen
+     `assets/og-miebau.jpg` 1200x630 (fuente en `docs/og-miebau-source.txt`, renderizada con
+     Playwright) en todo el sitio. Las fichas privadas de ponderaciones se completan con
+     `ensureSocialMeta` (su `<head>` no lo regenera el generador).
+  4. Títulos ≤60 / descripciones 120-155 únicas (`scripts/seo-text.mjs`,
+     `tests/seo-text.test.mjs`). Textos de exámenes: `data/examenes-seo.json`.
+  5. `js/share.js` + `data-share` (Web Share → portapapeles → enlace visible, `aria-live`).
+  6. Flechas/iconos decorativos con `aria-hidden`; footer newsletter y tarjetas h3→h2
+     (0 saltos de encabezado; CSS equivalente, capturas idénticas).
+  7. Google Fonts con `preconnect` + `<link>` (`FONT_LINKS`/`ensureFontLinks`).
+  Test 20 de `ponderaciones.test.mjs` sigue fallando con el árbol sucio: se comprueba con
+  los cambios commiteados.
