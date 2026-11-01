@@ -19,7 +19,7 @@ test('el directorio de universidades por comunidad ya está en el HTML estático
 test('las 82 universidades tienen un <a href> real a su ficha, agrupadas por comunidad', () => {
   for (const university of data.universities) {
     assert(university.profile, `Falta el campo profile de ${university.id}`);
-    assert(html.includes(`<a class="catalog-profile-link" href="${university.profile}">Ver ponderaciones →</a>`), `Falta el enlace real a ${university.id} en el directorio`);
+    assert(html.includes(`<a class="catalog-profile-link" href="${university.profile}">Ver ponderaciones <span aria-hidden="true">→</span></a>`), `Falta el enlace real a ${university.id} en el directorio`);
   }
 });
 

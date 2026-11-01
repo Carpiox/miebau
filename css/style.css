@@ -1,5 +1,4 @@
 /* Miebau — design system */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -191,3 +190,43 @@ footer { padding:0 24px 34px; border:0; color:var(--text-muted); font-size:.83re
 @media (max-width:900px){.ponderaciones-filter-grid{grid-template-columns:1fr 1fr}.ponderaciones-search-group{grid-column:1/-1}.ponderaciones-source-heading{align-items:stretch;flex-direction:column}.ponderaciones-source-heading .btn{align-self:flex-start}}
 @media (max-width:760px){.ponderaciones-filter-grid{grid-template-columns:1fr;gap:0}.ponderaciones-search-group{grid-column:auto}.ponderaciones-filter-grid .form-group{margin-bottom:16px}.ponderaciones-toolbar{align-items:stretch;flex-direction:column}.ponderaciones-actions{display:grid;grid-template-columns:1fr}.ponderaciones-actions .btn{width:100%}.ponderaciones-table-scroll{max-height:72vh}.ponderaciones-table{min-width:860px}.ponderaciones-table tbody th,.ponderaciones-table thead th:first-child{width:205px;min-width:205px;max-width:205px}.ponderaciones-table th,.ponderaciones-table td{padding:10px 11px}.ponderaciones-table td:nth-child(2){min-width:190px}.ponderaciones-table td:nth-child(4){min-width:220px}.ponderaciones-controls .section-heading{flex-direction:column}.ponderaciones-controls .pill{align-self:flex-start}.region-quick-links{max-height:180px;overflow:auto}.ponderaciones-global-intro{margin-top:38px}.profile-page-grid{grid-template-columns:1fr}.profile-sidebar{position:static}.profile-table-heading{flex-direction:column}.profile-ponderaciones-table{min-width:700px}.profile-ponderaciones-table td:nth-child(2){min-width:165px}.profile-ponderaciones-table td:nth-child(3){min-width:225px}.profile-ponderaciones-table td:nth-child(4){min-width:100px}}
 @media (prefers-reduced-motion:reduce){.pdf-card{transition:none}.pdf-card:hover{transform:none}}
+
+/* Consentimiento de cookies (js/consent.js). Los tres botones principales comparten
+   exactamente el mismo estilo: aceptar, rechazar y configurar tienen la misma prominencia. */
+.consent-banner { position:fixed; z-index:1000; left:0; right:0; bottom:0; max-height:90vh; overflow:auto; padding:16px; background:var(--surface); border-top:1px solid var(--border-strong); box-shadow:0 -10px 30px rgba(18,33,61,.14); }
+.consent-banner:focus { outline:none; }
+.consent-banner:focus-visible { box-shadow:0 -10px 30px rgba(18,33,61,.14), inset 0 0 0 3px rgba(90,67,242,.35); }
+.consent-inner { max-width:var(--max-width); margin:auto; }
+.consent-title { margin:0 0 6px; color:var(--navy); font:800 1.05rem var(--font-display); letter-spacing:-.02em; }
+.consent-text { margin:0 0 12px; max-width:820px; color:var(--text); font-size:.9rem; line-height:1.5; }
+.consent-text a { text-decoration:underline; }
+.consent-panel { margin:0 0 12px; padding:12px 14px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface-alt); }
+.consent-option { display:flex; align-items:flex-start; gap:10px; padding:8px 0; cursor:pointer; }
+.consent-option + .consent-option { border-top:1px solid var(--border); }
+.consent-option input { flex:none; width:20px; height:20px; margin-top:2px; accent-color:var(--primary); }
+.consent-option span { display:flex; flex-direction:column; gap:2px; color:var(--text); font-size:.88rem; }
+.consent-option small { color:var(--text-muted); font-size:.8rem; line-height:1.4; }
+.consent-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.consent-panel .consent-actions { margin-top:10px; }
+.consent-btn { min-height:44px; padding:10px 20px; border:2px solid var(--navy); border-radius:13px; color:#fff; background:var(--navy); font:800 .92rem var(--font); line-height:1; cursor:pointer; }
+.consent-btn:hover { background:#1c3159; }
+.consent-btn:focus-visible { outline:3px solid var(--primary); outline-offset:2px; }
+.footer-cookie-btn { padding:0; border:0; color:inherit; background:none; font:inherit; text-decoration:underline; cursor:pointer; }
+.footer-cookie-btn:hover { color:var(--primary); }
+.footer-cookie-btn:focus-visible { outline:2px solid var(--primary); outline-offset:3px; border-radius:4px; }
+@media (max-width:520px){ .consent-actions .consent-btn { flex:1 1 100%; } }
+@media (prefers-reduced-motion:reduce){ .consent-btn { transition:none; } }
+.table-scroll { max-width:100%; margin:12px 0 18px; overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius-sm); }
+.cookie-table { width:100%; min-width:560px; border-collapse:collapse; font-size:.86rem; }
+.cookie-table th, .cookie-table td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+.cookie-table thead th { color:var(--navy); background:var(--surface-alt); font-size:.78rem; }
+.cookie-table tbody tr:last-child td { border-bottom:0; }
+.cookie-table code { font-size:.82rem; word-break:break-word; }
+.share-feedback, .share-section .share-feedback { min-height:1.5em; margin:10px auto 0; color:var(--navy); font-size:.9rem; font-weight:700; text-align:center; }
+/* Títulos de tarjeta que pasaron de h3 a h2 para no saltar de nivel (H1 → H3):
+   mismo aspecto que el h3 que sustituyen. */
+.feature-card h2, .info-card h2 { font-size:1.05rem; }
+.feature-card h2 { margin-bottom:7px; }
+.info-card h2 { margin:10px 0 7px; }
+.contact-option h2 { margin:0 0 2px; font-size:.92rem; }
+.newsletter h2 { margin:0 0 4px; font-size:1rem; }

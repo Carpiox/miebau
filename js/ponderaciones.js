@@ -133,6 +133,16 @@
     return node;
   }
 
+  // La flecha «→» del CTA es decorativa: se oculta a los lectores de pantalla.
+  function appendCta(doc, link, cta) {
+    const match = /^(.*?)\s*→$/.exec(cta);
+    if (!match) { link.textContent = cta; return; }
+    link.appendChild(doc.createTextNode(`${match[1]} `));
+    const arrow = element(doc, 'span', '', '→');
+    arrow.setAttribute('aria-hidden', 'true');
+    link.appendChild(arrow);
+  }
+
   function option(doc, value, text) {
     const node = element(doc, 'option', '', text);
     node.value = value;
@@ -311,7 +321,8 @@
     card.appendChild(element(doc, 'div', 'uni-city', `${isPrivate ? 'Universidad privada' : item.isRegionalGroup ? 'Cobertura pública regional' : 'Universidad pública'} · ${item.mode}`));
     const view = catalogCardView(item);
     if (view.href) {
-      const link = element(doc, 'a', 'catalog-profile-link', view.cta);
+      const link = element(doc, 'a', 'catalog-profile-link');
+      appendCta(doc, link, view.cta);
       link.href = view.href;
       card.appendChild(link);
     }

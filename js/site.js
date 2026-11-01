@@ -38,7 +38,7 @@
   wireNav();
   addCalculatorCta();
   optimizeImages();
-  ['/js/forms.js', '/js/integrations.js', '/js/seo.js'].forEach((src) => {
+  ['/js/forms.js', '/js/share.js', '/js/integrations.js', '/js/consent.js', '/js/seo.js'].forEach((src) => {
     const script = document.createElement('script');
     script.src = src;
     script.async = false;

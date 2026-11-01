@@ -2,7 +2,9 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { ADSENSE_SCRIPT, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ensureSocialMeta, socialMetaBlock } from './seo-meta.mjs';
+import { inDescriptionRange, inTitleRange, pickDescription, pickTitle } from './seo-text.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
@@ -131,7 +133,7 @@ function renderLatestPonderacionesSection(data) {
             <div class="exam-title">${escapeHtml(university.name)}</div>
             <div class="exam-meta">${escapeHtml(university.region)} · Verificado el ${escapeHtml(displayDate(checkedAt))}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(university.profile)}">Ver ficha →</a>
+          <a class="exam-link" href="${escapeHtml(university.profile)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('')}
       </div>`
     : '<p class="catalog-empty-state">Pendiente de publicación: todavía no hay ponderaciones verificadas vigentes para 2027.</p>';
@@ -368,10 +370,69 @@ function statusLabel(coverage) {
   return 'Catálogo propio pendiente';
 }
 
+// Título (≤60) y descripción (120-155). Se prueban variantes de más a menos
+// largas y se queda la primera que cabe; así las fichas que ya cumplían no
+// cambian. «Universidades públicas de Andalucía en Andalucía» se evita
+// omitiendo la región cuando ya va en el nombre.
+// Nombres más cortos, de uso común, solo para título/descripción cuando el
+// nombre completo no deja sitio. La ficha (H1, tablas) usa siempre el nombre oficial.
+const SHORT_NAME_OVERRIDES = {
+  'universidad-internacional-isabel-i-de-castilla': 'Universidad Isabel I',
+  'universidad-catolica-de-valencia-san-vicente-martir': 'Universidad Católica de Valencia',
+};
+
+function nameVariants(university) {
+  const variants = [university.name];
+  const add = (name) => { if (name && !variants.includes(name)) variants.push(name); };
+  add(university.name.split(' / ')[0]);
+  add(university.name.replace(/\s*\([^)]*\)\s*$/, ''));
+  add(SHORT_NAME_OVERRIDES[university.id]);
+  return variants;
+}
+
+function seoTitle(university) {
+  return pickTitle(nameVariants(university).flatMap((name) => [
+    `${name} · Ponderaciones 2026-2027 · Miebau`,
+    `${name} · Ponderaciones 2026-2027`,
+    `${name} · Ponderaciones`,
+  ]), { label: `título de ${university.id}` });
+}
+
 function metaDescription(university, coverage) {
-  if (coverage === 'verified') return `Consulta las ponderaciones EvAU 2026-2027 de ${university.name} en ${university.region}: grados, campus, materias y coeficientes verificados.`;
-  if (coverage === 'partial') return `Consulta los programas conjuntos y datos parciales verificados de ${university.name}; su catálogo propio de ponderaciones EvAU 2026-2027 sigue pendiente.`;
-  return `Ficha de ${university.name} en ${university.region}: estado de las ponderaciones EvAU 2026-2027 y acceso a la fuente oficial disponible.`;
+  const names = nameVariants(university);
+  const inRegion = (name) => (name.includes(university.region) ? '' : ` en ${university.region}`);
+  let candidates;
+  if (coverage === 'verified') {
+    candidates = names.flatMap((name) => [
+      `Consulta las ponderaciones EvAU 2026-2027 de ${name}${inRegion(name)}: grados, campus, materias y coeficientes verificados.`,
+      `Ponderaciones EvAU 2026-2027 de ${name}: grados, campus, materias y coeficientes verificados.`,
+    ]);
+  } else if (coverage === 'partial') {
+    candidates = names.flatMap((name) => [
+      `Consulta los programas conjuntos y datos parciales verificados de ${name}; su catálogo propio de ponderaciones EvAU 2026-2027 sigue pendiente.`,
+      `Ponderaciones EvAU 2026-2027 de ${name}: programas conjuntos y datos parciales verificados; su catálogo propio sigue pendiente.`,
+    ]);
+  } else {
+    candidates = names.flatMap((name) => [
+      `Ficha de ${name}${inRegion(name)}: estado de las ponderaciones EvAU 2026-2027 y acceso a la fuente oficial disponible.`,
+      `Ponderaciones EvAU 2026-2027 de ${name}: estado de publicación y acceso a la fuente oficial disponible.`,
+      `Ficha de ${name}${inRegion(name)}: estado de las ponderaciones EvAU 2026-2027, aviso de publicación y acceso a la fuente oficial disponible.`,
+      `Ponderaciones EvAU 2026-2027 de ${name}${inRegion(name)}: estado de publicación, aviso cuando se publiquen y acceso a la fuente oficial.`,
+    ]);
+  }
+  return pickDescription(candidates, { label: `descripción de ${university.id}` });
+}
+
+// Las fichas privadas conservan su <head> escrito a mano; solo se reescribe el
+// título o la descripción cuando están fuera de rango.
+function upsertPrivateSeoText(html, university, coverage) {
+  const currentTitle = html.match(/<title>([\s\S]*?)<\/title>/)?.[1];
+  const currentDescription = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
+  if (currentTitle === undefined || currentDescription === undefined) throw new Error(`Falta title o description en la ficha privada ${university.id}`);
+  let out = html;
+  if (!inTitleRange(currentTitle)) out = out.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${escapeHtml(seoTitle(university))}</title>`);
+  if (!inDescriptionRange(currentDescription)) out = out.replace(/(<meta name="description" content=")[^"]*(")/, (_, open, close) => `${open}${escapeHtml(metaDescription(university, coverage))}${close}`);
+  return out;
 }
 
 function renderPublicProfile(data, university, records) {
@@ -403,15 +464,17 @@ function renderPublicProfile(data, university, records) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5a43f2">
-  <title>${escapeHtml(university.name)} · Ponderaciones 2026-2027 · Miebau</title>
+  <title>${escapeHtml(seoTitle(university))}</title>
   <meta name="description" content="${escapeHtml(metaDescription(university, coverage))}">
   <link rel="canonical" href="${canonical}">
+${socialMetaBlock({ escapedTitle: escapeHtml(seoTitle(university)), escapedDescription: escapeHtml(metaDescription(university, coverage)), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
   <script src="/js/site.js" defer></script>
 ${scripts}  <script type="application/ld+json">${breadcrumb}</script>
 ${faqSchema}
-  ${ADSENSE_SCRIPT}
+  ${ADSENSE_META}
 </head>
 <body>
   ${renderNav('ponderaciones')}
@@ -526,7 +589,7 @@ async function expectedFiles(data) {
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
     const withRelated = upsertPrivateRelatedSection(withSchema, renderRelatedUniversitiesSection(data, university));
     const withNavFooter = applyNavFooter(withRelated, 'ponderaciones');
-    files.push({ filePath, content: withNavFooter });
+    files.push({ filePath, content: ensureSocialMeta(upsertPrivateSeoText(withNavFooter, university, coverage)) });
   }
   const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
   const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));

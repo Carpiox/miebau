@@ -38,7 +38,7 @@
     results.forEach((item) => {
       const card = document.createElement('article');
       card.className = 'cutoff-card';
-      card.innerHTML = '<div class="cutoff-card-top"><span class="eyebrow">' + (item.curso || 'Curso pendiente') + '</span><strong>' + Number(item.nota).toLocaleString('es-ES', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + '</strong></div><h3>' + item.grado + '</h3><p>' + item.universidad + ' · ' + item.comunidad + '</p>' + (item.url ? '<a class="cutoff-card-link" href="' + item.url + '">Ver ficha →</a>' : '');
+      card.innerHTML = '<div class="cutoff-card-top"><span class="eyebrow">' + (item.curso || 'Curso pendiente') + '</span><strong>' + Number(item.nota).toLocaleString('es-ES', { minimumFractionDigits: 3, maximumFractionDigits: 3 }) + '</strong></div><h3>' + item.grado + '</h3><p>' + item.universidad + ' · ' + item.comunidad + '</p>' + (item.url ? '<a class="cutoff-card-link" href="' + item.url + '">Ver ficha <span aria-hidden="true">→</span></a>' : '');
       container.appendChild(card);
     });
   }

@@ -15,6 +15,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { upgradeOgImage } from './seo-meta.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -48,24 +49,50 @@ export function renderNav(activeKey = null) {
 }
 
 export function renderFooter() {
-  return `<footer class="site-footer"><div class="site-footer-inner"><div class="footer-top"><div class="footer-intro"><a class="navbar-brand" href="/">${LOGO}</a><p>Herramientas claras para tomar decisiones con calma antes, durante y después de la EvAU.</p><div class="social-links" aria-label="Redes sociales"><a href="/proximamente" aria-label="Instagram">IG</a><a href="/proximamente" aria-label="TikTok">TT</a><a href="/proximamente" aria-label="X">X</a></div></div><div class="footer-column"><div class="footer-heading">Herramientas</div><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a><a href="/notas-de-corte">Notas de corte</a><a href="/calendario-ebau">Calendario EBAU</a></div><div class="footer-column"><div class="footer-heading">Premium</div><a href="/premium">Miebau Premium</a><a href="/precios">Precios</a><a href="/preguntas-frecuentes">Preguntas frecuentes</a></div><div class="footer-column"><div class="footer-heading">Sobre nosotros</div><a href="/sobre-nosotros">Sobre nosotros</a><a href="/guias">Guías</a><a href="/contacto">Contacto</a></div><div class="footer-column"><div class="footer-heading">Legal</div><a href="/aviso-legal">Aviso legal</a><a href="/politica-privacidad">Privacidad</a><a href="/politica-cookies">Cookies</a></div></div><section class="newsletter" aria-labelledby="newsletterTitle"><div><h3 id="newsletterTitle">Una nota menos de incertidumbre</h3><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-web3forms="newsletter" name="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section><div class="footer-bottom"><span>© 2026 Miebau. Todos los derechos reservados.</span><span>Hecho para estudiantes que quieren decidir mejor.</span></div></div></footer>`;
+  return `<footer class="site-footer"><div class="site-footer-inner"><div class="footer-top"><div class="footer-intro"><a class="navbar-brand" href="/">${LOGO}</a><p>Herramientas claras para tomar decisiones con calma antes, durante y después de la EvAU.</p><div class="social-links" aria-label="Redes sociales"><a href="/proximamente" aria-label="Instagram">IG</a><a href="/proximamente" aria-label="TikTok">TT</a><a href="/proximamente" aria-label="X">X</a></div></div><div class="footer-column"><div class="footer-heading">Herramientas</div><a href="/calculadora">Calculadora</a><a href="/ponderaciones">Ponderaciones</a><a href="/examenes">Exámenes</a><a href="/notas-de-corte">Notas de corte</a><a href="/calendario-ebau">Calendario EBAU</a></div><div class="footer-column"><div class="footer-heading">Premium</div><a href="/premium">Miebau Premium</a><a href="/precios">Precios</a><a href="/preguntas-frecuentes">Preguntas frecuentes</a></div><div class="footer-column"><div class="footer-heading">Sobre nosotros</div><a href="/sobre-nosotros">Sobre nosotros</a><a href="/guias">Guías</a><a href="/contacto">Contacto</a></div><div class="footer-column"><div class="footer-heading">Legal</div><a href="/aviso-legal">Aviso legal</a><a href="/politica-privacidad">Privacidad</a><a href="/politica-cookies">Cookies</a></div></div><section class="newsletter" aria-labelledby="newsletterTitle"><div><h2 id="newsletterTitle">Una nota menos de incertidumbre</h2><p>Recibe novedades y guías prácticas para preparar la EvAU.</p></div><div><form class="newsletter-form" data-web3forms="newsletter" name="newsletter"><input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><input type="email" name="email" aria-label="Tu correo electrónico" placeholder="tu@email.com" required><button class="btn btn-primary" type="submit">Suscribirme</button></form><p class="newsletter-note" aria-live="polite"></p><p class="newsletter-consent">Al suscribirte aceptas recibir estos correos. Consulta la <a href="/politica-privacidad">política de privacidad</a>.</p></div></section><div class="footer-bottom"><span>© 2026 Miebau. Todos los derechos reservados.</span><button type="button" class="footer-cookie-btn" data-consent-open>Configurar cookies</button><span>Hecho para estudiantes que quieren decidir mejor.</span></div></div></footer>`;
 }
 
-// Cargador de Google AdSense. Va en el <head> estático de TODAS las páginas.
+// Google AdSense. El <head> estático YA NO carga adsbygoogle.js: ese script
+// (y GA4) solo se cargan tras el consentimiento, desde js/consent.js →
+// js/integrations.js. Aquí solo va la etiqueta de verificación de propiedad
+// de AdSense, que no descarga ni guarda nada.
 export const ADSENSE_CLIENT = 'ca-pub-2269622537984613';
-export const ADSENSE_SCRIPT = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`;
+export const ADSENSE_META = `<meta name="google-adsense-account" content="${ADSENSE_CLIENT}">`;
+// Cargador antiguo, solo para migrar páginas que todavía lo llevan.
+const LEGACY_ADSENSE_SCRIPT_RE = /\n?[ \t]*<script async src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=[^"]*"[^>]*><\/script>/g;
 
-// Idempotente: añade el cargador justo antes de </head> si la página aún no lo tiene.
+// Idempotente: quita el cargador antiguo (si existe) y deja la etiqueta de
+// verificación justo antes de </head> una sola vez.
 export function ensureAdsScript(html) {
-  if (html.includes(ADSENSE_SCRIPT)) return html;
-  if (!html.includes('</head>')) throw new Error('No se encontró </head> para insertar el script de AdSense');
-  return html.replace(/\n?<\/head>/, `\n  ${ADSENSE_SCRIPT}\n</head>`);
+  const withoutScript = html.replace(LEGACY_ADSENSE_SCRIPT_RE, '');
+  if (withoutScript.includes(ADSENSE_META)) return withoutScript;
+  if (!withoutScript.includes('</head>')) throw new Error('No se encontró </head> para insertar la etiqueta de AdSense');
+  return withoutScript.replace(/\n?<\/head>/, `\n  ${ADSENSE_META}\n</head>`);
+}
+
+// Google Fonts. Antes: @import dentro de css/style.css (cadena CSS → CSS de
+// Google → fuentes, bloquea el render y sin preconnect). Ahora: preconnect +
+// <link rel="stylesheet"> con display=swap, ANTES de la hoja de estilos propia.
+export const FONT_LINKS = [
+  '<link rel="preconnect" href="https://fonts.googleapis.com">',
+  '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap">',
+].join('\n  ');
+
+// Idempotente: inserta los enlaces justo antes de la hoja de estilos propia.
+export function ensureFontLinks(html) {
+  if (html.includes('fonts.googleapis.com/css2')) return html;
+  const own = html.match(/[ \t]*<link rel="stylesheet" href="[^"]*style\.css[^"]*"\s*\/?>/);
+  if (!own) throw new Error('No se encontró la hoja de estilos propia para insertar Google Fonts');
+  const indent = own[0].match(/^[ \t]*/)[0];
+  const lines = FONT_LINKS.split('\n  ').map((line) => `${indent}${line}`).join('\n');
+  return html.replace(own[0], `${lines}\n${own[0]}`);
 }
 
 export function applyNavFooter(html, activeKey) {
   if (!NAV_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <nav> en el HTML');
   if (!FOOTER_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <footer> en el HTML');
-  return ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter()));
+  return ensureFontLinks(upgradeOgImage(ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter()))));
 }
 
 // Páginas de nivel superior que no genera ningún otro script: activeKey debe

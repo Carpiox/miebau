@@ -1,7 +1,9 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { ADSENSE_SCRIPT, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { socialMetaBlock } from './seo-meta.mjs';
+import { pickDescription, pickTitle } from './seo-text.mjs';
 import { COMMUNITIES, FEATURED_HOME, GROUPS, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -89,8 +91,15 @@ export function renderCommunityPage(data, key) {
   if (!community) throw new Error(`Comunidad sin configurar: ${key}`);
   const entries = entriesOfCommunity(data, key);
   const url = `https://miebau.es${communityUrl(key)}`;
-  const title = `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas | MIEBAU`;
-  const description = `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, agrupadas en comunes, ciencias, sociales y artes y humanidades.`;
+  const title = pickTitle([
+    `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas | MIEBAU`,
+    `Exámenes PAU en ${community.withArticle}: ${entries.length} asignaturas`,
+  ], { label: `título del índice de ${key}` });
+  const description = pickDescription([
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, agrupadas en comunes, ciencias, sociales y artes y humanidades.`,
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas, por ramas: comunes, ciencias, sociales y artes.`,
+    `Índice de exámenes PAU 2026 en ${community.withArticle}: estructura verificada de ${entries.length} asignaturas por ramas.`,
+  ], { label: `descripción del índice de ${key}` });
   const others = Object.entries(COMMUNITIES).filter(([otherKey]) => otherKey !== key);
   const groups = GROUPS.map((group) => renderGroup(data, community, group, entries)).join('\n\n');
   const ponderacionLinks = community.ponderaciones
@@ -110,12 +119,13 @@ export function renderCommunityPage(data, key) {
   <title>${ogTitle}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${url}">
-  <meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Miebau"><meta property="og:title" content="${ogTitle}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://miebau.es/assets/miniatura.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${ogTitle}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="https://miebau.es/assets/miniatura.jpg">
+${socialMetaBlock({ escapedTitle: ogTitle, escapedDescription: escapeHtml(description), url })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${breadcrumb(community, key)}</script>
-  ${ADSENSE_SCRIPT}
+  ${ADSENSE_META}
 </head>
 <body>
   ${renderNav('examenes')}

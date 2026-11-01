@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>og-miebau (fuente)</title>
+<!-- Fuente de assets/og-miebau.jpg (1200x630). Se renderiza con Playwright/Chromium:
+     page.setViewportSize({width:1200,height:630}); page.screenshot({type:'jpeg',quality:86}). -->
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;overflow:hidden;font-family:Inter,'DM Sans',system-ui,sans-serif;color:#fff;background:linear-gradient(135deg,#12213d 0%,#2b2a8f 55%,#5a43f2 100%);position:relative}
+.glow{position:absolute;right:-160px;top:-180px;width:640px;height:640px;border-radius:50%;background:rgba(255,255,255,.09)}
+.glow2{position:absolute;right:120px;bottom:-260px;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.05)}
+.wrap{position:relative;height:100%;padding:72px 84px;display:flex;flex-direction:column;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:22px;font-weight:800;font-size:60px;letter-spacing:-.05em}
+.mark{width:84px;height:84px;border-radius:26px;display:grid;place-items:center;background:linear-gradient(135deg,#7a63ff,#4934d8);box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.mark svg{width:48px;height:48px}
+.brand b{color:#a79bff;font-weight:800}
+h1{font-size:92px;line-height:1.02;letter-spacing:-.045em;font-weight:800;max-width:900px}
+h1 span{color:#b9afff}
+.tags{display:flex;gap:14px;flex-wrap:wrap}
+.tags span{padding:12px 24px;border-radius:99px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.28);font-size:30px;font-weight:700}
+.url{font-size:30px;font-weight:700;opacity:.85;position:absolute;right:84px;top:100px}
+</style></head><body>
+<div class="glow"></div><div class="glow2"></div>
+<div class="wrap">
+  <div class="brand"><div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.6 4.6L19 7.5"/></svg></div><div>mi<b>ebau</b></div></div>
+  <h1>Tu EvAU,<br><span>con todo claro.</span></h1>
+  <div class="tags"><span>Calculadora</span><span>Ponderaciones</span><span>Exámenes</span><span>Notas de corte</span></div>
+</div>
+<div class="url">miebau.es</div>
+</body></html>

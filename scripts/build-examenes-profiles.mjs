@@ -2,7 +2,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { ADSENSE_SCRIPT, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { socialMetaBlock } from './seo-meta.mjs';
 import {
   HOME_FEATURED_END,
   HOME_FEATURED_START,
@@ -350,11 +351,13 @@ function renderProfile(data, entry) {
   <title>${escapeHtml(entry.seo.title)}</title>
   <meta name="description" content="${escapeHtml(entry.seo.meta_description)}">
   <link rel="canonical" href="${canonical}">
+${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescription: escapeHtml(entry.seo.meta_description), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
-  ${ADSENSE_SCRIPT}
+  ${ADSENSE_META}
 </head>
 <body>
   ${renderNav('examenes')}
@@ -442,7 +445,7 @@ function renderLatestExamSection(entries) {
             <div class="exam-title">${escapeHtml(entry.asignatura)}</div>
             <div class="exam-meta">${escapeHtml(entry.comunidad)}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha →</a>
+          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('');
 
   return `    <section class="card" aria-labelledby="latestExamsTitle" style="margin-top: 0.5rem;">

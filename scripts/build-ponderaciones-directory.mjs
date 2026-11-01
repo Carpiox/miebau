@@ -48,7 +48,7 @@ function renderCard(university) {
     ? 'Universidad privada'
     : university.id.endsWith('-publicas') ? 'Cobertura pública regional' : 'Universidad pública';
   const link = university.profile
-    ? `<a class="catalog-profile-link" href="${escapeHtml(university.profile)}">Ver ponderaciones →</a>`
+    ? `<a class="catalog-profile-link" href="${escapeHtml(university.profile)}">Ver ponderaciones <span aria-hidden="true">→</span></a>`
     : '';
   return `<article class="pdf-card"><div class="pdf-card-heading"><span class="pdf-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${escapeHtml(university.region)}</span></div><div class="uni-name">${escapeHtml(university.name)}</div><div class="uni-city">${kindLabel} · ${escapeHtml(university.mode || 'Presencial')}</div>${link}</article>`;
 }

@@ -5,7 +5,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-import { ADSENSE_SCRIPT } from '../scripts/build-nav-footer.mjs';
+import { ADSENSE_META } from '../scripts/build-nav-footer.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => readFileSync(path.join(ROOT, file), 'utf8');
@@ -20,12 +20,21 @@ test('ads.txt no está bloqueado ni reescrito por robots.txt, _redirects o _head
   assert.equal(execSync('git ls-files _headers', { cwd: ROOT }).toString().trim(), '');
 });
 
-test('todas las páginas HTML llevan el script de AdSense una sola vez, dentro de <head>', () => {
+test('ninguna página HTML carga adsbygoogle.js ni gtag.js de forma estática (solo tras consentimiento)', () => {
   const files = execSync('git ls-files "*.html"', { cwd: ROOT }).toString().trim().split('\n');
   assert(files.length >= 199);
   for (const file of files) {
     const html = read(file);
-    assert.equal(html.split(ADSENSE_SCRIPT).length - 1, 1, `${file}: script ausente o duplicado`);
-    assert(html.indexOf(ADSENSE_SCRIPT) < html.indexOf('</head>'), `${file}: script fuera de <head>`);
+    assert(!/adsbygoogle\.js/.test(html), `${file}: carga adsbygoogle.js sin consentimiento`);
+    assert(!/googletagmanager\.com/.test(html), `${file}: carga gtag.js sin consentimiento`);
+  }
+});
+
+test('todas las páginas HTML llevan la etiqueta de verificación de AdSense una sola vez, dentro de <head>', () => {
+  const files = execSync('git ls-files "*.html"', { cwd: ROOT }).toString().trim().split('\n');
+  for (const file of files) {
+    const html = read(file);
+    assert.equal(html.split(ADSENSE_META).length - 1, 1, `${file}: etiqueta ausente o duplicada`);
+    assert(html.indexOf(ADSENSE_META) < html.indexOf('</head>'), `${file}: etiqueta fuera de <head>`);
   }
 });
