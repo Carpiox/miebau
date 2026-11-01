@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { socialMetaBlock } from './seo-meta.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'notas-corte-2026.json');
@@ -134,7 +135,7 @@ function renderProfile(data, entry) {
   <title>${title}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${canonical}">
-  <meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Miebau"><meta property="og:title" content="${title}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://miebau.es/assets/miniatura.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="https://miebau.es/assets/miniatura.jpg">
+${socialMetaBlock({ escapedTitle: title, escapedDescription: escapeHtml(description), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>

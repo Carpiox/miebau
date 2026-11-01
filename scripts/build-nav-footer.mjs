@@ -15,6 +15,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { upgradeOgImage } from './seo-meta.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -72,7 +73,7 @@ export function ensureAdsScript(html) {
 export function applyNavFooter(html, activeKey) {
   if (!NAV_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <nav> en el HTML');
   if (!FOOTER_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <footer> en el HTML');
-  return ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter()));
+  return upgradeOgImage(ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter())));
 }
 
 // Páginas de nivel superior que no genera ningún otro script: activeKey debe

@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { ADSENSE_META, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ensureSocialMeta, socialMetaBlock } from './seo-meta.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'ponderaciones-2026-2027.json');
@@ -406,6 +407,7 @@ function renderPublicProfile(data, university, records) {
   <title>${escapeHtml(university.name)} · Ponderaciones 2026-2027 · Miebau</title>
   <meta name="description" content="${escapeHtml(metaDescription(university, coverage))}">
   <link rel="canonical" href="${canonical}">
+${socialMetaBlock({ escapedTitle: `${escapeHtml(university.name)} · Ponderaciones 2026-2027 · Miebau`, escapedDescription: escapeHtml(metaDescription(university, coverage)), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
   <script src="/js/site.js" defer></script>
@@ -526,7 +528,7 @@ async function expectedFiles(data) {
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
     const withRelated = upsertPrivateRelatedSection(withSchema, renderRelatedUniversitiesSection(data, university));
     const withNavFooter = applyNavFooter(withRelated, 'ponderaciones');
-    files.push({ filePath, content: withNavFooter });
+    files.push({ filePath, content: ensureSocialMeta(withNavFooter) });
   }
   const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
   const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));

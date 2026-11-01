@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { socialMetaBlock } from './seo-meta.mjs';
 import {
   HOME_FEATURED_END,
   HOME_FEATURED_START,
@@ -350,6 +351,7 @@ function renderProfile(data, entry) {
   <title>${escapeHtml(entry.seo.title)}</title>
   <meta name="description" content="${escapeHtml(entry.seo.meta_description)}">
   <link rel="canonical" href="${canonical}">
+${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescription: escapeHtml(entry.seo.meta_description), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>

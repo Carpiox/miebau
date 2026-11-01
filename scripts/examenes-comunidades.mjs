@@ -2,6 +2,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { socialMetaBlock } from './seo-meta.mjs';
 import { COMMUNITIES, FEATURED_HOME, GROUPS, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -110,7 +111,7 @@ export function renderCommunityPage(data, key) {
   <title>${ogTitle}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${url}">
-  <meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Miebau"><meta property="og:title" content="${ogTitle}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://miebau.es/assets/miniatura.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${ogTitle}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="https://miebau.es/assets/miniatura.jpg">
+${socialMetaBlock({ escapedTitle: ogTitle, escapedDescription: escapeHtml(description), url })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
