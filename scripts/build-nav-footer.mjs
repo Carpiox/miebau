@@ -70,10 +70,29 @@ export function ensureAdsScript(html) {
   return withoutScript.replace(/\n?<\/head>/, `\n  ${ADSENSE_META}\n</head>`);
 }
 
+// Google Fonts. Antes: @import dentro de css/style.css (cadena CSS → CSS de
+// Google → fuentes, bloquea el render y sin preconnect). Ahora: preconnect +
+// <link rel="stylesheet"> con display=swap, ANTES de la hoja de estilos propia.
+export const FONT_LINKS = [
+  '<link rel="preconnect" href="https://fonts.googleapis.com">',
+  '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap">',
+].join('\n  ');
+
+// Idempotente: inserta los enlaces justo antes de la hoja de estilos propia.
+export function ensureFontLinks(html) {
+  if (html.includes('fonts.googleapis.com/css2')) return html;
+  const own = html.match(/[ \t]*<link rel="stylesheet" href="[^"]*style\.css[^"]*"\s*\/?>/);
+  if (!own) throw new Error('No se encontró la hoja de estilos propia para insertar Google Fonts');
+  const indent = own[0].match(/^[ \t]*/)[0];
+  const lines = FONT_LINKS.split('\n  ').map((line) => `${indent}${line}`).join('\n');
+  return html.replace(own[0], `${lines}\n${own[0]}`);
+}
+
 export function applyNavFooter(html, activeKey) {
   if (!NAV_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <nav> en el HTML');
   if (!FOOTER_PLACEHOLDER.test(html)) throw new Error('No se encontró el placeholder de <footer> en el HTML');
-  return upgradeOgImage(ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter())));
+  return ensureFontLinks(upgradeOgImage(ensureAdsScript(html.replace(NAV_PLACEHOLDER, renderNav(activeKey)).replace(FOOTER_PLACEHOLDER, renderFooter()))));
 }
 
 // Páginas de nivel superior que no genera ningún otro script: activeKey debe

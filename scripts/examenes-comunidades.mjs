@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { socialMetaBlock } from './seo-meta.mjs';
 import { pickDescription, pickTitle } from './seo-text.mjs';
 import { COMMUNITIES, FEATURED_HOME, GROUPS, groupOf } from './examenes-taxonomia.mjs';
@@ -121,6 +121,7 @@ export function renderCommunityPage(data, key) {
   <link rel="canonical" href="${url}">
 ${socialMetaBlock({ escapedTitle: ogTitle, escapedDescription: escapeHtml(description), url })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${breadcrumb(community, key)}</script>

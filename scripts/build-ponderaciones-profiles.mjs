@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { ADSENSE_META, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { ensureSocialMeta, socialMetaBlock } from './seo-meta.mjs';
 import { inDescriptionRange, inTitleRange, pickDescription, pickTitle } from './seo-text.mjs';
 
@@ -469,6 +469,7 @@ function renderPublicProfile(data, university, records) {
   <link rel="canonical" href="${canonical}">
 ${socialMetaBlock({ escapedTitle: escapeHtml(seoTitle(university)), escapedDescription: escapeHtml(metaDescription(university, coverage)), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css?v=20260831-perfiles">
   <script src="/js/site.js" defer></script>
 ${scripts}  <script type="application/ld+json">${breadcrumb}</script>

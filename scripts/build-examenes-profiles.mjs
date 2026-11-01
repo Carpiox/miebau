@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, FONT_LINKS, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { socialMetaBlock } from './seo-meta.mjs';
 import {
   HOME_FEATURED_END,
@@ -353,6 +353,7 @@ function renderProfile(data, entry) {
   <link rel="canonical" href="${canonical}">
 ${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescription: escapeHtml(entry.seo.meta_description), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
