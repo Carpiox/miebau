@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { ADSENSE_SCRIPT, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { COMMUNITIES, FEATURED_HOME, GROUPS, groupOf } from './examenes-taxonomia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -115,7 +115,7 @@ export function renderCommunityPage(data, key) {
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${breadcrumb(community, key)}</script>
-  ${ADSENSE_SCRIPT}
+  ${ADSENSE_META}
 </head>
 <body>
   ${renderNav('examenes')}

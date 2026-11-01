@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { ADSENSE_SCRIPT, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ADSENSE_META, renderFooter, renderNav } from './build-nav-footer.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'notas-corte-2026.json');
@@ -139,7 +139,7 @@ function renderProfile(data, entry) {
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
   <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
-  ${ADSENSE_SCRIPT}
+  ${ADSENSE_META}
 </head>
 <body>
   ${renderNav('notas-de-corte')}
