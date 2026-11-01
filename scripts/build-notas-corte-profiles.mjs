@@ -251,7 +251,7 @@ function renderLatestSection(entries) {
             <div class="exam-title">${escapeHtml(entry.grado)}</div>
             <div class="exam-meta">${escapeHtml(entry.universidad)} · ${escapeHtml(entry.comunidad)} · ${formatNota(entry.nota)}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha →</a>
+          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('')}
       </div>`
     : '<p class="catalog-empty-state">Todavía no hay notas de corte verificadas publicadas. Iremos añadiendo universidades a medida que verifiquemos cada fuente oficial — sin datos inventados ni de relleno.</p>';

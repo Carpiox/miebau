@@ -133,7 +133,7 @@ function renderLatestPonderacionesSection(data) {
             <div class="exam-title">${escapeHtml(university.name)}</div>
             <div class="exam-meta">${escapeHtml(university.region)} · Verificado el ${escapeHtml(displayDate(checkedAt))}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(university.profile)}">Ver ficha →</a>
+          <a class="exam-link" href="${escapeHtml(university.profile)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('')}
       </div>`
     : '<p class="catalog-empty-state">Pendiente de publicación: todavía no hay ponderaciones verificadas vigentes para 2027.</p>';

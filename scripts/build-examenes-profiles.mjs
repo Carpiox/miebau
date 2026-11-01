@@ -444,7 +444,7 @@ function renderLatestExamSection(entries) {
             <div class="exam-title">${escapeHtml(entry.asignatura)}</div>
             <div class="exam-meta">${escapeHtml(entry.comunidad)}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha →</a>
+          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('');
 
   return `    <section class="card" aria-labelledby="latestExamsTitle" style="margin-top: 0.5rem;">

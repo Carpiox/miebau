@@ -79,7 +79,7 @@
               <span class="tag year">${escapeHtml(result.anio)}</span>
               <span class="tag">${escapeHtml(result.comunidad)}</span>
             </div>
-            <a class="exam-link" href="${escapeHtml(result.url)}">Ver ficha →</a>
+            <a class="exam-link" href="${escapeHtml(result.url)}">Ver ficha <span aria-hidden="true">→</span></a>
           </div>`).join('');
   }
 

@@ -224,3 +224,10 @@ footer { padding:0 24px 34px; border:0; color:var(--text-muted); font-size:.83re
 .cookie-table tbody tr:last-child td { border-bottom:0; }
 .cookie-table code { font-size:.82rem; word-break:break-word; }
 .share-feedback, .share-section .share-feedback { min-height:1.5em; margin:10px auto 0; color:var(--navy); font-size:.9rem; font-weight:700; text-align:center; }
+/* Títulos de tarjeta que pasaron de h3 a h2 para no saltar de nivel (H1 → H3):
+   mismo aspecto que el h3 que sustituyen. */
+.feature-card h2, .info-card h2 { font-size:1.05rem; }
+.feature-card h2 { margin-bottom:7px; }
+.info-card h2 { margin:10px 0 7px; }
+.contact-option h2 { margin:0 0 2px; font-size:.92rem; }
+.newsletter h2 { margin:0 0 4px; font-size:1rem; }
