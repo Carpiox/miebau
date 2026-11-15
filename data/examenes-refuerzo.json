@@ -192,6 +192,107 @@
           "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de las universidades públicas de Madrid está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
         }
       ]
+    },
+    "/examenes/region-de-murcia/matematicas-ii": {
+      "lead": "El examen de Matemáticas II (mates) de la PAU (EBAU) en la Región de Murcia dura 90 minutos y tiene cinco preguntas de 2 puntos: las tres primeras son obligatorias y en la cuarta y la quinta eliges una de dos opciones. Aquí tienes la estructura oficial de 2026, los criterios de corrección y los PDF de las convocatorias de junio y julio.",
+      "curso_nota": "Es el último examen oficial publicado (PAU 2026, convocatorias de junio y julio) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Material permitido y cómo se corrige Matemáticas II",
+          "parrafos": [
+            "Las instrucciones oficiales de las dos convocatorias de 2026 indican que solo se pueden usar las tablas estadísticas que se adjuntan al examen y que no se permiten calculadoras gráficas ni programables. En las preguntas 4 y 5 hay que contestar solo una de las dos opciones: si respondes las dos, solo se corrige la primera.",
+            "Según los criterios de calificación de junio, una pregunta bien contestada pero sin el desarrollo necesario se valora con 0 puntos. Los errores simples de cálculo restan entre 0,1 y 0,25 puntos, y los errores importantes o los errores simples reiterados pueden dejar ese apartado en 0. También se valoran el vocabulario y la notación, y puedes elegir el método que prefieras, aunque si demuestra falta de comprensión de conocimientos básicos la puntuación puede ser menor. Siempre que sea posible, un error en un apartado no debe afectar a los demás.",
+            "Los criterios de junio desglosan cada pregunta por apartados. Por ejemplo, la pregunta 1 daba 0,75 puntos por plantear bien el sistema, 0,25 por justificar que era compatible determinado y 1 punto por calcular la solución en función de k. La opción 4.1 daba 1 punto por justificar que la función cumple las condiciones del teorema de Lagrange (o de Rolle) y 1 punto por usarlo para concluir."
+          ]
+        },
+        {
+          "h2": "Qué cambió entre la convocatoria de junio y la de julio de 2026",
+          "parrafos": [
+            "En las dos convocatorias cada pregunta mantuvo su bloque. La pregunta 1 fue un sistema de ecuaciones con un parámetro k que hay que plantear, discutir y resolver (inversión en publicidad, materiales y logística en junio; cajas con piezas de fruta en julio). La pregunta 2 fue de optimización (el ángulo que hace máxima el área de un rectángulo en junio; el punto de una gráfica a distancia mínima de otro punto en julio) y la 3, de geometría en el espacio (posición relativa de una recta y un plano en junio; ecuación de un plano que contiene un punto y una recta en julio).",
+            "La opción 4.1 pidió justificar la existencia de un punto en un intervalo a partir de una derivada y la 4.2 trabajó con integrales (una primitiva en junio; una integral indefinida y un área en julio). La pregunta 5 fue de probabilidad: en la opción 5.1, probabilidad total y condicionada (tres máquinas en junio, dos urnas en julio) y en la 5.2, distribuciones (bombillas defectuosas en junio, una distribución normal de edades en julio).",
+            "Con solo dos exámenes se puede decir cómo se reparten los bloques, no predecir los enunciados de 2027."
+          ]
+        },
+        {
+          "h2": "Cómo preparar mates con estos exámenes",
+          "parrafos": [
+            "Escribe siempre el desarrollo completo: sin él, una respuesta correcta no puntúa. Practica la pregunta 1 como un problema de modelización (traducir un enunciado a un sistema con parámetro y discutirlo según los valores de k) y la 2 como un problema de optimización, donde parte de los puntos está en plantear bien la función antes de derivar.",
+            "En las preguntas 4 y 5 puedes elegir, así que conviene dominar al menos una opción completa de cada una en lugar de repasar las dos a medias, y no mezclar apartados de opciones distintas. Aprende a manejar las tablas estadísticas que se adjuntan, porque son el único material permitido, y entrena sin calculadora gráfica ni programable. Como orientación, con 90 minutos y cinco preguntas del mismo valor salen unos 18 minutos por pregunta, dejando algo de margen para revisar."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuántas preguntas tiene el examen de Matemáticas II de la PAU en Murcia?",
+          "a": "Cinco preguntas de 2 puntos. Las preguntas 1, 2 y 3 son obligatorias; en la 4 y en la 5 se elige una de las dos opciones."
+        },
+        {
+          "q": "¿Cuánto dura el examen de Matemáticas II?",
+          "a": "90 minutos, como el resto de exámenes de la PAU en la Región de Murcia."
+        },
+        {
+          "q": "¿Puedo usar calculadora en Matemáticas II?",
+          "a": "Las instrucciones oficiales de 2026 solo permiten las tablas estadísticas que se adjuntan y prohíben las calculadoras gráficas y programables. Consulta en tu centro qué otro material está permitido."
+        },
+        {
+          "q": "¿Qué pasa si respondo a las dos opciones de la pregunta 4 o de la 5?",
+          "a": "Solo se corrige la primera opción que hayas contestado."
+        },
+        {
+          "q": "¿Puntúa una respuesta correcta sin desarrollo?",
+          "a": "No. Según los criterios de calificación de junio de 2026, las preguntas contestadas correctamente sin incluir el desarrollo necesario se valoran con 0 puntos."
+        },
+        {
+          "q": "¿Cuánto pondera Matemáticas II para entrar a un grado en la Universidad de Murcia?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de la Universidad de Murcia está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
+    },
+    "/examenes/comunidad-de-madrid/ingles": {
+      "lead": "El examen de Inglés de la PAU (EvAU) en la Comunidad de Madrid dura 90 minutos y tiene cinco preguntas que se contestan en inglés: comprensión (2 puntos), respuestas con tus propias palabras (2), léxico (1), transformaciones gramaticales (2) y un writing de 140 a 180 palabras (3). Hay elección en las preguntas 1, 4 y 5.",
+      "curso_nota": "Es el último modelo oficial publicado (PAU 2026) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Cómo repartir los 90 minutos en el examen de Inglés",
+          "parrafos": [
+            "El writing vale tres de los diez puntos, más que cualquier otra pregunta, y hay que escribir entre 140 y 180 palabras sobre uno de los dos temas propuestos. Merece la pena reservarle un tramo propio del examen y dejar tiempo para contar las palabras y releer, en lugar de dejarlo para los últimos minutos.",
+            "En la pregunta 1 solo respondes a dos de las tres afirmaciones y en la 4 a cuatro de las seis transformaciones: lee primero todas las opciones y marca cuáles vas a contestar antes de redactar, porque si respondes a más de las solicitadas solo se corrigen las primeras."
+          ]
+        },
+        {
+          "h2": "Cómo preparar Inglés con estos exámenes",
+          "parrafos": [
+            "Cada pregunta entrena una destreza distinta. En la 1, practica clasificar afirmaciones como verdaderas, falsas o no dadas y señalar la evidencia del texto. En la 2, contesta con tus propias palabras en lugar de copiar frases del texto. La 3 es de léxico: localizar cinco términos equivalentes. En la 4, repasa las estructuras gramaticales que se transforman y escoge las cuatro que mejor dominas. Para el writing, escribe composiciones completas de 140 a 180 palabras en tiempo limitado.",
+            "El documento oficial identifica la asignatura como Inglés y exige un nivel de dominio B1, con comprensión, producción y mediación escrita. Compara tus respuestas con el modelo ordinario y con el extraordinario enlazados en esta ficha."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuánto dura el examen de Inglés de la PAU en Madrid?",
+          "a": "90 minutos."
+        },
+        {
+          "q": "¿Cuántas preguntas tiene y cuánto vale cada una?",
+          "a": "Cinco preguntas: comprensión (2 puntos), respuestas con palabras propias (2), léxico (1), transformaciones gramaticales (2) y un writing (3)."
+        },
+        {
+          "q": "¿Qué preguntas tienen elección?",
+          "a": "La 1, la 4 y la 5. En la 1 se responden 2 de 3 afirmaciones, en la 4 se hacen 4 de 6 transformaciones y en la 5 se elige 1 de 2 propuestas de escritura."
+        },
+        {
+          "q": "¿Cuántas palabras debe tener el writing?",
+          "a": "Entre 140 y 180 palabras, sobre uno de los dos temas propuestos. Vale 3 puntos."
+        },
+        {
+          "q": "¿Qué pasa si respondo a más opciones de las pedidas?",
+          "a": "Solo se corrigen las primeras que hayas contestado, así que conviene marcar la selección antes de redactar."
+        },
+        {
+          "q": "¿Cuánto pondera Inglés para entrar a un grado en Madrid?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de las universidades públicas de Madrid está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
     }
   }
 }
