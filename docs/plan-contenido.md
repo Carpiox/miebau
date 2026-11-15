@@ -20,8 +20,8 @@ Solo lectura: no se ha tocado ninguna página. Inventario completo de las 233 p�
 |---|---|---|---|
 | Notas de corte (fichas) | 68 | **68** | **0** |
 | Ponderaciones (fichas) | 82 | 66 (14 públicas verificadas con datos, 22 públicas pendientes/bloqueadas, 30 privadas sin publicación) | 61 (casi todas de privadas indexadas) |
-| Exámenes Madrid | 33 | 29 | 56 aprox. |
-| Exámenes Murcia | 31 | 3 | resto de las 196 de exámenes |
+| Exámenes Madrid | 33 | 29 | 61 (fichas) |
+| Exámenes Murcia | 31 | 3 | 135 (fichas) |
 | Otras | — | `/contacto`, `/guias`, `/politica-privacidad`, `/ponderaciones`, `/precios`, `/sobre-nosotros` | — |
 
 ### Lectura honesta (importante para la estrategia)
@@ -83,7 +83,7 @@ Criterio general: solo bloques con fuente verificable. Meta de similitud <0,50 e
 ### 3.5 Home, guías, calendario, precios, premium, contacto, legales
 - **Home** (331 palabras, 70 impr., pos 61): el título (`Miebau · Tu EvAU, con todo claro`) no contiene ninguna keyword buscada. Propuesta: reformular título/H1 y la intro con el uso real (calculadora, ponderaciones, exámenes PAU por comunidad).
 - **Guías** (86 palabras, 3 tarjetas, sin indexar): o se convierte en 2-3 guías cortas con fuente (cómo se calcula la nota, qué son las ponderaciones, cómo usar exámenes anteriores) o se recomienda `noindex`. Prefiero la primera, **pero solo con las fuentes de 3.2**.
-- **Precios / premium / contacto** (67-69 palabras): no son páginas para posicionar. Propuesta: contenido claro y breve; evaluar `noindex` en Lote 0 (premium tiene 8 impr. pos 5,9 por la palabra "premium", sin valor).
+- **Precios / premium / contacto** (67-69 palabras): no son páginas para posicionar. Propuesta: contenido claro y breve; evaluar `noindex` en Lote 0 (`/premium` tiene 8 impresiones en pos. 5,9, pero el export no dice con qué consulta; no la doy por valiosa).
 - **Calendario EBAU:** hoy `noindex` (62 palabras, sin fechas verificadas). Sin fuente oficial de fechas 2027 no se indexa.
 - **Legales:** correctas y completas, sin SEO. La política de privacidad (118 palabras) está incompleta (MIE-013) y es requisito para AdSense. Necesita que me confirmes datos del titular y del tratamiento (ver sección 5).
 
@@ -92,11 +92,11 @@ Criterio general: solo bloques con fuente verificable. Meta de similitud <0,50 e
 | Lote | Contenido | Impr. 3 m | Depende de |
 |---|---|---|---|
 | 0 | **Indexación** (solo noindex/enlaces/sitemap, sin contenido): D1, D2, D6 | — | Tu OK a D1, D2 |
-| 1 | Exámenes Murcia (31 fichas + índice) | ~140 | — |
+| 1 | Exámenes Murcia (31 fichas + índice) | 135 + 12 | — |
 | 2 | Calculadora + hub notas de corte (+ tabla de 68 titulaciones) + hub ponderaciones | ~160 | D3, fuente de la fórmula |
 | 3 | Home | 70 | D3, D4 |
 | 4 | Ponderaciones verificadas (15) | ~5 | — |
-| 5 | Exámenes Madrid (33 fichas + índice) | ~60 | — |
+| 5 | Exámenes Madrid (33 fichas + índice) | 61 + 9 | — |
 | 6 | Guías, precios, premium, contacto, legales | ~10 | Datos legales (sec. 5) |
 
 Tras cada lote: `node --test tests/*.test.mjs`, generadores en `--check`, `curl` del HTML crudo, similitud entre fichas antes/después, JSON-LD válido, 0 enlaces rotos, 0 huérfanas; commit por lote, **sin push**. `docs/seo-seguimiento.md` se actualiza con fecha, hipótesis y métricas a 2-4 semanas (posición media, impresiones, clics, páginas indexadas; valores base de hoy: 10 clics, 431 impresiones, 57 indexadas).
