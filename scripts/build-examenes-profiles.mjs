@@ -20,6 +20,7 @@ import { COMMUNITIES, GROUPS, RELATED, RELATED_OVERRIDES, groupOf } from './exam
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'examenes-seo.json');
+const REFUERZO_PATH = path.join(ROOT, 'data', 'examenes-refuerzo.json');
 const OUTPUT_DIR = path.join(ROOT, 'examenes');
 const EXAM_INDEX_PATH = path.join(ROOT, 'examenes.html');
 const HOME_PATH = path.join(ROOT, 'index.html');
@@ -329,6 +330,78 @@ ${sections.join('\n')}
 `;
 }
 
+
+// ---------------------------------------------------------------------------
+// Refuerzo editorial por ficha (data/examenes-refuerzo.json). Es opcional: las
+// fichas sin entrada se renderizan exactamente igual que antes. Cada texto del
+// refuerzo debe proceder de los PDF oficiales de la convocatoria o de
+// data/examenes-seo.json; nunca de datos sin verificar.
+// ---------------------------------------------------------------------------
+function validateRefuerzo(refuerzo, data) {
+  assert(refuerzo && typeof refuerzo === 'object' && refuerzo.entries && typeof refuerzo.entries === 'object', 'examenes-refuerzo.json necesita un objeto entries');
+  assert(!/TODO|pendiente_de_verificar/.test(JSON.stringify(refuerzo.entries)), 'El refuerzo no puede contener marcadores TODO ni pendientes');
+  for (const [url, item] of Object.entries(refuerzo.entries)) {
+    const entry = data.entries.find((candidate) => candidate.url === url);
+    assert(entry, `El refuerzo apunta a una ficha inexistente: ${url}`);
+    assert(entry.seo.title.length <= 60, `Título demasiado largo en ${url}: ${entry.seo.title.length}`);
+    assert(entry.seo.meta_description.length >= 120 && entry.seo.meta_description.length <= 155, `Meta description fuera de 120-155 en ${url}: ${entry.seo.meta_description.length}`);
+    assert(item.lead && wordCount(item.lead) >= 30 && wordCount(item.lead) <= 80, `El lead de ${url} debe tener 30-80 palabras`);
+    assert(item.curso_nota, `Falta curso_nota en ${url}`);
+    assert(Array.isArray(item.secciones) && item.secciones.length >= 2, `Faltan secciones en ${url}`);
+    for (const section of item.secciones) assert(section.h2 && Array.isArray(section.parrafos) && section.parrafos.length > 0 && section.parrafos.every(Boolean), `Sección incompleta en ${url}`);
+    assert(Array.isArray(item.faq) && item.faq.length >= 3 && item.faq.length <= 6, `Cada refuerzo necesita entre 3 y 6 preguntas frecuentes (${url})`);
+    assert(new Set(item.faq.map((faq) => faq.q)).size === item.faq.length, `Preguntas repetidas en ${url}`);
+    for (const faq of item.faq) assert(faq.q && faq.a, `Pregunta o respuesta vacía en ${url}`);
+  }
+  return refuerzo;
+}
+
+function applyRefuerzo(data, refuerzo) {
+  validateRefuerzo(refuerzo, data);
+  return {
+    ...data,
+    entries: data.entries.map((entry) => {
+      const item = refuerzo.entries[entry.url];
+      if (!item) return entry;
+      return { ...entry, refuerzo: item };
+    }),
+  };
+}
+
+function linkifyFaqAnswer(answer) {
+  return escapeHtml(answer).replace('con la calculadora', 'con la <a href="/calculadora">calculadora</a>');
+}
+
+function renderFaqJsonLd(entry) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: entry.refuerzo.faq.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  }).replace(/</g, '\\u003c');
+}
+
+function renderRefuerzoSections(entry) {
+  if (!entry.refuerzo) return '';
+  const sections = entry.refuerzo.secciones.map((section) => `        <section>
+          <h2>${escapeHtml(section.h2)}</h2>
+${section.parrafos.map((paragraph) => `          <p>${escapeHtml(paragraph)}</p>`).join('\n')}
+        </section>`).join('\n\n');
+  const faq = `        <section aria-labelledby="faq-examen">
+          <h2 id="faq-examen">Preguntas frecuentes sobre el examen de ${escapeHtml(entry.asignatura)}</h2>
+${entry.refuerzo.faq.map((item) => `          <h3>${escapeHtml(item.q)}</h3>
+          <p>${linkifyFaqAnswer(item.a)}</p>`).join('\n')}
+        </section>`;
+  return `
+${sections}
+
+${faq}
+`;
+}
+
 function renderProfile(data, entry) {
   const details = entry.contenido.datos_comunidad_asignatura;
   const canonical = `https://miebau.es${entry.url}`;
@@ -356,7 +429,7 @@ ${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescriptio
   ${FONT_LINKS}
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/site.js" defer></script>
-  <script type="application/ld+json">${renderBreadcrumb(entry)}</script>
+  <script type="application/ld+json">${renderBreadcrumb(entry)}</script>${entry.refuerzo ? `\n  <script type="application/ld+json">${renderFaqJsonLd(entry)}</script>` : ''}
   ${ADSENSE_META}
 </head>
 <body>
@@ -365,13 +438,13 @@ ${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescriptio
     <header class="content-hero">
       <span class="eyebrow">Estructura oficial · ${escapeHtml(details.curso_referencia)}</span>
       <h1>${escapeHtml(entry.seo.h1)}</h1>
-      <p>Formato, duración y criterios comprobados en documentación oficial ${officialContext}.</p>
+      <p>${entry.refuerzo ? escapeHtml(entry.refuerzo.lead) : `Formato, duración y criterios comprobados en documentación oficial ${officialContext}.`}</p>
     </header>
 
     <section class="contact-grid profile-page-grid">
       <article class="card prose">
-        <h2>Cómo es el examen</h2>
-        <p>${escapeHtml(entry.contenido.intro)}</p>${officialName}
+        <h2>${entry.refuerzo ? `Cómo es el examen de ${escapeHtml(entry.asignatura)} de la PAU en ${escapeHtml(COMMUNITIES[communitySlug(entry)].short)}` : 'Cómo es el examen'}</h2>
+        <p>${escapeHtml(entry.contenido.intro)}</p>${entry.refuerzo ? `\n        <p><strong>Curso de referencia:</strong> ${escapeHtml(entry.refuerzo.curso_nota)}</p>` : ''}${officialName}
 
         <h2>Estructura verificada para 2026</h2>
         <dl class="profile-facts">
@@ -385,7 +458,7 @@ ${socialMetaBlock({ escapedTitle: escapeHtml(entry.seo.title), escapedDescriptio
 ${renderBlocks(details.bloques_o_temario_destacado)}
         </ul>
         <p><strong>Indicaciones específicas:</strong> ${escapeHtml(details.notas_especificas)}</p>
-
+${renderRefuerzoSections(entry)}
         <h2>Fuentes oficiales</h2>
         <p>La duración se contrasta con la información general PAU 2026 y la estructura con el documento específico de la materia.</p>
         <ul class="profile-source-list">
@@ -474,7 +547,8 @@ function renderHome(source, data) {
   return `${source.slice(0, startIndex)}${renderHomeFeatured(data)}${source.slice(endIndex + HOME_FEATURED_END.length)}`;
 }
 
-async function expectedFiles(data) {
+async function expectedFiles(rawData) {
+  const data = applyRefuerzo(rawData, JSON.parse(await readFile(REFUERZO_PATH, 'utf8')));
   const profileFiles = data.entries.map((entry) => ({
     filePath: outputPathFor(entry),
     content: renderProfile(data, entry),

@@ -187,7 +187,7 @@ test('todas las rutas limpias del lote aparecen una vez en el sitemap', () => {
 test('las fichas no dependen de un framework ni de contenido renderizado por JavaScript', () => {
   for (const entry of data.entries) {
     const html = readFileSync(outputPathFor(entry), 'utf8');
-    assert.match(html, /<article class="card prose">[\s\S]*<h2>Cómo es el examen<\/h2>/);
+    assert.match(html, /<article class="card prose">[\s\S]*<h2>Cómo es el examen[^<]*<\/h2>/);
     assert.match(html, /<h2>Estructura verificada para 2026<\/h2>[\s\S]*<dl class="profile-facts">/);
     assert(!/astro|__next|react/i.test(html));
   }

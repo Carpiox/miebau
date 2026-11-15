@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import test from 'node:test';
@@ -45,13 +45,14 @@ test('cada ficha existe, tiene SEO propio y cita la fuente oficial', () => {
     assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert(html.includes(formatNota(entry.nota)));
     assert(html.includes(source.sourceUrl));
-    assert.doesNotMatch(html, /<meta\s+name="robots"[^>]*content="[^"]*noindex/i, `${entry.slug} no debería llevar noindex: ya está verificado`);
+    assert.match(html, /<meta name="robots" content="noindex, follow">/, `${entry.slug} debe llevar noindex: las fichas se consolidan en la tabla del hub`);
+    assert(!html.includes('Más notas de corte de'), `${entry.slug} no debe enlazar a fichas hermanas`);
     assert(!html.includes('TODO'));
     assert(!/astro|__next|react/i.test(html));
   }
 });
 
-test('las rutas limpias no llevan rewrite explícito a .html y están una vez en el sitemap', () => {
+test('las rutas limpias no llevan rewrite explícito a .html y NO están en el sitemap (noindex)', () => {
   const rules = redirects.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
   for (const entry of data.entries) {
     assert(existsSync(outputPathFor(entry)), `Falta la ficha estática de ${entry.url}`);
@@ -61,45 +62,61 @@ test('las rutas limpias no llevan rewrite explícito a .html y están una vez en
       `_redirects no debe rewritear ${entry.url} a su .html: Cloudflare Pages ya sirve *.html en la ruta limpia automáticamente y una regla explícita aquí produce un bucle de redirección`,
     );
 
-    const expectedSitemapEntry = `<loc>https://miebau.es${entry.url}</loc>`;
-    assert.equal(sitemap.split(expectedSitemapEntry).length - 1, 1, `Entrada de sitemap ausente o duplicada para ${entry.url}`);
-    assert(!sitemap.includes(`https://miebau.es${entry.url}.html`));
+    assert(!sitemap.includes(`https://miebau.es${entry.url}`), `${entry.url} es noindex y no debe estar en el sitemap`);
   }
   assert(sitemap.includes('<loc>https://miebau.es/notas-de-corte</loc>'), 'el hub debe estar en el sitemap ahora que tiene contenido real');
 });
 
-test('el hub muestra el copy real y la cobertura y el dataLayer del filtro no mienten', () => {
-  assert(hubHtml.includes('Notas de corte EvAU: la guía antes de elegir grado'));
+test('el hub muestra el copy real, la cobertura y una tabla estática con todas las notas', () => {
+  assert(hubHtml.includes('Notas de corte de la Universidad de Murcia (curso 2025-2026)'));
   assert(hubHtml.includes('¿Qué es la nota de corte?'));
-  assert(hubHtml.includes('¿Cómo se calcula tu nota de admisión?'));
+  assert(hubHtml.includes('Cómo calcular tu nota para compararla con la nota de corte'));
   assert(hubHtml.includes('"@type":"FAQPage"'));
   assert(!hubHtml.includes('Próximamente'), 'el hub ya no debe presentarse como una función futura: tiene datos reales');
+  assert(!hubHtml.includes('MIEBAU_CUTOFF_DATA'), 'los datos ya no se embeben como array: la tabla estática es la fuente');
 
   const coverageMatch = hubHtml.match(/id="cutoffCoverageBadge">(?:<!--[^>]*-->)?([^<]+)/);
   assert(coverageMatch, 'falta el badge de cobertura');
   assert.equal(coverageMatch[1], `${data.entries.length} notas de corte publicadas`);
 
-  const dataMatch = hubHtml.match(/window\.MIEBAU_CUTOFF_DATA = (\[.*?\]);/s);
-  assert(dataMatch, 'falta el array MIEBAU_CUTOFF_DATA embebido');
-  const embedded = JSON.parse(dataMatch[1]);
-  assert.equal(embedded.length, data.entries.length);
-  for (const item of embedded) {
-    assert(data.entries.some((entry) => entry.url === item.url && entry.grado === item.grado), `Entrada embebida no coincide con el dataset: ${item.url}`);
+  const rows = [...hubHtml.matchAll(/<tr data-grado="([^"]*)"[^>]*data-nota="([^"]*)">([\s\S]*?)<\/tr>/g)];
+  assert.equal(rows.length, data.entries.length, 'la tabla debe tener una fila por entrada del dataset');
+  const decode = (value) => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  for (const entry of data.entries) {
+    const row = rows.find((candidate) => decode(candidate[1]) === entry.grado);
+    assert(row, `Falta la fila de ${entry.grado}`);
+    assert.equal(Number(row[2]), Number(entry.nota));
+    assert(row[3].includes(formatNota(entry.nota)), `La nota mostrada no coincide en ${entry.grado}`);
+    assert(row[3].includes(entry.turno.replace(/&/g, '&amp;')), `El cupo mostrado no coincide en ${entry.grado}`);
   }
 });
 
-test('la sección de últimas notas de corte respeta prioridad y enlaza a fichas existentes', () => {
-  const startMarker = '<!-- notas-corte-latest:generated:start -->';
-  const endMarker = '<!-- notas-corte-latest:generated:end -->';
-  const latestBlock = hubHtml.slice(
-    hubHtml.indexOf(startMarker) + startMarker.length,
-    hubHtml.indexOf(endMarker),
-  );
-  const expected = [...data.entries].sort((left, right) => right.prioridad - left.prioridad).slice(0, 20);
-  const hrefs = [...latestBlock.matchAll(/<a class="exam-link" href="([^"]+)">/g)].map((match) => match[1]);
+test('la tabla del hub va ordenada por nota, no enlaza a fichas noindex y cita la fuente oficial', () => {
+  const startMarker = '<!-- notas-corte-table:generated:start -->';
+  const endMarker = '<!-- notas-corte-table:generated:end -->';
+  const block = hubHtml.slice(hubHtml.indexOf(startMarker) + startMarker.length, hubHtml.indexOf(endMarker));
+  const notes = [...block.matchAll(/data-nota="([^"]+)"/g)].map((match) => Number(match[1]));
+  assert.deepEqual(notes, [...notes].sort((a, b) => b - a));
+  assert(!/href="\/notas-de-corte\//.test(block), 'la tabla no debe enlazar a fichas noindex');
+  for (const source of data.sources) assert(block.includes(source.sourceUrl), `Falta la fuente ${source.id}`);
+});
 
-  assert.deepEqual(hrefs, expected.map((entry) => entry.url));
-  for (const entry of expected) {
-    assert(existsSync(outputPathFor(entry)), `No existe la ficha estática de ${entry.url}`);
+test('ninguna página del sitio enlaza a las fichas noindex de notas de corte (salvo ellas mismas con el hub)', () => {
+  const slugs = data.entries.map((entry) => entry.url);
+  const htmlFiles = [];
+  const walk = (dir) => {
+    for (const item of readdirSync(dir, { withFileTypes: true })) {
+      if (item.name === '.git' || item.name === 'node_modules') continue;
+      const full = path.join(dir, item.name);
+      if (item.isDirectory()) walk(full);
+      else if (item.name.endsWith('.html')) htmlFiles.push(full);
+    }
+  };
+  walk(ROOT);
+  for (const file of htmlFiles) {
+    const html = readFileSync(file, 'utf8');
+    for (const url of slugs) {
+      assert(!html.includes(`href="${url}"`), `${path.relative(ROOT, file)} enlaza a ${url}, que es noindex`);
+    }
   }
 });

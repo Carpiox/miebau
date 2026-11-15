@@ -230,3 +230,12 @@ footer { padding:0 24px 34px; border:0; color:var(--text-muted); font-size:.83re
 .info-card h2 { margin:10px 0 7px; }
 .contact-option h2 { margin:0 0 2px; font-size:.92rem; }
 .newsletter h2 { margin:0 0 4px; font-size:1rem; }
+
+.cutoff-table { width:100%; min-width:640px; border-collapse:collapse; font-size:.9rem; }
+.cutoff-table th, .cutoff-table td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top; }
+.cutoff-table thead th { color:var(--navy); background:var(--surface-alt); font-size:.78rem; }
+.cutoff-table tbody th { font-weight:600; }
+.cutoff-table td:nth-child(3), .cutoff-table td:nth-child(5) { white-space:nowrap; }
+.cutoff-table tbody tr[hidden] { display:none; }
+.cutoff-table tbody tr:last-child td, .cutoff-table tbody tr:last-child th { border-bottom:0; }
+.cutoff-empty { margin:12px 0; color:var(--muted, inherit); }

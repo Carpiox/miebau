@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "nota": "Contenido de refuerzo de fichas de examen (Lote 1, 2026-11-15). Cada afirmación procede de los PDF oficiales de la convocatoria PAU 2026 (data/murcia/textos/*) o de data/examenes-seo.json; lo que no consta ahí no se escribe. Madrid Historia del Arte se basa solo en data/examenes-seo.json porque los PDF de Madrid no están en el repositorio. El title, el h1 y la meta description de estas fichas viven en data/examenes-seo.json.",
+  "entries": {
+    "/examenes/region-de-murcia/geografia": {
+      "lead": "El examen de Geografía de la PAU (EBAU) en la Región de Murcia dura 90 minutos y tiene cuatro bloques de 2,5 puntos: los dos primeros son obligatorios y en el tercero y el cuarto eliges una de dos propuestas. Aquí tienes cómo está organizado, cómo se corrige y los PDF oficiales de 2026.",
+      "curso_nota": "Es el último examen oficial publicado (PAU 2026, convocatorias de junio y julio) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Cómo se corrige el examen de Geografía",
+          "parrafos": [
+            "Si respondes a las dos propuestas de un bloque con elección, solo se corrige la primera que hayas hecho, salvo que taches una de ellas. En el bloque 4 no se pueden mezclar términos entre las opciones 4.1 y 4.2: se elige una y se resuelve entera.",
+            "El criterio oficial insiste en que, al ser un examen competencial con imágenes, mapas o planos, no basta con describir lo que se ve: hay que explicarlo. También puntúan la coherencia, la corrección gramatical, léxica y ortográfica y la presentación. La deducción máxima en el ejercicio es de un punto: los dos primeros errores ortográficos no se penalizan, la misma falta repetida cuenta una sola vez y, a partir de la tercera, se descuentan 0,10 puntos por falta; por errores de redacción, presentación, coherencia, cohesión o incorrección léxica y gramatical se puede deducir como máximo medio punto.",
+            "En el bloque 4, cada opción tiene tres términos que hay que definir con un ejemplo referido a España (0,5 puntos cada uno, 1,5 en total) y dos definiciones cuyo término hay que identificar (0,5 puntos cada una, 1 en total)."
+          ]
+        },
+        {
+          "h2": "Qué cambió entre la convocatoria de junio y la de julio de 2026",
+          "parrafos": [
+            "En junio, el bloque 1 pedía reconocer tres formaciones vegetales a partir de imágenes y el bloque 2 comentar un mapa de migraciones interiores en España desde los años 50. En julio, el bloque 1 trató el desigual reparto de las precipitaciones y el bloque 2 identificó dominios agrarios a partir de imágenes.",
+            "Las dos convocatorias no repitieron tema en los bloques obligatorios, así que con solo dos exámenes no se puede deducir qué saldrá en 2027. Sí se repite la forma de preguntar: los bloques 1, 2 y 3 parten de imágenes, mapas, gráficos o planos y el bloque 4 es de vocabulario."
+          ]
+        },
+        {
+          "h2": "Cómo preparar Geografía con estos exámenes",
+          "parrafos": [
+            "Empieza por los bloques 1 y 2: suman cinco puntos y no admiten elección, así que no puedes esquivarlos. Practica el comentario de una imagen o un mapa siguiendo siempre el mismo orden: qué se muestra, dónde se localiza, qué causas lo explican y qué consecuencias tiene.",
+            "Para el bloque 4, ensaya los dos formatos (definir con ejemplo e identificar a partir de una definición) con vocabulario de los dos exámenes oficiales. Como orientación, con 90 minutos y cuatro bloques de igual valor te salen unos 20 o 25 minutos por bloque, dejando un margen para releer."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuánto dura el examen de Geografía de la PAU en Murcia?",
+          "a": "90 minutos, como el resto de exámenes de la PAU en la Región de Murcia."
+        },
+        {
+          "q": "¿Cuántos bloques tiene y cuánto vale cada uno?",
+          "a": "Cuatro bloques de 2,5 puntos. Los bloques 1 y 2 son obligatorios; en el 3 y el 4 se elige una de las dos propuestas."
+        },
+        {
+          "q": "¿Qué pasa si respondo a las dos opciones de un bloque?",
+          "a": "Solo se corrige la que hayas hecho primero, salvo que hayas tachado una de ellas."
+        },
+        {
+          "q": "¿Puedo mezclar términos de las opciones 4.1 y 4.2?",
+          "a": "No. Se elige una opción del bloque 4 y se responde tal como está compuesta."
+        },
+        {
+          "q": "¿Cuánto pondera Geografía para entrar a un grado en la Universidad de Murcia?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de la Universidad de Murcia está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
+    },
+    "/examenes/region-de-murcia/biologia": {
+      "lead": "El examen de Biología de la PAU (EBAU) en la Región de Murcia dura 90 minutos y tiene cinco preguntas de 2 puntos: las dos primeras son obligatorias y competenciales (4 puntos) y de las preguntas 3 a 5 eliges una opción en cada una (6 puntos). Aquí tienes la estructura oficial de 2026, cómo se corrige y los PDF.",
+      "curso_nota": "Es el último examen oficial publicado (PAU 2026, convocatorias de junio y julio) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Cómo se corrige el examen de Biología",
+          "parrafos": [
+            "Si respondes a más de una opción de una misma pregunta, solo se corrige la primera, a no ser que la otra esté claramente tachada. Las instrucciones oficiales piden no firmar ni hacer marcas en el cuadernillo de respuestas, y no se corrige lo que escribas en las dos caras marcadas como borrador.",
+            "Los criterios oficiales puntúan por apartados (en junio, por ejemplo, la pregunta 1 se dividía en apartados de 0,9, 0,5 y 0,6 puntos) y valoran las respuestas con distintos grados de exactitud de forma proporcional a su precisión. También cuentan el uso correcto de la terminología de la materia y la ortografía.",
+            "La parte obligatoria evalúa competencias concretas: la pregunta 1 la competencia específica 1 (interpretar y transmitir información científica) y la pregunta 2 la competencia específica 4 (explicar fenómenos biológicos mediante el planteamiento y la resolución de problemas)."
+          ]
+        },
+        {
+          "h2": "Qué cambió entre la convocatoria de junio y la de julio de 2026",
+          "parrafos": [
+            "En junio, la pregunta 1 fue de Metabolismo (comparar las tablas nutricionales de dos alimentos) y la 2 de Genética molecular y biomoléculas (un problema de herencia con la fenilcetonuria). En julio, la pregunta 1 fue de Biología celular, a partir de una gráfica con la cantidad de ADN de una célula de ratón.",
+            "En la parte opcional también cambió el reparto: el metabolismo, que en junio estaba en la parte obligatoria, pasó a la pregunta 3 en julio. Con solo dos exámenes no se puede predecir qué saldrá en 2027; lo que sí muestran es que un mismo tema puede caer como pregunta obligatoria en una convocatoria y como opcional en la siguiente, así que no conviene descartar ningún bloque."
+          ]
+        },
+        {
+          "h2": "Cómo preparar Biología con estos exámenes",
+          "parrafos": [
+            "Las preguntas 1 y 2 valen cuatro puntos y no se eligen: prepáralas como problemas y comentarios de datos (tablas, gráficas, cruces genéticos), no solo como teoría. Resuelve cada examen oficial completo y corrígelo con los criterios por apartados para ver dónde pierdes décimas.",
+            "En la parte opcional puedes elegir una opción por pregunta, así que conviene dominar al menos una de las dos de cada bloque en lugar de repasarlo todo a medias. Como orientación, con 90 minutos y cinco preguntas de igual valor salen unos 15 a 18 minutos por pregunta."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuántas preguntas tiene el examen de Biología de la PAU en Murcia?",
+          "a": "Cinco preguntas de 2 puntos. Las preguntas 1 y 2 son obligatorias y competenciales; en las preguntas 3, 4 y 5 se elige una de las dos opciones."
+        },
+        {
+          "q": "¿Cuánto dura el examen de Biología?",
+          "a": "90 minutos, como el resto de exámenes de la PAU en la Región de Murcia."
+        },
+        {
+          "q": "¿Qué pasa si respondo a las dos opciones de una pregunta?",
+          "a": "Se corrige solo la primera que hayas contestado, salvo que la otra esté claramente tachada."
+        },
+        {
+          "q": "¿Se corrige lo que escribo en el borrador?",
+          "a": "No. Lo que se escriba en las dos caras marcadas como borrador no se corrige, y tampoco se debe firmar ni hacer marcas en el cuadernillo."
+        },
+        {
+          "q": "¿Cuánto pondera Biología para entrar a un grado en la Universidad de Murcia?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de la Universidad de Murcia está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
+    },
+    "/examenes/region-de-murcia/fisica": {
+      "lead": "El examen de Física de la PAU (EBAU) en la Región de Murcia dura 90 minutos y se divide en cuatro bloques que suman 10 puntos: campo gravitatorio (2), campo electromagnético (3), vibraciones y ondas (3) y física relativista, cuántica, nuclear y de partículas (2). El primero es obligatorio y en los otros tres eliges la opción A o la B.",
+      "curso_nota": "Es el último examen oficial publicado (PAU 2026, convocatorias de junio y julio) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Cómo se corrige el examen de Física y qué errores penalizan",
+          "parrafos": [
+            "La opción que elijas en un bloque es independiente de la que elijas en los demás. Si respondes a más de una opción de un mismo bloque, solo se corrige la que hayas hecho primero. En la hoja de respuestas hay que indicar el número de bloque, la opción y la pregunta.",
+            "Los criterios oficiales distinguen tres niveles de error. Un error leve (unidades incorrectas o ausentes en datos o resultados, omitir el símbolo de vector, errores en potencias de 10, errores de transcripción o de cálculo leves) resta 0,1 puntos por error, y la suma de los errores leves de un mismo tipo en un apartado no supera el 20 % del valor de ese apartado. Un error medio penaliza hasta el 50 % del concepto evaluado y un error grave, el 100 %; por ejemplo, no razonar o justificar cuando se pide, o aplicar una expresión con un error conceptual.",
+            "Si un apartado depende del resultado de otro, se corrige con la respuesta que diste, de modo que un error previo no afecta a los siguientes salvo que el resultado sea físicamente absurdo. Omitir las unidades al sustituir valores en una ecuación no se considera error. Las respuestas numéricas hay que justificarlas con el planteamiento y los cálculos."
+          ]
+        },
+        {
+          "h2": "Qué cambió entre la convocatoria de junio y la de julio de 2026",
+          "parrafos": [
+            "Los cuatro bloques y su reparto de puntos son los mismos en las dos convocatorias de 2026 (2, 3, 3 y 2), con la opción A o B en los bloques 2, 3 y 4. Lo que cambia son los enunciados: en junio, el bloque 1 trabajaba con satélites Sentinel y GPS y el bloque 2 incluía, por ejemplo, una partícula de tinta acelerada entre dos placas metálicas."
+          ]
+        },
+        {
+          "h2": "Cómo preparar Física con estos exámenes",
+          "parrafos": [
+            "Dado que cada bloque tiene dos opciones salvo el gravitatorio, el campo gravitatorio es el único que no puedes evitar: dedícale tiempo seguro. Practica con los PDF oficiales resolviendo cada apartado por escrito, con planteamiento, cálculo y unidades, porque, según los criterios oficiales, no explicitar el desarrollo o el razonamiento que lleva al resultado se penaliza como error grave.",
+            "Corrige tus problemas con la lista de errores de arriba. Si pierdes décimas por unidades o por potencias de 10, un repaso final de prefijos (de pico a tera) y de cifras significativas es de lo más rentable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuántos bloques tiene el examen de Física de la PAU en Murcia y cuánto vale cada uno?",
+          "a": "Cuatro bloques: campo gravitatorio (2 puntos), campo electromagnético (3), vibraciones y ondas (3) y física relativista, cuántica, nuclear y de partículas (2), hasta un total de 10 puntos."
+        },
+        {
+          "q": "¿Qué parte es obligatoria y en cuáles se elige?",
+          "a": "El bloque 1, campo gravitatorio, es obligatorio. En los bloques 2, 3 y 4 se ofrecen dos opciones (A y B) y se elige una en cada uno, de forma independiente."
+        },
+        {
+          "q": "¿Me quitan puntos por olvidar las unidades?",
+          "a": "Sí, es un error leve: 0,1 puntos por error, con un tope del 20 % del valor del apartado para los errores leves del mismo tipo. Omitir unidades al sustituir valores en una ecuación no cuenta como error."
+        },
+        {
+          "q": "Si me equivoco en un apartado, ¿se contagia el error a los siguientes?",
+          "a": "No, siempre que el resultado no sea físicamente absurdo: el siguiente apartado se corrige con la respuesta que hayas dado."
+        },
+        {
+          "q": "¿Cuánto pondera Física para entrar a un grado en la Universidad de Murcia?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de la Universidad de Murcia está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
+    },
+    "/examenes/comunidad-de-madrid/historia-del-arte": {
+      "lead": "El examen de Historia del Arte de la PAU (EvAU) en la Comunidad de Madrid dura 90 minutos y tiene cuatro preguntas: cuatro términos a partir de imágenes (2 puntos), un tema a elegir entre dos (2), tres artistas a elegir entre cinco (3) y el comentario de una obra a elegir entre dos (3). Solo la primera pregunta no tiene opción.",
+      "curso_nota": "Es el último modelo oficial publicado (PAU 2026) y la referencia para preparar la PAU de 2027. No hemos verificado ningún cambio de formato para 2027.",
+      "secciones": [
+        {
+          "h2": "Cómo repartir los 90 minutos entre las cuatro preguntas",
+          "parrafos": [
+            "Las preguntas 3 y 4 valen tres puntos cada una, es decir, seis de los diez puntos del examen entre las dos, mientras que la primera y la segunda valen dos. Como orientación, no conviene gastar en los cuatro términos de la primera pregunta más tiempo que en el comentario de obra, que vale un punto más.",
+            "La pregunta 3 se contesta con tres artistas de los cinco que aparecen, y cada respuesta suma un punto: situar su época, sus rasgos y su producción principal. Es la pregunta donde elegir bien los artistas que mejor dominas ahorra más tiempo."
+          ]
+        },
+        {
+          "h2": "Cómo preparar Historia del Arte con estos exámenes",
+          "parrafos": [
+            "Cada pregunta pide una destreza distinta, así que conviene entrenarlas por separado: vocabulario artístico asociado a imágenes (pregunta 1), un tema desarrollado con características, artistas y obras (pregunta 2), fichas breves de autores con época, rasgos y obra principal (pregunta 3) y el análisis completo de una obra con identificación, cronología, estilo y comentario formal (pregunta 4).",
+            "Según la documentación oficial recogida en esta ficha, se valoran la precisión cronológica, el vocabulario técnico, la claridad y la organización. Al practicar, escribe cada respuesta con esos cuatro puntos en mente y compárala con el modelo ordinario y con el extraordinario."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuánto dura el examen de Historia del Arte de la PAU en Madrid?",
+          "a": "90 minutos."
+        },
+        {
+          "q": "¿Cuántas preguntas tiene y cuánto vale cada una?",
+          "a": "Cuatro preguntas: cuatro términos a partir de imágenes (2 puntos), un tema a elegir entre dos (2 puntos), tres artistas a elegir entre cinco (3 puntos en total, uno por artista) y el comentario de una obra a elegir entre dos (3 puntos)."
+        },
+        {
+          "q": "¿Qué parte no tiene opción?",
+          "a": "Solo la primera pregunta, la de los cuatro términos visuales. En las otras tres se elige un tema, tres artistas o una obra."
+        },
+        {
+          "q": "¿Dónde puedo ver el examen oficial?",
+          "a": "En esta ficha tienes los enlaces a los PDF oficiales de la convocatoria ordinaria y de la extraordinaria publicados por la universidad."
+        },
+        {
+          "q": "¿Cuánto pondera Historia del Arte para entrar a un grado en Madrid?",
+          "a": "Todavía no lo tenemos verificado. Esta web solo publica coeficientes cuando hay una tabla oficial comprobada, y la de las universidades públicas de Madrid está pendiente. Mientras tanto puedes simular tu nota con la calculadora."
+        }
+      ]
+    }
+  }
+}
