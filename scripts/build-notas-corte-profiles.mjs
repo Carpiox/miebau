@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+import { ROBOTS_NOINDEX_META } from './indexacion.mjs';
 import { ADSENSE_META, FONT_LINKS, renderFooter, renderNav } from './build-nav-footer.mjs';
 import { socialMetaBlock } from './seo-meta.mjs';
 import { pickDescription, pickTitle } from './seo-text.mjs';
@@ -103,24 +104,6 @@ function cupoNote(turno) {
   return ' <strong>Importante:</strong> este dato corresponde a la opción no prioritaria de Formación Profesional dentro del cupo general.';
 }
 
-function renderRelatedEntriesSection(data, entry) {
-  const siblings = data.entries
-    .filter((other) => other.universidad === entry.universidad && other.slug !== entry.slug)
-    .sort((left, right) => left.grado.localeCompare(right.grado, 'es'));
-
-  if (siblings.length === 0) return '';
-
-  const links = siblings
-    .map((other) => `          <a class="region-quick-link" href="${escapeHtml(other.url)}">${escapeHtml(other.grado)}</a>`)
-    .join('\n');
-
-  return `        <h2>Más notas de corte de ${escapeHtml(entry.universidad)}</h2>
-        <div class="region-quick-links">
-${links}
-        </div>
-`;
-}
-
 // Abreviaturas habituales, solo para los títulos/descripciones que no caben en
 // el límite de caracteres con el nombre completo del grado. El H1 y el resto de
 // la ficha usan siempre el nombre oficial completo.
@@ -180,6 +163,7 @@ function renderProfile(data, entry) {
   <title>${title}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${canonical}">
+  ${ROBOTS_NOINDEX_META}
 ${socialMetaBlock({ escapedTitle: title, escapedDescription: escapeHtml(description), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   ${FONT_LINKS}
@@ -215,7 +199,6 @@ ${socialMetaBlock({ escapedTitle: title, escapedDescription: escapeHtml(descript
           </li>
         </ul>
 
-${renderRelatedEntriesSection(data, entry)}
         <p class="profile-global-link"><a href="/notas-de-corte">Ver todas las notas de corte</a> · <a href="/calculadora">Calcular mi nota</a></p>
       </article>
 
@@ -252,7 +235,6 @@ function renderLatestSection(entries) {
             <div class="exam-title">${escapeHtml(entry.grado)}</div>
             <div class="exam-meta">${escapeHtml(entry.universidad)} · ${escapeHtml(entry.comunidad)} · ${formatNota(entry.nota)}</div>
           </div>
-          <a class="exam-link" href="${escapeHtml(entry.url)}">Ver ficha <span aria-hidden="true">→</span></a>
         </article>`).join('')}
       </div>`
     : '<p class="catalog-empty-state">Todavía no hay notas de corte verificadas publicadas. Iremos añadiendo universidades a medida que verifiquemos cada fuente oficial — sin datos inventados ni de relleno.</p>';
@@ -273,7 +255,6 @@ function renderCutoffDataScript(entries) {
     nota: entry.nota,
     curso: entry.curso,
     turno: entry.turno,
-    url: entry.url,
   }));
   return `${CUTOFF_DATA_START}
   <script>window.MIEBAU_CUTOFF_DATA = ${JSON.stringify(payload)};</script>

@@ -1,7 +1,8 @@
 /*
  * Notas de corte · filtro sobre los datos ya verificados y publicados.
  *
- * Contrato: { grado, universidad, comunidad, nota, curso, turno, url }
+ * Contrato: { grado, universidad, comunidad, nota, curso, turno } (url opcional: las fichas
+ * individuales están en noindex y no se enlazan desde el sitio)
  * window.MIEBAU_CUTOFF_DATA lo rellena scripts/build-notas-corte-profiles.mjs
  * a partir de data/notas-corte-2026.json — nunca a mano, para no inventar datos.
  */
