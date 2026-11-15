@@ -67,39 +67,38 @@ test('las rutas limpias no llevan rewrite explícito a .html y NO están en el s
   assert(sitemap.includes('<loc>https://miebau.es/notas-de-corte</loc>'), 'el hub debe estar en el sitemap ahora que tiene contenido real');
 });
 
-test('el hub muestra el copy real y la cobertura y el dataLayer del filtro no mienten', () => {
-  assert(hubHtml.includes('Notas de corte EvAU: la guía antes de elegir grado'));
+test('el hub muestra el copy real, la cobertura y una tabla estática con todas las notas', () => {
+  assert(hubHtml.includes('Notas de corte de la Universidad de Murcia (curso 2025-2026)'));
   assert(hubHtml.includes('¿Qué es la nota de corte?'));
-  assert(hubHtml.includes('¿Cómo se calcula tu nota de admisión?'));
+  assert(hubHtml.includes('Cómo calcular tu nota para compararla con la nota de corte'));
   assert(hubHtml.includes('"@type":"FAQPage"'));
   assert(!hubHtml.includes('Próximamente'), 'el hub ya no debe presentarse como una función futura: tiene datos reales');
+  assert(!hubHtml.includes('MIEBAU_CUTOFF_DATA'), 'los datos ya no se embeben como array: la tabla estática es la fuente');
 
   const coverageMatch = hubHtml.match(/id="cutoffCoverageBadge">(?:<!--[^>]*-->)?([^<]+)/);
   assert(coverageMatch, 'falta el badge de cobertura');
   assert.equal(coverageMatch[1], `${data.entries.length} notas de corte publicadas`);
 
-  const dataMatch = hubHtml.match(/window\.MIEBAU_CUTOFF_DATA = (\[.*?\]);/s);
-  assert(dataMatch, 'falta el array MIEBAU_CUTOFF_DATA embebido');
-  const embedded = JSON.parse(dataMatch[1]);
-  assert.equal(embedded.length, data.entries.length);
-  for (const item of embedded) {
-    assert(!('url' in item), `La entrada embebida de ${item.grado} no debe enlazar a una ficha noindex`);
-    assert(data.entries.some((entry) => entry.grado === item.grado && entry.nota === item.nota && entry.turno === item.turno), `Entrada embebida no coincide con el dataset: ${item.grado}`);
+  const rows = [...hubHtml.matchAll(/<tr data-grado="([^"]*)"[^>]*data-nota="([^"]*)">([\s\S]*?)<\/tr>/g)];
+  assert.equal(rows.length, data.entries.length, 'la tabla debe tener una fila por entrada del dataset');
+  const decode = (value) => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  for (const entry of data.entries) {
+    const row = rows.find((candidate) => decode(candidate[1]) === entry.grado);
+    assert(row, `Falta la fila de ${entry.grado}`);
+    assert.equal(Number(row[2]), Number(entry.nota));
+    assert(row[3].includes(formatNota(entry.nota)), `La nota mostrada no coincide en ${entry.grado}`);
+    assert(row[3].includes(entry.turno.replace(/&/g, '&amp;')), `El cupo mostrado no coincide en ${entry.grado}`);
   }
 });
 
-test('la sección de últimas notas de corte respeta prioridad y no enlaza a fichas noindex', () => {
-  const startMarker = '<!-- notas-corte-latest:generated:start -->';
-  const endMarker = '<!-- notas-corte-latest:generated:end -->';
-  const latestBlock = hubHtml.slice(
-    hubHtml.indexOf(startMarker) + startMarker.length,
-    hubHtml.indexOf(endMarker),
-  );
-  const expected = [...data.entries].sort((left, right) => right.prioridad - left.prioridad).slice(0, 20);
-  const titles = [...latestBlock.matchAll(/<div class="exam-title">([^<]+)<\/div>/g)].map((match) => match[1]);
-
-  assert.deepEqual(titles, expected.map((entry) => entry.grado));
-  assert(!/href="\/notas-de-corte\//.test(latestBlock), 'el bloque de últimas notas no debe enlazar a fichas noindex');
+test('la tabla del hub va ordenada por nota, no enlaza a fichas noindex y cita la fuente oficial', () => {
+  const startMarker = '<!-- notas-corte-table:generated:start -->';
+  const endMarker = '<!-- notas-corte-table:generated:end -->';
+  const block = hubHtml.slice(hubHtml.indexOf(startMarker) + startMarker.length, hubHtml.indexOf(endMarker));
+  const notes = [...block.matchAll(/data-nota="([^"]+)"/g)].map((match) => Number(match[1]));
+  assert.deepEqual(notes, [...notes].sort((a, b) => b - a));
+  assert(!/href="\/notas-de-corte\//.test(block), 'la tabla no debe enlazar a fichas noindex');
+  for (const source of data.sources) assert(block.includes(source.sourceUrl), `Falta la fuente ${source.id}`);
 });
 
 test('ninguna página del sitio enlaza a las fichas noindex de notas de corte (salvo ellas mismas con el hub)', () => {

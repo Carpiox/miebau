@@ -11,10 +11,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = path.join(ROOT, 'data', 'notas-corte-2026.json');
 const OUTPUT_DIR = path.join(ROOT, 'notas-de-corte');
 const HUB_PATH = path.join(ROOT, 'notas-de-corte.html');
-const LATEST_START = '<!-- notas-corte-latest:generated:start -->';
-const LATEST_END = '<!-- notas-corte-latest:generated:end -->';
-const CUTOFF_DATA_START = '<!-- notas-corte-cutoff-data:generated:start -->';
-const CUTOFF_DATA_END = '<!-- notas-corte-cutoff-data:generated:end -->';
+const TABLE_START = '<!-- notas-corte-table:generated:start -->';
+const TABLE_END = '<!-- notas-corte-table:generated:end -->';
 const COVERAGE_START = '<!-- notas-corte-coverage:generated:start -->';
 const COVERAGE_END = '<!-- notas-corte-coverage:generated:end -->';
 
@@ -224,41 +222,55 @@ function outputPathFor(entry) {
   return path.join(OUTPUT_DIR, `${entry.slug}.html`);
 }
 
-function renderLatestSection(entries) {
-  const latest = [...entries].sort((left, right) => right.prioridad - left.prioridad).slice(0, 20);
-
-  const content = latest.length
-    ? `<div class="exam-list">${latest.map((entry) => `
-        <article class="exam-row" data-checked-at="${escapeHtml(entry.checkedAt)}">
-          <div class="exam-icon" aria-hidden="true">📊</div>
-          <div class="exam-info">
-            <div class="exam-title">${escapeHtml(entry.grado)}</div>
-            <div class="exam-meta">${escapeHtml(entry.universidad)} · ${escapeHtml(entry.comunidad)} · ${formatNota(entry.nota)}</div>
-          </div>
-        </article>`).join('')}
-      </div>`
-    : '<p class="catalog-empty-state">Todavía no hay notas de corte verificadas publicadas. Iremos añadiendo universidades a medida que verifiquemos cada fuente oficial — sin datos inventados ni de relleno.</p>';
-
-  return `${LATEST_START}
-    <section class="card" aria-labelledby="latestCutoffsTitle" style="margin-top: 0.5rem;">
-      <h2 class="card-title" id="latestCutoffsTitle">Últimas notas de corte publicadas</h2>
-      ${content}
-    </section>
-    ${LATEST_END}`;
+function uniqueValues(entries, key) {
+  return [...new Set(entries.map((entry) => entry[key]))];
 }
 
-function renderCutoffDataScript(entries) {
-  const payload = entries.map((entry) => ({
-    grado: entry.grado,
-    universidad: entry.universidad,
-    comunidad: entry.comunidad,
-    nota: entry.nota,
-    curso: entry.curso,
-    turno: entry.turno,
-  }));
-  return `${CUTOFF_DATA_START}
-  <script>window.MIEBAU_CUTOFF_DATA = ${JSON.stringify(payload)};</script>
-  ${CUTOFF_DATA_END}`;
+// Tabla estática con TODAS las notas de corte publicadas. Es HTML real (no se
+// pinta con JavaScript) y no enlaza a las fichas individuales, que son noindex.
+// js/notas-de-corte.js solo filtra y ordena estas filas.
+function renderCutoffTable(data) {
+  const entries = [...data.entries].sort((left, right) => Number(right.nota) - Number(left.nota) || left.grado.localeCompare(right.grado, 'es'));
+  if (entries.length === 0) {
+    return `${TABLE_START}
+    <section class="card" aria-labelledby="cutoffTableTitle">
+      <h2 class="card-title" id="cutoffTableTitle">Notas de corte publicadas</h2>
+      <p class="catalog-empty-state">Todavía no hay notas de corte verificadas publicadas. Iremos añadiendo universidades a medida que verifiquemos cada fuente oficial — sin datos inventados ni de relleno.</p>
+    </section>
+    ${TABLE_END}`;
+  }
+  const universities = uniqueValues(entries, 'universidad');
+  const courses = uniqueValues(entries, 'curso');
+  const heading = `Notas de corte de grado · ${universities.join(' y ')} · curso ${courses.join(' y ')}`;
+  const rows = entries.map((entry) => `
+          <tr data-grado="${escapeHtml(entry.grado)}" data-universidad="${escapeHtml(entry.universidad)}" data-comunidad="${escapeHtml(entry.comunidad)}" data-nota="${entry.nota}">
+            <th scope="row">${escapeHtml(entry.grado)}</th>
+            <td>${escapeHtml(entry.universidad)}</td>
+            <td>${escapeHtml(entry.curso)}</td>
+            <td>${escapeHtml(entry.turno)}</td>
+            <td><strong>${formatNota(entry.nota)}</strong></td>
+          </tr>`).join('');
+  const sources = data.sources
+    .filter((source) => entries.some((entry) => entry.sourceId === source.id))
+    .map((source) => {
+      const checkedAt = entries.find((entry) => entry.sourceId === source.id).checkedAt;
+      return `<a href="${escapeHtml(source.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)}</a> · comprobado el ${escapeHtml(displayDate(checkedAt))}`;
+    })
+    .join('; ');
+  return `${TABLE_START}
+    <section class="card" aria-labelledby="cutoffTableTitle">
+      <div class="section-title-area"><h2 id="cutoffTableTitle">${escapeHtml(heading)}</h2><span class="badge-count" id="cutoffCount" aria-live="polite">${entries.length} resultados</span></div>
+      <div class="table-scroll">
+        <table class="cutoff-table" id="cutoffTable" aria-labelledby="cutoffTableTitle">
+          <thead><tr><th scope="col">Grado</th><th scope="col">Universidad</th><th scope="col">Curso</th><th scope="col">Cupo</th><th scope="col">Nota de corte</th></tr></thead>
+          <tbody id="cutoffBody">${rows}
+          </tbody>
+        </table>
+      </div>
+      <p class="cutoff-empty" id="cutoffEmpty" hidden>No hay coincidencias. Prueba a cambiar los filtros.</p>
+      <p><strong>Fuente oficial:</strong> ${sources}.</p>
+    </section>
+    ${TABLE_END}`;
 }
 
 function replaceGeneratedBlock(source, startMarker, endMarker, replacement) {
@@ -275,11 +287,9 @@ function renderCoverageLabel(entries) {
 }
 
 function renderHub(source, data) {
-  const withLatest = replaceGeneratedBlock(source, LATEST_START, LATEST_END, renderLatestSection(data.entries));
-  assert(withLatest !== null, `Falta el marcador ${LATEST_START} en notas-de-corte.html`);
-  const withData = replaceGeneratedBlock(withLatest, CUTOFF_DATA_START, CUTOFF_DATA_END, renderCutoffDataScript(data.entries));
-  assert(withData !== null, `Falta el marcador ${CUTOFF_DATA_START} en notas-de-corte.html`);
-  const withCoverage = replaceGeneratedBlock(withData, COVERAGE_START, COVERAGE_END, renderCoverageLabel(data.entries));
+  const withTable = replaceGeneratedBlock(source, TABLE_START, TABLE_END, renderCutoffTable(data));
+  assert(withTable !== null, `Falta el marcador ${TABLE_START} en notas-de-corte.html`);
+  const withCoverage = replaceGeneratedBlock(withTable, COVERAGE_START, COVERAGE_END, renderCoverageLabel(data.entries));
   assert(withCoverage !== null, `Falta el marcador ${COVERAGE_START} en notas-de-corte.html`);
   return withCoverage;
 }
@@ -326,4 +336,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { expectedFiles, formatNota, outputPathFor, renderHub, renderLatestSection, renderProfile, validateData };
+export { expectedFiles, formatNota, outputPathFor, renderCutoffTable, renderHub, renderProfile, validateData };
