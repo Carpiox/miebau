@@ -634,3 +634,7 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
     (3) Las fichas de notas de corte siguen con Jaccard medio 0,62 entre sí: no se reindexan hasta tener
     contenido propio (ver `docs/contenido-pendiente.md`). (4) No hay salida de red a webs oficiales:
     cualquier dato nuevo lo sube o pega el usuario.
+- 2026-11-15 (cont.): **Lote 2**: refuerzo de Matemáticas II (Murcia) e Inglés (Madrid) con el mismo mecanismo
+  (`data/examenes-refuerzo.json`; title/h1/meta en `examenes-seo.json`). Push de la rama autorizado por el
+  usuario (rama `claude/miebau-seo-diagnostico-rjcyk2`, sin PR ni `main`). Pendiente de OK: `noindex` en
+  `uam`, `uc3m`, `uoc` (0 impresiones, nunca rastreadas). El usuario subirá el PDF de ponderaciones de la UMU.
