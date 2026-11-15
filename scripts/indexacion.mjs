@@ -31,9 +31,16 @@ export const PONDERACIONES_INDEXADAS_2026_11_15 = new Set([
   'euneiz',
 ]);
 
+// Fichas con filas oficiales compartidas ("partial") pero sin ninguna impresión
+// ni rastreo en Search Console (export del 2026-11-15: 0 impresiones, nunca
+// rastreadas) y sin tabla propia verificada: noindex hasta tenerla (decisión del
+// usuario del 2026-11-15).
+export const PONDERACIONES_NOINDEX_PARCIALES = new Set(['uam', 'uc3m', 'uoc']);
+
 // `coverage` es el resultado de classifyUniversityCoverage(): 'verified' y
 // 'partial' tienen filas oficiales de ponderaciones; el resto, no.
 export function ponderacionNoindex(university, coverage) {
+  if (PONDERACIONES_NOINDEX_PARCIALES.has(university.id)) return true;
   if (coverage === 'verified' || coverage === 'partial') return false;
   return !PONDERACIONES_INDEXADAS_2026_11_15.has(university.id);
 }

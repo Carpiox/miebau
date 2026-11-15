@@ -7,7 +7,7 @@ import path from 'node:path';
 
 import { validateFixture } from '../scripts/build-ponderaciones-data.mjs';
 import { buildFaqEntries, classifyUniversityCoverage, latestCurrentUniversities, recordsForUniversity, renderLatestPonderacionesSection } from '../scripts/build-ponderaciones-profiles.mjs';
-import { PONDERACIONES_INDEXADAS_2026_11_15 } from '../scripts/indexacion.mjs';
+import { PONDERACIONES_INDEXADAS_2026_11_15, PONDERACIONES_NOINDEX_PARCIALES } from '../scripts/indexacion.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
@@ -297,7 +297,7 @@ test('23. SEO, canonical y sitemap cubren las 82 rutas, sin rewrites que Cloudfl
     descriptions.add(description);
     assert(profileHtml.includes(`<link rel="canonical" href="${canonical}">`), `Canonical incorrecto en ${university.id}`);
     assert.equal((profileHtml.match(/<h1>/g) || []).length, 1, `H1 incorrecto en ${university.id}`);
-    const expectNoindex = degreeRowsForUniversity(university.id).length === 0 && !PONDERACIONES_INDEXADAS_2026_11_15.has(university.id);
+    const expectNoindex = PONDERACIONES_NOINDEX_PARCIALES.has(university.id) || (degreeRowsForUniversity(university.id).length === 0 && !PONDERACIONES_INDEXADAS_2026_11_15.has(university.id));
     assert.equal(/<meta name="robots" content="noindex, follow">/.test(profileHtml), expectNoindex, `Robots incoherente en ${university.id}`);
     assert.equal(sitemap.includes(`<loc>${canonical}</loc>`), !expectNoindex, `Sitemap incoherente con el noindex en ${canonical}`);
     assert(!sitemap.includes(`<loc>${canonical}.html</loc>`), `Versión .html incluida en sitemap para ${university.id}`);
