@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 import { ADSENSE_META, FONT_LINKS, applyNavFooter, renderFooter, renderNav } from './build-nav-footer.mjs';
+import { ROBOTS_NOINDEX_META, applyRobotsMeta, ponderacionNoindex } from './indexacion.mjs';
 import { ensureSocialMeta, socialMetaBlock } from './seo-meta.mjs';
 import { inDescriptionRange, inTitleRange, pickDescription, pickTitle } from './seo-text.mjs';
 
@@ -466,7 +467,7 @@ function renderPublicProfile(data, university, records) {
   <meta name="theme-color" content="#5a43f2">
   <title>${escapeHtml(seoTitle(university))}</title>
   <meta name="description" content="${escapeHtml(metaDescription(university, coverage))}">
-  <link rel="canonical" href="${canonical}">
+  <link rel="canonical" href="${canonical}">${ponderacionNoindex(university, coverage) ? '\n  ' + ROBOTS_NOINDEX_META : ''}
 ${socialMetaBlock({ escapedTitle: escapeHtml(seoTitle(university)), escapedDescription: escapeHtml(metaDescription(university, coverage)), url: canonical })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   ${FONT_LINKS}
@@ -589,7 +590,7 @@ async function expectedFiles(data) {
     const withSchema = upsertPrivateFaqJsonLd(withFaq, renderFaqJsonLd(faqEntries));
     const withRelated = upsertPrivateRelatedSection(withSchema, renderRelatedUniversitiesSection(data, university));
     const withNavFooter = applyNavFooter(withRelated, 'ponderaciones');
-    files.push({ filePath, content: ensureSocialMeta(upsertPrivateSeoText(withNavFooter, university, coverage)) });
+    files.push({ filePath, content: applyRobotsMeta(ensureSocialMeta(upsertPrivateSeoText(withNavFooter, university, coverage)), ponderacionNoindex(university, coverage)) });
   }
   const currentIndex = await readFile(PONDERACIONES_INDEX_PATH, 'utf8');
   const nextIndex = replaceGeneratedBlock(currentIndex, LATEST_START, LATEST_END, renderLatestPonderacionesSection(data));
