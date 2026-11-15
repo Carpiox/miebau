@@ -24,5 +24,5 @@ Datos que **no se han escrito** porque no están verificados en el proyecto. Des
 | 17 | `/calendario-ebau` (noindex) | **Fechas oficiales PAU 2027** | Convocatoria del Distrito Universitario | Poder indexarla |
 
 ## Decisiones que quedan abiertas
-- **uam, uc3m y uoc** tienen 3, 3 y 1 filas oficiales compartidas (cobertura "partial") y por eso **siguen indexables**: no son páginas "sin dato". Si prefieres `noindex` en las tres, se cambia en `scripts/indexacion.mjs` (una línea) en el siguiente lote de indexación.
+- **uam, uc3m y uoc** pasaron a `noindex` el 2026-11-15 (0 impresiones, nunca rastreadas). Se reabren cuando tengan tabla oficial propia verificada (quitar el id de `PONDERACIONES_NOINDEX_PARCIALES`).
 - **Cifra de ponderaciones en noindex: 49, no 51.** El "51" salía de un fallo de aritmética de mi plan (sumé 15 pendientes cuando son 14 públicas + 1 privada). Hechos: 82 fichas − 16 ya indexadas − 14 verificadas − 3 parciales = 49.

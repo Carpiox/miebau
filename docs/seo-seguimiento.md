@@ -52,9 +52,10 @@ Orden de commits (más antiguo primero) y qué mirar. Los cambios de **indexaci�
 
 ## Próximos lotes del plan (no ejecutados)
 - **Lote 2 hecho** (Matemáticas II Murcia e Inglés Madrid). Siguientes por impresiones: Lengua Castellana (6), Historia de España (11), Inglés Murcia (5), Filosofía (4) y el índice `/examenes/region-de-murcia` (12 impr., pos 49).
-- **Propuesta de indexación pendiente de tu OK (Lote 0b):** `noindex` en `uam`, `uc3m` y `uoc` (ver abajo).
+- **Lote 0b hecho** (`bf40bd4`): `noindex` en `uam`, `uc3m` y `uoc`.
+- **Siguiente (Lote 3):** ponderaciones de la UMU, cuando el usuario suba el PDF oficial.
 - Resto de fichas de Murcia y Madrid; guías, precios, premium, contacto y legales (necesitan los datos de `docs/contenido-pendiente.md`).
 
-## Propuesta Lote 0b · `uam`, `uc3m`, `uoc` (pendiente de tu OK)
-Datos de Search Console (3 meses hasta 2026-11-15): **0 impresiones, 0 clics, ninguna consulta asociada**, y las tres están en "Descubierta: actualmente sin indexar" con último rastreo 1970-01-01 (Google no las ha rastreado nunca). Tienen 3, 3 y 1 filas oficiales compartidas, sin tabla propia verificada, y `uam`/`uc3m` se parecen entre sí (Jaccard 0,88).
-**Propuesta: `noindex` y fuera del sitemap las tres**, hasta tener su tabla oficial (el cambio es una línea en `scripts/indexacion.mjs` y es reversible). No pierden tráfico porque no tienen ninguno. Impacto esperado: sitemap de 113 a 110 URLs.
+## Lote 0b · `uam`, `uc3m`, `uoc` (hecho, commit `bf40bd4`)
+`noindex` y fuera del sitemap (113 → 110 URLs). Motivo: 0 impresiones y nunca rastreadas (Search Console, 2026-11-15), solo 3, 3 y 1 filas oficiales compartidas. **Qué vigilar a 14-28 días:** "Excluida por la etiqueta noindex" +3 en Indexación; sin cambio esperable en clics ni impresiones (no tenían). Reabrir cuando exista su tabla oficial verificada (quitar el id de `PONDERACIONES_NOINDEX_PARCIALES` en `scripts/indexacion.mjs`).
+Fichas de ponderaciones en noindex: **52** (49 + 3).
