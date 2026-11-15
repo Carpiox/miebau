@@ -612,3 +612,25 @@ para que la siguiente sesión no tenga que releer todo el proyecto.)
   7. Google Fonts con `preconnect` + `<link>` (`FONT_LINKS`/`ensureFontLinks`).
   Test 20 de `ponderaciones.test.mjs` sigue fallando con el árbol sucio: se comprueba con
   los cambios commiteados.
+- 2026-11-15: **Diagnóstico SEO con datos reales de Search Console y Lotes 0-1 de contenido** (rama
+  `claude/miebau-seo-diagnostico-rjcyk2`, commits sin push; el push lo hace el usuario). Detalle en
+  `docs/seo-informe-2026-11-15.md`, `docs/plan-contenido.md`, `docs/inventario-contenido.csv`,
+  `docs/contenido-pendiente.md` y `docs/seo-seguimiento.md`.
+  - **Dato clave**: 10 clics / 431 impresiones en 3 meses; 57 indexadas y 181 sin indexar (172
+    "descubierta, nunca rastreada"). Escribir más no desbloquea sola la indexación; el contenido se
+    mide donde ya hay rastreo (fichas de examen de Murcia, calculadora, hub de notas).
+  - **Lote 0 (indexación)**: `scripts/indexacion.mjs` es la fuente única. 68 fichas de notas de corte
+    en `noindex,follow`, fuera del sitemap y sin enlaces internos (consolidadas en la tabla de
+    `/notas-de-corte`); 49 fichas de ponderaciones sin dato propio en `noindex` (se mantienen las 16
+    indexadas el 2026-11-15, entre ellas `ucam`, y las que tienen filas oficiales: `uam`, `uc3m`, `uoc`).
+    Sitemap: 230 -> 113 URLs. `tests/indexacion.test.mjs` exige sitemap == páginas sin noindex.
+  - **Lote 1 (contenido)**: refuerzo de Geografía, Biología y Física (Murcia) e Historia del Arte
+    (Madrid) vía `data/examenes-refuerzo.json` (lead, secciones, FAQ visible + FAQPage; solo hechos de
+    los PDF oficiales de `data/murcia/textos` o de `examenes-seo.json`); `/calculadora` (ejemplo
+    comprobado contra la propia calculadora; **no aplica mínimos de aprobado y la página lo dice**);
+    `/notas-de-corte` con tabla estática de 68 filas (el JS solo filtra filas) y portada con enlaces.
+  - **Lecciones**: (1) similitud: usar Jaccard de 5 palabras o TF-IDF; el coseno de bolsa de palabras
+    sale ~0,95 siempre en español. (2) Un test heurístico rechaza "astro" (palabra "arrastro"): evitar.
+    (3) Las fichas de notas de corte siguen con Jaccard medio 0,62 entre sí: no se reindexan hasta tener
+    contenido propio (ver `docs/contenido-pendiente.md`). (4) No hay salida de red a webs oficiales:
+    cualquier dato nuevo lo sube o pega el usuario.
